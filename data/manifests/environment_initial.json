@@ -1,0 +1,31 @@
+{
+  "measured_utc": "2026-10-19T16:07:13.968891+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+  "memory": {
+    "total_bytes": 16786583552,
+    "available_bytes": 375021568
+  },
+  "disk_free_bytes": 8897466368,
+  "storage_budget_bytes": 4897466368,
+  "packages": {
+    "numpy": "2.3.4",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3",
+    "statsmodels": "0.14.6",
+    "matplotlib": "3.10.7",
+    "openpyxl": "3.1.5",
+    "PyYAML": "6.0.3",
+    "scikit-learn": "1.7.2",
+    "pypdf": "6.13.0"
+  },
+  "commands_on_path": {
+    "python": "C:\\Program Files (x86)\\MGLTools-1.5.7\\python.EXE",
+    "Rscript": null,
+    "conda": null,
+    "mamba": null,
+    "git": "C:\\Program Files\\Git\\cmd\\git.EXE",
+    "gh": "C:\\Program Files\\GitHub CLI\\gh.EXE"
+  }
+}

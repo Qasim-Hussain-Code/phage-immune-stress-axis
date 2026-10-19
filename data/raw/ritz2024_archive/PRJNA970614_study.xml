@@ -1,0 +1,59 @@
+<PROJECT_SET>
+<PROJECT accession="PRJNA970614" alias="PRJNA970614" center_name="University College Cork" broker_name="NCBI">
+  <IDENTIFIERS>
+    <PRIMARY_ID>PRJNA970614</PRIMARY_ID>
+    <SECONDARY_ID>SRP441601</SECONDARY_ID>
+    <SUBMITTER_ID namespace="University College Cork">PRJNA970614</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <NAME>Mouse microbiomes and viromes</NAME>
+  <TITLE>The Virome Regulates the Effects of Chronic Stress</TITLE>
+  <DESCRIPTION>Although the microbiota-gut-brain axis has been shown to play an important role in stress response, the focus has been almost entirely on the bacteriome with the gut virome overlooked. Here we show that chronic stress led to behavioural, immune, and bacteriome alterations in mice that were associated with changes at the level of the virome. Using a faecal virome transplant (FVT) from mice and autochthonously transferring it during chronic stress, improvements in stress-coping-related behaviours were unmasked. FVT also restored stress-induced changes in select circulating immune cell populations, cytokine release, bacteriome changes and gene expression in the amygdala. These data provide evidence that the virome is a viable treatment option to restore the microbiota-gut-brain axis during stress and a potential treatment strategy for stress-related psychopathologies.</DESCRIPTION>
+  <SUBMISSION_PROJECT>
+    <SEQUENCING_PROJECT/>
+    <ORGANISM>
+      <TAXON_ID>1070528</TAXON_ID>
+      <SCIENTIFIC_NAME>viral metagenome</SCIENTIFIC_NAME>
+    </ORGANISM>
+  </SUBMISSION_PROJECT>
+  <PROJECT_LINKS>
+    <PROJECT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJNA970614&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </PROJECT_LINK>
+    <PROJECT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJNA970614&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </PROJECT_LINK>
+  </PROJECT_LINKS>
+  <PROJECT_ATTRIBUTES>
+    <PROJECT_ATTRIBUTE>
+      <TAG>ENA-REFSEQ</TAG>
+      <VALUE>N</VALUE>
+    </PROJECT_ATTRIBUTE>
+    <PROJECT_ATTRIBUTE>
+      <TAG>PROJECT-ID</TAG>
+      <VALUE>970614</VALUE>
+    </PROJECT_ATTRIBUTE>
+    <PROJECT_ATTRIBUTE>
+      <TAG>NCBI-PROJECT-TYPE</TAG>
+      <VALUE>SUBMISSION</VALUE>
+    </PROJECT_ATTRIBUTE>
+    <PROJECT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </PROJECT_ATTRIBUTE>
+    <PROJECT_ATTRIBUTE>
+      <TAG>ENA-FIRST-PUBLIC</TAG>
+      <VALUE>2024-03-30</VALUE>
+    </PROJECT_ATTRIBUTE>
+    <PROJECT_ATTRIBUTE>
+      <TAG>ENA-LAST-UPDATE</TAG>
+      <VALUE>2024-03-30</VALUE>
+    </PROJECT_ATTRIBUTE>
+  </PROJECT_ATTRIBUTES>
+</PROJECT>
+</PROJECT_SET>

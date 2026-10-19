@@ -1,0 +1,103 @@
+[
+  {
+    "path": "data/raw/ritz2024_archive/Fvtstress_scripts_040124.pdf",
+    "url": "https://zenodo.org/api/records/10460215/files/Fvtstress_scripts_040124.pdf/content",
+    "bytes": 502039,
+    "sha256": "1a510d1e8691d01856383446999a5af57776b65d68504f73a54ef28733c59048",
+    "accessed_date_taipei": "2026-10-20",
+    "notes": "Downloaded bytes preserved",
+    "max_bytes": 1004078,
+    "license": "CC BY 4.0 article and code; ENA public archive metadata"
+  },
+  {
+    "path": "data/raw/ritz2024_archive/PRJNA970614_study.xml",
+    "url": "https://www.ebi.ac.uk/ena/browser/api/xml/PRJNA970614",
+    "bytes": 2891,
+    "sha256": "792c910856c5ab7fb480dc5049752ad59d98cd0e36188cdd35c07c0a3f0e5926",
+    "accessed_date_taipei": "2026-10-20",
+    "notes": "Downloaded bytes preserved",
+    "max_bytes": 100000,
+    "license": "Public ENA metadata; see provenance"
+  },
+  {
+    "path": "data/raw/ritz2024_archive/PRJNA970614_selected_samples.xml",
+    "url": "https://www.ebi.ac.uk/ena/browser/api/xml/SAMN35558015,SAMN35558035,SAMN35558037,SAMN35558065,SAMN35558085,SAMN35558118",
+    "bytes": 19149,
+    "sha256": "454f36c66a50bc22a09cb3aa36827571be130b540bf2112cd9bd38c5ba04c3bc",
+    "accessed_date_taipei": "2026-10-20",
+    "notes": "Downloaded bytes preserved",
+    "max_bytes": 100000,
+    "license": "Public ENA metadata; see provenance"
+  },
+  {
+    "path": "data/raw/ritz2024_archive/PRJNA970614_samples.xml",
+    "url": "https://www.ebi.ac.uk/ena/browser/api/xml/SAMN35558108,SAMN35558107,SAMN35558106,SAMN35558024,SAMN35558099,SAMN35558093,SAMN35558085,SAMN35558080,SAMN35558076,SAMN35558074,SAMN35558072,SAMN35558067,SAMN35558060,SAMN35558059,SAMN35558044,SAMN35558043,SAMN35558040,SAMN35558036,SAMN35558017,SAMN35558027,SAMN35558117,SAMN35558025,SAMN35558016,SAMN35558114,SAMN35558111,SAMN35558101,SAMN35558098,SAMN35558096,SAMN35558095,SAMN35558023,SAMN35558082,SAMN35558079,SAMN35558075,SAMN35558071,SAMN35558068,SAMN35558057,SAMN35558055,SAMN35558051,SAMN35558049,SAMN35558047,SAMN35558042,SAMN35558035,SAMN35558118,SAMN35558015,SAMN35558113,SAMN35558112,SAMN35558109,SAMN35558100,SAMN35558097,SAMN35558094,SAMN35558090,SAMN35558088,SAMN35558073,SAMN35558065,SAMN35558053,SAMN35558050,SAMN35558048,SAMN35558033,SAMN35558031,SAMN35558029,SAMN35558028,SAMN35558026,SAMN35558110,SAMN35558103,SAMN35558102,SAMN35558091,SAMN35558089,SAMN35558022,SAMN35558084,SAMN35558081,SAMN35558077,SAMN35558021,SAMN35558069,SAMN35558066,SAMN35558062,SAMN35558061,SAMN35558056,SAMN35558019,SAMN35558054,SAMN35558052,SAMN35558046,SAMN35558045,SAMN35558018,SAMN35558041,SAMN35558037,SAMN35558034,SAMN35558032,SAMN35558116,SAMN35558115,SAMN35558105,SAMN35558104,SAMN35558092,SAMN35558087,SAMN35558086,SAMN35558083,SAMN35558078,SAMN35558070,SAMN35558020,SAMN35558064,SAMN35558063,SAMN35558058,SAMN35558039,SAMN35558038,SAMN35558030",
+    "bytes": 330625,
+    "sha256": "4c0f1bed9763ea00bc0399e72f8196308281ca4b36aa5d4dced0addaa90fba43",
+    "accessed_date_taipei": "2026-10-20",
+    "notes": "Downloaded bytes preserved",
+    "max_bytes": 661250,
+    "license": "Public ENA metadata; see provenance"
+  },
+  {
+    "path": "data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv",
+    "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJNA970614&result=read_run&fields=run_accession,sample_accession,sample_alias,experiment_alias,library_name,library_source,library_strategy,library_layout,fastq_bytes,fastq_ftp&format=tsv",
+    "bytes": 24906,
+    "sha256": "e9cc15f4d70609ffe5268631117cfc9a1e0bea09b107d99bd25b9539342f9e70",
+    "accessed_date_taipei": "2026-10-20",
+    "notes": "Downloaded bytes preserved",
+    "max_bytes": 100000,
+    "license": "Public ENA metadata; see provenance"
+  },
+  {
+    "path": "data/raw/ritz2024_archive/PRJEB69687_ena_runs.tsv",
+    "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB69687&result=read_run&fields=run_accession,sample_accession,sample_alias,experiment_alias,library_name,library_source,library_strategy,library_layout,fastq_bytes,fastq_ftp&format=tsv",
+    "bytes": 14914,
+    "sha256": "71e69fe20f66cf1529ade4ca2d3c21bde143316d1d8135e1f6d71fc62c949fdc",
+    "accessed_date_taipei": "2026-10-20",
+    "notes": "Downloaded bytes preserved",
+    "max_bytes": 100000,
+    "license": "Public ENA metadata; see provenance"
+  },
+  {
+    "path": "data/raw/ritz2024_archive/PRJEB67706_ena_runs.tsv",
+    "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB67706&result=read_run&fields=run_accession,sample_accession,sample_alias,experiment_alias,library_name,library_source,library_strategy,library_layout,fastq_bytes,fastq_ftp&format=tsv",
+    "bytes": 21682,
+    "sha256": "f789ebee1d8aac1aa99f254fccc0c89651df35f326eeeda2ec1bfda3aae649ec",
+    "accessed_date_taipei": "2026-10-20",
+    "notes": "Downloaded bytes preserved",
+    "max_bytes": 100000,
+    "license": "Public ENA metadata; see provenance"
+  },
+  {
+    "path": "data/raw/article.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10847049/fullTextXML",
+    "accessed_date_taipei": "2026-10-20",
+    "notes": "Downloaded bytes preserved",
+    "bytes": 243047,
+    "sha256": "930377c6ff5be3a31815126ab34394eb80cd6e0e9f9ab1246b3e069767a701e6",
+    "max_bytes": 486094,
+    "license": "CC BY 4.0 article and code; ENA public archive metadata"
+  },
+  {
+    "path": "data/raw/source_data.xlsx",
+    "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41564-023-01564-y/MediaObjects/41564_2023_1564_MOESM2_ESM.xlsx",
+    "accessed_date_taipei": "2026-10-20",
+    "notes": "Downloaded bytes preserved",
+    "bytes": 23358,
+    "sha256": "1eac33250329c4160caff224c8ae4618a4a4849d5a086986bd12e5bb1c50d368",
+    "max_bytes": 100000,
+    "license": "CC BY 4.0 article and code; ENA public archive metadata"
+  },
+  {
+    "path": "data/manifests/zenodo_release.json",
+    "url": "https://zenodo.org/api/records/10460215",
+    "bytes": 330,
+    "sha256": "76fda2c0a52bed064f829ba066fd03acf95229fcf493e2ace07d4f4c399c29db",
+    "accessed_date_taipei": "2026-10-20",
+    "notes": "Canonical catalog selects record id, title, license and sorted file key/size/checksum; excludes changing usage statistics",
+    "transformation": "zenodo_catalog",
+    "max_bytes": 1000000,
+    "license": "CC BY 4.0"
+  }
+]
