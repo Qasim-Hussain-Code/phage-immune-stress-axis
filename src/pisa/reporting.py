@@ -138,4 +138,34 @@ check and several hundred MB depending on platform.
 '''
     text+='\n'.join(f'- {name}: {version}' for name,version in packages.items() if version)+'\n'
     (root/'docs/resource_usage.md').write_text(text,encoding='utf-8')
+    results=(root/'docs/results.md')
+    if results.exists():
+        technical=results.read_text(encoding='utf-8')
+        technical+=f'''\n## Computational completion and publication\n\n
+The full restricted ten-stage workflow, pilot, offline execution and verified
+resume completed. The validation-only interface also passed the 25-test suite.
+Four actual-data or availability figures were generated as PNG and vector PDF;
+their final exported PDF pages passed visual rendering checks documented in
+docs/pdf_qa.md. Excluded community analyses were reported as exclusions.
+
+Maximum measured per-process peak RSS in the recorded workflow was
+{usage['max_measured_stage_peak_rss_bytes']:,} bytes
+({usage['max_measured_stage_peak_rss_bytes']/1e6:.1f} MB), including validation
+process measurements. This is not a measured aggregate system peak. The
+project snapshot, including Git and optional QA software/cache, was
+{usage['project_bytes_including_git']:,} bytes
+({usage['project_bytes_including_git']/1e6:.2f} MB); disk free was
+{usage['disk_free_bytes']/1e9:.3f} GB. The operational ceiling was
+{usage['operational_storage_budget_bytes']/1e9:.3f} GB with a 4 GB reserve.
+Later Git bookkeeping can slightly change storage without changing results.
+
+Researcher and sole project author: Qasim Hussain. The local Git repository is
+prepared for review. The intended URL is
+https://github.com/Qasim-Hussain-Code/phage-immune-stress-axis, but it has not
+been verified as a published repository: connected access returned 404 and the
+local GitHub CLI token was invalid. No push or repository creation succeeded.
+See docs/publication_status.md. No causal phage mechanism or stability-immune
+association is claimed.
+'''
+        (root/'results/reports/final_assessment.md').write_text(technical,encoding='utf-8')
 

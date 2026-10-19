@@ -1,0 +1,125 @@
+experiment_id,group,endpoint,assay_domain,selected_endpoint,n_source_animals,n_observed,n_missing,missing_source_ids_json,missing_reason
+study_i,ctr,basal_corticosterone,endocrine,False,10,10,0,[],
+study_i,ctr,fst_immobility,behavior,False,10,10,0,[],
+study_i,ctr,il10_cona,immune,False,10,10,0,[],
+study_i,ctr,il10_unstimulated,immune,False,10,10,0,[],
+study_i,ctr,il6_cona,immune,False,10,10,0,[],
+study_i,ctr,il6_unstimulated,immune,False,10,10,0,[],
+study_i,ctr,post_corticosterone,endocrine,False,10,10,0,[],
+study_i,ctr,sit_si_ratio,behavior,False,10,10,0,[],
+study_i,ctr_stress,basal_corticosterone,endocrine,False,10,10,0,[],
+study_i,ctr_stress,fst_immobility,behavior,False,10,10,0,[],
+study_i,ctr_stress,il10_cona,immune,False,10,10,0,[],
+study_i,ctr_stress,il10_unstimulated,immune,False,10,10,0,[],
+study_i,ctr_stress,il6_cona,immune,False,10,10,0,[],
+study_i,ctr_stress,il6_unstimulated,immune,False,10,10,0,[],
+study_i,ctr_stress,post_corticosterone,endocrine,False,10,10,0,[],
+study_i,ctr_stress,sit_si_ratio,behavior,False,10,10,0,[],
+study_ii,ctr,cd44hi_thelper,immune,False,10,10,0,[],
+study_ii,ctr,cd62_neutrophils,immune,False,10,10,0,[],
+study_ii,ctr,cd69_thelper,immune,False,10,10,0,[],
+study_ii,ctr,cort_auc,endocrine,False,10,8,2,"[""3"",""19.1""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr,epm_open_arm_percent,behavior,False,10,10,0,[],
+study_ii,ctr,epm_open_entries_percent,behavior,False,10,10,0,[],
+study_ii,ctr,fst_immobility,behavior,False,10,10,0,[],
+study_ii,ctr,ifny_splenocyte_cona,immune,False,10,8,2,"[""2.1"",""3""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr,ifny_splenocyte_lps,immune,False,10,7,3,"[""1.1"",""2.1"",""3""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr,ifny_splenocyte_plasma,immune,False,10,8,2,"[""2.2"",""19.1""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr,ifny_splenocyte_unstimulated,immune,False,10,8,2,"[""1.1"",""2.1""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr,il12_plasma,immune,False,10,9,1,"[""19.1""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr,il12_splenocyte_cona,immune,False,10,10,0,[],
+study_ii,ctr,il12_splenocyte_lps,immune,False,10,10,0,[],
+study_ii,ctr,il12_splenocyte_unstimulated,immune,False,10,10,0,[],
+study_ii,ctr,il6_plasma,immune,False,10,7,3,"[""3"",""19.1"",""21""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr,il6_splenocyte_cona,immune,False,10,10,0,[],
+study_ii,ctr,il6_splenocyte_lps,immune,False,10,10,0,[],
+study_ii,ctr,il6_splenocyte_unstimulated,immune,False,10,9,1,"[""2.1""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr,ip10_plasma,immune,False,10,9,1,"[""19.1""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr,ip10_splenocyte_cona,immune,False,10,10,0,[],
+study_ii,ctr,ip10_splenocyte_lps,immune,False,10,10,0,[],
+study_ii,ctr,ip10_splenocyte_unstimulated,immune,False,10,9,1,"[""2.1""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr,ly6chi_monocytes,immune,True,10,10,0,[],
+study_ii,ctr,ly6chi_monocytes_cd62,immune,True,10,10,0,[],
+study_ii,ctr,mhc2_monocytes_ly6chi,immune,False,10,10,0,[],
+study_ii,ctr,mhc2_neutrophils,immune,False,10,10,0,[],
+study_ii,ctr,neutrophils_cd11b_ly6g,immune,False,10,10,0,[],
+study_ii,ctr,sit_corner_ratio,behavior,False,10,10,0,[],
+study_ii,ctr,sit_si_ratio,behavior,False,10,10,0,[],
+study_ii,ctr,sit_total_distance_hab,behavior,False,10,10,0,[],
+study_ii,ctr,thelper_cd4,immune,False,10,10,0,[],
+study_ii,ctr,tnfa_plasma,immune,False,10,9,1,"[""19.1""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr,tnfa_splenocyte_cona,immune,False,10,10,0,[],
+study_ii,ctr,tnfa_splenocyte_lps,immune,False,10,10,0,[],
+study_ii,ctr,tnfa_splenocyte_unstimulated,immune,True,10,9,1,"[""2.1""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,cd44hi_thelper,immune,False,10,10,0,[],
+study_ii,ctr_stress,cd62_neutrophils,immune,False,10,10,0,[],
+study_ii,ctr_stress,cd69_thelper,immune,False,10,10,0,[],
+study_ii,ctr_stress,cort_auc,endocrine,False,10,10,0,[],
+study_ii,ctr_stress,epm_open_arm_percent,behavior,False,10,7,3,"[""24"",""25"",""26""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,epm_open_entries_percent,behavior,False,10,8,2,"[""22"",""25""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,fst_immobility,behavior,False,10,10,0,[],
+study_ii,ctr_stress,ifny_splenocyte_cona,immune,False,10,8,2,"[""6"",""7""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,ifny_splenocyte_lps,immune,False,10,8,2,"[""6"",""7""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,ifny_splenocyte_plasma,immune,False,10,8,2,"[""6"",""7""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,ifny_splenocyte_unstimulated,immune,False,10,4,6,"[""4"",""5"",""6"",""7"",""23"",""25""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,il12_plasma,immune,False,10,10,0,[],
+study_ii,ctr_stress,il12_splenocyte_cona,immune,False,10,8,2,"[""6"",""7""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,il12_splenocyte_lps,immune,False,10,8,2,"[""6"",""7""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,il12_splenocyte_unstimulated,immune,False,10,8,2,"[""6"",""7""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,il6_plasma,immune,False,10,7,3,"[""5"",""6"",""26""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,il6_splenocyte_cona,immune,False,10,8,2,"[""6"",""7""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,il6_splenocyte_lps,immune,False,10,8,2,"[""6"",""7""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,il6_splenocyte_unstimulated,immune,False,10,6,4,"[""6"",""7"",""23"",""25""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,ip10_plasma,immune,False,10,10,0,[],
+study_ii,ctr_stress,ip10_splenocyte_cona,immune,False,10,7,3,"[""6"",""7"",""25""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,ip10_splenocyte_lps,immune,False,10,7,3,"[""6"",""7"",""25""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,ip10_splenocyte_unstimulated,immune,False,10,8,2,"[""6"",""7""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,ly6chi_monocytes,immune,True,10,10,0,[],
+study_ii,ctr_stress,ly6chi_monocytes_cd62,immune,True,10,10,0,[],
+study_ii,ctr_stress,mhc2_monocytes_ly6chi,immune,False,10,10,0,[],
+study_ii,ctr_stress,mhc2_neutrophils,immune,False,10,10,0,[],
+study_ii,ctr_stress,neutrophils_cd11b_ly6g,immune,False,10,9,1,"[""25""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,sit_corner_ratio,behavior,False,10,10,0,[],
+study_ii,ctr_stress,sit_si_ratio,behavior,False,10,10,0,[],
+study_ii,ctr_stress,sit_total_distance_hab,behavior,False,10,10,0,[],
+study_ii,ctr_stress,thelper_cd4,immune,False,10,10,0,[],
+study_ii,ctr_stress,tnfa_plasma,immune,False,10,9,1,"[""24""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,tnfa_splenocyte_cona,immune,False,10,8,2,"[""6"",""7""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,tnfa_splenocyte_lps,immune,False,10,7,3,"[""6"",""7"",""25""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,ctr_stress,tnfa_splenocyte_unstimulated,immune,True,10,8,2,"[""6"",""7""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,cd44hi_thelper,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,cd62_neutrophils,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,cd69_thelper,immune,False,10,8,2,"[""11"",""13""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,cort_auc,endocrine,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,epm_open_arm_percent,behavior,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,epm_open_entries_percent,behavior,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,fst_immobility,behavior,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,ifny_splenocyte_cona,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,ifny_splenocyte_lps,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,ifny_splenocyte_plasma,immune,False,10,7,3,"[""9"",""11"",""13""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,ifny_splenocyte_unstimulated,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,il12_plasma,immune,False,10,7,3,"[""9"",""11"",""13""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,il12_splenocyte_cona,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,il12_splenocyte_lps,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,il12_splenocyte_unstimulated,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,il6_plasma,immune,False,10,3,7,"[""10"",""11"",""13"",""27"",""28"",""29"",""31""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,il6_splenocyte_cona,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,il6_splenocyte_lps,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,il6_splenocyte_unstimulated,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,ip10_plasma,immune,False,10,7,3,"[""9"",""11"",""13""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,ip10_splenocyte_cona,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,ip10_splenocyte_lps,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,ip10_splenocyte_unstimulated,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,ly6chi_monocytes,immune,True,10,9,1,"[""31""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,ly6chi_monocytes_cd62,immune,True,10,9,1,"[""31""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,mhc2_monocytes_ly6chi,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,mhc2_neutrophils,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,neutrophils_cd11b_ly6g,immune,False,10,9,1,"[""31""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,sit_corner_ratio,behavior,False,10,10,0,[],
+study_ii,fvt_stress,sit_si_ratio,behavior,False,10,10,0,[],
+study_ii,fvt_stress,sit_total_distance_hab,behavior,False,10,10,0,[],
+study_ii,fvt_stress,thelper_cd4,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,tnfa_plasma,immune,False,10,6,4,"[""9"",""11"",""13"",""30""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,tnfa_splenocyte_cona,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,tnfa_splenocyte_lps,immune,False,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay
+study_ii,fvt_stress,tnfa_splenocyte_unstimulated,immune,True,10,9,1,"[""11""]",unresolved upstream censoring/exclusion or unavailable assay

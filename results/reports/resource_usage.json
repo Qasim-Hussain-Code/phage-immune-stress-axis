@@ -1,0 +1,11 @@
+{
+  "project_bytes_including_git": 14221240,
+  "project_bytes_excluding_git": 12700926,
+  "disk_free_bytes": 8878968832,
+  "available_memory_bytes": 665944064,
+  "process_peak_rss_bytes": 32923648,
+  "operational_storage_budget_bytes": 4897466368,
+  "elapsed_seconds": 0.967,
+  "max_measured_stage_peak_rss_bytes": 186699776,
+  "scope": "maximum native process peak among stages, runner and validation child; not aggregate simultaneous system memory"
+}

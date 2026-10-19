@@ -1,0 +1,1241 @@
+experiment_id,source_sheet,source_row,source_column,source_cell,source_id,mouse_id,source_group,group,endpoint,assay_domain,selected_endpoint,value,observation_status
+study_i,Stress virome study I,2,3,C2,1,study_i|ctr|1,Control,ctr,sit_si_ratio,behavior,False,1.0852090032154342,observed
+study_i,Stress virome study I,2,4,D2,1,study_i|ctr|1,Control,ctr,fst_immobility,behavior,False,52.0,observed
+study_i,Stress virome study I,2,5,E2,1,study_i|ctr|1,Control,ctr,basal_corticosterone,endocrine,False,0.6914067075051948,observed
+study_i,Stress virome study I,2,6,F2,1,study_i|ctr|1,Control,ctr,post_corticosterone,endocrine,False,116.157519810675,observed
+study_i,Stress virome study I,2,7,G2,1,study_i|ctr|1,Control,ctr,il6_unstimulated,immune,False,4.23,observed
+study_i,Stress virome study I,2,8,H2,1,study_i|ctr|1,Control,ctr,il6_cona,immune,False,9.46,observed
+study_i,Stress virome study I,2,9,I2,1,study_i|ctr|1,Control,ctr,il10_unstimulated,immune,False,0.186,observed
+study_i,Stress virome study I,2,10,J2,1,study_i|ctr|1,Control,ctr,il10_cona,immune,False,1.28,observed
+study_i,Stress virome study I,3,3,C3,2,study_i|ctr|2,Control,ctr,sit_si_ratio,behavior,False,0.8120805369127517,observed
+study_i,Stress virome study I,3,4,D3,2,study_i|ctr|2,Control,ctr,fst_immobility,behavior,False,58.0,observed
+study_i,Stress virome study I,3,5,E3,2,study_i|ctr|2,Control,ctr,basal_corticosterone,endocrine,False,6.419570548198027,observed
+study_i,Stress virome study I,3,6,F3,2,study_i|ctr|2,Control,ctr,post_corticosterone,endocrine,False,111.77489335196704,observed
+study_i,Stress virome study I,3,7,G3,2,study_i|ctr|2,Control,ctr,il6_unstimulated,immune,False,4.44,observed
+study_i,Stress virome study I,3,8,H3,2,study_i|ctr|2,Control,ctr,il6_cona,immune,False,7.82,observed
+study_i,Stress virome study I,3,9,I3,2,study_i|ctr|2,Control,ctr,il10_unstimulated,immune,False,0.366,observed
+study_i,Stress virome study I,3,10,J3,2,study_i|ctr|2,Control,ctr,il10_cona,immune,False,0.714,observed
+study_i,Stress virome study I,4,3,C4,3,study_i|ctr|3,Control,ctr,sit_si_ratio,behavior,False,1.5346038114343028,observed
+study_i,Stress virome study I,4,4,D4,3,study_i|ctr|3,Control,ctr,fst_immobility,behavior,False,74.0,observed
+study_i,Stress virome study I,4,5,E4,3,study_i|ctr|3,Control,ctr,basal_corticosterone,endocrine,False,14.2531658026452,observed
+study_i,Stress virome study I,4,6,F4,3,study_i|ctr|3,Control,ctr,post_corticosterone,endocrine,False,186.15751981067487,observed
+study_i,Stress virome study I,4,7,G4,3,study_i|ctr|3,Control,ctr,il6_unstimulated,immune,False,25.6,observed
+study_i,Stress virome study I,4,8,H4,3,study_i|ctr|3,Control,ctr,il6_cona,immune,False,116.0,observed
+study_i,Stress virome study I,4,9,I4,3,study_i|ctr|3,Control,ctr,il10_unstimulated,immune,False,6.47,observed
+study_i,Stress virome study I,4,10,J4,3,study_i|ctr|3,Control,ctr,il10_cona,immune,False,11.3,observed
+study_i,Stress virome study I,5,3,C5,4,study_i|ctr|4,Control,ctr,sit_si_ratio,behavior,False,0.7621052631578948,observed
+study_i,Stress virome study I,5,4,D5,4,study_i|ctr|4,Control,ctr,fst_immobility,behavior,False,64.0,observed
+study_i,Stress virome study I,5,5,E5,4,study_i|ctr|4,Control,ctr,basal_corticosterone,endocrine,False,19.638048184034027,observed
+study_i,Stress virome study I,5,6,F5,4,study_i|ctr|4,Control,ctr,post_corticosterone,endocrine,False,147.63750994030133,observed
+study_i,Stress virome study I,5,7,G5,4,study_i|ctr|4,Control,ctr,il6_unstimulated,immune,False,26.0,observed
+study_i,Stress virome study I,5,8,H5,4,study_i|ctr|4,Control,ctr,il6_cona,immune,False,276.0,observed
+study_i,Stress virome study I,5,9,I5,4,study_i|ctr|4,Control,ctr,il10_unstimulated,immune,False,3.18,observed
+study_i,Stress virome study I,5,10,J5,4,study_i|ctr|4,Control,ctr,il10_cona,immune,False,19.2,observed
+study_i,Stress virome study I,6,3,C6,5,study_i|ctr|5,Control,ctr,sit_si_ratio,behavior,False,0.9146919431279621,observed
+study_i,Stress virome study I,6,4,D6,5,study_i|ctr|5,Control,ctr,fst_immobility,behavior,False,105.0,observed
+study_i,Stress virome study I,6,5,E6,5,study_i|ctr|5,Control,ctr,basal_corticosterone,endocrine,False,0.8171201087958418,observed
+study_i,Stress virome study I,6,6,F6,5,study_i|ctr|5,Control,ctr,post_corticosterone,endocrine,False,162.51402242576177,observed
+study_i,Stress virome study I,6,7,G6,5,study_i|ctr|5,Control,ctr,il6_unstimulated,immune,False,25.8,observed
+study_i,Stress virome study I,6,8,H6,5,study_i|ctr|5,Control,ctr,il6_cona,immune,False,202.0,observed
+study_i,Stress virome study I,6,9,I6,5,study_i|ctr|5,Control,ctr,il10_unstimulated,immune,False,4.05,observed
+study_i,Stress virome study I,6,10,J6,5,study_i|ctr|5,Control,ctr,il10_cona,immune,False,16.3,observed
+study_i,Stress virome study I,7,3,C7,6,study_i|ctr|6,Control,ctr,sit_si_ratio,behavior,False,0.9178228388473854,observed
+study_i,Stress virome study I,7,4,D7,6,study_i|ctr|6,Control,ctr,fst_immobility,behavior,False,85.0,observed
+study_i,Stress virome study I,7,5,E7,6,study_i|ctr|6,Control,ctr,basal_corticosterone,endocrine,False,16.818902276132594,observed
+study_i,Stress virome study I,7,6,F7,6,study_i|ctr|6,Control,ctr,post_corticosterone,endocrine,False,141.20282284537157,observed
+study_i,Stress virome study I,7,7,G7,6,study_i|ctr|6,Control,ctr,il6_unstimulated,immune,False,21.8,observed
+study_i,Stress virome study I,7,8,H7,6,study_i|ctr|6,Control,ctr,il6_cona,immune,False,212.0,observed
+study_i,Stress virome study I,7,9,I7,6,study_i|ctr|6,Control,ctr,il10_unstimulated,immune,False,4.71,observed
+study_i,Stress virome study I,7,10,J7,6,study_i|ctr|6,Control,ctr,il10_cona,immune,False,23.1,observed
+study_i,Stress virome study I,8,3,C8,7,study_i|ctr|7,Control,ctr,sit_si_ratio,behavior,False,0.897907949790795,observed
+study_i,Stress virome study I,8,4,D8,7,study_i|ctr|7,Control,ctr,fst_immobility,behavior,False,112.0,observed
+study_i,Stress virome study I,8,5,E8,7,study_i|ctr|7,Control,ctr,basal_corticosterone,endocrine,False,7.970025920149089,observed
+study_i,Stress virome study I,8,6,F8,7,study_i|ctr|7,Control,ctr,post_corticosterone,endocrine,False,135.06633045340553,observed
+study_i,Stress virome study I,8,7,G8,7,study_i|ctr|7,Control,ctr,il6_unstimulated,immune,False,36.8,observed
+study_i,Stress virome study I,8,8,H8,7,study_i|ctr|7,Control,ctr,il6_cona,immune,False,279.0,observed
+study_i,Stress virome study I,8,9,I8,7,study_i|ctr|7,Control,ctr,il10_unstimulated,immune,False,5.7,observed
+study_i,Stress virome study I,8,10,J8,7,study_i|ctr|7,Control,ctr,il10_cona,immune,False,12.2,observed
+study_i,Stress virome study I,9,3,C9,8,study_i|ctr|8,Control,ctr,sit_si_ratio,behavior,False,1.2842639593908631,observed
+study_i,Stress virome study I,9,4,D9,8,study_i|ctr|8,Control,ctr,fst_immobility,behavior,False,91.0,observed
+study_i,Stress virome study I,9,5,E9,8,study_i|ctr|8,Control,ctr,basal_corticosterone,endocrine,False,17.28055343133539,observed
+study_i,Stress virome study I,9,6,F9,8,study_i|ctr|8,Control,ctr,post_corticosterone,endocrine,False,145.7675945439002,observed
+study_i,Stress virome study I,9,7,G9,8,study_i|ctr|8,Control,ctr,il6_unstimulated,immune,False,20.1,observed
+study_i,Stress virome study I,9,8,H9,8,study_i|ctr|8,Control,ctr,il6_cona,immune,False,272.0,observed
+study_i,Stress virome study I,9,9,I9,8,study_i|ctr|8,Control,ctr,il10_unstimulated,immune,False,6.08,observed
+study_i,Stress virome study I,9,10,J9,8,study_i|ctr|8,Control,ctr,il10_cona,immune,False,21.5,observed
+study_i,Stress virome study I,10,3,C10,9,study_i|ctr|9,Control,ctr,sit_si_ratio,behavior,False,1.0266940451745379,observed
+study_i,Stress virome study I,10,4,D10,9,study_i|ctr|9,Control,ctr,fst_immobility,behavior,False,79.0,observed
+study_i,Stress virome study I,10,5,E10,9,study_i|ctr|9,Control,ctr,basal_corticosterone,endocrine,False,15.653817717055126,observed
+study_i,Stress virome study I,10,6,F10,9,study_i|ctr|9,Control,ctr,post_corticosterone,endocrine,False,143.92303197438704,observed
+study_i,Stress virome study I,10,7,G10,9,study_i|ctr|9,Control,ctr,il6_unstimulated,immune,False,20.8,observed
+study_i,Stress virome study I,10,8,H10,9,study_i|ctr|9,Control,ctr,il6_cona,immune,False,216.0,observed
+study_i,Stress virome study I,10,9,I10,9,study_i|ctr|9,Control,ctr,il10_unstimulated,immune,False,4.06,observed
+study_i,Stress virome study I,10,10,J10,9,study_i|ctr|9,Control,ctr,il10_cona,immune,False,15.4,observed
+study_i,Stress virome study I,11,3,C11,10,study_i|ctr|10,Control,ctr,sit_si_ratio,behavior,False,1.1777215189873418,observed
+study_i,Stress virome study I,11,4,D11,10,study_i|ctr|10,Control,ctr,fst_immobility,behavior,False,41.0,observed
+study_i,Stress virome study I,11,5,E11,10,study_i|ctr|10,Control,ctr,basal_corticosterone,endocrine,False,0.5222900501731669,observed
+study_i,Stress virome study I,11,6,F11,10,study_i|ctr|10,Control,ctr,post_corticosterone,endocrine,False,126.78481470856173,observed
+study_i,Stress virome study I,11,7,G11,10,study_i|ctr|10,Control,ctr,il6_unstimulated,immune,False,18.2,observed
+study_i,Stress virome study I,11,8,H11,10,study_i|ctr|10,Control,ctr,il6_cona,immune,False,305.0,observed
+study_i,Stress virome study I,11,9,I11,10,study_i|ctr|10,Control,ctr,il10_unstimulated,immune,False,2.63,observed
+study_i,Stress virome study I,11,10,J11,10,study_i|ctr|10,Control,ctr,il10_cona,immune,False,17.6,observed
+study_i,Stress virome study I,12,3,C12,1,study_i|ctr_stress|1,Stress,ctr_stress,sit_si_ratio,behavior,False,0.60250569476082,observed
+study_i,Stress virome study I,12,4,D12,1,study_i|ctr_stress|1,Stress,ctr_stress,fst_immobility,behavior,False,138.0,observed
+study_i,Stress virome study I,12,5,E12,1,study_i|ctr_stress|1,Stress,ctr_stress,basal_corticosterone,endocrine,False,11.426939654051882,observed
+study_i,Stress virome study I,12,6,F12,1,study_i|ctr_stress|1,Stress,ctr_stress,post_corticosterone,endocrine,False,167.82830338469483,observed
+study_i,Stress virome study I,12,7,G12,1,study_i|ctr_stress|1,Stress,ctr_stress,il6_unstimulated,immune,False,17.0,observed
+study_i,Stress virome study I,12,8,H12,1,study_i|ctr_stress|1,Stress,ctr_stress,il6_cona,immune,False,162.0,observed
+study_i,Stress virome study I,12,9,I12,1,study_i|ctr_stress|1,Stress,ctr_stress,il10_unstimulated,immune,False,1.68,observed
+study_i,Stress virome study I,12,10,J12,1,study_i|ctr_stress|1,Stress,ctr_stress,il10_cona,immune,False,11.0,observed
+study_i,Stress virome study I,13,3,C13,2,study_i|ctr_stress|2,Stress,ctr_stress,sit_si_ratio,behavior,False,0.6778202676864243,observed
+study_i,Stress virome study I,13,4,D13,2,study_i|ctr_stress|2,Stress,ctr_stress,fst_immobility,behavior,False,89.0,observed
+study_i,Stress virome study I,13,5,E13,2,study_i|ctr_stress|2,Stress,ctr_stress,basal_corticosterone,endocrine,False,27.30653695582335,observed
+study_i,Stress virome study I,13,6,F13,2,study_i|ctr_stress|2,Stress,ctr_stress,post_corticosterone,endocrine,False,136.7901664600581,observed
+study_i,Stress virome study I,13,7,G13,2,study_i|ctr_stress|2,Stress,ctr_stress,il6_unstimulated,immune,False,21.3,observed
+study_i,Stress virome study I,13,8,H13,2,study_i|ctr_stress|2,Stress,ctr_stress,il6_cona,immune,False,460.0,observed
+study_i,Stress virome study I,13,9,I13,2,study_i|ctr_stress|2,Stress,ctr_stress,il10_unstimulated,immune,False,1.23,observed
+study_i,Stress virome study I,13,10,J13,2,study_i|ctr_stress|2,Stress,ctr_stress,il10_cona,immune,False,20.3,observed
+study_i,Stress virome study I,14,3,C14,3,study_i|ctr_stress|3,Stress,ctr_stress,sit_si_ratio,behavior,False,0.05907172995780591,observed
+study_i,Stress virome study I,14,4,D14,3,study_i|ctr_stress|3,Stress,ctr_stress,fst_immobility,behavior,False,132.0,observed
+study_i,Stress virome study I,14,5,E14,3,study_i|ctr_stress|3,Stress,ctr_stress,basal_corticosterone,endocrine,False,8.37171510875127,observed
+study_i,Stress virome study I,14,6,F14,3,study_i|ctr_stress|3,Stress,ctr_stress,post_corticosterone,endocrine,False,147.63750994030133,observed
+study_i,Stress virome study I,14,7,G14,3,study_i|ctr_stress|3,Stress,ctr_stress,il6_unstimulated,immune,False,32.5,observed
+study_i,Stress virome study I,14,8,H14,3,study_i|ctr_stress|3,Stress,ctr_stress,il6_cona,immune,False,454.0,observed
+study_i,Stress virome study I,14,9,I14,3,study_i|ctr_stress|3,Stress,ctr_stress,il10_unstimulated,immune,False,7.89,observed
+study_i,Stress virome study I,14,10,J14,3,study_i|ctr_stress|3,Stress,ctr_stress,il10_cona,immune,False,28.7,observed
+study_i,Stress virome study I,15,3,C15,4,study_i|ctr_stress|4,Stress,ctr_stress,sit_si_ratio,behavior,False,0.5909797822706065,observed
+study_i,Stress virome study I,15,4,D15,4,study_i|ctr_stress|4,Stress,ctr_stress,fst_immobility,behavior,False,140.0,observed
+study_i,Stress virome study I,15,5,E15,4,study_i|ctr_stress|4,Stress,ctr_stress,basal_corticosterone,endocrine,False,11.467610571210603,observed
+study_i,Stress virome study I,15,6,F15,4,study_i|ctr_stress|4,Stress,ctr_stress,post_corticosterone,endocrine,False,159.034353336959,observed
+study_i,Stress virome study I,15,7,G15,4,study_i|ctr_stress|4,Stress,ctr_stress,il6_unstimulated,immune,False,29.0,observed
+study_i,Stress virome study I,15,8,H15,4,study_i|ctr_stress|4,Stress,ctr_stress,il6_cona,immune,False,266.0,observed
+study_i,Stress virome study I,15,9,I15,4,study_i|ctr_stress|4,Stress,ctr_stress,il10_unstimulated,immune,False,3.13,observed
+study_i,Stress virome study I,15,10,J15,4,study_i|ctr_stress|4,Stress,ctr_stress,il10_cona,immune,False,11.5,observed
+study_i,Stress virome study I,16,3,C16,5,study_i|ctr_stress|5,Stress,ctr_stress,sit_si_ratio,behavior,False,1.0912343470483006,observed
+study_i,Stress virome study I,16,4,D16,5,study_i|ctr_stress|5,Stress,ctr_stress,fst_immobility,behavior,False,112.0,observed
+study_i,Stress virome study I,16,5,E16,5,study_i|ctr_stress|5,Stress,ctr_stress,basal_corticosterone,endocrine,False,2.2895198604795,observed
+study_i,Stress virome study I,16,6,F16,5,study_i|ctr_stress|5,Stress,ctr_stress,post_corticosterone,endocrine,False,192.015478187499,observed
+study_i,Stress virome study I,16,7,G16,5,study_i|ctr_stress|5,Stress,ctr_stress,il6_unstimulated,immune,False,34.3,observed
+study_i,Stress virome study I,16,8,H16,5,study_i|ctr_stress|5,Stress,ctr_stress,il6_cona,immune,False,356.0,observed
+study_i,Stress virome study I,16,9,I16,5,study_i|ctr_stress|5,Stress,ctr_stress,il10_unstimulated,immune,False,5.16,observed
+study_i,Stress virome study I,16,10,J16,5,study_i|ctr_stress|5,Stress,ctr_stress,il10_cona,immune,False,20.7,observed
+study_i,Stress virome study I,17,3,C17,6,study_i|ctr_stress|6,Stress,ctr_stress,sit_si_ratio,behavior,False,1.0038880248833593,observed
+study_i,Stress virome study I,17,4,D17,6,study_i|ctr_stress|6,Stress,ctr_stress,fst_immobility,behavior,False,128.0,observed
+study_i,Stress virome study I,17,5,E17,6,study_i|ctr_stress|6,Stress,ctr_stress,basal_corticosterone,endocrine,False,32.501673181764446,observed
+study_i,Stress virome study I,17,6,F17,6,study_i|ctr_stress|6,Stress,ctr_stress,post_corticosterone,endocrine,False,146.69935698057947,observed
+study_i,Stress virome study I,17,7,G17,6,study_i|ctr_stress|6,Stress,ctr_stress,il6_unstimulated,immune,False,22.0,observed
+study_i,Stress virome study I,17,8,H17,6,study_i|ctr_stress|6,Stress,ctr_stress,il6_cona,immune,False,217.0,observed
+study_i,Stress virome study I,17,9,I17,6,study_i|ctr_stress|6,Stress,ctr_stress,il10_unstimulated,immune,False,4.09,observed
+study_i,Stress virome study I,17,10,J17,6,study_i|ctr_stress|6,Stress,ctr_stress,il10_cona,immune,False,30.1,observed
+study_i,Stress virome study I,18,3,C18,7,study_i|ctr_stress|7,Stress,ctr_stress,sit_si_ratio,behavior,False,0.24849939975990393,observed
+study_i,Stress virome study I,18,4,D18,7,study_i|ctr_stress|7,Stress,ctr_stress,fst_immobility,behavior,False,95.0,observed
+study_i,Stress virome study I,18,5,E18,7,study_i|ctr_stress|7,Stress,ctr_stress,basal_corticosterone,endocrine,False,28.290337527736,observed
+study_i,Stress virome study I,18,6,F18,7,study_i|ctr_stress|7,Stress,ctr_stress,post_corticosterone,endocrine,False,198.73473730756893,observed
+study_i,Stress virome study I,18,7,G18,7,study_i|ctr_stress|7,Stress,ctr_stress,il6_unstimulated,immune,False,24.7,observed
+study_i,Stress virome study I,18,8,H18,7,study_i|ctr_stress|7,Stress,ctr_stress,il6_cona,immune,False,472.0,observed
+study_i,Stress virome study I,18,9,I18,7,study_i|ctr_stress|7,Stress,ctr_stress,il10_unstimulated,immune,False,4.67,observed
+study_i,Stress virome study I,18,10,J18,7,study_i|ctr_stress|7,Stress,ctr_stress,il10_cona,immune,False,21.1,observed
+study_i,Stress virome study I,19,3,C19,8,study_i|ctr_stress|8,Stress,ctr_stress,sit_si_ratio,behavior,False,0.3504996156802459,observed
+study_i,Stress virome study I,19,4,D19,8,study_i|ctr_stress|8,Stress,ctr_stress,fst_immobility,behavior,False,123.0,observed
+study_i,Stress virome study I,19,5,E19,8,study_i|ctr_stress|8,Stress,ctr_stress,basal_corticosterone,endocrine,False,13.388504292294872,observed
+study_i,Stress virome study I,19,6,F19,8,study_i|ctr_stress|8,Stress,ctr_stress,post_corticosterone,endocrine,False,151.45509479008663,observed
+study_i,Stress virome study I,19,7,G19,8,study_i|ctr_stress|8,Stress,ctr_stress,il6_unstimulated,immune,False,34.1,observed
+study_i,Stress virome study I,19,8,H19,8,study_i|ctr_stress|8,Stress,ctr_stress,il6_cona,immune,False,278.0,observed
+study_i,Stress virome study I,19,9,I19,8,study_i|ctr_stress|8,Stress,ctr_stress,il10_unstimulated,immune,False,7.43,observed
+study_i,Stress virome study I,19,10,J19,8,study_i|ctr_stress|8,Stress,ctr_stress,il10_cona,immune,False,25.9,observed
+study_i,Stress virome study I,20,3,C20,9,study_i|ctr_stress|9,Stress,ctr_stress,sit_si_ratio,behavior,False,0.8439581351094195,observed
+study_i,Stress virome study I,20,4,D20,9,study_i|ctr_stress|9,Stress,ctr_stress,fst_immobility,behavior,False,149.0,observed
+study_i,Stress virome study I,20,5,E20,9,study_i|ctr_stress|9,Stress,ctr_stress,basal_corticosterone,endocrine,False,34.32701457167619,observed
+study_i,Stress virome study I,20,6,F20,9,study_i|ctr_stress|9,Stress,ctr_stress,post_corticosterone,endocrine,False,134.213057836253,observed
+study_i,Stress virome study I,20,7,G20,9,study_i|ctr_stress|9,Stress,ctr_stress,il6_unstimulated,immune,False,25.1,observed
+study_i,Stress virome study I,20,8,H20,9,study_i|ctr_stress|9,Stress,ctr_stress,il6_cona,immune,False,185.0,observed
+study_i,Stress virome study I,20,9,I20,9,study_i|ctr_stress|9,Stress,ctr_stress,il10_unstimulated,immune,False,4.17,observed
+study_i,Stress virome study I,20,10,J20,9,study_i|ctr_stress|9,Stress,ctr_stress,il10_cona,immune,False,16.7,observed
+study_i,Stress virome study I,21,3,C21,10,study_i|ctr_stress|10,Stress,ctr_stress,sit_si_ratio,behavior,False,0.7145026575550495,observed
+study_i,Stress virome study I,21,4,D21,10,study_i|ctr_stress|10,Stress,ctr_stress,fst_immobility,behavior,False,162.0,observed
+study_i,Stress virome study I,21,5,E21,10,study_i|ctr_stress|10,Stress,ctr_stress,basal_corticosterone,endocrine,False,27.113765320738977,observed
+study_i,Stress virome study I,21,6,F21,10,study_i|ctr_stress|10,Stress,ctr_stress,post_corticosterone,endocrine,False,208.10464294186445,observed
+study_i,Stress virome study I,21,7,G21,10,study_i|ctr_stress|10,Stress,ctr_stress,il6_unstimulated,immune,False,29.2,observed
+study_i,Stress virome study I,21,8,H21,10,study_i|ctr_stress|10,Stress,ctr_stress,il6_cona,immune,False,229.0,observed
+study_i,Stress virome study I,21,9,I21,10,study_i|ctr_stress|10,Stress,ctr_stress,il10_unstimulated,immune,False,7.25,observed
+study_i,Stress virome study I,21,10,J21,10,study_i|ctr_stress|10,Stress,ctr_stress,il10_cona,immune,False,25.0,observed
+study_ii,FVT study II,2,3,C2,1.1,study_ii|ctr|1.1,ctr,ctr,sit_si_ratio,behavior,False,2.500659,observed
+study_ii,FVT study II,2,4,D2,1.1,study_ii|ctr|1.1,ctr,ctr,sit_corner_ratio,behavior,False,0.799191,observed
+study_ii,FVT study II,2,5,E2,1.1,study_ii|ctr|1.1,ctr,ctr,sit_total_distance_hab,behavior,False,959.756,observed
+study_ii,FVT study II,2,6,F2,1.1,study_ii|ctr|1.1,ctr,ctr,epm_open_arm_percent,behavior,False,0.333333,observed
+study_ii,FVT study II,2,7,G2,1.1,study_ii|ctr|1.1,ctr,ctr,epm_open_entries_percent,behavior,False,9.090909,observed
+study_ii,FVT study II,2,8,H2,1.1,study_ii|ctr|1.1,ctr,ctr,fst_immobility,behavior,False,192.0,observed
+study_ii,FVT study II,2,9,I2,1.1,study_ii|ctr|1.1,ctr,ctr,cort_auc,endocrine,False,6322.33,observed
+study_ii,FVT study II,2,10,J2,1.1,study_ii|ctr|1.1,ctr,ctr,ip10_plasma,immune,False,166.6748,observed
+study_ii,FVT study II,2,11,K2,1.1,study_ii|ctr|1.1,ctr,ctr,il12_plasma,immune,False,1298.576,observed
+study_ii,FVT study II,2,12,L2,1.1,study_ii|ctr|1.1,ctr,ctr,il6_plasma,immune,False,3.583646,observed
+study_ii,FVT study II,2,13,M2,1.1,study_ii|ctr|1.1,ctr,ctr,tnfa_plasma,immune,False,16.78279,observed
+study_ii,FVT study II,2,14,N2,1.1,study_ii|ctr|1.1,ctr,ctr,ly6chi_monocytes,immune,True,3.311311,observed
+study_ii,FVT study II,2,15,O2,1.1,study_ii|ctr|1.1,ctr,ctr,ly6chi_monocytes_cd62,immune,True,66.99522,observed
+study_ii,FVT study II,2,16,P2,1.1,study_ii|ctr|1.1,ctr,ctr,mhc2_monocytes_ly6chi,immune,False,6.822967,observed
+study_ii,FVT study II,2,17,Q2,1.1,study_ii|ctr|1.1,ctr,ctr,neutrophils_cd11b_ly6g,immune,False,11.32722,observed
+study_ii,FVT study II,2,18,R2,1.1,study_ii|ctr|1.1,ctr,ctr,cd62_neutrophils,immune,False,46.14373,observed
+study_ii,FVT study II,2,19,S2,1.1,study_ii|ctr|1.1,ctr,ctr,mhc2_neutrophils,immune,False,1.863093,observed
+study_ii,FVT study II,2,20,T2,1.1,study_ii|ctr|1.1,ctr,ctr,thelper_cd4,immune,False,16.36073,observed
+study_ii,FVT study II,2,21,U2,1.1,study_ii|ctr|1.1,ctr,ctr,cd44hi_thelper,immune,False,7.545708,observed
+study_ii,FVT study II,2,22,V2,1.1,study_ii|ctr|1.1,ctr,ctr,cd69_thelper,immune,False,1.365432,observed
+study_ii,FVT study II,2,23,W2,1.1,study_ii|ctr|1.1,ctr,ctr,il12_splenocyte_unstimulated,immune,False,103.099,observed
+study_ii,FVT study II,2,24,X2,1.1,study_ii|ctr|1.1,ctr,ctr,il6_splenocyte_cona,immune,False,2312.796,observed
+study_ii,FVT study II,2,25,Y2,1.1,study_ii|ctr|1.1,ctr,ctr,tnfa_splenocyte_unstimulated,immune,True,38.2166,observed
+study_ii,FVT study II,2,26,Z2,1.1,study_ii|ctr|1.1,ctr,ctr,ifny_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,2,27,AA2,1.1,study_ii|ctr|1.1,ctr,ctr,ifny_splenocyte_cona,immune,False,746.1537,observed
+study_ii,FVT study II,2,28,AB2,1.1,study_ii|ctr|1.1,ctr,ctr,ifny_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,2,29,AC2,1.1,study_ii|ctr|1.1,ctr,ctr,il12_splenocyte_cona,immune,False,110.7816,observed
+study_ii,FVT study II,2,30,AD2,1.1,study_ii|ctr|1.1,ctr,ctr,il12_splenocyte_lps,immune,False,183.7326,observed
+study_ii,FVT study II,2,31,AE2,1.1,study_ii|ctr|1.1,ctr,ctr,il6_splenocyte_unstimulated,immune,False,89.7765,observed
+study_ii,FVT study II,2,32,AF2,1.1,study_ii|ctr|1.1,ctr,ctr,il6_splenocyte_lps,immune,False,12860.37,observed
+study_ii,FVT study II,2,33,AG2,1.1,study_ii|ctr|1.1,ctr,ctr,ip10_splenocyte_unstimulated,immune,False,81.15962,observed
+study_ii,FVT study II,2,34,AH2,1.1,study_ii|ctr|1.1,ctr,ctr,ip10_splenocyte_cona,immune,False,3889.302,observed
+study_ii,FVT study II,2,35,AI2,1.1,study_ii|ctr|1.1,ctr,ctr,ip10_splenocyte_lps,immune,False,4097.864,observed
+study_ii,FVT study II,2,36,AJ2,1.1,study_ii|ctr|1.1,ctr,ctr,tnfa_splenocyte_cona,immune,False,1291.352,observed
+study_ii,FVT study II,2,37,AK2,1.1,study_ii|ctr|1.1,ctr,ctr,tnfa_splenocyte_lps,immune,False,1566.673,observed
+study_ii,FVT study II,2,38,AL2,1.1,study_ii|ctr|1.1,ctr,ctr,ifny_splenocyte_plasma,immune,False,0.940403,observed
+study_ii,FVT study II,3,3,C3,1.2,study_ii|ctr|1.2,ctr,ctr,sit_si_ratio,behavior,False,1.217094,observed
+study_ii,FVT study II,3,4,D3,1.2,study_ii|ctr|1.2,ctr,ctr,sit_corner_ratio,behavior,False,1.601724,observed
+study_ii,FVT study II,3,5,E3,1.2,study_ii|ctr|1.2,ctr,ctr,sit_total_distance_hab,behavior,False,989.367,observed
+study_ii,FVT study II,3,6,F3,1.2,study_ii|ctr|1.2,ctr,ctr,epm_open_arm_percent,behavior,False,15.33333,observed
+study_ii,FVT study II,3,7,G3,1.2,study_ii|ctr|1.2,ctr,ctr,epm_open_entries_percent,behavior,False,43.75,observed
+study_ii,FVT study II,3,8,H3,1.2,study_ii|ctr|1.2,ctr,ctr,fst_immobility,behavior,False,182.0,observed
+study_ii,FVT study II,3,9,I3,1.2,study_ii|ctr|1.2,ctr,ctr,cort_auc,endocrine,False,5466.507,observed
+study_ii,FVT study II,3,10,J3,1.2,study_ii|ctr|1.2,ctr,ctr,ip10_plasma,immune,False,221.1275,observed
+study_ii,FVT study II,3,11,K3,1.2,study_ii|ctr|1.2,ctr,ctr,il12_plasma,immune,False,1640.327,observed
+study_ii,FVT study II,3,12,L3,1.2,study_ii|ctr|1.2,ctr,ctr,il6_plasma,immune,False,22.10908,observed
+study_ii,FVT study II,3,13,M3,1.2,study_ii|ctr|1.2,ctr,ctr,tnfa_plasma,immune,False,22.38911,observed
+study_ii,FVT study II,3,14,N3,1.2,study_ii|ctr|1.2,ctr,ctr,ly6chi_monocytes,immune,True,2.875498,observed
+study_ii,FVT study II,3,15,O3,1.2,study_ii|ctr|1.2,ctr,ctr,ly6chi_monocytes_cd62,immune,True,58.42187,observed
+study_ii,FVT study II,3,16,P3,1.2,study_ii|ctr|1.2,ctr,ctr,mhc2_monocytes_ly6chi,immune,False,6.89015,observed
+study_ii,FVT study II,3,17,Q3,1.2,study_ii|ctr|1.2,ctr,ctr,neutrophils_cd11b_ly6g,immune,False,11.27865,observed
+study_ii,FVT study II,3,18,R3,1.2,study_ii|ctr|1.2,ctr,ctr,cd62_neutrophils,immune,False,44.47103,observed
+study_ii,FVT study II,3,19,S3,1.2,study_ii|ctr|1.2,ctr,ctr,mhc2_neutrophils,immune,False,1.27015,observed
+study_ii,FVT study II,3,20,T3,1.2,study_ii|ctr|1.2,ctr,ctr,thelper_cd4,immune,False,14.6993,observed
+study_ii,FVT study II,3,21,U3,1.2,study_ii|ctr|1.2,ctr,ctr,cd44hi_thelper,immune,False,6.454802,observed
+study_ii,FVT study II,3,22,V3,1.2,study_ii|ctr|1.2,ctr,ctr,cd69_thelper,immune,False,1.168281,observed
+study_ii,FVT study II,3,23,W3,1.2,study_ii|ctr|1.2,ctr,ctr,il12_splenocyte_unstimulated,immune,False,93.7358,observed
+study_ii,FVT study II,3,24,X3,1.2,study_ii|ctr|1.2,ctr,ctr,il6_splenocyte_cona,immune,False,2749.299,observed
+study_ii,FVT study II,3,25,Y3,1.2,study_ii|ctr|1.2,ctr,ctr,tnfa_splenocyte_unstimulated,immune,True,32.6727,observed
+study_ii,FVT study II,3,26,Z3,1.2,study_ii|ctr|1.2,ctr,ctr,ifny_splenocyte_unstimulated,immune,False,0.08211,observed
+study_ii,FVT study II,3,27,AA3,1.2,study_ii|ctr|1.2,ctr,ctr,ifny_splenocyte_cona,immune,False,907.7063,observed
+study_ii,FVT study II,3,28,AB3,1.2,study_ii|ctr|1.2,ctr,ctr,ifny_splenocyte_lps,immune,False,351.636,observed
+study_ii,FVT study II,3,29,AC3,1.2,study_ii|ctr|1.2,ctr,ctr,il12_splenocyte_cona,immune,False,119.0417,observed
+study_ii,FVT study II,3,30,AD3,1.2,study_ii|ctr|1.2,ctr,ctr,il12_splenocyte_lps,immune,False,191.361,observed
+study_ii,FVT study II,3,31,AE3,1.2,study_ii|ctr|1.2,ctr,ctr,il6_splenocyte_unstimulated,immune,False,95.4348,observed
+study_ii,FVT study II,3,32,AF3,1.2,study_ii|ctr|1.2,ctr,ctr,il6_splenocyte_lps,immune,False,7354.209,observed
+study_ii,FVT study II,3,33,AG3,1.2,study_ii|ctr|1.2,ctr,ctr,ip10_splenocyte_unstimulated,immune,False,60.7663,observed
+study_ii,FVT study II,3,34,AH3,1.2,study_ii|ctr|1.2,ctr,ctr,ip10_splenocyte_cona,immune,False,3685.166,observed
+study_ii,FVT study II,3,35,AI3,1.2,study_ii|ctr|1.2,ctr,ctr,ip10_splenocyte_lps,immune,False,2376.453,observed
+study_ii,FVT study II,3,36,AJ3,1.2,study_ii|ctr|1.2,ctr,ctr,tnfa_splenocyte_cona,immune,False,1496.366,observed
+study_ii,FVT study II,3,37,AK3,1.2,study_ii|ctr|1.2,ctr,ctr,tnfa_splenocyte_lps,immune,False,1175.027,observed
+study_ii,FVT study II,3,38,AL3,1.2,study_ii|ctr|1.2,ctr,ctr,ifny_splenocyte_plasma,immune,False,0.442252,observed
+study_ii,FVT study II,4,3,C4,2.1,study_ii|ctr|2.1,ctr,ctr,sit_si_ratio,behavior,False,2.325678,observed
+study_ii,FVT study II,4,4,D4,2.1,study_ii|ctr|2.1,ctr,ctr,sit_corner_ratio,behavior,False,1.405866,observed
+study_ii,FVT study II,4,5,E4,2.1,study_ii|ctr|2.1,ctr,ctr,sit_total_distance_hab,behavior,False,458.046,observed
+study_ii,FVT study II,4,6,F4,2.1,study_ii|ctr|2.1,ctr,ctr,epm_open_arm_percent,behavior,False,1.666667,observed
+study_ii,FVT study II,4,7,G4,2.1,study_ii|ctr|2.1,ctr,ctr,epm_open_entries_percent,behavior,False,8.333333,observed
+study_ii,FVT study II,4,8,H4,2.1,study_ii|ctr|2.1,ctr,ctr,fst_immobility,behavior,False,215.0,observed
+study_ii,FVT study II,4,9,I4,2.1,study_ii|ctr|2.1,ctr,ctr,cort_auc,endocrine,False,7208.866,observed
+study_ii,FVT study II,4,10,J4,2.1,study_ii|ctr|2.1,ctr,ctr,ip10_plasma,immune,False,201.7903,observed
+study_ii,FVT study II,4,11,K4,2.1,study_ii|ctr|2.1,ctr,ctr,il12_plasma,immune,False,1199.967,observed
+study_ii,FVT study II,4,12,L4,2.1,study_ii|ctr|2.1,ctr,ctr,il6_plasma,immune,False,46.58185,observed
+study_ii,FVT study II,4,13,M4,2.1,study_ii|ctr|2.1,ctr,ctr,tnfa_plasma,immune,False,23.56663,observed
+study_ii,FVT study II,4,14,N4,2.1,study_ii|ctr|2.1,ctr,ctr,ly6chi_monocytes,immune,True,7.894502,observed
+study_ii,FVT study II,4,15,O4,2.1,study_ii|ctr|2.1,ctr,ctr,ly6chi_monocytes_cd62,immune,True,66.47832,observed
+study_ii,FVT study II,4,16,P4,2.1,study_ii|ctr|2.1,ctr,ctr,mhc2_monocytes_ly6chi,immune,False,3.231389,observed
+study_ii,FVT study II,4,17,Q4,2.1,study_ii|ctr|2.1,ctr,ctr,neutrophils_cd11b_ly6g,immune,False,28.61966,observed
+study_ii,FVT study II,4,18,R4,2.1,study_ii|ctr|2.1,ctr,ctr,cd62_neutrophils,immune,False,45.72492,observed
+study_ii,FVT study II,4,19,S4,2.1,study_ii|ctr|2.1,ctr,ctr,mhc2_neutrophils,immune,False,1.203082,observed
+study_ii,FVT study II,4,20,T4,2.1,study_ii|ctr|2.1,ctr,ctr,thelper_cd4,immune,False,9.73988,observed
+study_ii,FVT study II,4,21,U4,2.1,study_ii|ctr|2.1,ctr,ctr,cd44hi_thelper,immune,False,8.349792,observed
+study_ii,FVT study II,4,22,V4,2.1,study_ii|ctr|2.1,ctr,ctr,cd69_thelper,immune,False,2.166881,observed
+study_ii,FVT study II,4,23,W4,2.1,study_ii|ctr|2.1,ctr,ctr,il12_splenocyte_unstimulated,immune,False,195.749,observed
+study_ii,FVT study II,4,24,X4,2.1,study_ii|ctr|2.1,ctr,ctr,il6_splenocyte_cona,immune,False,3305.888,observed
+study_ii,FVT study II,4,25,Y4,2.1,study_ii|ctr|2.1,ctr,ctr,tnfa_splenocyte_unstimulated,immune,True,,missing
+study_ii,FVT study II,4,26,Z4,2.1,study_ii|ctr|2.1,ctr,ctr,ifny_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,4,27,AA4,2.1,study_ii|ctr|2.1,ctr,ctr,ifny_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,4,28,AB4,2.1,study_ii|ctr|2.1,ctr,ctr,ifny_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,4,29,AC4,2.1,study_ii|ctr|2.1,ctr,ctr,il12_splenocyte_cona,immune,False,133.8665,observed
+study_ii,FVT study II,4,30,AD4,2.1,study_ii|ctr|2.1,ctr,ctr,il12_splenocyte_lps,immune,False,214.7565,observed
+study_ii,FVT study II,4,31,AE4,2.1,study_ii|ctr|2.1,ctr,ctr,il6_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,4,32,AF4,2.1,study_ii|ctr|2.1,ctr,ctr,il6_splenocyte_lps,immune,False,13376.21,observed
+study_ii,FVT study II,4,33,AG4,2.1,study_ii|ctr|2.1,ctr,ctr,ip10_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,4,34,AH4,2.1,study_ii|ctr|2.1,ctr,ctr,ip10_splenocyte_cona,immune,False,6586.152,observed
+study_ii,FVT study II,4,35,AI4,2.1,study_ii|ctr|2.1,ctr,ctr,ip10_splenocyte_lps,immune,False,5123.754,observed
+study_ii,FVT study II,4,36,AJ4,2.1,study_ii|ctr|2.1,ctr,ctr,tnfa_splenocyte_cona,immune,False,1227.979,observed
+study_ii,FVT study II,4,37,AK4,2.1,study_ii|ctr|2.1,ctr,ctr,tnfa_splenocyte_lps,immune,False,1800.543,observed
+study_ii,FVT study II,4,38,AL4,2.1,study_ii|ctr|2.1,ctr,ctr,ifny_splenocyte_plasma,immune,False,0.05388,observed
+study_ii,FVT study II,5,3,C5,2.2,study_ii|ctr|2.2,ctr,ctr,sit_si_ratio,behavior,False,0.986386,observed
+study_ii,FVT study II,5,4,D5,2.2,study_ii|ctr|2.2,ctr,ctr,sit_corner_ratio,behavior,False,0.621795,observed
+study_ii,FVT study II,5,5,E5,2.2,study_ii|ctr|2.2,ctr,ctr,sit_total_distance_hab,behavior,False,1370.97,observed
+study_ii,FVT study II,5,6,F5,2.2,study_ii|ctr|2.2,ctr,ctr,epm_open_arm_percent,behavior,False,8.666667,observed
+study_ii,FVT study II,5,7,G5,2.2,study_ii|ctr|2.2,ctr,ctr,epm_open_entries_percent,behavior,False,27.27273,observed
+study_ii,FVT study II,5,8,H5,2.2,study_ii|ctr|2.2,ctr,ctr,fst_immobility,behavior,False,128.0,observed
+study_ii,FVT study II,5,9,I5,2.2,study_ii|ctr|2.2,ctr,ctr,cort_auc,endocrine,False,6538.621,observed
+study_ii,FVT study II,5,10,J5,2.2,study_ii|ctr|2.2,ctr,ctr,ip10_plasma,immune,False,133.5841,observed
+study_ii,FVT study II,5,11,K5,2.2,study_ii|ctr|2.2,ctr,ctr,il12_plasma,immune,False,805.9284,observed
+study_ii,FVT study II,5,12,L5,2.2,study_ii|ctr|2.2,ctr,ctr,il6_plasma,immune,False,50.1214,observed
+study_ii,FVT study II,5,13,M5,2.2,study_ii|ctr|2.2,ctr,ctr,tnfa_plasma,immune,False,16.53166,observed
+study_ii,FVT study II,5,14,N5,2.2,study_ii|ctr|2.2,ctr,ctr,ly6chi_monocytes,immune,True,8.885853,observed
+study_ii,FVT study II,5,15,O5,2.2,study_ii|ctr|2.2,ctr,ctr,ly6chi_monocytes_cd62,immune,True,64.80494,observed
+study_ii,FVT study II,5,16,P5,2.2,study_ii|ctr|2.2,ctr,ctr,mhc2_monocytes_ly6chi,immune,False,2.764704,observed
+study_ii,FVT study II,5,17,Q5,2.2,study_ii|ctr|2.2,ctr,ctr,neutrophils_cd11b_ly6g,immune,False,30.89525,observed
+study_ii,FVT study II,5,18,R5,2.2,study_ii|ctr|2.2,ctr,ctr,cd62_neutrophils,immune,False,58.67259,observed
+study_ii,FVT study II,5,19,S5,2.2,study_ii|ctr|2.2,ctr,ctr,mhc2_neutrophils,immune,False,0.599631,observed
+study_ii,FVT study II,5,20,T5,2.2,study_ii|ctr|2.2,ctr,ctr,thelper_cd4,immune,False,7.69624,observed
+study_ii,FVT study II,5,21,U5,2.2,study_ii|ctr|2.2,ctr,ctr,cd44hi_thelper,immune,False,7.462867,observed
+study_ii,FVT study II,5,22,V5,2.2,study_ii|ctr|2.2,ctr,ctr,cd69_thelper,immune,False,1.30419,observed
+study_ii,FVT study II,5,23,W5,2.2,study_ii|ctr|2.2,ctr,ctr,il12_splenocyte_unstimulated,immune,False,44.8658,observed
+study_ii,FVT study II,5,24,X5,2.2,study_ii|ctr|2.2,ctr,ctr,il6_splenocyte_cona,immune,False,857.0872,observed
+study_ii,FVT study II,5,25,Y5,2.2,study_ii|ctr|2.2,ctr,ctr,tnfa_splenocyte_unstimulated,immune,True,22.2752,observed
+study_ii,FVT study II,5,26,Z5,2.2,study_ii|ctr|2.2,ctr,ctr,ifny_splenocyte_unstimulated,immune,False,0.11823,observed
+study_ii,FVT study II,5,27,AA5,2.2,study_ii|ctr|2.2,ctr,ctr,ifny_splenocyte_cona,immune,False,288.637,observed
+study_ii,FVT study II,5,28,AB5,2.2,study_ii|ctr|2.2,ctr,ctr,ifny_splenocyte_lps,immune,False,256.6221,observed
+study_ii,FVT study II,5,29,AC5,2.2,study_ii|ctr|2.2,ctr,ctr,il12_splenocyte_cona,immune,False,70.95565,observed
+study_ii,FVT study II,5,30,AD5,2.2,study_ii|ctr|2.2,ctr,ctr,il12_splenocyte_lps,immune,False,156.6726,observed
+study_ii,FVT study II,5,31,AE5,2.2,study_ii|ctr|2.2,ctr,ctr,il6_splenocyte_unstimulated,immune,False,43.3177,observed
+study_ii,FVT study II,5,32,AF5,2.2,study_ii|ctr|2.2,ctr,ctr,il6_splenocyte_lps,immune,False,8129.964,observed
+study_ii,FVT study II,5,33,AG5,2.2,study_ii|ctr|2.2,ctr,ctr,ip10_splenocyte_unstimulated,immune,False,93.8427,observed
+study_ii,FVT study II,5,34,AH5,2.2,study_ii|ctr|2.2,ctr,ctr,ip10_splenocyte_cona,immune,False,2032.625,observed
+study_ii,FVT study II,5,35,AI5,2.2,study_ii|ctr|2.2,ctr,ctr,ip10_splenocyte_lps,immune,False,1618.488,observed
+study_ii,FVT study II,5,36,AJ5,2.2,study_ii|ctr|2.2,ctr,ctr,tnfa_splenocyte_cona,immune,False,597.421,observed
+study_ii,FVT study II,5,37,AK5,2.2,study_ii|ctr|2.2,ctr,ctr,tnfa_splenocyte_lps,immune,False,1353.573,observed
+study_ii,FVT study II,5,38,AL5,2.2,study_ii|ctr|2.2,ctr,ctr,ifny_splenocyte_plasma,immune,False,,missing
+study_ii,FVT study II,6,3,C6,3,study_ii|ctr|3,ctr,ctr,sit_si_ratio,behavior,False,1.419001,observed
+study_ii,FVT study II,6,4,D6,3,study_ii|ctr|3,ctr,ctr,sit_corner_ratio,behavior,False,1.303797,observed
+study_ii,FVT study II,6,5,E6,3,study_ii|ctr|3,ctr,ctr,sit_total_distance_hab,behavior,False,790.567,observed
+study_ii,FVT study II,6,6,F6,3,study_ii|ctr|3,ctr,ctr,epm_open_arm_percent,behavior,False,3.666667,observed
+study_ii,FVT study II,6,7,G6,3,study_ii|ctr|3,ctr,ctr,epm_open_entries_percent,behavior,False,16.66667,observed
+study_ii,FVT study II,6,8,H6,3,study_ii|ctr|3,ctr,ctr,fst_immobility,behavior,False,153.0,observed
+study_ii,FVT study II,6,9,I6,3,study_ii|ctr|3,ctr,ctr,cort_auc,endocrine,False,,missing
+study_ii,FVT study II,6,10,J6,3,study_ii|ctr|3,ctr,ctr,ip10_plasma,immune,False,114.5544,observed
+study_ii,FVT study II,6,11,K6,3,study_ii|ctr|3,ctr,ctr,il12_plasma,immune,False,1011.837,observed
+study_ii,FVT study II,6,12,L6,3,study_ii|ctr|3,ctr,ctr,il6_plasma,immune,False,,missing
+study_ii,FVT study II,6,13,M6,3,study_ii|ctr|3,ctr,ctr,tnfa_plasma,immune,False,12.15204,observed
+study_ii,FVT study II,6,14,N6,3,study_ii|ctr|3,ctr,ctr,ly6chi_monocytes,immune,True,2.764268,observed
+study_ii,FVT study II,6,15,O6,3,study_ii|ctr|3,ctr,ctr,ly6chi_monocytes_cd62,immune,True,57.71386,observed
+study_ii,FVT study II,6,16,P6,3,study_ii|ctr|3,ctr,ctr,mhc2_monocytes_ly6chi,immune,False,6.014195,observed
+study_ii,FVT study II,6,17,Q6,3,study_ii|ctr|3,ctr,ctr,neutrophils_cd11b_ly6g,immune,False,6.981403,observed
+study_ii,FVT study II,6,18,R6,3,study_ii|ctr|3,ctr,ctr,cd62_neutrophils,immune,False,49.54888,observed
+study_ii,FVT study II,6,19,S6,3,study_ii|ctr|3,ctr,ctr,mhc2_neutrophils,immune,False,2.115072,observed
+study_ii,FVT study II,6,20,T6,3,study_ii|ctr|3,ctr,ctr,thelper_cd4,immune,False,16.06415,observed
+study_ii,FVT study II,6,21,U6,3,study_ii|ctr|3,ctr,ctr,cd44hi_thelper,immune,False,7.803561,observed
+study_ii,FVT study II,6,22,V6,3,study_ii|ctr|3,ctr,ctr,cd69_thelper,immune,False,2.558334,observed
+study_ii,FVT study II,6,23,W6,3,study_ii|ctr|3,ctr,ctr,il12_splenocyte_unstimulated,immune,False,167.718,observed
+study_ii,FVT study II,6,24,X6,3,study_ii|ctr|3,ctr,ctr,il6_splenocyte_cona,immune,False,3331.512,observed
+study_ii,FVT study II,6,25,Y6,3,study_ii|ctr|3,ctr,ctr,tnfa_splenocyte_unstimulated,immune,True,33.888,observed
+study_ii,FVT study II,6,26,Z6,3,study_ii|ctr|3,ctr,ctr,ifny_splenocyte_unstimulated,immune,False,0.78541,observed
+study_ii,FVT study II,6,27,AA6,3,study_ii|ctr|3,ctr,ctr,ifny_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,6,28,AB6,3,study_ii|ctr|3,ctr,ctr,ifny_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,6,29,AC6,3,study_ii|ctr|3,ctr,ctr,il12_splenocyte_cona,immune,False,174.8381,observed
+study_ii,FVT study II,6,30,AD6,3,study_ii|ctr|3,ctr,ctr,il12_splenocyte_lps,immune,False,295.4265,observed
+study_ii,FVT study II,6,31,AE6,3,study_ii|ctr|3,ctr,ctr,il6_splenocyte_unstimulated,immune,False,57.8166,observed
+study_ii,FVT study II,6,32,AF6,3,study_ii|ctr|3,ctr,ctr,il6_splenocyte_lps,immune,False,11378.72,observed
+study_ii,FVT study II,6,33,AG6,3,study_ii|ctr|3,ctr,ctr,ip10_splenocyte_unstimulated,immune,False,27.6863,observed
+study_ii,FVT study II,6,34,AH6,3,study_ii|ctr|3,ctr,ctr,ip10_splenocyte_cona,immune,False,4246.383,observed
+study_ii,FVT study II,6,35,AI6,3,study_ii|ctr|3,ctr,ctr,ip10_splenocyte_lps,immune,False,6134.703,observed
+study_ii,FVT study II,6,36,AJ6,3,study_ii|ctr|3,ctr,ctr,tnfa_splenocyte_cona,immune,False,2109.54,observed
+study_ii,FVT study II,6,37,AK6,3,study_ii|ctr|3,ctr,ctr,tnfa_splenocyte_lps,immune,False,1611.234,observed
+study_ii,FVT study II,6,38,AL6,3,study_ii|ctr|3,ctr,ctr,ifny_splenocyte_plasma,immune,False,0.647108,observed
+study_ii,FVT study II,7,3,C7,19.1,study_ii|ctr|19.1,ctr,ctr,sit_si_ratio,behavior,False,1.140274,observed
+study_ii,FVT study II,7,4,D7,19.1,study_ii|ctr|19.1,ctr,ctr,sit_corner_ratio,behavior,False,0.732484,observed
+study_ii,FVT study II,7,5,E7,19.1,study_ii|ctr|19.1,ctr,ctr,sit_total_distance_hab,behavior,False,804.66,observed
+study_ii,FVT study II,7,6,F7,19.1,study_ii|ctr|19.1,ctr,ctr,epm_open_arm_percent,behavior,False,3.333333,observed
+study_ii,FVT study II,7,7,G7,19.1,study_ii|ctr|19.1,ctr,ctr,epm_open_entries_percent,behavior,False,12.5,observed
+study_ii,FVT study II,7,8,H7,19.1,study_ii|ctr|19.1,ctr,ctr,fst_immobility,behavior,False,189.0,observed
+study_ii,FVT study II,7,9,I7,19.1,study_ii|ctr|19.1,ctr,ctr,cort_auc,endocrine,False,,missing
+study_ii,FVT study II,7,10,J7,19.1,study_ii|ctr|19.1,ctr,ctr,ip10_plasma,immune,False,,missing
+study_ii,FVT study II,7,11,K7,19.1,study_ii|ctr|19.1,ctr,ctr,il12_plasma,immune,False,,missing
+study_ii,FVT study II,7,12,L7,19.1,study_ii|ctr|19.1,ctr,ctr,il6_plasma,immune,False,,missing
+study_ii,FVT study II,7,13,M7,19.1,study_ii|ctr|19.1,ctr,ctr,tnfa_plasma,immune,False,,missing
+study_ii,FVT study II,7,14,N7,19.1,study_ii|ctr|19.1,ctr,ctr,ly6chi_monocytes,immune,True,3.659832,observed
+study_ii,FVT study II,7,15,O7,19.1,study_ii|ctr|19.1,ctr,ctr,ly6chi_monocytes_cd62,immune,True,54.40007,observed
+study_ii,FVT study II,7,16,P7,19.1,study_ii|ctr|19.1,ctr,ctr,mhc2_monocytes_ly6chi,immune,False,5.136233,observed
+study_ii,FVT study II,7,17,Q7,19.1,study_ii|ctr|19.1,ctr,ctr,neutrophils_cd11b_ly6g,immune,False,13.7462,observed
+study_ii,FVT study II,7,18,R7,19.1,study_ii|ctr|19.1,ctr,ctr,cd62_neutrophils,immune,False,52.60881,observed
+study_ii,FVT study II,7,19,S7,19.1,study_ii|ctr|19.1,ctr,ctr,mhc2_neutrophils,immune,False,1.554474,observed
+study_ii,FVT study II,7,20,T7,19.1,study_ii|ctr|19.1,ctr,ctr,thelper_cd4,immune,False,12.39196,observed
+study_ii,FVT study II,7,21,U7,19.1,study_ii|ctr|19.1,ctr,ctr,cd44hi_thelper,immune,False,8.804198,observed
+study_ii,FVT study II,7,22,V7,19.1,study_ii|ctr|19.1,ctr,ctr,cd69_thelper,immune,False,1.381982,observed
+study_ii,FVT study II,7,23,W7,19.1,study_ii|ctr|19.1,ctr,ctr,il12_splenocyte_unstimulated,immune,False,127.34,observed
+study_ii,FVT study II,7,24,X7,19.1,study_ii|ctr|19.1,ctr,ctr,il6_splenocyte_cona,immune,False,1921.233,observed
+study_ii,FVT study II,7,25,Y7,19.1,study_ii|ctr|19.1,ctr,ctr,tnfa_splenocyte_unstimulated,immune,True,35.3071,observed
+study_ii,FVT study II,7,26,Z7,19.1,study_ii|ctr|19.1,ctr,ctr,ifny_splenocyte_unstimulated,immune,False,0.70379,observed
+study_ii,FVT study II,7,27,AA7,19.1,study_ii|ctr|19.1,ctr,ctr,ifny_splenocyte_cona,immune,False,202.1246,observed
+study_ii,FVT study II,7,28,AB7,19.1,study_ii|ctr|19.1,ctr,ctr,ifny_splenocyte_lps,immune,False,29.43857,observed
+study_ii,FVT study II,7,29,AC7,19.1,study_ii|ctr|19.1,ctr,ctr,il12_splenocyte_cona,immune,False,132.7277,observed
+study_ii,FVT study II,7,30,AD7,19.1,study_ii|ctr|19.1,ctr,ctr,il12_splenocyte_lps,immune,False,184.3705,observed
+study_ii,FVT study II,7,31,AE7,19.1,study_ii|ctr|19.1,ctr,ctr,il6_splenocyte_unstimulated,immune,False,78.9673,observed
+study_ii,FVT study II,7,32,AF7,19.1,study_ii|ctr|19.1,ctr,ctr,il6_splenocyte_lps,immune,False,10695.44,observed
+study_ii,FVT study II,7,33,AG7,19.1,study_ii|ctr|19.1,ctr,ctr,ip10_splenocyte_unstimulated,immune,False,50.6021,observed
+study_ii,FVT study II,7,34,AH7,19.1,study_ii|ctr|19.1,ctr,ctr,ip10_splenocyte_cona,immune,False,5739.823,observed
+study_ii,FVT study II,7,35,AI7,19.1,study_ii|ctr|19.1,ctr,ctr,ip10_splenocyte_lps,immune,False,3756.048,observed
+study_ii,FVT study II,7,36,AJ7,19.1,study_ii|ctr|19.1,ctr,ctr,tnfa_splenocyte_cona,immune,False,1309.884,observed
+study_ii,FVT study II,7,37,AK7,19.1,study_ii|ctr|19.1,ctr,ctr,tnfa_splenocyte_lps,immune,False,1240.832,observed
+study_ii,FVT study II,7,38,AL7,19.1,study_ii|ctr|19.1,ctr,ctr,ifny_splenocyte_plasma,immune,False,,missing
+study_ii,FVT study II,8,3,C8,19.2,study_ii|ctr|19.2,ctr,ctr,sit_si_ratio,behavior,False,2.427386,observed
+study_ii,FVT study II,8,4,D8,19.2,study_ii|ctr|19.2,ctr,ctr,sit_corner_ratio,behavior,False,2.45283,observed
+study_ii,FVT study II,8,5,E8,19.2,study_ii|ctr|19.2,ctr,ctr,sit_total_distance_hab,behavior,False,828.645,observed
+study_ii,FVT study II,8,6,F8,19.2,study_ii|ctr|19.2,ctr,ctr,epm_open_arm_percent,behavior,False,9.0,observed
+study_ii,FVT study II,8,7,G8,19.2,study_ii|ctr|19.2,ctr,ctr,epm_open_entries_percent,behavior,False,30.0,observed
+study_ii,FVT study II,8,8,H8,19.2,study_ii|ctr|19.2,ctr,ctr,fst_immobility,behavior,False,148.0,observed
+study_ii,FVT study II,8,9,I8,19.2,study_ii|ctr|19.2,ctr,ctr,cort_auc,endocrine,False,7064.592,observed
+study_ii,FVT study II,8,10,J8,19.2,study_ii|ctr|19.2,ctr,ctr,ip10_plasma,immune,False,109.0011,observed
+study_ii,FVT study II,8,11,K8,19.2,study_ii|ctr|19.2,ctr,ctr,il12_plasma,immune,False,771.6821,observed
+study_ii,FVT study II,8,12,L8,19.2,study_ii|ctr|19.2,ctr,ctr,il6_plasma,immune,False,15.1409,observed
+study_ii,FVT study II,8,13,M8,19.2,study_ii|ctr|19.2,ctr,ctr,tnfa_plasma,immune,False,14.722,observed
+study_ii,FVT study II,8,14,N8,19.2,study_ii|ctr|19.2,ctr,ctr,ly6chi_monocytes,immune,True,3.820698,observed
+study_ii,FVT study II,8,15,O8,19.2,study_ii|ctr|19.2,ctr,ctr,ly6chi_monocytes_cd62,immune,True,62.72688,observed
+study_ii,FVT study II,8,16,P8,19.2,study_ii|ctr|19.2,ctr,ctr,mhc2_monocytes_ly6chi,immune,False,5.140119,observed
+study_ii,FVT study II,8,17,Q8,19.2,study_ii|ctr|19.2,ctr,ctr,neutrophils_cd11b_ly6g,immune,False,16.25974,observed
+study_ii,FVT study II,8,18,R8,19.2,study_ii|ctr|19.2,ctr,ctr,cd62_neutrophils,immune,False,52.04886,observed
+study_ii,FVT study II,8,19,S8,19.2,study_ii|ctr|19.2,ctr,ctr,mhc2_neutrophils,immune,False,1.129346,observed
+study_ii,FVT study II,8,20,T8,19.2,study_ii|ctr|19.2,ctr,ctr,thelper_cd4,immune,False,14.17048,observed
+study_ii,FVT study II,8,21,U8,19.2,study_ii|ctr|19.2,ctr,ctr,cd44hi_thelper,immune,False,8.749951,observed
+study_ii,FVT study II,8,22,V8,19.2,study_ii|ctr|19.2,ctr,ctr,cd69_thelper,immune,False,1.366323,observed
+study_ii,FVT study II,8,23,W8,19.2,study_ii|ctr|19.2,ctr,ctr,il12_splenocyte_unstimulated,immune,False,198.974,observed
+study_ii,FVT study II,8,24,X8,19.2,study_ii|ctr|19.2,ctr,ctr,il6_splenocyte_cona,immune,False,2334.415,observed
+study_ii,FVT study II,8,25,Y8,19.2,study_ii|ctr|19.2,ctr,ctr,tnfa_splenocyte_unstimulated,immune,True,59.35889,observed
+study_ii,FVT study II,8,26,Z8,19.2,study_ii|ctr|19.2,ctr,ctr,ifny_splenocyte_unstimulated,immune,False,0.75982,observed
+study_ii,FVT study II,8,27,AA8,19.2,study_ii|ctr|19.2,ctr,ctr,ifny_splenocyte_cona,immune,False,450.7745,observed
+study_ii,FVT study II,8,28,AB8,19.2,study_ii|ctr|19.2,ctr,ctr,ifny_splenocyte_lps,immune,False,140.3381,observed
+study_ii,FVT study II,8,29,AC8,19.2,study_ii|ctr|19.2,ctr,ctr,il12_splenocyte_cona,immune,False,165.7655,observed
+study_ii,FVT study II,8,30,AD8,19.2,study_ii|ctr|19.2,ctr,ctr,il12_splenocyte_lps,immune,False,280.8083,observed
+study_ii,FVT study II,8,31,AE8,19.2,study_ii|ctr|19.2,ctr,ctr,il6_splenocyte_unstimulated,immune,False,100.547,observed
+study_ii,FVT study II,8,32,AF8,19.2,study_ii|ctr|19.2,ctr,ctr,il6_splenocyte_lps,immune,False,14178.25,observed
+study_ii,FVT study II,8,33,AG8,19.2,study_ii|ctr|19.2,ctr,ctr,ip10_splenocyte_unstimulated,immune,False,48.4369,observed
+study_ii,FVT study II,8,34,AH8,19.2,study_ii|ctr|19.2,ctr,ctr,ip10_splenocyte_cona,immune,False,6200.792,observed
+study_ii,FVT study II,8,35,AI8,19.2,study_ii|ctr|19.2,ctr,ctr,ip10_splenocyte_lps,immune,False,6357.68,observed
+study_ii,FVT study II,8,36,AJ8,19.2,study_ii|ctr|19.2,ctr,ctr,tnfa_splenocyte_cona,immune,False,1921.284,observed
+study_ii,FVT study II,8,37,AK8,19.2,study_ii|ctr|19.2,ctr,ctr,tnfa_splenocyte_lps,immune,False,1875.053,observed
+study_ii,FVT study II,8,38,AL8,19.2,study_ii|ctr|19.2,ctr,ctr,ifny_splenocyte_plasma,immune,False,0.668059,observed
+study_ii,FVT study II,9,3,C9,20.1,study_ii|ctr|20.1,ctr,ctr,sit_si_ratio,behavior,False,1.663898,observed
+study_ii,FVT study II,9,4,D9,20.1,study_ii|ctr|20.1,ctr,ctr,sit_corner_ratio,behavior,False,1.169154,observed
+study_ii,FVT study II,9,5,E9,20.1,study_ii|ctr|20.1,ctr,ctr,sit_total_distance_hab,behavior,False,1205.67,observed
+study_ii,FVT study II,9,6,F9,20.1,study_ii|ctr|20.1,ctr,ctr,epm_open_arm_percent,behavior,False,12.0,observed
+study_ii,FVT study II,9,7,G9,20.1,study_ii|ctr|20.1,ctr,ctr,epm_open_entries_percent,behavior,False,40.0,observed
+study_ii,FVT study II,9,8,H9,20.1,study_ii|ctr|20.1,ctr,ctr,fst_immobility,behavior,False,110.0,observed
+study_ii,FVT study II,9,9,I9,20.1,study_ii|ctr|20.1,ctr,ctr,cort_auc,endocrine,False,7849.486,observed
+study_ii,FVT study II,9,10,J9,20.1,study_ii|ctr|20.1,ctr,ctr,ip10_plasma,immune,False,89.32361,observed
+study_ii,FVT study II,9,11,K9,20.1,study_ii|ctr|20.1,ctr,ctr,il12_plasma,immune,False,694.1183,observed
+study_ii,FVT study II,9,12,L9,20.1,study_ii|ctr|20.1,ctr,ctr,il6_plasma,immune,False,8.075092,observed
+study_ii,FVT study II,9,13,M9,20.1,study_ii|ctr|20.1,ctr,ctr,tnfa_plasma,immune,False,12.49845,observed
+study_ii,FVT study II,9,14,N9,20.1,study_ii|ctr|20.1,ctr,ctr,ly6chi_monocytes,immune,True,3.260093,observed
+study_ii,FVT study II,9,15,O9,20.1,study_ii|ctr|20.1,ctr,ctr,ly6chi_monocytes_cd62,immune,True,60.6673,observed
+study_ii,FVT study II,9,16,P9,20.1,study_ii|ctr|20.1,ctr,ctr,mhc2_monocytes_ly6chi,immune,False,3.527169,observed
+study_ii,FVT study II,9,17,Q9,20.1,study_ii|ctr|20.1,ctr,ctr,neutrophils_cd11b_ly6g,immune,False,13.2719,observed
+study_ii,FVT study II,9,18,R9,20.1,study_ii|ctr|20.1,ctr,ctr,cd62_neutrophils,immune,False,47.45346,observed
+study_ii,FVT study II,9,19,S9,20.1,study_ii|ctr|20.1,ctr,ctr,mhc2_neutrophils,immune,False,2.791242,observed
+study_ii,FVT study II,9,20,T9,20.1,study_ii|ctr|20.1,ctr,ctr,thelper_cd4,immune,False,11.93585,observed
+study_ii,FVT study II,9,21,U9,20.1,study_ii|ctr|20.1,ctr,ctr,cd44hi_thelper,immune,False,8.391918,observed
+study_ii,FVT study II,9,22,V9,20.1,study_ii|ctr|20.1,ctr,ctr,cd69_thelper,immune,False,1.575275,observed
+study_ii,FVT study II,9,23,W9,20.1,study_ii|ctr|20.1,ctr,ctr,il12_splenocyte_unstimulated,immune,False,120.141,observed
+study_ii,FVT study II,9,24,X9,20.1,study_ii|ctr|20.1,ctr,ctr,il6_splenocyte_cona,immune,False,2360.328,observed
+study_ii,FVT study II,9,25,Y9,20.1,study_ii|ctr|20.1,ctr,ctr,tnfa_splenocyte_unstimulated,immune,True,18.4942,observed
+study_ii,FVT study II,9,26,Z9,20.1,study_ii|ctr|20.1,ctr,ctr,ifny_splenocyte_unstimulated,immune,False,0.23624,observed
+study_ii,FVT study II,9,27,AA9,20.1,study_ii|ctr|20.1,ctr,ctr,ifny_splenocyte_cona,immune,False,285.1647,observed
+study_ii,FVT study II,9,28,AB9,20.1,study_ii|ctr|20.1,ctr,ctr,ifny_splenocyte_lps,immune,False,327.2382,observed
+study_ii,FVT study II,9,29,AC9,20.1,study_ii|ctr|20.1,ctr,ctr,il12_splenocyte_cona,immune,False,154.1997,observed
+study_ii,FVT study II,9,30,AD9,20.1,study_ii|ctr|20.1,ctr,ctr,il12_splenocyte_lps,immune,False,291.0965,observed
+study_ii,FVT study II,9,31,AE9,20.1,study_ii|ctr|20.1,ctr,ctr,il6_splenocyte_unstimulated,immune,False,33.7523,observed
+study_ii,FVT study II,9,32,AF9,20.1,study_ii|ctr|20.1,ctr,ctr,il6_splenocyte_lps,immune,False,16579.6,observed
+study_ii,FVT study II,9,33,AG9,20.1,study_ii|ctr|20.1,ctr,ctr,ip10_splenocyte_unstimulated,immune,False,19.9136,observed
+study_ii,FVT study II,9,34,AH9,20.1,study_ii|ctr|20.1,ctr,ctr,ip10_splenocyte_cona,immune,False,7268.557,observed
+study_ii,FVT study II,9,35,AI9,20.1,study_ii|ctr|20.1,ctr,ctr,ip10_splenocyte_lps,immune,False,9532.193,observed
+study_ii,FVT study II,9,36,AJ9,20.1,study_ii|ctr|20.1,ctr,ctr,tnfa_splenocyte_cona,immune,False,2110.055,observed
+study_ii,FVT study II,9,37,AK9,20.1,study_ii|ctr|20.1,ctr,ctr,tnfa_splenocyte_lps,immune,False,1830.052,observed
+study_ii,FVT study II,9,38,AL9,20.1,study_ii|ctr|20.1,ctr,ctr,ifny_splenocyte_plasma,immune,False,0.231371,observed
+study_ii,FVT study II,10,3,C10,20.2,study_ii|ctr|20.2,ctr,ctr,sit_si_ratio,behavior,False,1.564045,observed
+study_ii,FVT study II,10,4,D10,20.2,study_ii|ctr|20.2,ctr,ctr,sit_corner_ratio,behavior,False,0.511258,observed
+study_ii,FVT study II,10,5,E10,20.2,study_ii|ctr|20.2,ctr,ctr,sit_total_distance_hab,behavior,False,1062.87,observed
+study_ii,FVT study II,10,6,F10,20.2,study_ii|ctr|20.2,ctr,ctr,epm_open_arm_percent,behavior,False,13.33333,observed
+study_ii,FVT study II,10,7,G10,20.2,study_ii|ctr|20.2,ctr,ctr,epm_open_entries_percent,behavior,False,40.90909,observed
+study_ii,FVT study II,10,8,H10,20.2,study_ii|ctr|20.2,ctr,ctr,fst_immobility,behavior,False,138.0,observed
+study_ii,FVT study II,10,9,I10,20.2,study_ii|ctr|20.2,ctr,ctr,cort_auc,endocrine,False,5214.252,observed
+study_ii,FVT study II,10,10,J10,20.2,study_ii|ctr|20.2,ctr,ctr,ip10_plasma,immune,False,200.6086,observed
+study_ii,FVT study II,10,11,K10,20.2,study_ii|ctr|20.2,ctr,ctr,il12_plasma,immune,False,1274.057,observed
+study_ii,FVT study II,10,12,L10,20.2,study_ii|ctr|20.2,ctr,ctr,il6_plasma,immune,False,27.72162,observed
+study_ii,FVT study II,10,13,M10,20.2,study_ii|ctr|20.2,ctr,ctr,tnfa_plasma,immune,False,25.96127,observed
+study_ii,FVT study II,10,14,N10,20.2,study_ii|ctr|20.2,ctr,ctr,ly6chi_monocytes,immune,True,4.734617,observed
+study_ii,FVT study II,10,15,O10,20.2,study_ii|ctr|20.2,ctr,ctr,ly6chi_monocytes_cd62,immune,True,60.28859,observed
+study_ii,FVT study II,10,16,P10,20.2,study_ii|ctr|20.2,ctr,ctr,mhc2_monocytes_ly6chi,immune,False,2.990818,observed
+study_ii,FVT study II,10,17,Q10,20.2,study_ii|ctr|20.2,ctr,ctr,neutrophils_cd11b_ly6g,immune,False,22.11586,observed
+study_ii,FVT study II,10,18,R10,20.2,study_ii|ctr|20.2,ctr,ctr,cd62_neutrophils,immune,False,76.16355,observed
+study_ii,FVT study II,10,19,S10,20.2,study_ii|ctr|20.2,ctr,ctr,mhc2_neutrophils,immune,False,1.958288,observed
+study_ii,FVT study II,10,20,T10,20.2,study_ii|ctr|20.2,ctr,ctr,thelper_cd4,immune,False,12.51993,observed
+study_ii,FVT study II,10,21,U10,20.2,study_ii|ctr|20.2,ctr,ctr,cd44hi_thelper,immune,False,8.949005,observed
+study_ii,FVT study II,10,22,V10,20.2,study_ii|ctr|20.2,ctr,ctr,cd69_thelper,immune,False,0.919373,observed
+study_ii,FVT study II,10,23,W10,20.2,study_ii|ctr|20.2,ctr,ctr,il12_splenocyte_unstimulated,immune,False,154.071,observed
+study_ii,FVT study II,10,24,X10,20.2,study_ii|ctr|20.2,ctr,ctr,il6_splenocyte_cona,immune,False,4005.645,observed
+study_ii,FVT study II,10,25,Y10,20.2,study_ii|ctr|20.2,ctr,ctr,tnfa_splenocyte_unstimulated,immune,True,34.8471,observed
+study_ii,FVT study II,10,26,Z10,20.2,study_ii|ctr|20.2,ctr,ctr,ifny_splenocyte_unstimulated,immune,False,0.62507,observed
+study_ii,FVT study II,10,27,AA10,20.2,study_ii|ctr|20.2,ctr,ctr,ifny_splenocyte_cona,immune,False,372.9618,observed
+study_ii,FVT study II,10,28,AB10,20.2,study_ii|ctr|20.2,ctr,ctr,ifny_splenocyte_lps,immune,False,127.6759,observed
+study_ii,FVT study II,10,29,AC10,20.2,study_ii|ctr|20.2,ctr,ctr,il12_splenocyte_cona,immune,False,138.3914,observed
+study_ii,FVT study II,10,30,AD10,20.2,study_ii|ctr|20.2,ctr,ctr,il12_splenocyte_lps,immune,False,205.3029,observed
+study_ii,FVT study II,10,31,AE10,20.2,study_ii|ctr|20.2,ctr,ctr,il6_splenocyte_unstimulated,immune,False,82.0472,observed
+study_ii,FVT study II,10,32,AF10,20.2,study_ii|ctr|20.2,ctr,ctr,il6_splenocyte_lps,immune,False,20682.64,observed
+study_ii,FVT study II,10,33,AG10,20.2,study_ii|ctr|20.2,ctr,ctr,ip10_splenocyte_unstimulated,immune,False,37.0944,observed
+study_ii,FVT study II,10,34,AH10,20.2,study_ii|ctr|20.2,ctr,ctr,ip10_splenocyte_cona,immune,False,6395.185,observed
+study_ii,FVT study II,10,35,AI10,20.2,study_ii|ctr|20.2,ctr,ctr,ip10_splenocyte_lps,immune,False,8951.188,observed
+study_ii,FVT study II,10,36,AJ10,20.2,study_ii|ctr|20.2,ctr,ctr,tnfa_splenocyte_cona,immune,False,2414.268,observed
+study_ii,FVT study II,10,37,AK10,20.2,study_ii|ctr|20.2,ctr,ctr,tnfa_splenocyte_lps,immune,False,2299.311,observed
+study_ii,FVT study II,10,38,AL10,20.2,study_ii|ctr|20.2,ctr,ctr,ifny_splenocyte_plasma,immune,False,0.409976,observed
+study_ii,FVT study II,11,3,C11,21,study_ii|ctr|21,ctr,ctr,sit_si_ratio,behavior,False,1.04439,observed
+study_ii,FVT study II,11,4,D11,21,study_ii|ctr|21,ctr,ctr,sit_corner_ratio,behavior,False,0.587786,observed
+study_ii,FVT study II,11,5,E11,21,study_ii|ctr|21,ctr,ctr,sit_total_distance_hab,behavior,False,1181.3,observed
+study_ii,FVT study II,11,6,F11,21,study_ii|ctr|21,ctr,ctr,epm_open_arm_percent,behavior,False,14.33333,observed
+study_ii,FVT study II,11,7,G11,21,study_ii|ctr|21,ctr,ctr,epm_open_entries_percent,behavior,False,28.57143,observed
+study_ii,FVT study II,11,8,H11,21,study_ii|ctr|21,ctr,ctr,fst_immobility,behavior,False,198.0,observed
+study_ii,FVT study II,11,9,I11,21,study_ii|ctr|21,ctr,ctr,cort_auc,endocrine,False,6925.286,observed
+study_ii,FVT study II,11,10,J11,21,study_ii|ctr|21,ctr,ctr,ip10_plasma,immune,False,103.4895,observed
+study_ii,FVT study II,11,11,K11,21,study_ii|ctr|21,ctr,ctr,il12_plasma,immune,False,985.7465,observed
+study_ii,FVT study II,11,12,L11,21,study_ii|ctr|21,ctr,ctr,il6_plasma,immune,False,,missing
+study_ii,FVT study II,11,13,M11,21,study_ii|ctr|21,ctr,ctr,tnfa_plasma,immune,False,13.80678,observed
+study_ii,FVT study II,11,14,N11,21,study_ii|ctr|21,ctr,ctr,ly6chi_monocytes,immune,True,2.636905,observed
+study_ii,FVT study II,11,15,O11,21,study_ii|ctr|21,ctr,ctr,ly6chi_monocytes_cd62,immune,True,61.477,observed
+study_ii,FVT study II,11,16,P11,21,study_ii|ctr|21,ctr,ctr,mhc2_monocytes_ly6chi,immune,False,3.631961,observed
+study_ii,FVT study II,11,17,Q11,21,study_ii|ctr|21,ctr,ctr,neutrophils_cd11b_ly6g,immune,False,25.70759,observed
+study_ii,FVT study II,11,18,R11,21,study_ii|ctr|21,ctr,ctr,cd62_neutrophils,immune,False,79.52017,observed
+study_ii,FVT study II,11,19,S11,21,study_ii|ctr|21,ctr,ctr,mhc2_neutrophils,immune,False,0.506656,observed
+study_ii,FVT study II,11,20,T11,21,study_ii|ctr|21,ctr,ctr,thelper_cd4,immune,False,11.78243,observed
+study_ii,FVT study II,11,21,U11,21,study_ii|ctr|21,ctr,ctr,cd44hi_thelper,immune,False,6.713992,observed
+study_ii,FVT study II,11,22,V11,21,study_ii|ctr|21,ctr,ctr,cd69_thelper,immune,False,1.35472,observed
+study_ii,FVT study II,11,23,W11,21,study_ii|ctr|21,ctr,ctr,il12_splenocyte_unstimulated,immune,False,193.095,observed
+study_ii,FVT study II,11,24,X11,21,study_ii|ctr|21,ctr,ctr,il6_splenocyte_cona,immune,False,3549.542,observed
+study_ii,FVT study II,11,25,Y11,21,study_ii|ctr|21,ctr,ctr,tnfa_splenocyte_unstimulated,immune,True,34.8775,observed
+study_ii,FVT study II,11,26,Z11,21,study_ii|ctr|21,ctr,ctr,ifny_splenocyte_unstimulated,immune,False,0.22455,observed
+study_ii,FVT study II,11,27,AA11,21,study_ii|ctr|21,ctr,ctr,ifny_splenocyte_cona,immune,False,415.7519,observed
+study_ii,FVT study II,11,28,AB11,21,study_ii|ctr|21,ctr,ctr,ifny_splenocyte_lps,immune,False,178.697,observed
+study_ii,FVT study II,11,29,AC11,21,study_ii|ctr|21,ctr,ctr,il12_splenocyte_cona,immune,False,193.5111,observed
+study_ii,FVT study II,11,30,AD11,21,study_ii|ctr|21,ctr,ctr,il12_splenocyte_lps,immune,False,310.4805,observed
+study_ii,FVT study II,11,31,AE11,21,study_ii|ctr|21,ctr,ctr,il6_splenocyte_unstimulated,immune,False,71.4271,observed
+study_ii,FVT study II,11,32,AF11,21,study_ii|ctr|21,ctr,ctr,il6_splenocyte_lps,immune,False,14671.69,observed
+study_ii,FVT study II,11,33,AG11,21,study_ii|ctr|21,ctr,ctr,ip10_splenocyte_unstimulated,immune,False,36.4895,observed
+study_ii,FVT study II,11,34,AH11,21,study_ii|ctr|21,ctr,ctr,ip10_splenocyte_cona,immune,False,7563.502,observed
+study_ii,FVT study II,11,35,AI11,21,study_ii|ctr|21,ctr,ctr,ip10_splenocyte_lps,immune,False,7484.454,observed
+study_ii,FVT study II,11,36,AJ11,21,study_ii|ctr|21,ctr,ctr,tnfa_splenocyte_cona,immune,False,2478.149,observed
+study_ii,FVT study II,11,37,AK11,21,study_ii|ctr|21,ctr,ctr,tnfa_splenocyte_lps,immune,False,2084.779,observed
+study_ii,FVT study II,11,38,AL11,21,study_ii|ctr|21,ctr,ctr,ifny_splenocyte_plasma,immune,False,1.691114,observed
+study_ii,FVT study II,12,3,C12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,sit_si_ratio,behavior,False,1.545333,observed
+study_ii,FVT study II,12,4,D12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,sit_corner_ratio,behavior,False,4.917355,observed
+study_ii,FVT study II,12,5,E12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,sit_total_distance_hab,behavior,False,483.12,observed
+study_ii,FVT study II,12,6,F12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,epm_open_arm_percent,behavior,False,2.666667,observed
+study_ii,FVT study II,12,7,G12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,epm_open_entries_percent,behavior,False,10.52632,observed
+study_ii,FVT study II,12,8,H12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,fst_immobility,behavior,False,185.0,observed
+study_ii,FVT study II,12,9,I12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,cort_auc,endocrine,False,7398.141,observed
+study_ii,FVT study II,12,10,J12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,ip10_plasma,immune,False,135.6374,observed
+study_ii,FVT study II,12,11,K12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,il12_plasma,immune,False,1036.165,observed
+study_ii,FVT study II,12,12,L12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,il6_plasma,immune,False,14.08154,observed
+study_ii,FVT study II,12,13,M12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,tnfa_plasma,immune,False,16.14926,observed
+study_ii,FVT study II,12,14,N12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,ly6chi_monocytes,immune,True,2.078353,observed
+study_ii,FVT study II,12,15,O12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,ly6chi_monocytes_cd62,immune,True,50.63514,observed
+study_ii,FVT study II,12,16,P12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,mhc2_monocytes_ly6chi,immune,False,2.681722,observed
+study_ii,FVT study II,12,17,Q12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,neutrophils_cd11b_ly6g,immune,False,5.754705,observed
+study_ii,FVT study II,12,18,R12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,cd62_neutrophils,immune,False,44.92163,observed
+study_ii,FVT study II,12,19,S12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,mhc2_neutrophils,immune,False,2.548745,observed
+study_ii,FVT study II,12,20,T12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,thelper_cd4,immune,False,13.46822,observed
+study_ii,FVT study II,12,21,U12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,cd44hi_thelper,immune,False,6.414375,observed
+study_ii,FVT study II,12,22,V12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,cd69_thelper,immune,False,3.441329,observed
+study_ii,FVT study II,12,23,W12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,il12_splenocyte_unstimulated,immune,False,111.871,observed
+study_ii,FVT study II,12,24,X12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,il6_splenocyte_cona,immune,False,1872.033,observed
+study_ii,FVT study II,12,25,Y12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,tnfa_splenocyte_unstimulated,immune,True,30.6835,observed
+study_ii,FVT study II,12,26,Z12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,ifny_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,12,27,AA12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,ifny_splenocyte_cona,immune,False,2831.077,observed
+study_ii,FVT study II,12,28,AB12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,ifny_splenocyte_lps,immune,False,925.7757,observed
+study_ii,FVT study II,12,29,AC12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,il12_splenocyte_cona,immune,False,144.0557,observed
+study_ii,FVT study II,12,30,AD12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,il12_splenocyte_lps,immune,False,233.1176,observed
+study_ii,FVT study II,12,31,AE12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,il6_splenocyte_unstimulated,immune,False,43.0517,observed
+study_ii,FVT study II,12,32,AF12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,il6_splenocyte_lps,immune,False,10519.91,observed
+study_ii,FVT study II,12,33,AG12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,ip10_splenocyte_unstimulated,immune,False,22.6545,observed
+study_ii,FVT study II,12,34,AH12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,ip10_splenocyte_cona,immune,False,3389.888,observed
+study_ii,FVT study II,12,35,AI12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,ip10_splenocyte_lps,immune,False,2696.583,observed
+study_ii,FVT study II,12,36,AJ12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,tnfa_splenocyte_cona,immune,False,1600.678,observed
+study_ii,FVT study II,12,37,AK12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,tnfa_splenocyte_lps,immune,False,1217.619,observed
+study_ii,FVT study II,12,38,AL12,4,study_ii|ctr_stress|4,ctr_stress,ctr_stress,ifny_splenocyte_plasma,immune,False,1.715128,observed
+study_ii,FVT study II,13,3,C13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,sit_si_ratio,behavior,False,0.854863,observed
+study_ii,FVT study II,13,4,D13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,sit_corner_ratio,behavior,False,0.895765,observed
+study_ii,FVT study II,13,5,E13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,sit_total_distance_hab,behavior,False,662.729,observed
+study_ii,FVT study II,13,6,F13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,epm_open_arm_percent,behavior,False,0.0,observed
+study_ii,FVT study II,13,7,G13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,epm_open_entries_percent,behavior,False,0.0,observed
+study_ii,FVT study II,13,8,H13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,fst_immobility,behavior,False,208.0,observed
+study_ii,FVT study II,13,9,I13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,cort_auc,endocrine,False,12728.28,observed
+study_ii,FVT study II,13,10,J13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,ip10_plasma,immune,False,317.9997,observed
+study_ii,FVT study II,13,11,K13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,il12_plasma,immune,False,996.3351,observed
+study_ii,FVT study II,13,12,L13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,il6_plasma,immune,False,,missing
+study_ii,FVT study II,13,13,M13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,tnfa_plasma,immune,False,18.90663,observed
+study_ii,FVT study II,13,14,N13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,ly6chi_monocytes,immune,True,2.326868,observed
+study_ii,FVT study II,13,15,O13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,ly6chi_monocytes_cd62,immune,True,65.68925,observed
+study_ii,FVT study II,13,16,P13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,mhc2_monocytes_ly6chi,immune,False,1.41248,observed
+study_ii,FVT study II,13,17,Q13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,neutrophils_cd11b_ly6g,immune,False,11.77787,observed
+study_ii,FVT study II,13,18,R13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,cd62_neutrophils,immune,False,49.13458,observed
+study_ii,FVT study II,13,19,S13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,mhc2_neutrophils,immune,False,0.879548,observed
+study_ii,FVT study II,13,20,T13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,thelper_cd4,immune,False,11.23537,observed
+study_ii,FVT study II,13,21,U13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,cd44hi_thelper,immune,False,7.672369,observed
+study_ii,FVT study II,13,22,V13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,cd69_thelper,immune,False,1.395986,observed
+study_ii,FVT study II,13,23,W13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,il12_splenocyte_unstimulated,immune,False,270.744,observed
+study_ii,FVT study II,13,24,X13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,il6_splenocyte_cona,immune,False,3741.301,observed
+study_ii,FVT study II,13,25,Y13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,tnfa_splenocyte_unstimulated,immune,True,268.89,observed
+study_ii,FVT study II,13,26,Z13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,ifny_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,13,27,AA13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,ifny_splenocyte_cona,immune,False,5360.806,observed
+study_ii,FVT study II,13,28,AB13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,ifny_splenocyte_lps,immune,False,1557.937,observed
+study_ii,FVT study II,13,29,AC13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,il12_splenocyte_cona,immune,False,197.3156,observed
+study_ii,FVT study II,13,30,AD13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,il12_splenocyte_lps,immune,False,244.4451,observed
+study_ii,FVT study II,13,31,AE13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,il6_splenocyte_unstimulated,immune,False,166.3251,observed
+study_ii,FVT study II,13,32,AF13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,il6_splenocyte_lps,immune,False,13108.13,observed
+study_ii,FVT study II,13,33,AG13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,ip10_splenocyte_unstimulated,immune,False,119.071,observed
+study_ii,FVT study II,13,34,AH13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,ip10_splenocyte_cona,immune,False,4937.038,observed
+study_ii,FVT study II,13,35,AI13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,ip10_splenocyte_lps,immune,False,5243.839,observed
+study_ii,FVT study II,13,36,AJ13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,tnfa_splenocyte_cona,immune,False,1870.481,observed
+study_ii,FVT study II,13,37,AK13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,tnfa_splenocyte_lps,immune,False,1717.048,observed
+study_ii,FVT study II,13,38,AL13,5,study_ii|ctr_stress|5,ctr_stress,ctr_stress,ifny_splenocyte_plasma,immune,False,0.480674,observed
+study_ii,FVT study II,14,3,C14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,sit_si_ratio,behavior,False,0.466805,observed
+study_ii,FVT study II,14,4,D14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,sit_corner_ratio,behavior,False,9.113208,observed
+study_ii,FVT study II,14,5,E14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,sit_total_distance_hab,behavior,False,506.949,observed
+study_ii,FVT study II,14,6,F14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,epm_open_arm_percent,behavior,False,3.333333,observed
+study_ii,FVT study II,14,7,G14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,epm_open_entries_percent,behavior,False,21.42857,observed
+study_ii,FVT study II,14,8,H14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,fst_immobility,behavior,False,177.0,observed
+study_ii,FVT study II,14,9,I14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,cort_auc,endocrine,False,7775.498,observed
+study_ii,FVT study II,14,10,J14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,ip10_plasma,immune,False,273.7293,observed
+study_ii,FVT study II,14,11,K14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,il12_plasma,immune,False,924.1737,observed
+study_ii,FVT study II,14,12,L14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,il6_plasma,immune,False,,missing
+study_ii,FVT study II,14,13,M14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,tnfa_plasma,immune,False,17.38034,observed
+study_ii,FVT study II,14,14,N14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,ly6chi_monocytes,immune,True,1.733068,observed
+study_ii,FVT study II,14,15,O14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,ly6chi_monocytes_cd62,immune,True,62.69841,observed
+study_ii,FVT study II,14,16,P14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,mhc2_monocytes_ly6chi,immune,False,2.335601,observed
+study_ii,FVT study II,14,17,Q14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,neutrophils_cd11b_ly6g,immune,False,4.799145,observed
+study_ii,FVT study II,14,18,R14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,cd62_neutrophils,immune,False,56.4281,observed
+study_ii,FVT study II,14,19,S14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,mhc2_neutrophils,immune,False,2.391091,observed
+study_ii,FVT study II,14,20,T14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,thelper_cd4,immune,False,10.84248,observed
+study_ii,FVT study II,14,21,U14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,cd44hi_thelper,immune,False,8.169627,observed
+study_ii,FVT study II,14,22,V14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,cd69_thelper,immune,False,3.146067,observed
+study_ii,FVT study II,14,23,W14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,il12_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,14,24,X14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,il6_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,14,25,Y14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,tnfa_splenocyte_unstimulated,immune,True,,missing
+study_ii,FVT study II,14,26,Z14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,ifny_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,14,27,AA14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,ifny_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,14,28,AB14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,ifny_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,14,29,AC14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,il12_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,14,30,AD14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,il12_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,14,31,AE14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,il6_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,14,32,AF14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,il6_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,14,33,AG14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,ip10_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,14,34,AH14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,ip10_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,14,35,AI14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,ip10_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,14,36,AJ14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,tnfa_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,14,37,AK14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,tnfa_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,14,38,AL14,6,study_ii|ctr_stress|6,ctr_stress,ctr_stress,ifny_splenocyte_plasma,immune,False,,missing
+study_ii,FVT study II,15,3,C15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,sit_si_ratio,behavior,False,1.408221,observed
+study_ii,FVT study II,15,4,D15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,sit_corner_ratio,behavior,False,0.672249,observed
+study_ii,FVT study II,15,5,E15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,sit_total_distance_hab,behavior,False,1016.45,observed
+study_ii,FVT study II,15,6,F15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,epm_open_arm_percent,behavior,False,0.666667,observed
+study_ii,FVT study II,15,7,G15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,epm_open_entries_percent,behavior,False,7.142857,observed
+study_ii,FVT study II,15,8,H15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,fst_immobility,behavior,False,183.0,observed
+study_ii,FVT study II,15,9,I15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,cort_auc,endocrine,False,6539.208,observed
+study_ii,FVT study II,15,10,J15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,ip10_plasma,immune,False,246.6139,observed
+study_ii,FVT study II,15,11,K15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,il12_plasma,immune,False,872.2136,observed
+study_ii,FVT study II,15,12,L15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,il6_plasma,immune,False,70.21235,observed
+study_ii,FVT study II,15,13,M15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,tnfa_plasma,immune,False,19.6862,observed
+study_ii,FVT study II,15,14,N15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,ly6chi_monocytes,immune,True,1.748716,observed
+study_ii,FVT study II,15,15,O15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,ly6chi_monocytes_cd62,immune,True,52.80528,observed
+study_ii,FVT study II,15,16,P15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,mhc2_monocytes_ly6chi,immune,False,0.330033,observed
+study_ii,FVT study II,15,17,Q15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,neutrophils_cd11b_ly6g,immune,False,9.692965,observed
+study_ii,FVT study II,15,18,R15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,cd62_neutrophils,immune,False,47.15689,observed
+study_ii,FVT study II,15,19,S15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,mhc2_neutrophils,immune,False,1.428997,observed
+study_ii,FVT study II,15,20,T15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,thelper_cd4,immune,False,10.50961,observed
+study_ii,FVT study II,15,21,U15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,cd44hi_thelper,immune,False,8.04503,observed
+study_ii,FVT study II,15,22,V15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,cd69_thelper,immune,False,3.294893,observed
+study_ii,FVT study II,15,23,W15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,il12_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,15,24,X15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,il6_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,15,25,Y15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,tnfa_splenocyte_unstimulated,immune,True,,missing
+study_ii,FVT study II,15,26,Z15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,ifny_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,15,27,AA15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,ifny_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,15,28,AB15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,ifny_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,15,29,AC15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,il12_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,15,30,AD15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,il12_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,15,31,AE15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,il6_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,15,32,AF15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,il6_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,15,33,AG15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,ip10_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,15,34,AH15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,ip10_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,15,35,AI15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,ip10_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,15,36,AJ15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,tnfa_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,15,37,AK15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,tnfa_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,15,38,AL15,7,study_ii|ctr_stress|7,ctr_stress,ctr_stress,ifny_splenocyte_plasma,immune,False,,missing
+study_ii,FVT study II,16,3,C16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,sit_si_ratio,behavior,False,0.228741,observed
+study_ii,FVT study II,16,4,D16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,sit_corner_ratio,behavior,False,1.597969,observed
+study_ii,FVT study II,16,5,E16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,sit_total_distance_hab,behavior,False,360.721,observed
+study_ii,FVT study II,16,6,F16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,epm_open_arm_percent,behavior,False,0.333333,observed
+study_ii,FVT study II,16,7,G16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,epm_open_entries_percent,behavior,False,16.66667,observed
+study_ii,FVT study II,16,8,H16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,fst_immobility,behavior,False,221.0,observed
+study_ii,FVT study II,16,9,I16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,cort_auc,endocrine,False,8829.84,observed
+study_ii,FVT study II,16,10,J16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,ip10_plasma,immune,False,193.2488,observed
+study_ii,FVT study II,16,11,K16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,il12_plasma,immune,False,803.6765,observed
+study_ii,FVT study II,16,12,L16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,il6_plasma,immune,False,62.00375,observed
+study_ii,FVT study II,16,13,M16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,tnfa_plasma,immune,False,15.83931,observed
+study_ii,FVT study II,16,14,N16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,ly6chi_monocytes,immune,True,2.547026,observed
+study_ii,FVT study II,16,15,O16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,ly6chi_monocytes_cd62,immune,True,56.70545,observed
+study_ii,FVT study II,16,16,P16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,mhc2_monocytes_ly6chi,immune,False,1.469688,observed
+study_ii,FVT study II,16,17,Q16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,neutrophils_cd11b_ly6g,immune,False,8.445893,observed
+study_ii,FVT study II,16,18,R16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,cd62_neutrophils,immune,False,46.37119,observed
+study_ii,FVT study II,16,19,S16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,mhc2_neutrophils,immune,False,1.606648,observed
+study_ii,FVT study II,16,20,T16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,thelper_cd4,immune,False,12.07693,observed
+study_ii,FVT study II,16,21,U16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,cd44hi_thelper,immune,False,7.025701,observed
+study_ii,FVT study II,16,22,V16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,cd69_thelper,immune,False,2.634638,observed
+study_ii,FVT study II,16,23,W16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,il12_splenocyte_unstimulated,immune,False,114.808,observed
+study_ii,FVT study II,16,24,X16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,il6_splenocyte_cona,immune,False,1444.13,observed
+study_ii,FVT study II,16,25,Y16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,tnfa_splenocyte_unstimulated,immune,True,30.3309,observed
+study_ii,FVT study II,16,26,Z16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,ifny_splenocyte_unstimulated,immune,False,0.07089,observed
+study_ii,FVT study II,16,27,AA16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,ifny_splenocyte_cona,immune,False,778.8106,observed
+study_ii,FVT study II,16,28,AB16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,ifny_splenocyte_lps,immune,False,2490.63,observed
+study_ii,FVT study II,16,29,AC16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,il12_splenocyte_cona,immune,False,109.696,observed
+study_ii,FVT study II,16,30,AD16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,il12_splenocyte_lps,immune,False,228.0101,observed
+study_ii,FVT study II,16,31,AE16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,il6_splenocyte_unstimulated,immune,False,43.2836,observed
+study_ii,FVT study II,16,32,AF16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,il6_splenocyte_lps,immune,False,13098.76,observed
+study_ii,FVT study II,16,33,AG16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,ip10_splenocyte_unstimulated,immune,False,22.9864,observed
+study_ii,FVT study II,16,34,AH16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,ip10_splenocyte_cona,immune,False,2481.672,observed
+study_ii,FVT study II,16,35,AI16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,ip10_splenocyte_lps,immune,False,3837.932,observed
+study_ii,FVT study II,16,36,AJ16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,tnfa_splenocyte_cona,immune,False,1055.346,observed
+study_ii,FVT study II,16,37,AK16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,tnfa_splenocyte_lps,immune,False,1393.165,observed
+study_ii,FVT study II,16,38,AL16,8,study_ii|ctr_stress|8,ctr_stress,ctr_stress,ifny_splenocyte_plasma,immune,False,0.632815,observed
+study_ii,FVT study II,17,3,C17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,sit_si_ratio,behavior,False,0.344421,observed
+study_ii,FVT study II,17,4,D17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,sit_corner_ratio,behavior,False,9.879397,observed
+study_ii,FVT study II,17,5,E17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,sit_total_distance_hab,behavior,False,609.669,observed
+study_ii,FVT study II,17,6,F17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,epm_open_arm_percent,behavior,False,4.333333,observed
+study_ii,FVT study II,17,7,G17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,epm_open_entries_percent,behavior,False,,missing
+study_ii,FVT study II,17,8,H17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,fst_immobility,behavior,False,197.0,observed
+study_ii,FVT study II,17,9,I17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,cort_auc,endocrine,False,7305.505,observed
+study_ii,FVT study II,17,10,J17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,ip10_plasma,immune,False,435.1348,observed
+study_ii,FVT study II,17,11,K17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,il12_plasma,immune,False,432.8669,observed
+study_ii,FVT study II,17,12,L17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,il6_plasma,immune,False,22.13302,observed
+study_ii,FVT study II,17,13,M17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,tnfa_plasma,immune,False,13.70159,observed
+study_ii,FVT study II,17,14,N17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,ly6chi_monocytes,immune,True,0.981895,observed
+study_ii,FVT study II,17,15,O17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,ly6chi_monocytes_cd62,immune,True,51.09971,observed
+study_ii,FVT study II,17,16,P17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,mhc2_monocytes_ly6chi,immune,False,3.372434,observed
+study_ii,FVT study II,17,17,Q17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,neutrophils_cd11b_ly6g,immune,False,9.425908,observed
+study_ii,FVT study II,17,18,R17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,cd62_neutrophils,immune,False,49.69452,observed
+study_ii,FVT study II,17,19,S17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,mhc2_neutrophils,immune,False,0.91645,observed
+study_ii,FVT study II,17,20,T17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,thelper_cd4,immune,False,12.8863,observed
+study_ii,FVT study II,17,21,U17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,cd44hi_thelper,immune,False,5.971733,observed
+study_ii,FVT study II,17,22,V17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,cd69_thelper,immune,False,2.664656,observed
+study_ii,FVT study II,17,23,W17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,il12_splenocyte_unstimulated,immune,False,218.069,observed
+study_ii,FVT study II,17,24,X17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,il6_splenocyte_cona,immune,False,3699.486,observed
+study_ii,FVT study II,17,25,Y17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,tnfa_splenocyte_unstimulated,immune,True,83.7498,observed
+study_ii,FVT study II,17,26,Z17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,ifny_splenocyte_unstimulated,immune,False,0.4437,observed
+study_ii,FVT study II,17,27,AA17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,ifny_splenocyte_cona,immune,False,250.8576,observed
+study_ii,FVT study II,17,28,AB17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,ifny_splenocyte_lps,immune,False,275.5942,observed
+study_ii,FVT study II,17,29,AC17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,il12_splenocyte_cona,immune,False,192.0114,observed
+study_ii,FVT study II,17,30,AD17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,il12_splenocyte_lps,immune,False,318.5473,observed
+study_ii,FVT study II,17,31,AE17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,il6_splenocyte_unstimulated,immune,False,109.207,observed
+study_ii,FVT study II,17,32,AF17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,il6_splenocyte_lps,immune,False,18180.04,observed
+study_ii,FVT study II,17,33,AG17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,ip10_splenocyte_unstimulated,immune,False,82.2654,observed
+study_ii,FVT study II,17,34,AH17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,ip10_splenocyte_cona,immune,False,6342.197,observed
+study_ii,FVT study II,17,35,AI17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,ip10_splenocyte_lps,immune,False,7411.557,observed
+study_ii,FVT study II,17,36,AJ17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,tnfa_splenocyte_cona,immune,False,2587.621,observed
+study_ii,FVT study II,17,37,AK17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,tnfa_splenocyte_lps,immune,False,1503.919,observed
+study_ii,FVT study II,17,38,AL17,22,study_ii|ctr_stress|22,ctr_stress,ctr_stress,ifny_splenocyte_plasma,immune,False,0.91513,observed
+study_ii,FVT study II,18,3,C18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,sit_si_ratio,behavior,False,0.920059,observed
+study_ii,FVT study II,18,4,D18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,sit_corner_ratio,behavior,False,1.785714,observed
+study_ii,FVT study II,18,5,E18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,sit_total_distance_hab,behavior,False,850.57,observed
+study_ii,FVT study II,18,6,F18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,epm_open_arm_percent,behavior,False,0.333333,observed
+study_ii,FVT study II,18,7,G18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,epm_open_entries_percent,behavior,False,20.0,observed
+study_ii,FVT study II,18,8,H18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,fst_immobility,behavior,False,192.0,observed
+study_ii,FVT study II,18,9,I18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,cort_auc,endocrine,False,8843.94,observed
+study_ii,FVT study II,18,10,J18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,ip10_plasma,immune,False,136.2684,observed
+study_ii,FVT study II,18,11,K18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,il12_plasma,immune,False,657.2995,observed
+study_ii,FVT study II,18,12,L18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,il6_plasma,immune,False,5.581599,observed
+study_ii,FVT study II,18,13,M18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,tnfa_plasma,immune,False,13.95546,observed
+study_ii,FVT study II,18,14,N18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,ly6chi_monocytes,immune,True,2.730798,observed
+study_ii,FVT study II,18,15,O18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,ly6chi_monocytes_cd62,immune,True,64.432,observed
+study_ii,FVT study II,18,16,P18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,mhc2_monocytes_ly6chi,immune,False,2.184599,observed
+study_ii,FVT study II,18,17,Q18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,neutrophils_cd11b_ly6g,immune,False,12.5,observed
+study_ii,FVT study II,18,18,R18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,cd62_neutrophils,immune,False,62.86652,observed
+study_ii,FVT study II,18,19,S18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,mhc2_neutrophils,immune,False,0.87994,observed
+study_ii,FVT study II,18,20,T18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,thelper_cd4,immune,False,13.03244,observed
+study_ii,FVT study II,18,21,U18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,cd44hi_thelper,immune,False,6.497296,observed
+study_ii,FVT study II,18,22,V18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,cd69_thelper,immune,False,1.187309,observed
+study_ii,FVT study II,18,23,W18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,il12_splenocyte_unstimulated,immune,False,261.334,observed
+study_ii,FVT study II,18,24,X18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,il6_splenocyte_cona,immune,False,3566.015,observed
+study_ii,FVT study II,18,25,Y18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,tnfa_splenocyte_unstimulated,immune,True,292.79,observed
+study_ii,FVT study II,18,26,Z18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,ifny_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,18,27,AA18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,ifny_splenocyte_cona,immune,False,785.9957,observed
+study_ii,FVT study II,18,28,AB18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,ifny_splenocyte_lps,immune,False,142.7779,observed
+study_ii,FVT study II,18,29,AC18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,il12_splenocyte_cona,immune,False,208.1899,observed
+study_ii,FVT study II,18,30,AD18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,il12_splenocyte_lps,immune,False,240.0904,observed
+study_ii,FVT study II,18,31,AE18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,il6_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,18,32,AF18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,il6_splenocyte_lps,immune,False,15953.7,observed
+study_ii,FVT study II,18,33,AG18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,ip10_splenocyte_unstimulated,immune,False,195.445,observed
+study_ii,FVT study II,18,34,AH18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,ip10_splenocyte_cona,immune,False,6212.784,observed
+study_ii,FVT study II,18,35,AI18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,ip10_splenocyte_lps,immune,False,7654.266,observed
+study_ii,FVT study II,18,36,AJ18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,tnfa_splenocyte_cona,immune,False,2390.766,observed
+study_ii,FVT study II,18,37,AK18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,tnfa_splenocyte_lps,immune,False,1676.541,observed
+study_ii,FVT study II,18,38,AL18,23,study_ii|ctr_stress|23,ctr_stress,ctr_stress,ifny_splenocyte_plasma,immune,False,0.631889,observed
+study_ii,FVT study II,19,3,C19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,sit_si_ratio,behavior,False,0.719803,observed
+study_ii,FVT study II,19,4,D19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,sit_corner_ratio,behavior,False,0.420213,observed
+study_ii,FVT study II,19,5,E19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,sit_total_distance_hab,behavior,False,615.694,observed
+study_ii,FVT study II,19,6,F19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,epm_open_arm_percent,behavior,False,,missing
+study_ii,FVT study II,19,7,G19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,epm_open_entries_percent,behavior,False,13.33333,observed
+study_ii,FVT study II,19,8,H19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,fst_immobility,behavior,False,151.0,observed
+study_ii,FVT study II,19,9,I19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,cort_auc,endocrine,False,11735.69,observed
+study_ii,FVT study II,19,10,J19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,ip10_plasma,immune,False,532.2565,observed
+study_ii,FVT study II,19,11,K19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,il12_plasma,immune,False,1173.092,observed
+study_ii,FVT study II,19,12,L19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,il6_plasma,immune,False,29.5883,observed
+study_ii,FVT study II,19,13,M19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,tnfa_plasma,immune,False,,missing
+study_ii,FVT study II,19,14,N19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,ly6chi_monocytes,immune,True,1.913529,observed
+study_ii,FVT study II,19,15,O19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,ly6chi_monocytes_cd62,immune,True,74.8818,observed
+study_ii,FVT study II,19,16,P19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,mhc2_monocytes_ly6chi,immune,False,1.536643,observed
+study_ii,FVT study II,19,17,Q19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,neutrophils_cd11b_ly6g,immune,False,11.42802,observed
+study_ii,FVT study II,19,18,R19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,cd62_neutrophils,immune,False,68.8669,observed
+study_ii,FVT study II,19,19,S19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,mhc2_neutrophils,immune,False,0.603662,observed
+study_ii,FVT study II,19,20,T19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,thelper_cd4,immune,False,8.431064,observed
+study_ii,FVT study II,19,21,U19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,cd44hi_thelper,immune,False,6.814219,observed
+study_ii,FVT study II,19,22,V19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,cd69_thelper,immune,False,1.676727,observed
+study_ii,FVT study II,19,23,W19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,il12_splenocyte_unstimulated,immune,False,143.682,observed
+study_ii,FVT study II,19,24,X19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,il6_splenocyte_cona,immune,False,3000.946,observed
+study_ii,FVT study II,19,25,Y19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,tnfa_splenocyte_unstimulated,immune,True,37.7668,observed
+study_ii,FVT study II,19,26,Z19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,ifny_splenocyte_unstimulated,immune,False,0.32902,observed
+study_ii,FVT study II,19,27,AA19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,ifny_splenocyte_cona,immune,False,145.8454,observed
+study_ii,FVT study II,19,28,AB19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,ifny_splenocyte_lps,immune,False,35.08706,observed
+study_ii,FVT study II,19,29,AC19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,il12_splenocyte_cona,immune,False,152.1157,observed
+study_ii,FVT study II,19,30,AD19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,il12_splenocyte_lps,immune,False,210.6332,observed
+study_ii,FVT study II,19,31,AE19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,il6_splenocyte_unstimulated,immune,False,84.4395,observed
+study_ii,FVT study II,19,32,AF19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,il6_splenocyte_lps,immune,False,12203.9,observed
+study_ii,FVT study II,19,33,AG19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,ip10_splenocyte_unstimulated,immune,False,23.0844,observed
+study_ii,FVT study II,19,34,AH19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,ip10_splenocyte_cona,immune,False,5601.735,observed
+study_ii,FVT study II,19,35,AI19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,ip10_splenocyte_lps,immune,False,3810.057,observed
+study_ii,FVT study II,19,36,AJ19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,tnfa_splenocyte_cona,immune,False,2253.844,observed
+study_ii,FVT study II,19,37,AK19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,tnfa_splenocyte_lps,immune,False,1132.953,observed
+study_ii,FVT study II,19,38,AL19,24,study_ii|ctr_stress|24,ctr_stress,ctr_stress,ifny_splenocyte_plasma,immune,False,0.350809,observed
+study_ii,FVT study II,20,3,C20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,sit_si_ratio,behavior,False,0.822222,observed
+study_ii,FVT study II,20,4,D20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,sit_corner_ratio,behavior,False,5.254237,observed
+study_ii,FVT study II,20,5,E20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,sit_total_distance_hab,behavior,False,290.951,observed
+study_ii,FVT study II,20,6,F20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,epm_open_arm_percent,behavior,False,,missing
+study_ii,FVT study II,20,7,G20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,epm_open_entries_percent,behavior,False,,missing
+study_ii,FVT study II,20,8,H20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,fst_immobility,behavior,False,148.0,observed
+study_ii,FVT study II,20,9,I20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,cort_auc,endocrine,False,7032.979,observed
+study_ii,FVT study II,20,10,J20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,ip10_plasma,immune,False,158.9732,observed
+study_ii,FVT study II,20,11,K20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,il12_plasma,immune,False,736.9068,observed
+study_ii,FVT study II,20,12,L20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,il6_plasma,immune,False,15.84068,observed
+study_ii,FVT study II,20,13,M20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,tnfa_plasma,immune,False,14.25123,observed
+study_ii,FVT study II,20,14,N20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,ly6chi_monocytes,immune,True,4.385133,observed
+study_ii,FVT study II,20,15,O20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,ly6chi_monocytes_cd62,immune,True,57.26569,observed
+study_ii,FVT study II,20,16,P20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,mhc2_monocytes_ly6chi,immune,False,2.948041,observed
+study_ii,FVT study II,20,17,Q20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,neutrophils_cd11b_ly6g,immune,False,,missing
+study_ii,FVT study II,20,18,R20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,cd62_neutrophils,immune,False,69.41651,observed
+study_ii,FVT study II,20,19,S20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,mhc2_neutrophils,immune,False,0.947085,observed
+study_ii,FVT study II,20,20,T20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,thelper_cd4,immune,False,8.409911,observed
+study_ii,FVT study II,20,21,U20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,cd44hi_thelper,immune,False,9.786716,observed
+study_ii,FVT study II,20,22,V20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,cd69_thelper,immune,False,2.478704,observed
+study_ii,FVT study II,20,23,W20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,il12_splenocyte_unstimulated,immune,False,202.5974,observed
+study_ii,FVT study II,20,24,X20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,il6_splenocyte_cona,immune,False,7169.065,observed
+study_ii,FVT study II,20,25,Y20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,tnfa_splenocyte_unstimulated,immune,True,43.19555,observed
+study_ii,FVT study II,20,26,Z20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,ifny_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,20,27,AA20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,ifny_splenocyte_cona,immune,False,3673.774,observed
+study_ii,FVT study II,20,28,AB20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,ifny_splenocyte_lps,immune,False,287.1001,observed
+study_ii,FVT study II,20,29,AC20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,il12_splenocyte_cona,immune,False,384.8402,observed
+study_ii,FVT study II,20,30,AD20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,il12_splenocyte_lps,immune,False,341.2032,observed
+study_ii,FVT study II,20,31,AE20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,il6_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,20,32,AF20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,il6_splenocyte_lps,immune,False,19937.37,observed
+study_ii,FVT study II,20,33,AG20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,ip10_splenocyte_unstimulated,immune,False,67.27869,observed
+study_ii,FVT study II,20,34,AH20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,ip10_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,20,35,AI20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,ip10_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,20,36,AJ20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,tnfa_splenocyte_cona,immune,False,2630.266,observed
+study_ii,FVT study II,20,37,AK20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,tnfa_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,20,38,AL20,25,study_ii|ctr_stress|25,ctr_stress,ctr_stress,ifny_splenocyte_plasma,immune,False,1.370412,observed
+study_ii,FVT study II,21,3,C21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,sit_si_ratio,behavior,False,0.270512,observed
+study_ii,FVT study II,21,4,D21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,sit_corner_ratio,behavior,False,4.081942,observed
+study_ii,FVT study II,21,5,E21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,sit_total_distance_hab,behavior,False,721.867,observed
+study_ii,FVT study II,21,6,F21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,epm_open_arm_percent,behavior,False,,missing
+study_ii,FVT study II,21,7,G21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,epm_open_entries_percent,behavior,False,10.0,observed
+study_ii,FVT study II,21,8,H21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,fst_immobility,behavior,False,215.0,observed
+study_ii,FVT study II,21,9,I21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,cort_auc,endocrine,False,6597.279,observed
+study_ii,FVT study II,21,10,J21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,ip10_plasma,immune,False,131.335,observed
+study_ii,FVT study II,21,11,K21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,il12_plasma,immune,False,741.8481,observed
+study_ii,FVT study II,21,12,L21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,il6_plasma,immune,False,,missing
+study_ii,FVT study II,21,13,M21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,tnfa_plasma,immune,False,12.92892,observed
+study_ii,FVT study II,21,14,N21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,ly6chi_monocytes,immune,True,3.057811,observed
+study_ii,FVT study II,21,15,O21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,ly6chi_monocytes_cd62,immune,True,60.15691,observed
+study_ii,FVT study II,21,16,P21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,mhc2_monocytes_ly6chi,immune,False,3.040067,observed
+study_ii,FVT study II,21,17,Q21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,neutrophils_cd11b_ly6g,immune,False,9.611241,observed
+study_ii,FVT study II,21,18,R21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,cd62_neutrophils,immune,False,50.82902,observed
+study_ii,FVT study II,21,19,S21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,mhc2_neutrophils,immune,False,2.117133,observed
+study_ii,FVT study II,21,20,T21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,thelper_cd4,immune,False,14.75057,observed
+study_ii,FVT study II,21,21,U21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,cd44hi_thelper,immune,False,5.375657,observed
+study_ii,FVT study II,21,22,V21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,cd69_thelper,immune,False,2.416287,observed
+study_ii,FVT study II,21,23,W21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,il12_splenocyte_unstimulated,immune,False,219.168,observed
+study_ii,FVT study II,21,24,X21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,il6_splenocyte_cona,immune,False,4093.76,observed
+study_ii,FVT study II,21,25,Y21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,tnfa_splenocyte_unstimulated,immune,True,28.4382,observed
+study_ii,FVT study II,21,26,Z21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,ifny_splenocyte_unstimulated,immune,False,0.30509,observed
+study_ii,FVT study II,21,27,AA21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,ifny_splenocyte_cona,immune,False,151.9339,observed
+study_ii,FVT study II,21,28,AB21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,ifny_splenocyte_lps,immune,False,16.32701,observed
+study_ii,FVT study II,21,29,AC21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,il12_splenocyte_cona,immune,False,272.5975,observed
+study_ii,FVT study II,21,30,AD21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,il12_splenocyte_lps,immune,False,298.1078,observed
+study_ii,FVT study II,21,31,AE21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,il6_splenocyte_unstimulated,immune,False,65.7695,observed
+study_ii,FVT study II,21,32,AF21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,il6_splenocyte_lps,immune,False,10434.29,observed
+study_ii,FVT study II,21,33,AG21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,ip10_splenocyte_unstimulated,immune,False,21.2293,observed
+study_ii,FVT study II,21,34,AH21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,ip10_splenocyte_cona,immune,False,6087.029,observed
+study_ii,FVT study II,21,35,AI21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,ip10_splenocyte_lps,immune,False,4052.066,observed
+study_ii,FVT study II,21,36,AJ21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,tnfa_splenocyte_cona,immune,False,1915.147,observed
+study_ii,FVT study II,21,37,AK21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,tnfa_splenocyte_lps,immune,False,1299.082,observed
+study_ii,FVT study II,21,38,AL21,26,study_ii|ctr_stress|26,ctr_stress,ctr_stress,ifny_splenocyte_plasma,immune,False,0.152222,observed
+study_ii,FVT study II,22,3,C22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,sit_si_ratio,behavior,False,2.462825,observed
+study_ii,FVT study II,22,4,D22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,sit_corner_ratio,behavior,False,0.690891,observed
+study_ii,FVT study II,22,5,E22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,sit_total_distance_hab,behavior,False,621.569,observed
+study_ii,FVT study II,22,6,F22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,epm_open_arm_percent,behavior,False,3.0,observed
+study_ii,FVT study II,22,7,G22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,epm_open_entries_percent,behavior,False,20.0,observed
+study_ii,FVT study II,22,8,H22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,fst_immobility,behavior,False,180.0,observed
+study_ii,FVT study II,22,9,I22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,cort_auc,endocrine,False,7209.138,observed
+study_ii,FVT study II,22,10,J22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,ip10_plasma,immune,False,,missing
+study_ii,FVT study II,22,11,K22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,il12_plasma,immune,False,,missing
+study_ii,FVT study II,22,12,L22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,il6_plasma,immune,False,141.1205,observed
+study_ii,FVT study II,22,13,M22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,tnfa_plasma,immune,False,,missing
+study_ii,FVT study II,22,14,N22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,ly6chi_monocytes,immune,True,3.684622,observed
+study_ii,FVT study II,22,15,O22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,ly6chi_monocytes_cd62,immune,True,75.57179,observed
+study_ii,FVT study II,22,16,P22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,mhc2_monocytes_ly6chi,immune,False,4.929848,observed
+study_ii,FVT study II,22,17,Q22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,neutrophils_cd11b_ly6g,immune,False,10.89205,observed
+study_ii,FVT study II,22,18,R22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,cd62_neutrophils,immune,False,59.86151,observed
+study_ii,FVT study II,22,19,S22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,mhc2_neutrophils,immune,False,1.479146,observed
+study_ii,FVT study II,22,20,T22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,thelper_cd4,immune,False,13.27788,observed
+study_ii,FVT study II,22,21,U22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,cd44hi_thelper,immune,False,9.445585,observed
+study_ii,FVT study II,22,22,V22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,cd69_thelper,immune,False,1.264034,observed
+study_ii,FVT study II,22,23,W22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,il12_splenocyte_unstimulated,immune,False,154.127,observed
+study_ii,FVT study II,22,24,X22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,il6_splenocyte_cona,immune,False,2173.609,observed
+study_ii,FVT study II,22,25,Y22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,tnfa_splenocyte_unstimulated,immune,True,29.4841,observed
+study_ii,FVT study II,22,26,Z22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,ifny_splenocyte_unstimulated,immune,False,0.56098,observed
+study_ii,FVT study II,22,27,AA22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,ifny_splenocyte_cona,immune,False,1249.101,observed
+study_ii,FVT study II,22,28,AB22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,ifny_splenocyte_lps,immune,False,4240.545,observed
+study_ii,FVT study II,22,29,AC22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,il12_splenocyte_cona,immune,False,151.6479,observed
+study_ii,FVT study II,22,30,AD22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,il12_splenocyte_lps,immune,False,306.6077,observed
+study_ii,FVT study II,22,31,AE22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,il6_splenocyte_unstimulated,immune,False,69.7193,observed
+study_ii,FVT study II,22,32,AF22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,il6_splenocyte_lps,immune,False,17335.7,observed
+study_ii,FVT study II,22,33,AG22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,ip10_splenocyte_unstimulated,immune,False,35.82811,observed
+study_ii,FVT study II,22,34,AH22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,ip10_splenocyte_cona,immune,False,4976.777,observed
+study_ii,FVT study II,22,35,AI22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,ip10_splenocyte_lps,immune,False,6396.373,observed
+study_ii,FVT study II,22,36,AJ22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,tnfa_splenocyte_cona,immune,False,1716.71,observed
+study_ii,FVT study II,22,37,AK22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,tnfa_splenocyte_lps,immune,False,1465.993,observed
+study_ii,FVT study II,22,38,AL22,9,study_ii|fvt_stress|9,fvt_stress,fvt_stress,ifny_splenocyte_plasma,immune,False,,missing
+study_ii,FVT study II,23,3,C23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,sit_si_ratio,behavior,False,1.517886,observed
+study_ii,FVT study II,23,4,D23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,sit_corner_ratio,behavior,False,1.076923,observed
+study_ii,FVT study II,23,5,E23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,sit_total_distance_hab,behavior,False,994.597,observed
+study_ii,FVT study II,23,6,F23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,epm_open_arm_percent,behavior,False,6.0,observed
+study_ii,FVT study II,23,7,G23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,epm_open_entries_percent,behavior,False,30.76923,observed
+study_ii,FVT study II,23,8,H23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,fst_immobility,behavior,False,176.0,observed
+study_ii,FVT study II,23,9,I23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,cort_auc,endocrine,False,8357.553,observed
+study_ii,FVT study II,23,10,J23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,ip10_plasma,immune,False,97.2211,observed
+study_ii,FVT study II,23,11,K23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,il12_plasma,immune,False,887.3086,observed
+study_ii,FVT study II,23,12,L23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,il6_plasma,immune,False,,missing
+study_ii,FVT study II,23,13,M23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,tnfa_plasma,immune,False,11.51834,observed
+study_ii,FVT study II,23,14,N23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,ly6chi_monocytes,immune,True,4.678394,observed
+study_ii,FVT study II,23,15,O23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,ly6chi_monocytes_cd62,immune,True,81.66443,observed
+study_ii,FVT study II,23,16,P23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,mhc2_monocytes_ly6chi,immune,False,2.557492,observed
+study_ii,FVT study II,23,17,Q23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,neutrophils_cd11b_ly6g,immune,False,9.570516,observed
+study_ii,FVT study II,23,18,R23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,cd62_neutrophils,immune,False,67.75722,observed
+study_ii,FVT study II,23,19,S23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,mhc2_neutrophils,immune,False,1.76438,observed
+study_ii,FVT study II,23,20,T23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,thelper_cd4,immune,False,12.63123,observed
+study_ii,FVT study II,23,21,U23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,cd44hi_thelper,immune,False,10.14476,observed
+study_ii,FVT study II,23,22,V23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,cd69_thelper,immune,False,2.10458,observed
+study_ii,FVT study II,23,23,W23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,il12_splenocyte_unstimulated,immune,False,185.127,observed
+study_ii,FVT study II,23,24,X23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,il6_splenocyte_cona,immune,False,2821.43,observed
+study_ii,FVT study II,23,25,Y23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,tnfa_splenocyte_unstimulated,immune,True,33.4896,observed
+study_ii,FVT study II,23,26,Z23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,ifny_splenocyte_unstimulated,immune,False,0.56534,observed
+study_ii,FVT study II,23,27,AA23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,ifny_splenocyte_cona,immune,False,1733.81,observed
+study_ii,FVT study II,23,28,AB23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,ifny_splenocyte_lps,immune,False,3906.187,observed
+study_ii,FVT study II,23,29,AC23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,il12_splenocyte_cona,immune,False,171.5073,observed
+study_ii,FVT study II,23,30,AD23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,il12_splenocyte_lps,immune,False,304.9774,observed
+study_ii,FVT study II,23,31,AE23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,il6_splenocyte_unstimulated,immune,False,87.8995,observed
+study_ii,FVT study II,23,32,AF23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,il6_splenocyte_lps,immune,False,23033.1,observed
+study_ii,FVT study II,23,33,AG23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,ip10_splenocyte_unstimulated,immune,False,30.3228,observed
+study_ii,FVT study II,23,34,AH23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,ip10_splenocyte_cona,immune,False,6039.436,observed
+study_ii,FVT study II,23,35,AI23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,ip10_splenocyte_lps,immune,False,8258.343,observed
+study_ii,FVT study II,23,36,AJ23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,tnfa_splenocyte_cona,immune,False,1733.068,observed
+study_ii,FVT study II,23,37,AK23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,tnfa_splenocyte_lps,immune,False,1509.975,observed
+study_ii,FVT study II,23,38,AL23,10,study_ii|fvt_stress|10,fvt_stress,fvt_stress,ifny_splenocyte_plasma,immune,False,0.70508,observed
+study_ii,FVT study II,24,3,C24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,sit_si_ratio,behavior,False,1.753228,observed
+study_ii,FVT study II,24,4,D24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,sit_corner_ratio,behavior,False,1.132275,observed
+study_ii,FVT study II,24,5,E24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,sit_total_distance_hab,behavior,False,774.274,observed
+study_ii,FVT study II,24,6,F24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,epm_open_arm_percent,behavior,False,,missing
+study_ii,FVT study II,24,7,G24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,epm_open_entries_percent,behavior,False,,missing
+study_ii,FVT study II,24,8,H24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,fst_immobility,behavior,False,,missing
+study_ii,FVT study II,24,9,I24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,cort_auc,endocrine,False,,missing
+study_ii,FVT study II,24,10,J24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,ip10_plasma,immune,False,,missing
+study_ii,FVT study II,24,11,K24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,il12_plasma,immune,False,,missing
+study_ii,FVT study II,24,12,L24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,il6_plasma,immune,False,,missing
+study_ii,FVT study II,24,13,M24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,tnfa_plasma,immune,False,,missing
+study_ii,FVT study II,24,14,N24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,ly6chi_monocytes,immune,True,3.412174,observed
+study_ii,FVT study II,24,15,O24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,ly6chi_monocytes_cd62,immune,True,72.41253,observed
+study_ii,FVT study II,24,16,P24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,mhc2_monocytes_ly6chi,immune,False,,missing
+study_ii,FVT study II,24,17,Q24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,neutrophils_cd11b_ly6g,immune,False,9.051404,observed
+study_ii,FVT study II,24,18,R24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,cd62_neutrophils,immune,False,,missing
+study_ii,FVT study II,24,19,S24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,mhc2_neutrophils,immune,False,,missing
+study_ii,FVT study II,24,20,T24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,thelper_cd4,immune,False,,missing
+study_ii,FVT study II,24,21,U24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,cd44hi_thelper,immune,False,,missing
+study_ii,FVT study II,24,22,V24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,cd69_thelper,immune,False,,missing
+study_ii,FVT study II,24,23,W24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,il12_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,24,24,X24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,il6_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,24,25,Y24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,tnfa_splenocyte_unstimulated,immune,True,,missing
+study_ii,FVT study II,24,26,Z24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,ifny_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,24,27,AA24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,ifny_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,24,28,AB24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,ifny_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,24,29,AC24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,il12_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,24,30,AD24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,il12_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,24,31,AE24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,il6_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,24,32,AF24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,il6_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,24,33,AG24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,ip10_splenocyte_unstimulated,immune,False,,missing
+study_ii,FVT study II,24,34,AH24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,ip10_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,24,35,AI24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,ip10_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,24,36,AJ24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,tnfa_splenocyte_cona,immune,False,,missing
+study_ii,FVT study II,24,37,AK24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,tnfa_splenocyte_lps,immune,False,,missing
+study_ii,FVT study II,24,38,AL24,11,study_ii|fvt_stress|11,fvt_stress,fvt_stress,ifny_splenocyte_plasma,immune,False,,missing
+study_ii,FVT study II,25,3,C25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,sit_si_ratio,behavior,False,1.28974,observed
+study_ii,FVT study II,25,4,D25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,sit_corner_ratio,behavior,False,0.007225,observed
+study_ii,FVT study II,25,5,E25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,sit_total_distance_hab,behavior,False,1250.61,observed
+study_ii,FVT study II,25,6,F25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,epm_open_arm_percent,behavior,False,10.66667,observed
+study_ii,FVT study II,25,7,G25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,epm_open_entries_percent,behavior,False,36.36364,observed
+study_ii,FVT study II,25,8,H25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,fst_immobility,behavior,False,144.0,observed
+study_ii,FVT study II,25,9,I25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,cort_auc,endocrine,False,5840.768,observed
+study_ii,FVT study II,25,10,J25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,ip10_plasma,immune,False,209.1794,observed
+study_ii,FVT study II,25,11,K25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,il12_plasma,immune,False,738.2877,observed
+study_ii,FVT study II,25,12,L25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,il6_plasma,immune,False,491.526,observed
+study_ii,FVT study II,25,13,M25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,tnfa_plasma,immune,False,14.76327,observed
+study_ii,FVT study II,25,14,N25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,ly6chi_monocytes,immune,True,6.655276,observed
+study_ii,FVT study II,25,15,O25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,ly6chi_monocytes_cd62,immune,True,72.07219,observed
+study_ii,FVT study II,25,16,P25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,mhc2_monocytes_ly6chi,immune,False,2.703695,observed
+study_ii,FVT study II,25,17,Q25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,neutrophils_cd11b_ly6g,immune,False,24.64317,observed
+study_ii,FVT study II,25,18,R25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,cd62_neutrophils,immune,False,52.57575,observed
+study_ii,FVT study II,25,19,S25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,mhc2_neutrophils,immune,False,1.374349,observed
+study_ii,FVT study II,25,20,T25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,thelper_cd4,immune,False,12.32123,observed
+study_ii,FVT study II,25,21,U25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,cd44hi_thelper,immune,False,10.65524,observed
+study_ii,FVT study II,25,22,V25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,cd69_thelper,immune,False,2.862854,observed
+study_ii,FVT study II,25,23,W25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,il12_splenocyte_unstimulated,immune,False,143.786,observed
+study_ii,FVT study II,25,24,X25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,il6_splenocyte_cona,immune,False,2396.095,observed
+study_ii,FVT study II,25,25,Y25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,tnfa_splenocyte_unstimulated,immune,True,33.638,observed
+study_ii,FVT study II,25,26,Z25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,ifny_splenocyte_unstimulated,immune,False,0.73742,observed
+study_ii,FVT study II,25,27,AA25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,ifny_splenocyte_cona,immune,False,1672.68,observed
+study_ii,FVT study II,25,28,AB25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,ifny_splenocyte_lps,immune,False,4063.774,observed
+study_ii,FVT study II,25,29,AC25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,il12_splenocyte_cona,immune,False,119.7217,observed
+study_ii,FVT study II,25,30,AD25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,il12_splenocyte_lps,immune,False,262.6219,observed
+study_ii,FVT study II,25,31,AE25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,il6_splenocyte_unstimulated,immune,False,108.331,observed
+study_ii,FVT study II,25,32,AF25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,il6_splenocyte_lps,immune,False,20312.27,observed
+study_ii,FVT study II,25,33,AG25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,ip10_splenocyte_unstimulated,immune,False,31.0877,observed
+study_ii,FVT study II,25,34,AH25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,ip10_splenocyte_cona,immune,False,4619.692,observed
+study_ii,FVT study II,25,35,AI25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,ip10_splenocyte_lps,immune,False,7548.144,observed
+study_ii,FVT study II,25,36,AJ25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,tnfa_splenocyte_cona,immune,False,1811.074,observed
+study_ii,FVT study II,25,37,AK25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,tnfa_splenocyte_lps,immune,False,1348.536,observed
+study_ii,FVT study II,25,38,AL25,12,study_ii|fvt_stress|12,fvt_stress,fvt_stress,ifny_splenocyte_plasma,immune,False,1.364122,observed
+study_ii,FVT study II,26,3,C26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,sit_si_ratio,behavior,False,0.345408,observed
+study_ii,FVT study II,26,4,D26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,sit_corner_ratio,behavior,False,4.402778,observed
+study_ii,FVT study II,26,5,E26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,sit_total_distance_hab,behavior,False,794.405,observed
+study_ii,FVT study II,26,6,F26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,epm_open_arm_percent,behavior,False,9.333333,observed
+study_ii,FVT study II,26,7,G26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,epm_open_entries_percent,behavior,False,23.07692,observed
+study_ii,FVT study II,26,8,H26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,fst_immobility,behavior,False,201.0,observed
+study_ii,FVT study II,26,9,I26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,cort_auc,endocrine,False,7828.986,observed
+study_ii,FVT study II,26,10,J26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,ip10_plasma,immune,False,,missing
+study_ii,FVT study II,26,11,K26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,il12_plasma,immune,False,,missing
+study_ii,FVT study II,26,12,L26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,il6_plasma,immune,False,,missing
+study_ii,FVT study II,26,13,M26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,tnfa_plasma,immune,False,,missing
+study_ii,FVT study II,26,14,N26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,ly6chi_monocytes,immune,True,1.866434,observed
+study_ii,FVT study II,26,15,O26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,ly6chi_monocytes_cd62,immune,True,60.75772,observed
+study_ii,FVT study II,26,16,P26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,mhc2_monocytes_ly6chi,immune,False,3.596619,observed
+study_ii,FVT study II,26,17,Q26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,neutrophils_cd11b_ly6g,immune,False,16.28634,observed
+study_ii,FVT study II,26,18,R26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,cd62_neutrophils,immune,False,62.04802,observed
+study_ii,FVT study II,26,19,S26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,mhc2_neutrophils,immune,False,0.813441,observed
+study_ii,FVT study II,26,20,T26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,thelper_cd4,immune,False,13.10798,observed
+study_ii,FVT study II,26,21,U26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,cd44hi_thelper,immune,False,7.91418,observed
+study_ii,FVT study II,26,22,V26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,cd69_thelper,immune,False,,missing
+study_ii,FVT study II,26,23,W26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,il12_splenocyte_unstimulated,immune,False,133.36,observed
+study_ii,FVT study II,26,24,X26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,il6_splenocyte_cona,immune,False,1688.014,observed
+study_ii,FVT study II,26,25,Y26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,tnfa_splenocyte_unstimulated,immune,True,27.6034,observed
+study_ii,FVT study II,26,26,Z26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,ifny_splenocyte_unstimulated,immune,False,0.10801,observed
+study_ii,FVT study II,26,27,AA26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,ifny_splenocyte_cona,immune,False,2388.511,observed
+study_ii,FVT study II,26,28,AB26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,ifny_splenocyte_lps,immune,False,4516.632,observed
+study_ii,FVT study II,26,29,AC26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,il12_splenocyte_cona,immune,False,157.4352,observed
+study_ii,FVT study II,26,30,AD26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,il12_splenocyte_lps,immune,False,299.9612,observed
+study_ii,FVT study II,26,31,AE26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,il6_splenocyte_unstimulated,immune,False,54.6199,observed
+study_ii,FVT study II,26,32,AF26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,il6_splenocyte_lps,immune,False,16795.27,observed
+study_ii,FVT study II,26,33,AG26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,ip10_splenocyte_unstimulated,immune,False,34.9538,observed
+study_ii,FVT study II,26,34,AH26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,ip10_splenocyte_cona,immune,False,6375.025,observed
+study_ii,FVT study II,26,35,AI26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,ip10_splenocyte_lps,immune,False,7752.879,observed
+study_ii,FVT study II,26,36,AJ26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,tnfa_splenocyte_cona,immune,False,1285.182,observed
+study_ii,FVT study II,26,37,AK26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,tnfa_splenocyte_lps,immune,False,1692.689,observed
+study_ii,FVT study II,26,38,AL26,13,study_ii|fvt_stress|13,fvt_stress,fvt_stress,ifny_splenocyte_plasma,immune,False,,missing
+study_ii,FVT study II,27,3,C27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,sit_si_ratio,behavior,False,0.94321,observed
+study_ii,FVT study II,27,4,D27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,sit_corner_ratio,behavior,False,0.119007,observed
+study_ii,FVT study II,27,5,E27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,sit_total_distance_hab,behavior,False,809.387,observed
+study_ii,FVT study II,27,6,F27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,epm_open_arm_percent,behavior,False,4.0,observed
+study_ii,FVT study II,27,7,G27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,epm_open_entries_percent,behavior,False,25.0,observed
+study_ii,FVT study II,27,8,H27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,fst_immobility,behavior,False,210.0,observed
+study_ii,FVT study II,27,9,I27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,cort_auc,endocrine,False,8164.773,observed
+study_ii,FVT study II,27,10,J27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,ip10_plasma,immune,False,145.5187,observed
+study_ii,FVT study II,27,11,K27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,il12_plasma,immune,False,926.0088,observed
+study_ii,FVT study II,27,12,L27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,il6_plasma,immune,False,,missing
+study_ii,FVT study II,27,13,M27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,tnfa_plasma,immune,False,16.29584,observed
+study_ii,FVT study II,27,14,N27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,ly6chi_monocytes,immune,True,3.55822,observed
+study_ii,FVT study II,27,15,O27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,ly6chi_monocytes_cd62,immune,True,86.15077,observed
+study_ii,FVT study II,27,16,P27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,mhc2_monocytes_ly6chi,immune,False,0.888681,observed
+study_ii,FVT study II,27,17,Q27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,neutrophils_cd11b_ly6g,immune,False,13.40784,observed
+study_ii,FVT study II,27,18,R27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,cd62_neutrophils,immune,False,38.90437,observed
+study_ii,FVT study II,27,19,S27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,mhc2_neutrophils,immune,False,0.637864,observed
+study_ii,FVT study II,27,20,T27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,thelper_cd4,immune,False,14.09428,observed
+study_ii,FVT study II,27,21,U27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,cd44hi_thelper,immune,False,6.683184,observed
+study_ii,FVT study II,27,22,V27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,cd69_thelper,immune,False,2.180242,observed
+study_ii,FVT study II,27,23,W27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,il12_splenocyte_unstimulated,immune,False,87.9513,observed
+study_ii,FVT study II,27,24,X27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,il6_splenocyte_cona,immune,False,1317.354,observed
+study_ii,FVT study II,27,25,Y27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,tnfa_splenocyte_unstimulated,immune,True,20.4119,observed
+study_ii,FVT study II,27,26,Z27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,ifny_splenocyte_unstimulated,immune,False,0.42145,observed
+study_ii,FVT study II,27,27,AA27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,ifny_splenocyte_cona,immune,False,77.94205,observed
+study_ii,FVT study II,27,28,AB27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,ifny_splenocyte_lps,immune,False,14.34848,observed
+study_ii,FVT study II,27,29,AC27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,il12_splenocyte_cona,immune,False,169.8411,observed
+study_ii,FVT study II,27,30,AD27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,il12_splenocyte_lps,immune,False,287.3033,observed
+study_ii,FVT study II,27,31,AE27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,il6_splenocyte_unstimulated,immune,False,55.4983,observed
+study_ii,FVT study II,27,32,AF27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,il6_splenocyte_lps,immune,False,9201.458,observed
+study_ii,FVT study II,27,33,AG27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,ip10_splenocyte_unstimulated,immune,False,20.5242,observed
+study_ii,FVT study II,27,34,AH27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,ip10_splenocyte_cona,immune,False,3962.586,observed
+study_ii,FVT study II,27,35,AI27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,ip10_splenocyte_lps,immune,False,4624.76,observed
+study_ii,FVT study II,27,36,AJ27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,tnfa_splenocyte_cona,immune,False,878.8881,observed
+study_ii,FVT study II,27,37,AK27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,tnfa_splenocyte_lps,immune,False,1305.414,observed
+study_ii,FVT study II,27,38,AL27,27,study_ii|fvt_stress|27,fvt_stress,fvt_stress,ifny_splenocyte_plasma,immune,False,0.272851,observed
+study_ii,FVT study II,28,3,C28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,sit_si_ratio,behavior,False,0.221429,observed
+study_ii,FVT study II,28,4,D28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,sit_corner_ratio,behavior,False,4.930456,observed
+study_ii,FVT study II,28,5,E28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,sit_total_distance_hab,behavior,False,1165.28,observed
+study_ii,FVT study II,28,6,F28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,epm_open_arm_percent,behavior,False,13.0,observed
+study_ii,FVT study II,28,7,G28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,epm_open_entries_percent,behavior,False,40.0,observed
+study_ii,FVT study II,28,8,H28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,fst_immobility,behavior,False,204.0,observed
+study_ii,FVT study II,28,9,I28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,cort_auc,endocrine,False,7228.729,observed
+study_ii,FVT study II,28,10,J28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,ip10_plasma,immune,False,140.684,observed
+study_ii,FVT study II,28,11,K28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,il12_plasma,immune,False,918.2749,observed
+study_ii,FVT study II,28,12,L28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,il6_plasma,immune,False,,missing
+study_ii,FVT study II,28,13,M28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,tnfa_plasma,immune,False,14.77607,observed
+study_ii,FVT study II,28,14,N28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,ly6chi_monocytes,immune,True,3.063369,observed
+study_ii,FVT study II,28,15,O28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,ly6chi_monocytes_cd62,immune,True,74.1597,observed
+study_ii,FVT study II,28,16,P28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,mhc2_monocytes_ly6chi,immune,False,1.599086,observed
+study_ii,FVT study II,28,17,Q28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,neutrophils_cd11b_ly6g,immune,False,12.08808,observed
+study_ii,FVT study II,28,18,R28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,cd62_neutrophils,immune,False,54.32707,observed
+study_ii,FVT study II,28,19,S28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,mhc2_neutrophils,immune,False,0.515308,observed
+study_ii,FVT study II,28,20,T28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,thelper_cd4,immune,False,9.407641,observed
+study_ii,FVT study II,28,21,U28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,cd44hi_thelper,immune,False,10.49789,observed
+study_ii,FVT study II,28,22,V28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,cd69_thelper,immune,False,1.965655,observed
+study_ii,FVT study II,28,23,W28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,il12_splenocyte_unstimulated,immune,False,104.941,observed
+study_ii,FVT study II,28,24,X28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,il6_splenocyte_cona,immune,False,1039.747,observed
+study_ii,FVT study II,28,25,Y28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,tnfa_splenocyte_unstimulated,immune,True,24.522,observed
+study_ii,FVT study II,28,26,Z28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,ifny_splenocyte_unstimulated,immune,False,0.11314,observed
+study_ii,FVT study II,28,27,AA28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,ifny_splenocyte_cona,immune,False,89.36234,observed
+study_ii,FVT study II,28,28,AB28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,ifny_splenocyte_lps,immune,False,12.859,observed
+study_ii,FVT study II,28,29,AC28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,il12_splenocyte_cona,immune,False,160.375,observed
+study_ii,FVT study II,28,30,AD28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,il12_splenocyte_lps,immune,False,293.9545,observed
+study_ii,FVT study II,28,31,AE28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,il6_splenocyte_unstimulated,immune,False,56.7625,observed
+study_ii,FVT study II,28,32,AF28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,il6_splenocyte_lps,immune,False,9352.146,observed
+study_ii,FVT study II,28,33,AG28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,ip10_splenocyte_unstimulated,immune,False,25.5987,observed
+study_ii,FVT study II,28,34,AH28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,ip10_splenocyte_cona,immune,False,3453.228,observed
+study_ii,FVT study II,28,35,AI28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,ip10_splenocyte_lps,immune,False,4544.128,observed
+study_ii,FVT study II,28,36,AJ28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,tnfa_splenocyte_cona,immune,False,741.6118,observed
+study_ii,FVT study II,28,37,AK28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,tnfa_splenocyte_lps,immune,False,1369.773,observed
+study_ii,FVT study II,28,38,AL28,28,study_ii|fvt_stress|28,fvt_stress,fvt_stress,ifny_splenocyte_plasma,immune,False,0.50218,observed
+study_ii,FVT study II,29,3,C29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,sit_si_ratio,behavior,False,0.742809,observed
+study_ii,FVT study II,29,4,D29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,sit_corner_ratio,behavior,False,2.182692,observed
+study_ii,FVT study II,29,5,E29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,sit_total_distance_hab,behavior,False,1159.04,observed
+study_ii,FVT study II,29,6,F29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,epm_open_arm_percent,behavior,False,9.666667,observed
+study_ii,FVT study II,29,7,G29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,epm_open_entries_percent,behavior,False,20.0,observed
+study_ii,FVT study II,29,8,H29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,fst_immobility,behavior,False,121.0,observed
+study_ii,FVT study II,29,9,I29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,cort_auc,endocrine,False,7940.474,observed
+study_ii,FVT study II,29,10,J29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,ip10_plasma,immune,False,85.21028,observed
+study_ii,FVT study II,29,11,K29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,il12_plasma,immune,False,704.8323,observed
+study_ii,FVT study II,29,12,L29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,il6_plasma,immune,False,,missing
+study_ii,FVT study II,29,13,M29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,tnfa_plasma,immune,False,9.644047,observed
+study_ii,FVT study II,29,14,N29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,ly6chi_monocytes,immune,True,5.0089,observed
+study_ii,FVT study II,29,15,O29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,ly6chi_monocytes_cd62,immune,True,67.47132,observed
+study_ii,FVT study II,29,16,P29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,mhc2_monocytes_ly6chi,immune,False,1.38403,observed
+study_ii,FVT study II,29,17,Q29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,neutrophils_cd11b_ly6g,immune,False,20.10244,observed
+study_ii,FVT study II,29,18,R29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,cd62_neutrophils,immune,False,39.71478,observed
+study_ii,FVT study II,29,19,S29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,mhc2_neutrophils,immune,False,0.689921,observed
+study_ii,FVT study II,29,20,T29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,thelper_cd4,immune,False,11.97206,observed
+study_ii,FVT study II,29,21,U29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,cd44hi_thelper,immune,False,7.277397,observed
+study_ii,FVT study II,29,22,V29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,cd69_thelper,immune,False,3.1717,observed
+study_ii,FVT study II,29,23,W29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,il12_splenocyte_unstimulated,immune,False,124.307,observed
+study_ii,FVT study II,29,24,X29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,il6_splenocyte_cona,immune,False,2396.243,observed
+study_ii,FVT study II,29,25,Y29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,tnfa_splenocyte_unstimulated,immune,True,24.3062,observed
+study_ii,FVT study II,29,26,Z29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,ifny_splenocyte_unstimulated,immune,False,0.11314,observed
+study_ii,FVT study II,29,27,AA29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,ifny_splenocyte_cona,immune,False,137.9178,observed
+study_ii,FVT study II,29,28,AB29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,ifny_splenocyte_lps,immune,False,44.16986,observed
+study_ii,FVT study II,29,29,AC29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,il12_splenocyte_cona,immune,False,219.4948,observed
+study_ii,FVT study II,29,30,AD29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,il12_splenocyte_lps,immune,False,315.9854,observed
+study_ii,FVT study II,29,31,AE29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,il6_splenocyte_unstimulated,immune,False,48.2775,observed
+study_ii,FVT study II,29,32,AF29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,il6_splenocyte_lps,immune,False,12304.79,observed
+study_ii,FVT study II,29,33,AG29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,ip10_splenocyte_unstimulated,immune,False,25.7804,observed
+study_ii,FVT study II,29,34,AH29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,ip10_splenocyte_cona,immune,False,5643.426,observed
+study_ii,FVT study II,29,35,AI29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,ip10_splenocyte_lps,immune,False,6979.202,observed
+study_ii,FVT study II,29,36,AJ29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,tnfa_splenocyte_cona,immune,False,1513.619,observed
+study_ii,FVT study II,29,37,AK29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,tnfa_splenocyte_lps,immune,False,1486.77,observed
+study_ii,FVT study II,29,38,AL29,29,study_ii|fvt_stress|29,fvt_stress,fvt_stress,ifny_splenocyte_plasma,immune,False,0.306476,observed
+study_ii,FVT study II,30,3,C30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,sit_si_ratio,behavior,False,0.841729,observed
+study_ii,FVT study II,30,4,D30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,sit_corner_ratio,behavior,False,0.556497,observed
+study_ii,FVT study II,30,5,E30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,sit_total_distance_hab,behavior,False,908.639,observed
+study_ii,FVT study II,30,6,F30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,epm_open_arm_percent,behavior,False,0.0,observed
+study_ii,FVT study II,30,7,G30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,epm_open_entries_percent,behavior,False,0.0,observed
+study_ii,FVT study II,30,8,H30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,fst_immobility,behavior,False,188.0,observed
+study_ii,FVT study II,30,9,I30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,cort_auc,endocrine,False,5728.079,observed
+study_ii,FVT study II,30,10,J30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,ip10_plasma,immune,False,221.0277,observed
+study_ii,FVT study II,30,11,K30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,il12_plasma,immune,False,1193.776,observed
+study_ii,FVT study II,30,12,L30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,il6_plasma,immune,False,603.7929,observed
+study_ii,FVT study II,30,13,M30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,tnfa_plasma,immune,False,,missing
+study_ii,FVT study II,30,14,N30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,ly6chi_monocytes,immune,True,3.233906,observed
+study_ii,FVT study II,30,15,O30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,ly6chi_monocytes_cd62,immune,True,89.33512,observed
+study_ii,FVT study II,30,16,P30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,mhc2_monocytes_ly6chi,immune,False,0.862134,observed
+study_ii,FVT study II,30,17,Q30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,neutrophils_cd11b_ly6g,immune,False,10.11155,observed
+study_ii,FVT study II,30,18,R30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,cd62_neutrophils,immune,False,38.3121,observed
+study_ii,FVT study II,30,19,S30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,mhc2_neutrophils,immune,False,0.821908,observed
+study_ii,FVT study II,30,20,T30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,thelper_cd4,immune,False,12.7759,observed
+study_ii,FVT study II,30,21,U30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,cd44hi_thelper,immune,False,5.978309,observed
+study_ii,FVT study II,30,22,V30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,cd69_thelper,immune,False,1.487229,observed
+study_ii,FVT study II,30,23,W30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,il12_splenocyte_unstimulated,immune,False,136.47,observed
+study_ii,FVT study II,30,24,X30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,il6_splenocyte_cona,immune,False,2301.917,observed
+study_ii,FVT study II,30,25,Y30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,tnfa_splenocyte_unstimulated,immune,True,30.2566,observed
+study_ii,FVT study II,30,26,Z30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,ifny_splenocyte_unstimulated,immune,False,0.11314,observed
+study_ii,FVT study II,30,27,AA30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,ifny_splenocyte_cona,immune,False,106.5958,observed
+study_ii,FVT study II,30,28,AB30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,ifny_splenocyte_lps,immune,False,26.10052,observed
+study_ii,FVT study II,30,29,AC30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,il12_splenocyte_cona,immune,False,214.9662,observed
+study_ii,FVT study II,30,30,AD30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,il12_splenocyte_lps,immune,False,278.1612,observed
+study_ii,FVT study II,30,31,AE30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,il6_splenocyte_unstimulated,immune,False,60.7175,observed
+study_ii,FVT study II,30,32,AF30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,il6_splenocyte_lps,immune,False,13631.64,observed
+study_ii,FVT study II,30,33,AG30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,ip10_splenocyte_unstimulated,immune,False,27.9941,observed
+study_ii,FVT study II,30,34,AH30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,ip10_splenocyte_cona,immune,False,7051.646,observed
+study_ii,FVT study II,30,35,AI30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,ip10_splenocyte_lps,immune,False,7674.943,observed
+study_ii,FVT study II,30,36,AJ30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,tnfa_splenocyte_cona,immune,False,1270.563,observed
+study_ii,FVT study II,30,37,AK30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,tnfa_splenocyte_lps,immune,False,1716.796,observed
+study_ii,FVT study II,30,38,AL30,30,study_ii|fvt_stress|30,fvt_stress,fvt_stress,ifny_splenocyte_plasma,immune,False,1.270896,observed
+study_ii,FVT study II,31,3,C31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,sit_si_ratio,behavior,False,0.748455,observed
+study_ii,FVT study II,31,4,D31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,sit_corner_ratio,behavior,False,2.468085,observed
+study_ii,FVT study II,31,5,E31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,sit_total_distance_hab,behavior,False,1087.51,observed
+study_ii,FVT study II,31,6,F31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,epm_open_arm_percent,behavior,False,12.33333,observed
+study_ii,FVT study II,31,7,G31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,epm_open_entries_percent,behavior,False,26.92308,observed
+study_ii,FVT study II,31,8,H31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,fst_immobility,behavior,False,147.0,observed
+study_ii,FVT study II,31,9,I31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,cort_auc,endocrine,False,7775.34,observed
+study_ii,FVT study II,31,10,J31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,ip10_plasma,immune,False,129.5505,observed
+study_ii,FVT study II,31,11,K31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,il12_plasma,immune,False,516.6973,observed
+study_ii,FVT study II,31,12,L31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,il6_plasma,immune,False,,missing
+study_ii,FVT study II,31,13,M31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,tnfa_plasma,immune,False,10.76074,observed
+study_ii,FVT study II,31,14,N31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,ly6chi_monocytes,immune,True,,missing
+study_ii,FVT study II,31,15,O31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,ly6chi_monocytes_cd62,immune,True,,missing
+study_ii,FVT study II,31,16,P31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,mhc2_monocytes_ly6chi,immune,False,1.740295,observed
+study_ii,FVT study II,31,17,Q31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,neutrophils_cd11b_ly6g,immune,False,,missing
+study_ii,FVT study II,31,18,R31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,cd62_neutrophils,immune,False,63.37948,observed
+study_ii,FVT study II,31,19,S31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,mhc2_neutrophils,immune,False,0.727844,observed
+study_ii,FVT study II,31,20,T31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,thelper_cd4,immune,False,9.323636,observed
+study_ii,FVT study II,31,21,U31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,cd44hi_thelper,immune,False,8.620957,observed
+study_ii,FVT study II,31,22,V31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,cd69_thelper,immune,False,3.157406,observed
+study_ii,FVT study II,31,23,W31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,il12_splenocyte_unstimulated,immune,False,161.889,observed
+study_ii,FVT study II,31,24,X31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,il6_splenocyte_cona,immune,False,2325.978,observed
+study_ii,FVT study II,31,25,Y31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,tnfa_splenocyte_unstimulated,immune,True,26.9317,observed
+study_ii,FVT study II,31,26,Z31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,ifny_splenocyte_unstimulated,immune,False,0.11314,observed
+study_ii,FVT study II,31,27,AA31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,ifny_splenocyte_cona,immune,False,114.1759,observed
+study_ii,FVT study II,31,28,AB31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,ifny_splenocyte_lps,immune,False,127.2879,observed
+study_ii,FVT study II,31,29,AC31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,il12_splenocyte_cona,immune,False,261.1239,observed
+study_ii,FVT study II,31,30,AD31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,il12_splenocyte_lps,immune,False,361.0309,observed
+study_ii,FVT study II,31,31,AE31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,il6_splenocyte_unstimulated,immune,False,57.3405,observed
+study_ii,FVT study II,31,32,AF31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,il6_splenocyte_lps,immune,False,16211.64,observed
+study_ii,FVT study II,31,33,AG31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,ip10_splenocyte_unstimulated,immune,False,26.2556,observed
+study_ii,FVT study II,31,34,AH31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,ip10_splenocyte_cona,immune,False,5050.227,observed
+study_ii,FVT study II,31,35,AI31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,ip10_splenocyte_lps,immune,False,8568.154,observed
+study_ii,FVT study II,31,36,AJ31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,tnfa_splenocyte_cona,immune,False,1701.118,observed
+study_ii,FVT study II,31,37,AK31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,tnfa_splenocyte_lps,immune,False,2041.005,observed
+study_ii,FVT study II,31,38,AL31,31,study_ii|fvt_stress|31,fvt_stress,fvt_stress,ifny_splenocyte_plasma,immune,False,2.123719,observed

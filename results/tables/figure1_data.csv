@@ -1,0 +1,7 @@
+category,count,unit,source
+individual_recipient_bulk_metagenome,77,sequencing specimen,PRJNA970614
+pooled_fecal_virome,8,sequencing specimen,PRJNA970614
+transplant_inoculum,19,sequencing specimen,PRJNA970614
+study_i,20,source workbook animal row,Stress virome study I
+study_ii,30,source workbook animal row,FVT study II
+initial_enriched_pools_across_group_time,12,"published pool profiles, membership unresolved",article Fig1 caption: 3 per group/time

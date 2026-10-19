@@ -1,0 +1,3 @@
+experiment_id,source_sheet,source_max_row,source_column_count,phenotype_column_count,nonempty_animal_rows,fully_blank_rows_excluded,observed_phenotype_cells,missing_phenotype_cells,group_counts_json,identifier_scope,virome_linkage_verified
+study_i,Stress virome study I,21,10,8,20,0,160,0,"{""ctr"":10,""ctr_stress"":10}",experiment|group|literal_source_id,False
+study_ii,FVT study II,64,38,36,30,33,960,120,"{""ctr"":10,""ctr_stress"":10,""fvt_stress"":10}",experiment|group|literal_source_id,False

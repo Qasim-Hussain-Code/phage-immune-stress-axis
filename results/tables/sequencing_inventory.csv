@@ -1,0 +1,6 @@
+accession,sample_type,run_count,sample_count,fastq_file_count,compressed_fastq_bytes,compressed_fastq_gb_decimal,source,analysis_role
+PRJNA970614,individual_recipient_bulk_metagenome,77,77,154,189984457053,189.984457,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv,raw_reads_only_no_processed_profile
+PRJNA970614,pooled_fecal_virome,8,8,16,29407439487,29.407439,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv,raw_reads_only_no_processed_profile
+PRJNA970614,transplant_inoculum,19,19,38,42819560698,42.819561,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv,raw_reads_only_no_processed_profile
+PRJEB69687,16S_amplicon_manifest_only,52,52,104,1731077490,1.731077,data/raw/ritz2024_archive/PRJEB69687_ena_runs.tsv,initial_experiment_raw_manifest_no_animal_crosswalk
+PRJEB67706,brain_transcriptomic_manifest_only,74,74,148,320396480444,320.396480,data/raw/ritz2024_archive/PRJEB67706_ena_runs.tsv,secondary_assay_outside_selected_analysis

@@ -1,0 +1,6 @@
+{
+  "public_inputs": 10,
+  "gate": "restricted_analysis",
+  "reference_review": "docs/reference_repository_review.md",
+  "processed_virome_inputs": 0
+}

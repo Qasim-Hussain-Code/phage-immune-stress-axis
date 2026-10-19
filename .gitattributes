@@ -1,3 +1,7 @@
+# Project text is normalized for portable checkouts.
+* text=auto eol=lf
+*.pdf -text
+*.png -text
 # Frozen public inputs must retain exact byte-level checksums on every OS.
 data/raw/** -text
 data/manifests/zenodo_release.json -text

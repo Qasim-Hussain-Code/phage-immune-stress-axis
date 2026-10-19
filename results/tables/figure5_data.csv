@@ -1,0 +1,5 @@
+measurement,count,status
+processed_virome_profiles_retrieved,0,unavailable
+verified_virome_immune_matches,0,unavailable
+selected_endpoint_min_n_per_group,8,observed
+selected_endpoint_max_n_per_group,10,observed

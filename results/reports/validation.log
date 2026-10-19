@@ -1,0 +1,32 @@
+test_catalog_excludes_usage_stats (test_acquisition.AcquisitionContracts.test_catalog_excludes_usage_stats) ... ok
+test_fingerprint_detects_input_change (test_acquisition.AcquisitionContracts.test_fingerprint_detects_input_change) ... ok
+test_offline_missing_and_corrupt_inputs_fail (test_acquisition.AcquisitionContracts.test_offline_missing_and_corrupt_inputs_fail) ... ok
+test_streaming_cap_is_enforced_and_partial_removed (test_acquisition.AcquisitionContracts.test_streaming_cap_is_enforced_and_partial_removed) ... ok
+test_analytical_identity_and_edge_cases (test_immune.TestIndependentStatistics.test_analytical_identity_and_edge_cases) ... ok
+test_bh_matches_statsmodels (test_immune.TestIndependentStatistics.test_bh_matches_statsmodels) ... ok
+test_leave_one_out_agrees_with_brute_force_means (test_immune.TestIndependentStatistics.test_leave_one_out_agrees_with_brute_force_means) ... ok
+test_welch_matches_scipy (test_immune.TestIndependentStatistics.test_welch_matches_scipy) ... C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\scipy\stats\_axis_nan_policy.py:579: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  res = hypotest_fun_out(*samples, **kwds)
+ok
+test_blank_rows_missing_outcomes_and_zero (test_immune.TestSourceIdentifiers.test_blank_rows_missing_outcomes_and_zero) ... ok
+test_duplicate_and_unknown_groups_fail (test_immune.TestSourceIdentifiers.test_duplicate_and_unknown_groups_fail) ... ok
+test_fixed_six_test_family_and_no_study_i_tests (test_immune.TestSourceIdentifiers.test_fixed_six_test_family_and_no_study_i_tests) ... ok
+test_literal_and_composite_ids (test_immune.TestSourceIdentifiers.test_literal_and_composite_ids) ... ok
+test_unavailable_source_does_not_make_results (test_immune.TestSourceIdentifiers.test_unavailable_source_does_not_make_results) ... ok
+test_bray_curtis_scipy (test_metrics.CommunityMath.test_bray_curtis_scipy) ... ok
+test_closure_scale_invariance (test_metrics.CommunityMath.test_closure_scale_invariance) ... ok
+test_invalid_abundances (test_metrics.CommunityMath.test_invalid_abundances) ... ok
+test_pairwise_logratio_identity (test_metrics.CommunityMath.test_pairwise_logratio_identity) ... ok
+test_zero_handling_and_identity (test_metrics.CommunityMath.test_zero_handling_and_identity) ... ok
+test_decimal_source_ids_do_not_collapse (test_samples.SampleIdentityTests.test_decimal_source_ids_do_not_collapse) ... ok
+test_duplicate_source_row_fails_instead_of_merging (test_samples.SampleIdentityTests.test_duplicate_source_row_fails_instead_of_merging) ... ok
+test_fastq_sizes_count_files_not_biological_replicates (test_samples.SampleIdentityTests.test_fastq_sizes_count_files_not_biological_replicates) ... ok
+test_identifiers_require_experiment_and_group (test_samples.SampleIdentityTests.test_identifiers_require_experiment_and_group) ... ok
+test_inoculum_not_assigned_to_recipient (test_samples.SampleIdentityTests.test_inoculum_not_assigned_to_recipient) ... ok
+test_pool_cannot_link_to_an_individual (test_samples.SampleIdentityTests.test_pool_cannot_link_to_an_individual) ... ok
+test_source_rows_match_only_observed_within_row_assays (test_samples.SampleIdentityTests.test_source_rows_match_only_observed_within_row_assays) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 1.411s
+
+OK

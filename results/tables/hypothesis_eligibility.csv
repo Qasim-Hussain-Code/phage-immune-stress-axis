@@ -1,0 +1,7 @@
+hypothesis,question,status,reason
+Primary,Within-mouse phage change versus immune disruption,untestable,"No retrieved individual abundance matrix, verified crosswalk or chronic-stress immune baseline"
+H1,Stress-associated viral composition,untestable,Processed pool and recipient abundance matrices unavailable; no raw reprocessing within budget
+H2,Reference deviation versus immune outcomes,untestable,No retrieved processed viral profiles linked to immune measurements
+H3,Bacterial-adjusted viral association,untestable,No matched processed viral or bacterial tables; sample size limits adjustment
+H4,FVT-associated viral and immune outcomes,immune_component_only_testable,Separate immune contrasts only; no joint viral analysis or virome-specific mechanism
+H5,Robustness to viral filtering and compositional choices,untestable,No abundance or confidence annotations; mathematical estimators tested using software fixtures only

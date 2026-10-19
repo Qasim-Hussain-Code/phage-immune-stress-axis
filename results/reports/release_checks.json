@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "frozen_inputs": 10,
+  "contrasts": 6,
+  "figures": 4,
+  "matched_virome_immune": 0,
+  "tracked_files_scanned": 104,
+  "large_files_over_5MB": [],
+  "credential_pattern_matches": [],
+  "scope": "common credential patterns, not a guarantee of complete secret detection"
+}

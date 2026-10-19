@@ -1,0 +1,55 @@
+{
+  "principal_accession": "PRJNA970614",
+  "principal_run_count": 104,
+  "principal_specimen_count": 104,
+  "sequencing_category_counts": {
+    "individual_recipient_bulk_metagenome": 77,
+    "pooled_fecal_virome": 8,
+    "transplant_inoculum": 19
+  },
+  "principal_compressed_fastq_bytes": 262211457238,
+  "workbook_animal_rows": 50,
+  "workbook_group_counts": [
+    {
+      "experiment_id": "fvt_study_ii",
+      "group": "ctr",
+      "animal_rows": 10
+    },
+    {
+      "experiment_id": "fvt_study_ii",
+      "group": "ctr_stress",
+      "animal_rows": 10
+    },
+    {
+      "experiment_id": "fvt_study_ii",
+      "group": "fvt_stress",
+      "animal_rows": 10
+    },
+    {
+      "experiment_id": "stress_study_i",
+      "group": "Control",
+      "animal_rows": 10
+    },
+    {
+      "experiment_id": "stress_study_i",
+      "group": "Stress",
+      "animal_rows": 10
+    }
+  ],
+  "workbook_rows_with_observed_immune": 50,
+  "workbook_rows_with_observed_behavior": 50,
+  "within_workbook_immune_behavior_rows": 50,
+  "metadata_candidate_animal_keys": 42,
+  "metadata_candidates_with_before_after": 35,
+  "processed_virome_profiles_retrieved": 0,
+  "verified_virome_immune_matches": 0,
+  "verified_bacteriome_immune_matches": 0,
+  "longitudinal_phageome_stability_measurable": false,
+  "primary_association_identifiable": false,
+  "linkage_rows": 154,
+  "additional_accessions_are_inventory_only": [
+    "PRJEB69687",
+    "PRJEB67706"
+  ],
+  "decision": "Separate source-row immune analysis and sequencing availability audit only."
+}

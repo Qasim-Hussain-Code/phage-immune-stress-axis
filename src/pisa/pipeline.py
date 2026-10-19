@@ -27,7 +27,7 @@ DECLARED = {
  STAGES[5]:['data/processed/immune_long.csv','results/tables/immune_missingness.csv','results/tables/source_inventory.csv'],
  STAGES[6]:['results/tables/immune_contrasts.csv','results/tables/immune_sensitivity.csv','results/tables/immune_summary.csv','results/reports/phage_immune_associations.md'],
  STAGES[7]:['results/reports/bacteriome_integration.md'],
- STAGES[8]:['results/reports/validation.log','results/reports/validation_summary.json','docs/results.md','results/reports/final_assessment.md'],
+ STAGES[8]:['results/reports/validation.log','results/reports/validation_summary.json','docs/results.md'],
  STAGES[9]:[f'figures/{name}.{ext}' for name in ['figure1_design','figure4_immune','figure5_linkage_limit','figure7_robustness'] for ext in ['png','pdf']]+[f'results/tables/figure{n}_data.csv' for n in [1,4,5,7]]}
 
 
