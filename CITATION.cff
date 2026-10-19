@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite the original experimental study and this reanalysis when using these materials."
+title: "Gut phageome stability and stress-related immune responses: public-data feasibility and restricted immune reanalysis"
+type: software
+authors:
+  - family-names: Hussain
+    given-names: Qasim
+version: 0.1.0
+date-released: 2026-10-20
+license: MIT

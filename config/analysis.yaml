@@ -1,0 +1,22 @@
+study: Gut phageome stability and stress-related immune responses
+seed: 20261020
+analysis_pathway: restricted_pooled_audit_and_separate_immune_analysis
+threads: 1
+resources:
+  max_workers: 4
+  max_new_storage_bytes: 10000000000
+  disk_reserve_bytes: 4000000000
+  max_download_bytes: 10000000
+  max_process_rss_bytes: 1000000000
+  min_available_memory_bytes: 100000000
+immune:
+  endpoints:
+    - ly6chi_monocytes
+    - ly6chi_monocytes_cd62
+    - tnfa_splenocyte_unstimulated
+  confidence_level: 0.95
+  interpretation: exploratory_unadjusted
+  multiple_testing: six_contrasts_benjamini_hochberg
+virome:
+  enable_biological_analysis: false
+  reason: Processed viral matrices, annotations and verified animal crosswalk unavailable

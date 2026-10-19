@@ -1,0 +1,8 @@
+numpy==2.3.4
+scipy==1.16.3
+matplotlib==3.10.7
+openpyxl==3.1.5
+PyYAML==6.0.3
+pypdf==6.13.0
+# Independent validation only:
+statsmodels==0.14.6
