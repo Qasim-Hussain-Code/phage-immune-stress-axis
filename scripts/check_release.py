@@ -1,5 +1,6 @@
 """Check scientific lineage, execution evidence, artifact review and Git payloads."""
 import argparse
+from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
@@ -14,6 +15,65 @@ from pisa.figure_qa import review_status
 def require(condition,message):
     if not condition:
         raise ValueError(message)
+
+
+def _invocation_record(path):
+    """Read one canonical journal record, without trusting filesystem times."""
+    try:
+        record=json.loads(path.read_text(encoding='utf-8'))
+    except (OSError,ValueError) as exc:
+        raise ValueError(f'Unreadable or malformed invocation record: {path.name}') from exc
+    require(isinstance(record,dict),'Invocation record must be a JSON object: '+path.name)
+    identifier=record.get('invocation_id')
+    require(isinstance(identifier,str) and re.fullmatch(r'[A-Za-z0-9_-]{1,128}',identifier) is not None,
+            'Unsafe or missing invocation ID: '+path.name)
+    started=record.get('started_utc')
+    require(isinstance(started,str),'Invocation needs an ISO start timestamp: '+path.name)
+    try:
+        timestamp=datetime.fromisoformat(started)
+        require(timestamp.tzinfo is not None and timestamp.utcoffset() is not None,
+                'Invocation start timestamp must be timezone-aware: '+path.name)
+        timestamp=timestamp.astimezone(timezone.utc)
+    except (ValueError,OverflowError) as exc:
+        raise ValueError('Invalid timezone-aware invocation start timestamp: '+path.name) from exc
+    require(record.get('status') in {'running','failed','interrupted','completed_validation',
+                'completed_pilot','completed_restricted_analysis'},
+            'Unknown or missing invocation status: '+path.name)
+    return record,timestamp
+
+
+def verify_latest_invocation(root):
+    """Reject stale latest-success records and incomplete or malformed journals.
+
+    A latest record must equal its canonical per-invocation counterpart in full.
+    Every persisted JSON attempt must be valid; any newer or simultaneous other
+    attempt makes an older latest record insufficient proof, regardless of its
+    outcome. Only aware ISO start times are compared, never file mtimes.
+    """
+    root=Path(root).resolve()
+    latest,started=_invocation_record(root/'results/reports/run_status.json')
+    directory=root/'results/reports/invocations'
+    require(directory.is_dir() and directory.resolve().is_relative_to(root),
+            'Missing or unsafe per-invocation journal directory')
+    counterpart=directory/(latest['invocation_id']+'.json')
+    require(counterpart.is_file(),'Latest status has no per-invocation counterpart')
+    require(counterpart.resolve().is_relative_to(directory.resolve()),
+            'Unsafe latest-status counterpart path')
+    counterpart_record,counterpart_started=_invocation_record(counterpart)
+    require(counterpart_record==latest and counterpart_started==started,
+            'Latest status differs from its per-invocation counterpart')
+    records=sorted(directory.glob('*.json'))
+    require(bool(records),'Per-invocation journal contains no JSON records')
+    for path in records:
+        require(path.is_file() and path.resolve().is_relative_to(directory.resolve()),
+                'Unsafe per-invocation record path: '+path.name)
+        record,timestamp=_invocation_record(path)
+        require(path.name==record['invocation_id']+'.json',
+                'Invocation filename and record ID disagree: '+path.name)
+        if record['invocation_id']!=latest['invocation_id']:
+            require(timestamp<started,
+                    'A newer or simultaneous persisted invocation makes the latest-status proof stale: '+record['invocation_id'])
+    return latest
 
 
 def git_files(root,scope):
@@ -107,7 +167,7 @@ def check(root,scope='working',require_review=True):
     validation=json.loads((root/'results/reports/validation_summary.json').read_text(encoding='utf-8'))
     require(validation.get('success') and validation.get('tests_run',0)>0,'No successful executed validation record')
     require(validation.get('code_sha256')==code_digest(root),'Code or test fixtures changed after the executed validation suite')
-    status=json.loads((root/'results/reports/run_status.json').read_text(encoding='utf-8'))
+    status=verify_latest_invocation(root)
     require(status.get('status')=='completed_restricted_analysis','Latest invocation did not complete the full restricted analysis')
     from pisa.pipeline import STAGES,cache_valid,fingerprint,upstream_hashes
     key=fingerprint(root,root/'config/analysis.yaml')
@@ -146,6 +206,7 @@ def check(root,scope='working',require_review=True):
             'contrasts':len(contrasts),'figures':len(pdfs),'matched_virome_immune':0,
             'tests_run':validation['tests_run'],'code_sha256':validation['code_sha256'],
             'release_payload_files_verified':payload_files,
+            'invocation_id':status['invocation_id'],'invocation_started_utc':status['started_utc'],
             'files_scanned':len(files),'large_files_over_5MB':large,'credential_pattern_matches':suspects,
             'figure_review':qa['status'],'scope':'Common credential patterns; not a guarantee of complete secret detection'}
 

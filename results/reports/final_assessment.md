@@ -6,7 +6,7 @@ The source workbook contains 50 animal rows across two experiments. The principa
 
 ## Separate immune contrasts
 
-Three endpoints and two contrasts were selected after reading the published paper and before calculating the present contrasts. These are exploratory unadjusted animal-level summaries. All estimates use untransformed source units. Extended Data Table 1c identifies the two selected flow outcomes as basal (before forced swim, after chronic stress), percent of parent population; their differences are percentage points. Table 1b identifies unstimulated splenocyte TNF-alpha as pg/mL. Intervals are pointwise 95% Welch intervals. P values have a six-test BH correction. Unknown cage allocation, incomplete terminal measurements and unresolved detection censoring limit inferential calibration.
+Three endpoints and two contrasts were selected after reading the published paper and before calculating the present contrasts. These are exploratory unadjusted animal-level summaries. All estimates use untransformed source units. Extended Data Table 1c identifies the two selected flow outcomes as basal (blood collected on study day 19 before forced swim, after 16 defeat days), percent of parent population; their differences are percentage points. Table 1b identifies unstimulated splenocyte TNF-alpha as pg/mL, from terminal day-23 spleen collection after 19 defeat sessions. These source-linked assays are not contemporaneous measurements. Intervals are pointwise 95% Welch intervals. P values have a six-test BH correction. Housing differs for the stress-control contrast: unstressed controls were group housed and stressed groups singly housed. Both groups in the FVT-stressed comparison share the stated single-housing regime. Incomplete assay measurements, unresolved detection censoring and unavailable allocation details still limit interpretation.
 
 | Endpoint | Contrast | n first/second | Mean difference | 95% CI | P | BH q |
 |---|---|---:|---:|---|---:|---:|
@@ -40,7 +40,7 @@ No viral composition, temporal stability, reference deviation, bacterial-adjuste
 
 ## Validation
 
-The executed validation suite ran 66 tests with 0 failures and 0 errors. Independent checks cover Welch inference, BH adjustment, community-distance identities and linkage invariants. Synthetic fixtures are software tests only.
+The executed validation suite ran 131 tests with 0 failures and 0 errors. Independent checks cover Welch inference, BH adjustment, community-distance identities and linkage invariants. Synthetic fixtures are software tests only.
 
 Source: [Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y). Exact values and missingness are in results/tables; raw observations retain source-cell locations.
 
@@ -52,16 +52,29 @@ The three-group pooled-variance calculation reproduces the selected planned t st
 
 The planned contrast compares the stressed mean with the average of Control and FVT Stress. It does not jointly establish a stress effect and its reversal. Tukey intervals cover three pairwise comparisons within one endpoint under a common-variance model; the original across-outcome BH family remains unreconstructed.
 
+## Descriptive missingness and rank effects
+
+These diagnostics were added after inspecting the earlier reanalysis. They add no hypothesis tests and leave the primary six-test family unchanged. Bounds target the animals represented by workbook rows, conditional on missing percentage assays having well-defined values anywhere in [0,100]. They are descriptive extrema, not confidence intervals or evidence of robust statistical significance.
+
+| Percentage endpoint | FVT Stress minus Control Stress support bounds |
+|---|---|
+| Basal LY6Chi monocyte proportion | 1.16581 to 11.1658 percentage points |
+| Basal CD62L-positive fraction of LY6Chi monocytes | 8.32259 to 18.3226 percentage points |
+
+Under those support assumptions, neither missing percentage value can reverse the source-cohort FVT-versus-stressed mean direction. An undefined parent population would violate the well-defined-assay assumption. TNF-alpha has missing values and no identified finite upper support, so analogous finite bounds are unavailable.
+
+For observed TNF-alpha, 8 first-greater and 0 tied comparisons among 72 cross-group pairs give empirical superiority 0.111111 and rank-biserial effect -0.777778 for FVT Stress versus Control Stress. The pairs reuse 17 observed animals; they are not independent replicates. See `results/reports/phenotype_robustness.md` and the complete six-row bounds/rank tables.
+
 ## Conditional software calibration
 
 A separate synthetic benchmark completed 20,000 replicates in each of four known zero-mean scenarios, evaluating variance heterogeneity, skew and artificial clustering. It reads no biological observations. Its Monte Carlo uncertainty is simulation uncertainty, not mouse-level uncertainty. See `results/reports/software_calibration.md` and `results/tables/software_calibration.csv`. These checks cannot infer missing cage assignments or calibrate the actual experiment under an unknown dependence structure.
 
 ## Invocation status
 
-Invocation: 20261020T062609235563Z_13584. Mode: full. Status: completed_restricted_analysis.
-0 stages executed and 10 stages resumed after verifying their declared outputs and upstream dependencies.
+Invocation: 20261020T121334137518Z_3504. Mode: full. Status: completed_restricted_analysis.
+10 stages executed and 0 stages resumed after verifying their declared outputs and upstream dependencies.
 All selected restricted-workflow stages completed or were verified from cache. Scientifically excluded analyses remain exclusions.
-Validation (verified cached stage result): 66 tests, 0 failures, 0 errors, 0 skipped.
+Validation (executed in this invocation): 131 tests, 0 failures, 0 errors, 6 skipped.
 Prior visual review dated 2026-10-20T06:23:59.007316+00:00 matches the current bytes of 5 PDF files. This is not a new visual review by this invocation.
 
 Publication status is documented separately in `docs/publication_status.md`; executing this pipeline does not establish a GitHub publication.

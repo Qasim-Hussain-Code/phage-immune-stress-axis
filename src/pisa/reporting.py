@@ -30,11 +30,15 @@ def summarize(root,config):
        'Three endpoints and two contrasts were selected after reading the published paper and before calculating '
        'the present contrasts. These are exploratory unadjusted animal-level summaries. All estimates use '
        'untransformed source units. Extended Data Table 1c identifies the two selected flow outcomes as basal '
-       '(before forced swim, after chronic stress), percent of parent population; their differences are '
-       'percentage points. Table 1b identifies unstimulated splenocyte TNF-alpha as pg/mL. '
+       '(blood collected on study day 19 before forced swim, after 16 defeat days), percent of parent '
+       'population; their differences are percentage points. Table 1b identifies unstimulated '
+       'splenocyte TNF-alpha as pg/mL, from terminal day-23 spleen collection after 19 defeat sessions. '
+       'These source-linked assays are not contemporaneous measurements. '
        'Intervals are pointwise 95% Welch intervals. P values have a six-test BH correction. '
-       'Unknown cage allocation, incomplete terminal measurements and unresolved detection censoring '
-       'limit inferential calibration.','',
+       'Housing differs for the stress-control contrast: unstressed controls were group housed '
+       'and stressed groups singly housed. Both groups in the FVT-stressed comparison share the '
+       'stated single-housing regime. Incomplete assay measurements, unresolved detection '
+       'censoring and unavailable allocation details still limit interpretation.','',
        '| Endpoint | Contrast | n first/second | Mean difference | 95% CI | P | BH q |',
        '|---|---|---:|---:|---|---:|---:|']
     for row in results:
@@ -105,6 +109,38 @@ def summarize(root,config):
                 'and FVT Stress. It does not jointly establish a stress effect and its reversal. '
                 'Tukey intervals cover three pairwise comparisons within one endpoint under '
                 'a common-variance model; the original across-outcome BH family remains unreconstructed.'])
+    bounds_path=root/'results/tables/immune_missingness_bounds.csv'
+    ranks_path=root/'results/tables/immune_rank_effects.csv'
+    if bounds_path.is_file() and ranks_path.is_file():
+        bounds=read_csv(bounds_path);ranks=read_csv(ranks_path)
+        if len(bounds)!=6 or len(ranks)!=6:
+            raise ValueError('Descriptive robustness must retain the existing six comparisons')
+        lines.extend(['','## Descriptive missingness and rank effects','',
+            'These diagnostics were added after inspecting the earlier reanalysis. They add '
+            'no hypothesis tests and leave the primary six-test family unchanged. Bounds target '
+            'the animals represented by workbook rows, conditional on missing percentage assays '
+            'having well-defined values anywhere in [0,100]. They are descriptive extrema, '
+            'not confidence intervals or evidence of robust statistical significance.','',
+            '| Percentage endpoint | FVT Stress minus Control Stress support bounds |',
+            '|---|---|'])
+        for row in bounds:
+            if row['contrast']=='fvt_stress_minus_ctr_stress' and row['lower_mean_difference']!='':
+                lines.append(f"| {NAMES[row['endpoint']]} | {float(row['lower_mean_difference']):.6g} to "
+                             f"{float(row['upper_mean_difference']):.6g} percentage points |")
+        tnf=next(row for row in ranks if row['endpoint']=='tnfa_splenocyte_unstimulated'
+                 and row['contrast']=='fvt_stress_minus_ctr_stress')
+        lines.extend(['',
+            'Under those support assumptions, neither missing percentage value can reverse '
+            'the source-cohort FVT-versus-stressed mean direction. An undefined parent population '
+            'would violate the well-defined-assay assumption. TNF-alpha has missing values and '
+            'no identified finite upper support, so analogous finite bounds are unavailable.','',
+            f"For observed TNF-alpha, {tnf['direct_first_greater_pairs']} first-greater and "
+            f"{tnf['direct_tied_pairs']} tied comparisons among {tnf['cross_group_pair_count']} cross-group pairs "
+            f"give empirical superiority {float(tnf['empirical_probability_first_greater_plus_half_ties']):.6g} "
+            f"and rank-biserial effect {float(tnf['rank_biserial_first_minus_second']):.6g} for FVT Stress "
+            f"versus Control Stress. The pairs reuse {tnf['n_observed_animals']} observed animals; "
+            'they are not independent replicates. See `results/reports/phenotype_robustness.md` '
+            'and the complete six-row bounds/rank tables.'])
     calibration=root/'results/reports/software_calibration.md'
     if calibration.is_file():
         calibration_rows=read_csv(root/'results/tables/software_calibration.csv')

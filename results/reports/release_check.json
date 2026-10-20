@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "git_scope": "working",
+  "frozen_inputs": 10,
+  "phenotype_cells_verified": 1240,
+  "contrasts": 6,
+  "figures": 5,
+  "matched_virome_immune": 0,
+  "tests_run": 131,
+  "code_sha256": "ae488a59031f6160fb0193ceb26f41125f0986bed331c4ccd74548ede21078eb",
+  "release_payload_files_verified": 0,
+  "invocation_id": "20261020T121334137518Z_3504",
+  "invocation_started_utc": "2026-10-20T12:13:34.137518+00:00",
+  "files_scanned": 184,
+  "large_files_over_5MB": [],
+  "credential_pattern_matches": [],
+  "figure_review": "previous_review_matches_current_files",
+  "scope": "Common credential patterns; not a guarantee of complete secret detection"
+}

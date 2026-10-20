@@ -4,6 +4,8 @@ Audited 20 October 2026 (Asia/Taipei). DOI: [10.1016/j.bbi.2026.106532](https://
 
 **Decision: unresolved; no public processed recipient virome–immune pairing verified.** This is a relevant candidate, but cannot currently replace the missing inputs. Access failures do not establish data absence or scientific ineligibility.
 
+The subsequent [focused public-route follow-up](chen2026_public_route_followup.md) checks explicit Crossref TDM/manuscript routes, PubMed LinkOut, official university pages and exact-DOI preprint lookups. Its [tracked source ledger](../data/manifests/chen2026_followup_sources.json) preserves the responses and remaining access gaps. The candidate remains unresolved after those checks.
+
 The official [ScienceDirect preview](https://www.sciencedirect.com/science/article/pii/S0889159126002801), exposed through the public search index, describes pregnant Sprague–Dawley rats, gestational restraint on days 16–20, and shotgun profiling of adult offspring. Its availability section offers supporting data through corresponding author JuFang Huang on reasonable request. This establishes the published request route; it does not prove that no separate deposit exists. The public preview and abstract mention FVT and immune responses, but do not verify recipient-level co-measurement, sampling times, matrix availability, or reusable identifiers.
 
 The existing Europe PMC DOI response identifies the record as non-open-access, outside PMC/Europe PMC full text, with only a subscription DOI link. Those are index flags, not an inventory of publisher supplements or public research repositories. The existing BioProject search for `prenatal stress virome` returned zero hits, which is query-limited evidence.

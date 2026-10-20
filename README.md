@@ -82,7 +82,10 @@ immune linkage. This was not a systematic review or proof that none exists.
 The restricted analysis uses three biologically motivated FVT-study outcomes:
 basal LY6Chi monocyte proportion, basal CD62L-positive monocyte fraction, and
 unstimulated splenocyte TNF-alpha. “Basal” means before forced swim, after
-chronic stress; it is not a baseline before chronic stress. Original source
+16 defeat sessions on study day 19; it is not a baseline before chronic stress.
+Spleens were collected on day 23, after 19 defeat sessions, for subsequent
+ex vivo cytokine assays. These assays are not contemporaneous blood measurements.
+Original source
 values remain unchanged. No missing outcome or below-detection value is
 replaced with zero. All observed values are retained.
 
@@ -93,6 +96,9 @@ and leave-one-observed-animal-out fits are sensitivity checks. Endpoint choices
 followed reading the published results and precede the present calculations;
 this is exploratory reanalysis, not preregistered confirmation. Cage allocation,
 original outlier flags and quantitative detection thresholds are unavailable.
+Stressed animals were singly housed while unstressed controls remained group
+housed, so the stress-versus-control comparison also includes housing differences.
+FVT Stress and Control Stress share the reported single-housing regime.
 
 ## Primary results
 
@@ -124,6 +130,16 @@ table image prints 27.9. No source value or rounding tolerance was changed.
 The original complete BH family remains unreconstructed. See the
 [independent review](docs/original_analysis_review.md) and
 [replication table](results/tables/original_method_replication.csv).
+
+Two [post-hoc descriptive checks](docs/phenotype_robustness.md) add no hypothesis
+tests or imputed observations. If each missing percentage assay has a well-defined
+value in [0,100], the FVT-minus-stress mean difference among the ten source rows
+per group lies between 1.166 and 11.166 percentage points for LY6Chi monocytes,
+and between 8.323 and 18.323 points for CD62L-positive monocytes. These bounds
+retain positive direction under that assumption; they are not confidence
+intervals or significance claims. No finite TNF-alpha bounds are justified.
+The TNF-alpha FVT rank comparison has 8 greater and 64 lesser cross-group pairs,
+with no ties. Those 72 pairs reuse 17 animals and are not independent replicates.
 
 These are separate immune comparisons. They do not establish a specific phage
 effect, bacterial mediation, immune resilience or a causal gut-brain mechanism.

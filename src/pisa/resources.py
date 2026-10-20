@@ -1,6 +1,5 @@
 """Local persistent budgets and sampled process-family memory monitoring."""
 from __future__ import annotations
-import contextlib
 import ctypes
 import hashlib
 import json
@@ -8,10 +7,9 @@ import os
 from pathlib import Path
 import platform
 import shutil
-import signal
-import subprocess
 import sys
 import time
+from .processes import start_process
 
 
 def available_memory():
@@ -133,39 +131,33 @@ def child_rss(pid):
 
 
 def _stop_process_tree(process):
-    if process.poll() is not None: return
-    if os.name == 'nt':
-        with contextlib.suppress(OSError, subprocess.SubprocessError):
-            subprocess.run(['taskkill', '/PID', str(process.pid), '/T', '/F'],
-                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=10)
-    else:
-        with contextlib.suppress(ProcessLookupError): os.killpg(process.pid, signal.SIGTERM)
-    with contextlib.suppress(OSError): process.terminate()
-    try:
-        process.wait(timeout=5)
-    except subprocess.TimeoutExpired:
-        with contextlib.suppress(OSError): process.kill()
-        process.wait(timeout=5)
+    # Cleanup applies after normal parent exit too: remaining workers are owned
+    # by this command's Windows job or POSIX process group.
+    process.cleanup()
 
 
 def monitored_run(cmd, root, log_path, guard, timeout=None):
-    """Bound runtime, storage and process-family memory; terminate on failure."""
+    """Bound runtime/resources and clean owned descendants on every exit path."""
     timeout = guard.config.get('stage_timeout_seconds', 600) if timeout is None else timeout
     if timeout <= 0: raise ValueError('Child timeout must be positive')
     log_path = Path(log_path); log_path.parent.mkdir(parents=True, exist_ok=True)
     started = time.monotonic()
     with log_path.open('w', encoding='utf-8') as log:
-        process = subprocess.Popen(cmd, cwd=root, stdout=log, stderr=subprocess.STDOUT,
-            env=os.environ, start_new_session=os.name != 'nt')
+        process = start_process(cmd, cwd=root, stdout=log)
         try:
             while process.poll() is None:
+                process.observe()
                 guard.check(); guard.observe_processes()
                 if time.monotonic()-started > timeout:
                     raise TimeoutError(f'Child process exceeded {timeout} second timeout')
                 time.sleep(0.1)
-        except BaseException:
-            _stop_process_tree(process)
+        except BaseException as error:
+            try:
+                _stop_process_tree(process)
+            except BaseException as cleanup_error:
+                error.add_note(f'Owned-process cleanup also failed: {cleanup_error!r}')
             raise
+        _stop_process_tree(process)
         return process.returncode
 
 

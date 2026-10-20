@@ -2,7 +2,6 @@
 import argparse
 from datetime import datetime, timezone
 import hashlib
-import importlib.metadata
 import json
 import os
 import runpy
@@ -11,8 +10,9 @@ import subprocess
 import sys
 import time
 import traceback
-from .io import digest, write_csv, write_json
+from .io import digest, write_csv, write_json, code_digest
 from .resources import Guard, project_size, peak_rss, monitored_run
+from .environment import runtime_identity
 
 STAGES = [
     '01_audit_sources', '02_fetch_data', '03_validate_samples', '04_virome_qc',
@@ -26,21 +26,10 @@ DECLARED = {
  STAGES[3]:['results/reports/virome_qc.md'],
  STAGES[4]:['results/tables/hypothesis_eligibility.csv'],
  STAGES[5]:['data/processed/immune_long.csv','results/tables/immune_missingness.csv','results/tables/source_inventory.csv'],
- STAGES[6]:['results/tables/immune_contrasts.csv','results/tables/immune_sensitivity.csv','results/tables/immune_summary.csv','results/reports/phage_immune_associations.md','results/tables/original_method_replication.csv','results/reports/original_method_replication.md'],
+ STAGES[6]:['results/tables/immune_contrasts.csv','results/tables/immune_sensitivity.csv','results/tables/immune_summary.csv','results/reports/phage_immune_associations.md','results/tables/original_method_replication.csv','results/reports/original_method_replication.md','results/tables/immune_missingness_bounds.csv','results/tables/immune_rank_effects.csv','results/reports/phenotype_robustness.md'],
  STAGES[7]:['results/reports/bacteriome_integration.md'],
  STAGES[8]:['results/reports/validation.log','results/reports/validation_summary.json','docs/results.md','results/tables/software_calibration.csv','results/reports/software_calibration.md'],
  STAGES[9]:[f'figures/{name}.{ext}' for name in ['figure1_design','figure4_immune','figure5_linkage_limit','figure7_robustness','figure8_method_comparison'] for ext in ['png','pdf']]+[f'results/tables/figure{n}_data.csv' for n in [1,4,5,7,8]]}
-
-
-def runtime_identity():
-    """Library changes invalidate cached calculations without importing them."""
-    versions = {}
-    for name in ['numpy', 'scipy', 'matplotlib', 'openpyxl', 'PyYAML', 'statsmodels', 'pypdf']:
-        try:
-            versions[name] = importlib.metadata.version(name)
-        except importlib.metadata.PackageNotFoundError:
-            versions[name] = None
-    return {'python': sys.version, 'platform': sys.platform, 'packages': versions}
 
 
 def configure_environment(root):
@@ -146,6 +135,20 @@ def fingerprint(root, config_path):
     return h.hexdigest()
 
 
+def source_contract(root,config_path):
+    """Execution identity without treating an expected input download as an edit."""
+    root=Path(root)
+    paths={'config':Path(config_path),'requirements':root/'requirements.txt',
+           'input_manifest':root/'data/manifests/inputs.json'}
+    return {'code_sha256':code_digest(root),'runtime':runtime_identity(),
+            **{name:digest(path) if path.is_file() else None for name,path in paths.items()}}
+
+
+def require_unchanged_source(root,config_path,expected):
+    if source_contract(root,config_path)!=expected:
+        raise RuntimeError('Code, tests, configuration, dependency specification or runtime changed during execution')
+
+
 def validate(root,config,guard=None):
     guard=guard or Guard(root,config)
     path=root/'results/reports/validation.log'
@@ -198,6 +201,8 @@ def dispatch(stage, root, config, guard, offline):
         from .original_methods import run as replicate_original
         result=analyze(root,config)
         result['original_method_reconstruction']=replicate_original(root,config)
+        from .phenotype_robustness import run as phenotype_robustness
+        result['descriptive_phenotype_robustness']=phenotype_robustness(root,config)
         audit.association_gate(root,config)
         return result
     if stage == STAGES[7]:
@@ -234,8 +239,10 @@ def stage_entry(stage):
         config_path=(root/args.config).resolve()
         config=load_config(config_path)
         guard=Guard(root,config)
+        source_before=source_contract(root,config_path)
         dependencies=upstream_hashes(root,stage)
         result=dispatch(stage,root,config,guard,args.offline)
+        require_unchanged_source(root,config_path,source_before)
         changed={p:digest(root/p) for p in DECLARED[stage]}
         result=result or {}
         record={'schema_version':2,'stage':stage,'result':result,'resources':guard.check(),
@@ -270,14 +277,26 @@ def main():
             'scientific_stages_executed':0,'scientific_stages_resumed_verified':0,
             'runtime':runtime_identity()}
     def save_status():
-        write_json(root/'results/reports/run_status.json',status)
-        write_json(root/f'results/reports/invocations/{invocation_id}.json',status)
-    save_status()
+        # Attempt both records independently so a blocked latest-status path
+        # does not suppress the per-invocation failure record as well.
+        errors=[]
+        for target in [root/'results/reports/run_status.json',
+                       root/f'results/reports/invocations/{invocation_id}.json']:
+            try:
+                write_json(target,status)
+            except Exception as exc:
+                errors.append(exc)
+        if errors:
+            raise errors[0]
     started=time.monotonic()
     guard=None; config=None; usage={}; peak=peak_rss(); active_stage=None
+    primary_exception=None
     try:
+        save_status()
         configure_environment(root)
         config=load_config(config_path)
+        source_before=source_contract(root,config_path)
+        status['source_contract']=source_before
         if not 1 <= args.threads <= config['resources']['max_workers']:
             raise ValueError(f"threads must be between 1 and {config['resources']['max_workers']}; execution is serial")
         status['seed']=config['seed']
@@ -288,6 +307,7 @@ def main():
             # Verification must not extract metadata, fetch missing inputs or
             # write scientific source/processed tables, even without --offline.
             status.update(validate_only(root,config,guard))
+            require_unchanged_source(root,config_path,source_before)
             peak=max(peak,status['validation'].get('peak_rss_bytes',0))
             status['status']='completed_validation'
             status['validation_scope']='cached_frozen_inputs_and_software_tests_only'
@@ -325,41 +345,67 @@ def main():
                 status['stages'].append({'name':stage,'status':state,'result':record['result'],
                     'recorded_peak_rss_bytes':record['resources']['process_peak_rss_bytes'],
                     'resource_scope':'historical_cached_stage' if state=='resumed_verified' else 'measured_this_invocation'})
+                require_unchanged_source(root,config_path,source_before)
                 save_status(); print(f'{stage}: {state}',flush=True)
             status['status']='completed_pilot' if args.mode=='pilot' else 'completed_restricted_analysis'
         usage=guard.check()
         peak=max(peak,usage.get('max_observed_native_process_peak_rss_bytes',0),peak_rss())
         status['max_measured_stage_peak_rss_bytes']=peak
     except BaseException as exc:
+        primary_exception=exc
         status['status']='interrupted' if isinstance(exc,KeyboardInterrupt) else 'failed'
         status['failed_stage']=active_stage
         status['error_type']=type(exc).__name__; status['error']=str(exc)
         raise
     finally:
+        final_exception=None
+        def finalization_failure(exc,phase):
+            nonlocal final_exception
+            status.setdefault('finalization_errors',[]).append({
+                'phase':phase,'error_type':type(exc).__name__,'error':str(exc)})
+            # Retain the first analysis/interruption exception. A new failure
+            # discovered only during finalization must still fail this run.
+            if primary_exception is None and final_exception is None:
+                final_exception=exc
+                status['status']='interrupted' if isinstance(exc,KeyboardInterrupt) else 'failed'
+                status['failed_stage']='finalization'
+                status['error_type']=type(exc).__name__; status['error']=str(exc)
         status['elapsed_seconds']=round(time.monotonic()-started,3)
         status['finished_utc']=datetime.now(timezone.utc).isoformat()
         if guard is not None:
             try:
                 usage=guard.check()
-            except Exception as exc:
+            except BaseException as exc:
                 usage['snapshot_error']=str(exc)
-            peak=max(peak,guard.max_observed_native_process_peak_rss_bytes,peak_rss())
+                finalization_failure(exc,'final_resource_snapshot')
+            try:
+                peak=max(peak,guard.max_observed_native_process_peak_rss_bytes,peak_rss())
+            except BaseException as exc:
+                finalization_failure(exc,'final_native_memory_measurement')
         usage['max_measured_stage_peak_rss_bytes']=peak
         usage['invocation_id']=invocation_id
         usage['scope']='current invocation; native per-process peaks and separately sampled concurrent process-family RSS'
         status['max_measured_stage_peak_rss_bytes']=peak
-        save_status()
-        write_json(root/'results/reports/resource_usage.json',usage)
+        try:
+            write_json(root/'results/reports/resource_usage.json',usage)
+        except BaseException as exc:
+            finalization_failure(exc,'resource_usage_write')
         if config is not None:
-            from .reporting import resource_report
             try:
+                from .reporting import resource_report
                 resource_report(root,usage,invocation=status,config=config)
-            except Exception as report_error:
+            except BaseException as report_error:
                 status['report_error']=str(report_error)
-                if status['status'] not in ('failed','interrupted'):
-                    status['status']='failed'; status['error_type']=type(report_error).__name__
-                    status['error']=str(report_error); save_status()
-                    raise
-                save_status()  # Preserve the original failure, not a reporting error.
+                finalization_failure(report_error,'resource_report')
+        # Persist terminal state after reporting. Retry once so an isolated
+        # write failure is recorded as a failure rather than stale success.
+        for attempt in range(2):
+            try:
+                save_status()
+                break
+            except BaseException as exc:
+                finalization_failure(exc,'terminal_status_write')
+        if final_exception is not None:
+            raise final_exception
     print(json.dumps({'invocation_id':invocation_id,'status':status['status']}),flush=True)
 

@@ -49,7 +49,7 @@ class ResourceContracts(unittest.TestCase):
         process=Mock(); process.poll.return_value=None
         guard=Mock(); guard.config={'stage_timeout_seconds':1}
         with tempfile.TemporaryDirectory() as tmp, \
-             patch('pisa.resources.subprocess.Popen',return_value=process), \
+             patch('pisa.resources.start_process',return_value=process), \
              patch('pisa.resources.time.monotonic',side_effect=[0,2]), \
              patch('pisa.resources._stop_process_tree') as stop:
             with self.assertRaises(TimeoutError):

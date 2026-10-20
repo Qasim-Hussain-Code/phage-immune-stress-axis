@@ -5,7 +5,7 @@ availability and sample-linkage audit with a separate exploratory immune
 reanalysis. No new association between measured phageome stability and immune
 responses is reported.
 
-## What the original study already established
+## What the original study already reported
 
 [Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y) studied chronic
 stress, gut viral and bacterial profiles, fecal virome transplantation, selected
@@ -53,6 +53,15 @@ reporting contributions, not evidence that an ecological mechanism has been
 identified. The endpoints were chosen after reading published results and
 before computing these contrasts. The reanalysis is exploratory.
 
+The subsequent descriptive robustness diagnostics were added after inspecting
+that reanalysis. They show support-constrained ranges for missing percentage
+assays in the source-row cohort and normalized ordering effects for the same
+existing U statistics. They add no endpoints or hypothesis tests, establish no
+new biological association, and do not make the selected comparisons
+confirmatory. Conditional support bounds are not confidence intervals or a
+claim of robust significance; cross-group pairs are not independent animal
+replicates. Details are in [phenotype_robustness.md](phenotype_robustness.md).
+
 An independent original-method reconstruction adds a numerical provenance
 check. All nine selected caption t/P checks match, and 17 of 18 combined caption
 and group-summary checks match. FVT TNF-alpha has source mean 27.8492778,
@@ -96,9 +105,12 @@ support a priority claim or proof that no suitable dataset exists.
 The [expanded primary-data search](processed_data_search.md) adds 52 saved
 evidence records without recovering the missing matrices or crosswalk.
 A newer [prenatal-stress candidate](new_prenatal_stress_candidate.md) remains
-unresolved because its available abstract/preview does not verify accessible
-processed recipient viromes linked to individual immune assays. That candidate
-is not silently substituted or declared absent on the basis of access failures.
+unresolved after a [focused public-route follow-up](chen2026_public_route_followup.md)
+of advertised publisher routes, institutional sources and exact-DOI preprint
+lookups. The recovered responses did not establish recipient immune-assay
+protocols, timing, a legitimate animal crosswalk or public processed paired
+measurements. That candidate is not silently substituted or declared absent
+on the basis of access failures.
 
 The defensible conclusion is that this project identifies what the retrieved
 public inputs can support and what would be needed for the proposed integrated

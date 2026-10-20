@@ -2,10 +2,10 @@
 
 Current executed test counts, failures, errors and skips are recorded in
 `results/reports/validation_summary.json`, with individual outcomes in
-`results/reports/validation.log`. The expanded software suite and full synthetic
-benchmark completed successfully. Completion of the remaining workflow and
-visual QA is established by their matching invocation records; an earlier
-successful run does not establish a current invocation's outcome. Resource peaks belong to the
+`results/reports/validation.log`. Each execution record applies to its recorded
+code identity. Completion of the suite, workflow and visual QA is established
+by their matching invocation and review records; an earlier successful run
+does not establish a current invocation's outcome. Resource peaks belong to the
 invocation that measured them; see [resource_usage.md](resource_usage.md) and
 [reproduction_validation.md](reproduction_validation.md).
 
@@ -20,6 +20,8 @@ kept separate from biological observations and cannot replace missing assays.
 | Contrast reversal | Analytical identity | Group reversal negates the effect and reverses limits while retaining two-sided P. |
 | BH adjustment | statsmodels `multipletests(method="fdr_bh")` | Full adjusted vector, ties, boundary P values and invalid inputs. |
 | Leave-one-animal-out ranges | Separate brute-force sample means | Omission count, effect extrema, influential identifier and direction. |
+| Finite-support missingness bounds | Exhaustive support-corner enumeration | Both extrema for every percentage comparison, complete cases, reversal, all-missing cases, invalid support and observed values outside support. |
+| Empirical rank effects | SciPy average ranks and direct cross-animal pair counting | U identity, ties, reversal, superiority, rank-biserial effect and agreement with the existing sensitivity U; pairs remain distinct from animal counts. |
 | Original pooled ANOVA and planned contrast | Independently fitted statsmodels OLS and `t_test` | Residual sum of squares, pooled variance, F, contrast effect, standard error, t, P and interval. |
 | Original Tukey-Kramer pairs | statsmodels `pairwise_tukeyhsd` | All three pairs and simultaneous intervals in unequal-size synthetic fixtures. |
 | Aitchison distance | Pairwise log-ratio identity | Independent all-pairs expression versus CLR Euclidean distance. |
@@ -97,6 +99,28 @@ All six observed mean contrasts retain direction after individual omissions.
 This limited observation does not establish stable significance or remove
 housing dependence. TNF-alpha remains method-sensitive: its FVT Welch q is
 0.1551 and rank sensitivity q is 0.01102. Both are reported.
+
+## Descriptive source-cohort robustness
+
+The missingness bounds and normalized rank effects were added after inspecting
+the earlier reanalysis. They add no biological hypothesis tests and do not
+alter either six-test family. The percentage bounds concern animals represented
+by source workbook rows, including explicit missing assays; they do not
+establish completeness of the original randomized cohort. Every missing
+percentage must have a well-defined value in [0,100] for this target to apply.
+These are sharp descriptive support extrema, not confidence intervals,
+imputations, population effects or evidence of robust significance. Missing
+TNF-alpha values and unavailable finite upper support preclude analogous finite
+bounds. See [phenotype_robustness.md](phenotype_robustness.md).
+
+The empirical rank effects describe ordering of observed animal values.
+Average-rank U, direct wins plus half ties, and the existing sensitivity U must
+agree before outputs are written. Pair counts reuse animals; the 72 observed
+TNF-alpha cross-group pairs involve 17 animals, not 72 independent replicates.
+These summaries do not estimate raw mean differences or automatically establish
+a median shift. Source-record coverage, altered U values, out-of-support
+measurements and deterministic output preservation are exercised by prepared-
+stage fixtures. No interval is calculated by treating pairs as independent.
 
 ## Conditional synthetic null calibration
 

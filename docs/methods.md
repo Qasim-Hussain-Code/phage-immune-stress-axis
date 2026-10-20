@@ -46,9 +46,12 @@ contrast calculations, after the published findings were known.
 Selected outcomes are basal LY6Chi monocyte proportion, basal CD62L-positive
 fraction of that population and unstimulated splenocyte TNF-alpha. Extended
 Data Table 1c confirms the flow measurements are percentages of parent
-population, before forced swim after chronic stress. Effects are percentage
-points. Table 1b confirms the culture cytokine unit pg/mL. These are relative
-cell proportions and 24-hour culture output, not absolute blood cell counts or
+population. The selected blood was collected on study day 19, five minutes
+before forced swim and after 16 defeat days; fixed cells were analysed the
+following day. Splenocytes came from terminal day-23 collection, after the
+19-session stress regimen. The assays are source-linked but not contemporaneous.
+Effects are percentage points. Table 1b confirms the culture cytokine unit pg/mL. These are relative
+cell proportions and ex vivo culture output, not absolute blood cell counts or
 circulating TNF-alpha. No assay detection threshold is invented. The original
 study reports exclusions below detection and statistical/technical exclusions;
 the available workbook does not identify all such decisions.
@@ -65,8 +68,11 @@ control, and FVT stress minus stressed control. Each mean difference uses
 the Welch standard error, Satterthwaite degrees of freedom, two-sided t-test and
 pointwise 95% interval. A single six-test Benjamini-Hochberg correction is used.
 The nominal intervals are not simultaneous multiple-comparison intervals.
-Unknown cage allocation and stress-associated housing differences prevent a
-strong claim that individual-animal standard errors capture all dependence.
+Unstressed controls were group housed, while both stressed groups were singly
+housed. The stress-control contrast therefore bundles the stated housing
+regimes; the FVT-versus-stressed contrast shares the same stated regime.
+Missing cage/allocation details preclude a measured adjustment or a blanket
+claim that all potential dependence is captured by animal-level errors.
 No adjusted or high-dimensional model is fitted.
 
 Mann-Whitney U is a distributional sensitivity check, using SciPy auto exact or
@@ -77,6 +83,12 @@ P values. No favorable refit is substituted for the full estimate. Nonsignifican
 tests are not interpreted as equivalence. A posterior observed-power estimate
 would merely restate the P value and was not used; small-sample precision is
 shown through intervals and influence diagnostics instead.
+
+Additional descriptive diagnostics examine finite-support missingness bounds
+and normalized versions of the existing U statistics. They were added after
+inspecting the earlier reanalysis and do not add hypothesis tests. Their target,
+well-defined-assay assumption, sharp-bound formula and non-independence of
+cross-group pairs are specified in [phenotype_robustness.md](phenotype_robustness.md).
 
 ## Separate original-method reconstruction
 
@@ -147,7 +159,13 @@ Ten numbered stages run sequentially. Excluded stages generate explicit
 availability/eligibility reports, never fabricated scientific estimates.
 Pilot, full, offline, resume and validation-only modes are implemented.
 Fingerprinting covers configuration, code, test code and frozen inputs;
-resumption also checks declared output hashes. Streaming fetches reject
+resumption also checks declared output hashes.
+Code, tests, configuration, the dependency specification and runtime must also
+remain unchanged during an invocation and each stage. Validation records code
+identity before discovery and after the suite, rejecting a mismatch between
+those recorded digests. These are checkpoint comparisons.
+Expected retrieval of a checksum-specified missing input is distinguished from
+editing the input manifest or analysis implementation. Streaming fetches reject
 over-cap content and changed hashes, with partial files removed. Native child
 RSS, concurrent descendant RSS, available memory and disk usage are monitored
 during execution. Storage uses a host/checkout-bound persistent local baseline;

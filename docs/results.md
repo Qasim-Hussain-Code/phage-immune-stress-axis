@@ -6,7 +6,7 @@ The source workbook contains 50 animal rows across two experiments. The principa
 
 ## Separate immune contrasts
 
-Three endpoints and two contrasts were selected after reading the published paper and before calculating the present contrasts. These are exploratory unadjusted animal-level summaries. All estimates use untransformed source units. Extended Data Table 1c identifies the two selected flow outcomes as basal (before forced swim, after chronic stress), percent of parent population; their differences are percentage points. Table 1b identifies unstimulated splenocyte TNF-alpha as pg/mL. Intervals are pointwise 95% Welch intervals. P values have a six-test BH correction. Unknown cage allocation, incomplete terminal measurements and unresolved detection censoring limit inferential calibration.
+Three endpoints and two contrasts were selected after reading the published paper and before calculating the present contrasts. These are exploratory unadjusted animal-level summaries. All estimates use untransformed source units. Extended Data Table 1c identifies the two selected flow outcomes as basal (blood collected on study day 19 before forced swim, after 16 defeat days), percent of parent population; their differences are percentage points. Table 1b identifies unstimulated splenocyte TNF-alpha as pg/mL, from terminal day-23 spleen collection after 19 defeat sessions. These source-linked assays are not contemporaneous measurements. Intervals are pointwise 95% Welch intervals. P values have a six-test BH correction. Housing differs for the stress-control contrast: unstressed controls were group housed and stressed groups singly housed. Both groups in the FVT-stressed comparison share the stated single-housing regime. Incomplete assay measurements, unresolved detection censoring and unavailable allocation details still limit interpretation.
 
 | Endpoint | Contrast | n first/second | Mean difference | 95% CI | P | BH q |
 |---|---|---:|---:|---|---:|---:|
@@ -40,7 +40,7 @@ No viral composition, temporal stability, reference deviation, bacterial-adjuste
 
 ## Validation
 
-The executed validation suite ran 66 tests with 0 failures and 0 errors. Independent checks cover Welch inference, BH adjustment, community-distance identities and linkage invariants. Synthetic fixtures are software tests only.
+The executed validation suite ran 131 tests with 0 failures and 0 errors. Independent checks cover Welch inference, BH adjustment, community-distance identities and linkage invariants. Synthetic fixtures are software tests only.
 
 Source: [Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y). Exact values and missingness are in results/tables; raw observations retain source-cell locations.
 
@@ -51,6 +51,19 @@ A separate reconstruction table contains 24 records: `results/tables/original_me
 The three-group pooled-variance calculation reproduces the selected planned t statistics and Tukey comparisons at the published precision. In particular, the monocyte FVT comparison is P=0.106409 under Tukey-Kramer, explaining the published P=0.106 without additional exclusions. One printed group mean remains discrepant: unstimulated FVT TNF-alpha averages 27.8492778 pg/mL in the workbook, which rounds directly to 27.8, versus 27.9 in Table 1b. The discrepancy is retained; no tolerance was widened and no value changed.
 
 The planned contrast compares the stressed mean with the average of Control and FVT Stress. It does not jointly establish a stress effect and its reversal. Tukey intervals cover three pairwise comparisons within one endpoint under a common-variance model; the original across-outcome BH family remains unreconstructed.
+
+## Descriptive missingness and rank effects
+
+These diagnostics were added after inspecting the earlier reanalysis. They add no hypothesis tests and leave the primary six-test family unchanged. Bounds target the animals represented by workbook rows, conditional on missing percentage assays having well-defined values anywhere in [0,100]. They are descriptive extrema, not confidence intervals or evidence of robust statistical significance.
+
+| Percentage endpoint | FVT Stress minus Control Stress support bounds |
+|---|---|
+| Basal LY6Chi monocyte proportion | 1.16581 to 11.1658 percentage points |
+| Basal CD62L-positive fraction of LY6Chi monocytes | 8.32259 to 18.3226 percentage points |
+
+Under those support assumptions, neither missing percentage value can reverse the source-cohort FVT-versus-stressed mean direction. An undefined parent population would violate the well-defined-assay assumption. TNF-alpha has missing values and no identified finite upper support, so analogous finite bounds are unavailable.
+
+For observed TNF-alpha, 8 first-greater and 0 tied comparisons among 72 cross-group pairs give empirical superiority 0.111111 and rank-biserial effect -0.777778 for FVT Stress versus Control Stress. The pairs reuse 17 observed animals; they are not independent replicates. See `results/reports/phenotype_robustness.md` and the complete six-row bounds/rank tables.
 
 ## Conditional software calibration
 

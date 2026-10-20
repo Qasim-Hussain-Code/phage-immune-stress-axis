@@ -35,13 +35,16 @@ IDs restart within group and must remain scoped by experiment and treatment.
 ## Immune outcomes are endpoint phenotypes
 
 The selected LY6Chi monocyte and CD62L-positive measurements are basal blood
-proportions taken before the acute forced-swim test, after prior chronic stress
-exposure. They are percentages of parent populations. Contrasts are percentage
+proportions from blood collected on study day 19, before the acute forced-swim
+test and after 16 defeat days. Both flow outcomes are percentages of parent
+populations. Contrasts are percentage
 points, not absolute cell counts or relative percentage changes. Basal here is
 not a prechronic-stress baseline. Changes in proportions need not demonstrate
 changes in absolute circulating cell numbers or cell trafficking.
 
-TNF-alpha is measured in unstimulated splenocyte culture supernatant, in pg/mL.
+TNF-alpha is measured in unstimulated splenocyte culture supernatant, in pg/mL,
+from terminal day-23 spleen collection after 19 defeat sessions. Source-row
+linkage does not make the blood and spleen assays contemporaneous.
 It is distinct from plasma TNF-alpha and does not measure a within-mouse change
 across chronic stress. These unit and timing assignments follow Extended Data
 Table 1b,c of the [original article](https://doi.org/10.1038/s41564-023-01564-y),
@@ -60,6 +63,13 @@ analysis preserves all supplied observations and does not impute missing values.
 Mouse 11 has incomplete later measurements, and mouse 31 lacks selected
 monocyte measurements. Availability cannot be assumed independent of outcome.
 
+Conditional [0,100] support bounds describe how missing percentages can change
+the source-row cohort mean differences. They do not address population sampling
+uncertainty, undefined parent-cell populations, upstream omitted animals or
+statistical significance. Missing TNF-alpha has no justified finite upper bound.
+The added rank effects are descriptive; cross-group pairs share animals and
+cannot be treated as additional independent observations.
+
 The publication excluded measurements outside detection limits, technical
 failures and statistical outliers beyond 2.5 standard deviations. The retrieved
 workbook does not identify every exclusion, censoring threshold or omitted
@@ -72,8 +82,9 @@ tests do not establish equivalence or absence of a meaningful effect.
 
 Welch inference accommodates unequal sample variances but assumes independent
 animal observations. Cage allocation and possible cage-level dependence are
-unavailable. Stress and control housing differ in the original design, which
-further complicates biological attribution. No cage-adjusted standard errors or
+unavailable. Unstressed controls were group housed and both stressed groups
+singly housed. Housing therefore differs for stress-control comparisons, while
+FVT-versus-stressed comparisons share the stated regime. No cage-adjusted standard errors or
 housing-independent stress effect can be recovered from the available table.
 
 Three endpoints and two contrasts were selected after reading the published

@@ -1,7 +1,5 @@
 """Read-only resource and installed-software inventory (no installations)."""
 import ctypes
-import importlib.metadata
-import importlib.util
 import json
 import os
 from pathlib import Path
@@ -9,6 +7,8 @@ import platform
 import shutil
 import sys
 from datetime import datetime, timezone
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
+from pisa.environment import package_versions
 
 
 def memory():
@@ -31,12 +31,7 @@ def memory():
 
 def probe(root):
     disk = shutil.disk_usage(root)
-    packages = {}
-    for name in ['numpy', 'pandas', 'scipy', 'statsmodels', 'matplotlib', 'openpyxl', 'PyYAML', 'scikit-learn', 'pypdf']:
-        try:
-            packages[name] = importlib.metadata.version(name)
-        except importlib.metadata.PackageNotFoundError:
-            packages[name] = None
+    packages = package_versions()
     return {'measured_utc': datetime.now(timezone.utc).isoformat(),
             'platform': platform.platform(), 'python': sys.version, 'executable': sys.executable,
             'memory': memory(), 'disk_free_bytes': disk.free,

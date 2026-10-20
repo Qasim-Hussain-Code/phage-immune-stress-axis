@@ -1,7 +1,9 @@
 import csv
 import hashlib
 import json
+import os
 from pathlib import Path
+import tempfile
 
 
 def digest(path):
@@ -14,8 +16,19 @@ def digest(path):
 
 def write_json(path, value):
     path = Path(path)
+    payload=json.dumps(value,indent=2,allow_nan=False)+'\n'
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, indent=2, allow_nan=False) + '\n', encoding='utf-8')
+    # A sibling temporary file keeps replacement on the same filesystem.
+    # Serialize first; a failed write/replacement must preserve the prior record.
+    descriptor,temporary=tempfile.mkstemp(prefix='.pisa-'+path.name+'-',suffix='.tmp',dir=path.parent)
+    try:
+        with os.fdopen(descriptor,'w',encoding='utf-8',newline=None) as stream:
+            stream.write(payload)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary,path)
+    finally:
+        Path(temporary).unlink(missing_ok=True)
 
 
 def write_csv(path, rows, fields=None):

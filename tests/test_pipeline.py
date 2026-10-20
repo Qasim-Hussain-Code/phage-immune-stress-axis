@@ -5,10 +5,32 @@ import tempfile
 import unittest
 from unittest.mock import patch
 from pisa.io import digest
-from pisa.pipeline import STAGES, DECLARED, cache_valid, fingerprint, upstream_hashes, validate_only
+from pisa.pipeline import STAGES, DECLARED, cache_valid, fingerprint, upstream_hashes, validate_only, source_contract, require_unchanged_source
 
 
 class PipelineContracts(unittest.TestCase):
+    def test_execution_contract_rejects_source_config_spec_and_runtime_changes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)
+            paths=[root/'src/example.py',root/'config.yaml',root/'requirements.txt',root/'data/manifests/inputs.json']
+            for path in paths:path.parent.mkdir(parents=True,exist_ok=True);path.write_text('original')
+            expected=source_contract(root,paths[1])
+            for path in paths:
+                with self.subTest(path=path.relative_to(root)):
+                    path.write_text('changed')
+                    with self.assertRaisesRegex(RuntimeError,'changed during execution'):
+                        require_unchanged_source(root,paths[1],expected)
+                    path.write_text('original')
+            with patch('pisa.pipeline.runtime_identity',return_value={'different':'runtime'}):
+                with self.assertRaises(RuntimeError):require_unchanged_source(root,paths[1],expected)
+
+    def test_expected_input_materialization_does_not_change_source_contract(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);config=root/'config.yaml';config.write_text('fixture')
+            expected=source_contract(root,config)
+            target=root/'data/raw/expected.txt';target.parent.mkdir(parents=True);target.write_text('frozen input')
+            require_unchanged_source(root,config,expected)
+
     def test_output_tamper_and_exact_output_set(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp); stage=STAGES[0]; name=DECLARED[stage][0]

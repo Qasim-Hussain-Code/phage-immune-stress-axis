@@ -38,9 +38,11 @@ Experiment 2 immune counts vary by endpoint:
 | Unstimulated splenocyte IL-6 | 9 | 6 | 9 |
 | ConA-stimulated splenocyte IL-6 | 10 | 8 | 9 |
 
-Flow cytometry methods describe blood before and 45 minutes after FST, using the blood-cell fraction remaining after plasma collection. Figure 4 describes assessment after 16 days of defeat. The experiment timeline places FST on study day 19; accumulated defeat sessions and study days should not be equated without evidence. Corticosterone sampling at -5, +15, +45, +90 minutes around FST is acute stress reactivity, not a prechronic-stress immune baseline. Terminal plasma and splenocyte assays were collected at euthanasia; splenocyte cultures include unstimulated, ConA and LPS conditions. Below-detection cytokine samples were excluded in the publication. Technical replicates were averaged per individual.
+Flow cytometry methods describe blood before and 45 minutes after FST, using the blood-cell fraction remaining after plasma collection. Figure 4 describes assessment after 16 days of defeat. The experiment timeline places FST on study day 19, and Sec18 places basal blood collection five minutes before FST. This follows 16 defeat sessions: ten before the day-11 behavioural test, three before the day-15 test, and three before day19. Terminal plasma and spleen collection occurred on day23, after the 19-session course. The biological blood and spleen collections are therefore four study days apart; source-animal linkage does not make these measurements contemporaneous. These are specimen collection days, not exact assay readout times: Sec20 describes cytometer analysis on the following day, and Sec21 describes 24-hour splenocyte culture after a 2.5-hour rest. Corticosterone sampling at -5, +15, +45, +90 minutes around FST is acute stress reactivity, not a prechronic-stress immune baseline. Splenocyte cultures include unstimulated, ConA and LPS conditions. Below-detection cytokine samples were excluded in the publication. Technical replicates were averaged per individual.
 
 Evidence: Sec18-Sec22, Sec32, Figure 4. Consequently, endpoint cytokines from plasma and stimulated splenocyte cultures must remain separate outcomes. Neither measures a repeated within-mouse immune response across the entire chronic stress period.
+
+The housing caveat is contrast-specific. Sec10 states that stress groups were singly housed after habituation, while control groups remained group housed. The stressed-versus-unstressed contrast therefore includes different stated housing regimes. FVT Stress versus Ctr Stress compares two singly housed groups; it does not have that same between-regime difference. Cage membership, allocation history, aggressor assignment and other shared exposures remain unavailable, so this distinction does not establish independent errors or permit a retrospective cage correction.
 
 ## Endpoint units and basal timing verified against the published table
 
@@ -74,6 +76,12 @@ Even if matching succeeds, distinguish viral within-mouse change from endpoint i
 
 The paper's restoration contrast averages Ctr and FVT Stress against Ctr Stress. A significant contrast does not establish both individual pairwise effects. For example, the Figure 4 stressed-versus-FVT pairwise P values are 0.106 for monocytes and 0.231 for neutrophils. CD62L-positive monocytes show little Ctr-versus-stressed difference (P=0.845), despite a strong FVT difference. A reanalysis should report the component contrasts and intervals, not assume a common restoration pattern. The publication used an FDR threshold of 0.2 in some analyses and excluded statistical outliers beyond 2.5 standard deviations (Sec32); these choices warrant explicit sensitivity analysis if raw source observations can be retrieved.
 
+## Caption multiplicity consistency outside the selected endpoint family
+
+The three selected endpoints reproduce all nine selected caption-statistic checks at the reported precision; that statement does not cover every Figure4 endpoint or the original full BH family. A separate documentary check found an unresolved inconsistency for unstimulated splenocyte IL-6, which is outside the current selected family and has not been added as a biological hypothesis test. Figure4 prints `t(22)=2.328` and `q=0.010`. The publisher [HTML](https://www.nature.com/articles/s41564-023-01564-y) and [PDF](https://www.nature.com/articles/s41564-023-01564-y.pdf) agree with frozen XML Fig4 on these values. The caption identifies q as the BH-FDR-adjusted P value, and Sec32 explicitly describes Benjamini-Hochberg adjustment of the calculated planned-contrast P values.
+
+A two-sided t reference gives P=0.02950474 from that printed t and df. Allowing the t statistic to round to 2.328 gives P approximately 0.02947341-0.02953610, still above 0.010. Ordinary BH adjusted P values cannot be smaller than the corresponding raw P value: each eligible step-up term is `m*p_(j)/j >= p_(i)` for `j >= i`, before the minimum and cap at one. Thus the printed t/P/q combination cannot be reconciled as ordinary BH adjustment of that same two-sided t test. A different underlying calculation, notation or reporting error cannot be distinguished without complete original outputs and family definitions. No correction or cause is assigned. This narrow consistency check is not a reconstruction of the original BH family and does not alter the selected nine caption matches or the present six-test family.
+
 ## Exact supplementary targets
 
 XML media elements identify the files, independently of inferred URL conventions:
@@ -81,6 +89,6 @@ XML media elements identify the files, independently of inferred URL conventions
 - `41564_2023_1564_MOESM1_ESM.pdf`: reporting summary.
 - `41564_2023_1564_MOESM2_ESM.xlsx`: supplementary source data.
 
-Publisher source-data URL: [supplementary XLSX](https://static-content.springer-cdn.com/esm/art%3A10.1038%2Fs41564-023-01564-y/MediaObjects/41564_2023_1564_MOESM2_ESM.xlsx).
+Publisher source-data URL: [supplementary XLSX](https://static-content.springer.com/esm/art%3A10.1038%2Fs41564-023-01564-y/MediaObjects/41564_2023_1564_MOESM2_ESM.xlsx).
 
 Other primary resources declared in the XML: [PRJEB69687](https://www.ebi.ac.uk/ena/browser/view/PRJEB69687) (16S), [PRJNA970614](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA970614) (metagenomics), [PRJEB67706](https://www.ebi.ac.uk/ena/browser/view/PRJEB67706) (transcriptomics), and [Zenodo 10144096](https://doi.org/10.5281/zenodo.10144096) (analysis scripts). An accession or filename establishes provenance, not availability of processed abundance values or cross-assay matching.
