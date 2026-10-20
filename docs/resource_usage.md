@@ -1,6 +1,6 @@
 # Resource usage
 
-Invocation: 20261020T121334137518Z_3504. Status: completed_restricted_analysis.
+Invocation: 20261020T121937262146Z_30176. Status: completed_restricted_analysis.
 Current measured platform: Windows-11-10.0.26300-SP0. Python: 3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)].
 Historical `environment_initial.json` records the original research execution only. It does not govern this checkout's resource budget. The ignored local persistent baseline is bound to checkout location, filesystem and host. A fresh checkout measures its own available space. Restarting the same checkout does not reset its budget.
 
@@ -8,15 +8,15 @@ Historical `environment_initial.json` records the original research execution on
 |---|---:|---|
 | Local baseline disk free | 14208532480 | 14208.532 MB / 14.208532 GB |
 | Conservative total-project storage ceiling | 10000000000 | 10000.000 MB / 10.000000 GB |
-| Maximum measured native per-process RSS this invocation | 218083328 | 218.083 MB / 0.218083 GB |
-| Maximum sampled concurrent process-family RSS | 322330624 | 322.331 MB / 0.322331 GB |
-| Project snapshot including Git | 187131006 | 187.131 MB / 0.187131 GB |
-| Project snapshot excluding Git | 184964706 | 184.965 MB / 0.184965 GB |
-| Disk free at snapshot | 13669621760 | 13669.622 MB / 13.669622 GB |
-| Available system memory at snapshot | 2298576896 | 2298.577 MB / 2.298577 GB |
+| Maximum measured native per-process RSS this invocation | 218509312 | 218.509 MB / 0.218509 GB |
+| Maximum sampled concurrent process-family RSS | 322727936 | 322.728 MB / 0.322728 GB |
+| Project snapshot including Git | 298880003 | 298.880 MB / 0.298880 GB |
+| Project snapshot excluding Git | 296504512 | 296.505 MB / 0.296505 GB |
+| Disk free at snapshot | 13514125312 | 13514.125 MB / 13.514125 GB |
+| Available system memory at snapshot | 1893007360 | 1893.007 MB / 1.893007 GB |
 
 Configured minimum free disk: 4000000000 bytes. Per-process ceiling: 1000000000 bytes. Aggregate process-family ceiling: 1000000000 bytes. Available-memory floor: 100000000 bytes.
-Concurrent-memory samples: 139; maximum unreadable or already-exited processes in one sample: 1.
+Concurrent-memory samples: 132; maximum unreadable or already-exited processes in one sample: 0.
 The aggregate statistic sums simultaneous current RSS across runner descendants. It is sampled at approximately 0.1-second intervals during child execution and is not an exact whole-machine peak or an operating-system allocation limit. Brief processes or allocation spikes between polls may be missed. Native per-process peaks are reported separately; historical peaks from resumed stages are not counted as newly measured current-run peaks.
 The storage cap conservatively counts the entire checkout, including existing inputs, Git, environments, caches and temporary products inside it. Free disk is checked independently. Pre-existing software outside the checkout is not included in project bytes; installing a fresh environment requires a separate disk/RAM check. No raw sequencing data or reference database is acquired by the selected workflow.
 
@@ -46,7 +46,7 @@ The storage cap conservatively counts the entire checkout, including existing in
 
 ## Invocation status
 
-Invocation: 20261020T121334137518Z_3504. Mode: full. Status: completed_restricted_analysis.
+Invocation: 20261020T121937262146Z_30176. Mode: full. Status: completed_restricted_analysis.
 10 stages executed and 0 stages resumed after verifying their declared outputs and upstream dependencies.
 All selected restricted-workflow stages completed or were verified from cache. Scientifically excluded analyses remain exclusions.
 Validation (executed in this invocation): 131 tests, 0 failures, 0 errors, 6 skipped.

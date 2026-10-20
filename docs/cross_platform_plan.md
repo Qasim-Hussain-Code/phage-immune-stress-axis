@@ -183,7 +183,7 @@ rules above, including the exact-field policy and numeric tolerances, are
 unchanged.
 
 The next attempt stages a capped, hash-verified archive through standard input
-into a uniquely named `/tmp/phage-immune-stress-axis_validation/run_*` directory
+into a uniquely named `/var/tmp/phage-immune-stress-axis_validation/run_*` directory
 in the existing distribution. Both the isolated environment and committed-source
 checkout use this native temporary filesystem. No system package or WSL setting
 changes. The additional temporary files require an explicitly monitored 1.5 GB
@@ -204,3 +204,10 @@ already expanded WSL virtual-disk file; report observed host free space rather
 than claiming that all physical space was returned. These operational changes
 are recorded before the first full Linux analysis, not selected after viewing
 its scientific results.
+
+An initial native `/tmp` preflight found a 3.106 GB RAM-backed filesystem and
+refused execution before extraction or installation. The actual disk-backed
+`/var/tmp` filesystem has separately measured capacity; the final attempt uses
+that location. A concurrent Windows replay also stopped at its available-memory
+floor. Subsequent replays run serially. Neither refused attempt is a successful
+scientific execution, and neither changes the comparison rules.

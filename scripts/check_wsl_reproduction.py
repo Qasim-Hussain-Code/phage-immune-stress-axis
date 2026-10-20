@@ -1,4 +1,4 @@
-"""Bounded native-/tmp reproduction in an existing Ubuntu WSL distribution.
+"""Bounded native-disk reproduction in an existing Ubuntu WSL distribution.
 
 Uses previously verified offline wheels; never installs a distribution or system
 package. Windows monitors physical disk/RAM while Linux counts native files/RSS.
@@ -32,7 +32,7 @@ def cancel_native(distribution,native):
     """Signal only this marked native run; PID reuse is checked with pidfds."""
     program=r'''
 import pathlib,sys,os,json,signal,select,time
-p=pathlib.Path(sys.argv[1]);b=pathlib.Path('/tmp/phage-immune-stress-axis_validation')
+p=pathlib.Path(sys.argv[1]);b=pathlib.Path('/var/tmp/phage-immune-stress-axis_validation')
 assert p.parent==b and p.name.startswith('run_native_')
 if b.exists():assert not b.is_symlink() and b.stat().st_uid==os.getuid()
 b.mkdir(mode=0o700,exist_ok=True)
@@ -83,7 +83,7 @@ def main():
     guard=RecordingGuard(Guard(root,config));contract=source_contract(root,root/'config/analysis.yaml')
     now=datetime.now(timezone.utc);identifier='run_native_'+now.strftime('%Y%m%dT%H%M%S%fZ')
     disposable=root/'.cache/reproduction'/identifier
-    native='/tmp/phage-immune-stress-axis_validation/'+identifier
+    native='/var/tmp/phage-immune-stress-axis_validation/'+identifier
     report={'schema_version':1,'started_utc':now.isoformat(),'status':'running',
         'scope':'same physical host, independently installed Ubuntu WSL environment, fresh committed-source offline execution',
         'distribution':args.distribution,'native_directory':native,'native_storage_reservation_bytes':RESERVATION,
@@ -202,7 +202,7 @@ def main():
     finally:
         ctypes.windll.kernel32.SetThreadExecutionState(0x80000000)
         if guest_complete and report.get('status') in ('passed','needs_visual_review'):
-            cleanup="import pathlib,json,shutil,sys,os; p=pathlib.Path(sys.argv[1]); b=pathlib.Path('/tmp/phage-immune-stress-axis_validation'); assert p.parent==b and p.name.startswith('run_native_') and p.resolve().parent==b.resolve() and p.stat().st_uid==os.getuid(); m=json.loads((p/'.pisa_native_validation_owned').read_text()); assert m['uid']==os.getuid(); shutil.rmtree(p); print('removed')"
+            cleanup="import pathlib,json,shutil,sys,os; p=pathlib.Path(sys.argv[1]); b=pathlib.Path('/var/tmp/phage-immune-stress-axis_validation'); assert p.parent==b and p.name.startswith('run_native_') and p.resolve().parent==b.resolve() and p.stat().st_uid==os.getuid(); m=json.loads((p/'.pisa_native_validation_owned').read_text()); assert m['uid']==os.getuid(); shutil.rmtree(p); print('removed')"
             try:
                 result=subprocess.run(['wsl.exe','--distribution',args.distribution,'--cd','/','--exec','/usr/bin/python3','-I','-B','-c',cleanup,native],capture_output=True,text=True,timeout=30)
                 if result.returncode or result.stdout.strip()!='removed':raise RuntimeError(result.stderr[-2000:] or 'Missing cleanup acknowledgement')

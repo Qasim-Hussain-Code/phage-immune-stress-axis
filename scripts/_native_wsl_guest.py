@@ -1,7 +1,7 @@
 """Offline native-WSL validation worker; stdin bootstrap tar, stdout result tar.
 
 The host owns the physical Windows disk/RAM guard and source-commit selection.
-This worker writes only its fresh, marked /tmp run directory and leaves it for
+This worker writes only its fresh, marked /var/tmp run directory and leaves it for
 host verification/cleanup. It must be invoked with guest CWD / and inline code.
 """
 from __future__ import annotations
@@ -28,7 +28,7 @@ PREPARATION_CAP = 1_500_000_000
 BOOTSTRAP_CAP = 125_000_000
 SOURCE_CAP = 50_000_000
 ARTIFACT_CAP = 50_000_000
-PARENT = Path('/tmp/phage-immune-stress-axis_validation')
+PARENT = Path('/var/tmp/phage-immune-stress-axis_validation')
 
 
 def sha(path):

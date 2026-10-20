@@ -71,7 +71,7 @@ A separate synthetic benchmark completed 20,000 replicates in each of four known
 
 ## Invocation status
 
-Invocation: 20261020T121334137518Z_3504. Mode: full. Status: completed_restricted_analysis.
+Invocation: 20261020T121937262146Z_30176. Mode: full. Status: completed_restricted_analysis.
 10 stages executed and 0 stages resumed after verifying their declared outputs and upstream dependencies.
 All selected restricted-workflow stages completed or were verified from cache. Scientifically excluded analyses remain exclusions.
 Validation (executed in this invocation): 131 tests, 0 failures, 0 errors, 6 skipped.

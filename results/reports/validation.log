@@ -132,6 +132,6 @@ test_traversal_absolute_and_alternate_separator_paths_are_rejected (test_wsl_arc
 test_verify_file_requires_exact_size_hash_and_safe_path (test_wsl_archive.NativeArchiveContracts.test_verify_file_requires_exact_size_hash_and_safe_path) ... ok
 
 ----------------------------------------------------------------------
-Ran 131 tests in 21.090s
+Ran 131 tests in 20.840s
 
 OK (skipped=6)
