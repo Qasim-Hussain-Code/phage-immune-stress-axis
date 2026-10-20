@@ -33,3 +33,17 @@ def write_csv(path, rows, fields=None):
 def read_csv(path, delimiter=','):
     with Path(path).open(encoding='utf-8-sig', newline='') as stream:
         return list(csv.DictReader(stream, delimiter=delimiter))
+
+
+def code_digest(root):
+    """Hash executable source and software fixtures, excluding bytecode caches."""
+    root=Path(root)
+    checksum=hashlib.sha256()
+    for directory in ['src','scripts','tests']:
+        for path in sorted((root/directory).rglob('*')):
+            if not path.is_file() or '__pycache__' in path.parts or path.suffix in ['.pyc','.pyo']:
+                continue
+            checksum.update(path.relative_to(root).as_posix().encode('utf-8'))
+            checksum.update(b'\0')
+            checksum.update(digest(path).encode('ascii'))
+    return checksum.hexdigest()

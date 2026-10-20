@@ -5,6 +5,12 @@ initial viromes are pooled and the archived scripts reference processed matrices
 not supplied in that archive. It is a focused feasibility screen, not a
 systematic review or proof that no suitable dataset exists.
 
+The subsequent [full-methods and actual-supplement audit](alternative_dataset_audit.md)
+verifies Choi, Duan and Li in more detail and adds the unresolved Chen 2026
+prenatal-stress lead. It also records rejected content-mismatched mirror files,
+correct recovered supplements, and tracked source provenance. Use that audit
+for the current file-availability assessment.
+
 ## Inclusion criteria
 
 A replacement would need a relevant stress context, measured fecal viromes and
@@ -53,3 +59,19 @@ new linkage audit before association analysis is enabled.
 
 No raw read archives, viral reference databases, or candidate alternative data
 packages were downloaded for this screen. No authors were contacted.
+
+## Subsequent bounded checks
+
+The initial focused screen above is supplemented by the
+[expanded primary-data search](processed_data_search.md), which records 52
+saved evidence objects without recovering the Ritz study's processed matrices
+or cross-assay map. Those are retrieval records, not 52 independent biological
+datasets or evidence that every possible public location was checked.
+
+A relevant newer [prenatal-stress candidate](new_prenatal_stress_candidate.md)
+remains unresolved. Its abstract and accessible publisher preview mention
+virome/immune work and a request-based availability route, but do not verify
+public processed recipient profiles with individually linked immune outcomes.
+Access failures do not establish absence or scientific ineligibility. No data
+from that candidate enter the present biological analysis, and the existing
+feasibility gate is unchanged.

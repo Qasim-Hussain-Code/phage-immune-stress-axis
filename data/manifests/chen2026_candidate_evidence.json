@@ -1,0 +1,72 @@
+{
+  "audit_date_local": "2026-10-20",
+  "doi": "10.1016/j.bbi.2026.106532",
+  "status": "public_processed_recipient_virome_immune_pairing_unresolved",
+  "publisher_preview": {
+    "url": "https://www.sciencedirect.com/science/article/pii/S0889159126002801",
+    "access_channel": "web search index of official publisher; direct article and abs requests returned 403 via web tool",
+    "search_queries": [
+      "\"Association between gut virome and prenatal stress-induced changes\" \"data\"",
+      "\"Association between gut virome and prenatal stress-induced changes\" \"Materials\""
+    ],
+    "observed_sections": [
+      "Animals",
+      "Prenatal stress alters both the gut virome and bacterial community in male offspring",
+      "Availability of data and materials"
+    ],
+    "data_availability_paraphrase": "Authors offer supporting data through corresponding author JuFang Huang on reasonable request.",
+    "methods_paraphrase": "Preview identifies mature nine-week pregnant nulliparous Sprague-Dawley rats and gestational restraint on days 16–20; shotgun profiling concerns adult offspring.",
+    "not_verified": [
+      "complete methods",
+      "supplement file listing or contents",
+      "animal-level processed recipient viral matrix",
+      "individual immune measurements",
+      "matching recipient IDs",
+      "longitudinal recipient sampling"
+    ]
+  },
+  "existing_epmc_snapshot": "data/raw/alternative_search/chen2026_epmc_search.json",
+  "existing_bioproject_snapshot": "data/raw/alternative_search/chen2026_bioproject_search.json",
+  "caveat": "Search omissions, closed-access metadata and fetch failures do not establish absence of a public deposit.",
+  "connector_results": [
+    {
+      "tool": "GitHub search",
+      "query": "\"10.1016/j.bbi.2026.106532\"",
+      "result": {
+        "status": "fulfilled",
+        "value": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Action completed."
+            }
+          ],
+          "structuredContent": {
+            "results": []
+          },
+          "isError": false
+        }
+      }
+    },
+    {
+      "tool": "GitHub search_repositories",
+      "query": "prenatal stress virome",
+      "result": {
+        "status": "fulfilled",
+        "value": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Action completed."
+            }
+          ],
+          "structuredContent": {
+            "archive_filter_applied": null,
+            "repositories": []
+          },
+          "isError": false
+        }
+      }
+    }
+  ]
+}

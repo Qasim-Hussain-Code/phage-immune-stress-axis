@@ -1,0 +1,74 @@
+{
+  "started_utc": "2026-10-20T06:25:23.057020+00:00",
+  "scope": "executed public command modes on this host",
+  "checks": [
+    {
+      "mode": "validation",
+      "returncode": 0,
+      "invocation_id": "20261020T062523205084Z_4488",
+      "status": "completed_validation",
+      "executed": 0,
+      "resumed": 0,
+      "stage_names": [],
+      "scientific_inputs_tables_figures_unchanged": true
+    },
+    {
+      "mode": "pilot",
+      "returncode": 0,
+      "invocation_id": "20261020T062538703457Z_43688",
+      "status": "completed_pilot",
+      "executed": 0,
+      "resumed": 6,
+      "stage_names": [
+        "01_audit_sources",
+        "02_fetch_data",
+        "03_validate_samples",
+        "04_virome_qc",
+        "05_stability_metrics",
+        "06_immune_phenotypes"
+      ]
+    },
+    {
+      "mode": "resume_full",
+      "returncode": 0,
+      "invocation_id": "20261020T062539844561Z_24800",
+      "status": "completed_restricted_analysis",
+      "executed": 2,
+      "resumed": 8,
+      "stage_names": [
+        "01_audit_sources",
+        "02_fetch_data",
+        "03_validate_samples",
+        "04_virome_qc",
+        "05_stability_metrics",
+        "06_immune_phenotypes",
+        "07_immune_associations",
+        "08_bacteriome_integration",
+        "09_robustness_checks",
+        "10_generate_figures"
+      ]
+    },
+    {
+      "mode": "resume_unchanged",
+      "returncode": 0,
+      "invocation_id": "20261020T062609235563Z_13584",
+      "status": "completed_restricted_analysis",
+      "executed": 0,
+      "resumed": 10,
+      "stage_names": [
+        "01_audit_sources",
+        "02_fetch_data",
+        "03_validate_samples",
+        "04_virome_qc",
+        "05_stability_metrics",
+        "06_immune_phenotypes",
+        "07_immune_associations",
+        "08_bacteriome_integration",
+        "09_robustness_checks",
+        "10_generate_figures"
+      ]
+    }
+  ],
+  "status": "passed",
+  "finished_utc": "2026-10-20T06:26:10.499437+00:00"
+}

@@ -2,7 +2,7 @@
 
 This is a public-data feasibility study with a separate exploratory reanalysis of immune source data. It does not test a measured phageome stability versus immune-response relationship.
 
-The source workbook contains 50 animal rows across two experiments. The principal archive contains 104 sequencing specimens: 77 individual recipient bulk metagenomes, 8 enriched pools and 19 inocula. The initial paper captions imply 12 pool-by-time enriched profiles across group and time; these must not be added to the second experiment as longitudinal animals. No processed viral abundance profile was retrieved and zero are matched to immune outcomes. This is missing evidence, not a biological null result.
+The source workbook contains 50 animal rows across two experiments. The principal archive contains 104 sequencing runs representing 104 specimens: 77 individual recipient bulk specimens, 8 enriched pools and 19 inocula. The initial paper captions imply 12 pool-by-time enriched profiles across group and time; these must not be added to the second experiment as longitudinal animals. No processed viral abundance profile was retrieved and zero are matched to immune outcomes. This is missing evidence, not a biological null result.
 
 ## Separate immune contrasts
 
@@ -32,7 +32,7 @@ No observed animal was deleted as an outlier. Each contrast was recomputed after
 
 Group differences in immune source data do not imply that a phage or viral feature caused those differences. The original article already reports related treatment-associated immune results. Different endpoints and contrasts need not support a uniform restoration interpretation. Nonsignificant contrasts are not evidence of equivalence or absence of an immune effect.
 
-CD62L-positive monocyte fraction is higher with FVT than stressed control, while its stress-control contrast is imprecise. This is not demonstrated reversal of a stress-induced deficit. TNF-alpha has a highly dispersed stressed group: its FVT comparison differs between raw-mean Welch and rank-based tests. These estimate different aspects of the distribution; neither result is hidden. The monocyte FVT comparison uses Welch P=0.01265 here, whereas the article Fig. 4 reports Tukey pairwise P=0.106. The present six-test family, unequal-variance tests, retained workbook observations and upstream exclusions differ from the original orthogonal-contrast/Tukey analysis. This numerical difference is method sensitivity, not independent replication or evidence that the original calculation was wrong.
+CD62L-positive monocyte fraction is higher with FVT than stressed control, while its stress-control contrast is imprecise. This is not demonstrated reversal of a stress-induced deficit. TNF-alpha has a highly dispersed stressed group: its FVT comparison differs between raw-mean Welch and rank-based tests. These estimate different aspects of the distribution; neither result is hidden. The monocyte FVT comparison differs from the article's Tukey pairwise P=0.106. The original three-group pooled residual variance and Tukey adjustment differ from the present unequal-variance pairwise test and six-test BH family. Those method choices explain the numerical difference without requiring different source observations. This comparison does not identify an error in the original calculation. Upstream censoring and exclusions remain a separate general limitation.
 
 Endpoint-specific n=9 FVT groups contain different animals: monocyte and CD62L outcomes lack source ID 31, while TNF-alpha lacks ID 11. Equal sample counts do not establish matched endpoints.
 
@@ -40,6 +40,18 @@ No viral composition, temporal stability, reference deviation, bacterial-adjuste
 
 ## Validation
 
-The executed validation suite ran 25 tests with 0 failures and 0 errors. Independent checks cover Welch inference, BH adjustment, community-distance identities and linkage invariants. Synthetic fixtures are software tests only.
+The executed validation suite ran 66 tests with 0 failures and 0 errors. Independent checks cover Welch inference, BH adjustment, community-distance identities and linkage invariants. Synthetic fixtures are software tests only.
 
 Source: [Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y). Exact values and missingness are in results/tables; raw observations retain source-cell locations.
+
+## Original-method reconstruction
+
+A separate reconstruction table contains 24 records: `results/tables/original_method_replication.csv`. It is distinct from the fixed Welch family. Its presence does not imply that every original outcome or the original full multiplicity family was reconstructed. 17 of 18 printed reference checks agree, including all 9 selected caption-statistic checks.
+
+The three-group pooled-variance calculation reproduces the selected planned t statistics and Tukey comparisons at the published precision. In particular, the monocyte FVT comparison is P=0.106409 under Tukey-Kramer, explaining the published P=0.106 without additional exclusions. One printed group mean remains discrepant: unstimulated FVT TNF-alpha averages 27.8492778 pg/mL in the workbook, which rounds directly to 27.8, versus 27.9 in Table 1b. The discrepancy is retained; no tolerance was widened and no value changed.
+
+The planned contrast compares the stressed mean with the average of Control and FVT Stress. It does not jointly establish a stress effect and its reversal. Tukey intervals cover three pairwise comparisons within one endpoint under a common-variance model; the original across-outcome BH family remains unreconstructed.
+
+## Conditional software calibration
+
+A separate synthetic benchmark completed 20,000 replicates in each of four known zero-mean scenarios, evaluating variance heterogeneity, skew and artificial clustering. It reads no biological observations. Its Monte Carlo uncertainty is simulation uncertainty, not mouse-level uncertainty. See `results/reports/software_calibration.md` and `results/tables/software_calibration.csv`. These checks cannot infer missing cage assignments or calibrate the actual experiment under an unknown dependence structure.

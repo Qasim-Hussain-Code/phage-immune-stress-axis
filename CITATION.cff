@@ -1,10 +1,24 @@
 cff-version: 1.2.0
-message: "Please cite the original experimental study and this reanalysis when using these materials."
+message: "Please cite Ritz et al. (2024), the original datasets, and this local research software when using these materials. No public project release is claimed."
 title: "Gut phageome stability and stress-related immune responses: public-data feasibility and restricted immune reanalysis"
 type: software
 authors:
   - family-names: Hussain
     given-names: Qasim
-version: 0.1.0
+version: 0.2.0
 date-released: 2026-10-20
 license: MIT
+abstract: >-
+  Public-data feasibility and sample-linkage audit with a restricted exploratory
+  immune reanalysis, selected original-method replication, and explicitly
+  synthetic statistical software checks. The retrieved inputs do not support a
+  measured phageome stability versus immune association. Project authorship is
+  Qasim Hussain alone; upstream experimental data retain their original credit
+  and licenses.
+keywords:
+  - bacteriophage
+  - virome
+  - stress
+  - immune phenotype
+  - data provenance
+  - reproducible research

@@ -53,14 +53,24 @@ reporting contributions, not evidence that an ecological mechanism has been
 identified. The endpoints were chosen after reading published results and
 before computing these contrasts. The reanalysis is exploratory.
 
+An independent original-method reconstruction adds a numerical provenance
+check. All nine selected caption t/P checks match, and 17 of 18 combined caption
+and group-summary checks match. FVT TNF-alpha has source mean 27.8492778,
+rounding directly to 27.8, versus 27.9 in the original table image; this remains
+an explicit minor discrepancy. The original across-outcome BH family is not
+claimed to be reproduced. A synthetic calibration module adds a conditional
+software benchmark, not another biological result. Its four 20,000-replicate
+scenarios completed with no observed study outcomes read by the generator.
+
 ## Contradictions retained
 
 The FVT versus stressed-control monocyte comparison gives Welch P = 0.01265 and
 BH q = 0.03794 in this reanalysis, whereas the original publication reports
-Tukey pairwise P = 0.106. These are different tests and correction schemes.
-Upstream assay exclusions and the original analysis population are not fully
-resolved. The difference must remain visible; it does not establish that the
-published result was wrong.
+Tukey pairwise P = 0.106. Reconstructing the original three-group pooled variance
+and Tukey-Kramer calculation gives P = 0.106409 from the same source values.
+These method choices explain the numerical difference; no extra deletions are
+needed. Neither result is hidden or promoted as a correction of the original
+research. Upstream missingness remains a separate limitation.
 
 CD62L-positive monocytes have a strong FVT-associated difference, while the
 stressed-versus-control contrast does not establish a preceding deficit. Calling
@@ -82,6 +92,13 @@ into mice. No screened alternative was verified to supply the required relevant
 stress design, public processed recipient viromes, measured immune outcomes and
 explicit individual linkage. This was not a systematic review and does not
 support a priority claim or proof that no suitable dataset exists.
+
+The [expanded primary-data search](processed_data_search.md) adds 52 saved
+evidence records without recovering the missing matrices or crosswalk.
+A newer [prenatal-stress candidate](new_prenatal_stress_candidate.md) remains
+unresolved because its available abstract/preview does not verify accessible
+processed recipient viromes linked to individual immune assays. That candidate
+is not silently substituted or declared absent on the basis of access failures.
 
 The defensible conclusion is that this project identifies what the retrieved
 public inputs can support and what would be needed for the proposed integrated

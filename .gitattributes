@@ -5,3 +5,8 @@
 # Frozen public inputs must retain exact byte-level checksums on every OS.
 data/raw/** -text
 data/manifests/zenodo_release.json -text
+# Audit evidence inventories carry byte-level hashes of derived snapshots.
+data/manifests/processed_search_* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/manifests/alternative_search_* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/manifests/alternative_supplement_* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/manifests/chen2026_* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

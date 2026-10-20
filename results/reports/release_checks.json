@@ -1,11 +1,17 @@
 {
   "status": "passed",
+  "git_scope": "working",
   "frozen_inputs": 10,
+  "phenotype_cells_verified": 1240,
   "contrasts": 6,
-  "figures": 4,
+  "figures": 5,
   "matched_virome_immune": 0,
-  "tracked_files_scanned": 104,
+  "tests_run": 66,
+  "code_sha256": "3d9e0910a9d2b49c021edb0e8954fafd2ed4eefca85762d85670f60b06809a6b",
+  "release_payload_files_verified": 0,
+  "files_scanned": 153,
   "large_files_over_5MB": [],
   "credential_pattern_matches": [],
-  "scope": "common credential patterns, not a guarantee of complete secret detection"
+  "figure_review": "previous_review_matches_current_files",
+  "scope": "Common credential patterns; not a guarantee of complete secret detection"
 }

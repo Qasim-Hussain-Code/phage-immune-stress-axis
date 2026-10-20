@@ -9,6 +9,13 @@ source workbook, Zenodo code release and three sequencing accession manifests
 were audited. Small frozen inputs are accompanied by URLs and SHA-256 digests.
 No raw sequencing reads, assemblies or viral reference databases were acquired.
 The alternative dataset screen retained the psychosocial-stress question.
+The expanded search records 52 saved evidence responses or representations,
+including the complete supplementary package and scoped archive/repository
+queries. It recovered no missing community matrix or verified crosswalk. The
+prenatal-stress candidate remains unresolved rather than classified from its
+abstract as an analysis-ready substitute. These are bounded retrieval findings;
+see [processed_data_search.md](processed_data_search.md) and
+[new_prenatal_stress_candidate.md](new_prenatal_stress_candidate.md).
 
 The [feasibility gate](../results/reports/data_feasibility.md) excluded viral
 community and association analyses because the processed matrices and animal
@@ -71,6 +78,53 @@ tests are not interpreted as equivalence. A posterior observed-power estimate
 would merely restate the P value and was not used; small-sample precision is
 shown through intervals and influence diagnostics instead.
 
+## Separate original-method reconstruction
+
+The same observed study II values are additionally summarized under the
+original three-group common-variance model. The pooled residual sum of squares
+and degrees of freedom determine the planned contrast with coefficients
+`[-0.5, 1, -0.5]` in Ctr, Ctr Stress, FVT Stress order. All three Tukey-Kramer
+pairs are exported, with finite-df studentized-range probabilities and
+simultaneous 95% intervals within each endpoint. Planned-contrast intervals are
+pointwise. The original across-outcome BH family is not reconstructed.
+
+This layer reproduces all nine selected caption statistics at reported
+precision, including monocyte FVT Tukey P=0.106409 versus the present Welch
+P=0.012645. Pooled variance and Tukey multiplicity explain that difference from
+the same observations; extra exclusions are unnecessary. It does not replace
+the fixed six Welch tests or select a preferred significant result.
+
+Eight of nine group-summary checks match the published table. FVT unstimulated
+TNF-alpha has source mean 27.8492778 pg/mL, directly rounding to 27.8, versus
+the visibly printed 27.9. That discrepancy is retained. The combined check
+count is 17 matches out of 18, not complete agreement of all table cells.
+
+The paper's label of orthogonal contrasts does not establish independence of
+all contrast estimates with unequal group sizes. Under the common-variance
+model, covariance of contrasts c and d is `MSE * sum(c_i*d_i/n_i)`; unweighted
+coefficient orthogonality is insufficient. Complete original SPSS syntax is
+unavailable. See [original_analysis_review.md](original_analysis_review.md).
+
+## Synthetic software calibration
+
+The expanded full pipeline ran a separate 20,000-replicate
+all-null benchmark in each of four fixed scenarios: independent equal-variance
+Gaussian, Gaussian variances 4/1/1, centered lognormal and artificial Gaussian
+clusters with ICC 0.5. Three independently generated endpoints use group sizes
+10/10/9 and jointly retain the two overlapping adjacent contrasts per endpoint.
+The six P values enter one BH family. Reported events are per-test false
+positives, pointwise Welch coverage, all-null family rejection and three-pair
+Tukey interval coverage. Wilson intervals quantify Monte Carlo error only.
+
+No actual outcome or cage label is read by that module. Its all-group cluster
+assignment is a generic assumption stress test; it does not describe the
+original singly housed stressed groups or estimate their ICC. Default batches
+are bounded at 500, seeded scenario streams are batch-invariant under the
+recorded NumPy version, and raw simulated observations are not saved. The full
+benchmark completed with seed 20261020 in all four scenarios; its labeled
+table and report record that execution separately from quick unit fixtures. See
+[calibration_design.md](calibration_design.md).
+
 ## Excluded community inference and controls
 
 No viral composition, temporal distance, reference centroid, dispersion,
@@ -95,7 +149,12 @@ Pilot, full, offline, resume and validation-only modes are implemented.
 Fingerprinting covers configuration, code, test code and frozen inputs;
 resumption also checks declared output hashes. Streaming fetches reject
 over-cap content and changed hashes, with partial files removed. Native child
-RSS and disk usage are monitored during execution. All reported figures are
-derived from actual source rows or the availability inventory. Both PNG and
-vector PDF outputs are inspected for layout; machine-readable figure tables
-retain underlying observations and estimators.
+RSS, concurrent descendant RSS, available memory and disk usage are monitored
+during execution. Storage uses a host/checkout-bound persistent local baseline;
+historical environment records do not set another invocation's allowance.
+Resumed results are distinguished from newly measured stage peaks. The
+supported five-figure set uses actual source rows, availability inventories or
+the original-method reconstruction. It does not plot synthetic calibration as
+biology. PNG/PDF files and their visual review are verified separately;
+machine-readable tables retain underlying observations and estimators. A prior
+review establishes current QA only when the recorded file hashes still match.

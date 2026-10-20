@@ -32,7 +32,15 @@ not another uploaded file in the source release. The supplementary historical
 including PowerShell-serialized JSON and derived extracts; the execution
 manifest separately identifies the required reproducible inputs.
 
-Only small public files are tracked, with the largest approximately 0.5 MB.
+The core reproducible input collection contains small public files, with its
+largest original file approximately 0.5 MB. A separate expanded-search evidence
+manifest records 52 saved responses or connector representations and a
+32-member supplementary inventory. The 6.44 MB Europe PMC supplementary ZIP
+and its extracted evidence are ignored audit artifacts, not new individual
+community data. Its XLSX is byte-identical to the frozen source workbook.
+These search manifests are distinct from `inputs.json`; see
+`processed_data_search.md` for URLs, checksums, scope and access failures.
+
 Original workbook content is never edited. Source-local keys and cell locations
 make the numerical path auditable. Processed tables and figures are adaptations
 of the original source data and are identified as this reanalysis, without

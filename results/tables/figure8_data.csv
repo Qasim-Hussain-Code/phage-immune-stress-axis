@@ -1,0 +1,13 @@
+endpoint,contrast,method,mean_difference,ci_low,ci_high,p_value,interval_scope,effect_units
+ly6chi_monocytes,ctr_stress_minus_ctr,Welch,-2.034038,-3.6832521890656276,-0.38482381093437223,0.01975083736497108,pointwise 95%,percentage points
+ly6chi_monocytes,ctr_stress_minus_ctr,Original Tukey-Kramer,-2.034038,-3.8143845950374136,-0.2536914049625858,0.02280378314588516,simultaneous 95% across 3 pairs within endpoint,percentage points
+ly6chi_monocytes,fvt_stress_minus_ctr_stress,Welch,1.5564908555555554,0.3892617749180052,2.7237199361931057,0.012645259712841694,pointwise 95%,percentage points
+ly6chi_monocytes,fvt_stress_minus_ctr_stress,Original Tukey-Kramer,1.5564908555555554,-0.27264139120890674,3.3856231023200176,0.1064091012840993,simultaneous 95% across 3 pairs within endpoint,percentage points
+ly6chi_monocytes_cd62,ctr_stress_minus_ctr,Welch,-1.7604410000000001,-7.5833483338032215,4.062466333803221,0.5264782461931485,pointwise 95%,percentage points
+ly6chi_monocytes_cd62,ctr_stress_minus_ctr,Original Tukey-Kramer,-1.7604410000000001,-9.642167301809092,6.121285301809092,0.8448303242032852,simultaneous 95% across 3 pairs within endpoint,percentage points
+ly6chi_monocytes_cd62,fvt_stress_minus_ctr_stress,Welch,15.873654888888886,7.7261456480864314,24.021164129691343,0.000799888717483191,pointwise 95%,percentage points
+ly6chi_monocytes_cd62,fvt_stress_minus_ctr_stress,Original Tukey-Kramer,15.873654888888886,7.7759508918154125,23.97135888596236,0.00013585316994979557,simultaneous 95% across 3 pairs within endpoint,percentage points
+tnfa_splenocyte_unstimulated,ctr_stress_minus_ctr,Welch,67.54311708333333,-26.175457395300228,161.26169156196687,0.13254914070072993,pointwise 95%,pg/mL
+tnfa_splenocyte_unstimulated,ctr_stress_minus_ctr,Original Tukey-Kramer,67.54311708333333,-8.154246887648867,143.24048105431552,0.08640501711736936,simultaneous 95% across 3 pairs within endpoint,pg/mL
+tnfa_splenocyte_unstimulated,fvt_stress_minus_ctr_stress,Welch,-74.13131597222221,-167.77561160385247,19.512979659408046,0.10343116536850168,pointwise 95%,pg/mL
+tnfa_splenocyte_unstimulated,fvt_stress_minus_ctr_stress,Original Tukey-Kramer,-74.13131597222221,-149.8286799432044,1.5660479987599842,0.05568679862818382,simultaneous 95% across 3 pairs within endpoint,pg/mL

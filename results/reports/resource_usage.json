@@ -1,11 +1,19 @@
 {
-  "project_bytes_including_git": 14221240,
-  "project_bytes_excluding_git": 12700926,
-  "disk_free_bytes": 8878968832,
-  "available_memory_bytes": 665944064,
-  "process_peak_rss_bytes": 32923648,
-  "operational_storage_budget_bytes": 4897466368,
-  "elapsed_seconds": 0.967,
-  "max_measured_stage_peak_rss_bytes": 186699776,
-  "scope": "maximum native process peak among stages, runner and validation child; not aggregate simultaneous system memory"
+  "project_bytes_including_git": 42402113,
+  "project_bytes_excluding_git": 40858396,
+  "disk_free_bytes": 13854711808,
+  "available_memory_bytes": 1081970688,
+  "process_peak_rss_bytes": 33783808,
+  "operational_storage_budget_bytes": 10000000000,
+  "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
+  "baseline_disk_free_bytes": 14208532480,
+  "baseline_project_bytes": 14354435,
+  "max_sampled_aggregate_rss_bytes": 0,
+  "max_observed_native_process_peak_rss_bytes": 31285248,
+  "aggregate_memory_samples": 0,
+  "max_unreadable_or_exited_processes_per_sample": 0,
+  "elapsed_seconds": 1.098,
+  "max_measured_stage_peak_rss_bytes": 33783808,
+  "invocation_id": "20261020T062609235563Z_13584",
+  "scope": "current invocation; native per-process peaks and separately sampled concurrent process-family RSS"
 }

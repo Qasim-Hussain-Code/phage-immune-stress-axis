@@ -17,8 +17,11 @@ def summarize(root,config):
        'This is a public-data feasibility study with a separate exploratory reanalysis of immune source data. '
        'It does not test a measured phageome stability versus immune-response relationship.','',
        f"The source workbook contains {summary['workbook_animal_rows']} animal rows across two experiments. "
-       f"The principal archive contains {summary['principal_run_count']} sequencing specimens: "
-       '77 individual recipient bulk metagenomes, 8 enriched pools and 19 inocula. '
+       f"The principal archive contains {summary['principal_run_count']} sequencing runs representing "
+       f"{summary['principal_specimen_count']} specimens: "
+       f"{summary['sequencing_category_counts'].get('individual_recipient_bulk_metagenome',0)} individual recipient bulk specimens, "
+       f"{summary['sequencing_category_counts'].get('pooled_fecal_virome',0)} enriched pools and "
+       f"{summary['sequencing_category_counts'].get('transplant_inoculum',0)} inocula. "
        'The initial paper captions imply 12 pool-by-time enriched profiles across group and time; '
        'these must not be added to the second experiment as longitudinal animals. '
        'No processed viral abundance profile was retrieved and zero are matched to immune outcomes. '
@@ -59,11 +62,12 @@ def summarize(root,config):
        'contrast is imprecise. This is not demonstrated reversal of a stress-induced deficit. TNF-alpha '
        'has a highly dispersed stressed group: its FVT comparison differs between raw-mean Welch and '
        'rank-based tests. These estimate different aspects of the distribution; neither result is hidden. '
-       'The monocyte FVT comparison uses Welch P=0.01265 here, whereas the article Fig. 4 reports '
-       'Tukey pairwise P=0.106. The present six-test family, unequal-variance tests, retained workbook '
-       'observations and upstream exclusions differ from the original orthogonal-contrast/Tukey analysis. '
-       'This numerical difference is method sensitivity, not independent replication or evidence that '
-       'the original calculation was wrong.','',
+       'The monocyte FVT comparison differs from the article\'s Tukey pairwise P=0.106. '
+       'The original three-group pooled residual variance and Tukey adjustment differ from the '
+       'present unequal-variance pairwise test and six-test BH family. Those method choices explain '
+       'the numerical difference without requiring different source observations. This comparison '
+       'does not identify an error in the original calculation. Upstream censoring and exclusions '
+       'remain a separate general limitation.','',
        'Endpoint-specific n=9 FVT groups contain different animals: monocyte and CD62L outcomes lack '
        'source ID 31, while TNF-alpha lacks ID 11. Equal sample counts do not establish matched endpoints.','',
        'No viral composition, temporal stability, reference deviation, bacterial-adjusted association or '
@@ -76,96 +80,179 @@ def summarize(root,config):
        'community-distance identities and linkage invariants. Synthetic fixtures are software tests only.','',
        'Source: [Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y). '
        'Exact values and missingness are in results/tables; raw observations retain source-cell locations.'])
+    replication=root/'results/tables/original_method_replication.csv'
+    if replication.is_file():
+        replication_rows=read_csv(replication)
+        if replication_rows:
+            checked=[r for r in replication_rows if r['published_agreement'] not in ['not_reported_for_this_statistic','']]
+            mismatches=[r for r in checked if r['published_agreement']=='mismatch']
+            captions=[r for r in checked if r['record_type']!='group']
+            lines.extend(['','## Original-method reconstruction','',
+                f'A separate reconstruction table contains {len(replication_rows)} records: '
+                '`results/tables/original_method_replication.csv`. It is distinct from the fixed '
+                'Welch family. Its presence does not imply that every original outcome or the '
+                'original full multiplicity family was reconstructed. '
+                f'{len(checked)-len(mismatches)} of {len(checked)} printed reference checks agree, '
+                f'including all {len(captions)} selected caption-statistic checks.', '',
+                'The three-group pooled-variance calculation reproduces the selected planned '
+                't statistics and Tukey comparisons at the published precision. In particular, '
+                'the monocyte FVT comparison is P=0.106409 under Tukey-Kramer, explaining '
+                'the published P=0.106 without additional exclusions. One printed group mean '
+                'remains discrepant: unstimulated FVT TNF-alpha averages 27.8492778 pg/mL '
+                'in the workbook, which rounds directly to 27.8, versus 27.9 in Table 1b. '
+                'The discrepancy is retained; no tolerance was widened and no value changed.', '',
+                'The planned contrast compares the stressed mean with the average of Control '
+                'and FVT Stress. It does not jointly establish a stress effect and its reversal. '
+                'Tukey intervals cover three pairwise comparisons within one endpoint under '
+                'a common-variance model; the original across-outcome BH family remains unreconstructed.'])
+    calibration=root/'results/reports/software_calibration.md'
+    if calibration.is_file():
+        calibration_rows=read_csv(root/'results/tables/software_calibration.csv')
+        expected=config.get('calibration',{}).get('replicates',20000)
+        if len(calibration_rows)!=64 or any(
+            r['purpose']!='synthetic_not_biological' or int(r['replicates'])!=expected
+            or int(r['seed'])!=config['seed'] for r in calibration_rows):
+            raise ValueError('Synthetic calibration output does not match the current configured run')
+        lines.extend(['','## Conditional software calibration','',
+            f'A separate synthetic benchmark completed {expected:,} replicates in each of four '
+            'known zero-mean scenarios, evaluating variance '
+            'heterogeneity, skew and artificial clustering. It reads no biological observations. '
+            'Its Monte Carlo uncertainty is simulation uncertainty, not mouse-level uncertainty. '
+            'See `results/reports/software_calibration.md` and '
+            '`results/tables/software_calibration.csv`. These checks cannot infer missing cage '
+            'assignments or calibrate the actual experiment under an unknown dependence structure.'])
     text='\n'.join(lines)+'\n'
     (root/'docs/results.md').write_text(text,encoding='utf-8')
-    (root/'results/reports/final_assessment.md').write_text(text,encoding='utf-8')
 
 
-def resource_report(root,usage):
-    initial=json.loads((root/'data/manifests/environment_initial.json').read_text())
-    current=root/'data/manifests/environment_local.json'
-    packages=json.loads(current.read_text())['packages'] if current.exists() else initial['packages']
-    text=f'''# Resource usage
 
-The measured analysis host is Windows 11, not the Linux Mint system specified
-in the project brief. Scripts are portable; Linux execution was not performed.
-The initial standard `python` on PATH was an unrelated Python 2 installation;
-execution used the explicitly located Python 3.14 interpreter. R 4.5.2 was found
-under Program Files but was not required. Conda/Mamba executables were not on
-PATH. Existing scientific libraries were used without reinstalling them.
+def figure_qa_status(root):
+    """A matching prior visual review is evidence; file existence alone is not."""
+    from .figure_qa import review_status
+    path=root/'data/manifests/figure_qa.json'
+    if not path.is_file():
+        return {'status':'unverified','reason':'No tracked visual-review manifest'}
+    try:
+        record=json.loads(path.read_text(encoding='utf-8'))
+        if record.get('schema_version')!=1 or not record.get('figures'):
+            raise ValueError('Empty or unsupported visual-review manifest')
+        verified=review_status(root)
+        if verified['status']!='previous_review_matches_current_files':
+            raise ValueError('Current PDF files do not all match the recorded passed visual review')
+        return {'status':'prior_visual_review_matches_current_files',
+                'reviewed_utc':record.get('reviewed_utc') or
+                    (str(record.get('review_date_taipei'))+' Taipei date; exact UTC time not recorded'
+                     if record.get('review_date_taipei') else 'exact date/time not recorded'),
+                'figures_verified':verified['matched']}
+    except (OSError,ValueError,KeyError,TypeError) as exc:
+        return {'status':'unverified','reason':str(exc)}
 
-## Measured values
 
-| Measurement | Bytes | Decimal MB/GB |
-|---|---:|---:|
-| Initial installed physical RAM | {initial['memory']['total_bytes']} | {initial['memory']['total_bytes']/1e9:.3f} GB |
-| Initial available physical RAM | {initial['memory']['available_bytes']} | {initial['memory']['available_bytes']/1e6:.1f} MB |
-| Initial disk free | {initial['disk_free_bytes']} | {initial['disk_free_bytes']/1e9:.3f} GB |
-| Operational new-storage ceiling | {usage['operational_storage_budget_bytes']} | {usage['operational_storage_budget_bytes']/1e9:.3f} GB |
-| Maximum measured process peak RSS | {usage['max_measured_stage_peak_rss_bytes']} | {usage['max_measured_stage_peak_rss_bytes']/1e6:.1f} MB |
-| Project snapshot including Git | {usage['project_bytes_including_git']} | {usage['project_bytes_including_git']/1e6:.2f} MB |
-| Project snapshot excluding Git | {usage['project_bytes_excluding_git']} | {usage['project_bytes_excluding_git']/1e6:.2f} MB |
-| Disk free at snapshot | {usage['disk_free_bytes']} | {usage['disk_free_bytes']/1e9:.3f} GB |
+def invocation_text(root, invocation):
+    """Only this invocation's evidence may establish its completion status."""
+    state=invocation.get('status','resource_snapshot_only')
+    stages=invocation.get('stages',[])
+    completed=sum(row.get('status')=='completed' for row in stages)
+    resumed=sum(row.get('status')=='resumed_verified' for row in stages)
+    lines=['## Invocation status','',
+        f"Invocation: {invocation.get('invocation_id','not recorded')}. Mode: {invocation.get('mode','not recorded')}. Status: {state}.",
+        f'{completed} stages executed and {resumed} stages resumed after verifying their declared outputs and upstream dependencies.']
+    if state=='completed_pilot':
+        lines.append('Pilot stops after phenotype preparation. Immune inference, robustness tests and figures were not executed by this pilot.')
+    elif state=='completed_validation':
+        lines.append('Validation checked cached frozen inputs and software tests. It did not download data, extract metadata, or execute scientific analysis stages.')
+    elif state=='completed_restricted_analysis':
+        lines.append('All selected restricted-workflow stages completed or were verified from cache. Scientifically excluded analyses remain exclusions.')
+    elif state in ('failed','interrupted'):
+        lines.append(f"This invocation did not complete. Failure stage: {invocation.get('failed_stage') or 'startup/validation'}. "
+                     f"{invocation.get('error_type','')}: {invocation.get('error','')}")
+    validation=invocation.get('validation')
+    validation_scope='executed in this invocation'
+    if validation is None:
+        item=next((row for row in stages if row.get('name')=='09_robustness_checks'),None)
+        if item:
+            validation=item.get('result',{})
+            validation_scope='verified cached stage result' if item.get('status')=='resumed_verified' else 'executed in this invocation'
+    if validation and validation.get('success'):
+        lines.append(f"Validation ({validation_scope}): {validation.get('tests_run',0)} tests, "
+                     f"{validation.get('failures',0)} failures, {validation.get('errors',0)} errors, "
+                     f"{validation.get('skipped',0)} skipped.")
+    else:
+        lines.append('No successful validation result is established by this invocation record.')
+    qa=figure_qa_status(root)
+    if qa['status']=='prior_visual_review_matches_current_files':
+        lines.append(f"Prior visual review dated {qa['reviewed_utc']} matches the current bytes of {qa['figures_verified']} PDF files. This is not a new visual review by this invocation.")
+    else:
+        lines.append('Current figure visual QA is unverified: '+qa['reason']+'.')
+    lines.extend(['','Publication status is documented separately in `docs/publication_status.md`; executing this pipeline does not establish a GitHub publication.',
+                  'Researcher and sole project author: Qasim Hussain. No causal phage mechanism or stability-immune association is established by this restricted analysis.'])
+    return '\n'.join(lines)+'\n'
 
-The RAM maximum includes native peaks from the runner, stages and validation
-child. It is the maximum of per-process measurements, not a measured sum of
-concurrent processes or whole-machine memory. Each active process is capped
-at 1 GB; runner monitors child native RSS and project storage every 0.1 seconds.
-Available system memory is checked with a 100 MB minimum; a low-memory failure
-records a resumable failure rather than silently increasing the budget.
-Resource snapshots precede later documentation/Git housekeeping and can be
-regenerated. Logs and native measurements are in results/reports.
 
-## Footprint decisions
-
-The initial selected scientific inputs and outputs were estimated below 25 MB.
-The core run used about 3 MB before optional PDF QA installation. Public raw
-PRJNA970614 FASTQs total 262,211,457,238 compressed bytes; transcriptomic FASTQs
-total 320,396,480,444 bytes. Neither was fetched. The 16S archive totals
-1,731,077,490 bytes compressed, but reprocessing would not resolve missing viral
-matrices and was not selected. No MetaPhage pipeline, GPU model, classifier
-database, cloud account or paid compute service was installed or used.
-
-PDF rendering required optional workspace-only pypdfium2: a verified 3.95 MB
-wheel and about 8.09 MB installed files, plus small metadata and rendered PNGs.
-This is documented in pdf_qa.md. These caches count toward the guard's budget
-but are excluded from Git. A fresh scientific virtual environment is not part
-of the measured execution; installing one would require a separate budget
-check and several hundred MB depending on platform.
-
-## Observed library versions
-
-'''
-    text+='\n'.join(f'- {name}: {version}' for name,version in packages.items() if version)+'\n'
+def resource_report(root,usage,invocation=None,config=None):
+    """Report local measurements without rewriting a cached scientific artifact."""
+    invocation=invocation or {'status':'resource_snapshot_only'}
+    config=config or {'resources':{}}
+    resources=config.get('resources',{})
+    current_path=root/'data/manifests/environment_local.json'
+    current=json.loads(current_path.read_text(encoding='utf-8')) if current_path.is_file() else {}
+    samples=usage.get('aggregate_memory_samples',0)
+    rows=[
+        ('Local baseline disk free',usage.get('baseline_disk_free_bytes')),
+        ('Conservative total-project storage ceiling',usage.get('operational_storage_budget_bytes')),
+        ('Maximum measured native per-process RSS this invocation',usage.get('max_measured_stage_peak_rss_bytes')),
+        ('Maximum sampled concurrent process-family RSS',usage.get('max_sampled_aggregate_rss_bytes') if samples else None),
+        ('Project snapshot including Git',usage.get('project_bytes_including_git')),
+        ('Project snapshot excluding Git',usage.get('project_bytes_excluding_git')),
+        ('Disk free at snapshot',usage.get('disk_free_bytes')),
+        ('Available system memory at snapshot',usage.get('available_memory_bytes')),
+    ]
+    lines=['# Resource usage','',
+        f"Invocation: {invocation.get('invocation_id','not recorded')}. Status: {invocation.get('status','not recorded')}.",
+        f"Current measured platform: {current.get('platform','not recorded')}. "
+        f"Python: {str(current.get('python','not recorded')).splitlines()[0]}.",
+        'Historical `environment_initial.json` records the original research execution only. '
+        'It does not govern this checkout\'s resource budget. The ignored local persistent '
+        'baseline is bound to checkout location, filesystem and host. A fresh checkout measures '
+        'its own available space. Restarting the same checkout does not reset its budget.','',
+        '| Measurement | Bytes | Decimal MB/GB |','|---|---:|---|']
+    for label,value in rows:
+        lines.append(f'| {label} | {value if value is not None else "not measured"} | '
+                     +(f'{value/1e6:.3f} MB / {value/1e9:.6f} GB |' if value is not None else 'not measured |'))
+    lines.extend(['',
+        f"Configured minimum free disk: {resources.get('disk_reserve_bytes','not recorded')} bytes. "
+        f"Per-process ceiling: {resources.get('max_process_rss_bytes','not recorded')} bytes. "
+        f"Aggregate process-family ceiling: {resources.get('max_aggregate_rss_bytes',resources.get('max_process_rss_bytes','not recorded'))} bytes. "
+        f"Available-memory floor: {resources.get('min_available_memory_bytes','not recorded')} bytes.",
+        f'Concurrent-memory samples: {samples}; maximum unreadable or already-exited processes in one sample: '
+        f"{usage.get('max_unreadable_or_exited_processes_per_sample','not recorded')}.",
+        'The aggregate statistic sums simultaneous current RSS across runner descendants. It is '
+        'sampled at approximately 0.1-second intervals during child execution and is not an exact '
+        'whole-machine peak or an operating-system allocation limit. Brief processes or allocation '
+        'spikes between polls may be missed. Native per-process peaks are reported separately; '
+        'historical peaks from resumed stages are not counted as newly measured current-run peaks.',
+        'The storage cap conservatively counts the entire checkout, including existing inputs, '
+        'Git, environments, caches and temporary products inside it. Free disk is checked '
+        'independently. Pre-existing software outside the checkout is not included in project '
+        'bytes; installing a fresh environment requires a separate disk/RAM check. No raw '
+        'sequencing data or reference database is acquired by the selected workflow.','',
+        '## Observed local package versions',''])
+    lines.extend(f'- {name}: {version}' for name,version in current.get('packages',{}).items() if version)
+    if usage.get('snapshot_error'):
+        lines.extend(['','Final resource check did not pass: '+usage['snapshot_error']])
+    text='\n'.join(lines)+'\n\n'+invocation_text(root,invocation)
+    (root/'docs').mkdir(parents=True,exist_ok=True)
+    (root/'results/reports').mkdir(parents=True,exist_ok=True)
     (root/'docs/resource_usage.md').write_text(text,encoding='utf-8')
-    results=(root/'docs/results.md')
-    if results.exists():
-        technical=results.read_text(encoding='utf-8')
-        technical+=f'''\n## Computational completion and publication\n\n
-The full restricted ten-stage workflow, pilot, offline execution and verified
-resume completed. The validation-only interface also passed the 25-test suite.
-Four actual-data or availability figures were generated as PNG and vector PDF;
-their final exported PDF pages passed visual rendering checks documented in
-docs/pdf_qa.md. Excluded community analyses were reported as exclusions.
-
-Maximum measured per-process peak RSS in the recorded workflow was
-{usage['max_measured_stage_peak_rss_bytes']:,} bytes
-({usage['max_measured_stage_peak_rss_bytes']/1e6:.1f} MB), including validation
-process measurements. This is not a measured aggregate system peak. The
-project snapshot, including Git and optional QA software/cache, was
-{usage['project_bytes_including_git']:,} bytes
-({usage['project_bytes_including_git']/1e6:.2f} MB); disk free was
-{usage['disk_free_bytes']/1e9:.3f} GB. The operational ceiling was
-{usage['operational_storage_budget_bytes']/1e9:.3f} GB with a 4 GB reserve.
-Later Git bookkeeping can slightly change storage without changing results.
-
-Researcher and sole project author: Qasim Hussain. The local Git repository is
-prepared for review. The intended URL is
-https://github.com/Qasim-Hussain-Code/phage-immune-stress-axis, but it has not
-been verified as a published repository: connected access returned 404 and the
-local GitHub CLI token was invalid. No push or repository creation succeeded.
-See docs/publication_status.md. No causal phage mechanism or stability-immune
-association is claimed.
-'''
-        (root/'results/reports/final_assessment.md').write_text(technical,encoding='utf-8')
-
+    assessment='# Current invocation assessment\n\n'
+    if invocation.get('status')=='completed_restricted_analysis' and (root/'docs/results.md').is_file():
+        assessment=(root/'docs/results.md').read_text(encoding='utf-8')+'\n'
+    else:
+        assessment+='Scientific results from earlier invocations are not evidence that this invocation executed those analyses.\n\n'
+    assessment+=invocation_text(root,invocation)
+    (root/'results/reports/final_assessment.md').write_text(assessment,encoding='utf-8')
+    identifier=invocation.get('invocation_id')
+    if identifier and all(char.isalnum() or char in '_-' for char in identifier):
+        target=root/f'results/reports/invocations/{identifier}.md'
+        target.parent.mkdir(parents=True,exist_ok=True)
+        target.write_text(text,encoding='utf-8')

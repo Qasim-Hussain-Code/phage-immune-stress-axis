@@ -8,6 +8,8 @@ resources:
   disk_reserve_bytes: 4000000000
   max_download_bytes: 10000000
   max_process_rss_bytes: 1000000000
+  max_aggregate_rss_bytes: 1000000000
+  stage_timeout_seconds: 600
   min_available_memory_bytes: 100000000
 immune:
   endpoints:
@@ -20,3 +22,6 @@ immune:
 virome:
   enable_biological_analysis: false
   reason: Processed viral matrices, annotations and verified animal crosswalk unavailable
+calibration:
+  replicates: 20000
+  batch_size: 500

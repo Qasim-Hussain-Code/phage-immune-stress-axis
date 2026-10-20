@@ -2,7 +2,7 @@
 
 This is a public-data feasibility study with a separate exploratory reanalysis of immune source data. It does not test a measured phageome stability versus immune-response relationship.
 
-The source workbook contains 50 animal rows across two experiments. The principal archive contains 104 sequencing specimens: 77 individual recipient bulk metagenomes, 8 enriched pools and 19 inocula. The initial paper captions imply 12 pool-by-time enriched profiles across group and time; these must not be added to the second experiment as longitudinal animals. No processed viral abundance profile was retrieved and zero are matched to immune outcomes. This is missing evidence, not a biological null result.
+The source workbook contains 50 animal rows across two experiments. The principal archive contains 104 sequencing runs representing 104 specimens: 77 individual recipient bulk specimens, 8 enriched pools and 19 inocula. The initial paper captions imply 12 pool-by-time enriched profiles across group and time; these must not be added to the second experiment as longitudinal animals. No processed viral abundance profile was retrieved and zero are matched to immune outcomes. This is missing evidence, not a biological null result.
 
 ## Separate immune contrasts
 
@@ -32,7 +32,7 @@ No observed animal was deleted as an outlier. Each contrast was recomputed after
 
 Group differences in immune source data do not imply that a phage or viral feature caused those differences. The original article already reports related treatment-associated immune results. Different endpoints and contrasts need not support a uniform restoration interpretation. Nonsignificant contrasts are not evidence of equivalence or absence of an immune effect.
 
-CD62L-positive monocyte fraction is higher with FVT than stressed control, while its stress-control contrast is imprecise. This is not demonstrated reversal of a stress-induced deficit. TNF-alpha has a highly dispersed stressed group: its FVT comparison differs between raw-mean Welch and rank-based tests. These estimate different aspects of the distribution; neither result is hidden. The monocyte FVT comparison uses Welch P=0.01265 here, whereas the article Fig. 4 reports Tukey pairwise P=0.106. The present six-test family, unequal-variance tests, retained workbook observations and upstream exclusions differ from the original orthogonal-contrast/Tukey analysis. This numerical difference is method sensitivity, not independent replication or evidence that the original calculation was wrong.
+CD62L-positive monocyte fraction is higher with FVT than stressed control, while its stress-control contrast is imprecise. This is not demonstrated reversal of a stress-induced deficit. TNF-alpha has a highly dispersed stressed group: its FVT comparison differs between raw-mean Welch and rank-based tests. These estimate different aspects of the distribution; neither result is hidden. The monocyte FVT comparison differs from the article's Tukey pairwise P=0.106. The original three-group pooled residual variance and Tukey adjustment differ from the present unequal-variance pairwise test and six-test BH family. Those method choices explain the numerical difference without requiring different source observations. This comparison does not identify an error in the original calculation. Upstream censoring and exclusions remain a separate general limitation.
 
 Endpoint-specific n=9 FVT groups contain different animals: monocyte and CD62L outcomes lack source ID 31, while TNF-alpha lacks ID 11. Equal sample counts do not establish matched endpoints.
 
@@ -40,34 +40,29 @@ No viral composition, temporal stability, reference deviation, bacterial-adjuste
 
 ## Validation
 
-The executed validation suite ran 25 tests with 0 failures and 0 errors. Independent checks cover Welch inference, BH adjustment, community-distance identities and linkage invariants. Synthetic fixtures are software tests only.
+The executed validation suite ran 66 tests with 0 failures and 0 errors. Independent checks cover Welch inference, BH adjustment, community-distance identities and linkage invariants. Synthetic fixtures are software tests only.
 
 Source: [Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y). Exact values and missingness are in results/tables; raw observations retain source-cell locations.
 
-## Computational completion and publication
+## Original-method reconstruction
 
+A separate reconstruction table contains 24 records: `results/tables/original_method_replication.csv`. It is distinct from the fixed Welch family. Its presence does not imply that every original outcome or the original full multiplicity family was reconstructed. 17 of 18 printed reference checks agree, including all 9 selected caption-statistic checks.
 
-The full restricted ten-stage workflow, pilot, offline execution and verified
-resume completed. The validation-only interface also passed the 25-test suite.
-Four actual-data or availability figures were generated as PNG and vector PDF;
-their final exported PDF pages passed visual rendering checks documented in
-docs/pdf_qa.md. Excluded community analyses were reported as exclusions.
+The three-group pooled-variance calculation reproduces the selected planned t statistics and Tukey comparisons at the published precision. In particular, the monocyte FVT comparison is P=0.106409 under Tukey-Kramer, explaining the published P=0.106 without additional exclusions. One printed group mean remains discrepant: unstimulated FVT TNF-alpha averages 27.8492778 pg/mL in the workbook, which rounds directly to 27.8, versus 27.9 in Table 1b. The discrepancy is retained; no tolerance was widened and no value changed.
 
-Maximum measured per-process peak RSS in the recorded workflow was
-186,699,776 bytes
-(186.7 MB), including validation
-process measurements. This is not a measured aggregate system peak. The
-project snapshot, including Git and optional QA software/cache, was
-14,221,240 bytes
-(14.22 MB); disk free was
-8.879 GB. The operational ceiling was
-4.897 GB with a 4 GB reserve.
-Later Git bookkeeping can slightly change storage without changing results.
+The planned contrast compares the stressed mean with the average of Control and FVT Stress. It does not jointly establish a stress effect and its reversal. Tukey intervals cover three pairwise comparisons within one endpoint under a common-variance model; the original across-outcome BH family remains unreconstructed.
 
-Researcher and sole project author: Qasim Hussain. The local Git repository is
-prepared for review. The intended URL is
-https://github.com/Qasim-Hussain-Code/phage-immune-stress-axis, but it has not
-been verified as a published repository: connected access returned 404 and the
-local GitHub CLI token was invalid. No push or repository creation succeeded.
-See docs/publication_status.md. No causal phage mechanism or stability-immune
-association is claimed.
+## Conditional software calibration
+
+A separate synthetic benchmark completed 20,000 replicates in each of four known zero-mean scenarios, evaluating variance heterogeneity, skew and artificial clustering. It reads no biological observations. Its Monte Carlo uncertainty is simulation uncertainty, not mouse-level uncertainty. See `results/reports/software_calibration.md` and `results/tables/software_calibration.csv`. These checks cannot infer missing cage assignments or calibrate the actual experiment under an unknown dependence structure.
+
+## Invocation status
+
+Invocation: 20261020T062609235563Z_13584. Mode: full. Status: completed_restricted_analysis.
+0 stages executed and 10 stages resumed after verifying their declared outputs and upstream dependencies.
+All selected restricted-workflow stages completed or were verified from cache. Scientifically excluded analyses remain exclusions.
+Validation (verified cached stage result): 66 tests, 0 failures, 0 errors, 0 skipped.
+Prior visual review dated 2026-10-20T06:23:59.007316+00:00 matches the current bytes of 5 PDF files. This is not a new visual review by this invocation.
+
+Publication status is documented separately in `docs/publication_status.md`; executing this pipeline does not establish a GitHub publication.
+Researcher and sole project author: Qasim Hussain. No causal phage mechanism or stability-immune association is established by this restricted analysis.

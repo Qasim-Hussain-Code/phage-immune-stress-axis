@@ -2,9 +2,59 @@
 import csv
 import json
 from pathlib import Path
+import re
 import urllib.request
+from urllib.parse import urlparse
 import xml.etree.ElementTree as ET
 from .io import digest, read_csv, write_csv
+
+
+def load_manifest(root,config):
+    """Validate the frozen input contract before touching a destination."""
+    root=Path(root).resolve()
+    manifest=json.loads((root/'data/manifests/inputs.json').read_text(encoding='utf-8'))
+    if not isinstance(manifest,list) or not manifest:
+        raise ValueError('Input manifest must be a nonempty list')
+    seen=set()
+    for source in manifest:
+        if not isinstance(source,dict):
+            raise ValueError('Invalid source record')
+        relative=source.get('path')
+        if not isinstance(relative,str) or not relative or Path(relative).is_absolute():
+            raise ValueError('Input paths must be nonempty relative paths')
+        path=(root/relative).resolve()
+        if not path.is_relative_to(root) or path==root or path in seen:
+            raise ValueError('Input paths must be unique and remain inside the project')
+        seen.add(path)
+        if not re.fullmatch('[0-9a-f]{64}',str(source.get('sha256',''))):
+            raise ValueError('Every input requires a SHA-256 digest')
+        cap=source.get('max_bytes')
+        if isinstance(cap,bool) or not isinstance(cap,int) or cap<=0:
+            raise ValueError('Input download caps must be positive integers')
+        parsed=urlparse(source.get('url',''))
+        if parsed.scheme!='https' or not parsed.hostname or parsed.username or parsed.password:
+            raise ValueError('Public source URLs must use HTTPS without embedded credentials')
+        if source.get('transformation') not in [None,'zenodo_catalog']:
+            raise ValueError('Unrecognized input transformation')
+    return manifest
+
+
+def verify_cached_inputs(root,config,guard):
+    """Read-only cache verification: no retrieval, extraction or scientific writes."""
+    root=Path(root)
+    checks=[]
+    for source in load_manifest(root,config):
+        guard.check()
+        path=root/source['path']
+        if not path.is_file():
+            raise FileNotFoundError(f'Cached input missing: {source["path"]}; source: {source["url"]}')
+        if source.get('bytes') is not None and path.stat().st_size!=source['bytes']:
+            raise ValueError(f'Frozen input size mismatch: {source["path"]}')
+        if digest(path)!=source['sha256']:
+            raise ValueError(f'Checksum mismatch in frozen input: {source["path"]}')
+        checks.append({'path':source['path'],'status':'verified_cache','sha256':source['sha256']})
+    return {'status':'verified','verified_inputs':len(checks),'checks':checks,
+            'downloads':0,'scientific_files_written':0}
 
 
 def normalize_zenodo(payload):
@@ -20,7 +70,7 @@ def normalize_zenodo(payload):
 
 
 def fetch(root, config, guard, offline=False):
-    manifest = json.loads((root/'data/manifests/inputs.json').read_text())
+    manifest = load_manifest(root,config)
     checks = []
     for source in manifest:
         path = root/source['path']

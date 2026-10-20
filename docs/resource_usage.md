@@ -1,52 +1,26 @@
 # Resource usage
 
-The measured analysis host is Windows 11, not the Linux Mint system specified
-in the project brief. Scripts are portable; Linux execution was not performed.
-The initial standard `python` on PATH was an unrelated Python 2 installation;
-execution used the explicitly located Python 3.14 interpreter. R 4.5.2 was found
-under Program Files but was not required. Conda/Mamba executables were not on
-PATH. Existing scientific libraries were used without reinstalling them.
-
-## Measured values
+Invocation: 20261020T062609235563Z_13584. Status: completed_restricted_analysis.
+Current measured platform: Windows-11-10.0.26300-SP0. Python: 3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)].
+Historical `environment_initial.json` records the original research execution only. It does not govern this checkout's resource budget. The ignored local persistent baseline is bound to checkout location, filesystem and host. A fresh checkout measures its own available space. Restarting the same checkout does not reset its budget.
 
 | Measurement | Bytes | Decimal MB/GB |
-|---|---:|---:|
-| Initial installed physical RAM | 16786583552 | 16.787 GB |
-| Initial available physical RAM | 375021568 | 375.0 MB |
-| Initial disk free | 8897466368 | 8.897 GB |
-| Operational new-storage ceiling | 4897466368 | 4.897 GB |
-| Maximum measured process peak RSS | 186699776 | 186.7 MB |
-| Project snapshot including Git | 14221240 | 14.22 MB |
-| Project snapshot excluding Git | 12700926 | 12.70 MB |
-| Disk free at snapshot | 8878968832 | 8.879 GB |
+|---|---:|---|
+| Local baseline disk free | 14208532480 | 14208.532 MB / 14.208532 GB |
+| Conservative total-project storage ceiling | 10000000000 | 10000.000 MB / 10.000000 GB |
+| Maximum measured native per-process RSS this invocation | 33783808 | 33.784 MB / 0.033784 GB |
+| Maximum sampled concurrent process-family RSS | not measured | not measured |
+| Project snapshot including Git | 42402113 | 42.402 MB / 0.042402 GB |
+| Project snapshot excluding Git | 40858396 | 40.858 MB / 0.040858 GB |
+| Disk free at snapshot | 13854711808 | 13854.712 MB / 13.854712 GB |
+| Available system memory at snapshot | 1081970688 | 1081.971 MB / 1.081971 GB |
 
-The RAM maximum includes native peaks from the runner, stages and validation
-child. It is the maximum of per-process measurements, not a measured sum of
-concurrent processes or whole-machine memory. Each active process is capped
-at 1 GB; runner monitors child native RSS and project storage every 0.1 seconds.
-Available system memory is checked with a 100 MB minimum; a low-memory failure
-records a resumable failure rather than silently increasing the budget.
-Resource snapshots precede later documentation/Git housekeeping and can be
-regenerated. Logs and native measurements are in results/reports.
+Configured minimum free disk: 4000000000 bytes. Per-process ceiling: 1000000000 bytes. Aggregate process-family ceiling: 1000000000 bytes. Available-memory floor: 100000000 bytes.
+Concurrent-memory samples: 0; maximum unreadable or already-exited processes in one sample: 0.
+The aggregate statistic sums simultaneous current RSS across runner descendants. It is sampled at approximately 0.1-second intervals during child execution and is not an exact whole-machine peak or an operating-system allocation limit. Brief processes or allocation spikes between polls may be missed. Native per-process peaks are reported separately; historical peaks from resumed stages are not counted as newly measured current-run peaks.
+The storage cap conservatively counts the entire checkout, including existing inputs, Git, environments, caches and temporary products inside it. Free disk is checked independently. Pre-existing software outside the checkout is not included in project bytes; installing a fresh environment requires a separate disk/RAM check. No raw sequencing data or reference database is acquired by the selected workflow.
 
-## Footprint decisions
-
-The initial selected scientific inputs and outputs were estimated below 25 MB.
-The core run used about 3 MB before optional PDF QA installation. Public raw
-PRJNA970614 FASTQs total 262,211,457,238 compressed bytes; transcriptomic FASTQs
-total 320,396,480,444 bytes. Neither was fetched. The 16S archive totals
-1,731,077,490 bytes compressed, but reprocessing would not resolve missing viral
-matrices and was not selected. No MetaPhage pipeline, GPU model, classifier
-database, cloud account or paid compute service was installed or used.
-
-PDF rendering required optional workspace-only pypdfium2: a verified 3.95 MB
-wheel and about 8.09 MB installed files, plus small metadata and rendered PNGs.
-This is documented in pdf_qa.md. These caches count toward the guard's budget
-but are excluded from Git. A fresh scientific virtual environment is not part
-of the measured execution; installing one would require a separate budget
-check and several hundred MB depending on platform.
-
-## Observed library versions
+## Observed local package versions
 
 - numpy: 2.3.4
 - pandas: 2.3.3
@@ -57,3 +31,14 @@ check and several hundred MB depending on platform.
 - PyYAML: 6.0.3
 - scikit-learn: 1.7.2
 - pypdf: 6.13.0
+
+## Invocation status
+
+Invocation: 20261020T062609235563Z_13584. Mode: full. Status: completed_restricted_analysis.
+0 stages executed and 10 stages resumed after verifying their declared outputs and upstream dependencies.
+All selected restricted-workflow stages completed or were verified from cache. Scientifically excluded analyses remain exclusions.
+Validation (verified cached stage result): 66 tests, 0 failures, 0 errors, 0 skipped.
+Prior visual review dated 2026-10-20T06:23:59.007316+00:00 matches the current bytes of 5 PDF files. This is not a new visual review by this invocation.
+
+Publication status is documented separately in `docs/publication_status.md`; executing this pipeline does not establish a GitHub publication.
+Researcher and sole project author: Qasim Hussain. No causal phage mechanism or stability-immune association is established by this restricted analysis.

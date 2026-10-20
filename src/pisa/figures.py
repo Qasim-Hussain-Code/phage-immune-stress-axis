@@ -20,16 +20,20 @@ def generate(root,config):
         plt.close(fig)
     inventory=read_csv(root/'results/tables/sequencing_inventory.csv')
     source=read_csv(root/'results/tables/source_inventory.csv')
+    availability=json.loads((root/'results/reports/sample_audit_summary.json').read_text())
+    source_counts={r['experiment_id']:int(r['nonempty_animal_rows']) for r in source}
+    group_counts={r['experiment_id']:json.loads(r['group_counts_json']) for r in source}
+    categories=availability['sequencing_category_counts']
     data=[{'category':r['sample_type'],'count':r['sample_count'],'unit':'sequencing specimen','source':r['accession']}
           for r in inventory if r['accession']=='PRJNA970614']
     data.extend({'category':r['experiment_id'],'count':r['nonempty_animal_rows'],'unit':'source workbook animal row','source':r['source_sheet']} for r in source)
     data.append({'category':'initial_enriched_pools_across_group_time','count':12,'unit':'published pool profiles, membership unresolved','source':'article Fig1 caption: 3 per group/time'})
     write_csv(root/'results/tables/figure1_data.csv',data)
     fig,ax=plt.subplots(figsize=(10,5.2));ax.axis('off')
-    boxes=[(.02,.55,.43,.36,'Initial stress experiment\n20 phenotype source rows (10 + 10)\nPublished viromes: 3 pools/group/time\nPool membership across time unresolved'),
-           (.54,.55,.43,.36,'FVT experiment\n30 phenotype source rows (10 + 10 + 10)\n104 deposited sequencing specimens\n77 recipient specimens; 8 pools; 19 inocula'),
+    boxes=[(.02,.55,.43,.36,f'Initial stress experiment\nControl {group_counts["study_i"]["ctr"]}; Stress {group_counts["study_i"]["ctr_stress"]} phenotype rows\n3 pools/group before and after stress\nPool membership across time unresolved'),
+           (.54,.55,.43,.36,f'FVT experiment\nControl {group_counts["study_ii"]["ctr"]}; Stress {group_counts["study_ii"]["ctr_stress"]}; FVT Stress {group_counts["study_ii"]["fvt_stress"]}\nRecipient bulk profiles before/after\n{availability["principal_specimen_count"]} specimens: {categories["individual_recipient_bulk_metagenome"]} bulk; {categories["pooled_fecal_virome"]} pools; {categories["transplant_inoculum"]} inocula'),
            (.02,.09,.43,.31,'Individual immune measurements\nLinked to behavior within source rows\nAssay-specific missingness retained\nNo baseline of chronic immune change'),
-           (.54,.09,.43,.31,'Community analysis gate\nIndividual bulk viral profiles published\nMatrices and mouse crosswalk unavailable\n0 usable virome-immune matches')]
+           (.54,.09,.43,.31,f'Community analysis gate\nIndividual bulk viral profiles published\nMatrices and mouse crosswalk unavailable\n{availability["verified_virome_immune_matches"]} usable virome-immune matches')]
     for x,y,w,h,label in boxes:
         ax.add_patch(plt.Rectangle((x,y),w,h,facecolor='#eef4f7',edgecolor='#35586b',lw=1))
         ax.text(x+.02,y+h-.04,label,va='top',fontsize=10,linespacing=1.5)
@@ -74,16 +78,18 @@ def generate(root,config):
     save(fig,'figure4_immune')
 
     eligibility=read_csv(root/'results/tables/hypothesis_eligibility.csv')
-    limitation=[{'measurement':'processed_virome_profiles_retrieved','count':0,'status':'unavailable'},
-                {'measurement':'verified_virome_immune_matches','count':0,'status':'unavailable'},
-                {'measurement':'selected_endpoint_min_n_per_group','count':8,'status':'observed'},
-                {'measurement':'selected_endpoint_max_n_per_group','count':10,'status':'observed'}]
+    observed_counts=[int(r['n_observed']) for r in read_csv(root/'results/tables/immune_summary.csv')]
+    min_n,max_n=min(observed_counts),max(observed_counts)
+    limitation=[{'measurement':'processed_virome_profiles_retrieved','count':availability['processed_virome_profiles_retrieved'],'status':'unavailable'},
+                {'measurement':'verified_virome_immune_matches','count':availability['verified_virome_immune_matches'],'status':'unavailable'},
+                {'measurement':'selected_endpoint_min_n_per_group','count':min_n,'status':'observed'},
+                {'measurement':'selected_endpoint_max_n_per_group','count':max_n,'status':'observed'}]
     write_csv(root/'results/tables/figure5_data.csv',limitation)
     fig,ax=plt.subplots(figsize=(12,4.5));ax.axis('off')
     rows=[('Viral community matrix','Unavailable in inspected processed release'),
           ('Verified mouse crosswalk','Unavailable; literal IDs cannot be repaired by guessing'),
-          ('Individual immune outcomes','Available; endpoints have 8-10 observations/group'),
-          ('Matched viral and immune profiles','0 processed profiles matched to immune outcomes'),
+          ('Individual immune outcomes',f'Available; endpoints have {min_n}-{max_n} observations/group'),
+          ('Matched viral and immune profiles',f'{availability["verified_virome_immune_matches"]} processed profiles matched to immune outcomes'),
           ('Scientific consequence','Phageome stability versus immune response remains unanswered')]
     for i,(left,right) in enumerate(rows):
         y=.88-i*.18
@@ -112,4 +118,39 @@ def generate(root,config):
     fig.text(.02,.01,'Black: full estimate. Blue: leave-one-animal-out range, not a confidence interval. Rank sensitivity is in the source table.',fontsize=9)
     fig.tight_layout(rect=[0,.06,1,.9])
     save(fig,'figure7_robustness')
-    return {'figures':4,'png_outputs':4,'vector_pdf_outputs':4,'unsupported_figures':[2,3,6]}
+
+    original=read_csv(root/'results/tables/original_method_replication.csv')
+    comparison=[]
+    for row in contrasts:
+        comparison.append({'endpoint':row['endpoint'],'contrast':row['contrast'],'method':'Welch',
+            'mean_difference':row['mean_difference'],'ci_low':row['ci_low'],'ci_high':row['ci_high'],
+            'p_value':row['p_value'],'interval_scope':'pointwise 95%','effect_units':row['effect_units']})
+        match=next(r for r in original if r['record_type']=='tukey_kramer' and
+                   (r['endpoint'],r['contrast'])==(row['endpoint'],row['contrast']))
+        comparison.append({'endpoint':row['endpoint'],'contrast':row['contrast'],'method':'Original Tukey-Kramer',
+            'mean_difference':match['effect'],'ci_low':match['ci_low'],'ci_high':match['ci_high'],
+            'p_value':match['p_value'],'interval_scope':'simultaneous 95% across 3 pairs within endpoint',
+            'effect_units':match['effect_units']})
+    write_csv(root/'results/tables/figure8_data.csv',comparison)
+    fig,axes=plt.subplots(1,3,figsize=(12,4.7))
+    for column,(ax,endpoint) in enumerate(zip(axes,endpoints)):
+        for y,label in enumerate(['ctr_stress_minus_ctr','fvt_stress_minus_ctr_stress']):
+            for method,offset,color in [('Welch',-.13,'#46799b'),('Original Tukey-Kramer',.13,'#b87643')]:
+                row=next(r for r in comparison if (r['endpoint'],r['contrast'],r['method'])==(endpoint,label,method))
+                effect=float(row['mean_difference']);low=float(row['ci_low']);high=float(row['ci_high'])
+                ax.errorbar(effect,y+offset,xerr=[[effect-low],[high-effect]],fmt='o',color=color,capsize=3,ms=4)
+        ax.axvline(0,color='.7',ls='--',lw=1);ax.set_ylim(-.55,1.55)
+        ax.set_yticks([0,1],['Stress - Control','FVT Stress - Stress'] if column==0 else ['',''])
+        ax.set_xlabel('Difference (percentage points)' if column<2 else 'Difference (pg/mL)')
+        ax.set_title({'ly6chi_monocytes':'Basal LY6Chi monocytes',
+                      'ly6chi_monocytes_cd62':'Basal CD62L-positive monocytes',
+                      'tnfa_splenocyte_unstimulated':'Unstimulated splenocyte TNF-alpha'}[endpoint],fontsize=9)
+    from matplotlib.lines import Line2D
+    fig.legend([Line2D([0],[0],color='#46799b',marker='o'),Line2D([0],[0],color='#b87643',marker='o')],
+               ['Welch: unequal variances, pointwise 95%','Original Tukey-Kramer: pooled variance, simultaneous 95%'],
+               loc='lower center',bbox_to_anchor=(.5,.07),ncol=2,frameon=False,fontsize=9)
+    fig.suptitle('Variance and multiplicity assumptions change immune intervals',x=.02,ha='left',fontweight='bold',fontsize=13)
+    fig.text(.02,.015,'Identical observed values and mean differences. Tukey coverage concerns all 3 pairs within each endpoint; the original across-outcome BH family is not reconstructed.',fontsize=8)
+    fig.tight_layout(rect=[0,.2,1,.9])
+    save(fig,'figure8_method_comparison')
+    return {'figures':5,'png_outputs':5,'vector_pdf_outputs':5,'unsupported_figures':[2,3,6]}

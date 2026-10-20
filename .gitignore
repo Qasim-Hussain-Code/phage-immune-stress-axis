@@ -21,3 +21,4 @@ data/raw/ritz2024_archive/*
 results/reports/stages/
 results/reports/logs/
 data/manifests/environment_local.json
+data/manifests/resource_baseline_local.json

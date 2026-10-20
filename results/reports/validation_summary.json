@@ -1,8 +1,289 @@
 {
-  "tests_run": 25,
+  "schema_version": 2,
+  "started_utc": "2026-10-20T06:25:41.161799+00:00",
+  "finished_utc": "2026-10-20T06:25:48.422096+00:00",
+  "duration_seconds": 7.26,
+  "code_sha256": "3d9e0910a9d2b49c021edb0e8954fafd2ed4eefca85762d85670f60b06809a6b",
+  "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
+  "package_versions": {
+    "numpy": "2.3.4",
+    "scipy": "1.16.3",
+    "statsmodels": "0.14.6",
+    "matplotlib": "3.10.7",
+    "openpyxl": "3.1.5",
+    "PyYAML": "6.0.3",
+    "pypdf": "6.13.0"
+  },
+  "test_timings": [
+    {
+      "test": "test_acquisition.AcquisitionContracts.test_catalog_excludes_usage_stats",
+      "seconds": 0.000232
+    },
+    {
+      "test": "test_acquisition.AcquisitionContracts.test_fingerprint_detects_input_change",
+      "seconds": 0.024537
+    },
+    {
+      "test": "test_acquisition.AcquisitionContracts.test_malformed_manifest_fails_before_download",
+      "seconds": 0.011343
+    },
+    {
+      "test": "test_acquisition.AcquisitionContracts.test_offline_missing_and_corrupt_inputs_fail",
+      "seconds": 0.006297
+    },
+    {
+      "test": "test_acquisition.AcquisitionContracts.test_streaming_cap_is_enforced_and_partial_removed",
+      "seconds": 0.006877
+    },
+    {
+      "test": "test_acquisition.AcquisitionContracts.test_validation_does_not_write_or_extract",
+      "seconds": 0.007239
+    },
+    {
+      "test": "test_calibration.SoftwareCalibrationTests.test_benchmark_seed_and_batch_invariance",
+      "seconds": 0.8945
+    },
+    {
+      "test": "test_calibration.SoftwareCalibrationTests.test_cluster_covariance_matches_analytical_contract",
+      "seconds": 0.000227
+    },
+    {
+      "test": "test_calibration.SoftwareCalibrationTests.test_invalid_and_bounded_settings",
+      "seconds": 8.8e-05
+    },
+    {
+      "test": "test_calibration.SoftwareCalibrationTests.test_obvious_zero_signal_and_added_signal_controls",
+      "seconds": 0.000236
+    },
+    {
+      "test": "test_calibration.SoftwareCalibrationTests.test_outputs_need_no_biological_inputs_and_are_labeled",
+      "seconds": 0.031078
+    },
+    {
+      "test": "test_calibration.SoftwareCalibrationTests.test_replicate_major_generators_preserve_batches_exactly",
+      "seconds": 0.001549
+    },
+    {
+      "test": "test_calibration.SoftwareCalibrationTests.test_vectorized_welch_against_independent_scipy_samples",
+      "seconds": 0.019335
+    },
+    {
+      "test": "test_calibration.SoftwareCalibrationTests.test_wilson_matches_statsmodels_including_boundaries",
+      "seconds": 0.371347
+    },
+    {
+      "test": "test_configuration.ResourcePolicyConfiguration.test_hardware_policy_cannot_be_silently_weakened",
+      "seconds": 0.046377
+    },
+    {
+      "test": "test_figure_qa.RecordedFigureReview.test_missing_review_never_means_pass",
+      "seconds": 0.000827
+    },
+    {
+      "test": "test_figure_qa.RecordedFigureReview.test_review_is_invalidated_by_changed_or_added_pdf",
+      "seconds": 0.012717
+    },
+    {
+      "test": "test_immune.TestIndependentStatistics.test_analytical_identity_and_edge_cases",
+      "seconds": 0.000669
+    },
+    {
+      "test": "test_immune.TestIndependentStatistics.test_bh_matches_statsmodels",
+      "seconds": 0.005861
+    },
+    {
+      "test": "test_immune.TestIndependentStatistics.test_leave_one_out_agrees_with_brute_force_means",
+      "seconds": 0.001272
+    },
+    {
+      "test": "test_immune.TestIndependentStatistics.test_welch_matches_scipy",
+      "seconds": 0.003868
+    },
+    {
+      "test": "test_immune.TestSourceIdentifiers.test_blank_rows_missing_outcomes_and_zero",
+      "seconds": 0.222056
+    },
+    {
+      "test": "test_immune.TestSourceIdentifiers.test_duplicate_and_unknown_groups_fail",
+      "seconds": 0.078767
+    },
+    {
+      "test": "test_immune.TestSourceIdentifiers.test_fixed_six_test_family_and_no_study_i_tests",
+      "seconds": 0.05734
+    },
+    {
+      "test": "test_immune.TestSourceIdentifiers.test_literal_and_composite_ids",
+      "seconds": 5.6e-05
+    },
+    {
+      "test": "test_immune.TestSourceIdentifiers.test_unavailable_source_does_not_make_results",
+      "seconds": 0.000586
+    },
+    {
+      "test": "test_metrics.CommunityMath.test_bray_curtis_scipy",
+      "seconds": 0.000255
+    },
+    {
+      "test": "test_metrics.CommunityMath.test_closure_scale_invariance",
+      "seconds": 0.000176
+    },
+    {
+      "test": "test_metrics.CommunityMath.test_invalid_abundances",
+      "seconds": 0.000187
+    },
+    {
+      "test": "test_metrics.CommunityMath.test_pairwise_logratio_identity",
+      "seconds": 0.000147
+    },
+    {
+      "test": "test_metrics.CommunityMath.test_zero_handling_and_identity",
+      "seconds": 0.000138
+    },
+    {
+      "test": "test_original_methods.OriginalMethodRealDataVerification.test_cached_source_matches_published_caption_without_extra_exclusions",
+      "seconds": 0.486375
+    },
+    {
+      "test": "test_original_methods.OriginalMethodSyntheticTests.test_anova_and_contrast_against_independent_ols",
+      "seconds": 0.498772
+    },
+    {
+      "test": "test_original_methods.OriginalMethodSyntheticTests.test_contrast_covariance_depends_on_unequal_sizes",
+      "seconds": 0.000147
+    },
+    {
+      "test": "test_original_methods.OriginalMethodSyntheticTests.test_invalid_groups_and_degenerate_variance",
+      "seconds": 0.000584
+    },
+    {
+      "test": "test_original_methods.OriginalMethodSyntheticTests.test_planned_contrast_is_not_conjunction_of_pairwise_effects",
+      "seconds": 0.673718
+    },
+    {
+      "test": "test_original_methods.OriginalMethodSyntheticTests.test_published_rounding_is_explicit",
+      "seconds": 0.000125
+    },
+    {
+      "test": "test_original_methods.OriginalMethodSyntheticTests.test_tukey_against_statsmodels_for_unequal_group_sizes",
+      "seconds": 1.591343
+    },
+    {
+      "test": "test_pipeline.PipelineContracts.test_malformed_valid_json_cache_is_invalidated_without_exception",
+      "seconds": 0.014821
+    },
+    {
+      "test": "test_pipeline.PipelineContracts.test_output_tamper_and_exact_output_set",
+      "seconds": 0.026755
+    },
+    {
+      "test": "test_pipeline.PipelineContracts.test_runtime_change_invalidates_fingerprint",
+      "seconds": 0.020958
+    },
+    {
+      "test": "test_pipeline.PipelineContracts.test_upstream_changes_invalidate_downstream_cache",
+      "seconds": 0.026888
+    },
+    {
+      "test": "test_pipeline.PipelineContracts.test_validation_only_does_not_fetch_or_extract",
+      "seconds": 0.012381
+    },
+    {
+      "test": "test_release.ReleasePayload.test_stale_staged_code_and_missing_new_code_are_rejected",
+      "seconds": 1.203924
+    },
+    {
+      "test": "test_release.ReleasePayload.test_upstream_bytes_are_never_text_normalized",
+      "seconds": 0.377835
+    },
+    {
+      "test": "test_reporting.ReportingContracts.test_local_platform_and_scientific_artifact_preserved",
+      "seconds": 0.04295
+    },
+    {
+      "test": "test_reporting.ReportingContracts.test_pilot_and_validation_do_not_claim_full_analysis",
+      "seconds": 0.003255
+    },
+    {
+      "test": "test_reporting.ReportingContracts.test_visual_review_requires_matching_file_hash",
+      "seconds": 0.028622
+    },
+    {
+      "test": "test_reproduction.ReproductionContracts.test_archive_expansion_is_bounded",
+      "seconds": 0.033677
+    },
+    {
+      "test": "test_reproduction.ReproductionContracts.test_archive_rejects_traversal_and_links",
+      "seconds": 0.054527
+    },
+    {
+      "test": "test_reproduction.ReproductionContracts.test_cleanup_cannot_hide_detected_resource_failure",
+      "seconds": 0.000289
+    },
+    {
+      "test": "test_reproduction.ReproductionContracts.test_comparison_excludes_operational_records_and_detects_tampering",
+      "seconds": 0.036766
+    },
+    {
+      "test": "test_reproduction.ReproductionContracts.test_path_containment_rejects_other_shell_and_os_paths",
+      "seconds": 0.01108
+    },
+    {
+      "test": "test_reproduction.ReproductionContracts.test_recursive_cleanup_cannot_target_workspace_or_cache_root",
+      "seconds": 0.021057
+    },
+    {
+      "test": "test_reproduction.ReproductionContracts.test_regular_archive_extracts_exact_bytes",
+      "seconds": 0.03552
+    },
+    {
+      "test": "test_resources.ResourceContracts.test_aggregate_limit_separate_from_per_process_limit",
+      "seconds": 0.049958
+    },
+    {
+      "test": "test_resources.ResourceContracts.test_family_sums_current_rss_not_historical_peaks",
+      "seconds": 0.001136
+    },
+    {
+      "test": "test_resources.ResourceContracts.test_local_baseline_ignores_historical_machine_and_does_not_reset",
+      "seconds": 0.042432
+    },
+    {
+      "test": "test_resources.ResourceContracts.test_timeout_terminates_spawned_process_tree",
+      "seconds": 0.007525
+    },
+    {
+      "test": "test_samples.SampleIdentityTests.test_decimal_source_ids_do_not_collapse",
+      "seconds": 0.000255
+    },
+    {
+      "test": "test_samples.SampleIdentityTests.test_duplicate_source_row_fails_instead_of_merging",
+      "seconds": 0.000356
+    },
+    {
+      "test": "test_samples.SampleIdentityTests.test_fastq_sizes_count_files_not_biological_replicates",
+      "seconds": 0.000325
+    },
+    {
+      "test": "test_samples.SampleIdentityTests.test_identifiers_require_experiment_and_group",
+      "seconds": 0.000238
+    },
+    {
+      "test": "test_samples.SampleIdentityTests.test_inoculum_not_assigned_to_recipient",
+      "seconds": 0.000146
+    },
+    {
+      "test": "test_samples.SampleIdentityTests.test_pool_cannot_link_to_an_individual",
+      "seconds": 0.000132
+    },
+    {
+      "test": "test_samples.SampleIdentityTests.test_source_rows_match_only_observed_within_row_assays",
+      "seconds": 0.000214
+    }
+  ],
+  "tests_run": 66,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
   "success": true,
-  "peak_rss_bytes": 157732864
+  "peak_rss_bytes": 188280832
 }

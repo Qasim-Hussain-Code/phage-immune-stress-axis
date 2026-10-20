@@ -1,0 +1,162 @@
+{
+  "invocation_id": "20261020T062538703457Z_43688",
+  "mode": "pilot",
+  "offline": true,
+  "resume_requested": true,
+  "requested_threads": 1,
+  "actual_workers": 1,
+  "started_utc": "2026-10-20T06:25:38.703457+00:00",
+  "stages": [
+    {
+      "name": "01_audit_sources",
+      "status": "resumed_verified",
+      "result": {
+        "public_inputs": 10,
+        "gate": "restricted_analysis",
+        "reference_review": "docs/reference_repository_review.md",
+        "processed_virome_inputs": 0
+      },
+      "recorded_peak_rss_bytes": 30793728,
+      "resource_scope": "historical_cached_stage"
+    },
+    {
+      "name": "02_fetch_data",
+      "status": "resumed_verified",
+      "result": {
+        "verified_inputs": 10,
+        "offline": true,
+        "raw_reads_downloaded": 0,
+        "article_methods_verified": 4,
+        "archive_files": 1,
+        "processed_matrices_in_archive": 0,
+        "gate": "restricted_analysis"
+      },
+      "recorded_peak_rss_bytes": 37195776,
+      "resource_scope": "historical_cached_stage"
+    },
+    {
+      "name": "03_validate_samples",
+      "status": "resumed_verified",
+      "result": {
+        "principal_accession": "PRJNA970614",
+        "principal_run_count": 104,
+        "principal_specimen_count": 104,
+        "sequencing_category_counts": {
+          "individual_recipient_bulk_metagenome": 77,
+          "pooled_fecal_virome": 8,
+          "transplant_inoculum": 19
+        },
+        "principal_compressed_fastq_bytes": 262211457238,
+        "workbook_animal_rows": 50,
+        "workbook_group_counts": [
+          {
+            "experiment_id": "fvt_study_ii",
+            "group": "ctr",
+            "animal_rows": 10
+          },
+          {
+            "experiment_id": "fvt_study_ii",
+            "group": "ctr_stress",
+            "animal_rows": 10
+          },
+          {
+            "experiment_id": "fvt_study_ii",
+            "group": "fvt_stress",
+            "animal_rows": 10
+          },
+          {
+            "experiment_id": "stress_study_i",
+            "group": "Control",
+            "animal_rows": 10
+          },
+          {
+            "experiment_id": "stress_study_i",
+            "group": "Stress",
+            "animal_rows": 10
+          }
+        ],
+        "workbook_rows_with_observed_immune": 50,
+        "workbook_rows_with_observed_behavior": 50,
+        "within_workbook_immune_behavior_rows": 50,
+        "metadata_candidate_animal_keys": 42,
+        "metadata_candidates_with_before_after": 35,
+        "processed_virome_profiles_retrieved": 0,
+        "verified_virome_immune_matches": 0,
+        "verified_bacteriome_immune_matches": 0,
+        "longitudinal_phageome_stability_measurable": false,
+        "primary_association_identifiable": false,
+        "linkage_rows": 154,
+        "additional_accessions_are_inventory_only": [
+          "PRJEB69687",
+          "PRJEB67706"
+        ],
+        "decision": "Separate source-row immune analysis and sequencing availability audit only."
+      },
+      "recorded_peak_rss_bytes": 49033216,
+      "resource_scope": "historical_cached_stage"
+    },
+    {
+      "name": "04_virome_qc",
+      "status": "resumed_verified",
+      "result": {
+        "status": "excluded_missing_processed_inputs",
+        "biological_profiles_analyzed": 0
+      },
+      "recorded_peak_rss_bytes": 31059968,
+      "resource_scope": "historical_cached_stage"
+    },
+    {
+      "name": "05_stability_metrics",
+      "status": "resumed_verified",
+      "result": {
+        "temporal_stability_estimates": 0,
+        "reference_state_estimates": 0,
+        "hypotheses": 6
+      },
+      "recorded_peak_rss_bytes": 31121408,
+      "resource_scope": "historical_cached_stage"
+    },
+    {
+      "name": "06_immune_phenotypes",
+      "status": "resumed_verified",
+      "result": {
+        "status": "completed",
+        "source_animal_rows": 50,
+        "source_animal_rows_by_experiment": {
+          "study_i": 20,
+          "study_ii": 30
+        },
+        "long_records": 1240,
+        "missing_records": 120,
+        "matched_processed_virome_profiles": 0,
+        "outputs": [
+          "data/processed/immune_long.csv",
+          "results/tables/immune_missingness.csv",
+          "results/tables/source_inventory.csv"
+        ]
+      },
+      "recorded_peak_rss_bytes": 49438720,
+      "resource_scope": "historical_cached_stage"
+    }
+  ],
+  "status": "completed_pilot",
+  "scientific_stages_executed": 0,
+  "scientific_stages_resumed_verified": 6,
+  "runtime": {
+    "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "win32",
+    "packages": {
+      "numpy": "2.3.4",
+      "scipy": "1.16.3",
+      "matplotlib": "3.10.7",
+      "openpyxl": "3.1.5",
+      "PyYAML": "6.0.3",
+      "statsmodels": "0.14.6",
+      "pypdf": "6.13.0"
+    }
+  },
+  "seed": 20261020,
+  "max_measured_stage_peak_rss_bytes": 34390016,
+  "elapsed_seconds": 0.723,
+  "finished_utc": "2026-10-20T06:25:39.452973+00:00"
+}

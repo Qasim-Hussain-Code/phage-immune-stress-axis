@@ -45,7 +45,11 @@ TNF-alpha is measured in unstimulated splenocyte culture supernatant, in pg/mL.
 It is distinct from plasma TNF-alpha and does not measure a within-mouse change
 across chronic stress. These unit and timing assignments follow Extended Data
 Table 1b,c of the [original article](https://doi.org/10.1038/s41564-023-01564-y),
-whose rounded means agree with the source workbook.
+whose selected units and timing were checked against the actual table image.
+Eight of nine selected means round to the printed values. FVT unstimulated
+TNF-alpha averages 27.8492778 pg/mL, directly rounding to 27.8, whereas Table 1b
+prints 27.9. The small discrepancy is explicit and unresolved; no tolerance or
+source value was changed to conceal it.
 
 ## Sample size, missingness and upstream exclusions
 
@@ -82,10 +86,14 @@ The 95% intervals are pointwise and are not simultaneous confidence bands.
 
 The FVT versus stressed-control monocyte Welch P = 0.01265 differs from the
 published Tukey pairwise P = 0.106. Welch pairwise tests and the original
-three-group analysis have different variance and multiplicity assumptions;
-unresolved upstream exclusions may also affect comparability. The exact
-published analysis was not reconstructed, so the discrepancy must not be
-presented as an error correction.
+three-group analysis have different variance and multiplicity assumptions.
+A separate reconstruction from the same supplied observations gives
+Tukey-Kramer P = 0.106409 and matches all nine selected caption-statistic
+checks. Thus variance pooling and multiplicity explain this difference without
+additional exclusions. Upstream exclusions remain a general availability
+limitation, not a necessary explanation for this numerical comparison. The
+reconstruction does not identify an error in the original test or reproduce its
+complete across-outcome BH family.
 
 The CD62L-positive FVT contrast is 15.87 percentage points, but the preceding
 stress contrast is -1.76 points with a 95% interval of -7.58 to 4.06. These data
@@ -118,8 +126,24 @@ subsequently acquired, would remain predictions unless independently validated.
 
 ## Validation cannot supply missing measurements
 
-The executed 25-test suite verifies software calculations, source identity
-rules and acquisition safeguards. It does not validate biological independence,
+The software suite verifies calculations, source identity rules and acquisition
+safeguards; the current executed outcome is recorded in
+`results/reports/validation_summary.json`. It does not validate biological independence,
 recover excluded observations, establish statistical power or demonstrate null
 calibration under an unknown cage structure. No biological viral stability
 estimate is validated by testing a distance function on synthetic fixtures.
+
+The separate synthetic calibration benchmark uses known generating assumptions
+and no biological measurements. Its artificial clustered scenario cannot
+identify the actual cage structure, particularly for the original singly
+housed stressed groups. Good or poor simulated calibration is conditional on
+the chosen model. Wilson bounds describe Monte Carlo error, not biological
+uncertainty. The completed benchmark used 20,000 replicates per scenario;
+its results remain conditional software observations, not calibration of the
+actual experiment's unknown dependence.
+
+The expanded public search's 52 evidence records bound what was checked, not
+all possible public or private locations. A newer prenatal-stress candidate
+remains unresolved. Access failures and request-based availability statements
+cannot establish that a study is biologically ineligible or that no public
+deposit exists.

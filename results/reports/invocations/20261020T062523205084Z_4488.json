@@ -1,0 +1,381 @@
+{
+  "invocation_id": "20261020T062523205084Z_4488",
+  "mode": "validation",
+  "offline": true,
+  "resume_requested": false,
+  "requested_threads": 1,
+  "actual_workers": 1,
+  "started_utc": "2026-10-20T06:25:23.205084+00:00",
+  "stages": [],
+  "status": "completed_validation",
+  "scientific_stages_executed": 0,
+  "scientific_stages_resumed_verified": 0,
+  "runtime": {
+    "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "win32",
+    "packages": {
+      "numpy": "2.3.4",
+      "scipy": "1.16.3",
+      "matplotlib": "3.10.7",
+      "openpyxl": "3.1.5",
+      "PyYAML": "6.0.3",
+      "statsmodels": "0.14.6",
+      "pypdf": "6.13.0"
+    }
+  },
+  "seed": 20261020,
+  "input_verification": {
+    "status": "verified",
+    "verified_inputs": 10,
+    "checks": [
+      {
+        "path": "data/raw/ritz2024_archive/Fvtstress_scripts_040124.pdf",
+        "status": "verified_cache",
+        "sha256": "1a510d1e8691d01856383446999a5af57776b65d68504f73a54ef28733c59048"
+      },
+      {
+        "path": "data/raw/ritz2024_archive/PRJNA970614_study.xml",
+        "status": "verified_cache",
+        "sha256": "792c910856c5ab7fb480dc5049752ad59d98cd0e36188cdd35c07c0a3f0e5926"
+      },
+      {
+        "path": "data/raw/ritz2024_archive/PRJNA970614_selected_samples.xml",
+        "status": "verified_cache",
+        "sha256": "454f36c66a50bc22a09cb3aa36827571be130b540bf2112cd9bd38c5ba04c3bc"
+      },
+      {
+        "path": "data/raw/ritz2024_archive/PRJNA970614_samples.xml",
+        "status": "verified_cache",
+        "sha256": "4c0f1bed9763ea00bc0399e72f8196308281ca4b36aa5d4dced0addaa90fba43"
+      },
+      {
+        "path": "data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv",
+        "status": "verified_cache",
+        "sha256": "e9cc15f4d70609ffe5268631117cfc9a1e0bea09b107d99bd25b9539342f9e70"
+      },
+      {
+        "path": "data/raw/ritz2024_archive/PRJEB69687_ena_runs.tsv",
+        "status": "verified_cache",
+        "sha256": "71e69fe20f66cf1529ade4ca2d3c21bde143316d1d8135e1f6d71fc62c949fdc"
+      },
+      {
+        "path": "data/raw/ritz2024_archive/PRJEB67706_ena_runs.tsv",
+        "status": "verified_cache",
+        "sha256": "f789ebee1d8aac1aa99f254fccc0c89651df35f326eeeda2ec1bfda3aae649ec"
+      },
+      {
+        "path": "data/raw/article.xml",
+        "status": "verified_cache",
+        "sha256": "930377c6ff5be3a31815126ab34394eb80cd6e0e9f9ab1246b3e069767a701e6"
+      },
+      {
+        "path": "data/raw/source_data.xlsx",
+        "status": "verified_cache",
+        "sha256": "1eac33250329c4160caff224c8ae4618a4a4849d5a086986bd12e5bb1c50d368"
+      },
+      {
+        "path": "data/manifests/zenodo_release.json",
+        "status": "verified_cache",
+        "sha256": "76fda2c0a52bed064f829ba066fd03acf95229fcf493e2ace07d4f4c399c29db"
+      }
+    ],
+    "downloads": 0,
+    "scientific_files_written": 0
+  },
+  "validation": {
+    "status": "passed",
+    "test_log": "results/reports/validation.log",
+    "scope": "software_tests_not_reexecution_of_scientific_stages",
+    "schema_version": 2,
+    "started_utc": "2026-10-20T06:25:24.065324+00:00",
+    "finished_utc": "2026-10-20T06:25:37.041894+00:00",
+    "duration_seconds": 12.977,
+    "code_sha256": "3d9e0910a9d2b49c021edb0e8954fafd2ed4eefca85762d85670f60b06809a6b",
+    "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
+    "package_versions": {
+      "numpy": "2.3.4",
+      "scipy": "1.16.3",
+      "statsmodels": "0.14.6",
+      "matplotlib": "3.10.7",
+      "openpyxl": "3.1.5",
+      "PyYAML": "6.0.3",
+      "pypdf": "6.13.0"
+    },
+    "test_timings": [
+      {
+        "test": "test_acquisition.AcquisitionContracts.test_catalog_excludes_usage_stats",
+        "seconds": 0.000213
+      },
+      {
+        "test": "test_acquisition.AcquisitionContracts.test_fingerprint_detects_input_change",
+        "seconds": 0.025565
+      },
+      {
+        "test": "test_acquisition.AcquisitionContracts.test_malformed_manifest_fails_before_download",
+        "seconds": 0.024006
+      },
+      {
+        "test": "test_acquisition.AcquisitionContracts.test_offline_missing_and_corrupt_inputs_fail",
+        "seconds": 0.010664
+      },
+      {
+        "test": "test_acquisition.AcquisitionContracts.test_streaming_cap_is_enforced_and_partial_removed",
+        "seconds": 0.006819
+      },
+      {
+        "test": "test_acquisition.AcquisitionContracts.test_validation_does_not_write_or_extract",
+        "seconds": 0.008002
+      },
+      {
+        "test": "test_calibration.SoftwareCalibrationTests.test_benchmark_seed_and_batch_invariance",
+        "seconds": 1.576511
+      },
+      {
+        "test": "test_calibration.SoftwareCalibrationTests.test_cluster_covariance_matches_analytical_contract",
+        "seconds": 0.002929
+      },
+      {
+        "test": "test_calibration.SoftwareCalibrationTests.test_invalid_and_bounded_settings",
+        "seconds": 0.000105
+      },
+      {
+        "test": "test_calibration.SoftwareCalibrationTests.test_obvious_zero_signal_and_added_signal_controls",
+        "seconds": 0.000228
+      },
+      {
+        "test": "test_calibration.SoftwareCalibrationTests.test_outputs_need_no_biological_inputs_and_are_labeled",
+        "seconds": 0.040596
+      },
+      {
+        "test": "test_calibration.SoftwareCalibrationTests.test_replicate_major_generators_preserve_batches_exactly",
+        "seconds": 0.003467
+      },
+      {
+        "test": "test_calibration.SoftwareCalibrationTests.test_vectorized_welch_against_independent_scipy_samples",
+        "seconds": 0.02144
+      },
+      {
+        "test": "test_calibration.SoftwareCalibrationTests.test_wilson_matches_statsmodels_including_boundaries",
+        "seconds": 0.762353
+      },
+      {
+        "test": "test_configuration.ResourcePolicyConfiguration.test_hardware_policy_cannot_be_silently_weakened",
+        "seconds": 0.051648
+      },
+      {
+        "test": "test_figure_qa.RecordedFigureReview.test_missing_review_never_means_pass",
+        "seconds": 0.000838
+      },
+      {
+        "test": "test_figure_qa.RecordedFigureReview.test_review_is_invalidated_by_changed_or_added_pdf",
+        "seconds": 0.018656
+      },
+      {
+        "test": "test_immune.TestIndependentStatistics.test_analytical_identity_and_edge_cases",
+        "seconds": 0.000955
+      },
+      {
+        "test": "test_immune.TestIndependentStatistics.test_bh_matches_statsmodels",
+        "seconds": 0.009795
+      },
+      {
+        "test": "test_immune.TestIndependentStatistics.test_leave_one_out_agrees_with_brute_force_means",
+        "seconds": 0.001513
+      },
+      {
+        "test": "test_immune.TestIndependentStatistics.test_welch_matches_scipy",
+        "seconds": 0.004004
+      },
+      {
+        "test": "test_immune.TestSourceIdentifiers.test_blank_rows_missing_outcomes_and_zero",
+        "seconds": 1.094318
+      },
+      {
+        "test": "test_immune.TestSourceIdentifiers.test_duplicate_and_unknown_groups_fail",
+        "seconds": 0.158266
+      },
+      {
+        "test": "test_immune.TestSourceIdentifiers.test_fixed_six_test_family_and_no_study_i_tests",
+        "seconds": 0.149536
+      },
+      {
+        "test": "test_immune.TestSourceIdentifiers.test_literal_and_composite_ids",
+        "seconds": 0.000128
+      },
+      {
+        "test": "test_immune.TestSourceIdentifiers.test_unavailable_source_does_not_make_results",
+        "seconds": 0.002082
+      },
+      {
+        "test": "test_metrics.CommunityMath.test_bray_curtis_scipy",
+        "seconds": 0.000786
+      },
+      {
+        "test": "test_metrics.CommunityMath.test_closure_scale_invariance",
+        "seconds": 0.000629
+      },
+      {
+        "test": "test_metrics.CommunityMath.test_invalid_abundances",
+        "seconds": 0.00071
+      },
+      {
+        "test": "test_metrics.CommunityMath.test_pairwise_logratio_identity",
+        "seconds": 0.000578
+      },
+      {
+        "test": "test_metrics.CommunityMath.test_zero_handling_and_identity",
+        "seconds": 0.000562
+      },
+      {
+        "test": "test_original_methods.OriginalMethodRealDataVerification.test_cached_source_matches_published_caption_without_extra_exclusions",
+        "seconds": 2.335413
+      },
+      {
+        "test": "test_original_methods.OriginalMethodSyntheticTests.test_anova_and_contrast_against_independent_ols",
+        "seconds": 2.147042
+      },
+      {
+        "test": "test_original_methods.OriginalMethodSyntheticTests.test_contrast_covariance_depends_on_unequal_sizes",
+        "seconds": 0.000148
+      },
+      {
+        "test": "test_original_methods.OriginalMethodSyntheticTests.test_invalid_groups_and_degenerate_variance",
+        "seconds": 0.001066
+      },
+      {
+        "test": "test_original_methods.OriginalMethodSyntheticTests.test_planned_contrast_is_not_conjunction_of_pairwise_effects",
+        "seconds": 0.882122
+      },
+      {
+        "test": "test_original_methods.OriginalMethodSyntheticTests.test_published_rounding_is_explicit",
+        "seconds": 0.000108
+      },
+      {
+        "test": "test_original_methods.OriginalMethodSyntheticTests.test_tukey_against_statsmodels_for_unequal_group_sizes",
+        "seconds": 1.598779
+      },
+      {
+        "test": "test_pipeline.PipelineContracts.test_malformed_valid_json_cache_is_invalidated_without_exception",
+        "seconds": 0.014749
+      },
+      {
+        "test": "test_pipeline.PipelineContracts.test_output_tamper_and_exact_output_set",
+        "seconds": 0.023766
+      },
+      {
+        "test": "test_pipeline.PipelineContracts.test_runtime_change_invalidates_fingerprint",
+        "seconds": 0.025922
+      },
+      {
+        "test": "test_pipeline.PipelineContracts.test_upstream_changes_invalidate_downstream_cache",
+        "seconds": 0.028114
+      },
+      {
+        "test": "test_pipeline.PipelineContracts.test_validation_only_does_not_fetch_or_extract",
+        "seconds": 0.011453
+      },
+      {
+        "test": "test_release.ReleasePayload.test_stale_staged_code_and_missing_new_code_are_rejected",
+        "seconds": 0.987367
+      },
+      {
+        "test": "test_release.ReleasePayload.test_upstream_bytes_are_never_text_normalized",
+        "seconds": 0.335674
+      },
+      {
+        "test": "test_reporting.ReportingContracts.test_local_platform_and_scientific_artifact_preserved",
+        "seconds": 0.04647
+      },
+      {
+        "test": "test_reporting.ReportingContracts.test_pilot_and_validation_do_not_claim_full_analysis",
+        "seconds": 0.003548
+      },
+      {
+        "test": "test_reporting.ReportingContracts.test_visual_review_requires_matching_file_hash",
+        "seconds": 0.042928
+      },
+      {
+        "test": "test_reproduction.ReproductionContracts.test_archive_expansion_is_bounded",
+        "seconds": 0.031412
+      },
+      {
+        "test": "test_reproduction.ReproductionContracts.test_archive_rejects_traversal_and_links",
+        "seconds": 0.057534
+      },
+      {
+        "test": "test_reproduction.ReproductionContracts.test_cleanup_cannot_hide_detected_resource_failure",
+        "seconds": 0.000767
+      },
+      {
+        "test": "test_reproduction.ReproductionContracts.test_comparison_excludes_operational_records_and_detects_tampering",
+        "seconds": 0.046189
+      },
+      {
+        "test": "test_reproduction.ReproductionContracts.test_path_containment_rejects_other_shell_and_os_paths",
+        "seconds": 0.014619
+      },
+      {
+        "test": "test_reproduction.ReproductionContracts.test_recursive_cleanup_cannot_target_workspace_or_cache_root",
+        "seconds": 0.021865
+      },
+      {
+        "test": "test_reproduction.ReproductionContracts.test_regular_archive_extracts_exact_bytes",
+        "seconds": 0.030863
+      },
+      {
+        "test": "test_resources.ResourceContracts.test_aggregate_limit_separate_from_per_process_limit",
+        "seconds": 0.073922
+      },
+      {
+        "test": "test_resources.ResourceContracts.test_family_sums_current_rss_not_historical_peaks",
+        "seconds": 0.000894
+      },
+      {
+        "test": "test_resources.ResourceContracts.test_local_baseline_ignores_historical_machine_and_does_not_reset",
+        "seconds": 0.047558
+      },
+      {
+        "test": "test_resources.ResourceContracts.test_timeout_terminates_spawned_process_tree",
+        "seconds": 0.008607
+      },
+      {
+        "test": "test_samples.SampleIdentityTests.test_decimal_source_ids_do_not_collapse",
+        "seconds": 0.000226
+      },
+      {
+        "test": "test_samples.SampleIdentityTests.test_duplicate_source_row_fails_instead_of_merging",
+        "seconds": 0.000337
+      },
+      {
+        "test": "test_samples.SampleIdentityTests.test_fastq_sizes_count_files_not_biological_replicates",
+        "seconds": 0.000118
+      },
+      {
+        "test": "test_samples.SampleIdentityTests.test_identifiers_require_experiment_and_group",
+        "seconds": 0.000117
+      },
+      {
+        "test": "test_samples.SampleIdentityTests.test_inoculum_not_assigned_to_recipient",
+        "seconds": 9.9e-05
+      },
+      {
+        "test": "test_samples.SampleIdentityTests.test_pool_cannot_link_to_an_individual",
+        "seconds": 9.3e-05
+      },
+      {
+        "test": "test_samples.SampleIdentityTests.test_source_rows_match_only_observed_within_row_assays",
+        "seconds": 0.000188
+      }
+    ],
+    "tests_run": 66,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "success": true,
+    "peak_rss_bytes": 188534784
+  },
+  "validation_scope": "cached_frozen_inputs_and_software_tests_only",
+  "max_measured_stage_peak_rss_bytes": 188534784,
+  "elapsed_seconds": 14.985,
+  "finished_utc": "2026-10-20T06:25:38.216812+00:00"
+}

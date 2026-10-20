@@ -1,0 +1,125 @@
+[
+  {
+    "path": "data/raw/alternative_search/prenatal_more/crossref.json",
+    "url": "https://api.crossref.org/works/10.1016/j.bbi.2026.106532",
+    "max_bytes": 2000000,
+    "accessed_utc": "2026-10-20T02:59:24.723140+00:00",
+    "error": "URLError: <urlopen error [WinError 10013] \u5617\u8a66\u5b58\u53d6\u901a\u8a0a\u7aef\u88ab\u62d2\u7d55\uff0c\u56e0\u70ba\u5b58\u53d6\u6b0a\u9650\u4e0d\u8db3\u3002>"
+  },
+  {
+    "path": "data/raw/alternative_search/prenatal_more/openalex.json",
+    "url": "https://api.openalex.org/works/https://doi.org/10.1016/j.bbi.2026.106532",
+    "max_bytes": 2000000,
+    "accessed_utc": "2026-10-20T02:59:25.174178+00:00",
+    "error": "URLError: <urlopen error [WinError 10013] \u5617\u8a66\u5b58\u53d6\u901a\u8a0a\u7aef\u88ab\u62d2\u7d55\uff0c\u56e0\u70ba\u5b58\u53d6\u6b0a\u9650\u4e0d\u8db3\u3002>"
+  },
+  {
+    "path": "data/raw/alternative_search/prenatal_more/elsevier_meta.xml",
+    "url": "https://api.elsevier.com/content/article/pii/S0889159126002801?view=META_ABS&httpAccept=text/xml",
+    "max_bytes": 2000000,
+    "accessed_utc": "2026-10-20T02:59:25.870216+00:00",
+    "error": "URLError: <urlopen error [WinError 10013] \u5617\u8a66\u5b58\u53d6\u901a\u8a0a\u7aef\u88ab\u62d2\u7d55\uff0c\u56e0\u70ba\u5b58\u53d6\u6b0a\u9650\u4e0d\u8db3\u3002>"
+  },
+  {
+    "path": "data/raw/alternative_search/prenatal_more/publisher_preview.html",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0889159126002801",
+    "max_bytes": 2000000,
+    "accessed_utc": "2026-10-20T02:59:26.538014+00:00",
+    "error": "URLError: <urlopen error [WinError 10013] \u5617\u8a66\u5b58\u53d6\u901a\u8a0a\u7aef\u88ab\u62d2\u7d55\uff0c\u56e0\u70ba\u5b58\u53d6\u6b0a\u9650\u4e0d\u8db3\u3002>"
+  },
+  {
+    "path": "data/raw/alternative_search/prenatal_more/pubmed.xml",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=41831535&retmode=xml",
+    "max_bytes": 2000000,
+    "accessed_utc": "2026-10-20T02:59:26.912502+00:00",
+    "error": "URLError: <urlopen error [WinError 10013] \u5617\u8a66\u5b58\u53d6\u901a\u8a0a\u7aef\u88ab\u62d2\u7d55\uff0c\u56e0\u70ba\u5b58\u53d6\u6b0a\u9650\u4e0d\u8db3\u3002>"
+  },
+  {
+    "path": "data/raw/alternative_search/prenatal_more/bioproject_title.json",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=bioproject&term=%22Association%20between%20gut%20virome%22&retmode=json&retmax=20",
+    "max_bytes": 2000000,
+    "accessed_utc": "2026-10-20T02:59:29.743808+00:00",
+    "error": "URLError: <urlopen error [WinError 10013] \u5617\u8a66\u5b58\u53d6\u901a\u8a0a\u7aef\u88ab\u62d2\u7d55\uff0c\u56e0\u70ba\u5b58\u53d6\u6b0a\u9650\u4e0d\u8db3\u3002>"
+  },
+  {
+    "path": "data/raw/alternative_search/prenatal_more/sra_prenatal_virome.json",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=prenatal%20stress%20virome&retmode=json&retmax=20",
+    "max_bytes": 2000000,
+    "accessed_utc": "2026-10-20T02:59:44.765065+00:00",
+    "error": "URLError: <urlopen error [WinError 10013] \u5617\u8a66\u5b58\u53d6\u901a\u8a0a\u7aef\u88ab\u62d2\u7d55\uff0c\u56e0\u70ba\u5b58\u53d6\u6b0a\u9650\u4e0d\u8db3\u3002>"
+  },
+  {
+    "path": "data/raw/alternative_search/prenatal_more/crossref.json",
+    "url": "https://api.crossref.org/works/10.1016/j.bbi.2026.106532",
+    "max_bytes": 2000000,
+    "accessed_utc": "2026-10-20T03:01:23.606483+00:00",
+    "status": 200,
+    "resolved_url": "https://api.crossref.org/works/10.1016/j.bbi.2026.106532",
+    "content_type": "application/json",
+    "declared_content_length": null,
+    "bytes": 26429,
+    "sha256": "3197c72b7d61fab6cec7c8ef0279701e1da314697635b41b551a928f1a1a5938"
+  },
+  {
+    "path": "data/raw/alternative_search/prenatal_more/openalex.json",
+    "url": "https://api.openalex.org/works/https://doi.org/10.1016/j.bbi.2026.106532",
+    "max_bytes": 2000000,
+    "accessed_utc": "2026-10-20T03:01:29.407925+00:00",
+    "status": 200,
+    "resolved_url": "https://api.openalex.org/works/https://doi.org/10.1016/j.bbi.2026.106532",
+    "content_type": "application/json",
+    "declared_content_length": "22588",
+    "bytes": 22588,
+    "sha256": "4175931eeb070b17f0849a217471b8def288ee47232e7d4c4636ae6b4ca6f31a"
+  },
+  {
+    "path": "data/raw/alternative_search/prenatal_more/elsevier_meta.xml",
+    "url": "https://api.elsevier.com/content/article/pii/S0889159126002801?view=META_ABS&httpAccept=text/xml",
+    "max_bytes": 2000000,
+    "accessed_utc": "2026-10-20T03:01:36.041965+00:00",
+    "error": "HTTPError: HTTP Error 401: Unauthorized"
+  },
+  {
+    "path": "data/raw/alternative_search/prenatal_more/publisher_preview.html",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0889159126002801",
+    "max_bytes": 2000000,
+    "accessed_utc": "2026-10-20T03:01:42.421998+00:00",
+    "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+    "path": "data/raw/alternative_search/prenatal_more/pubmed.xml",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=41831535&retmode=xml",
+    "max_bytes": 2000000,
+    "accessed_utc": "2026-10-20T03:01:48.889383+00:00",
+    "status": 200,
+    "resolved_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=41831535&retmode=xml",
+    "content_type": "text/xml; charset=UTF-8",
+    "declared_content_length": null,
+    "bytes": 9132,
+    "sha256": "ecbe404a8509dd6df1fbfc624a27c6922368d6e9d27f8a45242633556ba99ffd"
+  },
+  {
+    "path": "data/raw/alternative_search/prenatal_more/bioproject_title.json",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=bioproject&term=%22Association%20between%20gut%20virome%22&retmode=json&retmax=20",
+    "max_bytes": 2000000,
+    "accessed_utc": "2026-10-20T03:01:56.752433+00:00",
+    "status": 200,
+    "resolved_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=bioproject&term=%22Association%20between%20gut%20virome%22&retmode=json&retmax=20",
+    "content_type": "application/json; charset=UTF-8",
+    "declared_content_length": null,
+    "bytes": 732,
+    "sha256": "77a4cdbdc2394eff647aa2df8ebd07a51c7bf77dcf133ba9ee7135445043634f"
+  },
+  {
+    "path": "data/raw/alternative_search/prenatal_more/sra_prenatal_virome.json",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=prenatal%20stress%20virome&retmode=json&retmax=20",
+    "max_bytes": 2000000,
+    "accessed_utc": "2026-10-20T03:02:13.475023+00:00",
+    "status": 200,
+    "resolved_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=prenatal%20stress%20virome&retmode=json&retmax=20",
+    "content_type": "application/json; charset=UTF-8",
+    "declared_content_length": null,
+    "bytes": 512,
+    "sha256": "9145a520148fa1227013001c67e4d09122543f3b95dfde082e10f79d963464a9"
+  }
+]

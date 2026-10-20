@@ -130,7 +130,13 @@ class TestIndependentStatistics(unittest.TestCase):
         for first, second in examples:
             with self.subTest(first=first):
                 actual = welch_difference(first, second)
-                reference = ttest_ind(first, second, equal_var=False)
+                if len(set(first))==1 or len(set(second))==1:
+                    # This warning is an expected property of the deliberately
+                    # constant software fixture, not a biological-data warning.
+                    with self.assertWarnsRegex(RuntimeWarning,'Precision loss'):
+                        reference = ttest_ind(first, second, equal_var=False)
+                else:
+                    reference = ttest_ind(first, second, equal_var=False)
                 interval = reference.confidence_interval()
                 self.assertAlmostEqual(actual["t_statistic"], reference.statistic, places=12)
                 self.assertAlmostEqual(actual["p_value"], reference.pvalue, places=12)

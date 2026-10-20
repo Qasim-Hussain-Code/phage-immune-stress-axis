@@ -4,7 +4,8 @@ Researcher and project author: **Qasim Hussain**
 ([Qasim-Hussain-Code](https://github.com/Qasim-Hussain-Code)).
 
 This repository contains a completed public-data feasibility audit and a
-restricted, exploratory immune source-data reanalysis. The proposed association
+restricted, exploratory immune source-data reanalysis, with a separate
+reconstruction of selected original statistical calculations. The proposed association
 between gut phageome stability and stress-related immune disruption could not
 be tested from the retrieved processed inputs. That is a data availability
 conclusion, not evidence of no biological relationship.
@@ -57,6 +58,16 @@ See the mandatory [feasibility gate](results/reports/data_feasibility.md),
 [machine-readable linkage map](results/tables/sample_linkage_audit.csv) and
 [archive audit](results/reports/archive_availability.md).
 
+An [expanded processed-data search](docs/processed_data_search.md) records 52
+saved evidence records. Its complete supplementary package contains the same
+phenotype workbook, a reporting summary and figure/table images, with no
+additional processed community matrix. Accession-linked analysis routes,
+selected author repositories and secondary indexes did not yield a verified
+replacement for the missing inputs. This is a bounded search result. A newer
+[prenatal-stress candidate](docs/new_prenatal_stress_candidate.md) remains
+unresolved; its preview and abstract do not establish public, linked recipient
+virome and immune measurements.
+
 ## Hypotheses and selected analysis
 
 The primary within-mouse stability/immune hypothesis and H1-H3/H5 viral
@@ -98,10 +109,21 @@ CD62L is higher with FVT without an established stress-induced deficit, so this
 is not evidence of reversal of that deficit. TNF-alpha is sensitive to the
 estimand: its FVT rank-test sensitivity q is approximately 0.0110, whereas the
 raw mean contrast remains imprecise. The monocyte FVT comparison also differs
-from the article's Tukey P=0.106: Welch P=0.01265 here. Test families, unequal
-variance treatment and upstream exclusions differ. Neither result is hidden,
-and the difference is not presented as a correction of the original research.
+from the article's Tukey P=0.106: Welch P=0.01265 here. The separate
+three-group pooled-variance reconstruction gives Tukey-Kramer P=0.106409 from
+the same source observations. Variance estimation and multiplicity explain the
+difference; no additional exclusions are needed. This is not a correction of
+the original calculation.
 Relative cell percentages do not establish absolute cell expansion.
+
+All nine selected caption-statistic checks match reported precision. Across
+those statistics and nine source group summaries, 17 of 18 checks match. One
+printed mean is retained as a discrepancy: FVT unstimulated TNF-alpha averages
+27.8492778 pg/mL in the workbook, rounding directly to 27.8, while the original
+table image prints 27.9. No source value or rounding tolerance was changed.
+The original complete BH family remains unreconstructed. See the
+[independent review](docs/original_analysis_review.md) and
+[replication table](results/tables/original_method_replication.csv).
 
 These are separate immune comparisons. They do not establish a specific phage
 effect, bacterial mediation, immune resilience or a causal gut-brain mechanism.
@@ -114,11 +136,29 @@ See [full results](docs/results.md), [limitations](docs/limitations.md),
 - [Figure 4](figures/figure4_immune.png): observed immune values and uncertainty.
 - [Figure 5](figures/figure5_linkage_limit.png): why no phage-immune model was fitted.
 - [Figure 7](figures/figure7_robustness.png): influence of omitting each animal.
+- [Figure 8](figures/figure8_method_comparison.png), original-method comparison: contrasts the fixed Welch intervals
+  with the original pooled-variance Tukey-Kramer intervals. The expanded full
+  pipeline generates this fifth supported figure; its current rendering and
+  review status must be checked in the execution and figure-QA records.
 
 Each figure has a vector PDF and `results/tables/figureN_data.csv`.
 Figure 4 contrast intervals are in `immune_contrasts.csv`. Composition,
 stability and bacteriome figures 2, 3 and 6 are excluded because their necessary
 processed inputs were not retrieved. Their absence is intentional.
+
+The separate [software calibration design](docs/calibration_design.md) specifies
+four synthetic all-null scenarios, including skew, unequal variance and an
+artificial cluster dependence stress test. Every simulation row is labeled
+`synthetic_not_biological`. The default full benchmark is 20,000 replicates per
+scenario in batches no larger than 500. The executed benchmark used seed
+20261020 and completed all 20,000 replicates in each scenario. Its all-null BH
+family rejection probabilities were 0.04620 for equal-variance Gaussian,
+0.04795 for unequal-variance Gaussian, 0.01150 for centered lognormal and
+0.16495 for artificial clusters with ICC 0.5. Exact Wilson intervals and
+coverage results are in the [software-only report](results/reports/software_calibration.md).
+These Monte Carlo intervals describe simulation error; no real cage structure
+or biological power is inferred. The artificial clusters do not describe the
+original singly housed stressed groups.
 
 ## Reproduction
 
@@ -151,27 +191,40 @@ Omit `--offline` only to retrieve a missing frozen input. Changed public content
 fails checksum validation and requires a documented new audit. Resume checks
 code/config/input fingerprints and declared output hashes. Pilot stops after
 phenotype preparation and does not imply that immune analysis or figures ran.
+Per-invocation records distinguish newly executed stages, verified resumed
+outputs, validation-only runs, pilots and failures. An earlier successful run
+does not establish completion of the current invocation. See
+[reproduction validation](docs/reproduction_validation.md).
 
 `--threads 4` is a ceiling interface; the selected small workflow executes
 serially and restricts numerical-library threads to one. It monitors native
-child RSS and project storage, rejects oversized downloads, preserves a 4 GB
-free-disk reserve and enforces the smaller of 10 GB or available budget. Initial
-free disk was only 8.897 GB, so the actual initial new-storage limit was
-4.897 GB. Raw PRJNA970614 FASTQs alone total 262.211 GB compressed and were
+per-process peaks and sampled concurrent process-family RSS, project storage
+and available memory. Downloads are capped and a 4 GB free-disk reserve is
+preserved. The storage ceiling is initialized from the current host and checkout
+as the smaller of 10 GB or free space minus the reserve; a persistent local
+baseline prevents a restart from resetting that allowance. Historical
+`environment_initial.json` is provenance, not another checkout's resource budget.
+Sampled aggregate RSS is not an exact whole-machine peak. Raw PRJNA970614 FASTQs
+alone total 262.211 GB compressed and were
 excluded. See [resource measurements](docs/resource_usage.md).
 
 ## Validation and publication status
 
-The full restricted pipeline and offline pilot completed. The initial suite
-passed all 25 tests, including independent SciPy/statsmodels comparisons,
-analytical log-ratio identities, missingness, pooling and inoculum safeguards.
-Final executed counts are in `results/reports/validation_summary.json`.
-Synthetic fixtures are exclusively software checks. Negative biological
+Earlier restricted and pilot runs completed. The expanded software validation
+and 20,000-replicate synthetic benchmark also completed successfully. Completion
+of the full workflow and current visual QA is established separately by their
+matching invocation and figure-review records. The suite includes
+independent SciPy/statsmodels comparisons, original-method reconstruction,
+analytical identities, missingness, pooling, inoculum, acquisition, resource and
+resume safeguards. Current executed counts and outcomes are in
+`results/reports/validation_summary.json`; current completion is established by
+the matching invocation record. Synthetic fixtures and calibration simulations
+are exclusively software checks. Negative biological
 controls are the measured control groups; an independent positive biological
 control for a phage-stability association is unavailable.
 
-The repository is prepared locally. GitHub publication is conditional on
-available authorized creation/push access; consult
+The repository is prepared locally. No remote creation or push has succeeded.
+GitHub publication requires available authorized creation/push access; consult
 [publication status](docs/publication_status.md) for the actual outcome.
 
 ## Provenance, license and attribution

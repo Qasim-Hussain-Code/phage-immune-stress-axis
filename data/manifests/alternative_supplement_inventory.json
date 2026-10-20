@@ -1,0 +1,1334 @@
+{
+  "created_utc": "2026-10-20T06:27:17.352508+00:00",
+  "method": "Read-only OOXML text/table/package inventory; openpyxl streaming cells. No figure digitization, workbook edits, or recalculation. Keyword hits supplement semantic inspection and do not prove endpoint absence.",
+  "files": [
+    {
+      "path": "data/raw/alternative_search/choi_supplement.docx",
+      "sha256": "a7a4a5b6d51a96c4a6202fdaf94d3741b199dc5dfb25ac8a5174b1d593683515",
+      "format": "docx",
+      "paragraphs": 88,
+      "caption_starts": [
+        "Supplementary Figure 1. Bacteriome composition of pig feces collected before and after weaning (A–B) Beta diversity analysis Principal coord",
+        "Supplementary Figure 2. Virome composition and phage–host prediction in pre- and post-weaning pig feces (A–B) Class-level viral taxonomy Bot",
+        "Supplementary Figure 3. Validation of antibiotic-induced depletion of native gut microbiota prior to fecal transplantation (A) Gut microbiot",
+        "Supplementary Figure 4. Nanoparticle tracking analysis (NTA) of viromes derived from pre- and post-weaning piglet feces (A–B) Particle size ",
+        "Supplementary Figure 5. Colon length and systemic growth parameters following FVT in post-FMT mice (A-B) Colon length The Post-FVT group exh",
+        "Supplementary Figure 6. Correlation heatmaps of microbial composition and metabolites Among the microbiota detected across all samples, a Sp",
+        "Supplementary Table 1. Post hoc power analysis for serum corticosterone and selected qRT-PCR endpoints in the Pre-FVT versus Post-FVT compar"
+      ],
+      "tables": [
+        {
+          "rows": 10,
+          "max_columns": 4,
+          "header_and_first_rows": [
+            [
+              "Endpoint",
+              "Comparison",
+              "Cohen’s d",
+              "Achieved power"
+            ],
+            [
+              "Corticosterone",
+              "Pre-FVT vs Post-FVT",
+              "4.750437",
+              "0.9997616"
+            ],
+            [
+              "TNF-α",
+              "Pre-FVT vs Post-FVT",
+              "6.01742",
+              "0.9999994"
+            ]
+          ]
+        }
+      ],
+      "media_members": [
+        "word/media/image5.png",
+        "word/media/image6.png",
+        "word/media/image3.png",
+        "word/media/image4.png",
+        "word/media/image1.png",
+        "word/media/image2.png"
+      ],
+      "embedded_members": [],
+      "validation_status": "accepted_study_content_match",
+      "validation_note": "Title/captions/table subject matter match the target article."
+    },
+    {
+      "path": "data/raw/alternative_search/duan_correct_supplement.docx",
+      "sha256": "3cd29b0d75afd63e87ada4ca9103b36a5f8a6a0847477a26fe3c184eae49b798",
+      "format": "docx",
+      "paragraphs": 32,
+      "caption_starts": [
+        "Supplementary Figures AND Tables",
+        "Supplementary Figure 1. Overview of gut virome sequencing and composition. (A) The ratio of phages and non-phages in the sequence is include",
+        "Supplementary Figure 2. According to KEGG annotation results of the viral genome, the histogram showed the number of genes on Levels 2 and 3",
+        "Supplementary Table 1. Baseline outcome measurements of SPT, FST and TST."
+      ],
+      "tables": [
+        {
+          "rows": 4,
+          "max_columns": 5,
+          "header_and_first_rows": [
+            [
+              "",
+              "CON(mean±SD)",
+              "CRS(mean±SD)",
+              "t",
+              "p"
+            ],
+            [
+              "SPT",
+              "0.854±0.054",
+              "0.890±0.042",
+              "1.489",
+              "0.160"
+            ],
+            [
+              "FST",
+              "100.590±44.995",
+              "107.913±45.060",
+              "0.314",
+              "0.758"
+            ]
+          ]
+        }
+      ],
+      "media_members": [
+        "word/media/image1.jpeg",
+        "word/media/image2.jpeg"
+      ],
+      "embedded_members": [],
+      "validation_status": "accepted_study_content_match",
+      "validation_note": "Title/captions/table subject matter match the target article."
+    },
+    {
+      "path": "data/raw/alternative_search/duan_supplement.docx",
+      "sha256": "85b5eea6a6a97243f5d60bbdac106ab9258a51a24d244c71832f6854c3b8dbb5",
+      "format": "docx",
+      "paragraphs": 1569,
+      "caption_starts": [
+        "Supplementary Figures and Tables"
+      ],
+      "tables": [
+        {
+          "rows": 60,
+          "max_columns": 10,
+          "header_and_first_rows": [
+            [
+              "Name",
+              "Size",
+              "Shape",
+              "Margin",
+              "Color",
+              "Opacity",
+              "Elevation",
+              "Surface",
+              "16S rRNA",
+              "Accession No. "
+            ],
+            [
+              "SUWK1",
+              "medium",
+              "Round",
+              "Entire",
+              "Clear/off-white",
+              "TT",
+              "Flat",
+              "Smooth",
+              "ND",
+              " -"
+            ],
+            [
+              "SUWK2",
+              "medium",
+              "Irregular",
+              "Undulated",
+              "Yellow",
+              "TP",
+              "Flat",
+              "Glistening",
+              "ND",
+              " -"
+            ]
+          ]
+        },
+        {
+          "rows": 60,
+          "max_columns": 10,
+          "header_and_first_rows": [
+            [
+              "Name",
+              "PS",
+              "PA",
+              "SP",
+              "ACC",
+              "Catalase",
+              "IAA (mg/ml)",
+              "NF",
+              "16S rRNA",
+              "Accession No. "
+            ],
+            [
+              "SUWK1",
+              "2.2±0.11",
+              "++",
+              "+",
+              "+++",
+              "++",
+              "4.9±0.12",
+              "+",
+              "ND",
+              " -"
+            ],
+            [
+              "SUWK2",
+              "-",
+              "-",
+              "-",
+              "+++",
+              "++",
+              "1.8±0.12",
+              "-",
+              "ND",
+              " -"
+            ]
+          ]
+        },
+        {
+          "rows": 3,
+          "max_columns": 6,
+          "header_and_first_rows": [
+            [
+              "",
+              "Df",
+              "Sum Sq",
+              "Mean Sq",
+              "F value",
+              "Pr(>F)"
+            ],
+            [
+              "Location",
+              "2",
+              "26.72222",
+              "13.36111",
+              "0.029132",
+              "0.971425"
+            ],
+            [
+              "Residuals                    ",
+              "6",
+              "2751.833",
+              "458.6389",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "rows": 3,
+          "max_columns": 6,
+          "header_and_first_rows": [
+            [
+              "",
+              "Df",
+              "Sum Sq",
+              "Mean Sq",
+              "F value",
+              "Pr(>F)"
+            ],
+            [
+              "Location",
+              "2",
+              "0.001057",
+              "0.000529",
+              "0.00973",
+              "0.990332"
+            ],
+            [
+              "Residuals                    ",
+              "6",
+              "0.32601",
+              "0.054335",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "rows": 4,
+          "max_columns": 6,
+          "header_and_first_rows": [
+            [
+              "",
+              "Df",
+              "Sum of Sqs",
+              "R2",
+              "F",
+              "Pr(>F)"
+            ],
+            [
+              "Location",
+              "2",
+              "0.606831",
+              "0.378535",
+              "1.8273",
+              "0.003"
+            ],
+            [
+              "Residual",
+              "6",
+              "0.996275",
+              "0.621465",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "rows": 3,
+          "max_columns": 6,
+          "header_and_first_rows": [
+            [
+              "",
+              "Df",
+              "Sum Sq",
+              "Mean Sq",
+              "F value",
+              "Pr(>F)"
+            ],
+            [
+              "Location",
+              "2",
+              "748.0817",
+              "374.0408",
+              "0.199057",
+              "0.824704"
+            ],
+            [
+              "Residuals                    ",
+              "6",
+              "11274.41",
+              "1879.068",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "rows": 3,
+          "max_columns": 6,
+          "header_and_first_rows": [
+            [
+              "",
+              "Df",
+              "Sum Sq",
+              "Mean Sq",
+              "F value",
+              "Pr(>F)"
+            ],
+            [
+              "Location",
+              "2",
+              "0.372482",
+              "0.186241",
+              "1.890259",
+              "0.23087"
+            ],
+            [
+              "Residuals                    ",
+              "6",
+              "0.59116",
+              "0.098527",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "rows": 4,
+          "max_columns": 6,
+          "header_and_first_rows": [
+            [
+              "",
+              "Df",
+              "Sum of Sqs",
+              "R2",
+              "F",
+              "Pr(>F)"
+            ],
+            [
+              "location ",
+              "2",
+              "0.500794",
+              "0.293568",
+              "1.246694",
+              "0.131"
+            ],
+            [
+              "Residual ",
+              "6",
+              "1.205093",
+              "0.706432",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "rows": 3,
+          "max_columns": 6,
+          "header_and_first_rows": [
+            [
+              "",
+              "Df",
+              "Sum Sq",
+              "Mean Sq",
+              "F value",
+              "Pr(>F)"
+            ],
+            [
+              "Location",
+              "2",
+              "374.1667",
+              "187.0833",
+              "1.666419",
+              "0.278896"
+            ],
+            [
+              "Residuals                    ",
+              "5",
+              "561.3333",
+              "112.2667",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "rows": 3,
+          "max_columns": 6,
+          "header_and_first_rows": [
+            [
+              "",
+              "Df",
+              "Sum Sq",
+              "Mean Sq",
+              "F value",
+              "Pr(>F)"
+            ],
+            [
+              "Location",
+              "2",
+              "2.82427",
+              "1.412135",
+              "1.440593",
+              "0.320587"
+            ],
+            [
+              "Residuals                    ",
+              "5",
+              "4.901227",
+              "0.980245",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "rows": 4,
+          "max_columns": 6,
+          "header_and_first_rows": [
+            [
+              "",
+              "Df",
+              "Sum of Sqs",
+              "R2",
+              "F",
+              "Pr(>F)"
+            ],
+            [
+              "Location",
+              "2",
+              "0.517415",
+              "0.276667",
+              "0.956223",
+              "0.567"
+            ],
+            [
+              "Residual",
+              "5",
+              "1.352757",
+              "0.723333",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "rows": 3,
+          "max_columns": 6,
+          "header_and_first_rows": [
+            [
+              "",
+              "Df",
+              "Sum Sq",
+              "Mean Sq",
+              "F value",
+              "Pr(>F)"
+            ],
+            [
+              "Location",
+              "2",
+              "215.3889",
+              "107.6944",
+              "18.20188",
+              "0.002833"
+            ],
+            [
+              "Residuals",
+              "6",
+              "35.5",
+              "5.916667",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "rows": 4,
+          "max_columns": 5,
+          "header_and_first_rows": [
+            [
+              "",
+              "Diff",
+              "lwr",
+              "upr",
+              "p adj"
+            ],
+            [
+              "Greenville-Campus",
+              "-2.83333",
+              "-8.92712",
+              "3.260452",
+              "0.386772"
+            ],
+            [
+              "Kaysville-Campus",
+              "-11.5",
+              "-17.5938",
+              "-5.40622",
+              "0.002809"
+            ]
+          ]
+        },
+        {
+          "rows": 3,
+          "max_columns": 6,
+          "header_and_first_rows": [
+            [
+              "",
+              "Df",
+              "Sum Sq",
+              "Mean Sq",
+              "F value",
+              "Pr(>F)"
+            ],
+            [
+              "Location",
+              "2",
+              "0.082983",
+              "0.041492",
+              "0.547219",
+              "0.604922"
+            ],
+            [
+              "Residuals",
+              "6",
+              "0.454935",
+              "0.075823",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "rows": 4,
+          "max_columns": 6,
+          "header_and_first_rows": [
+            [
+              "",
+              "Df",
+              "Sum of Sqs",
+              "R2",
+              "F",
+              "Pr(>F)"
+            ],
+            [
+              "Location",
+              "2",
+              "0.83536",
+              "0.465238",
+              "2.609975",
+              "0.006"
+            ],
+            [
+              "Residual",
+              "6",
+              "0.960193",
+              "0.534762",
+              "",
+              ""
+            ]
+          ]
+        }
+      ],
+      "media_members": [
+        "word/media/image7.jpeg",
+        "word/media/image5.jpeg",
+        "word/media/image4.jpeg",
+        "word/media/image3.jpeg",
+        "word/media/image2.png",
+        "word/media/image1.png",
+        "word/media/image6.jpeg"
+      ],
+      "embedded_members": [],
+      "validation_status": "rejected_content_mismatch",
+      "validation_note": "Study-specific mirror URL returned unrelated plant microbiology/genetics content; do not use to assess the paper or its actual supplements."
+    },
+    {
+      "path": "data/raw/alternative_search/li_correct_Table_1.xlsx",
+      "sha256": "f6b5014a7afaeeb79fe62c4c2a19c1010084c36976854582d86ba0b0c2ba6148",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "state": "visible",
+          "declared_rows": 17,
+          "declared_columns": 8,
+          "nonempty_rows": 17,
+          "header_and_first_rows": [
+            [
+              "Supplementary Table S1.Raw data and clean data after quality control",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "Samples",
+              "Insert Size(bp)",
+              "Raw reads",
+              "Raw base(bp)",
+              "Clean reads",
+              "Clean base(bp)",
+              "Percent in raw reads(%)",
+              "Percent in raw bases(%)"
+            ],
+            [
+              "HC01",
+              "400",
+              "60232444",
+              "9095099044",
+              "59656899",
+              "8929633689",
+              "99.044460158382",
+              "98.180719591953"
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "accepted_study_content_match",
+      "validation_note": "Title/captions/table subject matter match the target article."
+    },
+    {
+      "path": "data/raw/alternative_search/li_correct_Table_2.xlsx",
+      "sha256": "24d62916ecd08d737a7ddb8f895b2930699521267d26e5314bc72d4df318d062",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "state": "visible",
+          "declared_rows": 5031,
+          "declared_columns": 14,
+          "nonempty_rows": 5031,
+          "header_and_first_rows": [
+            [
+              "Supplementary Table S2.CheckV assesses the quality and completeness of metagenome-assembled viral genomes",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "vOTU_id",
+              "vOTU_length(bp)",
+              "provirus",
+              "proviral_length",
+              "gene_count",
+              "viral_genes",
+              "host_genes",
+              "checkv_quality",
+              "miuvig_quality",
+              "completeness",
+              "completeness_method",
+              "contamination",
+              "kmer_freq",
+              "warnings"
+            ],
+            [
+              "vOTU-1",
+              "862985",
+              "No",
+              "NA",
+              "828",
+              "2",
+              "557",
+              "High-quality",
+              "High-quality",
+              "100",
+              "HMM-based (lower-bound)",
+              "0",
+              "1",
+              null
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "accepted_study_content_match",
+      "validation_note": "Title/captions/table subject matter match the target article."
+    },
+    {
+      "path": "data/raw/alternative_search/li_correct_Table_3.xlsx",
+      "sha256": "d7f510cd18904ab536d8ecf213eb721545ed3863c8c45aad8ae1d8522c48a495",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "state": "visible",
+          "declared_rows": 1196,
+          "declared_columns": 7,
+          "nonempty_rows": 1196,
+          "header_and_first_rows": [
+            [
+              "Supplementary Table S3. CRISPR-Cas spacer in our metagenomic scaffolds matches from the viral sequences in each group",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "Group name",
+              "virus",
+              "host_anno",
+              "spacer",
+              null,
+              null,
+              null
+            ],
+            [
+              "HC",
+              "vOTU-10",
+              "Alistipes communis (taxid 2585118)",
+              "NODE_18798_length_4574_cov_4.524350",
+              null,
+              null,
+              null
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "accepted_study_content_match",
+      "validation_note": "Title/captions/table subject matter match the target article."
+    },
+    {
+      "path": "data/raw/alternative_search/li_correct_Table_4.xlsx",
+      "sha256": "0c9a9f49739ea5325a059f6e493a06ee5f624418a873e853586a8b21a8966ebb",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "state": "visible",
+          "declared_rows": 8716,
+          "declared_columns": 7,
+          "nonempty_rows": 8716,
+          "header_and_first_rows": [
+            [
+              "Supplementary Table S4. Host assignment of isolate viruses based on viral tRNAs in each group.",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "Group name",
+              "viruses",
+              "host_anno",
+              "tRNA",
+              null,
+              null,
+              null
+            ],
+            [
+              "HC",
+              "vOTU-1",
+              "Ruminococcus sp. JE7A12 (taxid 2564099)",
+              "NODE_108435_length_1216_cov_3.283582",
+              null,
+              null,
+              null
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "accepted_study_content_match",
+      "validation_note": "Title/captions/table subject matter match the target article."
+    },
+    {
+      "path": "data/raw/alternative_search/li_correct_Table_5.xlsx",
+      "sha256": "689c9441a04de9a59b52cc8d0b48b2f05b6a1bcfd70f65d04d9b7ee406ccc42b",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "state": "visible",
+          "declared_rows": 15322,
+          "declared_columns": 7,
+          "nonempty_rows": 15322,
+          "header_and_first_rows": [
+            [
+              "Supplementary Table S5. Microbial hosts connected to viral sequences based on direct BLASTn matches in each group",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "Group name",
+              "virus",
+              "host_anno",
+              "blastn",
+              null,
+              null,
+              null
+            ],
+            [
+              "HC",
+              "vOTU-1",
+              "Acinetobacter calcoaceticus (taxid 471)",
+              "NODE_10168_length_8112_cov_3.988799",
+              null,
+              null,
+              null
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "accepted_study_content_match",
+      "validation_note": "Title/captions/table subject matter match the target article."
+    },
+    {
+      "path": "data/raw/alternative_search/li_correct_Table_6.xlsx",
+      "sha256": "fc4588a31b029b5c177d79c1e2e6364bfd88cc1e63e73b20e8ab8e99a626ec8b",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "state": "visible",
+          "declared_rows": 9,
+          "declared_columns": 9,
+          "nonempty_rows": 9,
+          "header_and_first_rows": [
+            [
+              "Supplementary Table S6.List of bacterial hosts connected with viral sequences in each group",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              "HC",
+              "CUMS",
+              null,
+              "Ami",
+              null,
+              "Flu",
+              "XYS"
+            ],
+            [
+              "Contigs No.",
+              null,
+              "808460",
+              "901987",
+              null,
+              "1038339",
+              null,
+              "752335",
+              "919530"
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "accepted_study_content_match",
+      "validation_note": "Title/captions/table subject matter match the target article."
+    },
+    {
+      "path": "data/raw/alternative_search/li_correct_Table_7.xlsx",
+      "sha256": "a476f234c78d4fa40d4a251177595caa18f344fe12bfef10ea7db3f3cd461017",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "state": "visible",
+          "declared_rows": 25108,
+          "declared_columns": 4,
+          "nonempty_rows": 25108,
+          "header_and_first_rows": [
+            [
+              "Supplementary Table S7.List of host assignment per vOTUs",
+              null,
+              null,
+              null
+            ],
+            [
+              "virus",
+              "host_anno",
+              "contig",
+              "Prediction method"
+            ],
+            [
+              "vOTU-77",
+              "[Bacillus] selenitireducens MLS10 (taxid 439292)",
+              "NODE_12572_length_6600_cov_3.818335",
+              "Blastn"
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "accepted_study_content_match",
+      "validation_note": "Title/captions/table subject matter match the target article."
+    },
+    {
+      "path": "data/raw/alternative_search/li_correct_Table_8.xlsx",
+      "sha256": "cb81e0196d862f29f765fffd8b1de92f383cab776c8edabbafdf8689644424f6",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "state": "visible",
+          "declared_rows": 159,
+          "declared_columns": 3,
+          "nonempty_rows": 159,
+          "header_and_first_rows": [
+            [
+              "Supplementary Table S8. Strong (|ρ| > 0.7) and significant (p < 0.01) correlations between vOTUs and bacterial hosts",
+              null,
+              null
+            ],
+            [
+              "Genus",
+              "vOTUs",
+              "Family level"
+            ],
+            [
+              "Muribaculaceae bacterium DSM 108610",
+              "vOTU-3",
+              "Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Caudovirales;;;"
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "accepted_study_content_match",
+      "validation_note": "Title/captions/table subject matter match the target article."
+    },
+    {
+      "path": "data/raw/alternative_search/li_Table_1.xlsx",
+      "sha256": "90f7ca29467e0819eb30010ae23f85770090a5ec697947a9bfbeaf3838c3129e",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "Table S1",
+          "state": "visible",
+          "declared_rows": 56,
+          "declared_columns": 6,
+          "nonempty_rows": 53,
+          "header_and_first_rows": [
+            [
+              "Table S1. Phenotypic data for the NC493 x ‘Chilliwack’ mapping population of 93 individuals. The phenotype was scored for two consecutive years as presence or absence of fruit on primocanes (initiated in the same year as",
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "Plant IDs",
+              "2008",
+              "2009",
+              "Plant IDs",
+              "2008",
+              "2009"
+            ],
+            [
+              "1",
+              "BF",
+              "BF",
+              "25",
+              "BF",
+              "BF"
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "rejected_content_mismatch",
+      "validation_note": "Study-specific mirror URL returned unrelated plant microbiology/genetics content; do not use to assess the paper or its actual supplements."
+    },
+    {
+      "path": "data/raw/alternative_search/li_Table_2.xlsx",
+      "sha256": "b0d62dee5e1e2bb7f6dd7d56499e98d05f49361b260db547a0ca2f4ccd14def7",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "Table S2",
+          "state": "visible",
+          "declared_rows": 26928,
+          "declared_columns": 10,
+          "nonempty_rows": 26927,
+          "header_and_first_rows": [
+            [
+              "Table S2. Chi-Square test results performed on SNP markers heterozygous in NC493 (AF) and Chilliwack (BF) respectively. The markers are named according to their physical position in the R. occidentalis genome (ORUS 4115-",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "Phenoptype",
+              "Chromosome",
+              "Physical position in the genome",
+              "LOD score",
+              "chisquare value",
+              "Phenotype",
+              "Chromosome",
+              "Physical position in the genome",
+              "LOD score",
+              "chisquare value"
+            ],
+            [
+              "AF",
+              "chr4",
+              "4076592",
+              "4.323094309",
+              "4.75e-05",
+              "BF",
+              "chr1",
+              "2705484",
+              "0",
+              "1"
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "rejected_content_mismatch",
+      "validation_note": "Study-specific mirror URL returned unrelated plant microbiology/genetics content; do not use to assess the paper or its actual supplements."
+    },
+    {
+      "path": "data/raw/alternative_search/li_Table_3.xlsx",
+      "sha256": "4aede834048ccc929f4c5d5b953c3a3ec3c4c50523191144dadd57474f52d96a",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "Table S3",
+          "state": "visible",
+          "declared_rows": 198,
+          "declared_columns": 6,
+          "nonempty_rows": 194,
+          "header_and_first_rows": [
+            [
+              "Table S3. SNP markers used for analysing quantitative trait loci underlying Annual-Fruiting (AF) in red raspberry populations segregating for the trait. The markers were analysed by using high resolution melting (HRM) PC",
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "Marker name",
+              "Primer orientation (5' to 3')",
+              "Primer Sequence",
+              "X16.093(Z12041-2 X Z12022-7)",
+              "X16.109 (Z12027-13 X Z12022-7)",
+              "X16.111 (Z12027-13 X Z12011-8)"
+            ],
+            [
+              "chr3-4,522,390 ",
+              "For",
+              "GCTCGTGACCCAGAAGAAAA",
+              "abxab",
+              "abxab",
+              "abxab"
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "rejected_content_mismatch",
+      "validation_note": "Study-specific mirror URL returned unrelated plant microbiology/genetics content; do not use to assess the paper or its actual supplements."
+    },
+    {
+      "path": "data/raw/alternative_search/li_Table_4.xlsx",
+      "sha256": "e2b62a9f5251fba6d841a29c8a80254ad65917cc285dad3e9bdd5ac01551aaf9",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "state": "visible",
+          "declared_rows": 88,
+          "declared_columns": 4,
+          "nonempty_rows": 84,
+          "header_and_first_rows": [
+            [
+              "Table S4. Fruiting phenotypes of the C1 blackberry segregating population derived from a cross between Annual and Biennial-Fruiting parents (RM63 x RM44). The phenotype was scored for two consecutive years as presence or",
+              null,
+              null,
+              null
+            ],
+            [
+              "No",
+              "Individual",
+              "AF/BF phenotype",
+              null
+            ],
+            [
+              "1",
+              "C1-1",
+              "BF",
+              null
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "rejected_content_mismatch",
+      "validation_note": "Study-specific mirror URL returned unrelated plant microbiology/genetics content; do not use to assess the paper or its actual supplements."
+    },
+    {
+      "path": "data/raw/alternative_search/li_Table_5.xlsx",
+      "sha256": "104a02f5adbc419d521280d9c7c28517dd330912bc03b2c3e1f06bb9a4acaa55",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "Table S5",
+          "state": "visible",
+          "declared_rows": 2348,
+          "declared_columns": 5,
+          "nonempty_rows": 2345,
+          "header_and_first_rows": [
+            [
+              "Table S5. List of all genes in the genomic interval of RiAF3 (35 to 43.7 Mb) and RiAF4 (0 to 10.58 Mb). Gene models and their physical location (bp) in the R. occidentalis genome (ORUS 4115-3 v3.0, VanBuren et al. 2018) ",
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "Rubus gene models",
+              "Physical location (bp)",
+              "Arsbidopsis orthologue",
+              "Biological function in Arabidopsis",
+              null
+            ],
+            [
+              "Ro03_G24419",
+              "43717084",
+              "AT5G36950.1",
+              "DEG10   degradation of periplasmic proteins 10",
+              null
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "rejected_content_mismatch",
+      "validation_note": "Study-specific mirror URL returned unrelated plant microbiology/genetics content; do not use to assess the paper or its actual supplements."
+    },
+    {
+      "path": "data/raw/alternative_search/li_Table_6.xlsx",
+      "sha256": "4f2ca60bde992a561872ba4057a13f4a86d09acf1f140d8336aebbc1bf6d9ee0",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "Table S5",
+          "state": "visible",
+          "declared_rows": 2349,
+          "declared_columns": 9,
+          "nonempty_rows": 2345,
+          "header_and_first_rows": [
+            [
+              "Table S6: All differentially expressed genes in the regions underlying RiAF3 (35 to 43.7 Mb) and RiAF4 (0 to 10.58 Mb) of the R. occidentalis genome (ORUS 4115-3 v3.0, VanBuren et al. 2018). WA= ‘Wakefield’, HT= ‘Heritag",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "Rubus gene model",
+              "Physical location (bp)",
+              "Arsbidopsis orthologue",
+              "Biological function in Arabidopsis",
+              "log2FoldChange (BF to AF)",
+              "pvalue",
+              "Average RPKM WA (BF)",
+              "Average RPKM HT (AF)",
+              null
+            ],
+            [
+              "Ro03_G24419",
+              "43717084",
+              "AT5G36950.1",
+              "DEG10   degradation of periplasmic proteins 10",
+              "-0.434530921",
+              "0.002206808",
+              "288.36984256666665",
+              "390.40990273333335",
+              null
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "rejected_content_mismatch",
+      "validation_note": "Study-specific mirror URL returned unrelated plant microbiology/genetics content; do not use to assess the paper or its actual supplements."
+    },
+    {
+      "path": "data/raw/alternative_search/li_Table_7.xlsx",
+      "sha256": "b6d526e64565e7cf8c8a92f33d1b3e07f7fb16f1efc5d887bbd881f349a79ffd",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "SupplementaryTable7",
+          "state": "visible",
+          "declared_rows": 3321,
+          "declared_columns": 6,
+          "nonempty_rows": 3321,
+          "header_and_first_rows": [
+            [
+              "Supplementary Table 7. The number of SNPs and additive genetic variance (%) explained in TEXT by 1-Mb genomic windows from single-trait WssGBLUP analysis correcting for indirect effects where all other  traits were inclu",
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "Trait",
+              "Chromosome",
+              "Start position",
+              "End position",
+              "Number of SNP within window",
+              "% Genetic variance explained"
+            ],
+            [
+              "Texture",
+              "5",
+              "55929423",
+              "56925298",
+              "426",
+              "1.58111"
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "rejected_content_mismatch",
+      "validation_note": "Study-specific mirror URL returned unrelated plant microbiology/genetics content; do not use to assess the paper or its actual supplements."
+    },
+    {
+      "path": "data/raw/alternative_search/li_Table_8.xlsx",
+      "sha256": "a79c0904877c31c141c1ab49d10d83514f97938f67b53cc027c99873a39949cc",
+      "format": "xlsx",
+      "sheets": [
+        {
+          "name": "SupplementaryTable8",
+          "state": "visible",
+          "declared_rows": 3347,
+          "declared_columns": 6,
+          "nonempty_rows": 3347,
+          "header_and_first_rows": [
+            [
+              "Supplementary Table 8. The number of SNPs and additive genetic variance (%) explained in FIRM by 1-Mb genomic windows from single-trait WssGBLUP analysis correcting for indirect effects where all other  traits were inclu",
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "Trait",
+              "Chromosome",
+              "Start position",
+              "End position",
+              "Number of SNP within window",
+              "% Genetic variance explained"
+            ],
+            [
+              "Firmness",
+              "18",
+              "51448313",
+              "52447232",
+              "426",
+              "1.62399"
+            ]
+          ],
+          "immune_keyword_hits": []
+        }
+      ],
+      "validation_status": "rejected_content_mismatch",
+      "validation_note": "Study-specific mirror URL returned unrelated plant microbiology/genetics content; do not use to assess the paper or its actual supplements."
+    }
+  ],
+  "peak_rss_bytes": 70524928
+}

@@ -44,13 +44,15 @@ Evidence: Sec18-Sec22, Sec32, Figure 4. Consequently, endpoint cytokines from pl
 
 ## Endpoint units and basal timing verified against the published table
 
-The publisher's [article PDF](https://www.nature.com/articles/s41564-023-01564-y.pdf), Extended Data Table 1b,c, provides unit and timing evidence absent from the workbook column names. The table was inspected through indexed primary-source text. Its rounded means agree with the means independently calculated from the source workbook:
+The publisher's [article PDF](https://www.nature.com/articles/s41564-023-01564-y.pdf), Extended Data Table 1b,c, provides unit and timing evidence absent from the workbook column names. The table was inspected through indexed primary-source text, with the TNF-alpha cell subsequently checked visually. Eight of the nine selected group means agree with direct rounding of the workbook means. The printed FVT unstimulated TNF-alpha mean is an unresolved exception:
 
 | Selected workbook column | Published Ctr / Stress / FVT Stress means | Recalculated source means | Published unit and timing |
 |---|---|---|---|
 | `ly6chi_monocytes` | 4.38 / 2.35 / 3.91 | 4.3843577 / 2.3503197 / 3.9068106 | Table 1c: percent of parent population, basal blood sample |
 | `ly6chi_monocytes_cd62` | 61.4 / 59.6 / 75.5 | 61.397405 / 59.636964 / 75.510619 | Table 1c: percent of parent population, basal blood sample |
 | `tnfa_splenocyte_unstimulated` | 34.4 / 102.0 / 27.9 | 34.437477 / 101.980594 / 27.849278 | Table 1b: pg/mL, vehicle/unstimulated splenocyte culture |
+
+The FVT unstimulated TNF-alpha workbook mean is 27.8492778 pg/mL, which rounds directly to 27.8 at one decimal place, whereas Table 1b prints 27.9. No source correction or explanation is inferred. The published units, ordering and assay context remain supported. The reconstructed caption t statistics and Tukey comparisons agree with the source observations despite this printed group-mean discrepancy.
 
 Basal in Table 1c means before the acute forced-swim test, after the chronic stress exposure already received. It does not denote a baseline before chronic stress. The table separately reports 45-minute post-FST monocyte means of 2.47 / 2.37 / 2.75 and CD62L-positive monocyte means of 71.1 / 73.7 / 75.4. Those do not match these workbook columns. Therefore the selected cell outcomes should be labeled basal, before FST, with the chronic-stress context retained. Their additive mean contrasts are percentage points, not relative percentage changes, absolute cell counts, or demonstrated immune-cell trafficking.
 
