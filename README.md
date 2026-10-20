@@ -36,16 +36,6 @@ See the mandatory [feasibility gate](results/reports/data_feasibility.md),
 [machine-readable linkage map](results/tables/sample_linkage_audit.csv) and
 [archive audit](results/reports/archive_availability.md).
 
-An [expanded processed-data search](docs/processed_data_search.md) records 52
-saved evidence records. Its complete supplementary package contains the same
-phenotype workbook, a reporting summary and figure/table images, with no
-additional processed community matrix. Accession-linked analysis routes,
-selected author repositories and secondary indexes did not yield a verified
-replacement for the missing inputs. This is a bounded search result. A newer
-[prenatal-stress candidate](docs/new_prenatal_stress_candidate.md) remains
-unresolved; its preview and abstract do not establish public, linked recipient
-virome and immune measurements.
-
 ## Hypotheses and selected analysis
 
 The primary within-mouse stability/immune hypothesis and H1-H3/H5 viral
