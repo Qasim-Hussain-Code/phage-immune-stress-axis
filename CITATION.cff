@@ -1,7 +1,9 @@
 cff-version: 1.2.0
-message: "Please cite Ritz et al. (2024), the original datasets, and this local research software when using these materials. No public project release is claimed."
+message: "Please cite Ritz et al. (2024), the original datasets, and this research software when using these materials."
 title: "Gut phageome stability and stress-related immune responses: public-data feasibility and restricted immune reanalysis"
 type: software
+repository-code: "https://github.com/Qasim-Hussain-Code/phage-immune-stress-axis"
+url: "https://github.com/Qasim-Hussain-Code/phage-immune-stress-axis"
 authors:
   - family-names: Hussain
     given-names: Qasim

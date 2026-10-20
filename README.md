@@ -266,9 +266,11 @@ are exclusively software checks. The measured control groups provide treatment
 references. Independent biological negative and positive controls for the
 unmeasured phage-stability association are unavailable.
 
-The local release is validated. Authorized GitHub CLI access has been verified;
-publication is in progress. Consult [publication status](docs/publication_status.md)
-for the verified remote outcome.
+The validated project is public at
+[Qasim-Hussain-Code/phage-immune-stress-axis](https://github.com/Qasim-Hussain-Code/phage-immune-stress-axis).
+The first push was verified by both Git remote references and the GitHub API.
+See [publication status](docs/publication_status.md) and the
+[machine-readable verification](results/reports/publication_check.json).
 
 ## Provenance, license and attribution
 
