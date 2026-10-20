@@ -31,18 +31,6 @@ The initial-study captions imply 12 pool-by-time profiles: three per group at
 two times. Their membership and deposited profile crosswalk are unresolved.
 They are not 12 independently verified animals or longitudinal pools.
 
-The FVT study contains both pooled enriched viromes and individual bulk-derived
-viral signals. The inspected code releases contain only script PDFs. Their
-viral/bacterial matrices, annotations and animal recalibration map are absent.
-Control identifiers such as `1.1`, `19.2`, `19x2` and `1x2` cannot be repaired by
-punctuation removal or presumed renumbering. No profile is assigned using row
-order. Inocula are never treated as recipient communities.
-
-**Retrieved processed viral profiles: 0. Verified usable virome-immune matches:
-0. Measured temporal stability estimates: 0.** Same-row immune and behavioral
-measurements are linked only within their source sheet. Sequencing specimens,
-mouse rows, pools, technical observations and complete cases remain distinct.
-
 See the mandatory [feasibility gate](results/reports/data_feasibility.md),
 [sample audit](results/reports/sample_linkage.md),
 [machine-readable linkage map](results/tables/sample_linkage_audit.csv) and
