@@ -1,12 +1,5 @@
 # Gut phageome stability and stress-related immune responses
 
-This repository contains a completed public-data feasibility audit and a
-restricted, exploratory immune source-data reanalysis, with a separate
-reconstruction of selected original statistical calculations. The proposed association
-between gut phageome stability and stress-related immune disruption could not
-be tested from the retrieved processed inputs. That is a data availability
-conclusion, not evidence of no biological relationship.
-
 ## Research question and biological context
 
 Is preservation of a mouse's gut phage community during chronic stress
