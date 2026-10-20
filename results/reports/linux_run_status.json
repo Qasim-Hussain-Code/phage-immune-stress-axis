@@ -1,0 +1,1058 @@
+{
+  "invocation_id": "20261020T124233722784Z_466",
+  "mode": "full",
+  "offline": true,
+  "resume_requested": false,
+  "requested_threads": 1,
+  "actual_workers": 1,
+  "started_utc": "2026-10-20T12:42:33.722784+00:00",
+  "stages": [
+    {
+      "name": "01_audit_sources",
+      "status": "completed",
+      "result": {
+        "public_inputs": 10,
+        "gate": "restricted_analysis",
+        "reference_review": "docs/reference_repository_review.md",
+        "processed_virome_inputs": 0
+      },
+      "recorded_peak_rss_bytes": 30683136,
+      "resource_scope": "measured_this_invocation"
+    },
+    {
+      "name": "02_fetch_data",
+      "status": "completed",
+      "result": {
+        "verified_inputs": 10,
+        "offline": true,
+        "raw_reads_downloaded": 0,
+        "article_methods_verified": 4,
+        "archive_files": 1,
+        "processed_matrices_in_archive": 0,
+        "gate": "restricted_analysis"
+      },
+      "recorded_peak_rss_bytes": 33701888,
+      "resource_scope": "measured_this_invocation"
+    },
+    {
+      "name": "03_validate_samples",
+      "status": "completed",
+      "result": {
+        "principal_accession": "PRJNA970614",
+        "principal_run_count": 104,
+        "principal_specimen_count": 104,
+        "sequencing_category_counts": {
+          "individual_recipient_bulk_metagenome": 77,
+          "pooled_fecal_virome": 8,
+          "transplant_inoculum": 19
+        },
+        "principal_compressed_fastq_bytes": 262211457238,
+        "workbook_animal_rows": 50,
+        "workbook_group_counts": [
+          {
+            "experiment_id": "fvt_study_ii",
+            "group": "ctr",
+            "animal_rows": 10
+          },
+          {
+            "experiment_id": "fvt_study_ii",
+            "group": "ctr_stress",
+            "animal_rows": 10
+          },
+          {
+            "experiment_id": "fvt_study_ii",
+            "group": "fvt_stress",
+            "animal_rows": 10
+          },
+          {
+            "experiment_id": "stress_study_i",
+            "group": "Control",
+            "animal_rows": 10
+          },
+          {
+            "experiment_id": "stress_study_i",
+            "group": "Stress",
+            "animal_rows": 10
+          }
+        ],
+        "workbook_rows_with_observed_immune": 50,
+        "workbook_rows_with_observed_behavior": 50,
+        "within_workbook_immune_behavior_rows": 50,
+        "metadata_candidate_animal_keys": 42,
+        "metadata_candidates_with_before_after": 35,
+        "processed_virome_profiles_retrieved": 0,
+        "verified_virome_immune_matches": 0,
+        "verified_bacteriome_immune_matches": 0,
+        "longitudinal_phageome_stability_measurable": false,
+        "primary_association_identifiable": false,
+        "linkage_rows": 154,
+        "additional_accessions_are_inventory_only": [
+          "PRJEB69687",
+          "PRJEB67706"
+        ],
+        "decision": "Separate source-row immune analysis and sequencing availability audit only."
+      },
+      "recorded_peak_rss_bytes": 63819776,
+      "resource_scope": "measured_this_invocation"
+    },
+    {
+      "name": "04_virome_qc",
+      "status": "completed",
+      "result": {
+        "status": "excluded_missing_processed_inputs",
+        "biological_profiles_analyzed": 0
+      },
+      "recorded_peak_rss_bytes": 30945280,
+      "resource_scope": "measured_this_invocation"
+    },
+    {
+      "name": "05_stability_metrics",
+      "status": "completed",
+      "result": {
+        "temporal_stability_estimates": 0,
+        "reference_state_estimates": 0,
+        "hypotheses": 6
+      },
+      "recorded_peak_rss_bytes": 31076352,
+      "resource_scope": "measured_this_invocation"
+    },
+    {
+      "name": "06_immune_phenotypes",
+      "status": "completed",
+      "result": {
+        "status": "completed",
+        "source_animal_rows": 50,
+        "source_animal_rows_by_experiment": {
+          "study_i": 20,
+          "study_ii": 30
+        },
+        "long_records": 1240,
+        "missing_records": 120,
+        "matched_processed_virome_profiles": 0,
+        "outputs": [
+          "data/processed/immune_long.csv",
+          "results/tables/immune_missingness.csv",
+          "results/tables/source_inventory.csv"
+        ]
+      },
+      "recorded_peak_rss_bytes": 64364544,
+      "resource_scope": "measured_this_invocation"
+    },
+    {
+      "name": "07_immune_associations",
+      "status": "completed",
+      "result": {
+        "status": "completed",
+        "analysis": "separate exploratory immune contrasts",
+        "tests": 6,
+        "bh_family_size": 6,
+        "n_q_below_0_05": 3,
+        "selected_endpoints": [
+          "ly6chi_monocytes",
+          "ly6chi_monocytes_cd62",
+          "tnfa_splenocyte_unstimulated"
+        ],
+        "contrast_results": [
+          {
+            "experiment_id": "study_ii",
+            "endpoint": "ly6chi_monocytes",
+            "contrast": "ctr_stress_minus_ctr",
+            "first_group": "ctr_stress",
+            "second_group": "ctr",
+            "n_first": 10,
+            "n_second": 10,
+            "mean_first": 2.3503197,
+            "mean_second": 4.3843577,
+            "mean_difference": -2.034038,
+            "standard_error": 0.757375034059145,
+            "ci_low": -3.6832521890656276,
+            "ci_high": -0.38482381093437223,
+            "confidence_level": 0.95,
+            "t_statistic": -2.685641734318321,
+            "degrees_freedom": 12.063591766773243,
+            "p_value": 0.01975083736497108,
+            "method": "two-sided unpaired Welch t-test",
+            "scale": "untransformed source units",
+            "effect_units": "percentage points",
+            "family": "three fixed endpoints by two fixed contrasts",
+            "family_size": 6,
+            "interpretation": "exploratory unadjusted animal-level comparison; cage allocation unavailable; upstream censoring and exclusions unresolved; no viral-immune association",
+            "q_value": 0.03950167472994216
+          },
+          {
+            "experiment_id": "study_ii",
+            "endpoint": "ly6chi_monocytes",
+            "contrast": "fvt_stress_minus_ctr_stress",
+            "first_group": "fvt_stress",
+            "second_group": "ctr_stress",
+            "n_first": 9,
+            "n_second": 10,
+            "mean_first": 3.9068105555555555,
+            "mean_second": 2.3503197,
+            "mean_difference": 1.5564908555555554,
+            "standard_error": 0.5435366237138322,
+            "ci_low": 0.3892617749180052,
+            "ci_high": 2.7237199361931057,
+            "confidence_level": 0.95,
+            "t_statistic": 2.8636356551661475,
+            "degrees_freedom": 13.815909707619522,
+            "p_value": 0.012645259712841694,
+            "method": "two-sided unpaired Welch t-test",
+            "scale": "untransformed source units",
+            "effect_units": "percentage points",
+            "family": "three fixed endpoints by two fixed contrasts",
+            "family_size": 6,
+            "interpretation": "exploratory unadjusted animal-level comparison; cage allocation unavailable; upstream censoring and exclusions unresolved; no viral-immune association",
+            "q_value": 0.03793577913852508
+          },
+          {
+            "experiment_id": "study_ii",
+            "endpoint": "ly6chi_monocytes_cd62",
+            "contrast": "ctr_stress_minus_ctr",
+            "first_group": "ctr_stress",
+            "second_group": "ctr",
+            "n_first": 10,
+            "n_second": 10,
+            "mean_first": 59.636964,
+            "mean_second": 61.397405,
+            "mean_difference": -1.7604410000000001,
+            "standard_error": 2.7083418783752173,
+            "ci_low": -7.5833483338032215,
+            "ci_high": 4.062466333803221,
+            "confidence_level": 0.95,
+            "t_statistic": -0.6500069337834558,
+            "degrees_freedom": 13.64788008338832,
+            "p_value": 0.5264782461931485,
+            "method": "two-sided unpaired Welch t-test",
+            "scale": "untransformed source units",
+            "effect_units": "percentage points",
+            "family": "three fixed endpoints by two fixed contrasts",
+            "family_size": 6,
+            "interpretation": "exploratory unadjusted animal-level comparison; cage allocation unavailable; upstream censoring and exclusions unresolved; no viral-immune association",
+            "q_value": 0.5264782461931485
+          },
+          {
+            "experiment_id": "study_ii",
+            "endpoint": "ly6chi_monocytes_cd62",
+            "contrast": "fvt_stress_minus_ctr_stress",
+            "first_group": "fvt_stress",
+            "second_group": "ctr_stress",
+            "n_first": 9,
+            "n_second": 10,
+            "mean_first": 75.51061888888889,
+            "mean_second": 59.636964,
+            "mean_difference": 15.873654888888886,
+            "standard_error": 3.8385983345162025,
+            "ci_low": 7.7261456480864314,
+            "ci_high": 24.021164129691343,
+            "confidence_level": 0.95,
+            "t_statistic": 4.1352737394154895,
+            "degrees_freedom": 15.76090666957244,
+            "p_value": 0.000799888717483191,
+            "method": "two-sided unpaired Welch t-test",
+            "scale": "untransformed source units",
+            "effect_units": "percentage points",
+            "family": "three fixed endpoints by two fixed contrasts",
+            "family_size": 6,
+            "interpretation": "exploratory unadjusted animal-level comparison; cage allocation unavailable; upstream censoring and exclusions unresolved; no viral-immune association",
+            "q_value": 0.004799332304899146
+          },
+          {
+            "experiment_id": "study_ii",
+            "endpoint": "tnfa_splenocyte_unstimulated",
+            "contrast": "ctr_stress_minus_ctr",
+            "first_group": "ctr_stress",
+            "second_group": "ctr",
+            "n_first": 8,
+            "n_second": 9,
+            "mean_first": 101.98059375,
+            "mean_second": 34.43747666666667,
+            "mean_difference": 67.54311708333333,
+            "standard_error": 39.779373142285124,
+            "ci_low": -26.175457395300228,
+            "ci_high": 161.26169156196687,
+            "confidence_level": 0.95,
+            "t_statistic": 1.697943224035765,
+            "degrees_freedom": 7.129287461985539,
+            "p_value": 0.13254914070072993,
+            "method": "two-sided unpaired Welch t-test",
+            "scale": "untransformed source units",
+            "effect_units": "pg/mL",
+            "family": "three fixed endpoints by two fixed contrasts",
+            "family_size": 6,
+            "interpretation": "exploratory unadjusted animal-level comparison; cage allocation unavailable; upstream censoring and exclusions unresolved; no viral-immune association",
+            "q_value": 0.15905896884087592
+          },
+          {
+            "experiment_id": "study_ii",
+            "endpoint": "tnfa_splenocyte_unstimulated",
+            "contrast": "fvt_stress_minus_ctr_stress",
+            "first_group": "fvt_stress",
+            "second_group": "ctr_stress",
+            "n_first": 9,
+            "n_second": 8,
+            "mean_first": 27.84927777777778,
+            "mean_second": 101.98059375,
+            "mean_difference": -74.13131597222221,
+            "standard_error": 39.623983313791214,
+            "ci_low": -167.77561160385247,
+            "ci_high": 19.512979659408046,
+            "confidence_level": 0.95,
+            "t_statistic": -1.8708698563988302,
+            "degrees_freedom": 7.019054017402427,
+            "p_value": 0.10343116536850168,
+            "method": "two-sided unpaired Welch t-test",
+            "scale": "untransformed source units",
+            "effect_units": "pg/mL",
+            "family": "three fixed endpoints by two fixed contrasts",
+            "family_size": 6,
+            "interpretation": "exploratory unadjusted animal-level comparison; cage allocation unavailable; upstream censoring and exclusions unresolved; no viral-immune association",
+            "q_value": 0.15514674805275253
+          }
+        ],
+        "interpretation": "exploratory unadjusted animal-level comparison; cage allocation unavailable; upstream censoring and exclusions unresolved; no viral-immune association",
+        "outputs": [
+          "results/tables/immune_contrasts.csv",
+          "results/tables/immune_sensitivity.csv",
+          "results/tables/immune_summary.csv"
+        ],
+        "original_method_reconstruction": {
+          "status": "completed",
+          "endpoints": 3,
+          "rows": 24,
+          "published_checks": 18,
+          "published_matches": 17,
+          "published_mismatches": 1,
+          "source_group_summary_checks": 9,
+          "source_group_summary_matches": 8,
+          "caption_statistic_checks": 9,
+          "caption_statistic_matches": 9,
+          "additional_observations_excluded": 0,
+          "original_bh_reproduced": false,
+          "primary_welch_family_unchanged": true,
+          "outputs": [
+            "results/tables/original_method_replication.csv",
+            "results/reports/original_method_replication.md"
+          ]
+        },
+        "descriptive_phenotype_robustness": {
+          "status": "completed",
+          "bounds_rows": 6,
+          "rank_effect_rows": 6,
+          "finite_bounds_rows": 4,
+          "existing_u_checks": 6,
+          "new_hypothesis_tests": 0,
+          "primary_tables_changed": false,
+          "outputs": [
+            "results/tables/immune_missingness_bounds.csv",
+            "results/tables/immune_rank_effects.csv",
+            "results/reports/phenotype_robustness.md"
+          ]
+        }
+      },
+      "recorded_peak_rss_bytes": 133062656,
+      "resource_scope": "measured_this_invocation"
+    },
+    {
+      "name": "08_bacteriome_integration",
+      "status": "completed",
+      "result": {
+        "status": "excluded_missing_processed_inputs",
+        "models_fitted": 0
+      },
+      "recorded_peak_rss_bytes": 31338496,
+      "resource_scope": "measured_this_invocation"
+    },
+    {
+      "name": "09_robustness_checks",
+      "status": "completed",
+      "result": {
+        "status": "passed",
+        "test_log": "results/reports/validation.log",
+        "scope": "software_tests_not_reexecution_of_scientific_stages",
+        "schema_version": 2,
+        "started_utc": "2026-10-20T12:42:41.254488+00:00",
+        "project_version": "0.2.1",
+        "finished_utc": "2026-10-20T12:42:49.516312+00:00",
+        "duration_seconds": 8.262,
+        "code_sha256": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
+        "code_sha256_after": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
+        "source_unchanged_during_validation": true,
+        "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+        "package_versions": {
+          "contourpy": "1.3.3",
+          "cycler": "0.12.1",
+          "et_xmlfile": "2.0.0",
+          "fonttools": "4.60.1",
+          "kiwisolver": "1.4.9",
+          "matplotlib": "3.10.7",
+          "numpy": "2.3.4",
+          "openpyxl": "3.1.5",
+          "packaging": "25.0",
+          "pandas": "2.3.3",
+          "patsy": "1.0.2",
+          "pillow": "12.0.0",
+          "pyparsing": "3.2.5",
+          "pypdf": "6.13.0",
+          "python-dateutil": "2.9.0.post0",
+          "pytz": "2025.2",
+          "PyYAML": "6.0.3",
+          "scipy": "1.16.3",
+          "six": "1.17.0",
+          "statsmodels": "0.14.6",
+          "tzdata": "2025.2"
+        },
+        "test_timings": [
+          {
+            "test": "test_acquisition.AcquisitionContracts.test_catalog_excludes_usage_stats",
+            "seconds": 0.000512
+          },
+          {
+            "test": "test_acquisition.AcquisitionContracts.test_fingerprint_detects_input_change",
+            "seconds": 0.024008
+          },
+          {
+            "test": "test_acquisition.AcquisitionContracts.test_malformed_manifest_fails_before_download",
+            "seconds": 0.017209
+          },
+          {
+            "test": "test_acquisition.AcquisitionContracts.test_offline_missing_and_corrupt_inputs_fail",
+            "seconds": 0.001365
+          },
+          {
+            "test": "test_acquisition.AcquisitionContracts.test_streaming_cap_is_enforced_and_partial_removed",
+            "seconds": 0.001796
+          },
+          {
+            "test": "test_acquisition.AcquisitionContracts.test_validation_does_not_write_or_extract",
+            "seconds": 0.001265
+          },
+          {
+            "test": "test_calibration.SoftwareCalibrationTests.test_benchmark_seed_and_batch_invariance",
+            "seconds": 1.711897
+          },
+          {
+            "test": "test_calibration.SoftwareCalibrationTests.test_cluster_covariance_matches_analytical_contract",
+            "seconds": 0.000369
+          },
+          {
+            "test": "test_calibration.SoftwareCalibrationTests.test_invalid_and_bounded_settings",
+            "seconds": 0.000121
+          },
+          {
+            "test": "test_calibration.SoftwareCalibrationTests.test_obvious_zero_signal_and_added_signal_controls",
+            "seconds": 0.000269
+          },
+          {
+            "test": "test_calibration.SoftwareCalibrationTests.test_outputs_need_no_biological_inputs_and_are_labeled",
+            "seconds": 0.01537
+          },
+          {
+            "test": "test_calibration.SoftwareCalibrationTests.test_replicate_major_generators_preserve_batches_exactly",
+            "seconds": 0.002476
+          },
+          {
+            "test": "test_calibration.SoftwareCalibrationTests.test_vectorized_welch_against_independent_scipy_samples",
+            "seconds": 0.040764
+          },
+          {
+            "test": "test_calibration.SoftwareCalibrationTests.test_wilson_matches_statsmodels_including_boundaries",
+            "seconds": 1.14889
+          },
+          {
+            "test": "test_configuration.ResourcePolicyConfiguration.test_hardware_policy_cannot_be_silently_weakened",
+            "seconds": 0.025053
+          },
+          {
+            "test": "test_environment.DependencyProvenance.test_missing_distribution_is_explicit",
+            "seconds": 0.012293
+          },
+          {
+            "test": "test_environment.DependencyProvenance.test_pins_cover_observed_active_dependency_closure",
+            "seconds": 0.03281
+          },
+          {
+            "test": "test_environment.DependencyProvenance.test_transitive_version_change_invalidates_cache_fingerprint",
+            "seconds": 0.021049
+          },
+          {
+            "test": "test_figure_qa.RecordedFigureReview.test_missing_review_never_means_pass",
+            "seconds": 0.000323
+          },
+          {
+            "test": "test_figure_qa.RecordedFigureReview.test_review_is_invalidated_by_changed_or_added_pdf",
+            "seconds": 0.002478
+          },
+          {
+            "test": "test_immune.TestIndependentStatistics.test_analytical_identity_and_edge_cases",
+            "seconds": 0.000894
+          },
+          {
+            "test": "test_immune.TestIndependentStatistics.test_bh_matches_statsmodels",
+            "seconds": 0.014995
+          },
+          {
+            "test": "test_immune.TestIndependentStatistics.test_leave_one_out_agrees_with_brute_force_means",
+            "seconds": 0.001816
+          },
+          {
+            "test": "test_immune.TestIndependentStatistics.test_welch_matches_scipy",
+            "seconds": 0.005252
+          },
+          {
+            "test": "test_immune.TestSourceIdentifiers.test_blank_rows_missing_outcomes_and_zero",
+            "seconds": 0.254725
+          },
+          {
+            "test": "test_immune.TestSourceIdentifiers.test_duplicate_and_unknown_groups_fail",
+            "seconds": 0.020311
+          },
+          {
+            "test": "test_immune.TestSourceIdentifiers.test_fixed_six_test_family_and_no_study_i_tests",
+            "seconds": 0.028182
+          },
+          {
+            "test": "test_immune.TestSourceIdentifiers.test_literal_and_composite_ids",
+            "seconds": 6.5e-05
+          },
+          {
+            "test": "test_immune.TestSourceIdentifiers.test_unavailable_source_does_not_make_results",
+            "seconds": 0.00038
+          },
+          {
+            "test": "test_io.AtomicJSON.test_conflict_classifier_requires_windows_permissionerror_and_known_code",
+            "seconds": 0.000195
+          },
+          {
+            "test": "test_io.AtomicJSON.test_failed_replace_preserves_existing_record",
+            "seconds": 0.019159
+          },
+          {
+            "test": "test_io.AtomicJSON.test_native_serialization_is_preserved_and_temporary_is_removed",
+            "seconds": 0.012041
+          },
+          {
+            "test": "test_io.AtomicJSON.test_ordinary_permission_nonwindows_and_other_oserrors_are_not_retried",
+            "seconds": 0.018377
+          },
+          {
+            "test": "test_io.AtomicJSON.test_persistent_known_windows_conflict_is_bounded_and_preserves_old_bytes",
+            "seconds": 0.010558
+          },
+          {
+            "test": "test_io.AtomicJSON.test_serialization_failure_never_opens_or_truncates_destination",
+            "seconds": 0.000473
+          },
+          {
+            "test": "test_io.AtomicJSON.test_transient_windows_conflicts_retry_then_publish_with_real_replace",
+            "seconds": 0.013643
+          },
+          {
+            "test": "test_metrics.CommunityMath.test_bray_curtis_scipy",
+            "seconds": 0.000203
+          },
+          {
+            "test": "test_metrics.CommunityMath.test_closure_scale_invariance",
+            "seconds": 9.7e-05
+          },
+          {
+            "test": "test_metrics.CommunityMath.test_invalid_abundances",
+            "seconds": 0.000127
+          },
+          {
+            "test": "test_metrics.CommunityMath.test_pairwise_logratio_identity",
+            "seconds": 8.9e-05
+          },
+          {
+            "test": "test_metrics.CommunityMath.test_zero_handling_and_identity",
+            "seconds": 7.4e-05
+          },
+          {
+            "test": "test_original_methods.OriginalMethodRealDataVerification.test_cached_source_matches_published_caption_without_extra_exclusions",
+            "seconds": 0.541709
+          },
+          {
+            "test": "test_original_methods.OriginalMethodSyntheticTests.test_anova_and_contrast_against_independent_ols",
+            "seconds": 0.994283
+          },
+          {
+            "test": "test_original_methods.OriginalMethodSyntheticTests.test_contrast_covariance_depends_on_unequal_sizes",
+            "seconds": 4.8e-05
+          },
+          {
+            "test": "test_original_methods.OriginalMethodSyntheticTests.test_invalid_groups_and_degenerate_variance",
+            "seconds": 0.000236
+          },
+          {
+            "test": "test_original_methods.OriginalMethodSyntheticTests.test_planned_contrast_is_not_conjunction_of_pairwise_effects",
+            "seconds": 0.131508
+          },
+          {
+            "test": "test_original_methods.OriginalMethodSyntheticTests.test_published_rounding_is_explicit",
+            "seconds": 4.2e-05
+          },
+          {
+            "test": "test_original_methods.OriginalMethodSyntheticTests.test_tukey_against_statsmodels_for_unequal_group_sizes",
+            "seconds": 0.363393
+          },
+          {
+            "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_missing_source_endpoint_record_and_support_violation_fail",
+            "seconds": 0.004672
+          },
+          {
+            "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_prepared_stage_fixture_outputs_are_descriptive_and_repeatable",
+            "seconds": 0.004335
+          },
+          {
+            "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_tampered_or_incomplete_existing_u_fails_before_outputs",
+            "seconds": 0.010498
+          },
+          {
+            "test": "test_phenotype_robustness.RankEffectTests.test_rank_reversal_all_ties_and_invalid_inputs",
+            "seconds": 0.000187
+          },
+          {
+            "test": "test_phenotype_robustness.RankEffectTests.test_tied_midrank_u_matches_independent_library_and_pair_counts",
+            "seconds": 0.000496
+          },
+          {
+            "test": "test_phenotype_robustness.SupportBoundTests.test_bounds_equal_independently_enumerated_corners",
+            "seconds": 0.000207
+          },
+          {
+            "test": "test_phenotype_robustness.SupportBoundTests.test_bounds_reversal_all_missing_and_unknown_support",
+            "seconds": 5.8e-05
+          },
+          {
+            "test": "test_phenotype_robustness.SupportBoundTests.test_invalid_counts_support_and_outcomes_fail",
+            "seconds": 0.000162
+          },
+          {
+            "test": "test_pipeline.PipelineContracts.test_execution_contract_rejects_source_config_spec_and_runtime_changes",
+            "seconds": 0.061344
+          },
+          {
+            "test": "test_pipeline.PipelineContracts.test_expected_input_materialization_does_not_change_source_contract",
+            "seconds": 0.024798
+          },
+          {
+            "test": "test_pipeline.PipelineContracts.test_malformed_valid_json_cache_is_invalidated_without_exception",
+            "seconds": 0.00102
+          },
+          {
+            "test": "test_pipeline.PipelineContracts.test_output_tamper_and_exact_output_set",
+            "seconds": 0.001758
+          },
+          {
+            "test": "test_pipeline.PipelineContracts.test_runtime_change_invalidates_fingerprint",
+            "seconds": 0.001792
+          },
+          {
+            "test": "test_pipeline.PipelineContracts.test_upstream_changes_invalidate_downstream_cache",
+            "seconds": 0.001337
+          },
+          {
+            "test": "test_pipeline.PipelineContracts.test_validation_only_does_not_fetch_or_extract",
+            "seconds": 0.000898
+          },
+          {
+            "test": "test_pipeline_failures.RunnerFinalizationFailures.test_final_resource_failure_cannot_preserve_completed_status",
+            "seconds": 0.108427
+          },
+          {
+            "test": "test_pipeline_failures.RunnerFinalizationFailures.test_interruption_survives_secondary_finalization_errors",
+            "seconds": 0.084213
+          },
+          {
+            "test": "test_pipeline_failures.RunnerFinalizationFailures.test_new_reporting_failure_fails_previously_completed_analysis",
+            "seconds": 0.106536
+          },
+          {
+            "test": "test_pipeline_failures.RunnerFinalizationFailures.test_original_failure_survives_secondary_resource_and_reporting_errors",
+            "seconds": 0.091254
+          },
+          {
+            "test": "test_pipeline_failures.RunnerFinalizationFailures.test_resource_record_write_failure_is_terminal_and_recorded",
+            "seconds": 0.075483
+          },
+          {
+            "test": "test_pipeline_failures.RunnerFinalizationFailures.test_status_path_failure_still_records_failed_invocation",
+            "seconds": 0.060427
+          },
+          {
+            "test": "test_portability.PortabilityContracts.test_absolute_and_relative_boundaries_are_fixed_or_conditions",
+            "seconds": 0.005618
+          },
+          {
+            "test": "test_portability.PortabilityContracts.test_bounds_limit_detail_without_hiding_total_differences",
+            "seconds": 0.004266
+          },
+          {
+            "test": "test_portability.PortabilityContracts.test_exact_bytes_and_newline_only_semantic_equality_are_distinct",
+            "seconds": 0.002692
+          },
+          {
+            "test": "test_portability.PortabilityContracts.test_hard_invalid_figure_takes_precedence_over_other_visual_review",
+            "seconds": 0.015153
+          },
+          {
+            "test": "test_portability.PortabilityContracts.test_header_row_order_row_count_and_row_width_are_enforced",
+            "seconds": 0.003423
+          },
+          {
+            "test": "test_portability.PortabilityContracts.test_ids_source_values_counts_json_and_publication_fields_remain_exact",
+            "seconds": 0.004967
+          },
+          {
+            "test": "test_portability.PortabilityContracts.test_nonfinite_values_are_rejected_even_when_bytes_match",
+            "seconds": 0.008548
+          },
+          {
+            "test": "test_portability.PortabilityContracts.test_plan_is_deterministic_and_names_every_fixed_schema",
+            "seconds": 0.000819
+          },
+          {
+            "test": "test_portability.PortabilityContracts.test_tree_inventory_and_figure_review_never_claim_byte_identity",
+            "seconds": 0.045676
+          },
+          {
+            "test": "test_portability.PortabilityContracts.test_unknown_schema_and_broadened_whitelist_fail_closed",
+            "seconds": 0.001767
+          },
+          {
+            "test": "test_processes.LinuxIdentityContracts.test_pidfd_capture_rechecks_identity_and_closes_raced_descriptor",
+            "seconds": 0.00088
+          },
+          {
+            "test": "test_processes.LinuxIdentityContracts.test_reused_pid_is_not_signalled_by_starttime_fallback",
+            "seconds": 0.000237
+          },
+          {
+            "test": "test_processes.LinuxProcessIntegration.test_keyboard_interrupt_cleans_observed_separate_sessions",
+            "seconds": 0.208642
+          },
+          {
+            "test": "test_processes.LinuxProcessIntegration.test_observed_reparented_leaf_is_cleaned_on_controller_failure",
+            "seconds": 0.212769
+          },
+          {
+            "test": "test_processes.LinuxProcessIntegration.test_parent_nonzero_cleans_ordinary_process_group",
+            "seconds": 0.217852
+          },
+          {
+            "test": "test_processes.LinuxProcessIntegration.test_parent_success_cleans_ordinary_process_group",
+            "seconds": 0.21669
+          },
+          {
+            "test": "test_processes.LinuxProcessIntegration.test_resource_failure_cleans_observed_separate_sessions",
+            "seconds": 0.209441
+          },
+          {
+            "test": "test_processes.LinuxProcessIntegration.test_timeout_cleans_observed_separate_sessions",
+            "seconds": 0.617368
+          },
+          {
+            "test": "test_processes.ProcessCleanupContracts.test_normal_parent_success_does_not_hide_cleanup_failure",
+            "seconds": 0.000849
+          },
+          {
+            "test": "test_processes.ProcessCleanupContracts.test_original_guard_error_survives_secondary_cleanup_error",
+            "seconds": 0.000617
+          },
+          {
+            "test": "test_processes.ProcessCleanupContracts.test_posix_group_is_signalled_after_leader_has_already_exited",
+            "seconds": 0.000603
+          },
+          {
+            "test": "test_processes.WindowsJobIntegration.test_argv_cwd_environment_stdin_and_combined_log",
+            "seconds": 1.7e-05
+          },
+          {
+            "test": "test_processes.WindowsJobIntegration.test_assignment_failure_never_executes_child_and_closes_handles",
+            "seconds": 1e-05
+          },
+          {
+            "test": "test_processes.WindowsJobIntegration.test_create_failure_does_not_leak_job_or_stdio_handles",
+            "seconds": 6e-06
+          },
+          {
+            "test": "test_processes.WindowsJobIntegration.test_keyboard_interrupt_cleans_worker_and_grandchild",
+            "seconds": 5e-06
+          },
+          {
+            "test": "test_processes.WindowsJobIntegration.test_parent_nonzero_cleans_worker_and_grandchild",
+            "seconds": 5e-06
+          },
+          {
+            "test": "test_processes.WindowsJobIntegration.test_parent_success_cleans_worker_and_grandchild",
+            "seconds": 4e-06
+          },
+          {
+            "test": "test_processes.WindowsJobIntegration.test_resource_error_cleans_worker_and_grandchild",
+            "seconds": 4e-06
+          },
+          {
+            "test": "test_processes.WindowsJobIntegration.test_resume_failure_never_executes_child_and_closes_handles",
+            "seconds": 5e-06
+          },
+          {
+            "test": "test_processes.WindowsJobIntegration.test_timeout_cleans_worker_and_grandchild",
+            "seconds": 4e-06
+          },
+          {
+            "test": "test_release.LatestInvocationProof.test_filename_identity_and_simultaneous_attempts_fail_closed",
+            "seconds": 0.001746
+          },
+          {
+            "test": "test_release.LatestInvocationProof.test_latest_success_matches_counterpart_and_follows_older_failure",
+            "seconds": 0.001043
+          },
+          {
+            "test": "test_release.LatestInvocationProof.test_malformed_older_record_is_not_silently_ignored",
+            "seconds": 0.003812
+          },
+          {
+            "test": "test_release.LatestInvocationProof.test_matching_id_but_different_record_body_is_rejected",
+            "seconds": 0.001138
+          },
+          {
+            "test": "test_release.LatestInvocationProof.test_missing_counterpart_fails_closed",
+            "seconds": 0.00084
+          },
+          {
+            "test": "test_release.LatestInvocationProof.test_old_completed_record_rejected_after_newer_failed_or_successful_attempt",
+            "seconds": 0.004399
+          },
+          {
+            "test": "test_release.LatestInvocationProof.test_unsafe_ids_and_naive_or_invalid_start_times_are_rejected",
+            "seconds": 0.010389
+          },
+          {
+            "test": "test_release.ReleasePayload.test_stale_staged_code_and_missing_new_code_are_rejected",
+            "seconds": 0.054077
+          },
+          {
+            "test": "test_release.ReleasePayload.test_upstream_bytes_are_never_text_normalized",
+            "seconds": 0.013461
+          },
+          {
+            "test": "test_reporting.ReportingContracts.test_local_platform_and_scientific_artifact_preserved",
+            "seconds": 0.001527
+          },
+          {
+            "test": "test_reporting.ReportingContracts.test_pilot_and_validation_do_not_claim_full_analysis",
+            "seconds": 0.000251
+          },
+          {
+            "test": "test_reporting.ReportingContracts.test_visual_review_requires_matching_file_hash",
+            "seconds": 0.001786
+          },
+          {
+            "test": "test_reproduction.ReproductionContracts.test_archive_expansion_is_bounded",
+            "seconds": 0.001018
+          },
+          {
+            "test": "test_reproduction.ReproductionContracts.test_archive_rejects_traversal_and_links",
+            "seconds": 0.001424
+          },
+          {
+            "test": "test_reproduction.ReproductionContracts.test_cleanup_cannot_hide_detected_resource_failure",
+            "seconds": 0.00016
+          },
+          {
+            "test": "test_reproduction.ReproductionContracts.test_comparison_excludes_operational_records_and_detects_tampering",
+            "seconds": 0.001704
+          },
+          {
+            "test": "test_reproduction.ReproductionContracts.test_path_containment_rejects_other_shell_and_os_paths",
+            "seconds": 0.000593
+          },
+          {
+            "test": "test_reproduction.ReproductionContracts.test_recursive_cleanup_cannot_target_workspace_or_cache_root",
+            "seconds": 0.001338
+          },
+          {
+            "test": "test_reproduction.ReproductionContracts.test_regular_archive_extracts_exact_bytes",
+            "seconds": 0.00097
+          },
+          {
+            "test": "test_resources.ResourceContracts.test_aggregate_limit_separate_from_per_process_limit",
+            "seconds": 0.00444
+          },
+          {
+            "test": "test_resources.ResourceContracts.test_family_sums_current_rss_not_historical_peaks",
+            "seconds": 0.000312
+          },
+          {
+            "test": "test_resources.ResourceContracts.test_local_baseline_ignores_historical_machine_and_does_not_reset",
+            "seconds": 0.002198
+          },
+          {
+            "test": "test_resources.ResourceContracts.test_timeout_terminates_spawned_process_tree",
+            "seconds": 0.001157
+          },
+          {
+            "test": "test_samples.SampleIdentityTests.test_decimal_source_ids_do_not_collapse",
+            "seconds": 8.3e-05
+          },
+          {
+            "test": "test_samples.SampleIdentityTests.test_duplicate_source_row_fails_instead_of_merging",
+            "seconds": 0.000134
+          },
+          {
+            "test": "test_samples.SampleIdentityTests.test_fastq_sizes_count_files_not_biological_replicates",
+            "seconds": 4.1e-05
+          },
+          {
+            "test": "test_samples.SampleIdentityTests.test_identifiers_require_experiment_and_group",
+            "seconds": 3.3e-05
+          },
+          {
+            "test": "test_samples.SampleIdentityTests.test_inoculum_not_assigned_to_recipient",
+            "seconds": 3e-05
+          },
+          {
+            "test": "test_samples.SampleIdentityTests.test_pool_cannot_link_to_an_individual",
+            "seconds": 2.5e-05
+          },
+          {
+            "test": "test_samples.SampleIdentityTests.test_source_rows_match_only_observed_within_row_assays",
+            "seconds": 5.5e-05
+          },
+          {
+            "test": "test_validation_identity.ValidationIdentity.test_source_edit_during_suite_fails_and_retains_both_identities",
+            "seconds": 0.03227
+          },
+          {
+            "test": "test_wsl_archive.NativeArchiveContracts.test_expanded_byte_member_and_truncated_stream_bounds",
+            "seconds": 0.001515
+          },
+          {
+            "test": "test_wsl_archive.NativeArchiveContracts.test_links_special_files_and_duplicate_members_are_rejected",
+            "seconds": 0.001895
+          },
+          {
+            "test": "test_wsl_archive.NativeArchiveContracts.test_real_nonseekable_tar_stream_extracts_exact_file_bytes",
+            "seconds": 0.00094
+          },
+          {
+            "test": "test_wsl_archive.NativeArchiveContracts.test_traversal_absolute_and_alternate_separator_paths_are_rejected",
+            "seconds": 0.002843
+          },
+          {
+            "test": "test_wsl_archive.NativeArchiveContracts.test_verify_file_requires_exact_size_hash_and_safe_path",
+            "seconds": 0.001844
+          }
+        ],
+        "tests_run": 135,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 9,
+        "success": true,
+        "peak_rss_bytes": 205082624,
+        "synthetic_software_calibration": {
+          "status": "completed",
+          "purpose": "synthetic_not_biological",
+          "scenarios": 4,
+          "replicates_per_scenario": 20000,
+          "seed": 20261020,
+          "batch_size": 500,
+          "maximum_batch_bound": 500,
+          "rows": 64,
+          "biological_observations_used": 0,
+          "outputs": [
+            "results/tables/software_calibration.csv",
+            "results/reports/software_calibration.md"
+          ]
+        }
+      },
+      "recorded_peak_rss_bytes": 132231168,
+      "resource_scope": "measured_this_invocation"
+    },
+    {
+      "name": "10_generate_figures",
+      "status": "completed",
+      "result": {
+        "figures": 5,
+        "png_outputs": 5,
+        "vector_pdf_outputs": 5,
+        "unsupported_figures": [
+          2,
+          3,
+          6
+        ]
+      },
+      "recorded_peak_rss_bytes": 254525440,
+      "resource_scope": "measured_this_invocation"
+    }
+  ],
+  "status": "completed_restricted_analysis",
+  "scientific_stages_executed": 10,
+  "scientific_stages_resumed_verified": 0,
+  "runtime": {
+    "project_version": "0.2.1",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "platform": "linux",
+    "packages": {
+      "contourpy": "1.3.3",
+      "cycler": "0.12.1",
+      "et_xmlfile": "2.0.0",
+      "fonttools": "4.60.1",
+      "kiwisolver": "1.4.9",
+      "matplotlib": "3.10.7",
+      "numpy": "2.3.4",
+      "openpyxl": "3.1.5",
+      "packaging": "25.0",
+      "pandas": "2.3.3",
+      "patsy": "1.0.2",
+      "pillow": "12.0.0",
+      "pyparsing": "3.2.5",
+      "pypdf": "6.13.0",
+      "python-dateutil": "2.9.0.post0",
+      "pytz": "2025.2",
+      "PyYAML": "6.0.3",
+      "scipy": "1.16.3",
+      "six": "1.17.0",
+      "statsmodels": "0.14.6",
+      "tzdata": "2025.2"
+    }
+  },
+  "source_contract": {
+    "code_sha256": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
+    "runtime": {
+      "project_version": "0.2.1",
+      "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+      "platform": "linux",
+      "packages": {
+        "contourpy": "1.3.3",
+        "cycler": "0.12.1",
+        "et_xmlfile": "2.0.0",
+        "fonttools": "4.60.1",
+        "kiwisolver": "1.4.9",
+        "matplotlib": "3.10.7",
+        "numpy": "2.3.4",
+        "openpyxl": "3.1.5",
+        "packaging": "25.0",
+        "pandas": "2.3.3",
+        "patsy": "1.0.2",
+        "pillow": "12.0.0",
+        "pyparsing": "3.2.5",
+        "pypdf": "6.13.0",
+        "python-dateutil": "2.9.0.post0",
+        "pytz": "2025.2",
+        "PyYAML": "6.0.3",
+        "scipy": "1.16.3",
+        "six": "1.17.0",
+        "statsmodels": "0.14.6",
+        "tzdata": "2025.2"
+      }
+    },
+    "config": "24ff6b01d841d6d4685db7e35e4386ce45921fe5982612a4d0cbddbdee7f0ad5",
+    "requirements": "b088db497bb8d4763c1fc6f660842ec423c75562684c0ec747c1b8a183ae0079",
+    "input_manifest": "e61c2efdd943748b06002a515d80babd0827552725682fb3161f907a87663c7b"
+  },
+  "seed": 20261020,
+  "max_measured_stage_peak_rss_bytes": 254672896,
+  "elapsed_seconds": 26.849,
+  "finished_utc": "2026-10-20T12:43:00.589459+00:00"
+}

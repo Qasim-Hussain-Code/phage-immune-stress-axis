@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "reviewed_utc": "2026-10-20T12:51:09.975124+00:00",
+  "status": "passed",
+  "scope": "Actual five independently generated Linux PDFs rendered and viewed; all five original Linux PNG companions also viewed.",
+  "source_commit": "06b7cab84937c174c3197ba63d560ddc9cc70b1c",
+  "code_sha256": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
+  "renderer": "pypdfium2 5.14.0, PDFium 156.0.8076.0, scale 2",
+  "reviewers": "Codex primary agent viewed all five PDF renders; independent review agent viewed all five PDF renders and all five original PNGs. This is agent visual QA, not independent human peer review.",
+  "checks": [
+    "Legible titles, labels, units, sample counts, intervals, legends and captions",
+    "No observed clipping, overlap, broken glyphs or missing scientific elements",
+    "Percentage points versus pg/mL, zero virome matches, exploratory outcomes and LOO-not-CI qualifications retained",
+    "Pointwise Welch and within-endpoint simultaneous Tukey-Kramer coverage distinguished"
+  ],
+  "figures": [
+    {
+      "path": "figures/figure1_design.pdf",
+      "linux_sha256": "60487bc7123533066fe2bc2d4c81e07d813489208e5488bba987e04a011da21c",
+      "reference_sha256": "967578db43ebacf82d765fcf65ce3df4db81f51ca941fe00b9ce4cd88671548a",
+      "render_path": ".cache/linux_figure_review/figure1_design_actual_pdf.png",
+      "page_count": 1,
+      "text_equal_ignoring_whitespace": true,
+      "linux_png_size": [
+        2385,
+        1357
+      ],
+      "reference_png_size": [
+        2385,
+        1357
+      ],
+      "linux_png_sha256": "c16afe674a0ee7ff35072f956c7d37c53f9685637f8b96bea0cd58fa9fed1845",
+      "reference_png_sha256": "93c4149d2a4b9491d1556f47e8ba6000616024394b21c54f2ec73825907d00ac",
+      "render_sha256": "fc1c5e6ee75c280f3e95cad4212ec1110cb0298c8b0716a12249bb5f6b48d51e",
+      "actual_pdf_render_viewed": true,
+      "original_png_viewed": true,
+      "visual_status": "passed"
+    },
+    {
+      "path": "figures/figure4_immune.pdf",
+      "linux_sha256": "f3c6edeb42a909749c983aafa68f31e2a0d4b4f6de940512a71a92c78cc68214",
+      "reference_sha256": "35917ac4a8a0345a7dfca5102b3ce47a0ae01375f4151c8950cfba57e93cd888",
+      "render_path": ".cache/linux_figure_review/figure4_immune_actual_pdf.png",
+      "page_count": 1,
+      "text_equal_ignoring_whitespace": true,
+      "linux_png_size": [
+        3565,
+        2105
+      ],
+      "reference_png_size": [
+        3565,
+        2105
+      ],
+      "linux_png_sha256": "94e975846a9c7e5a0a0559c8e58a1af2d64dda3c30edef6a5650ea1af5e59786",
+      "reference_png_sha256": "73ede8c178bbe6d7d76629e306407c54d3aa97dae14bd84daaf37f1686b55c59",
+      "render_sha256": "9c3794340a7168beedf637dd3ae0183d9795e926b49c96c6b1df038adf9f93ec",
+      "actual_pdf_render_viewed": true,
+      "original_png_viewed": true,
+      "visual_status": "passed"
+    },
+    {
+      "path": "figures/figure5_linkage_limit.pdf",
+      "linux_sha256": "5fe6c0e55d250a96acc2fefef473e1ba73ca187035bc5d2ade1f12089933af10",
+      "reference_sha256": "8af3b8017388ae8bbf85c5ade6b79bc6463f55bb2a76a0e44ff512425267b0d0",
+      "render_path": ".cache/linux_figure_review/figure5_linkage_limit_actual_pdf.png",
+      "page_count": 1,
+      "text_equal_ignoring_whitespace": true,
+      "linux_png_size": [
+        2850,
+        1199
+      ],
+      "reference_png_size": [
+        2850,
+        1199
+      ],
+      "linux_png_sha256": "2298f9894698c902dbcc55ef56f6e8167ba3e748bd25b113dd4955d72f52fb9a",
+      "reference_png_sha256": "9d783c63809566c5e98026ba5afbda138ed59d6e62ed53909db75045a0440b61",
+      "render_sha256": "8ec8fa9c430a2bcdaefc1f7405ddf4e2c02605531486214edc4abae7beb03f93",
+      "actual_pdf_render_viewed": true,
+      "original_png_viewed": true,
+      "visual_status": "passed"
+    },
+    {
+      "path": "figures/figure7_robustness.pdf",
+      "linux_sha256": "8fee6443a8fbb96a427be93f82c5080ded6be13e237ee1e1040f2625c0c51dd0",
+      "reference_sha256": "b9fb5f17dfb7e73cd755c7eda547f01e64807ab632cbdd9b4d17b6a35d23d018",
+      "render_path": ".cache/linux_figure_review/figure7_robustness_actual_pdf.png",
+      "page_count": 1,
+      "text_equal_ignoring_whitespace": true,
+      "linux_png_size": [
+        3572,
+        1173
+      ],
+      "reference_png_size": [
+        3572,
+        1173
+      ],
+      "linux_png_sha256": "cabbc4cd4a6d47797ddc28a19a91728b18b82145d65dade91d14fab958824c50",
+      "reference_png_sha256": "373ed2e00e3079e23751c7cb6ecf903d1078c6d3b2ac8f0e67b8cb0ff3487880",
+      "render_sha256": "ffe1fbc44f4e467f80da83ed281da6faa0ba181ec929cf741db51f791cb3538a",
+      "actual_pdf_render_viewed": true,
+      "original_png_viewed": true,
+      "visual_status": "passed"
+    },
+    {
+      "path": "figures/figure8_method_comparison.pdf",
+      "linux_sha256": "9324e262e8f2c80916f9516b82d154f41bd89a0fce45c0e1af0e3096c25b83af",
+      "reference_sha256": "f4093eac8338c645c12a6301adf3f86bc559a9f5cd135f9f23dbffc408b7aa29",
+      "render_path": ".cache/linux_figure_review/figure8_method_comparison_actual_pdf.png",
+      "page_count": 1,
+      "text_equal_ignoring_whitespace": true,
+      "linux_png_size": [
+        3572,
+        1427
+      ],
+      "reference_png_size": [
+        3572,
+        1427
+      ],
+      "linux_png_sha256": "f109a6335a0fd8f313b95ee47a79c9beb5958c971eb4592ec3d8dadc751502f3",
+      "reference_png_sha256": "ff7d6914e08198a81701b8c5dee9bbcfd8cb4f507c949c12227a0c6d5b8b0298",
+      "render_sha256": "7df686783d3e28ef9797d95e486a442fb2547333e059886d71905d9d588ae37b",
+      "actual_pdf_render_viewed": true,
+      "original_png_viewed": true,
+      "visual_status": "passed"
+    }
+  ]
+}

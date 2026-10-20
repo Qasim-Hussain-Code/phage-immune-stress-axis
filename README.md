@@ -180,14 +180,16 @@ original singly housed stressed groups.
 
 ## Reproduction
 
-Use Python 3.11 or newer. The recorded execution used Python 3.14 on Windows 11
-and existing NumPy, SciPy, Matplotlib, openpyxl, PyYAML and statsmodels. The
-portable scripts support Linux; an actual Linux execution was not performed.
-Do not use an unrelated Python 2 installation that happens to be on PATH.
-Optional PDF text extraction uses pypdf. Exact observed versions are in
-`data/manifests/environment_initial.json`. Small frozen public inputs are
-included for offline reproduction; large raw reads and reference databases are
-not included or downloaded.
+Use Python 3.11 or newer. Version 0.2.1 was executed with CPython 3.14.0
+on Windows 11 and CPython 3.14.4 in the existing Ubuntu WSL2 distribution.
+The Linux check newly installed all 21 pinned distributions in an isolated
+environment from verified official wheels. The Windows reference used its
+existing packages. These runs share one physical host. Exact environment,
+installation and build evidence is in the [environment report](docs/environment_reproduction.md)
+and [Linux setup report](docs/linux_environment_setup.md). Do not use an
+unrelated Python 2 installation on PATH. Small frozen public inputs are
+included for offline reproduction; large raw reads and reference databases
+are excluded.
 
 ```bash
 python scripts/environment_probe.py
@@ -201,8 +203,7 @@ python scripts/run_all.py --config config/analysis.yaml --threads 4 --offline --
 python scripts/run_all.py --config config/analysis.yaml --threads 4 --offline --mode pilot
 ```
 
-The first two installation commands are instructions for a fresh environment;
-no scientific packages were installed during the recorded analysis. Check free
+The environment and installation commands create a fresh environment. Check free
 disk/RAM before installing; a fresh environment is expected to require several
 hundred MB, depending on platform. Cached inputs are verified by SHA-256.
 Omit `--offline` only to retrieve a missing frozen input. Changed public content
@@ -230,23 +231,32 @@ Sampled aggregate RSS is not an exact whole-machine peak. Raw PRJNA970614 FASTQs
 alone total 262.211 GB compressed and were
 excluded. See [resource measurements](docs/resource_usage.md).
 
-During the recorded fresh-checkout reproduction, sampled aggregate process-family
-RSS peaked at 292.4 MB and the largest native per-process peak was 217.5 MB.
-Total project storage peaked at 58.9 MB including the disposable archive/checkout,
-then fell to 51.3 MB after cleanup, with 13.85 GB free. These are measured run
-snapshots, including local caches and Git, rather than installed system-software
-sizes or exact continuous whole-machine memory peaks.
+During the final Windows fresh-checkout reproduction, sampled concurrent
+process-family RSS peaked at 366.9 MB and the largest native per-process peak
+was 220.0 MB. Project storage peaked at 196.5 MB including disposable files,
+then fell to 187.9 MB after cleanup, with 13.54 GB free. The separate Linux
+attempt used about 481.2 MB in its complete native directory before packaging;
+its outer guest monitor sampled 337.6 MB concurrent RSS. These scopes are
+reported separately, and guest RSS is not added to virtual-machine memory.
+See the [Linux execution evidence](docs/linux_reproduction_validation.md).
 
 ## Validation and publication status
 
-Version 0.2.0 passed 66 tests with zero failures, errors or skips. A fresh Git
-archive of commit `53ffec7b6f77178ecde8cf4c5044d444fe172735` executed all ten stages
-offline without resume, using the existing interpreter and packages. All 28
-scientific CSV and PNG/PDF outputs matched the reference by exact SHA-256.
-The [reproduction evidence](results/reports/reproduction_check.json) records
-the committed source, frozen inputs, comparisons, resource measurements and
-completed cleanup. This establishes same-host reproduction; it does not establish
-an independently installed environment, Linux execution or remote CI. The suite includes
+Version 0.2.1 collected 135 tests on each platform, with zero failures or
+errors: Windows executed 129 and skipped six Linux-only tests; Linux executed
+126 and skipped nine Windows-only tests. A fresh Git archive of commit
+`06b7cab84937c174c3197ba63d560ddc9cc70b1c` executed all ten stages offline
+without resume on both platforms. All 30 Windows scientific CSV and PNG/PDF
+outputs matched the reference by exact SHA-256. On Linux, all 20 CSVs passed
+the fixed exact-field/numeric-tolerance policy: 18 were byte-identical and two
+had derived-value differences at most 3e-14. All ten changed Linux figure
+files passed actual visual review. Linux outputs are not byte-identical overall.
+
+The [Windows evidence](results/reports/reproduction_check.json) and
+[Linux validation report](docs/linux_reproduction_validation.md) record source,
+inputs, comparisons, resources and completed cleanup. The Linux environment
+was independently installed on the same host; no separate physical-machine,
+Linux Mint, macOS or remote CI execution is claimed. The suite includes
 independent SciPy/statsmodels comparisons, original-method reconstruction,
 analytical identities, missingness, pooling, inoculum, acquisition, resource and
 resume safeguards. Current executed counts and outcomes are in
@@ -256,9 +266,9 @@ are exclusively software checks. The measured control groups provide treatment
 references. Independent biological negative and positive controls for the
 unmeasured phage-stability association are unavailable.
 
-The repository is prepared locally. No remote creation or push has succeeded.
-GitHub publication requires available authorized creation/push access; consult
-[publication status](docs/publication_status.md) for the actual outcome.
+The local release is validated. Authorized GitHub CLI access has been verified;
+publication is in progress. Consult [publication status](docs/publication_status.md)
+for the verified remote outcome.
 
 ## Provenance, license and attribution
 

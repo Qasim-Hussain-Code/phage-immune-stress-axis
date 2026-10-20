@@ -1,0 +1,19 @@
+{
+  "project_bytes_including_git": 4027358,
+  "project_bytes_excluding_git": 4027358,
+  "disk_free_bytes": 981624483840,
+  "available_memory_bytes": 5483253760,
+  "process_peak_rss_bytes": 32915456,
+  "operational_storage_budget_bytes": 1500000000,
+  "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
+  "baseline_disk_free_bytes": 981626515456,
+  "baseline_project_bytes": 2164177,
+  "max_sampled_aggregate_rss_bytes": 304316416,
+  "max_observed_native_process_peak_rss_bytes": 254672896,
+  "aggregate_memory_samples": 232,
+  "max_unreadable_or_exited_processes_per_sample": 0,
+  "elapsed_seconds": 25.499,
+  "max_measured_stage_peak_rss_bytes": 254672896,
+  "invocation_id": "20261020T124233722784Z_466",
+  "scope": "current invocation; native per-process peaks and separately sampled concurrent process-family RSS"
+}

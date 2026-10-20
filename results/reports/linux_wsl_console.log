@@ -1,7 +1,14 @@
-Traceback (most recent call last):
-  File "<string>", line 405, in <module>
-    raise SystemExit(main())
-                     ~~~~^^
-  File "<string>", line 396, in main
-    raise RuntimeError('Native filesystem reserve would be exceeded')
-RuntimeError: Native filesystem reserve would be exceeded
+Extract bounded bootstrap into /var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z
+START create_venv
+DONE create_venv
+START bootstrap_pip
+DONE bootstrap_pip
+START install_pins
+DONE install_pins
+START pip_check
+DONE pip_check
+START inspect_installed
+DONE inspect_installed
+START full_pipeline
+DONE full_pipeline
+Package bounded result artifacts; status=completed_independent_linux_validation
