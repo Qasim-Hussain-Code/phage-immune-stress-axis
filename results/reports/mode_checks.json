@@ -1,11 +1,40 @@
 {
-  "started_utc": "2026-10-20T06:25:23.057020+00:00",
+  "started_utc": "2026-10-20T12:30:18.357392+00:00",
   "scope": "executed public command modes on this host",
+  "code_sha256": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
+  "runtime": {
+    "project_version": "0.2.1",
+    "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "win32",
+    "packages": {
+      "contourpy": "1.3.3",
+      "cycler": "0.12.1",
+      "et_xmlfile": "2.0.0",
+      "fonttools": "4.60.1",
+      "kiwisolver": "1.4.9",
+      "matplotlib": "3.10.7",
+      "numpy": "2.3.4",
+      "openpyxl": "3.1.5",
+      "packaging": "25.0",
+      "pandas": "2.3.3",
+      "patsy": "1.0.2",
+      "pillow": "12.0.0",
+      "pyparsing": "3.2.5",
+      "pypdf": "6.13.0",
+      "python-dateutil": "2.9.0.post0",
+      "pytz": "2025.2",
+      "PyYAML": "6.0.3",
+      "scipy": "1.16.3",
+      "six": "1.17.0",
+      "statsmodels": "0.14.6",
+      "tzdata": "2025.2"
+    }
+  },
   "checks": [
     {
       "mode": "validation",
       "returncode": 0,
-      "invocation_id": "20261020T062523205084Z_4488",
+      "invocation_id": "20261020T123018640075Z_23804",
       "status": "completed_validation",
       "executed": 0,
       "resumed": 0,
@@ -15,10 +44,10 @@
     {
       "mode": "pilot",
       "returncode": 0,
-      "invocation_id": "20261020T062538703457Z_43688",
+      "invocation_id": "20261020T123045490076Z_24100",
       "status": "completed_pilot",
-      "executed": 0,
-      "resumed": 6,
+      "executed": 6,
+      "resumed": 0,
       "stage_names": [
         "01_audit_sources",
         "02_fetch_data",
@@ -31,10 +60,10 @@
     {
       "mode": "resume_full",
       "returncode": 0,
-      "invocation_id": "20261020T062539844561Z_24800",
+      "invocation_id": "20261020T123101215308Z_18600",
       "status": "completed_restricted_analysis",
-      "executed": 2,
-      "resumed": 8,
+      "executed": 4,
+      "resumed": 6,
       "stage_names": [
         "01_audit_sources",
         "02_fetch_data",
@@ -51,7 +80,7 @@
     {
       "mode": "resume_unchanged",
       "returncode": 0,
-      "invocation_id": "20261020T062609235563Z_13584",
+      "invocation_id": "20261020T123200773661Z_38916",
       "status": "completed_restricted_analysis",
       "executed": 0,
       "resumed": 10,
@@ -70,5 +99,5 @@
     }
   ],
   "status": "passed",
-  "finished_utc": "2026-10-20T06:26:10.499437+00:00"
+  "finished_utc": "2026-10-20T12:32:05.156374+00:00"
 }

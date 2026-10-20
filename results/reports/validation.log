@@ -27,9 +27,13 @@ test_duplicate_and_unknown_groups_fail (test_immune.TestSourceIdentifiers.test_d
 test_fixed_six_test_family_and_no_study_i_tests (test_immune.TestSourceIdentifiers.test_fixed_six_test_family_and_no_study_i_tests) ... ok
 test_literal_and_composite_ids (test_immune.TestSourceIdentifiers.test_literal_and_composite_ids) ... ok
 test_unavailable_source_does_not_make_results (test_immune.TestSourceIdentifiers.test_unavailable_source_does_not_make_results) ... ok
+test_conflict_classifier_requires_windows_permissionerror_and_known_code (test_io.AtomicJSON.test_conflict_classifier_requires_windows_permissionerror_and_known_code) ... ok
 test_failed_replace_preserves_existing_record (test_io.AtomicJSON.test_failed_replace_preserves_existing_record) ... ok
 test_native_serialization_is_preserved_and_temporary_is_removed (test_io.AtomicJSON.test_native_serialization_is_preserved_and_temporary_is_removed) ... ok
+test_ordinary_permission_nonwindows_and_other_oserrors_are_not_retried (test_io.AtomicJSON.test_ordinary_permission_nonwindows_and_other_oserrors_are_not_retried) ... ok
+test_persistent_known_windows_conflict_is_bounded_and_preserves_old_bytes (test_io.AtomicJSON.test_persistent_known_windows_conflict_is_bounded_and_preserves_old_bytes) ... ok
 test_serialization_failure_never_opens_or_truncates_destination (test_io.AtomicJSON.test_serialization_failure_never_opens_or_truncates_destination) ... ok
+test_transient_windows_conflicts_retry_then_publish_with_real_replace (test_io.AtomicJSON.test_transient_windows_conflicts_retry_then_publish_with_real_replace) ... ok
 test_bray_curtis_scipy (test_metrics.CommunityMath.test_bray_curtis_scipy) ... ok
 test_closure_scale_invariance (test_metrics.CommunityMath.test_closure_scale_invariance) ... ok
 test_invalid_abundances (test_metrics.CommunityMath.test_invalid_abundances) ... ok
@@ -132,6 +136,6 @@ test_traversal_absolute_and_alternate_separator_paths_are_rejected (test_wsl_arc
 test_verify_file_requires_exact_size_hash_and_safe_path (test_wsl_archive.NativeArchiveContracts.test_verify_file_requires_exact_size_hash_and_safe_path) ... ok
 
 ----------------------------------------------------------------------
-Ran 131 tests in 20.840s
+Ran 135 tests in 28.798s
 
 OK (skipped=6)

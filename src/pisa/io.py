@@ -3,7 +3,9 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import sys
 import tempfile
+import time
 
 
 def digest(path):
@@ -12,6 +14,25 @@ def digest(path):
         for block in iter(lambda: stream.read(1024 * 1024), b''):
             h.update(block)
     return h.hexdigest()
+
+
+def _windows_replacement_conflict(error):
+    """Only documented Windows permission/sharing/lock replacement conflicts."""
+    return (sys.platform == 'win32' and isinstance(error, PermissionError)
+            and getattr(error, 'winerror', None) in (5, 32, 33))
+
+
+def _replace_with_retry(temporary, destination):
+    # Six attempts, at most 0.62 seconds total requested sleep. Retry only the
+    # replacement; serialization, writing and fsync have already succeeded.
+    for delay in (0.02, 0.04, 0.08, 0.16, 0.32, None):
+        try:
+            os.replace(temporary, destination)
+            return
+        except PermissionError as error:
+            if delay is None or not _windows_replacement_conflict(error):
+                raise
+            time.sleep(delay)
 
 
 def write_json(path, value):
@@ -26,7 +47,7 @@ def write_json(path, value):
             stream.write(payload)
             stream.flush()
             os.fsync(stream.fileno())
-        os.replace(temporary,path)
+        _replace_with_retry(temporary,path)
     finally:
         Path(temporary).unlink(missing_ok=True)
 
