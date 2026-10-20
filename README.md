@@ -137,9 +137,11 @@ See [full results](docs/results.md), [limitations](docs/limitations.md),
 - [Figure 5](figures/figure5_linkage_limit.png): why no phage-immune model was fitted.
 - [Figure 7](figures/figure7_robustness.png): influence of omitting each animal.
 - [Figure 8](figures/figure8_method_comparison.png), original-method comparison: contrasts the fixed Welch intervals
-  with the original pooled-variance Tukey-Kramer intervals. The expanded full
-  pipeline generates this fifth supported figure; its current rendering and
-  review status must be checked in the execution and figure-QA records.
+  with the original pooled-variance Tukey-Kramer intervals, using identical
+  observations and point estimates with different interval coverage scopes.
+
+All five actual PDF pages were rendered and visually inspected. The
+[review record](docs/pdf_qa.md) binds that inspection to the current PDF hashes.
 
 Each figure has a vector PDF and `results/tables/figureN_data.csv`.
 Figure 4 contrast intervals are in `immune_contrasts.csv`. Composition,
@@ -196,6 +198,10 @@ outputs, validation-only runs, pilots and failures. An earlier successful run
 does not establish completion of the current invocation. See
 [reproduction validation](docs/reproduction_validation.md).
 
+The executed [command-mode checks](results/reports/mode_checks.json) also verify
+that validation leaves scientific files unchanged, the pilot stops after stage
+six, and an unchanged full resume verifies all ten stages without recomputation.
+
 `--threads 4` is a ceiling interface; the selected small workflow executes
 serially and restricts numerical-library threads to one. It monitors native
 per-process peaks and sampled concurrent process-family RSS, project storage
@@ -208,20 +214,31 @@ Sampled aggregate RSS is not an exact whole-machine peak. Raw PRJNA970614 FASTQs
 alone total 262.211 GB compressed and were
 excluded. See [resource measurements](docs/resource_usage.md).
 
+During the recorded fresh-checkout reproduction, sampled aggregate process-family
+RSS peaked at 292.4 MB and the largest native per-process peak was 217.5 MB.
+Total project storage peaked at 58.9 MB including the disposable archive/checkout,
+then fell to 51.3 MB after cleanup, with 13.85 GB free. These are measured run
+snapshots, including local caches and Git, rather than installed system-software
+sizes or exact continuous whole-machine memory peaks.
+
 ## Validation and publication status
 
-Earlier restricted and pilot runs completed. The expanded software validation
-and 20,000-replicate synthetic benchmark also completed successfully. Completion
-of the full workflow and current visual QA is established separately by their
-matching invocation and figure-review records. The suite includes
+Version 0.2.0 passed 66 tests with zero failures, errors or skips. A fresh Git
+archive of commit `53ffec7b6f77178ecde8cf4c5044d444fe172735` executed all ten stages
+offline without resume, using the existing interpreter and packages. All 28
+scientific CSV and PNG/PDF outputs matched the reference by exact SHA-256.
+The [reproduction evidence](results/reports/reproduction_check.json) records
+the committed source, frozen inputs, comparisons, resource measurements and
+completed cleanup. This establishes same-host reproduction; it does not establish
+an independently installed environment, Linux execution or remote CI. The suite includes
 independent SciPy/statsmodels comparisons, original-method reconstruction,
 analytical identities, missingness, pooling, inoculum, acquisition, resource and
 resume safeguards. Current executed counts and outcomes are in
 `results/reports/validation_summary.json`; current completion is established by
 the matching invocation record. Synthetic fixtures and calibration simulations
-are exclusively software checks. Negative biological
-controls are the measured control groups; an independent positive biological
-control for a phage-stability association is unavailable.
+are exclusively software checks. The measured control groups provide treatment
+references. Independent biological negative and positive controls for the
+unmeasured phage-stability association are unavailable.
 
 The repository is prepared locally. No remote creation or push has succeeded.
 GitHub publication requires available authorized creation/push access; consult
