@@ -1,8 +1,5 @@
 # Gut phageome stability and stress-related immune responses
 
-Researcher and project author: **Qasim Hussain**
-([Qasim-Hussain-Code](https://github.com/Qasim-Hussain-Code)).
-
 This repository contains a completed public-data feasibility audit and a
 restricted, exploratory immune source-data reanalysis, with a separate
 reconstruction of selected original statistical calculations. The proposed association
