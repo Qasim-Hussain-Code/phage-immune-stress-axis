@@ -9,3 +9,7 @@ The resulting remote commit is checked through Git and the GitHub API. Repositor
 Project files contain research code, public-source data, methods, results and reproducibility evidence. Local caches and working notes are excluded. Scientific limitations and upstream data/software citations remain part of the research record; cited upstream authors are not repository contributors.
 
 The completed Windows and Linux validation is documented separately. Repository access and successful pushing do not establish remote CI execution or external scientific review.
+
+The maintained [private-push command](private_push.md) checks the effective push
+destination, visibility, attribution, new-history credential patterns and
+scientific release evidence before sending a pinned commit to `main`.

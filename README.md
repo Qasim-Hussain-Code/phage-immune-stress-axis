@@ -148,8 +148,9 @@ original singly housed stressed groups.
 
 ## Reproduction
 
-Use Python 3.11 or newer. Version 0.2.1 was executed with CPython 3.14.0
-on Windows 11 and CPython 3.14.4 in the existing Ubuntu WSL2 distribution.
+Use Python 3.11 or newer. Version 0.2.2 completed the offline workflow with
+CPython 3.14.0 on Windows 11. The earlier independently installed Linux replay
+used version 0.2.1 with CPython 3.14.4 in the existing Ubuntu WSL2 distribution.
 The Linux check newly installed all 21 pinned distributions in an isolated
 environment from verified official wheels. The Windows reference used its
 existing packages. These runs share one physical host. Exact environment,
@@ -210,21 +211,29 @@ See the [Linux execution evidence](docs/linux_reproduction_validation.md).
 
 ## Validation and publication status
 
-Version 0.2.1 collected 135 tests on each platform, with zero failures or
-errors: Windows executed 129 and skipped six Linux-only tests; Linux executed
-126 and skipped nine Windows-only tests. A fresh Git archive of commit
-`06b7cab84937c174c3197ba63d560ddc9cc70b1c` executed all ten stages offline
-without resume on both platforms. All 30 Windows scientific CSV and PNG/PDF
-outputs matched the reference by exact SHA-256. On Linux, all 20 CSVs passed
-the fixed exact-field/numeric-tolerance policy: 18 were byte-identical and two
-had derived-value differences at most 3e-14. All ten changed Linux figure
-files passed actual visual review. Linux outputs are not byte-identical overall.
+Version 0.2.2 collected 174 Windows tests: 168 executed successfully and six
+Linux-only tests were skipped, with zero failures or errors. All ten stages
+completed offline. All 30 scientific outputs and all ten frozen inputs remain
+byte-for-byte identical to the preceding version. Generated validation reports
+now distinguish collected, executed and skipped tests. The
+[hardening report](docs/validation_hardening.md) records the size-validation,
+reporting and private-push changes. A fresh committed-source replay of this
+revision is recorded separately when completed.
+
+The earlier full Linux replay at commit
+`06b7cab84937c174c3197ba63d560ddc9cc70b1c` collected 135 tests, executed 126 and
+skipped nine Windows-only cases. Its 20 CSVs passed the fixed comparison policy:
+18 were byte-identical and two had derived-value differences at most 3e-14.
+All ten changed Linux figure files passed actual visual review. That run
+establishes the stated earlier source revision; it is not a claim that the new
+source has already completed Linux execution. Linux outputs are not
+byte-identical overall.
 
 The [Windows evidence](results/reports/reproduction_check.json) and
-[Linux validation report](docs/linux_reproduction_validation.md) record source,
-inputs, comparisons, resources and completed cleanup. The Linux environment
-was independently installed on the same host; no separate physical-machine,
-Linux Mint, macOS or remote CI execution is claimed. The suite includes
+[Linux validation report](docs/linux_reproduction_validation.md) identify their
+executed source revisions, inputs, comparisons, resources and cleanup. These
+environments share one physical host; no separate physical-machine, Linux Mint,
+macOS or remote CI execution is claimed. The suite includes
 independent SciPy/statsmodels comparisons, original-method reconstruction,
 analytical identities, missingness, pooling, inoculum, acquisition, resource and
 resume safeguards. Current executed counts and outcomes are in
@@ -238,7 +247,8 @@ The validated project is maintained in the private repository at
 [Qasim-Hussain-Code/phage-immune-stress-axis](https://github.com/Qasim-Hussain-Code/phage-immune-stress-axis).
 Repository visibility and sole-contributor attribution are checked before each push.
 See [publication status](docs/publication_status.md) and the
-[machine-readable verification](results/reports/publication_check.json).
+[machine-readable verification](results/reports/publication_check.json). Use the
+[checked private-push command](docs/private_push.md) for subsequent pushes.
 
 ## Provenance, license and attribution
 

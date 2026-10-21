@@ -120,15 +120,25 @@ def verify_payload_consistency(root,scope):
     return len(working)
 
 
+def verify_frozen_inputs(root,scope='working'):
+    """Apply the acquisition contract to working and selected Git input bytes."""
+    from pisa.acquisition import load_manifest,verify_input_file
+    root=Path(root).resolve()
+    manifest=load_manifest(root)
+    for entry in manifest:
+        verify_input_file(root/entry['path'],entry)
+        if scope!='working':
+            payload=read_payload(root,entry['path'],scope)
+            require(len(payload)==entry['bytes'],f'Frozen input size differs in Git {scope}: '+entry['path'])
+            require(hashlib.sha256(payload).hexdigest()==entry['sha256'],
+                    f'Frozen input bytes differ in Git {scope}: '+entry['path'])
+    return manifest
+
+
 def check(root,scope='working',require_review=True):
     root=Path(root).resolve()
     payload_files=verify_payload_consistency(root,scope)
-    manifest=json.loads((root/'data/manifests/inputs.json').read_text(encoding='utf-8'))
-    for entry in manifest:
-        require(digest(root/entry['path'])==entry['sha256'],'Frozen working input changed: '+entry['path'])
-        if scope!='working':
-            require(hashlib.sha256(read_payload(root,entry['path'],scope)).hexdigest()==entry['sha256'],
-                    f'Frozen input bytes differ in Git {scope}: '+entry['path'])
+    manifest=verify_frozen_inputs(root,scope)
 
     from pisa.immune import parse_workbook,ENDPOINTS,CONTRASTS
     prepared=read_csv(root/'data/processed/immune_long.csv')

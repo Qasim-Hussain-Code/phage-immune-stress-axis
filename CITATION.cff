@@ -7,8 +7,8 @@ url: "https://github.com/Qasim-Hussain-Code/phage-immune-stress-axis"
 authors:
   - family-names: Hussain
     given-names: Qasim
-version: 0.2.1
-date-released: 2026-10-20
+version: 0.2.2
+date-released: 2026-10-21
 license: MIT
 abstract: >-
   Public-data feasibility and sample-linkage audit with a restricted exploratory

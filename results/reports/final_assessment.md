@@ -40,7 +40,7 @@ No viral composition, temporal stability, reference deviation, bacterial-adjuste
 
 ## Validation
 
-The executed validation suite ran 135 tests with 0 failures and 0 errors. Independent checks cover Welch inference, BH adjustment, community-distance identities and linkage invariants. Synthetic fixtures are software tests only.
+Validation: 174 tests collected, 168 executed, 6 skipped, 0 failures and 0 errors. Independent checks cover Welch inference, BH adjustment, community-distance identities and linkage invariants. Synthetic fixtures are software tests only.
 
 Source: [Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y). Exact values and missingness are in results/tables; raw observations retain source-cell locations.
 
@@ -71,10 +71,10 @@ A separate synthetic benchmark completed 20,000 replicates in each of four known
 
 ## Invocation status
 
-Invocation: 20261020T123200773661Z_38916. Mode: full. Status: completed_restricted_analysis.
-0 stages executed and 10 stages resumed after verifying their declared outputs and upstream dependencies.
+Invocation: 20261021T131343730951Z_32180. Mode: full. Status: completed_restricted_analysis.
+10 stages executed and 0 stages resumed after verifying their declared outputs and upstream dependencies.
 All selected restricted-workflow stages completed or were verified from cache. Scientifically excluded analyses remain exclusions.
-Validation (verified cached stage result): 135 tests, 0 failures, 0 errors, 6 skipped.
+Validation (executed in this invocation): 174 tests collected, 168 executed, 6 skipped, 0 failures and 0 errors.
 Prior visual review dated 2026-10-20T06:23:59.007316+00:00 matches the current bytes of 5 PDF files. This is not a new visual review by this invocation.
 
 Publication status is documented separately in `docs/publication_status.md`; executing this pipeline does not establish a GitHub publication.

@@ -8,6 +8,17 @@ CONTRAST_NAMES={'ctr_stress_minus_ctr':'Control Stress minus Control',
                 'fvt_stress_minus_ctr_stress':'FVT Stress minus Control Stress'}
 
 
+def validation_counts_text(validation):
+    """Unittest tests_run includes skips; executed counts include failed tests."""
+    counts={name:validation.get(name,0) for name in ('tests_run','skipped','failures','errors')}
+    if any(isinstance(value,bool) or not isinstance(value,int) or value<0
+           for value in counts.values()) or counts['skipped']>counts['tests_run']:
+        raise ValueError('Validation counts must be nonnegative integers with skips within collected tests')
+    executed=counts['tests_run']-counts['skipped']
+    return (f"{counts['tests_run']} tests collected, {executed} executed, "
+            f"{counts['skipped']} skipped, {counts['failures']} failures and {counts['errors']} errors")
+
+
 def summarize(root,config):
     results=read_csv(root/'results/tables/immune_contrasts.csv')
     sensitivities=read_csv(root/'results/tables/immune_sensitivity.csv')
@@ -79,8 +90,8 @@ def summarize(root,config):
        'additional work if their processed matrix, confidence annotations and verified animal map become '
        'available. Endpoint immune measurements would still not measure chronic-stress immune stability.','',
        '## Validation','',
-       f"The executed validation suite ran {validation['tests_run']} tests with {validation['failures']} failures "
-       f"and {validation['errors']} errors. Independent checks cover Welch inference, BH adjustment, "
+       f"Validation: {validation_counts_text(validation)}. "
+       'Independent checks cover Welch inference, BH adjustment, '
        'community-distance identities and linkage invariants. Synthetic fixtures are software tests only.','',
        'Source: [Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y). '
        'Exact values and missingness are in results/tables; raw observations retain source-cell locations.'])
@@ -209,11 +220,11 @@ def invocation_text(root, invocation):
         if item:
             validation=item.get('result',{})
             validation_scope='verified cached stage result' if item.get('status')=='resumed_verified' else 'executed in this invocation'
-    if validation and validation.get('success'):
-        lines.append(f"Validation ({validation_scope}): {validation.get('tests_run',0)} tests, "
-                     f"{validation.get('failures',0)} failures, {validation.get('errors',0)} errors, "
-                     f"{validation.get('skipped',0)} skipped.")
-    else:
+    if validation:
+        lines.append(f"Validation ({validation_scope}): {validation_counts_text(validation)}.")
+    if not (validation and validation.get('success')
+            and validation.get('tests_run',0)>validation.get('skipped',0)
+            and not validation.get('failures',0) and not validation.get('errors',0)):
         lines.append('No successful validation result is established by this invocation record.')
     qa=figure_qa_status(root)
     if qa['status']=='prior_visual_review_matches_current_files':

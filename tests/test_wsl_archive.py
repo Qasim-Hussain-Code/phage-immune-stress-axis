@@ -2,7 +2,10 @@
 import hashlib
 import importlib.util
 import io
+import json
 from pathlib import Path
+import subprocess
+import sys
 import tarfile
 import tempfile
 import unittest
@@ -111,6 +114,82 @@ class NativeArchiveContracts(unittest.TestCase):
             path.write_bytes(b'X'*len(payload))
             with self.assertRaisesRegex(ValueError, 'differs from verified host metadata'):
                 guest.verify_file(root, record)
+
+
+class NativeInputIdentity(unittest.TestCase):
+    @staticmethod
+    def fixture(root, first=b'x'):
+        (root/'data/manifests').mkdir(parents=True)
+        records=[]
+        for index in range(10):
+            payload=first if index==0 else f'input{index}'.encode('ascii')
+            name=f'input{index}';(root/name).write_bytes(payload)
+            records.append({'path':name,'url':f'https://example.org/source/{index}',
+                            'bytes':len(payload),'sha256':hashlib.sha256(payload).hexdigest(),
+                            'max_bytes':100})
+        NativeInputIdentity.save_manifest(root,records)
+        return records
+
+    @staticmethod
+    def save_manifest(root,records):
+        (root/'data/manifests/inputs.json').write_text(json.dumps(records),encoding='utf-8')
+
+    def test_ten_inputs_and_zero_byte_file_keep_verified_identity(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);records=self.fixture(root,first=b'')
+            expected=[{key:entry[key] for key in ['path','bytes','sha256']} for entry in records]
+            self.assertEqual(guest.snapshot_inputs(root),expected)
+            self.save_manifest(root,records[:-1])
+            with self.assertRaisesRegex(ValueError,'frozen ten-input manifest'):
+                guest.snapshot_inputs(root)
+
+    def test_size_is_required_and_rejects_negative_bool_string_and_float(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);records=self.fixture(root)
+            variants=[dict(records[0],bytes=size) for size in [-1,True,False,'1',1.0,None]]
+            variants.append({key:value for key,value in records[0].items() if key!='bytes'})
+            for entry in variants:
+                self.save_manifest(root,[entry,*records[1:]])
+                with self.subTest(entry=entry),self.assertRaisesRegex(ValueError,'nonnegative integers'):
+                    guest.snapshot_inputs(root)
+
+    def test_correct_hash_does_not_override_wrong_size(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);records=self.fixture(root)
+            records[0]['bytes']=2;self.save_manifest(root,records)
+            with self.assertRaisesRegex(ValueError,'Frozen input size mismatch: input0'):
+                guest.snapshot_inputs(root)
+
+    def test_same_size_tampering_still_fails_checksum(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);self.fixture(root)
+            (root/'input0').write_bytes(b'y')
+            with self.assertRaisesRegex(ValueError,'Checksum mismatch in frozen input: input0'):
+                guest.snapshot_inputs(root)
+
+    def test_prebootstrap_snapshot_imports_no_scientific_packages(self):
+        code="""import builtins,importlib.util,pathlib,sys
+blocked={'numpy','pandas','scipy','matplotlib','statsmodels','openpyxl','yaml'}
+original=builtins.__import__
+def guarded(name,*args,**kwargs):
+ if name.split('.')[0] in blocked:raise AssertionError('Scientific import before bootstrap: '+name)
+ return original(name,*args,**kwargs)
+builtins.__import__=guarded
+sys.path.insert(0,sys.argv[1])
+spec=importlib.util.spec_from_file_location('native_input_fixture',sys.argv[2])
+module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+assert len(module.snapshot_inputs(pathlib.Path(sys.argv[3])))==10
+assert not any(name.split('.')[0] in blocked for name in sys.modules)
+print('ten inputs verified without scientific imports')
+"""
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);self.fixture(root)
+            project=Path(__file__).resolve().parents[1]
+            result=subprocess.run([sys.executable,'-I','-B','-c',code,str(project/'src'),
+                                   str(project/'scripts/_native_wsl_guest.py'),str(root)],
+                                  capture_output=True,text=True,timeout=15)
+            self.assertEqual(result.returncode,0,result.stderr)
+            self.assertEqual(result.stdout.strip(),'ten inputs verified without scientific imports')
 
 
 if __name__ == '__main__':

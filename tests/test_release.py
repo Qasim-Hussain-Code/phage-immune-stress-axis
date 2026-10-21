@@ -11,6 +11,54 @@ spec=importlib.util.spec_from_file_location('release_checker',ROOT/'scripts/chec
 release=importlib.util.module_from_spec(spec);spec.loader.exec_module(release)
 
 
+class FrozenInputProvenance(unittest.TestCase):
+    @staticmethod
+    def fixture(root,payload=b'abc'):
+        (root/'data/manifests').mkdir(parents=True)
+        path=root/'source';path.write_bytes(payload)
+        return {'path':'source','url':'https://example.org/source',
+                'bytes':len(payload),'sha256':release.digest(path),'max_bytes':100}
+
+    @staticmethod
+    def save_manifest(root,entry):
+        (root/'data/manifests/inputs.json').write_text(json.dumps([entry]),encoding='utf-8')
+
+    def test_release_rejects_invalid_size_schema_before_other_checks(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);entry=self.fixture(root)
+            for size in [-1,True,False,'3',3.0,None]:
+                self.save_manifest(root,{**entry,'bytes':size})
+                with self.subTest(size=size),self.assertRaisesRegex(ValueError,'nonnegative integers'):
+                    release.check(root)
+
+    def test_release_rejects_wrong_size_with_correct_hash(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);entry=self.fixture(root)
+            self.save_manifest(root,{**entry,'bytes':entry['bytes']+1})
+            with self.assertRaisesRegex(ValueError,'Frozen input size mismatch'):
+                release.check(root)
+
+    def test_empty_frozen_input_is_valid(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);entry=self.fixture(root,b'')
+            self.save_manifest(root,entry)
+            self.assertEqual(release.verify_frozen_inputs(root),[entry])
+
+    def test_selected_git_input_requires_size_and_checksum(self):
+        for stored,current,message in [(b'old',b'longer','size differs in Git'),
+                                       (b'old',b'new','bytes differ in Git')]:
+            with self.subTest(message=message),tempfile.TemporaryDirectory() as directory:
+                root=Path(directory);entry=self.fixture(root,stored)
+                git=['git','-c',f'safe.directory={root.as_posix()}']
+                subprocess.run(git+['init','--quiet'],cwd=root,check=True,capture_output=True)
+                subprocess.run(git+['add','source'],cwd=root,check=True,capture_output=True)
+                (root/'source').write_bytes(current)
+                entry.update(bytes=len(current),sha256=release.digest(root/'source'))
+                self.save_manifest(root,entry)
+                with self.assertRaisesRegex(ValueError,message):
+                    release.verify_frozen_inputs(root,'index')
+
+
 class ReleasePayload(unittest.TestCase):
     def test_stale_staged_code_and_missing_new_code_are_rejected(self):
         with tempfile.TemporaryDirectory() as directory:

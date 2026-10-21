@@ -9,7 +9,14 @@ import xml.etree.ElementTree as ET
 from .io import digest, read_csv, write_csv
 
 
-def load_manifest(root,config):
+def _declared_input_bytes(source):
+    size=source.get('bytes')
+    if isinstance(size,bool) or not isinstance(size,int) or size<0:
+        raise ValueError('Frozen input sizes must be nonnegative integers')
+    return size
+
+
+def load_manifest(root,config=None):
     """Validate the frozen input contract before touching a destination."""
     root=Path(root).resolve()
     manifest=json.loads((root/'data/manifests/inputs.json').read_text(encoding='utf-8'))
@@ -28,6 +35,7 @@ def load_manifest(root,config):
         seen.add(path)
         if not re.fullmatch('[0-9a-f]{64}',str(source.get('sha256',''))):
             raise ValueError('Every input requires a SHA-256 digest')
+        _declared_input_bytes(source)
         cap=source.get('max_bytes')
         if isinstance(cap,bool) or not isinstance(cap,int) or cap<=0:
             raise ValueError('Input download caps must be positive integers')
@@ -39,6 +47,18 @@ def load_manifest(root,config):
     return manifest
 
 
+def verify_input_file(path,source):
+    """Require the stored/canonical file's declared size and frozen checksum."""
+    expected_bytes=_declared_input_bytes(source)
+    path=Path(path)
+    if not path.is_file():
+        raise FileNotFoundError(f'Cached input missing: {source["path"]}; source: {source["url"]}')
+    if path.stat().st_size!=expected_bytes:
+        raise ValueError(f'Frozen input size mismatch: {source["path"]}')
+    if digest(path)!=source['sha256']:
+        raise ValueError(f'Checksum mismatch in frozen input: {source["path"]}')
+
+
 def verify_cached_inputs(root,config,guard):
     """Read-only cache verification: no retrieval, extraction or scientific writes."""
     root=Path(root)
@@ -46,12 +66,7 @@ def verify_cached_inputs(root,config,guard):
     for source in load_manifest(root,config):
         guard.check()
         path=root/source['path']
-        if not path.is_file():
-            raise FileNotFoundError(f'Cached input missing: {source["path"]}; source: {source["url"]}')
-        if source.get('bytes') is not None and path.stat().st_size!=source['bytes']:
-            raise ValueError(f'Frozen input size mismatch: {source["path"]}')
-        if digest(path)!=source['sha256']:
-            raise ValueError(f'Checksum mismatch in frozen input: {source["path"]}')
+        verify_input_file(path,source)
         checks.append({'path':source['path'],'status':'verified_cache','sha256':source['sha256']})
     return {'status':'verified','verified_inputs':len(checks),'checks':checks,
             'downloads':0,'scientific_files_written':0}
@@ -75,8 +90,7 @@ def fetch(root, config, guard, offline=False):
     for source in manifest:
         path = root/source['path']
         if path.exists():
-            if digest(path) != source['sha256']:
-                raise ValueError(f'Checksum mismatch in frozen input: {source["path"]}')
+            verify_input_file(path,source)
             checks.append({'path': source['path'], 'status': 'verified_cache', 'sha256': source['sha256']})
             continue
         if offline:
@@ -103,8 +117,7 @@ def fetch(root, config, guard, offline=False):
                     guard.check()
             if source.get('transformation')=='zenodo_catalog':
                 part.write_bytes(normalize_zenodo(part.read_bytes()))
-            if digest(part) != source['sha256']:
-                raise ValueError(f'Public input changed: {source["url"]}; frozen hash {source["sha256"]}')
+            verify_input_file(part,source)
             part.replace(path)
         finally:
             part.unlink(missing_ok=True)

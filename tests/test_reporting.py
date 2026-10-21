@@ -4,7 +4,8 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
-from pisa.reporting import figure_qa_status, invocation_text, resource_report
+from unittest.mock import patch
+from pisa.reporting import figure_qa_status, invocation_text, resource_report, summarize, validation_counts_text
 
 
 class ReportingContracts(unittest.TestCase):
@@ -16,8 +17,55 @@ class ReportingContracts(unittest.TestCase):
             self.assertNotIn('25-test',pilot)
             validation=invocation_text(root,{'status':'completed_validation','mode':'validation',
                 'validation':{'success':True,'tests_run':73,'failures':0,'errors':0,'skipped':1}})
-            self.assertIn('73 tests',validation)
+            self.assertIn('73 tests collected, 72 executed, 1 skipped',validation)
             self.assertIn('did not download data',validation)
+
+    def test_summary_and_invocation_report_platform_skips_separately(self):
+        for skipped,executed in ((6,129),(9,126)):
+            with self.subTest(skipped=skipped),tempfile.TemporaryDirectory() as tmp:
+                root=Path(tmp);(root/'docs').mkdir();(root/'results/reports').mkdir(parents=True)
+                record={'success':True,'tests_run':135,'failures':0,'errors':0,'skipped':skipped}
+                summary={'workbook_animal_rows':0,'principal_run_count':0,
+                         'principal_specimen_count':0,'sequencing_category_counts':{}}
+                (root/'results/reports/sample_audit_summary.json').write_text(json.dumps(summary))
+                (root/'results/reports/validation_summary.json').write_text(json.dumps(record))
+                # Empty synthetic scientific tables isolate the generated validation prose.
+                with patch('pisa.reporting.read_csv',return_value=[]):
+                    summarize(root,{})
+                expected=f'135 tests collected, {executed} executed, {skipped} skipped, 0 failures and 0 errors'
+                self.assertIn(expected,(root/'docs/results.md').read_text())
+                current=invocation_text(root,{'status':'completed_validation','validation':record})
+                self.assertIn('Validation (executed in this invocation): '+expected,current)
+                cached=invocation_text(root,{'status':'completed_restricted_analysis',
+                    'stages':[{'name':'09_robustness_checks','status':'resumed_verified','result':record}]})
+                self.assertIn('Validation (verified cached stage result): '+expected,cached)
+                self.assertNotIn('135 executed',current)
+                self.assertNotIn(f'{executed} passed',current)
+
+    def test_failed_zero_and_all_skipped_validation_counts_do_not_claim_success(self):
+        cases=[
+            ({'success':False,'tests_run':135,'skipped':6,'failures':2,'errors':1},
+             '135 tests collected, 129 executed, 6 skipped, 2 failures and 1 errors'),
+            ({'success':False,'tests_run':0,'skipped':0,'failures':0,'errors':0},
+             '0 tests collected, 0 executed, 0 skipped, 0 failures and 0 errors'),
+            ({'success':True,'tests_run':3,'skipped':3,'failures':0,'errors':0},
+             '3 tests collected, 0 executed, 3 skipped, 0 failures and 0 errors'),
+            ({'success':True,'tests_run':3,'skipped':0,'failures':1,'errors':0},
+             '3 tests collected, 3 executed, 0 skipped, 1 failures and 0 errors'),
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            for record,expected in cases:
+                with self.subTest(record=record):
+                    text=invocation_text(Path(tmp),{'status':'failed','validation':record})
+                    self.assertIn(expected,text)
+                    self.assertIn('No successful validation result is established',text)
+                    self.assertNotIn('passed',text)
+
+    def test_invalid_counts_cannot_generate_negative_executed_tests(self):
+        for record in ({'tests_run':2,'skipped':3},{'tests_run':-1},
+                       {'tests_run':True},{'tests_run':'135'}):
+            with self.subTest(record=record),self.assertRaises(ValueError):
+                validation_counts_text(record)
 
     def test_local_platform_and_scientific_artifact_preserved(self):
         with tempfile.TemporaryDirectory() as tmp:

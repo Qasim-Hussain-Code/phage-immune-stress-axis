@@ -1,6 +1,6 @@
 # Resource usage
 
-Invocation: 20261020T123200773661Z_38916. Status: completed_restricted_analysis.
+Invocation: 20261021T131343730951Z_32180. Status: completed_restricted_analysis.
 Current measured platform: Windows-11-10.0.26300-SP0. Python: 3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)].
 Historical `environment_initial.json` records the original research execution only. It does not govern this checkout's resource budget. The ignored local persistent baseline is bound to checkout location, filesystem and host. A fresh checkout measures its own available space. Restarting the same checkout does not reset its budget.
 
@@ -8,15 +8,15 @@ Historical `environment_initial.json` records the original research execution on
 |---|---:|---|
 | Local baseline disk free | 14208532480 | 14208.532 MB / 14.208532 GB |
 | Conservative total-project storage ceiling | 10000000000 | 10000.000 MB / 10.000000 GB |
-| Maximum measured native per-process RSS this invocation | 35729408 | 35.729 MB / 0.035729 GB |
-| Maximum sampled concurrent process-family RSS | not measured | not measured |
-| Project snapshot including Git | 187807047 | 187.807 MB / 0.187807 GB |
-| Project snapshot excluding Git | 185373414 | 185.373 MB / 0.185373 GB |
-| Disk free at snapshot | 13550358528 | 13550.359 MB / 13.550359 GB |
-| Available system memory at snapshot | 1260466176 | 1260.466 MB / 1.260466 GB |
+| Maximum measured native per-process RSS this invocation | 218140672 | 218.141 MB / 0.218141 GB |
+| Maximum sampled concurrent process-family RSS | 324915200 | 324.915 MB / 0.324915 GB |
+| Project snapshot including Git | 190908829 | 190.909 MB / 0.190909 GB |
+| Project snapshot excluding Git | 188004938 | 188.005 MB / 0.188005 GB |
+| Disk free at snapshot | 10358075392 | 10358.075 MB / 10.358075 GB |
+| Available system memory at snapshot | 924049408 | 924.049 MB / 0.924049 GB |
 
 Configured minimum free disk: 4000000000 bytes. Per-process ceiling: 1000000000 bytes. Aggregate process-family ceiling: 1000000000 bytes. Available-memory floor: 100000000 bytes.
-Concurrent-memory samples: 0; maximum unreadable or already-exited processes in one sample: 0.
+Concurrent-memory samples: 137; maximum unreadable or already-exited processes in one sample: 2.
 The aggregate statistic sums simultaneous current RSS across runner descendants. It is sampled at approximately 0.1-second intervals during child execution and is not an exact whole-machine peak or an operating-system allocation limit. Brief processes or allocation spikes between polls may be missed. Native per-process peaks are reported separately; historical peaks from resumed stages are not counted as newly measured current-run peaks.
 The storage cap conservatively counts the entire checkout, including existing inputs, Git, environments, caches and temporary products inside it. Free disk is checked independently. Pre-existing software outside the checkout is not included in project bytes; installing a fresh environment requires a separate disk/RAM check. No raw sequencing data or reference database is acquired by the selected workflow.
 
@@ -46,10 +46,10 @@ The storage cap conservatively counts the entire checkout, including existing in
 
 ## Invocation status
 
-Invocation: 20261020T123200773661Z_38916. Mode: full. Status: completed_restricted_analysis.
-0 stages executed and 10 stages resumed after verifying their declared outputs and upstream dependencies.
+Invocation: 20261021T131343730951Z_32180. Mode: full. Status: completed_restricted_analysis.
+10 stages executed and 0 stages resumed after verifying their declared outputs and upstream dependencies.
 All selected restricted-workflow stages completed or were verified from cache. Scientifically excluded analyses remain exclusions.
-Validation (verified cached stage result): 135 tests, 0 failures, 0 errors, 6 skipped.
+Validation (executed in this invocation): 174 tests collected, 168 executed, 6 skipped, 0 failures and 0 errors.
 Prior visual review dated 2026-10-20T06:23:59.007316+00:00 matches the current bytes of 5 PDF files. This is not a new visual review by this invocation.
 
 Publication status is documented separately in `docs/publication_status.md`; executing this pipeline does not establish a GitHub publication.

@@ -106,14 +106,15 @@ def verify_file(root, record):
 
 
 def snapshot_inputs(checkout):
-    manifest = json.loads((checkout / 'data/manifests/inputs.json').read_text())
+    # Acquisition and its dependencies are standard-library-only, so this
+    # contract is available before scientific wheels are bootstrapped.
+    from pisa.acquisition import load_manifest, verify_input_file
+    manifest = load_manifest(checkout)
     rows = []
     for source in manifest:
         path = checkout.joinpath(*relative(source['path']).parts)
-        observed = sha(path)
-        if observed != source['sha256'] or ('bytes' in source and path.stat().st_size != source['bytes']):
-            raise ValueError('Frozen scientific input changed: ' + source['path'])
-        rows.append({'path': source['path'], 'bytes': path.stat().st_size, 'sha256': observed})
+        verify_input_file(path, source)
+        rows.append({'path': source['path'], 'bytes': source['bytes'], 'sha256': source['sha256']})
     if len(rows) != 10:
         raise ValueError('Expected the frozen ten-input manifest')
     return rows
