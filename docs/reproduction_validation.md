@@ -1,7 +1,7 @@
 # Local committed-source reproduction validation
 
-Status: passed. Recorded UTC completion: 2026-10-20T12:35:22.623221+00:00.
-Selected Git commit: 06b7cab84937c174c3197ba63d560ddc9cc70b1c.
+Status: passed. Recorded UTC completion: 2026-10-21T13:26:43.056490+00:00.
+Selected Git commit: eb7ba6c8b945670a1f55c493d89435f36750900c.
 Scope: same-host committed-source checkout, existing interpreter/packages, offline full execution.
 
 This check uses a fresh Git archive inside the existing workspace and the same Python interpreter and installed package environment. It does not establish Linux execution, independent dependency installation, virtual-machine reproduction, or remote CI success. No network or package installation is requested.
@@ -13,5 +13,3 @@ Disposable checkout/archive cleanup: removed.
 Outer storage checks include the archive, disposable checkout, its generated outputs and temporary/cache files. Outer sampled aggregate memory includes the reproduction controller, fresh runner, stages and validation descendants. Per-process native peaks and sampled simultaneous RSS remain distinct measurements.
 
 Machine-readable evidence: `results/reports/reproduction_check.json`. Child log: `results/reports/reproduction_run.log`. The JSON contains exact source identities, input checks, each comparison and resource observations.
-
-The separate [Linux reproduction](linux_reproduction_validation.md) newly installed all pinned dependencies and completed the same ten stages. Its tolerance-based CSV comparison and actual figure review are reported separately from this Windows exact-byte result.

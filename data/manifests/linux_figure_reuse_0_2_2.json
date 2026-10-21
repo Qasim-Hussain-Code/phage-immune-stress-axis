@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "checked_utc": "2026-10-21T13:34:36.299287+00:00",
+  "status": "passed",
+  "source_commit": "eb7ba6c8b945670a1f55c493d89435f36750900c",
+  "code_sha256": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
+  "prior_review_record": "data/manifests/linux_figure_qa.json",
+  "prior_review_record_sha256": "13447f6a9754752a8e0ed31538455e2dd7328c8e1e8d361dbef1ff2dc4251cb0",
+  "prior_reviewed_utc": "2026-10-20T12:51:09.975124+00:00",
+  "new_visual_inspection_performed": false,
+  "scope": "All ten new Linux files exactly match the bytes already covered by the retained visual review. This accepts unchanged reviewed assets; it is not a claim of a new human or agent visual inspection.",
+  "figures": [
+    {
+      "path": "figures/figure1_design.pdf",
+      "sha256": "60487bc7123533066fe2bc2d4c81e07d813489208e5488bba987e04a011da21c",
+      "matches_previously_reviewed_bytes": true
+    },
+    {
+      "path": "figures/figure1_design.png",
+      "sha256": "c16afe674a0ee7ff35072f956c7d37c53f9685637f8b96bea0cd58fa9fed1845",
+      "matches_previously_reviewed_bytes": true
+    },
+    {
+      "path": "figures/figure4_immune.pdf",
+      "sha256": "f3c6edeb42a909749c983aafa68f31e2a0d4b4f6de940512a71a92c78cc68214",
+      "matches_previously_reviewed_bytes": true
+    },
+    {
+      "path": "figures/figure4_immune.png",
+      "sha256": "94e975846a9c7e5a0a0559c8e58a1af2d64dda3c30edef6a5650ea1af5e59786",
+      "matches_previously_reviewed_bytes": true
+    },
+    {
+      "path": "figures/figure5_linkage_limit.pdf",
+      "sha256": "5fe6c0e55d250a96acc2fefef473e1ba73ca187035bc5d2ade1f12089933af10",
+      "matches_previously_reviewed_bytes": true
+    },
+    {
+      "path": "figures/figure5_linkage_limit.png",
+      "sha256": "2298f9894698c902dbcc55ef56f6e8167ba3e748bd25b113dd4955d72f52fb9a",
+      "matches_previously_reviewed_bytes": true
+    },
+    {
+      "path": "figures/figure7_robustness.pdf",
+      "sha256": "8fee6443a8fbb96a427be93f82c5080ded6be13e237ee1e1040f2625c0c51dd0",
+      "matches_previously_reviewed_bytes": true
+    },
+    {
+      "path": "figures/figure7_robustness.png",
+      "sha256": "cabbc4cd4a6d47797ddc28a19a91728b18b82145d65dade91d14fab958824c50",
+      "matches_previously_reviewed_bytes": true
+    },
+    {
+      "path": "figures/figure8_method_comparison.pdf",
+      "sha256": "9324e262e8f2c80916f9516b82d154f41bd89a0fce45c0e1af0e3096c25b83af",
+      "matches_previously_reviewed_bytes": true
+    },
+    {
+      "path": "figures/figure8_method_comparison.png",
+      "sha256": "f109a6335a0fd8f313b95ee47a79c9beb5958c971eb4592ec3d8dadc751502f3",
+      "matches_previously_reviewed_bytes": true
+    }
+  ]
+}

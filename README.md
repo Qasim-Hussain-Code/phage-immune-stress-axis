@@ -148,9 +148,9 @@ original singly housed stressed groups.
 
 ## Reproduction
 
-Use Python 3.11 or newer. Version 0.2.2 completed the offline workflow with
-CPython 3.14.0 on Windows 11. The earlier independently installed Linux replay
-used version 0.2.1 with CPython 3.14.4 in the existing Ubuntu WSL2 distribution.
+Use Python 3.11 or newer. Version 0.2.2 completed fresh offline workflows with
+CPython 3.14.0 on Windows 11 and CPython 3.14.4 in the existing Ubuntu WSL2
+distribution.
 The Linux check newly installed all 21 pinned distributions in an isolated
 environment from verified official wheels. The Windows reference used its
 existing packages. These runs share one physical host. Exact environment,
@@ -200,40 +200,36 @@ Sampled aggregate RSS is not an exact whole-machine peak. Raw PRJNA970614 FASTQs
 alone total 262.211 GB compressed and were
 excluded. See [resource measurements](docs/resource_usage.md).
 
-During the final Windows fresh-checkout reproduction, sampled concurrent
-process-family RSS peaked at 366.9 MB and the largest native per-process peak
-was 220.0 MB. Project storage peaked at 196.5 MB including disposable files,
-then fell to 187.9 MB after cleanup, with 13.54 GB free. The separate Linux
-attempt used about 481.2 MB in its complete native directory before packaging;
-its outer guest monitor sampled 337.6 MB concurrent RSS. These scopes are
-reported separately, and guest RSS is not added to virtual-machine memory.
-See the [Linux execution evidence](docs/linux_reproduction_validation.md).
+During the latest Windows fresh-checkout replay, sampled concurrent
+process-family RSS peaked at 369.4 MB and the largest native per-process peak
+was 219.1 MB. Project storage peaked at 201.2 MB including disposable files,
+then fell to 191.0 MB after cleanup, with 10.36 GB free. The separate Linux
+run used 482.6 MB in its complete native directory before packaging; its outer
+guest monitor sampled 338.4 MB concurrent RSS. These scopes are reported
+separately, and guest RSS is not added to virtual-machine memory. See the
+[Linux execution evidence](docs/linux_reproduction_validation.md).
 
 ## Validation and publication status
 
-Version 0.2.2 collected 174 Windows tests: 168 executed successfully and six
-Linux-only tests were skipped, with zero failures or errors. All ten stages
-completed offline. All 30 scientific outputs and all ten frozen inputs remain
-byte-for-byte identical to the preceding version. Generated validation reports
-now distinguish collected, executed and skipped tests. The
-[hardening report](docs/validation_hardening.md) records the size-validation,
-reporting and private-push changes. A fresh committed-source replay of this
-revision is recorded separately when completed.
+Version 0.2.2 collected 174 tests on each platform, with zero failures or
+errors. Windows executed 168 and skipped six Linux-only cases; Linux executed
+165 and skipped nine Windows-only cases. A fresh Git archive of commit
+`eb7ba6c8b945670a1f55c493d89435f36750900c` executed all ten stages offline without resume on both platforms.
+All 30 Windows scientific files matched exactly. All 20 Linux CSVs passed the
+fixed exact-field/numeric-tolerance policy: 18 were byte-identical, while two
+had derived-value differences at most 3e-14. All ten new Linux figure files
+exactly match previously visually reviewed Linux bytes. No new visual
+inspection is claimed, and Linux output is not byte-identical overall.
 
-The earlier full Linux replay at commit
-`06b7cab84937c174c3197ba63d560ddc9cc70b1c` collected 135 tests, executed 126 and
-skipped nine Windows-only cases. Its 20 CSVs passed the fixed comparison policy:
-18 were byte-identical and two had derived-value differences at most 3e-14.
-All ten changed Linux figure files passed actual visual review. That run
-establishes the stated earlier source revision; it is not a claim that the new
-source has already completed Linux execution. Linux outputs are not
-byte-identical overall.
-
-The [Windows evidence](results/reports/reproduction_check.json) and
-[Linux validation report](docs/linux_reproduction_validation.md) identify their
-executed source revisions, inputs, comparisons, resources and cleanup. These
-environments share one physical host; no separate physical-machine, Linux Mint,
-macOS or remote CI execution is claimed. The suite includes
+All 30 scientific outputs and all ten frozen inputs also remain byte-for-byte
+unchanged from before the version 0.2.2 validation-hardening changes. Generated
+reports distinguish collected, executed and skipped tests. See the
+[hardening report](docs/validation_hardening.md),
+[Windows evidence](results/reports/reproduction_check.json) and
+[Linux validation](docs/linux_reproduction_validation.md) for source identities,
+comparisons, resources and completed cleanup. The Linux dependencies were
+independently installed on the same physical host; no separate physical-machine,
+Linux Mint, macOS or remote CI execution is claimed. The suite includes
 independent SciPy/statsmodels comparisons, original-method reconstruction,
 analytical identities, missingness, pooling, inoculum, acquisition, resource and
 resume safeguards. Current executed counts and outcomes are in

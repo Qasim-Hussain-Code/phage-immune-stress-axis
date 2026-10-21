@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "started_utc": "2026-10-20T12:32:55.211361+00:00",
+  "started_utc": "2026-10-21T13:23:22.145566+00:00",
   "status": "passed",
   "scope": "same-host committed-source checkout, existing interpreter/packages, offline full execution",
   "network_requested": false,
   "packages_installed": false,
   "keep_requested": false,
   "runtime": {
-    "project_version": "0.2.1",
+    "project_version": "0.2.2",
     "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
     "platform": "win32",
     "packages": {
@@ -219,11 +219,11 @@
   ],
   "git": {
     "requested_ref": "HEAD",
-    "commit": "06b7cab84937c174c3197ba63d560ddc9cc70b1c",
-    "tree": "72dcda6d1db8e5b6dfab2ccf1937effbb5a6c28b",
-    "tracked_files": 205,
-    "tracked_file_bytes": 4225006,
-    "estimated_tar_bound_bytes": 6113262,
+    "commit": "eb7ba6c8b945670a1f55c493d89435f36750900c",
+    "tree": "68dc32bc919b92c03449395b58d34af0df31cf7a",
+    "tracked_files": 222,
+    "tracked_file_bytes": 4977574,
+    "estimated_tar_bound_bytes": 6935462,
     "working_git_normalized_source_and_reference_match": true
   },
   "reference_scope": "working file bytes at start, Git-normalized equivalent to selected commit",
@@ -259,16 +259,16 @@
     "results/tables/software_calibration.csv": "dc120e362a7ae92a28375db9becfc7687e062b376e58ebf156f648339f724342",
     "results/tables/source_inventory.csv": "43ac0485dcae76377232029d5e5b5872fbc2d260a5405ade9e1086b98b3c477e"
   },
-  "working_code_digest": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
+  "working_code_digest": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
   "archive": {
-    "sha256": "0039367be13b5b25e66f5f74f8cdba80921e215560055fe04340a0f3b7284dbb",
-    "bytes": 4392960
+    "sha256": "071550f66dba78378491fbd1e6b026941d6aca5d2ea6d9b41d4c28ca51200f70",
+    "bytes": 5160960
   },
   "extraction": {
-    "members": 222,
-    "regular_file_bytes": 4225006
+    "members": 239,
+    "regular_file_bytes": 4977574
   },
-  "exported_code_digest": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
+  "exported_code_digest": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
   "raw_code_digests_equal": true,
   "code_digest_note": "Git-normalized equivalence is checked; raw code bytes can differ only through configured text normalization",
   "cleared_generated_paths": [
@@ -354,7 +354,7 @@
   },
   "command": [
     "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
-    "C:\\Users\\User\\Documents\\phage-immune-stress-axis\\.cache\\reproduction\\run_20261020T123255211361Z\\checkout\\scripts\\run_all.py",
+    "C:\\Users\\User\\Documents\\phage-immune-stress-axis\\.cache\\reproduction\\run_20261021T132322145566Z\\checkout\\scripts\\run_all.py",
     "--config",
     "config/analysis.yaml",
     "--threads",
@@ -469,12 +469,12 @@
   "comparison_outputs": 30,
   "validation": {
     "schema_version": 2,
-    "started_utc": "2026-10-20T12:34:22.366780+00:00",
-    "project_version": "0.2.1",
-    "finished_utc": "2026-10-20T12:34:46.563819+00:00",
-    "duration_seconds": 24.197,
-    "code_sha256": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
-    "code_sha256_after": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
+    "started_utc": "2026-10-21T13:25:36.847780+00:00",
+    "project_version": "0.2.2",
+    "finished_utc": "2026-10-21T13:26:06.703390+00:00",
+    "duration_seconds": 29.856,
+    "code_sha256": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
+    "code_sha256_after": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
     "source_unchanged_during_validation": true,
     "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
     "package_versions": {
@@ -503,187 +503,211 @@
     "test_timings": [
       {
         "test": "test_acquisition.AcquisitionContracts.test_catalog_excludes_usage_stats",
-        "seconds": 0.000325
+        "seconds": 0.000286
+      },
+      {
+        "test": "test_acquisition.AcquisitionContracts.test_correct_hash_does_not_override_wrong_cached_size",
+        "seconds": 0.009327
+      },
+      {
+        "test": "test_acquisition.AcquisitionContracts.test_download_with_correct_hash_and_wrong_size_is_not_promoted",
+        "seconds": 0.004668
       },
       {
         "test": "test_acquisition.AcquisitionContracts.test_fingerprint_detects_input_change",
-        "seconds": 0.058225
+        "seconds": 0.040074
+      },
+      {
+        "test": "test_acquisition.AcquisitionContracts.test_input_byte_size_schema_rejects_invalid_and_missing_sizes",
+        "seconds": 0.026806
       },
       {
         "test": "test_acquisition.AcquisitionContracts.test_malformed_manifest_fails_before_download",
-        "seconds": 0.017798
+        "seconds": 0.009586
       },
       {
         "test": "test_acquisition.AcquisitionContracts.test_offline_missing_and_corrupt_inputs_fail",
-        "seconds": 0.029453
+        "seconds": 0.004942
       },
       {
         "test": "test_acquisition.AcquisitionContracts.test_streaming_cap_is_enforced_and_partial_removed",
-        "seconds": 0.01309
+        "seconds": 0.004384
       },
       {
         "test": "test_acquisition.AcquisitionContracts.test_validation_does_not_write_or_extract",
-        "seconds": 0.012784
+        "seconds": 0.006331
+      },
+      {
+        "test": "test_acquisition.AcquisitionContracts.test_zenodo_download_rejects_wrong_canonical_size",
+        "seconds": 0.005323
+      },
+      {
+        "test": "test_acquisition.AcquisitionContracts.test_zenodo_download_verifies_canonical_stored_size",
+        "seconds": 0.01522
+      },
+      {
+        "test": "test_acquisition.AcquisitionContracts.test_zero_byte_input_is_valid_for_cache_and_offline_fetch",
+        "seconds": 0.009536
       },
       {
         "test": "test_calibration.SoftwareCalibrationTests.test_benchmark_seed_and_batch_invariance",
-        "seconds": 1.531552
+        "seconds": 0.945013
       },
       {
         "test": "test_calibration.SoftwareCalibrationTests.test_cluster_covariance_matches_analytical_contract",
-        "seconds": 0.002038
+        "seconds": 0.000251
       },
       {
         "test": "test_calibration.SoftwareCalibrationTests.test_invalid_and_bounded_settings",
-        "seconds": 0.000122
+        "seconds": 8.7e-05
       },
       {
         "test": "test_calibration.SoftwareCalibrationTests.test_obvious_zero_signal_and_added_signal_controls",
-        "seconds": 0.000289
+        "seconds": 0.000217
       },
       {
         "test": "test_calibration.SoftwareCalibrationTests.test_outputs_need_no_biological_inputs_and_are_labeled",
-        "seconds": 0.076618
+        "seconds": 0.033547
       },
       {
         "test": "test_calibration.SoftwareCalibrationTests.test_replicate_major_generators_preserve_batches_exactly",
-        "seconds": 0.004967
+        "seconds": 0.001576
       },
       {
         "test": "test_calibration.SoftwareCalibrationTests.test_vectorized_welch_against_independent_scipy_samples",
-        "seconds": 0.037798
+        "seconds": 0.02039
       },
       {
         "test": "test_calibration.SoftwareCalibrationTests.test_wilson_matches_statsmodels_including_boundaries",
-        "seconds": 1.699843
+        "seconds": 0.353404
       },
       {
         "test": "test_configuration.ResourcePolicyConfiguration.test_hardware_policy_cannot_be_silently_weakened",
-        "seconds": 0.119204
+        "seconds": 0.082129
       },
       {
         "test": "test_environment.DependencyProvenance.test_missing_distribution_is_explicit",
-        "seconds": 0.046388
+        "seconds": 0.016965
       },
       {
         "test": "test_environment.DependencyProvenance.test_pins_cover_observed_active_dependency_closure",
-        "seconds": 0.119248
+        "seconds": 0.029886
       },
       {
         "test": "test_environment.DependencyProvenance.test_transitive_version_change_invalidates_cache_fingerprint",
-        "seconds": 0.103585
+        "seconds": 0.030064
       },
       {
         "test": "test_figure_qa.RecordedFigureReview.test_missing_review_never_means_pass",
-        "seconds": 0.003426
+        "seconds": 0.000737
       },
       {
         "test": "test_figure_qa.RecordedFigureReview.test_review_is_invalidated_by_changed_or_added_pdf",
-        "seconds": 0.034245
+        "seconds": 0.017124
       },
       {
         "test": "test_immune.TestIndependentStatistics.test_analytical_identity_and_edge_cases",
-        "seconds": 0.003068
+        "seconds": 0.000938
       },
       {
         "test": "test_immune.TestIndependentStatistics.test_bh_matches_statsmodels",
-        "seconds": 0.031455
+        "seconds": 0.006049
       },
       {
         "test": "test_immune.TestIndependentStatistics.test_leave_one_out_agrees_with_brute_force_means",
-        "seconds": 0.009056
+        "seconds": 0.001393
       },
       {
         "test": "test_immune.TestIndependentStatistics.test_welch_matches_scipy",
-        "seconds": 0.01726
+        "seconds": 0.004946
       },
       {
         "test": "test_immune.TestSourceIdentifiers.test_blank_rows_missing_outcomes_and_zero",
-        "seconds": 1.662788
+        "seconds": 0.28883
       },
       {
         "test": "test_immune.TestSourceIdentifiers.test_duplicate_and_unknown_groups_fail",
-        "seconds": 0.108457
+        "seconds": 0.047543
       },
       {
         "test": "test_immune.TestSourceIdentifiers.test_fixed_six_test_family_and_no_study_i_tests",
-        "seconds": 0.070674
+        "seconds": 0.030847
       },
       {
         "test": "test_immune.TestSourceIdentifiers.test_literal_and_composite_ids",
-        "seconds": 7e-05
+        "seconds": 5.7e-05
       },
       {
         "test": "test_immune.TestSourceIdentifiers.test_unavailable_source_does_not_make_results",
-        "seconds": 0.000969
+        "seconds": 0.000665
       },
       {
         "test": "test_io.AtomicJSON.test_conflict_classifier_requires_windows_permissionerror_and_known_code",
-        "seconds": 0.000255
+        "seconds": 0.000152
       },
       {
         "test": "test_io.AtomicJSON.test_failed_replace_preserves_existing_record",
-        "seconds": 0.005695
+        "seconds": 0.017993
       },
       {
         "test": "test_io.AtomicJSON.test_native_serialization_is_preserved_and_temporary_is_removed",
-        "seconds": 0.005936
+        "seconds": 0.005333
       },
       {
         "test": "test_io.AtomicJSON.test_ordinary_permission_nonwindows_and_other_oserrors_are_not_retried",
-        "seconds": 0.025144
+        "seconds": 0.024139
       },
       {
         "test": "test_io.AtomicJSON.test_persistent_known_windows_conflict_is_bounded_and_preserves_old_bytes",
-        "seconds": 0.018755
+        "seconds": 0.023911
       },
       {
         "test": "test_io.AtomicJSON.test_serialization_failure_never_opens_or_truncates_destination",
-        "seconds": 0.003907
+        "seconds": 0.004373
       },
       {
         "test": "test_io.AtomicJSON.test_transient_windows_conflicts_retry_then_publish_with_real_replace",
-        "seconds": 0.026579
+        "seconds": 0.030553
       },
       {
         "test": "test_metrics.CommunityMath.test_bray_curtis_scipy",
-        "seconds": 0.000432
+        "seconds": 0.000378
       },
       {
         "test": "test_metrics.CommunityMath.test_closure_scale_invariance",
-        "seconds": 0.000266
+        "seconds": 0.000233
       },
       {
         "test": "test_metrics.CommunityMath.test_invalid_abundances",
-        "seconds": 0.000261
+        "seconds": 0.000266
       },
       {
         "test": "test_metrics.CommunityMath.test_pairwise_logratio_identity",
-        "seconds": 0.000201
+        "seconds": 0.000236
       },
       {
         "test": "test_metrics.CommunityMath.test_zero_handling_and_identity",
-        "seconds": 0.000176
+        "seconds": 0.000199
       },
       {
         "test": "test_original_methods.OriginalMethodRealDataVerification.test_cached_source_matches_published_caption_without_extra_exclusions",
-        "seconds": 2.322948
+        "seconds": 0.740157
       },
       {
         "test": "test_original_methods.OriginalMethodSyntheticTests.test_anova_and_contrast_against_independent_ols",
-        "seconds": 2.100744
+        "seconds": 2.841282
       },
       {
         "test": "test_original_methods.OriginalMethodSyntheticTests.test_contrast_covariance_depends_on_unequal_sizes",
-        "seconds": 0.000154
+        "seconds": 8.5e-05
       },
       {
         "test": "test_original_methods.OriginalMethodSyntheticTests.test_invalid_groups_and_degenerate_variance",
-        "seconds": 0.000631
+        "seconds": 0.00034
       },
       {
         "test": "test_original_methods.OriginalMethodSyntheticTests.test_planned_contrast_is_not_conjunction_of_pairwise_effects",
-        "seconds": 0.622473
+        "seconds": 0.881425
       },
       {
         "test": "test_original_methods.OriginalMethodSyntheticTests.test_published_rounding_is_explicit",
@@ -691,155 +715,239 @@
       },
       {
         "test": "test_original_methods.OriginalMethodSyntheticTests.test_tukey_against_statsmodels_for_unequal_group_sizes",
-        "seconds": 1.459848
+        "seconds": 1.827582
       },
       {
         "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_missing_source_endpoint_record_and_support_violation_fail",
-        "seconds": 0.043376
+        "seconds": 0.052699
       },
       {
         "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_prepared_stage_fixture_outputs_are_descriptive_and_repeatable",
-        "seconds": 0.079922
+        "seconds": 0.082823
       },
       {
         "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_tampered_or_incomplete_existing_u_fails_before_outputs",
-        "seconds": 0.117211
+        "seconds": 0.141847
       },
       {
         "test": "test_phenotype_robustness.RankEffectTests.test_rank_reversal_all_ties_and_invalid_inputs",
-        "seconds": 0.00051
+        "seconds": 0.00053
       },
       {
         "test": "test_phenotype_robustness.RankEffectTests.test_tied_midrank_u_matches_independent_library_and_pair_counts",
-        "seconds": 0.000756
+        "seconds": 0.0007
       },
       {
         "test": "test_phenotype_robustness.SupportBoundTests.test_bounds_equal_independently_enumerated_corners",
-        "seconds": 0.000565
+        "seconds": 0.000545
       },
       {
         "test": "test_phenotype_robustness.SupportBoundTests.test_bounds_reversal_all_missing_and_unknown_support",
-        "seconds": 0.000164
+        "seconds": 0.000369
       },
       {
         "test": "test_phenotype_robustness.SupportBoundTests.test_invalid_counts_support_and_outcomes_fail",
-        "seconds": 0.000436
+        "seconds": 0.000768
       },
       {
         "test": "test_pipeline.PipelineContracts.test_execution_contract_rejects_source_config_spec_and_runtime_changes",
-        "seconds": 0.34032
+        "seconds": 0.370288
       },
       {
         "test": "test_pipeline.PipelineContracts.test_expected_input_materialization_does_not_change_source_contract",
-        "seconds": 0.104522
+        "seconds": 0.132944
       },
       {
         "test": "test_pipeline.PipelineContracts.test_malformed_valid_json_cache_is_invalidated_without_exception",
-        "seconds": 0.011974
+        "seconds": 0.013671
       },
       {
         "test": "test_pipeline.PipelineContracts.test_output_tamper_and_exact_output_set",
-        "seconds": 0.021477
+        "seconds": 0.021939
       },
       {
         "test": "test_pipeline.PipelineContracts.test_runtime_change_invalidates_fingerprint",
-        "seconds": 0.018976
+        "seconds": 0.024447
       },
       {
         "test": "test_pipeline.PipelineContracts.test_upstream_changes_invalidate_downstream_cache",
-        "seconds": 0.017608
+        "seconds": 0.021754
       },
       {
         "test": "test_pipeline.PipelineContracts.test_validation_only_does_not_fetch_or_extract",
-        "seconds": 0.007324
+        "seconds": 0.009201
       },
       {
         "test": "test_pipeline_failures.RunnerFinalizationFailures.test_final_resource_failure_cannot_preserve_completed_status",
-        "seconds": 0.10234
+        "seconds": 0.149585
       },
       {
         "test": "test_pipeline_failures.RunnerFinalizationFailures.test_interruption_survives_secondary_finalization_errors",
-        "seconds": 0.090352
+        "seconds": 0.136185
       },
       {
         "test": "test_pipeline_failures.RunnerFinalizationFailures.test_new_reporting_failure_fails_previously_completed_analysis",
-        "seconds": 0.096783
+        "seconds": 0.113206
       },
       {
         "test": "test_pipeline_failures.RunnerFinalizationFailures.test_original_failure_survives_secondary_resource_and_reporting_errors",
-        "seconds": 0.18337
+        "seconds": 0.11067
       },
       {
         "test": "test_pipeline_failures.RunnerFinalizationFailures.test_resource_record_write_failure_is_terminal_and_recorded",
-        "seconds": 0.129815
+        "seconds": 0.134817
       },
       {
         "test": "test_pipeline_failures.RunnerFinalizationFailures.test_status_path_failure_still_records_failed_invocation",
-        "seconds": 0.054106
+        "seconds": 0.111387
       },
       {
         "test": "test_portability.PortabilityContracts.test_absolute_and_relative_boundaries_are_fixed_or_conditions",
-        "seconds": 0.093399
+        "seconds": 0.079992
       },
       {
         "test": "test_portability.PortabilityContracts.test_bounds_limit_detail_without_hiding_total_differences",
-        "seconds": 0.059619
+        "seconds": 0.049888
       },
       {
         "test": "test_portability.PortabilityContracts.test_exact_bytes_and_newline_only_semantic_equality_are_distinct",
-        "seconds": 0.039484
+        "seconds": 0.047358
       },
       {
         "test": "test_portability.PortabilityContracts.test_hard_invalid_figure_takes_precedence_over_other_visual_review",
-        "seconds": 0.485487
+        "seconds": 0.6331
       },
       {
         "test": "test_portability.PortabilityContracts.test_header_row_order_row_count_and_row_width_are_enforced",
-        "seconds": 0.047566
+        "seconds": 0.069228
       },
       {
         "test": "test_portability.PortabilityContracts.test_ids_source_values_counts_json_and_publication_fields_remain_exact",
-        "seconds": 0.132661
+        "seconds": 0.219687
       },
       {
         "test": "test_portability.PortabilityContracts.test_nonfinite_values_are_rejected_even_when_bytes_match",
-        "seconds": 0.180417
+        "seconds": 0.302815
       },
       {
         "test": "test_portability.PortabilityContracts.test_plan_is_deterministic_and_names_every_fixed_schema",
-        "seconds": 0.002235
+        "seconds": 0.003267
       },
       {
         "test": "test_portability.PortabilityContracts.test_tree_inventory_and_figure_review_never_claim_byte_identity",
-        "seconds": 1.003034
+        "seconds": 1.121693
       },
       {
         "test": "test_portability.PortabilityContracts.test_unknown_schema_and_broadened_whitelist_fail_closed",
-        "seconds": 0.02919
+        "seconds": 0.044098
+      },
+      {
+        "test": "test_private_push.GitPolicy.test_clean_new_blob_and_empty_commit_are_supported",
+        "seconds": 1.103273
+      },
+      {
+        "test": "test_private_push.GitPolicy.test_credentials_removed_by_later_commit_still_block_release",
+        "seconds": 0.918498
+      },
+      {
+        "test": "test_private_push.GitPolicy.test_default_approved_destination_is_valid",
+        "seconds": 0.438068
+      },
+      {
+        "test": "test_private_push.GitPolicy.test_explicit_url_rewrite_is_checked_even_with_an_approved_pushurl",
+        "seconds": 0.499631
+      },
+      {
+        "test": "test_private_push.GitPolicy.test_generic_url_rewrite_is_rejected",
+        "seconds": 0.379526
+      },
+      {
+        "test": "test_private_push.GitPolicy.test_git_replacement_cannot_conceal_original_credential_blob",
+        "seconds": 1.094384
+      },
+      {
+        "test": "test_private_push.GitPolicy.test_inherited_config_selector_cannot_hide_transport_rewrites",
+        "seconds": 0.667883
+      },
+      {
+        "test": "test_private_push.GitPolicy.test_multiple_push_destinations_are_rejected",
+        "seconds": 0.504414
+      },
+      {
+        "test": "test_private_push.GitPolicy.test_private_working_file_in_new_history_is_rejected",
+        "seconds": 0.757824
+      },
+      {
+        "test": "test_private_push.GitPolicy.test_push_only_url_rewrite_is_rejected",
+        "seconds": 0.386068
+      },
+      {
+        "test": "test_private_push.GitPolicy.test_separate_public_push_url_is_rejected",
+        "seconds": 0.460072
+      },
+      {
+        "test": "test_private_push.ReleaseIdentity.test_api_host_is_pinned_despite_an_inherited_enterprise_host",
+        "seconds": 0.003505
+      },
+      {
+        "test": "test_private_push.ReleaseIdentity.test_commit_message_format_is_enforced",
+        "seconds": 0.001007
+      },
+      {
+        "test": "test_private_push.ReleaseIdentity.test_credentials_in_commit_bodies_are_rejected_without_echoing_values",
+        "seconds": 0.000127
+      },
+      {
+        "test": "test_private_push.ReleaseIdentity.test_default_check_never_invokes_a_push",
+        "seconds": 0.001074
+      },
+      {
+        "test": "test_private_push.ReleaseIdentity.test_optimized_python_cannot_disable_the_private_check",
+        "seconds": 0.265227
+      },
+      {
+        "test": "test_private_push.ReleaseIdentity.test_other_authors_committers_and_coauthor_trailers_are_rejected",
+        "seconds": 0.000445
+      },
+      {
+        "test": "test_private_push.ReleaseIdentity.test_private_target_and_single_researcher_are_required",
+        "seconds": 0.000457
+      },
+      {
+        "test": "test_private_push.ReleaseIdentity.test_public_target_stops_before_any_git_or_push_operation",
+        "seconds": 0.000289
+      },
+      {
+        "test": "test_private_push.ReleaseIdentity.test_user_authored_github_web_commits_remain_valid",
+        "seconds": 0.000129
+      },
+      {
+        "test": "test_private_push.ReleaseIdentity.test_verified_push_pins_commit_and_url_and_blocks_visibility_change",
+        "seconds": 0.003064
       },
       {
         "test": "test_processes.LinuxIdentityContracts.test_pidfd_capture_rechecks_identity_and_closes_raced_descriptor",
-        "seconds": 0.001767
+        "seconds": 0.001555
       },
       {
         "test": "test_processes.LinuxIdentityContracts.test_reused_pid_is_not_signalled_by_starttime_fallback",
-        "seconds": 0.000392
+        "seconds": 0.000684
       },
       {
         "test": "test_processes.LinuxProcessIntegration.test_keyboard_interrupt_cleans_observed_separate_sessions",
-        "seconds": 0.000182
+        "seconds": 6.4e-05
       },
       {
         "test": "test_processes.LinuxProcessIntegration.test_observed_reparented_leaf_is_cleaned_on_controller_failure",
-        "seconds": 6.3e-05
+        "seconds": 5.3e-05
       },
       {
         "test": "test_processes.LinuxProcessIntegration.test_parent_nonzero_cleans_ordinary_process_group",
-        "seconds": 4.8e-05
+        "seconds": 4.5e-05
       },
       {
         "test": "test_processes.LinuxProcessIntegration.test_parent_success_cleans_ordinary_process_group",
-        "seconds": 4.4e-05
+        "seconds": 4.3e-05
       },
       {
         "test": "test_processes.LinuxProcessIntegration.test_resource_failure_cleans_observed_separate_sessions",
@@ -851,259 +959,307 @@
       },
       {
         "test": "test_processes.ProcessCleanupContracts.test_normal_parent_success_does_not_hide_cleanup_failure",
-        "seconds": 0.006715
+        "seconds": 0.007626
       },
       {
         "test": "test_processes.ProcessCleanupContracts.test_original_guard_error_survives_secondary_cleanup_error",
-        "seconds": 0.006863
+        "seconds": 0.006229
       },
       {
         "test": "test_processes.ProcessCleanupContracts.test_posix_group_is_signalled_after_leader_has_already_exited",
-        "seconds": 0.001517
+        "seconds": 0.001494
       },
       {
         "test": "test_processes.WindowsJobIntegration.test_argv_cwd_environment_stdin_and_combined_log",
-        "seconds": 0.119339
+        "seconds": 0.111048
       },
       {
         "test": "test_processes.WindowsJobIntegration.test_assignment_failure_never_executes_child_and_closes_handles",
-        "seconds": 0.03605
+        "seconds": 0.030603
       },
       {
         "test": "test_processes.WindowsJobIntegration.test_create_failure_does_not_leak_job_or_stdio_handles",
-        "seconds": 0.017834
+        "seconds": 0.006617
       },
       {
         "test": "test_processes.WindowsJobIntegration.test_keyboard_interrupt_cleans_worker_and_grandchild",
-        "seconds": 0.35223
+        "seconds": 0.476507
       },
       {
         "test": "test_processes.WindowsJobIntegration.test_parent_nonzero_cleans_worker_and_grandchild",
-        "seconds": 0.369019
+        "seconds": 0.371009
       },
       {
         "test": "test_processes.WindowsJobIntegration.test_parent_success_cleans_worker_and_grandchild",
-        "seconds": 0.474085
+        "seconds": 0.388503
       },
       {
         "test": "test_processes.WindowsJobIntegration.test_resource_error_cleans_worker_and_grandchild",
-        "seconds": 0.352968
+        "seconds": 0.374449
       },
       {
         "test": "test_processes.WindowsJobIntegration.test_resume_failure_never_executes_child_and_closes_handles",
-        "seconds": 0.027796
+        "seconds": 0.025428
       },
       {
         "test": "test_processes.WindowsJobIntegration.test_timeout_cleans_worker_and_grandchild",
-        "seconds": 2.790795
+        "seconds": 2.802565
+      },
+      {
+        "test": "test_release.FrozenInputProvenance.test_empty_frozen_input_is_valid",
+        "seconds": 0.021651
+      },
+      {
+        "test": "test_release.FrozenInputProvenance.test_release_rejects_invalid_size_schema_before_other_checks",
+        "seconds": 0.054839
+      },
+      {
+        "test": "test_release.FrozenInputProvenance.test_release_rejects_wrong_size_with_correct_hash",
+        "seconds": 0.035732
+      },
+      {
+        "test": "test_release.FrozenInputProvenance.test_selected_git_input_requires_size_and_checksum",
+        "seconds": 0.597663
       },
       {
         "test": "test_release.LatestInvocationProof.test_filename_identity_and_simultaneous_attempts_fail_closed",
-        "seconds": 0.066679
+        "seconds": 0.056
       },
       {
         "test": "test_release.LatestInvocationProof.test_latest_success_matches_counterpart_and_follows_older_failure",
-        "seconds": 0.036162
+        "seconds": 0.044226
       },
       {
         "test": "test_release.LatestInvocationProof.test_malformed_older_record_is_not_silently_ignored",
-        "seconds": 0.098847
+        "seconds": 0.142228
       },
       {
         "test": "test_release.LatestInvocationProof.test_matching_id_but_different_record_body_is_rejected",
-        "seconds": 0.014044
+        "seconds": 0.020797
       },
       {
         "test": "test_release.LatestInvocationProof.test_missing_counterpart_fails_closed",
-        "seconds": 0.014486
+        "seconds": 0.019484
       },
       {
         "test": "test_release.LatestInvocationProof.test_old_completed_record_rejected_after_newer_failed_or_successful_attempt",
-        "seconds": 0.122279
+        "seconds": 0.150849
       },
       {
         "test": "test_release.LatestInvocationProof.test_unsafe_ids_and_naive_or_invalid_start_times_are_rejected",
-        "seconds": 0.200196
+        "seconds": 0.33211
       },
       {
         "test": "test_release.ReleasePayload.test_stale_staged_code_and_missing_new_code_are_rejected",
-        "seconds": 1.373739
+        "seconds": 1.262332
       },
       {
         "test": "test_release.ReleasePayload.test_upstream_bytes_are_never_text_normalized",
-        "seconds": 0.424783
+        "seconds": 0.538366
+      },
+      {
+        "test": "test_reporting.ReportingContracts.test_failed_zero_and_all_skipped_validation_counts_do_not_claim_success",
+        "seconds": 0.003565
+      },
+      {
+        "test": "test_reporting.ReportingContracts.test_invalid_counts_cannot_generate_negative_executed_tests",
+        "seconds": 0.000271
       },
       {
         "test": "test_reporting.ReportingContracts.test_local_platform_and_scientific_artifact_preserved",
-        "seconds": 0.067348
+        "seconds": 0.0417
       },
       {
         "test": "test_reporting.ReportingContracts.test_pilot_and_validation_do_not_claim_full_analysis",
-        "seconds": 0.004019
+        "seconds": 0.003253
+      },
+      {
+        "test": "test_reporting.ReportingContracts.test_summary_and_invocation_report_platform_skips_separately",
+        "seconds": 0.058935
       },
       {
         "test": "test_reporting.ReportingContracts.test_visual_review_requires_matching_file_hash",
-        "seconds": 0.039514
+        "seconds": 0.062467
       },
       {
         "test": "test_reproduction.ReproductionContracts.test_archive_expansion_is_bounded",
-        "seconds": 0.019706
+        "seconds": 0.038204
       },
       {
         "test": "test_reproduction.ReproductionContracts.test_archive_rejects_traversal_and_links",
-        "seconds": 0.049148
+        "seconds": 0.067744
       },
       {
         "test": "test_reproduction.ReproductionContracts.test_cleanup_cannot_hide_detected_resource_failure",
-        "seconds": 0.000426
+        "seconds": 0.001261
       },
       {
         "test": "test_reproduction.ReproductionContracts.test_comparison_excludes_operational_records_and_detects_tampering",
-        "seconds": 0.038443
+        "seconds": 0.058545
       },
       {
         "test": "test_reproduction.ReproductionContracts.test_path_containment_rejects_other_shell_and_os_paths",
-        "seconds": 0.014054
+        "seconds": 0.013532
       },
       {
         "test": "test_reproduction.ReproductionContracts.test_recursive_cleanup_cannot_target_workspace_or_cache_root",
-        "seconds": 0.031623
+        "seconds": 0.035616
       },
       {
         "test": "test_reproduction.ReproductionContracts.test_regular_archive_extracts_exact_bytes",
-        "seconds": 0.030452
+        "seconds": 0.046284
       },
       {
         "test": "test_resources.ResourceContracts.test_aggregate_limit_separate_from_per_process_limit",
-        "seconds": 0.097675
+        "seconds": 0.05066
       },
       {
         "test": "test_resources.ResourceContracts.test_family_sums_current_rss_not_historical_peaks",
-        "seconds": 0.000916
+        "seconds": 0.000993
       },
       {
         "test": "test_resources.ResourceContracts.test_local_baseline_ignores_historical_machine_and_does_not_reset",
-        "seconds": 0.08563
+        "seconds": 0.055032
       },
       {
         "test": "test_resources.ResourceContracts.test_timeout_terminates_spawned_process_tree",
-        "seconds": 0.05313
+        "seconds": 0.007545
       },
       {
         "test": "test_samples.SampleIdentityTests.test_decimal_source_ids_do_not_collapse",
-        "seconds": 0.00029
+        "seconds": 0.000268
       },
       {
         "test": "test_samples.SampleIdentityTests.test_duplicate_source_row_fails_instead_of_merging",
-        "seconds": 0.000456
+        "seconds": 0.000802
       },
       {
         "test": "test_samples.SampleIdentityTests.test_fastq_sizes_count_files_not_biological_replicates",
-        "seconds": 0.000162
+        "seconds": 0.000182
       },
       {
         "test": "test_samples.SampleIdentityTests.test_identifiers_require_experiment_and_group",
-        "seconds": 0.000164
+        "seconds": 0.00015
       },
       {
         "test": "test_samples.SampleIdentityTests.test_inoculum_not_assigned_to_recipient",
-        "seconds": 0.000135
+        "seconds": 0.000119
       },
       {
         "test": "test_samples.SampleIdentityTests.test_pool_cannot_link_to_an_individual",
-        "seconds": 0.000121
+        "seconds": 0.000107
       },
       {
         "test": "test_samples.SampleIdentityTests.test_source_rows_match_only_observed_within_row_assays",
-        "seconds": 0.00703
+        "seconds": 0.000191
       },
       {
         "test": "test_validation_identity.ValidationIdentity.test_source_edit_during_suite_fails_and_retains_both_identities",
-        "seconds": 0.185604
+        "seconds": 0.131329
       },
       {
         "test": "test_wsl_archive.NativeArchiveContracts.test_expanded_byte_member_and_truncated_stream_bounds",
-        "seconds": 0.004285
+        "seconds": 0.014445
       },
       {
         "test": "test_wsl_archive.NativeArchiveContracts.test_links_special_files_and_duplicate_members_are_rejected",
-        "seconds": 0.004084
+        "seconds": 0.015728
       },
       {
         "test": "test_wsl_archive.NativeArchiveContracts.test_real_nonseekable_tar_stream_extracts_exact_file_bytes",
-        "seconds": 0.022104
+        "seconds": 0.049926
       },
       {
         "test": "test_wsl_archive.NativeArchiveContracts.test_traversal_absolute_and_alternate_separator_paths_are_rejected",
-        "seconds": 0.007693
+        "seconds": 0.024644
       },
       {
         "test": "test_wsl_archive.NativeArchiveContracts.test_verify_file_requires_exact_size_hash_and_safe_path",
-        "seconds": 0.013164
+        "seconds": 0.024678
+      },
+      {
+        "test": "test_wsl_archive.NativeInputIdentity.test_correct_hash_does_not_override_wrong_size",
+        "seconds": 0.06428
+      },
+      {
+        "test": "test_wsl_archive.NativeInputIdentity.test_prebootstrap_snapshot_imports_no_scientific_packages",
+        "seconds": 0.226429
+      },
+      {
+        "test": "test_wsl_archive.NativeInputIdentity.test_same_size_tampering_still_fails_checksum",
+        "seconds": 0.066139
+      },
+      {
+        "test": "test_wsl_archive.NativeInputIdentity.test_size_is_required_and_rejects_negative_bool_string_and_float",
+        "seconds": 0.122481
+      },
+      {
+        "test": "test_wsl_archive.NativeInputIdentity.test_ten_inputs_and_zero_byte_file_keep_verified_identity",
+        "seconds": 0.106037
       }
     ],
-    "tests_run": 135,
+    "tests_run": 174,
     "failures": 0,
     "errors": 0,
     "skipped": 6,
     "success": true,
-    "peak_rss_bytes": 192397312
+    "peak_rss_bytes": 192888832
   },
   "fresh_run_resources": {
-    "project_bytes_including_git": 3987560,
-    "project_bytes_excluding_git": 3987560,
-    "disk_free_bytes": 13526986752,
-    "available_memory_bytes": 1422475264,
-    "process_peak_rss_bytes": 37249024,
-    "operational_storage_budget_bytes": 9548040192,
+    "project_bytes_including_git": 4704692,
+    "project_bytes_excluding_git": 4704692,
+    "disk_free_bytes": 10353438720,
+    "available_memory_bytes": 2386665472,
+    "process_peak_rss_bytes": 36564992,
+    "operational_storage_budget_bytes": 6356899840,
     "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
-    "baseline_disk_free_bytes": 13548040192,
-    "baseline_project_bytes": 2163472,
-    "max_sampled_aggregate_rss_bytes": 332066816,
-    "max_observed_native_process_peak_rss_bytes": 219971584,
-    "aggregate_memory_samples": 326,
-    "max_unreadable_or_exited_processes_per_sample": 4,
-    "elapsed_seconds": 74.489,
-    "max_measured_stage_peak_rss_bytes": 219971584,
-    "invocation_id": "20261020T123402561243Z_31812",
+    "baseline_disk_free_bytes": 10356899840,
+    "baseline_project_bytes": 2844978,
+    "max_sampled_aggregate_rss_bytes": 332300288,
+    "max_observed_native_process_peak_rss_bytes": 219107328,
+    "aggregate_memory_samples": 337,
+    "max_unreadable_or_exited_processes_per_sample": 2,
+    "elapsed_seconds": 72.235,
+    "max_measured_stage_peak_rss_bytes": 219107328,
+    "invocation_id": "20261021T132524335189Z_31520",
     "scope": "current invocation; native per-process peaks and separately sampled concurrent process-family RSS"
   },
   "outer_resources_before_cleanup": {
-    "project_bytes_including_git": 196318996,
-    "project_bytes_excluding_git": 193776104,
-    "disk_free_bytes": 13526654976,
-    "available_memory_bytes": 1323057152,
-    "process_peak_rss_bytes": 37810176,
+    "project_bytes_including_git": 200915304,
+    "project_bytes_excluding_git": 197910212,
+    "disk_free_bytes": 10353479680,
+    "available_memory_bytes": 2544623616,
+    "process_peak_rss_bytes": 37969920,
     "operational_storage_budget_bytes": 10000000000,
     "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
     "baseline_disk_free_bytes": 14208532480,
     "baseline_project_bytes": 14354435,
-    "max_sampled_aggregate_rss_bytes": 366882816,
-    "max_observed_native_process_peak_rss_bytes": 219971584,
-    "aggregate_memory_samples": 332,
-    "max_unreadable_or_exited_processes_per_sample": 1,
-    "elapsed_seconds": 146.936,
-    "max_sampled_project_bytes_including_disposable_checkout": 196531438
+    "max_sampled_aggregate_rss_bytes": 369389568,
+    "max_observed_native_process_peak_rss_bytes": 219107328,
+    "aggregate_memory_samples": 328,
+    "max_unreadable_or_exited_processes_per_sample": 2,
+    "elapsed_seconds": 200.083,
+    "max_sampled_project_bytes_including_disposable_checkout": 201158926
   },
   "disposable_cleanup": "removed",
   "disposable_path": null,
   "outer_resources_after_cleanup": {
-    "project_bytes_including_git": 187919503,
-    "project_bytes_excluding_git": 185376611,
-    "disk_free_bytes": 13535453184,
-    "available_memory_bytes": 1320128512,
-    "process_peak_rss_bytes": 37810176,
+    "project_bytes_including_git": 191030589,
+    "project_bytes_excluding_git": 188025497,
+    "disk_free_bytes": 10363846656,
+    "available_memory_bytes": 2550136832,
+    "process_peak_rss_bytes": 37969920,
     "operational_storage_budget_bytes": 10000000000,
     "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
     "baseline_disk_free_bytes": 14208532480,
     "baseline_project_bytes": 14354435,
-    "max_sampled_aggregate_rss_bytes": 366882816,
-    "max_observed_native_process_peak_rss_bytes": 219971584,
-    "aggregate_memory_samples": 332,
-    "max_unreadable_or_exited_processes_per_sample": 1,
-    "elapsed_seconds": 147.335,
-    "max_sampled_project_bytes_including_disposable_checkout": 196531438
+    "max_sampled_aggregate_rss_bytes": 369389568,
+    "max_observed_native_process_peak_rss_bytes": 219107328,
+    "aggregate_memory_samples": 328,
+    "max_unreadable_or_exited_processes_per_sample": 2,
+    "elapsed_seconds": 200.838,
+    "max_sampled_project_bytes_including_disposable_checkout": 201158926
   },
-  "elapsed_seconds": 147.412,
-  "finished_utc": "2026-10-20T12:35:22.623221+00:00"
+  "elapsed_seconds": 200.911,
+  "finished_utc": "2026-10-21T13:26:43.056490+00:00"
 }

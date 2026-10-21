@@ -1,0 +1,693 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-21T13:43:50.468453+00:00",
+  "status": "independent_linux_install_and_full_offline_execution_passed",
+  "source_commit": "eb7ba6c8b945670a1f55c493d89435f36750900c",
+  "code_sha256": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
+  "project_version": "0.2.2",
+  "scope": "Fresh Ubuntu WSL2 environment on the same physical Windows host; no new distribution or system packages installed.",
+  "execution_report": "results/reports/linux_reproduction_check.json",
+  "execution_report_sha256": "fbbd9adf29c444cb8234316d3b96c3a772590e5af829972101f65453bed19dba",
+  "wheel_acquisition_scope": "Previously retrieved official PyPI wheels reverified and installed offline; no new wheel metadata request claimed.",
+  "official_wheel_sources": [
+    {
+      "name": "contourpy",
+      "version": "1.3.3",
+      "filename": "contourpy-1.3.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "metadata_url": "https://pypi.org/pypi/contourpy/1.3.3/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "d9f84d19398beebd015473d40ea0b10a1eb96705ee18df05bd947a12584ac28d",
+      "wheel_url": "https://files.pythonhosted.org/packages/04/5f/9ff93450ba96b09c7c2b3f81c94de31c89f92292f1380261bd7195bea4ea/contourpy-1.3.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "wheel_bytes": 363819,
+      "wheel_sha256": "f64836de09927cba6f79dcd00fdd7d5329f3fccc633468507079c829ca4db4e3",
+      "accessed_utc": "2026-10-20T11:40:16.094312+00:00"
+    },
+    {
+      "name": "cycler",
+      "version": "0.12.1",
+      "filename": "cycler-0.12.1-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/cycler/0.12.1/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "c4dc853a4b3611f48cfef3e363faeb85c70af63e3d49fe2c64dbe56ab5d688f0",
+      "wheel_url": "https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl",
+      "wheel_bytes": 8321,
+      "wheel_sha256": "85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30",
+      "accessed_utc": "2026-10-20T11:40:16.114130+00:00"
+    },
+    {
+      "name": "et_xmlfile",
+      "version": "2.0.0",
+      "filename": "et_xmlfile-2.0.0-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/et_xmlfile/2.0.0/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "807b439c620d04dc8b1680d18d462233b4c4711d11a32a2e6d74b47949af9bf0",
+      "wheel_url": "https://files.pythonhosted.org/packages/c1/8b/5fe2cc11fee489817272089c4203e679c63b570a5aaeb18d852ae3cbba6a/et_xmlfile-2.0.0-py3-none-any.whl",
+      "wheel_bytes": 18059,
+      "wheel_sha256": "7a91720bc756843502c3b7504c77b8fe44217c85c537d85037f0f536151b2caa",
+      "accessed_utc": "2026-10-20T11:40:16.242412+00:00"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.60.1",
+      "filename": "fonttools-4.60.1-cp314-cp314-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl",
+      "metadata_url": "https://pypi.org/pypi/fonttools/4.60.1/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "50cd03f987abfa3edde479fdaf99399f22a19b2b40dd4311d9694e705f688c4d",
+      "wheel_url": "https://files.pythonhosted.org/packages/3d/2e/d4831caa96d85a84dd0da1d9f90d81cec081f551e0ea216df684092c6c97/fonttools-4.60.1-cp314-cp314-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl",
+      "wheel_bytes": 4843490,
+      "wheel_sha256": "e852d9dda9f93ad3651ae1e3bb770eac544ec93c3807888798eccddf84596537",
+      "accessed_utc": "2026-10-20T11:40:16.265514+00:00"
+    },
+    {
+      "name": "kiwisolver",
+      "version": "1.4.9",
+      "filename": "kiwisolver-1.4.9-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "metadata_url": "https://pypi.org/pypi/kiwisolver/1.4.9/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "23eb160a3ba6b71bdda2520c4db8676dd6f08fc09b2e9198be19b295c32c778d",
+      "wheel_url": "https://files.pythonhosted.org/packages/43/dc/51acc6791aa14e5cb6d8a2e28cefb0dc2886d8862795449d021334c0df20/kiwisolver-1.4.9-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "wheel_bytes": 1472414,
+      "wheel_sha256": "767c23ad1c58c9e827b649a9ab7809fd5fd9db266a9cf02b0e926ddc2c680d58",
+      "accessed_utc": "2026-10-20T11:40:16.360706+00:00"
+    },
+    {
+      "name": "numpy",
+      "version": "2.3.4",
+      "filename": "numpy-2.3.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "metadata_url": "https://pypi.org/pypi/numpy/2.3.4/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "a8103c2bd7aefd67b76713842bb31d2d2bc6e8fd2eb0921d626df0d70de5957d",
+      "wheel_url": "https://files.pythonhosted.org/packages/e8/7e/4a14a769741fbf237eec5a12a2cbc7a4c4e061852b6533bcb9e9a796c908/numpy-2.3.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "wheel_bytes": 16638601,
+      "wheel_sha256": "d5e081bc082825f8b139f9e9fe42942cb4054524598aaeb177ff476cc76d09d2",
+      "accessed_utc": "2026-10-20T11:40:16.388577+00:00"
+    },
+    {
+      "name": "scipy",
+      "version": "1.16.3",
+      "filename": "scipy-1.16.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "metadata_url": "https://pypi.org/pypi/scipy/1.16.3/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "3eb666307d3ad8ed2641a7d714a04520922cdcafd3fe3fcfd5d3e4b6ce2c316f",
+      "wheel_url": "https://files.pythonhosted.org/packages/71/bc/35957d88645476307e4839712642896689df442f3e53b0fa016ecf8a3357/scipy-1.16.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "wheel_bytes": 35704729,
+      "wheel_sha256": "d3837938ae715fc0fe3c39c0202de3a8853aff22ca66781ddc2ade7554b7e2cc",
+      "accessed_utc": "2026-10-20T11:40:16.498411+00:00"
+    },
+    {
+      "name": "matplotlib",
+      "version": "3.10.7",
+      "filename": "matplotlib-3.10.7-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "metadata_url": "https://pypi.org/pypi/matplotlib/3.10.7/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "88c84aba34b74e0918dd84138705cc7ff82aa599d6d9113e1120ecc6fb3d5c20",
+      "wheel_url": "https://files.pythonhosted.org/packages/de/ff/f3781b5057fa3786623ad8976fc9f7b0d02b2f28534751fd5a44240de4cf/matplotlib-3.10.7-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "wheel_bytes": 9804247,
+      "wheel_sha256": "7146d64f561498764561e9cd0ed64fcf582e570fc519e6f521e2d0cfd43365e1",
+      "accessed_utc": "2026-10-20T11:40:16.598829+00:00"
+    },
+    {
+      "name": "openpyxl",
+      "version": "3.1.5",
+      "filename": "openpyxl-3.1.5-py2.py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/openpyxl/3.1.5/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "6a922b57aebf0a54ec276b48bab917fa6684a5822e2d40a465972098d46be12e",
+      "wheel_url": "https://files.pythonhosted.org/packages/c0/da/977ded879c29cbd04de313843e76868e6e13408a94ed6b987245dc7c8506/openpyxl-3.1.5-py2.py3-none-any.whl",
+      "wheel_bytes": 250910,
+      "wheel_sha256": "5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2",
+      "accessed_utc": "2026-10-20T11:40:16.780817+00:00"
+    },
+    {
+      "name": "packaging",
+      "version": "25.0",
+      "filename": "packaging-25.0-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/packaging/25.0/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "6ab300d7b0735a50109912decebb1731ed292f1ed88a3ce5e4bb7876b182cac0",
+      "wheel_url": "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl",
+      "wheel_bytes": 66469,
+      "wheel_sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484",
+      "accessed_utc": "2026-10-20T11:40:16.790120+00:00"
+    },
+    {
+      "name": "pandas",
+      "version": "2.3.3",
+      "filename": "pandas-2.3.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+      "metadata_url": "https://pypi.org/pypi/pandas/2.3.3/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "c3618a698fd3a5ba9a90e8c831ff7a1aa10a409364d024cf74b0bc0b31cc8940",
+      "wheel_url": "https://files.pythonhosted.org/packages/15/b2/0e62f78c0c5ba7e3d2c5945a82456f4fac76c480940f805e0b97fcbc2f65/pandas-2.3.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+      "wheel_bytes": 12332638,
+      "wheel_sha256": "ee67acbbf05014ea6c763beb097e03cd629961c8a632075eeb34247120abcb4b",
+      "accessed_utc": "2026-10-20T11:40:16.882525+00:00"
+    },
+    {
+      "name": "patsy",
+      "version": "1.0.2",
+      "filename": "patsy-1.0.2-py2.py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/patsy/1.0.2/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "07c50e23800e2ccf5d7a1ce92fd7a9a908786a3f1868024e24219c7cf79d20ca",
+      "wheel_url": "https://files.pythonhosted.org/packages/f1/70/ba4b949bdc0490ab78d545459acd7702b211dfccf7eb89bbc1060f52818d/patsy-1.0.2-py2.py3-none-any.whl",
+      "wheel_bytes": 233301,
+      "wheel_sha256": "37bfddbc58fcf0362febb5f54f10743f8b21dd2aa73dec7e7ef59d1b02ae668a",
+      "accessed_utc": "2026-10-20T11:40:16.900130+00:00"
+    },
+    {
+      "name": "pillow",
+      "version": "12.0.0",
+      "filename": "pillow-12.0.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "metadata_url": "https://pypi.org/pypi/pillow/12.0.0/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "94de639ce3874335396491c786eeeb6039e8f858a0d91f8e53cf28b4352fee44",
+      "wheel_url": "https://files.pythonhosted.org/packages/3a/be/ee90a3d79271227e0f0a33c453531efd6ed14b2e708596ba5dd9be948da3/pillow-12.0.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "wheel_bytes": 7038482,
+      "wheel_sha256": "c98fa880d695de164b4135a52fd2e9cd7b7c90a9d8ac5e9e443a24a95ef9248e",
+      "accessed_utc": "2026-10-20T11:40:17.050033+00:00"
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.2.5",
+      "filename": "pyparsing-3.2.5-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/pyparsing/3.2.5/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "8b4e6b3f89ff7de79f94fe93387a9bb683738f5c862febebd0cb0c45b2f42397",
+      "wheel_url": "https://files.pythonhosted.org/packages/10/5e/1aa9a93198c6b64513c9d7752de7422c06402de6600a8767da1524f9570b/pyparsing-3.2.5-py3-none-any.whl",
+      "wheel_bytes": 113890,
+      "wheel_sha256": "e38a4f02064cf41fe6593d328d0512495ad1f3d8a91c4f73fc401b3079a59a5e",
+      "accessed_utc": "2026-10-20T11:40:17.236257+00:00"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3",
+      "filename": "pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "metadata_url": "https://pypi.org/pypi/PyYAML/6.0.3/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "c3f35597bc2f08cc990c2a5fe57bef6687b3a3d7c61d8b0ba4cc067777eb1def",
+      "wheel_url": "https://files.pythonhosted.org/packages/88/f9/16491d7ed2a919954993e48aa941b200f38040928474c9e85ea9e64222c3/pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "wheel_bytes": 794175,
+      "wheel_sha256": "c458b6d084f9b935061bc36216e8a69a7e293a2f1e68bf956dcd9e6cbcd143f5",
+      "accessed_utc": "2026-10-20T11:40:17.333496+00:00"
+    },
+    {
+      "name": "pypdf",
+      "version": "6.13.0",
+      "filename": "pypdf-6.13.0-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/pypdf/6.13.0/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "e8a598508845aa0ef3cef375eb6e24d34fbe547abf909ddd0a44142a0c73ea0e",
+      "wheel_url": "https://files.pythonhosted.org/packages/9d/70/16942ec95d32187d8679ce8419cee2d5c0dbe90fa3ac1b307daea4c86da9/pypdf-6.13.0-py3-none-any.whl",
+      "wheel_bytes": 345958,
+      "wheel_sha256": "de1294ae49d6956edb4e5c41527fb9e8716ddd2b120f2185c68aab784d4ffe60",
+      "accessed_utc": "2026-10-20T11:40:17.451766+00:00"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "filename": "python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/python-dateutil/2.9.0.post0/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "65747bc111eb972ae6f477f211253f21e25738cb7d894ddb80ddd65f620b58a7",
+      "wheel_url": "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+      "wheel_bytes": 229892,
+      "wheel_sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427",
+      "accessed_utc": "2026-10-20T11:40:17.552039+00:00"
+    },
+    {
+      "name": "pytz",
+      "version": "2025.2",
+      "filename": "pytz-2025.2-py2.py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/pytz/2025.2/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "26524f570bd285f46d5e9315f71b77278e37d5e9edac18f7f9e16d872e4b7691",
+      "wheel_url": "https://files.pythonhosted.org/packages/81/c4/34e93fe5f5429d7570ec1fa436f1986fb1f00c3e0f43a589fe2bbcd22c3f/pytz-2025.2-py2.py3-none-any.whl",
+      "wheel_bytes": 509225,
+      "wheel_sha256": "5ddf76296dd8c44c26eb8f4b6f35488f3ccbf6fbbd7adee0b7262d43f0ec2f00",
+      "accessed_utc": "2026-10-20T11:40:17.655139+00:00"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "filename": "six-1.17.0-py2.py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/six/1.17.0/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "d8de39dd52b73048d81a8fd78022ee2bc72f8b568bcf0d88e5d5069c302b1208",
+      "wheel_url": "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl",
+      "wheel_bytes": 11050,
+      "wheel_sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "accessed_utc": "2026-10-20T11:40:17.761368+00:00"
+    },
+    {
+      "name": "statsmodels",
+      "version": "0.14.6",
+      "filename": "statsmodels-0.14.6-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "metadata_url": "https://pypi.org/pypi/statsmodels/0.14.6/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "729c3f4fc0fa684c5352830b040ac536893d0bf4ac41d13e09f974a5eb350bcb",
+      "wheel_url": "https://files.pythonhosted.org/packages/34/0e/2408735aca9e764643196212f9069912100151414dd617d39ffc72d77eee/statsmodels-0.14.6-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "wheel_bytes": 10337587,
+      "wheel_sha256": "3414e40c073d725007a6603a18247ab7af3467e1af4a5e5a24e4c27bc26673b4",
+      "accessed_utc": "2026-10-20T11:40:17.860755+00:00"
+    },
+    {
+      "name": "tzdata",
+      "version": "2025.2",
+      "filename": "tzdata-2025.2-py2.py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/tzdata/2025.2/json",
+      "metadata_http_status": 200,
+      "metadata_sha256": "43397a82f60dc8aec2efbe842d16a3fb34409ee61e4d1c86eab620643cbcfb9d",
+      "wheel_url": "https://files.pythonhosted.org/packages/5c/23/c7abc0ca0a1526a0774eca151daeb8de62ec457e77262b66b359c3c7679e/tzdata-2025.2-py2.py3-none-any.whl",
+      "wheel_bytes": 347839,
+      "wheel_sha256": "1a403fada01ff9221ca8044d701868fa132215d84beb92242d9acd2147f667a8",
+      "accessed_utc": "2026-10-20T11:40:19.796888+00:00"
+    }
+  ],
+  "setup_evidence": {
+    "status": "prepared_dependency_and_binary_configuration_verified",
+    "commands": [
+      {
+        "name": "create_venv",
+        "argv": [
+          "/usr/bin/python3",
+          "-I",
+          "-B",
+          "-m",
+          "venv",
+          "--without-pip",
+          "--copies",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env"
+        ],
+        "started_utc": "2026-10-21T13:29:54.181017+00:00",
+        "returncode": 0,
+        "elapsed_seconds": 0.108,
+        "resources": {
+          "project_bytes_including_git": 141152354,
+          "project_bytes_excluding_git": 141152354,
+          "disk_free_bytes": 981988286464,
+          "available_memory_bytes": 5441634304,
+          "process_peak_rss_bytes": 32948224,
+          "operational_storage_budget_bytes": 1500000000,
+          "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 41054208,
+          "max_observed_native_process_peak_rss_bytes": 33218560,
+          "aggregate_memory_samples": 1,
+          "max_unreadable_or_exited_processes_per_sample": 0,
+          "elapsed_seconds": 0.116
+        }
+      },
+      {
+        "name": "bootstrap_pip",
+        "argv": [
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env/bin/python",
+          "-I",
+          "-B",
+          "-c",
+          "import sys,runpy;sys.path.insert(0,sys.argv.pop(1));sys.argv[0]='pip';runpy.run_module('pip',run_name='__main__',alter_sys=True)",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/bootstrap/pip-25.2-py3-none-any.whl",
+          "--isolated",
+          "--disable-pip-version-check",
+          "install",
+          "--no-index",
+          "--no-deps",
+          "--no-compile",
+          "--no-cache-dir",
+          "--no-input",
+          "--only-binary=:all:",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/bootstrap/pip-25.2-py3-none-any.whl"
+        ],
+        "started_utc": "2026-10-21T13:29:54.292932+00:00",
+        "returncode": 0,
+        "elapsed_seconds": 1.277,
+        "resources": {
+          "project_bytes_including_git": 146515681,
+          "project_bytes_excluding_git": 146515681,
+          "disk_free_bytes": 981981589504,
+          "available_memory_bytes": 5436465152,
+          "process_peak_rss_bytes": 32948224,
+          "operational_storage_budget_bytes": 1500000000,
+          "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 86380544,
+          "max_observed_native_process_peak_rss_bytes": 54038528,
+          "aggregate_memory_samples": 13,
+          "max_unreadable_or_exited_processes_per_sample": 0,
+          "elapsed_seconds": 1.4
+        }
+      },
+      {
+        "name": "install_pins",
+        "argv": [
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env/bin/python",
+          "-I",
+          "-B",
+          "-m",
+          "pip",
+          "--isolated",
+          "--disable-pip-version-check",
+          "install",
+          "--no-index",
+          "--no-deps",
+          "--no-compile",
+          "--no-cache-dir",
+          "--no-input",
+          "--only-binary=:all:",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/contourpy-1.3.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/cycler-0.12.1-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/et_xmlfile-2.0.0-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/fonttools-4.60.1-cp314-cp314-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/kiwisolver-1.4.9-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/numpy-2.3.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/scipy-1.16.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/matplotlib-3.10.7-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/openpyxl-3.1.5-py2.py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/packaging-25.0-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pandas-2.3.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/patsy-1.0.2-py2.py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pillow-12.0.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pyparsing-3.2.5-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pypdf-6.13.0-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pytz-2025.2-py2.py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/six-1.17.0-py2.py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/statsmodels-0.14.6-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/tzdata-2025.2-py2.py3-none-any.whl"
+        ],
+        "started_utc": "2026-10-21T13:29:55.577511+00:00",
+        "returncode": 0,
+        "elapsed_seconds": 8.598,
+        "resources": {
+          "project_bytes_including_git": 480718732,
+          "project_bytes_excluding_git": 480718732,
+          "disk_free_bytes": 981624864768,
+          "available_memory_bytes": 5507330048,
+          "process_peak_rss_bytes": 32948224,
+          "operational_storage_budget_bytes": 1500000000,
+          "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 92262400,
+          "max_observed_native_process_peak_rss_bytes": 62754816,
+          "aggregate_memory_samples": 70,
+          "max_unreadable_or_exited_processes_per_sample": 0,
+          "elapsed_seconds": 10.098
+        }
+      },
+      {
+        "name": "pip_check",
+        "argv": [
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env/bin/python",
+          "-I",
+          "-B",
+          "-m",
+          "pip",
+          "--isolated",
+          "--disable-pip-version-check",
+          "check"
+        ],
+        "started_utc": "2026-10-21T13:30:04.275629+00:00",
+        "returncode": 0,
+        "elapsed_seconds": 0.397,
+        "resources": {
+          "project_bytes_including_git": 480718762,
+          "project_bytes_excluding_git": 480718762,
+          "disk_free_bytes": 981624860672,
+          "available_memory_bytes": 5500334080,
+          "process_peak_rss_bytes": 32948224,
+          "operational_storage_budget_bytes": 1500000000,
+          "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 92262400,
+          "max_observed_native_process_peak_rss_bytes": 62754816,
+          "aggregate_memory_samples": 72,
+          "max_unreadable_or_exited_processes_per_sample": 0,
+          "elapsed_seconds": 10.593
+        }
+      },
+      {
+        "name": "inspect_installed",
+        "argv": [
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env/bin/python",
+          "-I",
+          "-B",
+          "-c",
+          "import sys,pathlib,json,re,importlib.metadata as m,contextlib,io\nexpected=json.loads(sys.argv[1]);canon=lambda n:re.sub(r'[-_.]+','-',n).lower()\nobserved={canon(d.metadata['Name']):d.version for d in m.distributions()}\nassert sys.prefix!=sys.base_prefix and pathlib.Path(sys.prefix).resolve()==pathlib.Path(sys.argv[2]).resolve()\nassert {k:v for k,v in observed.items() if k!='pip'}==expected and observed.get('pip')=='25.2'\nimport yaml\nassert yaml.safe_load(pathlib.Path(sys.argv[3]).read_text())==json.loads(sys.argv[4])\nprint(json.dumps({'python':sys.version,'prefix':sys.prefix,'base_prefix':sys.base_prefix,'packages':observed,'expected_pins_matched':len(expected)}))\nimport numpy,scipy\nfor name,module in [('numpy',numpy),('scipy',scipy)]:\n stream=io.StringIO()\n with contextlib.redirect_stdout(stream):module.show_config()\n print(json.dumps({'binary_configuration':name,'text':stream.getvalue()}))\n",
+          "{\"contourpy\": \"1.3.3\", \"cycler\": \"0.12.1\", \"et-xmlfile\": \"2.0.0\", \"fonttools\": \"4.60.1\", \"kiwisolver\": \"1.4.9\", \"numpy\": \"2.3.4\", \"scipy\": \"1.16.3\", \"matplotlib\": \"3.10.7\", \"openpyxl\": \"3.1.5\", \"packaging\": \"25.0\", \"pandas\": \"2.3.3\", \"patsy\": \"1.0.2\", \"pillow\": \"12.0.0\", \"pyparsing\": \"3.2.5\", \"pyyaml\": \"6.0.3\", \"pypdf\": \"6.13.0\", \"python-dateutil\": \"2.9.0.post0\", \"pytz\": \"2025.2\", \"six\": \"1.17.0\", \"statsmodels\": \"0.14.6\", \"tzdata\": \"2025.2\"}",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/checkout/config/analysis.yaml",
+          "{\"study\": \"Gut phageome stability and stress-related immune responses\", \"seed\": 20261020, \"analysis_pathway\": \"restricted_pooled_audit_and_separate_immune_analysis\", \"threads\": 1, \"resources\": {\"max_workers\": 4, \"max_new_storage_bytes\": 10000000000, \"disk_reserve_bytes\": 4000000000, \"max_download_bytes\": 10000000, \"max_process_rss_bytes\": 1000000000, \"max_aggregate_rss_bytes\": 1000000000, \"stage_timeout_seconds\": 600, \"min_available_memory_bytes\": 100000000}, \"immune\": {\"endpoints\": [\"ly6chi_monocytes\", \"ly6chi_monocytes_cd62\", \"tnfa_splenocyte_unstimulated\"], \"confidence_level\": 0.95, \"interpretation\": \"exploratory_unadjusted\", \"multiple_testing\": \"six_contrasts_benjamini_hochberg\"}, \"virome\": {\"enable_biological_analysis\": false, \"reason\": \"Processed viral matrices, annotations and verified animal crosswalk unavailable\"}, \"calibration\": {\"replicates\": 20000, \"batch_size\": 500}}"
+        ],
+        "started_utc": "2026-10-21T13:30:04.769968+00:00",
+        "returncode": 0,
+        "elapsed_seconds": 0.398,
+        "resources": {
+          "project_bytes_including_git": 480723191,
+          "project_bytes_excluding_git": 480723191,
+          "disk_free_bytes": 981624852480,
+          "available_memory_bytes": 5502509056,
+          "process_peak_rss_bytes": 32948224,
+          "operational_storage_budget_bytes": 1500000000,
+          "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 92262400,
+          "max_observed_native_process_peak_rss_bytes": 62754816,
+          "aggregate_memory_samples": 74,
+          "max_unreadable_or_exited_processes_per_sample": 0,
+          "elapsed_seconds": 11.094
+        }
+      },
+      {
+        "name": "full_pipeline",
+        "argv": [
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env/bin/python",
+          "-B",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/checkout/scripts/run_all.py",
+          "--mode",
+          "full",
+          "--threads",
+          "1",
+          "--offline",
+          "--config",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/checkout/config/native_validation.json"
+        ],
+        "started_utc": "2026-10-21T13:30:05.271455+00:00",
+        "returncode": 0,
+        "elapsed_seconds": 37.893,
+        "resources": {
+          "project_bytes_including_git": 482644068,
+          "project_bytes_excluding_git": 482644068,
+          "disk_free_bytes": 981622734848,
+          "available_memory_bytes": 5565108224,
+          "process_peak_rss_bytes": 32948224,
+          "operational_storage_budget_bytes": 1500000000,
+          "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 338358272,
+          "max_observed_native_process_peak_rss_bytes": 254431232,
+          "aggregate_memory_samples": 257,
+          "max_unreadable_or_exited_processes_per_sample": 0,
+          "elapsed_seconds": 49.09
+        }
+      }
+    ],
+    "installed_metadata_log": "{\"python\": \"3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]\", \"prefix\": \"/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env\", \"base_prefix\": \"/usr\", \"packages\": {\"pandas\": \"2.3.3\", \"pytz\": \"2025.2\", \"contourpy\": \"1.3.3\", \"fonttools\": \"4.60.1\", \"openpyxl\": \"3.1.5\", \"et-xmlfile\": \"2.0.0\", \"packaging\": \"25.0\", \"pyparsing\": \"3.2.5\", \"six\": \"1.17.0\", \"pyyaml\": \"6.0.3\", \"matplotlib\": \"3.10.7\", \"patsy\": \"1.0.2\", \"python-dateutil\": \"2.9.0.post0\", \"scipy\": \"1.16.3\", \"statsmodels\": \"0.14.6\", \"pypdf\": \"6.13.0\", \"pip\": \"25.2\", \"numpy\": \"2.3.4\", \"pillow\": \"12.0.0\", \"cycler\": \"0.12.1\", \"kiwisolver\": \"1.4.9\", \"tzdata\": \"2025.2\"}, \"expected_pins_matched\": 21}\n{\"binary_configuration\": \"numpy\", \"text\": \"Build Dependencies:\\n  blas:\\n    detection method: pkgconfig\\n    found: true\\n    include directory: /opt/_internal/cpython-3.14.0/lib/python3.14/site-packages/scipy_openblas64/include\\n    lib directory: /opt/_internal/cpython-3.14.0/lib/python3.14/site-packages/scipy_openblas64/lib\\n    name: scipy-openblas\\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\\n      Haswell MAX_THREADS=64\\n    pc file directory: /project/.openblas\\n    version: 0.3.30\\n  lapack:\\n    detection method: pkgconfig\\n    found: true\\n    include directory: /opt/_internal/cpython-3.14.0/lib/python3.14/site-packages/scipy_openblas64/include\\n    lib directory: /opt/_internal/cpython-3.14.0/lib/python3.14/site-packages/scipy_openblas64/lib\\n    name: scipy-openblas\\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\\n      Haswell MAX_THREADS=64\\n    pc file directory: /project/.openblas\\n    version: 0.3.30\\nCompilers:\\n  c:\\n    commands: cc\\n    linker: ld.bfd\\n    name: gcc\\n    version: 14.2.1\\n  c++:\\n    commands: c++\\n    linker: ld.bfd\\n    name: gcc\\n    version: 14.2.1\\n  cython:\\n    commands: cython\\n    linker: cython\\n    name: cython\\n    version: 3.1.4\\nMachine Information:\\n  build:\\n    cpu: x86_64\\n    endian: little\\n    family: x86_64\\n    system: linux\\n  host:\\n    cpu: x86_64\\n    endian: little\\n    family: x86_64\\n    system: linux\\nPython Information:\\n  path: /tmp/build-env-qywnc8nt/bin/python\\n  version: '3.14'\\nSIMD Extensions:\\n  baseline:\\n  - SSE\\n  - SSE2\\n  - SSE3\\n  found:\\n  - SSSE3\\n  - SSE41\\n  - POPCNT\\n  - SSE42\\n  - AVX\\n  - F16C\\n  - FMA3\\n  - AVX2\\n  not found:\\n  - AVX512F\\n  - AVX512CD\\n  - AVX512_KNL\\n  - AVX512_KNM\\n  - AVX512_SKX\\n  - AVX512_CLX\\n  - AVX512_CNL\\n  - AVX512_ICL\\n  - AVX512_SPR\\n\\n\"}\n{\"binary_configuration\": \"scipy\", \"text\": \"Build Dependencies:\\n  blas:\\n    detection method: pkgconfig\\n    found: true\\n    include directory: /opt/_internal/cpython-3.14.0rc1/lib/python3.14/site-packages/scipy_openblas32/include\\n    lib directory: /opt/_internal/cpython-3.14.0rc1/lib/python3.14/site-packages/scipy_openblas32/lib\\n    name: scipy-openblas\\n    openblas configuration: OpenBLAS 0.3.29.dev DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=64\\n    pc file directory: /project\\n    version: 0.3.29.dev\\n  lapack:\\n    detection method: pkgconfig\\n    found: true\\n    include directory: /opt/_internal/cpython-3.14.0rc1/lib/python3.14/site-packages/scipy_openblas32/include\\n    lib directory: /opt/_internal/cpython-3.14.0rc1/lib/python3.14/site-packages/scipy_openblas32/lib\\n    name: scipy-openblas\\n    openblas configuration: OpenBLAS 0.3.29.dev DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=64\\n    pc file directory: /project\\n    version: 0.3.29.dev\\n  pybind11:\\n    detection method: config-tool\\n    include directory: unknown\\n    name: pybind11\\n    version: 3.0.1\\nCompilers:\\n  c:\\n    commands: cc\\n    linker: ld.bfd\\n    name: gcc\\n    version: 10.2.1\\n  c++:\\n    commands: c++\\n    linker: ld.bfd\\n    name: gcc\\n    version: 10.2.1\\n  cython:\\n    commands: cython\\n    linker: cython\\n    name: cython\\n    version: 3.1.6\\n  fortran:\\n    commands: gfortran\\n    linker: ld.bfd\\n    name: gcc\\n    version: 10.2.1\\n  pythran:\\n    include directory: ../../tmp/build-env-hl3_u310/lib/python3.14/site-packages/pythran\\n    version: 0.18.0\\nMachine Information:\\n  build:\\n    cpu: x86_64\\n    endian: little\\n    family: x86_64\\n    system: linux\\n  cross-compiled: false\\n  host:\\n    cpu: x86_64\\n    endian: little\\n    family: x86_64\\n    system: linux\\nPython Information:\\n  path: /tmp/build-env-hl3_u310/bin/python\\n  version: '3.14'\\n\\n\"}\n",
+    "wheels": [
+      {
+        "name": "contourpy",
+        "version": "1.3.3",
+        "path": "wheels/contourpy-1.3.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "bytes": 363819,
+        "sha256": "f64836de09927cba6f79dcd00fdd7d5329f3fccc633468507079c829ca4db4e3"
+      },
+      {
+        "name": "cycler",
+        "version": "0.12.1",
+        "path": "wheels/cycler-0.12.1-py3-none-any.whl",
+        "bytes": 8321,
+        "sha256": "85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30"
+      },
+      {
+        "name": "et_xmlfile",
+        "version": "2.0.0",
+        "path": "wheels/et_xmlfile-2.0.0-py3-none-any.whl",
+        "bytes": 18059,
+        "sha256": "7a91720bc756843502c3b7504c77b8fe44217c85c537d85037f0f536151b2caa"
+      },
+      {
+        "name": "fonttools",
+        "version": "4.60.1",
+        "path": "wheels/fonttools-4.60.1-cp314-cp314-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl",
+        "bytes": 4843490,
+        "sha256": "e852d9dda9f93ad3651ae1e3bb770eac544ec93c3807888798eccddf84596537"
+      },
+      {
+        "name": "kiwisolver",
+        "version": "1.4.9",
+        "path": "wheels/kiwisolver-1.4.9-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "bytes": 1472414,
+        "sha256": "767c23ad1c58c9e827b649a9ab7809fd5fd9db266a9cf02b0e926ddc2c680d58"
+      },
+      {
+        "name": "numpy",
+        "version": "2.3.4",
+        "path": "wheels/numpy-2.3.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "bytes": 16638601,
+        "sha256": "d5e081bc082825f8b139f9e9fe42942cb4054524598aaeb177ff476cc76d09d2"
+      },
+      {
+        "name": "scipy",
+        "version": "1.16.3",
+        "path": "wheels/scipy-1.16.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "bytes": 35704729,
+        "sha256": "d3837938ae715fc0fe3c39c0202de3a8853aff22ca66781ddc2ade7554b7e2cc"
+      },
+      {
+        "name": "matplotlib",
+        "version": "3.10.7",
+        "path": "wheels/matplotlib-3.10.7-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "bytes": 9804247,
+        "sha256": "7146d64f561498764561e9cd0ed64fcf582e570fc519e6f521e2d0cfd43365e1"
+      },
+      {
+        "name": "openpyxl",
+        "version": "3.1.5",
+        "path": "wheels/openpyxl-3.1.5-py2.py3-none-any.whl",
+        "bytes": 250910,
+        "sha256": "5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2"
+      },
+      {
+        "name": "packaging",
+        "version": "25.0",
+        "path": "wheels/packaging-25.0-py3-none-any.whl",
+        "bytes": 66469,
+        "sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484"
+      },
+      {
+        "name": "pandas",
+        "version": "2.3.3",
+        "path": "wheels/pandas-2.3.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+        "bytes": 12332638,
+        "sha256": "ee67acbbf05014ea6c763beb097e03cd629961c8a632075eeb34247120abcb4b"
+      },
+      {
+        "name": "patsy",
+        "version": "1.0.2",
+        "path": "wheels/patsy-1.0.2-py2.py3-none-any.whl",
+        "bytes": 233301,
+        "sha256": "37bfddbc58fcf0362febb5f54f10743f8b21dd2aa73dec7e7ef59d1b02ae668a"
+      },
+      {
+        "name": "pillow",
+        "version": "12.0.0",
+        "path": "wheels/pillow-12.0.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "bytes": 7038482,
+        "sha256": "c98fa880d695de164b4135a52fd2e9cd7b7c90a9d8ac5e9e443a24a95ef9248e"
+      },
+      {
+        "name": "pyparsing",
+        "version": "3.2.5",
+        "path": "wheels/pyparsing-3.2.5-py3-none-any.whl",
+        "bytes": 113890,
+        "sha256": "e38a4f02064cf41fe6593d328d0512495ad1f3d8a91c4f73fc401b3079a59a5e"
+      },
+      {
+        "name": "PyYAML",
+        "version": "6.0.3",
+        "path": "wheels/pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "bytes": 794175,
+        "sha256": "c458b6d084f9b935061bc36216e8a69a7e293a2f1e68bf956dcd9e6cbcd143f5"
+      },
+      {
+        "name": "pypdf",
+        "version": "6.13.0",
+        "path": "wheels/pypdf-6.13.0-py3-none-any.whl",
+        "bytes": 345958,
+        "sha256": "de1294ae49d6956edb4e5c41527fb9e8716ddd2b120f2185c68aab784d4ffe60"
+      },
+      {
+        "name": "python-dateutil",
+        "version": "2.9.0.post0",
+        "path": "wheels/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+        "bytes": 229892,
+        "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
+      },
+      {
+        "name": "pytz",
+        "version": "2025.2",
+        "path": "wheels/pytz-2025.2-py2.py3-none-any.whl",
+        "bytes": 509225,
+        "sha256": "5ddf76296dd8c44c26eb8f4b6f35488f3ccbf6fbbd7adee0b7262d43f0ec2f00"
+      },
+      {
+        "name": "six",
+        "version": "1.17.0",
+        "path": "wheels/six-1.17.0-py2.py3-none-any.whl",
+        "bytes": 11050,
+        "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+      },
+      {
+        "name": "statsmodels",
+        "version": "0.14.6",
+        "path": "wheels/statsmodels-0.14.6-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "bytes": 10337587,
+        "sha256": "3414e40c073d725007a6603a18247ab7af3467e1af4a5e5a24e4c27bc26673b4"
+      },
+      {
+        "name": "tzdata",
+        "version": "2025.2",
+        "path": "wheels/tzdata-2025.2-py2.py3-none-any.whl",
+        "bytes": 347839,
+        "sha256": "1a403fada01ff9221ca8044d701868fa132215d84beb92242d9acd2147f667a8"
+      }
+    ],
+    "pip": {
+      "path": "bootstrap/pip-25.2-py3-none-any.whl",
+      "bytes": 1752557,
+      "sha256": "6d67a2b4e7f14d8b31b8b52648866fa717f45a1eb70e83002f4331d07e953717",
+      "version": "25.2"
+    },
+    "newly_installed": true,
+    "numerical_analysis_run": false,
+    "analysis_executed_by_this_worker": true
+  },
+  "compressed_scientific_wheel_bytes": 101465096,
+  "tests_collected": 174,
+  "tests_executed": 165,
+  "tests_skipped": 9,
+  "failures": 0,
+  "errors": 0,
+  "native_resources_after": {
+    "project_bytes_including_git": 482644068,
+    "project_bytes_excluding_git": 482644068,
+    "disk_free_bytes": 981622734848,
+    "available_memory_bytes": 5565108224,
+    "process_peak_rss_bytes": 32948224,
+    "operational_storage_budget_bytes": 1500000000,
+    "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
+    "baseline_disk_free_bytes": 982018265088,
+    "baseline_project_bytes": 111228613,
+    "max_sampled_aggregate_rss_bytes": 338358272,
+    "max_observed_native_process_peak_rss_bytes": 254431232,
+    "aggregate_memory_samples": 257,
+    "max_unreadable_or_exited_processes_per_sample": 0,
+    "elapsed_seconds": 49.187
+  },
+  "windows_startup_preflight": {
+    "checked_utc": "2026-10-21T13:29:39.797043+00:00",
+    "available_memory_bytes": 2225131520,
+    "required_startup_bytes": 2000000000,
+    "purpose": "Conservative host startup gate for the version 0.2.2 native Linux replay."
+  },
+  "host_min_available_memory_bytes": 319045632,
+  "host_min_free_disk_bytes": 10217545728,
+  "native_cleanup": "removed_verified_owned_directory",
+  "host_disposable_cleanup": "removed",
+  "figure_acceptance_record": "data/manifests/linux_figure_reuse_0_2_2.json"
+}

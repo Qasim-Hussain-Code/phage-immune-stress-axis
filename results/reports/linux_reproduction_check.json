@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "started_utc": "2026-10-20T12:42:16.324584+00:00",
-  "status": "passed_with_numeric_tolerance_and_visual_review",
+  "started_utc": "2026-10-21T13:29:40.091508+00:00",
+  "status": "passed_with_numeric_tolerance_and_prior_figure_review",
   "scope": "same physical host, independently installed Ubuntu WSL environment, fresh committed-source offline execution",
   "distribution": "Ubuntu",
-  "native_directory": "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z",
+  "native_directory": "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z",
   "native_storage_reservation_bytes": 1500000000,
   "scientific_network_requested": false,
   "workers": 1,
@@ -12,7 +12,7 @@
   "full_child_timeout_seconds": 600,
   "outer_timeout_seconds": 950,
   "windows_runtime": {
-    "project_version": "0.2.1",
+    "project_version": "0.2.2",
     "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
     "platform": "win32",
     "packages": {
@@ -41,29 +41,29 @@
   },
   "comparison_plan_sha256": "fb41c3626e1e1097cb60578a816d7a6449cb52ef286eed78009f1147f049ea2e",
   "windows_before": {
-    "project_bytes_including_git": 188055483,
-    "project_bytes_excluding_git": 185512591,
-    "disk_free_bytes": 13519425536,
-    "available_memory_bytes": 3712217088,
-    "process_peak_rss_bytes": 36634624,
+    "project_bytes_including_git": 190869917,
+    "project_bytes_excluding_git": 187864825,
+    "disk_free_bytes": 10372734976,
+    "available_memory_bytes": 2202324992,
+    "process_peak_rss_bytes": 36663296,
     "operational_storage_budget_bytes": 10000000000,
     "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
     "baseline_disk_free_bytes": 14208532480,
     "baseline_project_bytes": 14354435,
     "max_sampled_aggregate_rss_bytes": 0,
-    "max_observed_native_process_peak_rss_bytes": 35131392,
+    "max_observed_native_process_peak_rss_bytes": 35123200,
     "aggregate_memory_samples": 0,
     "max_unreadable_or_exited_processes_per_sample": 0,
-    "elapsed_seconds": 0.234,
-    "max_sampled_project_bytes_including_disposable_checkout": 188055483
+    "elapsed_seconds": 0.221,
+    "max_sampled_project_bytes_including_disposable_checkout": 190869917
   },
   "git": {
     "requested_ref": "HEAD",
-    "commit": "06b7cab84937c174c3197ba63d560ddc9cc70b1c",
-    "tree": "72dcda6d1db8e5b6dfab2ccf1937effbb5a6c28b",
-    "tracked_files": 205,
-    "tracked_file_bytes": 4225006,
-    "estimated_tar_bound_bytes": 6113262,
+    "commit": "eb7ba6c8b945670a1f55c493d89435f36750900c",
+    "tree": "68dc32bc919b92c03449395b58d34af0df31cf7a",
+    "tracked_files": 222,
+    "tracked_file_bytes": 4977574,
+    "estimated_tar_bound_bytes": 6935462,
     "working_git_normalized_source_and_reference_match": true
   },
   "reference_sha256": {
@@ -99,27 +99,27 @@
     "results/tables/source_inventory.csv": "43ac0485dcae76377232029d5e5b5872fbc2d260a5405ade9e1086b98b3c477e"
   },
   "bootstrap": {
-    "bytes": 107663360,
-    "sha256": "c06d690b65096f7c7a1ca17e8270bf9aeb365e280cc37dd42e167c546c2ab2b4"
+    "bytes": 108431360,
+    "sha256": "cebf44fd658bb3b28b71836199bb826040628e1fa53c6dab45f966200cc70892"
   },
   "helper_sha256": {
     "scripts/check_wsl_reproduction.py": "3253cb4c7c7d939aab965bfa17b8199964e891e2fd649a5c571e6a6b333e115d",
-    "scripts/_native_wsl_guest.py": "d52396ecc31ad671fd54b0fb53445071227c205006092a8448bcfcdbf24a1604"
+    "scripts/_native_wsl_guest.py": "0746a93e464cb1158dc3900594e9d3aa104aaf1a4add80bf2034a571c8bb2255"
   },
-  "windows_min_available_memory_bytes": 908636160,
-  "windows_min_disk_free_bytes": 13366784000,
+  "windows_min_available_memory_bytes": 319045632,
+  "windows_min_disk_free_bytes": 10217545728,
   "wsl_exit_code": 0,
   "result_archive": {
-    "bytes": 2129920,
-    "sha256": "43bd871633f778179f5a25f9598487a202ae8bf141c80150e4b4a0f0cf43c190"
+    "bytes": 2467840,
+    "sha256": "92cf51101161230c26e52992c07ef2530d2ca3a7c02b06abc4de90ebe9d8e5fd"
   },
   "result_extraction": {
-    "members": 87,
-    "regular_file_bytes": 1972793
+    "members": 94,
+    "regular_file_bytes": 2292927
   },
   "guest_evidence": {
-    "started_utc": "2026-10-20T12:42:23.246144+00:00",
-    "native_run_directory": "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z",
+    "started_utc": "2026-10-21T13:29:53.221704+00:00",
+    "native_run_directory": "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z",
     "status": "completed_independent_linux_validation",
     "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
     "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
@@ -138,37 +138,37 @@
           "venv",
           "--without-pip",
           "--copies",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/env"
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env"
         ],
-        "started_utc": "2026-10-20T12:42:24.130587+00:00",
+        "started_utc": "2026-10-21T13:29:54.181017+00:00",
         "returncode": 0,
         "elapsed_seconds": 0.108,
         "resources": {
-          "project_bytes_including_git": 139702810,
-          "project_bytes_excluding_git": 139702810,
-          "disk_free_bytes": 981990010880,
-          "available_memory_bytes": 5446766592,
-          "process_peak_rss_bytes": 32915456,
+          "project_bytes_including_git": 141152354,
+          "project_bytes_excluding_git": 141152354,
+          "disk_free_bytes": 981988286464,
+          "available_memory_bytes": 5441634304,
+          "process_peak_rss_bytes": 32948224,
           "operational_storage_budget_bytes": 1500000000,
           "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
-          "baseline_disk_free_bytes": 982019989504,
-          "baseline_project_bytes": 109779070,
-          "max_sampled_aggregate_rss_bytes": 41439232,
-          "max_observed_native_process_peak_rss_bytes": 33247232,
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 41054208,
+          "max_observed_native_process_peak_rss_bytes": 33218560,
           "aggregate_memory_samples": 1,
           "max_unreadable_or_exited_processes_per_sample": 0,
-          "elapsed_seconds": 0.115
+          "elapsed_seconds": 0.116
         }
       },
       {
         "name": "bootstrap_pip",
         "argv": [
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/env/bin/python",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env/bin/python",
           "-I",
           "-B",
           "-c",
           "import sys,runpy;sys.path.insert(0,sys.argv.pop(1));sys.argv[0]='pip';runpy.run_module('pip',run_name='__main__',alter_sys=True)",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/bootstrap/pip-25.2-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/bootstrap/pip-25.2-py3-none-any.whl",
           "--isolated",
           "--disable-pip-version-check",
           "install",
@@ -178,32 +178,32 @@
           "--no-cache-dir",
           "--no-input",
           "--only-binary=:all:",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/bootstrap/pip-25.2-py3-none-any.whl"
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/bootstrap/pip-25.2-py3-none-any.whl"
         ],
-        "started_utc": "2026-10-20T12:42:24.240389+00:00",
+        "started_utc": "2026-10-21T13:29:54.292932+00:00",
         "returncode": 0,
-        "elapsed_seconds": 1.28,
+        "elapsed_seconds": 1.277,
         "resources": {
-          "project_bytes_including_git": 145066137,
-          "project_bytes_excluding_git": 145066137,
-          "disk_free_bytes": 981983297536,
-          "available_memory_bytes": 5425221632,
-          "process_peak_rss_bytes": 32915456,
+          "project_bytes_including_git": 146515681,
+          "project_bytes_excluding_git": 146515681,
+          "disk_free_bytes": 981981589504,
+          "available_memory_bytes": 5436465152,
+          "process_peak_rss_bytes": 32948224,
           "operational_storage_budget_bytes": 1500000000,
           "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
-          "baseline_disk_free_bytes": 982019989504,
-          "baseline_project_bytes": 109779070,
-          "max_sampled_aggregate_rss_bytes": 86499328,
-          "max_observed_native_process_peak_rss_bytes": 54030336,
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 86380544,
+          "max_observed_native_process_peak_rss_bytes": 54038528,
           "aggregate_memory_samples": 13,
           "max_unreadable_or_exited_processes_per_sample": 0,
-          "elapsed_seconds": 1.411
+          "elapsed_seconds": 1.4
         }
       },
       {
         "name": "install_pins",
         "argv": [
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/env/bin/python",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env/bin/python",
           "-I",
           "-B",
           "-m",
@@ -217,52 +217,52 @@
           "--no-cache-dir",
           "--no-input",
           "--only-binary=:all:",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/contourpy-1.3.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/cycler-0.12.1-py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/et_xmlfile-2.0.0-py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/fonttools-4.60.1-cp314-cp314-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/kiwisolver-1.4.9-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/numpy-2.3.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/scipy-1.16.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/matplotlib-3.10.7-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/openpyxl-3.1.5-py2.py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/packaging-25.0-py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/pandas-2.3.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/patsy-1.0.2-py2.py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/pillow-12.0.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/pyparsing-3.2.5-py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/pypdf-6.13.0-py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/pytz-2025.2-py2.py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/six-1.17.0-py2.py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/statsmodels-0.14.6-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/tzdata-2025.2-py2.py3-none-any.whl"
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/contourpy-1.3.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/cycler-0.12.1-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/et_xmlfile-2.0.0-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/fonttools-4.60.1-cp314-cp314-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/kiwisolver-1.4.9-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/numpy-2.3.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/scipy-1.16.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/matplotlib-3.10.7-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/openpyxl-3.1.5-py2.py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/packaging-25.0-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pandas-2.3.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/patsy-1.0.2-py2.py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pillow-12.0.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pyparsing-3.2.5-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pypdf-6.13.0-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pytz-2025.2-py2.py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/six-1.17.0-py2.py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/statsmodels-0.14.6-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/tzdata-2025.2-py2.py3-none-any.whl"
         ],
-        "started_utc": "2026-10-20T12:42:25.536657+00:00",
+        "started_utc": "2026-10-21T13:29:55.577511+00:00",
         "returncode": 0,
-        "elapsed_seconds": 6.554,
+        "elapsed_seconds": 8.598,
         "resources": {
-          "project_bytes_including_git": 479269188,
-          "project_bytes_excluding_git": 479269188,
-          "disk_free_bytes": 981626572800,
-          "available_memory_bytes": 5469282304,
-          "process_peak_rss_bytes": 32915456,
+          "project_bytes_including_git": 480718732,
+          "project_bytes_excluding_git": 480718732,
+          "disk_free_bytes": 981624864768,
+          "available_memory_bytes": 5507330048,
+          "process_peak_rss_bytes": 32948224,
           "operational_storage_budget_bytes": 1500000000,
           "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
-          "baseline_disk_free_bytes": 982019989504,
-          "baseline_project_bytes": 109779070,
-          "max_sampled_aggregate_rss_bytes": 93712384,
-          "max_observed_native_process_peak_rss_bytes": 62623744,
-          "aggregate_memory_samples": 53,
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 92262400,
+          "max_observed_native_process_peak_rss_bytes": 62754816,
+          "aggregate_memory_samples": 70,
           "max_unreadable_or_exited_processes_per_sample": 0,
-          "elapsed_seconds": 8.085
+          "elapsed_seconds": 10.098
         }
       },
       {
         "name": "pip_check",
         "argv": [
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/env/bin/python",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env/bin/python",
           "-I",
           "-B",
           "-m",
@@ -271,91 +271,91 @@
           "--disable-pip-version-check",
           "check"
         ],
-        "started_utc": "2026-10-20T12:42:32.210377+00:00",
+        "started_utc": "2026-10-21T13:30:04.275629+00:00",
         "returncode": 0,
-        "elapsed_seconds": 0.721,
+        "elapsed_seconds": 0.397,
         "resources": {
-          "project_bytes_including_git": 479269218,
-          "project_bytes_excluding_git": 479269218,
-          "disk_free_bytes": 981626568704,
-          "available_memory_bytes": 5484007424,
-          "process_peak_rss_bytes": 32915456,
+          "project_bytes_including_git": 480718762,
+          "project_bytes_excluding_git": 480718762,
+          "disk_free_bytes": 981624860672,
+          "available_memory_bytes": 5500334080,
+          "process_peak_rss_bytes": 32948224,
           "operational_storage_budget_bytes": 1500000000,
           "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
-          "baseline_disk_free_bytes": 982019989504,
-          "baseline_project_bytes": 109779070,
-          "max_sampled_aggregate_rss_bytes": 93712384,
-          "max_observed_native_process_peak_rss_bytes": 62623744,
-          "aggregate_memory_samples": 56,
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 92262400,
+          "max_observed_native_process_peak_rss_bytes": 62754816,
+          "aggregate_memory_samples": 72,
           "max_unreadable_or_exited_processes_per_sample": 0,
-          "elapsed_seconds": 8.937
+          "elapsed_seconds": 10.593
         }
       },
       {
         "name": "inspect_installed",
         "argv": [
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/env/bin/python",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env/bin/python",
           "-I",
           "-B",
           "-c",
           "import sys,pathlib,json,re,importlib.metadata as m,contextlib,io\nexpected=json.loads(sys.argv[1]);canon=lambda n:re.sub(r'[-_.]+','-',n).lower()\nobserved={canon(d.metadata['Name']):d.version for d in m.distributions()}\nassert sys.prefix!=sys.base_prefix and pathlib.Path(sys.prefix).resolve()==pathlib.Path(sys.argv[2]).resolve()\nassert {k:v for k,v in observed.items() if k!='pip'}==expected and observed.get('pip')=='25.2'\nimport yaml\nassert yaml.safe_load(pathlib.Path(sys.argv[3]).read_text())==json.loads(sys.argv[4])\nprint(json.dumps({'python':sys.version,'prefix':sys.prefix,'base_prefix':sys.base_prefix,'packages':observed,'expected_pins_matched':len(expected)}))\nimport numpy,scipy\nfor name,module in [('numpy',numpy),('scipy',scipy)]:\n stream=io.StringIO()\n with contextlib.redirect_stdout(stream):module.show_config()\n print(json.dumps({'binary_configuration':name,'text':stream.getvalue()}))\n",
           "{\"contourpy\": \"1.3.3\", \"cycler\": \"0.12.1\", \"et-xmlfile\": \"2.0.0\", \"fonttools\": \"4.60.1\", \"kiwisolver\": \"1.4.9\", \"numpy\": \"2.3.4\", \"scipy\": \"1.16.3\", \"matplotlib\": \"3.10.7\", \"openpyxl\": \"3.1.5\", \"packaging\": \"25.0\", \"pandas\": \"2.3.3\", \"patsy\": \"1.0.2\", \"pillow\": \"12.0.0\", \"pyparsing\": \"3.2.5\", \"pyyaml\": \"6.0.3\", \"pypdf\": \"6.13.0\", \"python-dateutil\": \"2.9.0.post0\", \"pytz\": \"2025.2\", \"six\": \"1.17.0\", \"statsmodels\": \"0.14.6\", \"tzdata\": \"2025.2\"}",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/env",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/checkout/config/analysis.yaml",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/checkout/config/analysis.yaml",
           "{\"study\": \"Gut phageome stability and stress-related immune responses\", \"seed\": 20261020, \"analysis_pathway\": \"restricted_pooled_audit_and_separate_immune_analysis\", \"threads\": 1, \"resources\": {\"max_workers\": 4, \"max_new_storage_bytes\": 10000000000, \"disk_reserve_bytes\": 4000000000, \"max_download_bytes\": 10000000, \"max_process_rss_bytes\": 1000000000, \"max_aggregate_rss_bytes\": 1000000000, \"stage_timeout_seconds\": 600, \"min_available_memory_bytes\": 100000000}, \"immune\": {\"endpoints\": [\"ly6chi_monocytes\", \"ly6chi_monocytes_cd62\", \"tnfa_splenocyte_unstimulated\"], \"confidence_level\": 0.95, \"interpretation\": \"exploratory_unadjusted\", \"multiple_testing\": \"six_contrasts_benjamini_hochberg\"}, \"virome\": {\"enable_biological_analysis\": false, \"reason\": \"Processed viral matrices, annotations and verified animal crosswalk unavailable\"}, \"calibration\": {\"replicates\": 20000, \"batch_size\": 500}}"
         ],
-        "started_utc": "2026-10-20T12:42:33.062305+00:00",
+        "started_utc": "2026-10-21T13:30:04.769968+00:00",
         "returncode": 0,
-        "elapsed_seconds": 0.476,
+        "elapsed_seconds": 0.398,
         "resources": {
-          "project_bytes_including_git": 479273647,
-          "project_bytes_excluding_git": 479273647,
-          "disk_free_bytes": 981626560512,
-          "available_memory_bytes": 5477457920,
-          "process_peak_rss_bytes": 32915456,
+          "project_bytes_including_git": 480723191,
+          "project_bytes_excluding_git": 480723191,
+          "disk_free_bytes": 981624852480,
+          "available_memory_bytes": 5502509056,
+          "process_peak_rss_bytes": 32948224,
           "operational_storage_budget_bytes": 1500000000,
           "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
-          "baseline_disk_free_bytes": 982019989504,
-          "baseline_project_bytes": 109779070,
-          "max_sampled_aggregate_rss_bytes": 93712384,
-          "max_observed_native_process_peak_rss_bytes": 62623744,
-          "aggregate_memory_samples": 58,
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 92262400,
+          "max_observed_native_process_peak_rss_bytes": 62754816,
+          "aggregate_memory_samples": 74,
           "max_unreadable_or_exited_processes_per_sample": 0,
-          "elapsed_seconds": 9.537
+          "elapsed_seconds": 11.094
         }
       },
       {
         "name": "full_pipeline",
         "argv": [
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/env/bin/python",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env/bin/python",
           "-B",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/checkout/scripts/run_all.py",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/checkout/scripts/run_all.py",
           "--mode",
           "full",
           "--threads",
           "1",
           "--offline",
           "--config",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/checkout/config/native_validation.json"
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/checkout/config/native_validation.json"
         ],
-        "started_utc": "2026-10-20T12:42:33.663136+00:00",
+        "started_utc": "2026-10-21T13:30:05.271455+00:00",
         "returncode": 0,
-        "elapsed_seconds": 27.065,
+        "elapsed_seconds": 37.893,
         "resources": {
-          "project_bytes_including_git": 481159184,
-          "project_bytes_excluding_git": 481159184,
-          "disk_free_bytes": 981624459264,
-          "available_memory_bytes": 5496696832,
-          "process_peak_rss_bytes": 32915456,
+          "project_bytes_including_git": 482644068,
+          "project_bytes_excluding_git": 482644068,
+          "disk_free_bytes": 981622734848,
+          "available_memory_bytes": 5565108224,
+          "process_peak_rss_bytes": 32948224,
           "operational_storage_budget_bytes": 1500000000,
           "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
-          "baseline_disk_free_bytes": 982019989504,
-          "baseline_project_bytes": 109779070,
-          "max_sampled_aggregate_rss_bytes": 337580032,
-          "max_observed_native_process_peak_rss_bytes": 254656512,
-          "aggregate_memory_samples": 166,
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 338358272,
+          "max_observed_native_process_peak_rss_bytes": 254431232,
+          "aggregate_memory_samples": 257,
           "max_unreadable_or_exited_processes_per_sample": 0,
-          "elapsed_seconds": 36.729
+          "elapsed_seconds": 49.09
         }
       }
     ],
@@ -369,18 +369,18 @@
     },
     "bootstrap_extraction": {
       "members": 24,
-      "regular_file_bytes": 107618117
+      "regular_file_bytes": 108386117
     },
-    "source_archive_commit_marker": "06b7cab84937c174c3197ba63d560ddc9cc70b1c",
+    "source_archive_commit_marker": "eb7ba6c8b945670a1f55c493d89435f36750900c",
     "source_extraction": {
-      "members": 222,
-      "regular_file_bytes": 4225006
+      "members": 239,
+      "regular_file_bytes": 4977574
     },
     "expanded_wheel_member_bytes_including_bootstrap": 339544760,
     "source_before": {
-      "commit": "06b7cab84937c174c3197ba63d560ddc9cc70b1c",
-      "source_tar_sha256": "0039367be13b5b25e66f5f74f8cdba80921e215560055fe04340a0f3b7284dbb",
-      "code_sha256": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
+      "commit": "eb7ba6c8b945670a1f55c493d89435f36750900c",
+      "source_tar_sha256": "071550f66dba78378491fbd1e6b026941d6aca5d2ea6d9b41d4c28ca51200f70",
+      "code_sha256": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
       "requirements_sha256": "b088db497bb8d4763c1fc6f660842ec423c75562684c0ec747c1b8a183ae0079",
       "input_manifest_sha256": "e61c2efdd943748b06002a515d80babd0827552725682fb3161f907a87663c7b",
       "original_config_sha256": "55fad47fdd07b759a24834943ae6b076b15e2f51a663f190cf01a7998212b22f"
@@ -529,30 +529,30 @@
       }
     },
     "resources_before": {
-      "project_bytes_including_git": 109779345,
-      "project_bytes_excluding_git": 109779345,
-      "disk_free_bytes": 982019985408,
-      "available_memory_bytes": 5456850944,
-      "process_peak_rss_bytes": 32915456,
+      "project_bytes_including_git": 111228889,
+      "project_bytes_excluding_git": 111228889,
+      "disk_free_bytes": 982018260992,
+      "available_memory_bytes": 5457694720,
+      "process_peak_rss_bytes": 32948224,
       "operational_storage_budget_bytes": 1500000000,
       "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
-      "baseline_disk_free_bytes": 982019989504,
-      "baseline_project_bytes": 109779070,
+      "baseline_disk_free_bytes": 982018265088,
+      "baseline_project_bytes": 111228613,
       "max_sampled_aggregate_rss_bytes": 0,
-      "max_observed_native_process_peak_rss_bytes": 32915456,
+      "max_observed_native_process_peak_rss_bytes": 32948224,
       "aggregate_memory_samples": 0,
       "max_unreadable_or_exited_processes_per_sample": 0,
-      "elapsed_seconds": 0.005
+      "elapsed_seconds": 0.004
     },
     "original_config_matches_host_metadata": true,
     "full_pipeline_status": {
-      "invocation_id": "20261020T124233722784Z_466",
+      "invocation_id": "20261021T133005318021Z_509",
       "mode": "full",
       "offline": true,
       "resume_requested": false,
       "requested_threads": 1,
       "actual_workers": 1,
-      "started_utc": "2026-10-20T12:42:33.722784+00:00",
+      "started_utc": "2026-10-21T13:30:05.318021+00:00",
       "stages": [
         {
           "name": "01_audit_sources",
@@ -563,7 +563,7 @@
             "reference_review": "docs/reference_repository_review.md",
             "processed_virome_inputs": 0
           },
-          "recorded_peak_rss_bytes": 30683136,
+          "recorded_peak_rss_bytes": 30531584,
           "resource_scope": "measured_this_invocation"
         },
         {
@@ -578,7 +578,7 @@
             "processed_matrices_in_archive": 0,
             "gate": "restricted_analysis"
           },
-          "recorded_peak_rss_bytes": 33701888,
+          "recorded_peak_rss_bytes": 33980416,
           "resource_scope": "measured_this_invocation"
         },
         {
@@ -639,7 +639,7 @@
             ],
             "decision": "Separate source-row immune analysis and sequencing availability audit only."
           },
-          "recorded_peak_rss_bytes": 63819776,
+          "recorded_peak_rss_bytes": 63873024,
           "resource_scope": "measured_this_invocation"
         },
         {
@@ -649,7 +649,7 @@
             "status": "excluded_missing_processed_inputs",
             "biological_profiles_analyzed": 0
           },
-          "recorded_peak_rss_bytes": 30945280,
+          "recorded_peak_rss_bytes": 30793728,
           "resource_scope": "measured_this_invocation"
         },
         {
@@ -660,7 +660,7 @@
             "reference_state_estimates": 0,
             "hypotheses": 6
           },
-          "recorded_peak_rss_bytes": 31076352,
+          "recorded_peak_rss_bytes": 30924800,
           "resource_scope": "measured_this_invocation"
         },
         {
@@ -682,7 +682,7 @@
               "results/tables/source_inventory.csv"
             ]
           },
-          "recorded_peak_rss_bytes": 64364544,
+          "recorded_peak_rss_bytes": 64380928,
           "resource_scope": "measured_this_invocation"
         },
         {
@@ -897,7 +897,7 @@
               ]
             }
           },
-          "recorded_peak_rss_bytes": 133062656,
+          "recorded_peak_rss_bytes": 133091328,
           "resource_scope": "measured_this_invocation"
         },
         {
@@ -907,7 +907,7 @@
             "status": "excluded_missing_processed_inputs",
             "models_fitted": 0
           },
-          "recorded_peak_rss_bytes": 31338496,
+          "recorded_peak_rss_bytes": 31055872,
           "resource_scope": "measured_this_invocation"
         },
         {
@@ -918,12 +918,12 @@
             "test_log": "results/reports/validation.log",
             "scope": "software_tests_not_reexecution_of_scientific_stages",
             "schema_version": 2,
-            "started_utc": "2026-10-20T12:42:41.254488+00:00",
-            "project_version": "0.2.1",
-            "finished_utc": "2026-10-20T12:42:49.516312+00:00",
-            "duration_seconds": 8.262,
-            "code_sha256": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
-            "code_sha256_after": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
+            "started_utc": "2026-10-21T13:30:10.851402+00:00",
+            "project_version": "0.2.2",
+            "finished_utc": "2026-10-21T13:30:17.851742+00:00",
+            "duration_seconds": 7.0,
+            "code_sha256": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
+            "code_sha256_after": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
             "source_unchanged_during_validation": true,
             "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
             "package_versions": {
@@ -952,551 +952,707 @@
             "test_timings": [
               {
                 "test": "test_acquisition.AcquisitionContracts.test_catalog_excludes_usage_stats",
-                "seconds": 0.000512
+                "seconds": 0.000317
+              },
+              {
+                "test": "test_acquisition.AcquisitionContracts.test_correct_hash_does_not_override_wrong_cached_size",
+                "seconds": 0.001694
+              },
+              {
+                "test": "test_acquisition.AcquisitionContracts.test_download_with_correct_hash_and_wrong_size_is_not_promoted",
+                "seconds": 0.000978
               },
               {
                 "test": "test_acquisition.AcquisitionContracts.test_fingerprint_detects_input_change",
-                "seconds": 0.024008
+                "seconds": 0.015805
+              },
+              {
+                "test": "test_acquisition.AcquisitionContracts.test_input_byte_size_schema_rejects_invalid_and_missing_sizes",
+                "seconds": 0.014772
               },
               {
                 "test": "test_acquisition.AcquisitionContracts.test_malformed_manifest_fails_before_download",
-                "seconds": 0.017209
+                "seconds": 0.00302
               },
               {
                 "test": "test_acquisition.AcquisitionContracts.test_offline_missing_and_corrupt_inputs_fail",
-                "seconds": 0.001365
+                "seconds": 0.000833
               },
               {
                 "test": "test_acquisition.AcquisitionContracts.test_streaming_cap_is_enforced_and_partial_removed",
-                "seconds": 0.001796
+                "seconds": 0.000873
               },
               {
                 "test": "test_acquisition.AcquisitionContracts.test_validation_does_not_write_or_extract",
-                "seconds": 0.001265
-              },
-              {
-                "test": "test_calibration.SoftwareCalibrationTests.test_benchmark_seed_and_batch_invariance",
-                "seconds": 1.711897
-              },
-              {
-                "test": "test_calibration.SoftwareCalibrationTests.test_cluster_covariance_matches_analytical_contract",
-                "seconds": 0.000369
-              },
-              {
-                "test": "test_calibration.SoftwareCalibrationTests.test_invalid_and_bounded_settings",
-                "seconds": 0.000121
-              },
-              {
-                "test": "test_calibration.SoftwareCalibrationTests.test_obvious_zero_signal_and_added_signal_controls",
-                "seconds": 0.000269
-              },
-              {
-                "test": "test_calibration.SoftwareCalibrationTests.test_outputs_need_no_biological_inputs_and_are_labeled",
-                "seconds": 0.01537
-              },
-              {
-                "test": "test_calibration.SoftwareCalibrationTests.test_replicate_major_generators_preserve_batches_exactly",
-                "seconds": 0.002476
-              },
-              {
-                "test": "test_calibration.SoftwareCalibrationTests.test_vectorized_welch_against_independent_scipy_samples",
-                "seconds": 0.040764
-              },
-              {
-                "test": "test_calibration.SoftwareCalibrationTests.test_wilson_matches_statsmodels_including_boundaries",
-                "seconds": 1.14889
-              },
-              {
-                "test": "test_configuration.ResourcePolicyConfiguration.test_hardware_policy_cannot_be_silently_weakened",
-                "seconds": 0.025053
-              },
-              {
-                "test": "test_environment.DependencyProvenance.test_missing_distribution_is_explicit",
-                "seconds": 0.012293
-              },
-              {
-                "test": "test_environment.DependencyProvenance.test_pins_cover_observed_active_dependency_closure",
-                "seconds": 0.03281
-              },
-              {
-                "test": "test_environment.DependencyProvenance.test_transitive_version_change_invalidates_cache_fingerprint",
-                "seconds": 0.021049
-              },
-              {
-                "test": "test_figure_qa.RecordedFigureReview.test_missing_review_never_means_pass",
-                "seconds": 0.000323
-              },
-              {
-                "test": "test_figure_qa.RecordedFigureReview.test_review_is_invalidated_by_changed_or_added_pdf",
-                "seconds": 0.002478
-              },
-              {
-                "test": "test_immune.TestIndependentStatistics.test_analytical_identity_and_edge_cases",
-                "seconds": 0.000894
-              },
-              {
-                "test": "test_immune.TestIndependentStatistics.test_bh_matches_statsmodels",
-                "seconds": 0.014995
-              },
-              {
-                "test": "test_immune.TestIndependentStatistics.test_leave_one_out_agrees_with_brute_force_means",
-                "seconds": 0.001816
-              },
-              {
-                "test": "test_immune.TestIndependentStatistics.test_welch_matches_scipy",
-                "seconds": 0.005252
-              },
-              {
-                "test": "test_immune.TestSourceIdentifiers.test_blank_rows_missing_outcomes_and_zero",
-                "seconds": 0.254725
-              },
-              {
-                "test": "test_immune.TestSourceIdentifiers.test_duplicate_and_unknown_groups_fail",
-                "seconds": 0.020311
-              },
-              {
-                "test": "test_immune.TestSourceIdentifiers.test_fixed_six_test_family_and_no_study_i_tests",
-                "seconds": 0.028182
-              },
-              {
-                "test": "test_immune.TestSourceIdentifiers.test_literal_and_composite_ids",
-                "seconds": 6.5e-05
-              },
-              {
-                "test": "test_immune.TestSourceIdentifiers.test_unavailable_source_does_not_make_results",
-                "seconds": 0.00038
-              },
-              {
-                "test": "test_io.AtomicJSON.test_conflict_classifier_requires_windows_permissionerror_and_known_code",
-                "seconds": 0.000195
-              },
-              {
-                "test": "test_io.AtomicJSON.test_failed_replace_preserves_existing_record",
-                "seconds": 0.019159
-              },
-              {
-                "test": "test_io.AtomicJSON.test_native_serialization_is_preserved_and_temporary_is_removed",
-                "seconds": 0.012041
-              },
-              {
-                "test": "test_io.AtomicJSON.test_ordinary_permission_nonwindows_and_other_oserrors_are_not_retried",
-                "seconds": 0.018377
-              },
-              {
-                "test": "test_io.AtomicJSON.test_persistent_known_windows_conflict_is_bounded_and_preserves_old_bytes",
-                "seconds": 0.010558
-              },
-              {
-                "test": "test_io.AtomicJSON.test_serialization_failure_never_opens_or_truncates_destination",
-                "seconds": 0.000473
-              },
-              {
-                "test": "test_io.AtomicJSON.test_transient_windows_conflicts_retry_then_publish_with_real_replace",
-                "seconds": 0.013643
-              },
-              {
-                "test": "test_metrics.CommunityMath.test_bray_curtis_scipy",
-                "seconds": 0.000203
-              },
-              {
-                "test": "test_metrics.CommunityMath.test_closure_scale_invariance",
-                "seconds": 9.7e-05
-              },
-              {
-                "test": "test_metrics.CommunityMath.test_invalid_abundances",
-                "seconds": 0.000127
-              },
-              {
-                "test": "test_metrics.CommunityMath.test_pairwise_logratio_identity",
-                "seconds": 8.9e-05
-              },
-              {
-                "test": "test_metrics.CommunityMath.test_zero_handling_and_identity",
-                "seconds": 7.4e-05
-              },
-              {
-                "test": "test_original_methods.OriginalMethodRealDataVerification.test_cached_source_matches_published_caption_without_extra_exclusions",
-                "seconds": 0.541709
-              },
-              {
-                "test": "test_original_methods.OriginalMethodSyntheticTests.test_anova_and_contrast_against_independent_ols",
-                "seconds": 0.994283
-              },
-              {
-                "test": "test_original_methods.OriginalMethodSyntheticTests.test_contrast_covariance_depends_on_unequal_sizes",
-                "seconds": 4.8e-05
-              },
-              {
-                "test": "test_original_methods.OriginalMethodSyntheticTests.test_invalid_groups_and_degenerate_variance",
-                "seconds": 0.000236
-              },
-              {
-                "test": "test_original_methods.OriginalMethodSyntheticTests.test_planned_contrast_is_not_conjunction_of_pairwise_effects",
-                "seconds": 0.131508
-              },
-              {
-                "test": "test_original_methods.OriginalMethodSyntheticTests.test_published_rounding_is_explicit",
-                "seconds": 4.2e-05
-              },
-              {
-                "test": "test_original_methods.OriginalMethodSyntheticTests.test_tukey_against_statsmodels_for_unequal_group_sizes",
-                "seconds": 0.363393
-              },
-              {
-                "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_missing_source_endpoint_record_and_support_violation_fail",
-                "seconds": 0.004672
-              },
-              {
-                "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_prepared_stage_fixture_outputs_are_descriptive_and_repeatable",
-                "seconds": 0.004335
-              },
-              {
-                "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_tampered_or_incomplete_existing_u_fails_before_outputs",
-                "seconds": 0.010498
-              },
-              {
-                "test": "test_phenotype_robustness.RankEffectTests.test_rank_reversal_all_ties_and_invalid_inputs",
-                "seconds": 0.000187
-              },
-              {
-                "test": "test_phenotype_robustness.RankEffectTests.test_tied_midrank_u_matches_independent_library_and_pair_counts",
-                "seconds": 0.000496
-              },
-              {
-                "test": "test_phenotype_robustness.SupportBoundTests.test_bounds_equal_independently_enumerated_corners",
-                "seconds": 0.000207
-              },
-              {
-                "test": "test_phenotype_robustness.SupportBoundTests.test_bounds_reversal_all_missing_and_unknown_support",
-                "seconds": 5.8e-05
-              },
-              {
-                "test": "test_phenotype_robustness.SupportBoundTests.test_invalid_counts_support_and_outcomes_fail",
-                "seconds": 0.000162
-              },
-              {
-                "test": "test_pipeline.PipelineContracts.test_execution_contract_rejects_source_config_spec_and_runtime_changes",
-                "seconds": 0.061344
-              },
-              {
-                "test": "test_pipeline.PipelineContracts.test_expected_input_materialization_does_not_change_source_contract",
-                "seconds": 0.024798
-              },
-              {
-                "test": "test_pipeline.PipelineContracts.test_malformed_valid_json_cache_is_invalidated_without_exception",
-                "seconds": 0.00102
-              },
-              {
-                "test": "test_pipeline.PipelineContracts.test_output_tamper_and_exact_output_set",
-                "seconds": 0.001758
-              },
-              {
-                "test": "test_pipeline.PipelineContracts.test_runtime_change_invalidates_fingerprint",
-                "seconds": 0.001792
-              },
-              {
-                "test": "test_pipeline.PipelineContracts.test_upstream_changes_invalidate_downstream_cache",
-                "seconds": 0.001337
-              },
-              {
-                "test": "test_pipeline.PipelineContracts.test_validation_only_does_not_fetch_or_extract",
-                "seconds": 0.000898
-              },
-              {
-                "test": "test_pipeline_failures.RunnerFinalizationFailures.test_final_resource_failure_cannot_preserve_completed_status",
-                "seconds": 0.108427
-              },
-              {
-                "test": "test_pipeline_failures.RunnerFinalizationFailures.test_interruption_survives_secondary_finalization_errors",
-                "seconds": 0.084213
-              },
-              {
-                "test": "test_pipeline_failures.RunnerFinalizationFailures.test_new_reporting_failure_fails_previously_completed_analysis",
-                "seconds": 0.106536
-              },
-              {
-                "test": "test_pipeline_failures.RunnerFinalizationFailures.test_original_failure_survives_secondary_resource_and_reporting_errors",
-                "seconds": 0.091254
-              },
-              {
-                "test": "test_pipeline_failures.RunnerFinalizationFailures.test_resource_record_write_failure_is_terminal_and_recorded",
-                "seconds": 0.075483
-              },
-              {
-                "test": "test_pipeline_failures.RunnerFinalizationFailures.test_status_path_failure_still_records_failed_invocation",
-                "seconds": 0.060427
-              },
-              {
-                "test": "test_portability.PortabilityContracts.test_absolute_and_relative_boundaries_are_fixed_or_conditions",
-                "seconds": 0.005618
-              },
-              {
-                "test": "test_portability.PortabilityContracts.test_bounds_limit_detail_without_hiding_total_differences",
-                "seconds": 0.004266
-              },
-              {
-                "test": "test_portability.PortabilityContracts.test_exact_bytes_and_newline_only_semantic_equality_are_distinct",
-                "seconds": 0.002692
-              },
-              {
-                "test": "test_portability.PortabilityContracts.test_hard_invalid_figure_takes_precedence_over_other_visual_review",
-                "seconds": 0.015153
-              },
-              {
-                "test": "test_portability.PortabilityContracts.test_header_row_order_row_count_and_row_width_are_enforced",
-                "seconds": 0.003423
-              },
-              {
-                "test": "test_portability.PortabilityContracts.test_ids_source_values_counts_json_and_publication_fields_remain_exact",
-                "seconds": 0.004967
-              },
-              {
-                "test": "test_portability.PortabilityContracts.test_nonfinite_values_are_rejected_even_when_bytes_match",
-                "seconds": 0.008548
-              },
-              {
-                "test": "test_portability.PortabilityContracts.test_plan_is_deterministic_and_names_every_fixed_schema",
-                "seconds": 0.000819
-              },
-              {
-                "test": "test_portability.PortabilityContracts.test_tree_inventory_and_figure_review_never_claim_byte_identity",
-                "seconds": 0.045676
-              },
-              {
-                "test": "test_portability.PortabilityContracts.test_unknown_schema_and_broadened_whitelist_fail_closed",
-                "seconds": 0.001767
-              },
-              {
-                "test": "test_processes.LinuxIdentityContracts.test_pidfd_capture_rechecks_identity_and_closes_raced_descriptor",
-                "seconds": 0.00088
-              },
-              {
-                "test": "test_processes.LinuxIdentityContracts.test_reused_pid_is_not_signalled_by_starttime_fallback",
-                "seconds": 0.000237
-              },
-              {
-                "test": "test_processes.LinuxProcessIntegration.test_keyboard_interrupt_cleans_observed_separate_sessions",
-                "seconds": 0.208642
-              },
-              {
-                "test": "test_processes.LinuxProcessIntegration.test_observed_reparented_leaf_is_cleaned_on_controller_failure",
-                "seconds": 0.212769
-              },
-              {
-                "test": "test_processes.LinuxProcessIntegration.test_parent_nonzero_cleans_ordinary_process_group",
-                "seconds": 0.217852
-              },
-              {
-                "test": "test_processes.LinuxProcessIntegration.test_parent_success_cleans_ordinary_process_group",
-                "seconds": 0.21669
-              },
-              {
-                "test": "test_processes.LinuxProcessIntegration.test_resource_failure_cleans_observed_separate_sessions",
-                "seconds": 0.209441
-              },
-              {
-                "test": "test_processes.LinuxProcessIntegration.test_timeout_cleans_observed_separate_sessions",
-                "seconds": 0.617368
-              },
-              {
-                "test": "test_processes.ProcessCleanupContracts.test_normal_parent_success_does_not_hide_cleanup_failure",
-                "seconds": 0.000849
-              },
-              {
-                "test": "test_processes.ProcessCleanupContracts.test_original_guard_error_survives_secondary_cleanup_error",
-                "seconds": 0.000617
-              },
-              {
-                "test": "test_processes.ProcessCleanupContracts.test_posix_group_is_signalled_after_leader_has_already_exited",
-                "seconds": 0.000603
-              },
-              {
-                "test": "test_processes.WindowsJobIntegration.test_argv_cwd_environment_stdin_and_combined_log",
-                "seconds": 1.7e-05
-              },
-              {
-                "test": "test_processes.WindowsJobIntegration.test_assignment_failure_never_executes_child_and_closes_handles",
-                "seconds": 1e-05
-              },
-              {
-                "test": "test_processes.WindowsJobIntegration.test_create_failure_does_not_leak_job_or_stdio_handles",
-                "seconds": 6e-06
-              },
-              {
-                "test": "test_processes.WindowsJobIntegration.test_keyboard_interrupt_cleans_worker_and_grandchild",
-                "seconds": 5e-06
-              },
-              {
-                "test": "test_processes.WindowsJobIntegration.test_parent_nonzero_cleans_worker_and_grandchild",
-                "seconds": 5e-06
-              },
-              {
-                "test": "test_processes.WindowsJobIntegration.test_parent_success_cleans_worker_and_grandchild",
-                "seconds": 4e-06
-              },
-              {
-                "test": "test_processes.WindowsJobIntegration.test_resource_error_cleans_worker_and_grandchild",
-                "seconds": 4e-06
-              },
-              {
-                "test": "test_processes.WindowsJobIntegration.test_resume_failure_never_executes_child_and_closes_handles",
-                "seconds": 5e-06
-              },
-              {
-                "test": "test_processes.WindowsJobIntegration.test_timeout_cleans_worker_and_grandchild",
-                "seconds": 4e-06
-              },
-              {
-                "test": "test_release.LatestInvocationProof.test_filename_identity_and_simultaneous_attempts_fail_closed",
-                "seconds": 0.001746
-              },
-              {
-                "test": "test_release.LatestInvocationProof.test_latest_success_matches_counterpart_and_follows_older_failure",
-                "seconds": 0.001043
-              },
-              {
-                "test": "test_release.LatestInvocationProof.test_malformed_older_record_is_not_silently_ignored",
-                "seconds": 0.003812
-              },
-              {
-                "test": "test_release.LatestInvocationProof.test_matching_id_but_different_record_body_is_rejected",
-                "seconds": 0.001138
-              },
-              {
-                "test": "test_release.LatestInvocationProof.test_missing_counterpart_fails_closed",
-                "seconds": 0.00084
-              },
-              {
-                "test": "test_release.LatestInvocationProof.test_old_completed_record_rejected_after_newer_failed_or_successful_attempt",
-                "seconds": 0.004399
-              },
-              {
-                "test": "test_release.LatestInvocationProof.test_unsafe_ids_and_naive_or_invalid_start_times_are_rejected",
-                "seconds": 0.010389
-              },
-              {
-                "test": "test_release.ReleasePayload.test_stale_staged_code_and_missing_new_code_are_rejected",
-                "seconds": 0.054077
-              },
-              {
-                "test": "test_release.ReleasePayload.test_upstream_bytes_are_never_text_normalized",
-                "seconds": 0.013461
-              },
-              {
-                "test": "test_reporting.ReportingContracts.test_local_platform_and_scientific_artifact_preserved",
-                "seconds": 0.001527
-              },
-              {
-                "test": "test_reporting.ReportingContracts.test_pilot_and_validation_do_not_claim_full_analysis",
-                "seconds": 0.000251
-              },
-              {
-                "test": "test_reporting.ReportingContracts.test_visual_review_requires_matching_file_hash",
-                "seconds": 0.001786
-              },
-              {
-                "test": "test_reproduction.ReproductionContracts.test_archive_expansion_is_bounded",
-                "seconds": 0.001018
-              },
-              {
-                "test": "test_reproduction.ReproductionContracts.test_archive_rejects_traversal_and_links",
-                "seconds": 0.001424
-              },
-              {
-                "test": "test_reproduction.ReproductionContracts.test_cleanup_cannot_hide_detected_resource_failure",
-                "seconds": 0.00016
-              },
-              {
-                "test": "test_reproduction.ReproductionContracts.test_comparison_excludes_operational_records_and_detects_tampering",
-                "seconds": 0.001704
-              },
-              {
-                "test": "test_reproduction.ReproductionContracts.test_path_containment_rejects_other_shell_and_os_paths",
-                "seconds": 0.000593
-              },
-              {
-                "test": "test_reproduction.ReproductionContracts.test_recursive_cleanup_cannot_target_workspace_or_cache_root",
-                "seconds": 0.001338
-              },
-              {
-                "test": "test_reproduction.ReproductionContracts.test_regular_archive_extracts_exact_bytes",
                 "seconds": 0.00097
               },
               {
-                "test": "test_resources.ResourceContracts.test_aggregate_limit_separate_from_per_process_limit",
-                "seconds": 0.00444
+                "test": "test_acquisition.AcquisitionContracts.test_zenodo_download_rejects_wrong_canonical_size",
+                "seconds": 0.001286
               },
               {
-                "test": "test_resources.ResourceContracts.test_family_sums_current_rss_not_historical_peaks",
-                "seconds": 0.000312
+                "test": "test_acquisition.AcquisitionContracts.test_zenodo_download_verifies_canonical_stored_size",
+                "seconds": 0.004202
               },
               {
-                "test": "test_resources.ResourceContracts.test_local_baseline_ignores_historical_machine_and_does_not_reset",
-                "seconds": 0.002198
+                "test": "test_acquisition.AcquisitionContracts.test_zero_byte_input_is_valid_for_cache_and_offline_fetch",
+                "seconds": 0.001672
               },
               {
-                "test": "test_resources.ResourceContracts.test_timeout_terminates_spawned_process_tree",
-                "seconds": 0.001157
+                "test": "test_calibration.SoftwareCalibrationTests.test_benchmark_seed_and_batch_invariance",
+                "seconds": 1.139059
               },
               {
-                "test": "test_samples.SampleIdentityTests.test_decimal_source_ids_do_not_collapse",
-                "seconds": 8.3e-05
+                "test": "test_calibration.SoftwareCalibrationTests.test_cluster_covariance_matches_analytical_contract",
+                "seconds": 0.000214
               },
               {
-                "test": "test_samples.SampleIdentityTests.test_duplicate_source_row_fails_instead_of_merging",
-                "seconds": 0.000134
+                "test": "test_calibration.SoftwareCalibrationTests.test_invalid_and_bounded_settings",
+                "seconds": 6.9e-05
               },
               {
-                "test": "test_samples.SampleIdentityTests.test_fastq_sizes_count_files_not_biological_replicates",
-                "seconds": 4.1e-05
+                "test": "test_calibration.SoftwareCalibrationTests.test_obvious_zero_signal_and_added_signal_controls",
+                "seconds": 0.000156
               },
               {
-                "test": "test_samples.SampleIdentityTests.test_identifiers_require_experiment_and_group",
-                "seconds": 3.3e-05
+                "test": "test_calibration.SoftwareCalibrationTests.test_outputs_need_no_biological_inputs_and_are_labeled",
+                "seconds": 0.009872
               },
               {
-                "test": "test_samples.SampleIdentityTests.test_inoculum_not_assigned_to_recipient",
+                "test": "test_calibration.SoftwareCalibrationTests.test_replicate_major_generators_preserve_batches_exactly",
+                "seconds": 0.001325
+              },
+              {
+                "test": "test_calibration.SoftwareCalibrationTests.test_vectorized_welch_against_independent_scipy_samples",
+                "seconds": 0.018794
+              },
+              {
+                "test": "test_calibration.SoftwareCalibrationTests.test_wilson_matches_statsmodels_including_boundaries",
+                "seconds": 0.753812
+              },
+              {
+                "test": "test_configuration.ResourcePolicyConfiguration.test_hardware_policy_cannot_be_silently_weakened",
+                "seconds": 0.035949
+              },
+              {
+                "test": "test_environment.DependencyProvenance.test_missing_distribution_is_explicit",
+                "seconds": 0.008629
+              },
+              {
+                "test": "test_environment.DependencyProvenance.test_pins_cover_observed_active_dependency_closure",
+                "seconds": 0.021189
+              },
+              {
+                "test": "test_environment.DependencyProvenance.test_transitive_version_change_invalidates_cache_fingerprint",
+                "seconds": 0.014202
+              },
+              {
+                "test": "test_figure_qa.RecordedFigureReview.test_missing_review_never_means_pass",
+                "seconds": 0.000258
+              },
+              {
+                "test": "test_figure_qa.RecordedFigureReview.test_review_is_invalidated_by_changed_or_added_pdf",
+                "seconds": 0.001443
+              },
+              {
+                "test": "test_immune.TestIndependentStatistics.test_analytical_identity_and_edge_cases",
+                "seconds": 0.000794
+              },
+              {
+                "test": "test_immune.TestIndependentStatistics.test_bh_matches_statsmodels",
+                "seconds": 0.010078
+              },
+              {
+                "test": "test_immune.TestIndependentStatistics.test_leave_one_out_agrees_with_brute_force_means",
+                "seconds": 0.001249
+              },
+              {
+                "test": "test_immune.TestIndependentStatistics.test_welch_matches_scipy",
+                "seconds": 0.00374
+              },
+              {
+                "test": "test_immune.TestSourceIdentifiers.test_blank_rows_missing_outcomes_and_zero",
+                "seconds": 0.161316
+              },
+              {
+                "test": "test_immune.TestSourceIdentifiers.test_duplicate_and_unknown_groups_fail",
+                "seconds": 0.016949
+              },
+              {
+                "test": "test_immune.TestSourceIdentifiers.test_fixed_six_test_family_and_no_study_i_tests",
+                "seconds": 0.02105
+              },
+              {
+                "test": "test_immune.TestSourceIdentifiers.test_literal_and_composite_ids",
+                "seconds": 4.8e-05
+              },
+              {
+                "test": "test_immune.TestSourceIdentifiers.test_unavailable_source_does_not_make_results",
+                "seconds": 0.000352
+              },
+              {
+                "test": "test_io.AtomicJSON.test_conflict_classifier_requires_windows_permissionerror_and_known_code",
+                "seconds": 0.000136
+              },
+              {
+                "test": "test_io.AtomicJSON.test_failed_replace_preserves_existing_record",
+                "seconds": 0.028146
+              },
+              {
+                "test": "test_io.AtomicJSON.test_native_serialization_is_preserved_and_temporary_is_removed",
+                "seconds": 0.019097
+              },
+              {
+                "test": "test_io.AtomicJSON.test_ordinary_permission_nonwindows_and_other_oserrors_are_not_retried",
+                "seconds": 0.012102
+              },
+              {
+                "test": "test_io.AtomicJSON.test_persistent_known_windows_conflict_is_bounded_and_preserves_old_bytes",
+                "seconds": 0.009189
+              },
+              {
+                "test": "test_io.AtomicJSON.test_serialization_failure_never_opens_or_truncates_destination",
+                "seconds": 0.000262
+              },
+              {
+                "test": "test_io.AtomicJSON.test_transient_windows_conflicts_retry_then_publish_with_real_replace",
+                "seconds": 0.008969
+              },
+              {
+                "test": "test_metrics.CommunityMath.test_bray_curtis_scipy",
+                "seconds": 0.000142
+              },
+              {
+                "test": "test_metrics.CommunityMath.test_closure_scale_invariance",
+                "seconds": 7.9e-05
+              },
+              {
+                "test": "test_metrics.CommunityMath.test_invalid_abundances",
+                "seconds": 7.9e-05
+              },
+              {
+                "test": "test_metrics.CommunityMath.test_pairwise_logratio_identity",
+                "seconds": 5.8e-05
+              },
+              {
+                "test": "test_metrics.CommunityMath.test_zero_handling_and_identity",
+                "seconds": 4.8e-05
+              },
+              {
+                "test": "test_original_methods.OriginalMethodRealDataVerification.test_cached_source_matches_published_caption_without_extra_exclusions",
+                "seconds": 0.354588
+              },
+              {
+                "test": "test_original_methods.OriginalMethodSyntheticTests.test_anova_and_contrast_against_independent_ols",
+                "seconds": 0.651893
+              },
+              {
+                "test": "test_original_methods.OriginalMethodSyntheticTests.test_contrast_covariance_depends_on_unequal_sizes",
                 "seconds": 3e-05
               },
               {
-                "test": "test_samples.SampleIdentityTests.test_pool_cannot_link_to_an_individual",
-                "seconds": 2.5e-05
+                "test": "test_original_methods.OriginalMethodSyntheticTests.test_invalid_groups_and_degenerate_variance",
+                "seconds": 0.000151
               },
               {
-                "test": "test_samples.SampleIdentityTests.test_source_rows_match_only_observed_within_row_assays",
+                "test": "test_original_methods.OriginalMethodSyntheticTests.test_planned_contrast_is_not_conjunction_of_pairwise_effects",
+                "seconds": 0.083736
+              },
+              {
+                "test": "test_original_methods.OriginalMethodSyntheticTests.test_published_rounding_is_explicit",
+                "seconds": 2.9e-05
+              },
+              {
+                "test": "test_original_methods.OriginalMethodSyntheticTests.test_tukey_against_statsmodels_for_unequal_group_sizes",
+                "seconds": 0.224271
+              },
+              {
+                "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_missing_source_endpoint_record_and_support_violation_fail",
+                "seconds": 0.043414
+              },
+              {
+                "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_prepared_stage_fixture_outputs_are_descriptive_and_repeatable",
+                "seconds": 0.007693
+              },
+              {
+                "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_tampered_or_incomplete_existing_u_fails_before_outputs",
+                "seconds": 0.009917
+              },
+              {
+                "test": "test_phenotype_robustness.RankEffectTests.test_rank_reversal_all_ties_and_invalid_inputs",
+                "seconds": 0.00011
+              },
+              {
+                "test": "test_phenotype_robustness.RankEffectTests.test_tied_midrank_u_matches_independent_library_and_pair_counts",
+                "seconds": 0.000251
+              },
+              {
+                "test": "test_phenotype_robustness.SupportBoundTests.test_bounds_equal_independently_enumerated_corners",
+                "seconds": 0.000133
+              },
+              {
+                "test": "test_phenotype_robustness.SupportBoundTests.test_bounds_reversal_all_missing_and_unknown_support",
+                "seconds": 3.8e-05
+              },
+              {
+                "test": "test_phenotype_robustness.SupportBoundTests.test_invalid_counts_support_and_outcomes_fail",
+                "seconds": 8.5e-05
+              },
+              {
+                "test": "test_pipeline.PipelineContracts.test_execution_contract_rejects_source_config_spec_and_runtime_changes",
+                "seconds": 0.03701
+              },
+              {
+                "test": "test_pipeline.PipelineContracts.test_expected_input_materialization_does_not_change_source_contract",
+                "seconds": 0.014182
+              },
+              {
+                "test": "test_pipeline.PipelineContracts.test_malformed_valid_json_cache_is_invalidated_without_exception",
+                "seconds": 0.00055
+              },
+              {
+                "test": "test_pipeline.PipelineContracts.test_output_tamper_and_exact_output_set",
+                "seconds": 0.001828
+              },
+              {
+                "test": "test_pipeline.PipelineContracts.test_runtime_change_invalidates_fingerprint",
+                "seconds": 0.001003
+              },
+              {
+                "test": "test_pipeline.PipelineContracts.test_upstream_changes_invalidate_downstream_cache",
+                "seconds": 0.000721
+              },
+              {
+                "test": "test_pipeline.PipelineContracts.test_validation_only_does_not_fetch_or_extract",
+                "seconds": 0.000507
+              },
+              {
+                "test": "test_pipeline_failures.RunnerFinalizationFailures.test_final_resource_failure_cannot_preserve_completed_status",
+                "seconds": 0.099374
+              },
+              {
+                "test": "test_pipeline_failures.RunnerFinalizationFailures.test_interruption_survives_secondary_finalization_errors",
+                "seconds": 0.097576
+              },
+              {
+                "test": "test_pipeline_failures.RunnerFinalizationFailures.test_new_reporting_failure_fails_previously_completed_analysis",
+                "seconds": 0.126694
+              },
+              {
+                "test": "test_pipeline_failures.RunnerFinalizationFailures.test_original_failure_survives_secondary_resource_and_reporting_errors",
+                "seconds": 0.050605
+              },
+              {
+                "test": "test_pipeline_failures.RunnerFinalizationFailures.test_resource_record_write_failure_is_terminal_and_recorded",
+                "seconds": 0.015727
+              },
+              {
+                "test": "test_pipeline_failures.RunnerFinalizationFailures.test_status_path_failure_still_records_failed_invocation",
+                "seconds": 0.015154
+              },
+              {
+                "test": "test_portability.PortabilityContracts.test_absolute_and_relative_boundaries_are_fixed_or_conditions",
+                "seconds": 0.004794
+              },
+              {
+                "test": "test_portability.PortabilityContracts.test_bounds_limit_detail_without_hiding_total_differences",
+                "seconds": 0.002658
+              },
+              {
+                "test": "test_portability.PortabilityContracts.test_exact_bytes_and_newline_only_semantic_equality_are_distinct",
+                "seconds": 0.007236
+              },
+              {
+                "test": "test_portability.PortabilityContracts.test_hard_invalid_figure_takes_precedence_over_other_visual_review",
+                "seconds": 0.025563
+              },
+              {
+                "test": "test_portability.PortabilityContracts.test_header_row_order_row_count_and_row_width_are_enforced",
+                "seconds": 0.012617
+              },
+              {
+                "test": "test_portability.PortabilityContracts.test_ids_source_values_counts_json_and_publication_fields_remain_exact",
+                "seconds": 0.00858
+              },
+              {
+                "test": "test_portability.PortabilityContracts.test_nonfinite_values_are_rejected_even_when_bytes_match",
+                "seconds": 0.021975
+              },
+              {
+                "test": "test_portability.PortabilityContracts.test_plan_is_deterministic_and_names_every_fixed_schema",
+                "seconds": 0.000485
+              },
+              {
+                "test": "test_portability.PortabilityContracts.test_tree_inventory_and_figure_review_never_claim_byte_identity",
+                "seconds": 0.037857
+              },
+              {
+                "test": "test_portability.PortabilityContracts.test_unknown_schema_and_broadened_whitelist_fail_closed",
+                "seconds": 0.001098
+              },
+              {
+                "test": "test_private_push.GitPolicy.test_clean_new_blob_and_empty_commit_are_supported",
+                "seconds": 0.076545
+              },
+              {
+                "test": "test_private_push.GitPolicy.test_credentials_removed_by_later_commit_still_block_release",
+                "seconds": 0.051395
+              },
+              {
+                "test": "test_private_push.GitPolicy.test_default_approved_destination_is_valid",
+                "seconds": 0.020185
+              },
+              {
+                "test": "test_private_push.GitPolicy.test_explicit_url_rewrite_is_checked_even_with_an_approved_pushurl",
+                "seconds": 0.02998
+              },
+              {
+                "test": "test_private_push.GitPolicy.test_generic_url_rewrite_is_rejected",
+                "seconds": 0.01923
+              },
+              {
+                "test": "test_private_push.GitPolicy.test_git_replacement_cannot_conceal_original_credential_blob",
+                "seconds": 0.031082
+              },
+              {
+                "test": "test_private_push.GitPolicy.test_inherited_config_selector_cannot_hide_transport_rewrites",
+                "seconds": 0.018114
+              },
+              {
+                "test": "test_private_push.GitPolicy.test_multiple_push_destinations_are_rejected",
+                "seconds": 0.01129
+              },
+              {
+                "test": "test_private_push.GitPolicy.test_private_working_file_in_new_history_is_rejected",
+                "seconds": 0.026468
+              },
+              {
+                "test": "test_private_push.GitPolicy.test_push_only_url_rewrite_is_rejected",
+                "seconds": 0.014251
+              },
+              {
+                "test": "test_private_push.GitPolicy.test_separate_public_push_url_is_rejected",
+                "seconds": 0.010435
+              },
+              {
+                "test": "test_private_push.ReleaseIdentity.test_api_host_is_pinned_despite_an_inherited_enterprise_host",
+                "seconds": 0.000355
+              },
+              {
+                "test": "test_private_push.ReleaseIdentity.test_commit_message_format_is_enforced",
+                "seconds": 0.000241
+              },
+              {
+                "test": "test_private_push.ReleaseIdentity.test_credentials_in_commit_bodies_are_rejected_without_echoing_values",
+                "seconds": 2.2e-05
+              },
+              {
+                "test": "test_private_push.ReleaseIdentity.test_default_check_never_invokes_a_push",
+                "seconds": 0.000179
+              },
+              {
+                "test": "test_private_push.ReleaseIdentity.test_optimized_python_cannot_disable_the_private_check",
+                "seconds": 0.258168
+              },
+              {
+                "test": "test_private_push.ReleaseIdentity.test_other_authors_committers_and_coauthor_trailers_are_rejected",
+                "seconds": 0.0002
+              },
+              {
+                "test": "test_private_push.ReleaseIdentity.test_private_target_and_single_researcher_are_required",
+                "seconds": 0.000115
+              },
+              {
+                "test": "test_private_push.ReleaseIdentity.test_public_target_stops_before_any_git_or_push_operation",
+                "seconds": 0.000128
+              },
+              {
+                "test": "test_private_push.ReleaseIdentity.test_user_authored_github_web_commits_remain_valid",
+                "seconds": 2.7e-05
+              },
+              {
+                "test": "test_private_push.ReleaseIdentity.test_verified_push_pins_commit_and_url_and_blocks_visibility_change",
+                "seconds": 0.000615
+              },
+              {
+                "test": "test_processes.LinuxIdentityContracts.test_pidfd_capture_rechecks_identity_and_closes_raced_descriptor",
+                "seconds": 0.000547
+              },
+              {
+                "test": "test_processes.LinuxIdentityContracts.test_reused_pid_is_not_signalled_by_starttime_fallback",
+                "seconds": 0.000158
+              },
+              {
+                "test": "test_processes.LinuxProcessIntegration.test_keyboard_interrupt_cleans_observed_separate_sessions",
+                "seconds": 0.211398
+              },
+              {
+                "test": "test_processes.LinuxProcessIntegration.test_observed_reparented_leaf_is_cleaned_on_controller_failure",
+                "seconds": 0.21019
+              },
+              {
+                "test": "test_processes.LinuxProcessIntegration.test_parent_nonzero_cleans_ordinary_process_group",
+                "seconds": 0.217222
+              },
+              {
+                "test": "test_processes.LinuxProcessIntegration.test_parent_success_cleans_ordinary_process_group",
+                "seconds": 0.217391
+              },
+              {
+                "test": "test_processes.LinuxProcessIntegration.test_resource_failure_cleans_observed_separate_sessions",
+                "seconds": 0.212722
+              },
+              {
+                "test": "test_processes.LinuxProcessIntegration.test_timeout_cleans_observed_separate_sessions",
+                "seconds": 0.615678
+              },
+              {
+                "test": "test_processes.ProcessCleanupContracts.test_normal_parent_success_does_not_hide_cleanup_failure",
+                "seconds": 0.001805
+              },
+              {
+                "test": "test_processes.ProcessCleanupContracts.test_original_guard_error_survives_secondary_cleanup_error",
+                "seconds": 0.001261
+              },
+              {
+                "test": "test_processes.ProcessCleanupContracts.test_posix_group_is_signalled_after_leader_has_already_exited",
+                "seconds": 0.001126
+              },
+              {
+                "test": "test_processes.WindowsJobIntegration.test_argv_cwd_environment_stdin_and_combined_log",
+                "seconds": 2.8e-05
+              },
+              {
+                "test": "test_processes.WindowsJobIntegration.test_assignment_failure_never_executes_child_and_closes_handles",
+                "seconds": 4.4e-05
+              },
+              {
+                "test": "test_processes.WindowsJobIntegration.test_create_failure_does_not_leak_job_or_stdio_handles",
+                "seconds": 1.5e-05
+              },
+              {
+                "test": "test_processes.WindowsJobIntegration.test_keyboard_interrupt_cleans_worker_and_grandchild",
+                "seconds": 1.1e-05
+              },
+              {
+                "test": "test_processes.WindowsJobIntegration.test_parent_nonzero_cleans_worker_and_grandchild",
+                "seconds": 1.1e-05
+              },
+              {
+                "test": "test_processes.WindowsJobIntegration.test_parent_success_cleans_worker_and_grandchild",
+                "seconds": 8e-06
+              },
+              {
+                "test": "test_processes.WindowsJobIntegration.test_resource_error_cleans_worker_and_grandchild",
+                "seconds": 7e-06
+              },
+              {
+                "test": "test_processes.WindowsJobIntegration.test_resume_failure_never_executes_child_and_closes_handles",
+                "seconds": 8e-06
+              },
+              {
+                "test": "test_processes.WindowsJobIntegration.test_timeout_cleans_worker_and_grandchild",
+                "seconds": 8e-06
+              },
+              {
+                "test": "test_release.FrozenInputProvenance.test_empty_frozen_input_is_valid",
+                "seconds": 0.001331
+              },
+              {
+                "test": "test_release.FrozenInputProvenance.test_release_rejects_invalid_size_schema_before_other_checks",
+                "seconds": 0.030161
+              },
+              {
+                "test": "test_release.FrozenInputProvenance.test_release_rejects_wrong_size_with_correct_hash",
+                "seconds": 0.000781
+              },
+              {
+                "test": "test_release.FrozenInputProvenance.test_selected_git_input_requires_size_and_checksum",
+                "seconds": 0.031644
+              },
+              {
+                "test": "test_release.LatestInvocationProof.test_filename_identity_and_simultaneous_attempts_fail_closed",
+                "seconds": 0.001446
+              },
+              {
+                "test": "test_release.LatestInvocationProof.test_latest_success_matches_counterpart_and_follows_older_failure",
+                "seconds": 0.00085
+              },
+              {
+                "test": "test_release.LatestInvocationProof.test_malformed_older_record_is_not_silently_ignored",
+                "seconds": 0.003097
+              },
+              {
+                "test": "test_release.LatestInvocationProof.test_matching_id_but_different_record_body_is_rejected",
+                "seconds": 0.000712
+              },
+              {
+                "test": "test_release.LatestInvocationProof.test_missing_counterpart_fails_closed",
+                "seconds": 0.000633
+              },
+              {
+                "test": "test_release.LatestInvocationProof.test_old_completed_record_rejected_after_newer_failed_or_successful_attempt",
+                "seconds": 0.003088
+              },
+              {
+                "test": "test_release.LatestInvocationProof.test_unsafe_ids_and_naive_or_invalid_start_times_are_rejected",
+                "seconds": 0.018704
+              },
+              {
+                "test": "test_release.ReleasePayload.test_stale_staged_code_and_missing_new_code_are_rejected",
+                "seconds": 0.024942
+              },
+              {
+                "test": "test_release.ReleasePayload.test_upstream_bytes_are_never_text_normalized",
+                "seconds": 0.009884
+              },
+              {
+                "test": "test_reporting.ReportingContracts.test_failed_zero_and_all_skipped_validation_counts_do_not_claim_success",
+                "seconds": 0.000373
+              },
+              {
+                "test": "test_reporting.ReportingContracts.test_invalid_counts_cannot_generate_negative_executed_tests",
+                "seconds": 5e-05
+              },
+              {
+                "test": "test_reporting.ReportingContracts.test_local_platform_and_scientific_artifact_preserved",
+                "seconds": 0.001106
+              },
+              {
+                "test": "test_reporting.ReportingContracts.test_pilot_and_validation_do_not_claim_full_analysis",
+                "seconds": 0.000186
+              },
+              {
+                "test": "test_reporting.ReportingContracts.test_summary_and_invocation_report_platform_skips_separately",
+                "seconds": 0.001583
+              },
+              {
+                "test": "test_reporting.ReportingContracts.test_visual_review_requires_matching_file_hash",
+                "seconds": 0.006289
+              },
+              {
+                "test": "test_reproduction.ReproductionContracts.test_archive_expansion_is_bounded",
+                "seconds": 0.000734
+              },
+              {
+                "test": "test_reproduction.ReproductionContracts.test_archive_rejects_traversal_and_links",
+                "seconds": 0.000954
+              },
+              {
+                "test": "test_reproduction.ReproductionContracts.test_cleanup_cannot_hide_detected_resource_failure",
+                "seconds": 0.000118
+              },
+              {
+                "test": "test_reproduction.ReproductionContracts.test_comparison_excludes_operational_records_and_detects_tampering",
+                "seconds": 0.001013
+              },
+              {
+                "test": "test_reproduction.ReproductionContracts.test_path_containment_rejects_other_shell_and_os_paths",
+                "seconds": 0.000407
+              },
+              {
+                "test": "test_reproduction.ReproductionContracts.test_recursive_cleanup_cannot_target_workspace_or_cache_root",
+                "seconds": 0.001345
+              },
+              {
+                "test": "test_reproduction.ReproductionContracts.test_regular_archive_extracts_exact_bytes",
+                "seconds": 0.000831
+              },
+              {
+                "test": "test_resources.ResourceContracts.test_aggregate_limit_separate_from_per_process_limit",
+                "seconds": 0.003606
+              },
+              {
+                "test": "test_resources.ResourceContracts.test_family_sums_current_rss_not_historical_peaks",
+                "seconds": 0.000224
+              },
+              {
+                "test": "test_resources.ResourceContracts.test_local_baseline_ignores_historical_machine_and_does_not_reset",
+                "seconds": 0.001644
+              },
+              {
+                "test": "test_resources.ResourceContracts.test_timeout_terminates_spawned_process_tree",
+                "seconds": 0.00082
+              },
+              {
+                "test": "test_samples.SampleIdentityTests.test_decimal_source_ids_do_not_collapse",
+                "seconds": 5.3e-05
+              },
+              {
+                "test": "test_samples.SampleIdentityTests.test_duplicate_source_row_fails_instead_of_merging",
+                "seconds": 9.9e-05
+              },
+              {
+                "test": "test_samples.SampleIdentityTests.test_fastq_sizes_count_files_not_biological_replicates",
                 "seconds": 5.5e-05
               },
               {
+                "test": "test_samples.SampleIdentityTests.test_identifiers_require_experiment_and_group",
+                "seconds": 2.8e-05
+              },
+              {
+                "test": "test_samples.SampleIdentityTests.test_inoculum_not_assigned_to_recipient",
+                "seconds": 2.4e-05
+              },
+              {
+                "test": "test_samples.SampleIdentityTests.test_pool_cannot_link_to_an_individual",
+                "seconds": 1.7e-05
+              },
+              {
+                "test": "test_samples.SampleIdentityTests.test_source_rows_match_only_observed_within_row_assays",
+                "seconds": 3.9e-05
+              },
+              {
                 "test": "test_validation_identity.ValidationIdentity.test_source_edit_during_suite_fails_and_retains_both_identities",
-                "seconds": 0.03227
+                "seconds": 0.045203
               },
               {
                 "test": "test_wsl_archive.NativeArchiveContracts.test_expanded_byte_member_and_truncated_stream_bounds",
-                "seconds": 0.001515
+                "seconds": 0.002487
               },
               {
                 "test": "test_wsl_archive.NativeArchiveContracts.test_links_special_files_and_duplicate_members_are_rejected",
-                "seconds": 0.001895
+                "seconds": 0.002994
               },
               {
                 "test": "test_wsl_archive.NativeArchiveContracts.test_real_nonseekable_tar_stream_extracts_exact_file_bytes",
-                "seconds": 0.00094
+                "seconds": 0.001083
               },
               {
                 "test": "test_wsl_archive.NativeArchiveContracts.test_traversal_absolute_and_alternate_separator_paths_are_rejected",
-                "seconds": 0.002843
+                "seconds": 0.001742
               },
               {
                 "test": "test_wsl_archive.NativeArchiveContracts.test_verify_file_requires_exact_size_hash_and_safe_path",
-                "seconds": 0.001844
+                "seconds": 0.000647
+              },
+              {
+                "test": "test_wsl_archive.NativeInputIdentity.test_correct_hash_does_not_override_wrong_size",
+                "seconds": 0.001356
+              },
+              {
+                "test": "test_wsl_archive.NativeInputIdentity.test_prebootstrap_snapshot_imports_no_scientific_packages",
+                "seconds": 0.06262
+              },
+              {
+                "test": "test_wsl_archive.NativeInputIdentity.test_same_size_tampering_still_fails_checksum",
+                "seconds": 0.008731
+              },
+              {
+                "test": "test_wsl_archive.NativeInputIdentity.test_size_is_required_and_rejects_negative_bool_string_and_float",
+                "seconds": 0.012568
+              },
+              {
+                "test": "test_wsl_archive.NativeInputIdentity.test_ten_inputs_and_zero_byte_file_keep_verified_identity",
+                "seconds": 0.00194
               }
             ],
-            "tests_run": 135,
+            "tests_run": 174,
             "failures": 0,
             "errors": 0,
             "skipped": 9,
             "success": true,
-            "peak_rss_bytes": 205082624,
+            "peak_rss_bytes": 205963264,
             "synthetic_software_calibration": {
               "status": "completed",
               "purpose": "synthetic_not_biological",
@@ -1513,7 +1669,7 @@
               ]
             }
           },
-          "recorded_peak_rss_bytes": 132231168,
+          "recorded_peak_rss_bytes": 132005888,
           "resource_scope": "measured_this_invocation"
         },
         {
@@ -1529,7 +1685,7 @@
               6
             ]
           },
-          "recorded_peak_rss_bytes": 254525440,
+          "recorded_peak_rss_bytes": 254291968,
           "resource_scope": "measured_this_invocation"
         }
       ],
@@ -1537,7 +1693,7 @@
       "scientific_stages_executed": 10,
       "scientific_stages_resumed_verified": 0,
       "runtime": {
-        "project_version": "0.2.1",
+        "project_version": "0.2.2",
         "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
         "platform": "linux",
         "packages": {
@@ -1565,9 +1721,9 @@
         }
       },
       "source_contract": {
-        "code_sha256": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
+        "code_sha256": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
         "runtime": {
-          "project_version": "0.2.1",
+          "project_version": "0.2.2",
           "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
           "platform": "linux",
           "packages": {
@@ -1599,18 +1755,18 @@
         "input_manifest": "e61c2efdd943748b06002a515d80babd0827552725682fb3161f907a87663c7b"
       },
       "seed": 20261020,
-      "max_measured_stage_peak_rss_bytes": 254672896,
-      "elapsed_seconds": 26.849,
-      "finished_utc": "2026-10-20T12:43:00.589459+00:00"
+      "max_measured_stage_peak_rss_bytes": 254431232,
+      "elapsed_seconds": 20.142,
+      "finished_utc": "2026-10-21T13:30:25.472777+00:00"
     },
     "validation": {
       "schema_version": 2,
-      "started_utc": "2026-10-20T12:42:41.254488+00:00",
-      "project_version": "0.2.1",
-      "finished_utc": "2026-10-20T12:42:49.516312+00:00",
-      "duration_seconds": 8.262,
-      "code_sha256": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
-      "code_sha256_after": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
+      "started_utc": "2026-10-21T13:30:10.851402+00:00",
+      "project_version": "0.2.2",
+      "finished_utc": "2026-10-21T13:30:17.851742+00:00",
+      "duration_seconds": 7.0,
+      "code_sha256": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
+      "code_sha256_after": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
       "source_unchanged_during_validation": true,
       "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
       "package_versions": {
@@ -1639,572 +1795,728 @@
       "test_timings": [
         {
           "test": "test_acquisition.AcquisitionContracts.test_catalog_excludes_usage_stats",
-          "seconds": 0.000512
+          "seconds": 0.000317
+        },
+        {
+          "test": "test_acquisition.AcquisitionContracts.test_correct_hash_does_not_override_wrong_cached_size",
+          "seconds": 0.001694
+        },
+        {
+          "test": "test_acquisition.AcquisitionContracts.test_download_with_correct_hash_and_wrong_size_is_not_promoted",
+          "seconds": 0.000978
         },
         {
           "test": "test_acquisition.AcquisitionContracts.test_fingerprint_detects_input_change",
-          "seconds": 0.024008
+          "seconds": 0.015805
+        },
+        {
+          "test": "test_acquisition.AcquisitionContracts.test_input_byte_size_schema_rejects_invalid_and_missing_sizes",
+          "seconds": 0.014772
         },
         {
           "test": "test_acquisition.AcquisitionContracts.test_malformed_manifest_fails_before_download",
-          "seconds": 0.017209
+          "seconds": 0.00302
         },
         {
           "test": "test_acquisition.AcquisitionContracts.test_offline_missing_and_corrupt_inputs_fail",
-          "seconds": 0.001365
+          "seconds": 0.000833
         },
         {
           "test": "test_acquisition.AcquisitionContracts.test_streaming_cap_is_enforced_and_partial_removed",
-          "seconds": 0.001796
+          "seconds": 0.000873
         },
         {
           "test": "test_acquisition.AcquisitionContracts.test_validation_does_not_write_or_extract",
-          "seconds": 0.001265
-        },
-        {
-          "test": "test_calibration.SoftwareCalibrationTests.test_benchmark_seed_and_batch_invariance",
-          "seconds": 1.711897
-        },
-        {
-          "test": "test_calibration.SoftwareCalibrationTests.test_cluster_covariance_matches_analytical_contract",
-          "seconds": 0.000369
-        },
-        {
-          "test": "test_calibration.SoftwareCalibrationTests.test_invalid_and_bounded_settings",
-          "seconds": 0.000121
-        },
-        {
-          "test": "test_calibration.SoftwareCalibrationTests.test_obvious_zero_signal_and_added_signal_controls",
-          "seconds": 0.000269
-        },
-        {
-          "test": "test_calibration.SoftwareCalibrationTests.test_outputs_need_no_biological_inputs_and_are_labeled",
-          "seconds": 0.01537
-        },
-        {
-          "test": "test_calibration.SoftwareCalibrationTests.test_replicate_major_generators_preserve_batches_exactly",
-          "seconds": 0.002476
-        },
-        {
-          "test": "test_calibration.SoftwareCalibrationTests.test_vectorized_welch_against_independent_scipy_samples",
-          "seconds": 0.040764
-        },
-        {
-          "test": "test_calibration.SoftwareCalibrationTests.test_wilson_matches_statsmodels_including_boundaries",
-          "seconds": 1.14889
-        },
-        {
-          "test": "test_configuration.ResourcePolicyConfiguration.test_hardware_policy_cannot_be_silently_weakened",
-          "seconds": 0.025053
-        },
-        {
-          "test": "test_environment.DependencyProvenance.test_missing_distribution_is_explicit",
-          "seconds": 0.012293
-        },
-        {
-          "test": "test_environment.DependencyProvenance.test_pins_cover_observed_active_dependency_closure",
-          "seconds": 0.03281
-        },
-        {
-          "test": "test_environment.DependencyProvenance.test_transitive_version_change_invalidates_cache_fingerprint",
-          "seconds": 0.021049
-        },
-        {
-          "test": "test_figure_qa.RecordedFigureReview.test_missing_review_never_means_pass",
-          "seconds": 0.000323
-        },
-        {
-          "test": "test_figure_qa.RecordedFigureReview.test_review_is_invalidated_by_changed_or_added_pdf",
-          "seconds": 0.002478
-        },
-        {
-          "test": "test_immune.TestIndependentStatistics.test_analytical_identity_and_edge_cases",
-          "seconds": 0.000894
-        },
-        {
-          "test": "test_immune.TestIndependentStatistics.test_bh_matches_statsmodels",
-          "seconds": 0.014995
-        },
-        {
-          "test": "test_immune.TestIndependentStatistics.test_leave_one_out_agrees_with_brute_force_means",
-          "seconds": 0.001816
-        },
-        {
-          "test": "test_immune.TestIndependentStatistics.test_welch_matches_scipy",
-          "seconds": 0.005252
-        },
-        {
-          "test": "test_immune.TestSourceIdentifiers.test_blank_rows_missing_outcomes_and_zero",
-          "seconds": 0.254725
-        },
-        {
-          "test": "test_immune.TestSourceIdentifiers.test_duplicate_and_unknown_groups_fail",
-          "seconds": 0.020311
-        },
-        {
-          "test": "test_immune.TestSourceIdentifiers.test_fixed_six_test_family_and_no_study_i_tests",
-          "seconds": 0.028182
-        },
-        {
-          "test": "test_immune.TestSourceIdentifiers.test_literal_and_composite_ids",
-          "seconds": 6.5e-05
-        },
-        {
-          "test": "test_immune.TestSourceIdentifiers.test_unavailable_source_does_not_make_results",
-          "seconds": 0.00038
-        },
-        {
-          "test": "test_io.AtomicJSON.test_conflict_classifier_requires_windows_permissionerror_and_known_code",
-          "seconds": 0.000195
-        },
-        {
-          "test": "test_io.AtomicJSON.test_failed_replace_preserves_existing_record",
-          "seconds": 0.019159
-        },
-        {
-          "test": "test_io.AtomicJSON.test_native_serialization_is_preserved_and_temporary_is_removed",
-          "seconds": 0.012041
-        },
-        {
-          "test": "test_io.AtomicJSON.test_ordinary_permission_nonwindows_and_other_oserrors_are_not_retried",
-          "seconds": 0.018377
-        },
-        {
-          "test": "test_io.AtomicJSON.test_persistent_known_windows_conflict_is_bounded_and_preserves_old_bytes",
-          "seconds": 0.010558
-        },
-        {
-          "test": "test_io.AtomicJSON.test_serialization_failure_never_opens_or_truncates_destination",
-          "seconds": 0.000473
-        },
-        {
-          "test": "test_io.AtomicJSON.test_transient_windows_conflicts_retry_then_publish_with_real_replace",
-          "seconds": 0.013643
-        },
-        {
-          "test": "test_metrics.CommunityMath.test_bray_curtis_scipy",
-          "seconds": 0.000203
-        },
-        {
-          "test": "test_metrics.CommunityMath.test_closure_scale_invariance",
-          "seconds": 9.7e-05
-        },
-        {
-          "test": "test_metrics.CommunityMath.test_invalid_abundances",
-          "seconds": 0.000127
-        },
-        {
-          "test": "test_metrics.CommunityMath.test_pairwise_logratio_identity",
-          "seconds": 8.9e-05
-        },
-        {
-          "test": "test_metrics.CommunityMath.test_zero_handling_and_identity",
-          "seconds": 7.4e-05
-        },
-        {
-          "test": "test_original_methods.OriginalMethodRealDataVerification.test_cached_source_matches_published_caption_without_extra_exclusions",
-          "seconds": 0.541709
-        },
-        {
-          "test": "test_original_methods.OriginalMethodSyntheticTests.test_anova_and_contrast_against_independent_ols",
-          "seconds": 0.994283
-        },
-        {
-          "test": "test_original_methods.OriginalMethodSyntheticTests.test_contrast_covariance_depends_on_unequal_sizes",
-          "seconds": 4.8e-05
-        },
-        {
-          "test": "test_original_methods.OriginalMethodSyntheticTests.test_invalid_groups_and_degenerate_variance",
-          "seconds": 0.000236
-        },
-        {
-          "test": "test_original_methods.OriginalMethodSyntheticTests.test_planned_contrast_is_not_conjunction_of_pairwise_effects",
-          "seconds": 0.131508
-        },
-        {
-          "test": "test_original_methods.OriginalMethodSyntheticTests.test_published_rounding_is_explicit",
-          "seconds": 4.2e-05
-        },
-        {
-          "test": "test_original_methods.OriginalMethodSyntheticTests.test_tukey_against_statsmodels_for_unequal_group_sizes",
-          "seconds": 0.363393
-        },
-        {
-          "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_missing_source_endpoint_record_and_support_violation_fail",
-          "seconds": 0.004672
-        },
-        {
-          "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_prepared_stage_fixture_outputs_are_descriptive_and_repeatable",
-          "seconds": 0.004335
-        },
-        {
-          "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_tampered_or_incomplete_existing_u_fails_before_outputs",
-          "seconds": 0.010498
-        },
-        {
-          "test": "test_phenotype_robustness.RankEffectTests.test_rank_reversal_all_ties_and_invalid_inputs",
-          "seconds": 0.000187
-        },
-        {
-          "test": "test_phenotype_robustness.RankEffectTests.test_tied_midrank_u_matches_independent_library_and_pair_counts",
-          "seconds": 0.000496
-        },
-        {
-          "test": "test_phenotype_robustness.SupportBoundTests.test_bounds_equal_independently_enumerated_corners",
-          "seconds": 0.000207
-        },
-        {
-          "test": "test_phenotype_robustness.SupportBoundTests.test_bounds_reversal_all_missing_and_unknown_support",
-          "seconds": 5.8e-05
-        },
-        {
-          "test": "test_phenotype_robustness.SupportBoundTests.test_invalid_counts_support_and_outcomes_fail",
-          "seconds": 0.000162
-        },
-        {
-          "test": "test_pipeline.PipelineContracts.test_execution_contract_rejects_source_config_spec_and_runtime_changes",
-          "seconds": 0.061344
-        },
-        {
-          "test": "test_pipeline.PipelineContracts.test_expected_input_materialization_does_not_change_source_contract",
-          "seconds": 0.024798
-        },
-        {
-          "test": "test_pipeline.PipelineContracts.test_malformed_valid_json_cache_is_invalidated_without_exception",
-          "seconds": 0.00102
-        },
-        {
-          "test": "test_pipeline.PipelineContracts.test_output_tamper_and_exact_output_set",
-          "seconds": 0.001758
-        },
-        {
-          "test": "test_pipeline.PipelineContracts.test_runtime_change_invalidates_fingerprint",
-          "seconds": 0.001792
-        },
-        {
-          "test": "test_pipeline.PipelineContracts.test_upstream_changes_invalidate_downstream_cache",
-          "seconds": 0.001337
-        },
-        {
-          "test": "test_pipeline.PipelineContracts.test_validation_only_does_not_fetch_or_extract",
-          "seconds": 0.000898
-        },
-        {
-          "test": "test_pipeline_failures.RunnerFinalizationFailures.test_final_resource_failure_cannot_preserve_completed_status",
-          "seconds": 0.108427
-        },
-        {
-          "test": "test_pipeline_failures.RunnerFinalizationFailures.test_interruption_survives_secondary_finalization_errors",
-          "seconds": 0.084213
-        },
-        {
-          "test": "test_pipeline_failures.RunnerFinalizationFailures.test_new_reporting_failure_fails_previously_completed_analysis",
-          "seconds": 0.106536
-        },
-        {
-          "test": "test_pipeline_failures.RunnerFinalizationFailures.test_original_failure_survives_secondary_resource_and_reporting_errors",
-          "seconds": 0.091254
-        },
-        {
-          "test": "test_pipeline_failures.RunnerFinalizationFailures.test_resource_record_write_failure_is_terminal_and_recorded",
-          "seconds": 0.075483
-        },
-        {
-          "test": "test_pipeline_failures.RunnerFinalizationFailures.test_status_path_failure_still_records_failed_invocation",
-          "seconds": 0.060427
-        },
-        {
-          "test": "test_portability.PortabilityContracts.test_absolute_and_relative_boundaries_are_fixed_or_conditions",
-          "seconds": 0.005618
-        },
-        {
-          "test": "test_portability.PortabilityContracts.test_bounds_limit_detail_without_hiding_total_differences",
-          "seconds": 0.004266
-        },
-        {
-          "test": "test_portability.PortabilityContracts.test_exact_bytes_and_newline_only_semantic_equality_are_distinct",
-          "seconds": 0.002692
-        },
-        {
-          "test": "test_portability.PortabilityContracts.test_hard_invalid_figure_takes_precedence_over_other_visual_review",
-          "seconds": 0.015153
-        },
-        {
-          "test": "test_portability.PortabilityContracts.test_header_row_order_row_count_and_row_width_are_enforced",
-          "seconds": 0.003423
-        },
-        {
-          "test": "test_portability.PortabilityContracts.test_ids_source_values_counts_json_and_publication_fields_remain_exact",
-          "seconds": 0.004967
-        },
-        {
-          "test": "test_portability.PortabilityContracts.test_nonfinite_values_are_rejected_even_when_bytes_match",
-          "seconds": 0.008548
-        },
-        {
-          "test": "test_portability.PortabilityContracts.test_plan_is_deterministic_and_names_every_fixed_schema",
-          "seconds": 0.000819
-        },
-        {
-          "test": "test_portability.PortabilityContracts.test_tree_inventory_and_figure_review_never_claim_byte_identity",
-          "seconds": 0.045676
-        },
-        {
-          "test": "test_portability.PortabilityContracts.test_unknown_schema_and_broadened_whitelist_fail_closed",
-          "seconds": 0.001767
-        },
-        {
-          "test": "test_processes.LinuxIdentityContracts.test_pidfd_capture_rechecks_identity_and_closes_raced_descriptor",
-          "seconds": 0.00088
-        },
-        {
-          "test": "test_processes.LinuxIdentityContracts.test_reused_pid_is_not_signalled_by_starttime_fallback",
-          "seconds": 0.000237
-        },
-        {
-          "test": "test_processes.LinuxProcessIntegration.test_keyboard_interrupt_cleans_observed_separate_sessions",
-          "seconds": 0.208642
-        },
-        {
-          "test": "test_processes.LinuxProcessIntegration.test_observed_reparented_leaf_is_cleaned_on_controller_failure",
-          "seconds": 0.212769
-        },
-        {
-          "test": "test_processes.LinuxProcessIntegration.test_parent_nonzero_cleans_ordinary_process_group",
-          "seconds": 0.217852
-        },
-        {
-          "test": "test_processes.LinuxProcessIntegration.test_parent_success_cleans_ordinary_process_group",
-          "seconds": 0.21669
-        },
-        {
-          "test": "test_processes.LinuxProcessIntegration.test_resource_failure_cleans_observed_separate_sessions",
-          "seconds": 0.209441
-        },
-        {
-          "test": "test_processes.LinuxProcessIntegration.test_timeout_cleans_observed_separate_sessions",
-          "seconds": 0.617368
-        },
-        {
-          "test": "test_processes.ProcessCleanupContracts.test_normal_parent_success_does_not_hide_cleanup_failure",
-          "seconds": 0.000849
-        },
-        {
-          "test": "test_processes.ProcessCleanupContracts.test_original_guard_error_survives_secondary_cleanup_error",
-          "seconds": 0.000617
-        },
-        {
-          "test": "test_processes.ProcessCleanupContracts.test_posix_group_is_signalled_after_leader_has_already_exited",
-          "seconds": 0.000603
-        },
-        {
-          "test": "test_processes.WindowsJobIntegration.test_argv_cwd_environment_stdin_and_combined_log",
-          "seconds": 1.7e-05
-        },
-        {
-          "test": "test_processes.WindowsJobIntegration.test_assignment_failure_never_executes_child_and_closes_handles",
-          "seconds": 1e-05
-        },
-        {
-          "test": "test_processes.WindowsJobIntegration.test_create_failure_does_not_leak_job_or_stdio_handles",
-          "seconds": 6e-06
-        },
-        {
-          "test": "test_processes.WindowsJobIntegration.test_keyboard_interrupt_cleans_worker_and_grandchild",
-          "seconds": 5e-06
-        },
-        {
-          "test": "test_processes.WindowsJobIntegration.test_parent_nonzero_cleans_worker_and_grandchild",
-          "seconds": 5e-06
-        },
-        {
-          "test": "test_processes.WindowsJobIntegration.test_parent_success_cleans_worker_and_grandchild",
-          "seconds": 4e-06
-        },
-        {
-          "test": "test_processes.WindowsJobIntegration.test_resource_error_cleans_worker_and_grandchild",
-          "seconds": 4e-06
-        },
-        {
-          "test": "test_processes.WindowsJobIntegration.test_resume_failure_never_executes_child_and_closes_handles",
-          "seconds": 5e-06
-        },
-        {
-          "test": "test_processes.WindowsJobIntegration.test_timeout_cleans_worker_and_grandchild",
-          "seconds": 4e-06
-        },
-        {
-          "test": "test_release.LatestInvocationProof.test_filename_identity_and_simultaneous_attempts_fail_closed",
-          "seconds": 0.001746
-        },
-        {
-          "test": "test_release.LatestInvocationProof.test_latest_success_matches_counterpart_and_follows_older_failure",
-          "seconds": 0.001043
-        },
-        {
-          "test": "test_release.LatestInvocationProof.test_malformed_older_record_is_not_silently_ignored",
-          "seconds": 0.003812
-        },
-        {
-          "test": "test_release.LatestInvocationProof.test_matching_id_but_different_record_body_is_rejected",
-          "seconds": 0.001138
-        },
-        {
-          "test": "test_release.LatestInvocationProof.test_missing_counterpart_fails_closed",
-          "seconds": 0.00084
-        },
-        {
-          "test": "test_release.LatestInvocationProof.test_old_completed_record_rejected_after_newer_failed_or_successful_attempt",
-          "seconds": 0.004399
-        },
-        {
-          "test": "test_release.LatestInvocationProof.test_unsafe_ids_and_naive_or_invalid_start_times_are_rejected",
-          "seconds": 0.010389
-        },
-        {
-          "test": "test_release.ReleasePayload.test_stale_staged_code_and_missing_new_code_are_rejected",
-          "seconds": 0.054077
-        },
-        {
-          "test": "test_release.ReleasePayload.test_upstream_bytes_are_never_text_normalized",
-          "seconds": 0.013461
-        },
-        {
-          "test": "test_reporting.ReportingContracts.test_local_platform_and_scientific_artifact_preserved",
-          "seconds": 0.001527
-        },
-        {
-          "test": "test_reporting.ReportingContracts.test_pilot_and_validation_do_not_claim_full_analysis",
-          "seconds": 0.000251
-        },
-        {
-          "test": "test_reporting.ReportingContracts.test_visual_review_requires_matching_file_hash",
-          "seconds": 0.001786
-        },
-        {
-          "test": "test_reproduction.ReproductionContracts.test_archive_expansion_is_bounded",
-          "seconds": 0.001018
-        },
-        {
-          "test": "test_reproduction.ReproductionContracts.test_archive_rejects_traversal_and_links",
-          "seconds": 0.001424
-        },
-        {
-          "test": "test_reproduction.ReproductionContracts.test_cleanup_cannot_hide_detected_resource_failure",
-          "seconds": 0.00016
-        },
-        {
-          "test": "test_reproduction.ReproductionContracts.test_comparison_excludes_operational_records_and_detects_tampering",
-          "seconds": 0.001704
-        },
-        {
-          "test": "test_reproduction.ReproductionContracts.test_path_containment_rejects_other_shell_and_os_paths",
-          "seconds": 0.000593
-        },
-        {
-          "test": "test_reproduction.ReproductionContracts.test_recursive_cleanup_cannot_target_workspace_or_cache_root",
-          "seconds": 0.001338
-        },
-        {
-          "test": "test_reproduction.ReproductionContracts.test_regular_archive_extracts_exact_bytes",
           "seconds": 0.00097
         },
         {
-          "test": "test_resources.ResourceContracts.test_aggregate_limit_separate_from_per_process_limit",
-          "seconds": 0.00444
+          "test": "test_acquisition.AcquisitionContracts.test_zenodo_download_rejects_wrong_canonical_size",
+          "seconds": 0.001286
         },
         {
-          "test": "test_resources.ResourceContracts.test_family_sums_current_rss_not_historical_peaks",
-          "seconds": 0.000312
+          "test": "test_acquisition.AcquisitionContracts.test_zenodo_download_verifies_canonical_stored_size",
+          "seconds": 0.004202
         },
         {
-          "test": "test_resources.ResourceContracts.test_local_baseline_ignores_historical_machine_and_does_not_reset",
-          "seconds": 0.002198
+          "test": "test_acquisition.AcquisitionContracts.test_zero_byte_input_is_valid_for_cache_and_offline_fetch",
+          "seconds": 0.001672
         },
         {
-          "test": "test_resources.ResourceContracts.test_timeout_terminates_spawned_process_tree",
-          "seconds": 0.001157
+          "test": "test_calibration.SoftwareCalibrationTests.test_benchmark_seed_and_batch_invariance",
+          "seconds": 1.139059
         },
         {
-          "test": "test_samples.SampleIdentityTests.test_decimal_source_ids_do_not_collapse",
-          "seconds": 8.3e-05
+          "test": "test_calibration.SoftwareCalibrationTests.test_cluster_covariance_matches_analytical_contract",
+          "seconds": 0.000214
         },
         {
-          "test": "test_samples.SampleIdentityTests.test_duplicate_source_row_fails_instead_of_merging",
-          "seconds": 0.000134
+          "test": "test_calibration.SoftwareCalibrationTests.test_invalid_and_bounded_settings",
+          "seconds": 6.9e-05
         },
         {
-          "test": "test_samples.SampleIdentityTests.test_fastq_sizes_count_files_not_biological_replicates",
-          "seconds": 4.1e-05
+          "test": "test_calibration.SoftwareCalibrationTests.test_obvious_zero_signal_and_added_signal_controls",
+          "seconds": 0.000156
         },
         {
-          "test": "test_samples.SampleIdentityTests.test_identifiers_require_experiment_and_group",
-          "seconds": 3.3e-05
+          "test": "test_calibration.SoftwareCalibrationTests.test_outputs_need_no_biological_inputs_and_are_labeled",
+          "seconds": 0.009872
         },
         {
-          "test": "test_samples.SampleIdentityTests.test_inoculum_not_assigned_to_recipient",
+          "test": "test_calibration.SoftwareCalibrationTests.test_replicate_major_generators_preserve_batches_exactly",
+          "seconds": 0.001325
+        },
+        {
+          "test": "test_calibration.SoftwareCalibrationTests.test_vectorized_welch_against_independent_scipy_samples",
+          "seconds": 0.018794
+        },
+        {
+          "test": "test_calibration.SoftwareCalibrationTests.test_wilson_matches_statsmodels_including_boundaries",
+          "seconds": 0.753812
+        },
+        {
+          "test": "test_configuration.ResourcePolicyConfiguration.test_hardware_policy_cannot_be_silently_weakened",
+          "seconds": 0.035949
+        },
+        {
+          "test": "test_environment.DependencyProvenance.test_missing_distribution_is_explicit",
+          "seconds": 0.008629
+        },
+        {
+          "test": "test_environment.DependencyProvenance.test_pins_cover_observed_active_dependency_closure",
+          "seconds": 0.021189
+        },
+        {
+          "test": "test_environment.DependencyProvenance.test_transitive_version_change_invalidates_cache_fingerprint",
+          "seconds": 0.014202
+        },
+        {
+          "test": "test_figure_qa.RecordedFigureReview.test_missing_review_never_means_pass",
+          "seconds": 0.000258
+        },
+        {
+          "test": "test_figure_qa.RecordedFigureReview.test_review_is_invalidated_by_changed_or_added_pdf",
+          "seconds": 0.001443
+        },
+        {
+          "test": "test_immune.TestIndependentStatistics.test_analytical_identity_and_edge_cases",
+          "seconds": 0.000794
+        },
+        {
+          "test": "test_immune.TestIndependentStatistics.test_bh_matches_statsmodels",
+          "seconds": 0.010078
+        },
+        {
+          "test": "test_immune.TestIndependentStatistics.test_leave_one_out_agrees_with_brute_force_means",
+          "seconds": 0.001249
+        },
+        {
+          "test": "test_immune.TestIndependentStatistics.test_welch_matches_scipy",
+          "seconds": 0.00374
+        },
+        {
+          "test": "test_immune.TestSourceIdentifiers.test_blank_rows_missing_outcomes_and_zero",
+          "seconds": 0.161316
+        },
+        {
+          "test": "test_immune.TestSourceIdentifiers.test_duplicate_and_unknown_groups_fail",
+          "seconds": 0.016949
+        },
+        {
+          "test": "test_immune.TestSourceIdentifiers.test_fixed_six_test_family_and_no_study_i_tests",
+          "seconds": 0.02105
+        },
+        {
+          "test": "test_immune.TestSourceIdentifiers.test_literal_and_composite_ids",
+          "seconds": 4.8e-05
+        },
+        {
+          "test": "test_immune.TestSourceIdentifiers.test_unavailable_source_does_not_make_results",
+          "seconds": 0.000352
+        },
+        {
+          "test": "test_io.AtomicJSON.test_conflict_classifier_requires_windows_permissionerror_and_known_code",
+          "seconds": 0.000136
+        },
+        {
+          "test": "test_io.AtomicJSON.test_failed_replace_preserves_existing_record",
+          "seconds": 0.028146
+        },
+        {
+          "test": "test_io.AtomicJSON.test_native_serialization_is_preserved_and_temporary_is_removed",
+          "seconds": 0.019097
+        },
+        {
+          "test": "test_io.AtomicJSON.test_ordinary_permission_nonwindows_and_other_oserrors_are_not_retried",
+          "seconds": 0.012102
+        },
+        {
+          "test": "test_io.AtomicJSON.test_persistent_known_windows_conflict_is_bounded_and_preserves_old_bytes",
+          "seconds": 0.009189
+        },
+        {
+          "test": "test_io.AtomicJSON.test_serialization_failure_never_opens_or_truncates_destination",
+          "seconds": 0.000262
+        },
+        {
+          "test": "test_io.AtomicJSON.test_transient_windows_conflicts_retry_then_publish_with_real_replace",
+          "seconds": 0.008969
+        },
+        {
+          "test": "test_metrics.CommunityMath.test_bray_curtis_scipy",
+          "seconds": 0.000142
+        },
+        {
+          "test": "test_metrics.CommunityMath.test_closure_scale_invariance",
+          "seconds": 7.9e-05
+        },
+        {
+          "test": "test_metrics.CommunityMath.test_invalid_abundances",
+          "seconds": 7.9e-05
+        },
+        {
+          "test": "test_metrics.CommunityMath.test_pairwise_logratio_identity",
+          "seconds": 5.8e-05
+        },
+        {
+          "test": "test_metrics.CommunityMath.test_zero_handling_and_identity",
+          "seconds": 4.8e-05
+        },
+        {
+          "test": "test_original_methods.OriginalMethodRealDataVerification.test_cached_source_matches_published_caption_without_extra_exclusions",
+          "seconds": 0.354588
+        },
+        {
+          "test": "test_original_methods.OriginalMethodSyntheticTests.test_anova_and_contrast_against_independent_ols",
+          "seconds": 0.651893
+        },
+        {
+          "test": "test_original_methods.OriginalMethodSyntheticTests.test_contrast_covariance_depends_on_unequal_sizes",
           "seconds": 3e-05
         },
         {
-          "test": "test_samples.SampleIdentityTests.test_pool_cannot_link_to_an_individual",
-          "seconds": 2.5e-05
+          "test": "test_original_methods.OriginalMethodSyntheticTests.test_invalid_groups_and_degenerate_variance",
+          "seconds": 0.000151
         },
         {
-          "test": "test_samples.SampleIdentityTests.test_source_rows_match_only_observed_within_row_assays",
+          "test": "test_original_methods.OriginalMethodSyntheticTests.test_planned_contrast_is_not_conjunction_of_pairwise_effects",
+          "seconds": 0.083736
+        },
+        {
+          "test": "test_original_methods.OriginalMethodSyntheticTests.test_published_rounding_is_explicit",
+          "seconds": 2.9e-05
+        },
+        {
+          "test": "test_original_methods.OriginalMethodSyntheticTests.test_tukey_against_statsmodels_for_unequal_group_sizes",
+          "seconds": 0.224271
+        },
+        {
+          "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_missing_source_endpoint_record_and_support_violation_fail",
+          "seconds": 0.043414
+        },
+        {
+          "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_prepared_stage_fixture_outputs_are_descriptive_and_repeatable",
+          "seconds": 0.007693
+        },
+        {
+          "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_tampered_or_incomplete_existing_u_fails_before_outputs",
+          "seconds": 0.009917
+        },
+        {
+          "test": "test_phenotype_robustness.RankEffectTests.test_rank_reversal_all_ties_and_invalid_inputs",
+          "seconds": 0.00011
+        },
+        {
+          "test": "test_phenotype_robustness.RankEffectTests.test_tied_midrank_u_matches_independent_library_and_pair_counts",
+          "seconds": 0.000251
+        },
+        {
+          "test": "test_phenotype_robustness.SupportBoundTests.test_bounds_equal_independently_enumerated_corners",
+          "seconds": 0.000133
+        },
+        {
+          "test": "test_phenotype_robustness.SupportBoundTests.test_bounds_reversal_all_missing_and_unknown_support",
+          "seconds": 3.8e-05
+        },
+        {
+          "test": "test_phenotype_robustness.SupportBoundTests.test_invalid_counts_support_and_outcomes_fail",
+          "seconds": 8.5e-05
+        },
+        {
+          "test": "test_pipeline.PipelineContracts.test_execution_contract_rejects_source_config_spec_and_runtime_changes",
+          "seconds": 0.03701
+        },
+        {
+          "test": "test_pipeline.PipelineContracts.test_expected_input_materialization_does_not_change_source_contract",
+          "seconds": 0.014182
+        },
+        {
+          "test": "test_pipeline.PipelineContracts.test_malformed_valid_json_cache_is_invalidated_without_exception",
+          "seconds": 0.00055
+        },
+        {
+          "test": "test_pipeline.PipelineContracts.test_output_tamper_and_exact_output_set",
+          "seconds": 0.001828
+        },
+        {
+          "test": "test_pipeline.PipelineContracts.test_runtime_change_invalidates_fingerprint",
+          "seconds": 0.001003
+        },
+        {
+          "test": "test_pipeline.PipelineContracts.test_upstream_changes_invalidate_downstream_cache",
+          "seconds": 0.000721
+        },
+        {
+          "test": "test_pipeline.PipelineContracts.test_validation_only_does_not_fetch_or_extract",
+          "seconds": 0.000507
+        },
+        {
+          "test": "test_pipeline_failures.RunnerFinalizationFailures.test_final_resource_failure_cannot_preserve_completed_status",
+          "seconds": 0.099374
+        },
+        {
+          "test": "test_pipeline_failures.RunnerFinalizationFailures.test_interruption_survives_secondary_finalization_errors",
+          "seconds": 0.097576
+        },
+        {
+          "test": "test_pipeline_failures.RunnerFinalizationFailures.test_new_reporting_failure_fails_previously_completed_analysis",
+          "seconds": 0.126694
+        },
+        {
+          "test": "test_pipeline_failures.RunnerFinalizationFailures.test_original_failure_survives_secondary_resource_and_reporting_errors",
+          "seconds": 0.050605
+        },
+        {
+          "test": "test_pipeline_failures.RunnerFinalizationFailures.test_resource_record_write_failure_is_terminal_and_recorded",
+          "seconds": 0.015727
+        },
+        {
+          "test": "test_pipeline_failures.RunnerFinalizationFailures.test_status_path_failure_still_records_failed_invocation",
+          "seconds": 0.015154
+        },
+        {
+          "test": "test_portability.PortabilityContracts.test_absolute_and_relative_boundaries_are_fixed_or_conditions",
+          "seconds": 0.004794
+        },
+        {
+          "test": "test_portability.PortabilityContracts.test_bounds_limit_detail_without_hiding_total_differences",
+          "seconds": 0.002658
+        },
+        {
+          "test": "test_portability.PortabilityContracts.test_exact_bytes_and_newline_only_semantic_equality_are_distinct",
+          "seconds": 0.007236
+        },
+        {
+          "test": "test_portability.PortabilityContracts.test_hard_invalid_figure_takes_precedence_over_other_visual_review",
+          "seconds": 0.025563
+        },
+        {
+          "test": "test_portability.PortabilityContracts.test_header_row_order_row_count_and_row_width_are_enforced",
+          "seconds": 0.012617
+        },
+        {
+          "test": "test_portability.PortabilityContracts.test_ids_source_values_counts_json_and_publication_fields_remain_exact",
+          "seconds": 0.00858
+        },
+        {
+          "test": "test_portability.PortabilityContracts.test_nonfinite_values_are_rejected_even_when_bytes_match",
+          "seconds": 0.021975
+        },
+        {
+          "test": "test_portability.PortabilityContracts.test_plan_is_deterministic_and_names_every_fixed_schema",
+          "seconds": 0.000485
+        },
+        {
+          "test": "test_portability.PortabilityContracts.test_tree_inventory_and_figure_review_never_claim_byte_identity",
+          "seconds": 0.037857
+        },
+        {
+          "test": "test_portability.PortabilityContracts.test_unknown_schema_and_broadened_whitelist_fail_closed",
+          "seconds": 0.001098
+        },
+        {
+          "test": "test_private_push.GitPolicy.test_clean_new_blob_and_empty_commit_are_supported",
+          "seconds": 0.076545
+        },
+        {
+          "test": "test_private_push.GitPolicy.test_credentials_removed_by_later_commit_still_block_release",
+          "seconds": 0.051395
+        },
+        {
+          "test": "test_private_push.GitPolicy.test_default_approved_destination_is_valid",
+          "seconds": 0.020185
+        },
+        {
+          "test": "test_private_push.GitPolicy.test_explicit_url_rewrite_is_checked_even_with_an_approved_pushurl",
+          "seconds": 0.02998
+        },
+        {
+          "test": "test_private_push.GitPolicy.test_generic_url_rewrite_is_rejected",
+          "seconds": 0.01923
+        },
+        {
+          "test": "test_private_push.GitPolicy.test_git_replacement_cannot_conceal_original_credential_blob",
+          "seconds": 0.031082
+        },
+        {
+          "test": "test_private_push.GitPolicy.test_inherited_config_selector_cannot_hide_transport_rewrites",
+          "seconds": 0.018114
+        },
+        {
+          "test": "test_private_push.GitPolicy.test_multiple_push_destinations_are_rejected",
+          "seconds": 0.01129
+        },
+        {
+          "test": "test_private_push.GitPolicy.test_private_working_file_in_new_history_is_rejected",
+          "seconds": 0.026468
+        },
+        {
+          "test": "test_private_push.GitPolicy.test_push_only_url_rewrite_is_rejected",
+          "seconds": 0.014251
+        },
+        {
+          "test": "test_private_push.GitPolicy.test_separate_public_push_url_is_rejected",
+          "seconds": 0.010435
+        },
+        {
+          "test": "test_private_push.ReleaseIdentity.test_api_host_is_pinned_despite_an_inherited_enterprise_host",
+          "seconds": 0.000355
+        },
+        {
+          "test": "test_private_push.ReleaseIdentity.test_commit_message_format_is_enforced",
+          "seconds": 0.000241
+        },
+        {
+          "test": "test_private_push.ReleaseIdentity.test_credentials_in_commit_bodies_are_rejected_without_echoing_values",
+          "seconds": 2.2e-05
+        },
+        {
+          "test": "test_private_push.ReleaseIdentity.test_default_check_never_invokes_a_push",
+          "seconds": 0.000179
+        },
+        {
+          "test": "test_private_push.ReleaseIdentity.test_optimized_python_cannot_disable_the_private_check",
+          "seconds": 0.258168
+        },
+        {
+          "test": "test_private_push.ReleaseIdentity.test_other_authors_committers_and_coauthor_trailers_are_rejected",
+          "seconds": 0.0002
+        },
+        {
+          "test": "test_private_push.ReleaseIdentity.test_private_target_and_single_researcher_are_required",
+          "seconds": 0.000115
+        },
+        {
+          "test": "test_private_push.ReleaseIdentity.test_public_target_stops_before_any_git_or_push_operation",
+          "seconds": 0.000128
+        },
+        {
+          "test": "test_private_push.ReleaseIdentity.test_user_authored_github_web_commits_remain_valid",
+          "seconds": 2.7e-05
+        },
+        {
+          "test": "test_private_push.ReleaseIdentity.test_verified_push_pins_commit_and_url_and_blocks_visibility_change",
+          "seconds": 0.000615
+        },
+        {
+          "test": "test_processes.LinuxIdentityContracts.test_pidfd_capture_rechecks_identity_and_closes_raced_descriptor",
+          "seconds": 0.000547
+        },
+        {
+          "test": "test_processes.LinuxIdentityContracts.test_reused_pid_is_not_signalled_by_starttime_fallback",
+          "seconds": 0.000158
+        },
+        {
+          "test": "test_processes.LinuxProcessIntegration.test_keyboard_interrupt_cleans_observed_separate_sessions",
+          "seconds": 0.211398
+        },
+        {
+          "test": "test_processes.LinuxProcessIntegration.test_observed_reparented_leaf_is_cleaned_on_controller_failure",
+          "seconds": 0.21019
+        },
+        {
+          "test": "test_processes.LinuxProcessIntegration.test_parent_nonzero_cleans_ordinary_process_group",
+          "seconds": 0.217222
+        },
+        {
+          "test": "test_processes.LinuxProcessIntegration.test_parent_success_cleans_ordinary_process_group",
+          "seconds": 0.217391
+        },
+        {
+          "test": "test_processes.LinuxProcessIntegration.test_resource_failure_cleans_observed_separate_sessions",
+          "seconds": 0.212722
+        },
+        {
+          "test": "test_processes.LinuxProcessIntegration.test_timeout_cleans_observed_separate_sessions",
+          "seconds": 0.615678
+        },
+        {
+          "test": "test_processes.ProcessCleanupContracts.test_normal_parent_success_does_not_hide_cleanup_failure",
+          "seconds": 0.001805
+        },
+        {
+          "test": "test_processes.ProcessCleanupContracts.test_original_guard_error_survives_secondary_cleanup_error",
+          "seconds": 0.001261
+        },
+        {
+          "test": "test_processes.ProcessCleanupContracts.test_posix_group_is_signalled_after_leader_has_already_exited",
+          "seconds": 0.001126
+        },
+        {
+          "test": "test_processes.WindowsJobIntegration.test_argv_cwd_environment_stdin_and_combined_log",
+          "seconds": 2.8e-05
+        },
+        {
+          "test": "test_processes.WindowsJobIntegration.test_assignment_failure_never_executes_child_and_closes_handles",
+          "seconds": 4.4e-05
+        },
+        {
+          "test": "test_processes.WindowsJobIntegration.test_create_failure_does_not_leak_job_or_stdio_handles",
+          "seconds": 1.5e-05
+        },
+        {
+          "test": "test_processes.WindowsJobIntegration.test_keyboard_interrupt_cleans_worker_and_grandchild",
+          "seconds": 1.1e-05
+        },
+        {
+          "test": "test_processes.WindowsJobIntegration.test_parent_nonzero_cleans_worker_and_grandchild",
+          "seconds": 1.1e-05
+        },
+        {
+          "test": "test_processes.WindowsJobIntegration.test_parent_success_cleans_worker_and_grandchild",
+          "seconds": 8e-06
+        },
+        {
+          "test": "test_processes.WindowsJobIntegration.test_resource_error_cleans_worker_and_grandchild",
+          "seconds": 7e-06
+        },
+        {
+          "test": "test_processes.WindowsJobIntegration.test_resume_failure_never_executes_child_and_closes_handles",
+          "seconds": 8e-06
+        },
+        {
+          "test": "test_processes.WindowsJobIntegration.test_timeout_cleans_worker_and_grandchild",
+          "seconds": 8e-06
+        },
+        {
+          "test": "test_release.FrozenInputProvenance.test_empty_frozen_input_is_valid",
+          "seconds": 0.001331
+        },
+        {
+          "test": "test_release.FrozenInputProvenance.test_release_rejects_invalid_size_schema_before_other_checks",
+          "seconds": 0.030161
+        },
+        {
+          "test": "test_release.FrozenInputProvenance.test_release_rejects_wrong_size_with_correct_hash",
+          "seconds": 0.000781
+        },
+        {
+          "test": "test_release.FrozenInputProvenance.test_selected_git_input_requires_size_and_checksum",
+          "seconds": 0.031644
+        },
+        {
+          "test": "test_release.LatestInvocationProof.test_filename_identity_and_simultaneous_attempts_fail_closed",
+          "seconds": 0.001446
+        },
+        {
+          "test": "test_release.LatestInvocationProof.test_latest_success_matches_counterpart_and_follows_older_failure",
+          "seconds": 0.00085
+        },
+        {
+          "test": "test_release.LatestInvocationProof.test_malformed_older_record_is_not_silently_ignored",
+          "seconds": 0.003097
+        },
+        {
+          "test": "test_release.LatestInvocationProof.test_matching_id_but_different_record_body_is_rejected",
+          "seconds": 0.000712
+        },
+        {
+          "test": "test_release.LatestInvocationProof.test_missing_counterpart_fails_closed",
+          "seconds": 0.000633
+        },
+        {
+          "test": "test_release.LatestInvocationProof.test_old_completed_record_rejected_after_newer_failed_or_successful_attempt",
+          "seconds": 0.003088
+        },
+        {
+          "test": "test_release.LatestInvocationProof.test_unsafe_ids_and_naive_or_invalid_start_times_are_rejected",
+          "seconds": 0.018704
+        },
+        {
+          "test": "test_release.ReleasePayload.test_stale_staged_code_and_missing_new_code_are_rejected",
+          "seconds": 0.024942
+        },
+        {
+          "test": "test_release.ReleasePayload.test_upstream_bytes_are_never_text_normalized",
+          "seconds": 0.009884
+        },
+        {
+          "test": "test_reporting.ReportingContracts.test_failed_zero_and_all_skipped_validation_counts_do_not_claim_success",
+          "seconds": 0.000373
+        },
+        {
+          "test": "test_reporting.ReportingContracts.test_invalid_counts_cannot_generate_negative_executed_tests",
+          "seconds": 5e-05
+        },
+        {
+          "test": "test_reporting.ReportingContracts.test_local_platform_and_scientific_artifact_preserved",
+          "seconds": 0.001106
+        },
+        {
+          "test": "test_reporting.ReportingContracts.test_pilot_and_validation_do_not_claim_full_analysis",
+          "seconds": 0.000186
+        },
+        {
+          "test": "test_reporting.ReportingContracts.test_summary_and_invocation_report_platform_skips_separately",
+          "seconds": 0.001583
+        },
+        {
+          "test": "test_reporting.ReportingContracts.test_visual_review_requires_matching_file_hash",
+          "seconds": 0.006289
+        },
+        {
+          "test": "test_reproduction.ReproductionContracts.test_archive_expansion_is_bounded",
+          "seconds": 0.000734
+        },
+        {
+          "test": "test_reproduction.ReproductionContracts.test_archive_rejects_traversal_and_links",
+          "seconds": 0.000954
+        },
+        {
+          "test": "test_reproduction.ReproductionContracts.test_cleanup_cannot_hide_detected_resource_failure",
+          "seconds": 0.000118
+        },
+        {
+          "test": "test_reproduction.ReproductionContracts.test_comparison_excludes_operational_records_and_detects_tampering",
+          "seconds": 0.001013
+        },
+        {
+          "test": "test_reproduction.ReproductionContracts.test_path_containment_rejects_other_shell_and_os_paths",
+          "seconds": 0.000407
+        },
+        {
+          "test": "test_reproduction.ReproductionContracts.test_recursive_cleanup_cannot_target_workspace_or_cache_root",
+          "seconds": 0.001345
+        },
+        {
+          "test": "test_reproduction.ReproductionContracts.test_regular_archive_extracts_exact_bytes",
+          "seconds": 0.000831
+        },
+        {
+          "test": "test_resources.ResourceContracts.test_aggregate_limit_separate_from_per_process_limit",
+          "seconds": 0.003606
+        },
+        {
+          "test": "test_resources.ResourceContracts.test_family_sums_current_rss_not_historical_peaks",
+          "seconds": 0.000224
+        },
+        {
+          "test": "test_resources.ResourceContracts.test_local_baseline_ignores_historical_machine_and_does_not_reset",
+          "seconds": 0.001644
+        },
+        {
+          "test": "test_resources.ResourceContracts.test_timeout_terminates_spawned_process_tree",
+          "seconds": 0.00082
+        },
+        {
+          "test": "test_samples.SampleIdentityTests.test_decimal_source_ids_do_not_collapse",
+          "seconds": 5.3e-05
+        },
+        {
+          "test": "test_samples.SampleIdentityTests.test_duplicate_source_row_fails_instead_of_merging",
+          "seconds": 9.9e-05
+        },
+        {
+          "test": "test_samples.SampleIdentityTests.test_fastq_sizes_count_files_not_biological_replicates",
           "seconds": 5.5e-05
         },
         {
+          "test": "test_samples.SampleIdentityTests.test_identifiers_require_experiment_and_group",
+          "seconds": 2.8e-05
+        },
+        {
+          "test": "test_samples.SampleIdentityTests.test_inoculum_not_assigned_to_recipient",
+          "seconds": 2.4e-05
+        },
+        {
+          "test": "test_samples.SampleIdentityTests.test_pool_cannot_link_to_an_individual",
+          "seconds": 1.7e-05
+        },
+        {
+          "test": "test_samples.SampleIdentityTests.test_source_rows_match_only_observed_within_row_assays",
+          "seconds": 3.9e-05
+        },
+        {
           "test": "test_validation_identity.ValidationIdentity.test_source_edit_during_suite_fails_and_retains_both_identities",
-          "seconds": 0.03227
+          "seconds": 0.045203
         },
         {
           "test": "test_wsl_archive.NativeArchiveContracts.test_expanded_byte_member_and_truncated_stream_bounds",
-          "seconds": 0.001515
+          "seconds": 0.002487
         },
         {
           "test": "test_wsl_archive.NativeArchiveContracts.test_links_special_files_and_duplicate_members_are_rejected",
-          "seconds": 0.001895
+          "seconds": 0.002994
         },
         {
           "test": "test_wsl_archive.NativeArchiveContracts.test_real_nonseekable_tar_stream_extracts_exact_file_bytes",
-          "seconds": 0.00094
+          "seconds": 0.001083
         },
         {
           "test": "test_wsl_archive.NativeArchiveContracts.test_traversal_absolute_and_alternate_separator_paths_are_rejected",
-          "seconds": 0.002843
+          "seconds": 0.001742
         },
         {
           "test": "test_wsl_archive.NativeArchiveContracts.test_verify_file_requires_exact_size_hash_and_safe_path",
-          "seconds": 0.001844
+          "seconds": 0.000647
+        },
+        {
+          "test": "test_wsl_archive.NativeInputIdentity.test_correct_hash_does_not_override_wrong_size",
+          "seconds": 0.001356
+        },
+        {
+          "test": "test_wsl_archive.NativeInputIdentity.test_prebootstrap_snapshot_imports_no_scientific_packages",
+          "seconds": 0.06262
+        },
+        {
+          "test": "test_wsl_archive.NativeInputIdentity.test_same_size_tampering_still_fails_checksum",
+          "seconds": 0.008731
+        },
+        {
+          "test": "test_wsl_archive.NativeInputIdentity.test_size_is_required_and_rejects_negative_bool_string_and_float",
+          "seconds": 0.012568
+        },
+        {
+          "test": "test_wsl_archive.NativeInputIdentity.test_ten_inputs_and_zero_byte_file_keep_verified_identity",
+          "seconds": 0.00194
         }
       ],
-      "tests_run": 135,
+      "tests_run": 174,
       "failures": 0,
       "errors": 0,
       "skipped": 9,
       "success": true,
-      "peak_rss_bytes": 205082624
+      "peak_rss_bytes": 205963264
     },
     "resources_after": {
-      "project_bytes_including_git": 481159184,
-      "project_bytes_excluding_git": 481159184,
-      "disk_free_bytes": 981624459264,
-      "available_memory_bytes": 5496696832,
-      "process_peak_rss_bytes": 32915456,
+      "project_bytes_including_git": 482644068,
+      "project_bytes_excluding_git": 482644068,
+      "disk_free_bytes": 981622734848,
+      "available_memory_bytes": 5565108224,
+      "process_peak_rss_bytes": 32948224,
       "operational_storage_budget_bytes": 1500000000,
       "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
-      "baseline_disk_free_bytes": 982019989504,
-      "baseline_project_bytes": 109779070,
-      "max_sampled_aggregate_rss_bytes": 337580032,
-      "max_observed_native_process_peak_rss_bytes": 254656512,
-      "aggregate_memory_samples": 166,
+      "baseline_disk_free_bytes": 982018265088,
+      "baseline_project_bytes": 111228613,
+      "max_sampled_aggregate_rss_bytes": 338358272,
+      "max_observed_native_process_peak_rss_bytes": 254431232,
+      "aggregate_memory_samples": 257,
       "max_unreadable_or_exited_processes_per_sample": 0,
-      "elapsed_seconds": 36.87
+      "elapsed_seconds": 49.187
     },
     "source_after": {
-      "commit": "06b7cab84937c174c3197ba63d560ddc9cc70b1c",
-      "source_tar_sha256": "0039367be13b5b25e66f5f74f8cdba80921e215560055fe04340a0f3b7284dbb",
-      "code_sha256": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
+      "commit": "eb7ba6c8b945670a1f55c493d89435f36750900c",
+      "source_tar_sha256": "071550f66dba78378491fbd1e6b026941d6aca5d2ea6d9b41d4c28ca51200f70",
+      "code_sha256": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
       "requirements_sha256": "b088db497bb8d4763c1fc6f660842ec423c75562684c0ec747c1b8a183ae0079",
       "input_manifest_sha256": "e61c2efdd943748b06002a515d80babd0827552725682fb3161f907a87663c7b",
       "original_config_sha256": "55fad47fdd07b759a24834943ae6b076b15e2f51a663f190cf01a7998212b22f"
@@ -2261,7 +2573,7 @@
         "sha256": "76fda2c0a52bed064f829ba066fd03acf95229fcf493e2ace07d4f4c399c29db"
       }
     ],
-    "elapsed_seconds": 37.754
+    "elapsed_seconds": 50.147
   },
   "setup_evidence": {
     "status": "prepared_dependency_and_binary_configuration_verified",
@@ -2276,37 +2588,37 @@
           "venv",
           "--without-pip",
           "--copies",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/env"
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env"
         ],
-        "started_utc": "2026-10-20T12:42:24.130587+00:00",
+        "started_utc": "2026-10-21T13:29:54.181017+00:00",
         "returncode": 0,
         "elapsed_seconds": 0.108,
         "resources": {
-          "project_bytes_including_git": 139702810,
-          "project_bytes_excluding_git": 139702810,
-          "disk_free_bytes": 981990010880,
-          "available_memory_bytes": 5446766592,
-          "process_peak_rss_bytes": 32915456,
+          "project_bytes_including_git": 141152354,
+          "project_bytes_excluding_git": 141152354,
+          "disk_free_bytes": 981988286464,
+          "available_memory_bytes": 5441634304,
+          "process_peak_rss_bytes": 32948224,
           "operational_storage_budget_bytes": 1500000000,
           "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
-          "baseline_disk_free_bytes": 982019989504,
-          "baseline_project_bytes": 109779070,
-          "max_sampled_aggregate_rss_bytes": 41439232,
-          "max_observed_native_process_peak_rss_bytes": 33247232,
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 41054208,
+          "max_observed_native_process_peak_rss_bytes": 33218560,
           "aggregate_memory_samples": 1,
           "max_unreadable_or_exited_processes_per_sample": 0,
-          "elapsed_seconds": 0.115
+          "elapsed_seconds": 0.116
         }
       },
       {
         "name": "bootstrap_pip",
         "argv": [
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/env/bin/python",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env/bin/python",
           "-I",
           "-B",
           "-c",
           "import sys,runpy;sys.path.insert(0,sys.argv.pop(1));sys.argv[0]='pip';runpy.run_module('pip',run_name='__main__',alter_sys=True)",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/bootstrap/pip-25.2-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/bootstrap/pip-25.2-py3-none-any.whl",
           "--isolated",
           "--disable-pip-version-check",
           "install",
@@ -2316,32 +2628,32 @@
           "--no-cache-dir",
           "--no-input",
           "--only-binary=:all:",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/bootstrap/pip-25.2-py3-none-any.whl"
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/bootstrap/pip-25.2-py3-none-any.whl"
         ],
-        "started_utc": "2026-10-20T12:42:24.240389+00:00",
+        "started_utc": "2026-10-21T13:29:54.292932+00:00",
         "returncode": 0,
-        "elapsed_seconds": 1.28,
+        "elapsed_seconds": 1.277,
         "resources": {
-          "project_bytes_including_git": 145066137,
-          "project_bytes_excluding_git": 145066137,
-          "disk_free_bytes": 981983297536,
-          "available_memory_bytes": 5425221632,
-          "process_peak_rss_bytes": 32915456,
+          "project_bytes_including_git": 146515681,
+          "project_bytes_excluding_git": 146515681,
+          "disk_free_bytes": 981981589504,
+          "available_memory_bytes": 5436465152,
+          "process_peak_rss_bytes": 32948224,
           "operational_storage_budget_bytes": 1500000000,
           "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
-          "baseline_disk_free_bytes": 982019989504,
-          "baseline_project_bytes": 109779070,
-          "max_sampled_aggregate_rss_bytes": 86499328,
-          "max_observed_native_process_peak_rss_bytes": 54030336,
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 86380544,
+          "max_observed_native_process_peak_rss_bytes": 54038528,
           "aggregate_memory_samples": 13,
           "max_unreadable_or_exited_processes_per_sample": 0,
-          "elapsed_seconds": 1.411
+          "elapsed_seconds": 1.4
         }
       },
       {
         "name": "install_pins",
         "argv": [
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/env/bin/python",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env/bin/python",
           "-I",
           "-B",
           "-m",
@@ -2355,52 +2667,52 @@
           "--no-cache-dir",
           "--no-input",
           "--only-binary=:all:",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/contourpy-1.3.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/cycler-0.12.1-py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/et_xmlfile-2.0.0-py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/fonttools-4.60.1-cp314-cp314-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/kiwisolver-1.4.9-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/numpy-2.3.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/scipy-1.16.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/matplotlib-3.10.7-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/openpyxl-3.1.5-py2.py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/packaging-25.0-py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/pandas-2.3.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/patsy-1.0.2-py2.py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/pillow-12.0.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/pyparsing-3.2.5-py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/pypdf-6.13.0-py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/pytz-2025.2-py2.py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/six-1.17.0-py2.py3-none-any.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/statsmodels-0.14.6-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/staged/wheels/tzdata-2025.2-py2.py3-none-any.whl"
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/contourpy-1.3.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/cycler-0.12.1-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/et_xmlfile-2.0.0-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/fonttools-4.60.1-cp314-cp314-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/kiwisolver-1.4.9-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/numpy-2.3.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/scipy-1.16.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/matplotlib-3.10.7-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/openpyxl-3.1.5-py2.py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/packaging-25.0-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pandas-2.3.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/patsy-1.0.2-py2.py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pillow-12.0.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pyparsing-3.2.5-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pypdf-6.13.0-py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/pytz-2025.2-py2.py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/six-1.17.0-py2.py3-none-any.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/statsmodels-0.14.6-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/staged/wheels/tzdata-2025.2-py2.py3-none-any.whl"
         ],
-        "started_utc": "2026-10-20T12:42:25.536657+00:00",
+        "started_utc": "2026-10-21T13:29:55.577511+00:00",
         "returncode": 0,
-        "elapsed_seconds": 6.554,
+        "elapsed_seconds": 8.598,
         "resources": {
-          "project_bytes_including_git": 479269188,
-          "project_bytes_excluding_git": 479269188,
-          "disk_free_bytes": 981626572800,
-          "available_memory_bytes": 5469282304,
-          "process_peak_rss_bytes": 32915456,
+          "project_bytes_including_git": 480718732,
+          "project_bytes_excluding_git": 480718732,
+          "disk_free_bytes": 981624864768,
+          "available_memory_bytes": 5507330048,
+          "process_peak_rss_bytes": 32948224,
           "operational_storage_budget_bytes": 1500000000,
           "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
-          "baseline_disk_free_bytes": 982019989504,
-          "baseline_project_bytes": 109779070,
-          "max_sampled_aggregate_rss_bytes": 93712384,
-          "max_observed_native_process_peak_rss_bytes": 62623744,
-          "aggregate_memory_samples": 53,
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 92262400,
+          "max_observed_native_process_peak_rss_bytes": 62754816,
+          "aggregate_memory_samples": 70,
           "max_unreadable_or_exited_processes_per_sample": 0,
-          "elapsed_seconds": 8.085
+          "elapsed_seconds": 10.098
         }
       },
       {
         "name": "pip_check",
         "argv": [
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/env/bin/python",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env/bin/python",
           "-I",
           "-B",
           "-m",
@@ -2409,95 +2721,95 @@
           "--disable-pip-version-check",
           "check"
         ],
-        "started_utc": "2026-10-20T12:42:32.210377+00:00",
+        "started_utc": "2026-10-21T13:30:04.275629+00:00",
         "returncode": 0,
-        "elapsed_seconds": 0.721,
+        "elapsed_seconds": 0.397,
         "resources": {
-          "project_bytes_including_git": 479269218,
-          "project_bytes_excluding_git": 479269218,
-          "disk_free_bytes": 981626568704,
-          "available_memory_bytes": 5484007424,
-          "process_peak_rss_bytes": 32915456,
+          "project_bytes_including_git": 480718762,
+          "project_bytes_excluding_git": 480718762,
+          "disk_free_bytes": 981624860672,
+          "available_memory_bytes": 5500334080,
+          "process_peak_rss_bytes": 32948224,
           "operational_storage_budget_bytes": 1500000000,
           "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
-          "baseline_disk_free_bytes": 982019989504,
-          "baseline_project_bytes": 109779070,
-          "max_sampled_aggregate_rss_bytes": 93712384,
-          "max_observed_native_process_peak_rss_bytes": 62623744,
-          "aggregate_memory_samples": 56,
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 92262400,
+          "max_observed_native_process_peak_rss_bytes": 62754816,
+          "aggregate_memory_samples": 72,
           "max_unreadable_or_exited_processes_per_sample": 0,
-          "elapsed_seconds": 8.937
+          "elapsed_seconds": 10.593
         }
       },
       {
         "name": "inspect_installed",
         "argv": [
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/env/bin/python",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env/bin/python",
           "-I",
           "-B",
           "-c",
           "import sys,pathlib,json,re,importlib.metadata as m,contextlib,io\nexpected=json.loads(sys.argv[1]);canon=lambda n:re.sub(r'[-_.]+','-',n).lower()\nobserved={canon(d.metadata['Name']):d.version for d in m.distributions()}\nassert sys.prefix!=sys.base_prefix and pathlib.Path(sys.prefix).resolve()==pathlib.Path(sys.argv[2]).resolve()\nassert {k:v for k,v in observed.items() if k!='pip'}==expected and observed.get('pip')=='25.2'\nimport yaml\nassert yaml.safe_load(pathlib.Path(sys.argv[3]).read_text())==json.loads(sys.argv[4])\nprint(json.dumps({'python':sys.version,'prefix':sys.prefix,'base_prefix':sys.base_prefix,'packages':observed,'expected_pins_matched':len(expected)}))\nimport numpy,scipy\nfor name,module in [('numpy',numpy),('scipy',scipy)]:\n stream=io.StringIO()\n with contextlib.redirect_stdout(stream):module.show_config()\n print(json.dumps({'binary_configuration':name,'text':stream.getvalue()}))\n",
           "{\"contourpy\": \"1.3.3\", \"cycler\": \"0.12.1\", \"et-xmlfile\": \"2.0.0\", \"fonttools\": \"4.60.1\", \"kiwisolver\": \"1.4.9\", \"numpy\": \"2.3.4\", \"scipy\": \"1.16.3\", \"matplotlib\": \"3.10.7\", \"openpyxl\": \"3.1.5\", \"packaging\": \"25.0\", \"pandas\": \"2.3.3\", \"patsy\": \"1.0.2\", \"pillow\": \"12.0.0\", \"pyparsing\": \"3.2.5\", \"pyyaml\": \"6.0.3\", \"pypdf\": \"6.13.0\", \"python-dateutil\": \"2.9.0.post0\", \"pytz\": \"2025.2\", \"six\": \"1.17.0\", \"statsmodels\": \"0.14.6\", \"tzdata\": \"2025.2\"}",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/env",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/checkout/config/analysis.yaml",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/checkout/config/analysis.yaml",
           "{\"study\": \"Gut phageome stability and stress-related immune responses\", \"seed\": 20261020, \"analysis_pathway\": \"restricted_pooled_audit_and_separate_immune_analysis\", \"threads\": 1, \"resources\": {\"max_workers\": 4, \"max_new_storage_bytes\": 10000000000, \"disk_reserve_bytes\": 4000000000, \"max_download_bytes\": 10000000, \"max_process_rss_bytes\": 1000000000, \"max_aggregate_rss_bytes\": 1000000000, \"stage_timeout_seconds\": 600, \"min_available_memory_bytes\": 100000000}, \"immune\": {\"endpoints\": [\"ly6chi_monocytes\", \"ly6chi_monocytes_cd62\", \"tnfa_splenocyte_unstimulated\"], \"confidence_level\": 0.95, \"interpretation\": \"exploratory_unadjusted\", \"multiple_testing\": \"six_contrasts_benjamini_hochberg\"}, \"virome\": {\"enable_biological_analysis\": false, \"reason\": \"Processed viral matrices, annotations and verified animal crosswalk unavailable\"}, \"calibration\": {\"replicates\": 20000, \"batch_size\": 500}}"
         ],
-        "started_utc": "2026-10-20T12:42:33.062305+00:00",
+        "started_utc": "2026-10-21T13:30:04.769968+00:00",
         "returncode": 0,
-        "elapsed_seconds": 0.476,
+        "elapsed_seconds": 0.398,
         "resources": {
-          "project_bytes_including_git": 479273647,
-          "project_bytes_excluding_git": 479273647,
-          "disk_free_bytes": 981626560512,
-          "available_memory_bytes": 5477457920,
-          "process_peak_rss_bytes": 32915456,
+          "project_bytes_including_git": 480723191,
+          "project_bytes_excluding_git": 480723191,
+          "disk_free_bytes": 981624852480,
+          "available_memory_bytes": 5502509056,
+          "process_peak_rss_bytes": 32948224,
           "operational_storage_budget_bytes": 1500000000,
           "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
-          "baseline_disk_free_bytes": 982019989504,
-          "baseline_project_bytes": 109779070,
-          "max_sampled_aggregate_rss_bytes": 93712384,
-          "max_observed_native_process_peak_rss_bytes": 62623744,
-          "aggregate_memory_samples": 58,
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 92262400,
+          "max_observed_native_process_peak_rss_bytes": 62754816,
+          "aggregate_memory_samples": 74,
           "max_unreadable_or_exited_processes_per_sample": 0,
-          "elapsed_seconds": 9.537
+          "elapsed_seconds": 11.094
         }
       },
       {
         "name": "full_pipeline",
         "argv": [
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/env/bin/python",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env/bin/python",
           "-B",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/checkout/scripts/run_all.py",
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/checkout/scripts/run_all.py",
           "--mode",
           "full",
           "--threads",
           "1",
           "--offline",
           "--config",
-          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/checkout/config/native_validation.json"
+          "/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/checkout/config/native_validation.json"
         ],
-        "started_utc": "2026-10-20T12:42:33.663136+00:00",
+        "started_utc": "2026-10-21T13:30:05.271455+00:00",
         "returncode": 0,
-        "elapsed_seconds": 27.065,
+        "elapsed_seconds": 37.893,
         "resources": {
-          "project_bytes_including_git": 481159184,
-          "project_bytes_excluding_git": 481159184,
-          "disk_free_bytes": 981624459264,
-          "available_memory_bytes": 5496696832,
-          "process_peak_rss_bytes": 32915456,
+          "project_bytes_including_git": 482644068,
+          "project_bytes_excluding_git": 482644068,
+          "disk_free_bytes": 981622734848,
+          "available_memory_bytes": 5565108224,
+          "process_peak_rss_bytes": 32948224,
           "operational_storage_budget_bytes": 1500000000,
           "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
-          "baseline_disk_free_bytes": 982019989504,
-          "baseline_project_bytes": 109779070,
-          "max_sampled_aggregate_rss_bytes": 337580032,
-          "max_observed_native_process_peak_rss_bytes": 254656512,
-          "aggregate_memory_samples": 166,
+          "baseline_disk_free_bytes": 982018265088,
+          "baseline_project_bytes": 111228613,
+          "max_sampled_aggregate_rss_bytes": 338358272,
+          "max_observed_native_process_peak_rss_bytes": 254431232,
+          "aggregate_memory_samples": 257,
           "max_unreadable_or_exited_processes_per_sample": 0,
-          "elapsed_seconds": 36.729
+          "elapsed_seconds": 49.09
         }
       }
     ],
-    "installed_metadata_log": "{\"python\": \"3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]\", \"prefix\": \"/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T124216324584Z/env\", \"base_prefix\": \"/usr\", \"packages\": {\"pandas\": \"2.3.3\", \"pytz\": \"2025.2\", \"contourpy\": \"1.3.3\", \"fonttools\": \"4.60.1\", \"openpyxl\": \"3.1.5\", \"et-xmlfile\": \"2.0.0\", \"packaging\": \"25.0\", \"pyparsing\": \"3.2.5\", \"six\": \"1.17.0\", \"pyyaml\": \"6.0.3\", \"matplotlib\": \"3.10.7\", \"patsy\": \"1.0.2\", \"python-dateutil\": \"2.9.0.post0\", \"scipy\": \"1.16.3\", \"statsmodels\": \"0.14.6\", \"pypdf\": \"6.13.0\", \"pip\": \"25.2\", \"numpy\": \"2.3.4\", \"pillow\": \"12.0.0\", \"cycler\": \"0.12.1\", \"kiwisolver\": \"1.4.9\", \"tzdata\": \"2025.2\"}, \"expected_pins_matched\": 21}\n{\"binary_configuration\": \"numpy\", \"text\": \"Build Dependencies:\\n  blas:\\n    detection method: pkgconfig\\n    found: true\\n    include directory: /opt/_internal/cpython-3.14.0/lib/python3.14/site-packages/scipy_openblas64/include\\n    lib directory: /opt/_internal/cpython-3.14.0/lib/python3.14/site-packages/scipy_openblas64/lib\\n    name: scipy-openblas\\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\\n      Haswell MAX_THREADS=64\\n    pc file directory: /project/.openblas\\n    version: 0.3.30\\n  lapack:\\n    detection method: pkgconfig\\n    found: true\\n    include directory: /opt/_internal/cpython-3.14.0/lib/python3.14/site-packages/scipy_openblas64/include\\n    lib directory: /opt/_internal/cpython-3.14.0/lib/python3.14/site-packages/scipy_openblas64/lib\\n    name: scipy-openblas\\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\\n      Haswell MAX_THREADS=64\\n    pc file directory: /project/.openblas\\n    version: 0.3.30\\nCompilers:\\n  c:\\n    commands: cc\\n    linker: ld.bfd\\n    name: gcc\\n    version: 14.2.1\\n  c++:\\n    commands: c++\\n    linker: ld.bfd\\n    name: gcc\\n    version: 14.2.1\\n  cython:\\n    commands: cython\\n    linker: cython\\n    name: cython\\n    version: 3.1.4\\nMachine Information:\\n  build:\\n    cpu: x86_64\\n    endian: little\\n    family: x86_64\\n    system: linux\\n  host:\\n    cpu: x86_64\\n    endian: little\\n    family: x86_64\\n    system: linux\\nPython Information:\\n  path: /tmp/build-env-qywnc8nt/bin/python\\n  version: '3.14'\\nSIMD Extensions:\\n  baseline:\\n  - SSE\\n  - SSE2\\n  - SSE3\\n  found:\\n  - SSSE3\\n  - SSE41\\n  - POPCNT\\n  - SSE42\\n  - AVX\\n  - F16C\\n  - FMA3\\n  - AVX2\\n  not found:\\n  - AVX512F\\n  - AVX512CD\\n  - AVX512_KNL\\n  - AVX512_KNM\\n  - AVX512_SKX\\n  - AVX512_CLX\\n  - AVX512_CNL\\n  - AVX512_ICL\\n  - AVX512_SPR\\n\\n\"}\n{\"binary_configuration\": \"scipy\", \"text\": \"Build Dependencies:\\n  blas:\\n    detection method: pkgconfig\\n    found: true\\n    include directory: /opt/_internal/cpython-3.14.0rc1/lib/python3.14/site-packages/scipy_openblas32/include\\n    lib directory: /opt/_internal/cpython-3.14.0rc1/lib/python3.14/site-packages/scipy_openblas32/lib\\n    name: scipy-openblas\\n    openblas configuration: OpenBLAS 0.3.29.dev DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=64\\n    pc file directory: /project\\n    version: 0.3.29.dev\\n  lapack:\\n    detection method: pkgconfig\\n    found: true\\n    include directory: /opt/_internal/cpython-3.14.0rc1/lib/python3.14/site-packages/scipy_openblas32/include\\n    lib directory: /opt/_internal/cpython-3.14.0rc1/lib/python3.14/site-packages/scipy_openblas32/lib\\n    name: scipy-openblas\\n    openblas configuration: OpenBLAS 0.3.29.dev DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=64\\n    pc file directory: /project\\n    version: 0.3.29.dev\\n  pybind11:\\n    detection method: config-tool\\n    include directory: unknown\\n    name: pybind11\\n    version: 3.0.1\\nCompilers:\\n  c:\\n    commands: cc\\n    linker: ld.bfd\\n    name: gcc\\n    version: 10.2.1\\n  c++:\\n    commands: c++\\n    linker: ld.bfd\\n    name: gcc\\n    version: 10.2.1\\n  cython:\\n    commands: cython\\n    linker: cython\\n    name: cython\\n    version: 3.1.6\\n  fortran:\\n    commands: gfortran\\n    linker: ld.bfd\\n    name: gcc\\n    version: 10.2.1\\n  pythran:\\n    include directory: ../../tmp/build-env-hl3_u310/lib/python3.14/site-packages/pythran\\n    version: 0.18.0\\nMachine Information:\\n  build:\\n    cpu: x86_64\\n    endian: little\\n    family: x86_64\\n    system: linux\\n  cross-compiled: false\\n  host:\\n    cpu: x86_64\\n    endian: little\\n    family: x86_64\\n    system: linux\\nPython Information:\\n  path: /tmp/build-env-hl3_u310/bin/python\\n  version: '3.14'\\n\\n\"}\n",
+    "installed_metadata_log": "{\"python\": \"3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]\", \"prefix\": \"/var/tmp/phage-immune-stress-axis_validation/run_native_20261021T132940091508Z/env\", \"base_prefix\": \"/usr\", \"packages\": {\"pandas\": \"2.3.3\", \"pytz\": \"2025.2\", \"contourpy\": \"1.3.3\", \"fonttools\": \"4.60.1\", \"openpyxl\": \"3.1.5\", \"et-xmlfile\": \"2.0.0\", \"packaging\": \"25.0\", \"pyparsing\": \"3.2.5\", \"six\": \"1.17.0\", \"pyyaml\": \"6.0.3\", \"matplotlib\": \"3.10.7\", \"patsy\": \"1.0.2\", \"python-dateutil\": \"2.9.0.post0\", \"scipy\": \"1.16.3\", \"statsmodels\": \"0.14.6\", \"pypdf\": \"6.13.0\", \"pip\": \"25.2\", \"numpy\": \"2.3.4\", \"pillow\": \"12.0.0\", \"cycler\": \"0.12.1\", \"kiwisolver\": \"1.4.9\", \"tzdata\": \"2025.2\"}, \"expected_pins_matched\": 21}\n{\"binary_configuration\": \"numpy\", \"text\": \"Build Dependencies:\\n  blas:\\n    detection method: pkgconfig\\n    found: true\\n    include directory: /opt/_internal/cpython-3.14.0/lib/python3.14/site-packages/scipy_openblas64/include\\n    lib directory: /opt/_internal/cpython-3.14.0/lib/python3.14/site-packages/scipy_openblas64/lib\\n    name: scipy-openblas\\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\\n      Haswell MAX_THREADS=64\\n    pc file directory: /project/.openblas\\n    version: 0.3.30\\n  lapack:\\n    detection method: pkgconfig\\n    found: true\\n    include directory: /opt/_internal/cpython-3.14.0/lib/python3.14/site-packages/scipy_openblas64/include\\n    lib directory: /opt/_internal/cpython-3.14.0/lib/python3.14/site-packages/scipy_openblas64/lib\\n    name: scipy-openblas\\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\\n      Haswell MAX_THREADS=64\\n    pc file directory: /project/.openblas\\n    version: 0.3.30\\nCompilers:\\n  c:\\n    commands: cc\\n    linker: ld.bfd\\n    name: gcc\\n    version: 14.2.1\\n  c++:\\n    commands: c++\\n    linker: ld.bfd\\n    name: gcc\\n    version: 14.2.1\\n  cython:\\n    commands: cython\\n    linker: cython\\n    name: cython\\n    version: 3.1.4\\nMachine Information:\\n  build:\\n    cpu: x86_64\\n    endian: little\\n    family: x86_64\\n    system: linux\\n  host:\\n    cpu: x86_64\\n    endian: little\\n    family: x86_64\\n    system: linux\\nPython Information:\\n  path: /tmp/build-env-qywnc8nt/bin/python\\n  version: '3.14'\\nSIMD Extensions:\\n  baseline:\\n  - SSE\\n  - SSE2\\n  - SSE3\\n  found:\\n  - SSSE3\\n  - SSE41\\n  - POPCNT\\n  - SSE42\\n  - AVX\\n  - F16C\\n  - FMA3\\n  - AVX2\\n  not found:\\n  - AVX512F\\n  - AVX512CD\\n  - AVX512_KNL\\n  - AVX512_KNM\\n  - AVX512_SKX\\n  - AVX512_CLX\\n  - AVX512_CNL\\n  - AVX512_ICL\\n  - AVX512_SPR\\n\\n\"}\n{\"binary_configuration\": \"scipy\", \"text\": \"Build Dependencies:\\n  blas:\\n    detection method: pkgconfig\\n    found: true\\n    include directory: /opt/_internal/cpython-3.14.0rc1/lib/python3.14/site-packages/scipy_openblas32/include\\n    lib directory: /opt/_internal/cpython-3.14.0rc1/lib/python3.14/site-packages/scipy_openblas32/lib\\n    name: scipy-openblas\\n    openblas configuration: OpenBLAS 0.3.29.dev DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=64\\n    pc file directory: /project\\n    version: 0.3.29.dev\\n  lapack:\\n    detection method: pkgconfig\\n    found: true\\n    include directory: /opt/_internal/cpython-3.14.0rc1/lib/python3.14/site-packages/scipy_openblas32/include\\n    lib directory: /opt/_internal/cpython-3.14.0rc1/lib/python3.14/site-packages/scipy_openblas32/lib\\n    name: scipy-openblas\\n    openblas configuration: OpenBLAS 0.3.29.dev DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=64\\n    pc file directory: /project\\n    version: 0.3.29.dev\\n  pybind11:\\n    detection method: config-tool\\n    include directory: unknown\\n    name: pybind11\\n    version: 3.0.1\\nCompilers:\\n  c:\\n    commands: cc\\n    linker: ld.bfd\\n    name: gcc\\n    version: 10.2.1\\n  c++:\\n    commands: c++\\n    linker: ld.bfd\\n    name: gcc\\n    version: 10.2.1\\n  cython:\\n    commands: cython\\n    linker: cython\\n    name: cython\\n    version: 3.1.6\\n  fortran:\\n    commands: gfortran\\n    linker: ld.bfd\\n    name: gcc\\n    version: 10.2.1\\n  pythran:\\n    include directory: ../../tmp/build-env-hl3_u310/lib/python3.14/site-packages/pythran\\n    version: 0.18.0\\nMachine Information:\\n  build:\\n    cpu: x86_64\\n    endian: little\\n    family: x86_64\\n    system: linux\\n  cross-compiled: false\\n  host:\\n    cpu: x86_64\\n    endian: little\\n    family: x86_64\\n    system: linux\\nPython Information:\\n  path: /tmp/build-env-hl3_u310/bin/python\\n  version: '3.14'\\n\\n\"}\n",
     "wheels": [
       {
         "name": "contourpy",
@@ -4292,50 +4604,49 @@
   },
   "native_cleanup": "removed_verified_owned_directory",
   "windows_before_cleanup": {
-    "project_bytes_including_git": 305510709,
-    "project_bytes_excluding_git": 302967817,
-    "disk_free_bytes": 13356269568,
-    "available_memory_bytes": 1317216256,
-    "process_peak_rss_bytes": 38850560,
+    "project_bytes_including_git": 309248552,
+    "project_bytes_excluding_git": 306243460,
+    "disk_free_bytes": 10214150144,
+    "available_memory_bytes": 2114961408,
+    "process_peak_rss_bytes": 38989824,
     "operational_storage_budget_bytes": 10000000000,
     "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
     "baseline_disk_free_bytes": 14208532480,
     "baseline_project_bytes": 14354435,
-    "max_sampled_aggregate_rss_bytes": 88666112,
-    "max_observed_native_process_peak_rss_bytes": 38850560,
-    "aggregate_memory_samples": 143,
+    "max_sampled_aggregate_rss_bytes": 88784896,
+    "max_observed_native_process_peak_rss_bytes": 38834176,
+    "aggregate_memory_samples": 185,
     "max_unreadable_or_exited_processes_per_sample": 0,
-    "elapsed_seconds": 88.983,
-    "max_sampled_project_bytes_including_disposable_checkout": 305510709
+    "elapsed_seconds": 117.214,
+    "max_sampled_project_bytes_including_disposable_checkout": 309248552
   },
   "disposable_cleanup": "removed",
   "windows_after_cleanup": {
-    "project_bytes_including_git": 189344172,
-    "project_bytes_excluding_git": 186801280,
-    "disk_free_bytes": 13472624640,
-    "available_memory_bytes": 1304834048,
-    "process_peak_rss_bytes": 38850560,
+    "project_bytes_including_git": 190887961,
+    "project_bytes_excluding_git": 187882869,
+    "disk_free_bytes": 10332717056,
+    "available_memory_bytes": 1945059328,
+    "process_peak_rss_bytes": 38989824,
     "operational_storage_budget_bytes": 10000000000,
     "baseline_scope": "local_persistent_checkout_baseline_conservative_total_project_cap",
     "baseline_disk_free_bytes": 14208532480,
     "baseline_project_bytes": 14354435,
-    "max_sampled_aggregate_rss_bytes": 88666112,
-    "max_observed_native_process_peak_rss_bytes": 38850560,
-    "aggregate_memory_samples": 143,
+    "max_sampled_aggregate_rss_bytes": 88784896,
+    "max_observed_native_process_peak_rss_bytes": 38834176,
+    "aggregate_memory_samples": 185,
     "max_unreadable_or_exited_processes_per_sample": 0,
-    "elapsed_seconds": 89.349,
-    "max_sampled_project_bytes_including_disposable_checkout": 305510709
+    "elapsed_seconds": 117.596,
+    "max_sampled_project_bytes_including_disposable_checkout": 309248552
   },
-  "elapsed_seconds": 89.185,
-  "finished_utc": "2026-10-20T12:43:45.524011+00:00",
+  "elapsed_seconds": 117.448,
+  "finished_utc": "2026-10-21T13:31:37.550663+00:00",
   "visual_review": {
     "status": "passed",
-    "reviewed_utc": "2026-10-20T12:51:09.975124+00:00",
-    "record": "data/manifests/linux_figure_qa.json",
-    "record_sha256": "13447f6a9754752a8e0ed31538455e2dd7328c8e1e8d361dbef1ff2dc4251cb0",
-    "pdfs_viewed": 5,
-    "original_pngs_viewed": 5,
+    "mode": "exact_match_to_previously_reviewed_files",
+    "record": "data/manifests/linux_figure_reuse_0_2_2.json",
+    "record_sha256": "13438a36fbaddd54b58dd2308f90247dfcf56f35ecde075f55dbaa41dd844e29",
+    "reviewed_assets_matching": 10,
     "automated_comparison_preserved": true,
-    "scope": "18 byte-identical CSVs; 2 CSVs pass the locked derived-field tolerance; 10 changed figure files pass actual visual review. Linux output is not byte-identical overall."
+    "new_visual_inspection_performed": false
   }
 }

@@ -1,5 +1,12 @@
 # Independent Ubuntu WSL environment setup
 
+**Latest replay:** version 0.2.2 at `eb7ba6c8b945670a1f55c493d89435f36750900c` completed a new independent
+installation and all ten offline stages on 21 October 2026. The current
+[setup manifest](../data/manifests/linux_environment_0_2_2.json) and
+[Linux execution report](linux_reproduction_validation.md) record 174 collected
+tests, 165 executed and nine platform skips. The original dated setup snapshot
+below remains historical evidence for version 0.2.1.
+
 Recorded 2026-10-20T12:47:15.508155+00:00. The fresh Linux environment and all ten offline pipeline stages completed for commit `06b7cab84937c174c3197ba63d560ddc9cc70b1c`. All 20 CSV comparisons passed the locked exact-field/numeric-tolerance policy. At this setup snapshot the overall comparison is **pending figure review**: 18 of 30 files are byte-identical, two CSVs are semantically equivalent, and ten changed figure files require visual QA. Consult the [execution report](../results/reports/linux_reproduction_check.json) for its subsequent final outcome.
 
 The [self-contained setup manifest](../data/manifests/linux_environment_setup.json) records official PyPI metadata URLs, response sizes/statuses and SHA-256 hashes for every selected wheel; installed versions; binary build configuration; commands; resource measurements; failed attempts; and cleanup. Its execution-report snapshot was captured before figure QA and can differ in hash from the later updated execution report. The prospective rules are in [cross_platform_plan.md](cross_platform_plan.md).

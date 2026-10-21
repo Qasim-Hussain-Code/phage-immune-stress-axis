@@ -38,12 +38,20 @@ these checks to the code and output hashes. The working-source invocation is
 `20261021T131343730951Z_32180`; it does not itself establish a committed-source
 replay or a new Linux execution.
 
-Fresh committed-source reproduction is reported separately in
-[Windows reproduction](reproduction_validation.md) and
-[Linux reproduction](linux_reproduction_validation.md), with their actual source
-revisions. The earlier Linux proof remains evidence for its stated commit until
-a newer execution is completed; dependency installation or preparation alone
-does not count as a completed scientific run.
+Fresh committed-source reproduction also passed at `eb7ba6c8b945670a1f55c493d89435f36750900c` on both
+Windows and Ubuntu WSL. Windows reproduced all 30 scientific outputs exactly;
+Linux passed all 20 CSV comparisons and matched all ten previously reviewed
+Linux figure files. Both collected 174 tests, with 168 executed on Windows and
+165 on Linux; the remaining six/nine cases were platform-specific skips.
+See [Windows reproduction](reproduction_validation.md) and
+[Linux reproduction](linux_reproduction_validation.md).
+
+The executed command-mode checks passed for the same code digest:
+validation-only changed no scientific inputs, tables or figures; the pilot
+stopped after six verified stages; full resume recomputed validation and figure
+generation after validation records changed; and the final unchanged resume verified all ten
+stages with zero recomputation. The [mode record](../results/reports/mode_checks.json)
+distinguishes these invocations from the fresh full executions.
 
 These changes strengthen software and provenance checks. They do not supply the
 missing community matrix or animal crosswalk and do not make the proposed

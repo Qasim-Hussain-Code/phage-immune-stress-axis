@@ -1,9 +1,9 @@
 {
-  "started_utc": "2026-10-20T12:30:18.357392+00:00",
+  "started_utc": "2026-10-21T13:36:22.963663+00:00",
   "scope": "executed public command modes on this host",
-  "code_sha256": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
+  "code_sha256": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
   "runtime": {
-    "project_version": "0.2.1",
+    "project_version": "0.2.2",
     "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
     "platform": "win32",
     "packages": {
@@ -34,7 +34,7 @@
     {
       "mode": "validation",
       "returncode": 0,
-      "invocation_id": "20261020T123018640075Z_23804",
+      "invocation_id": "20261021T133623180002Z_17412",
       "status": "completed_validation",
       "executed": 0,
       "resumed": 0,
@@ -44,10 +44,10 @@
     {
       "mode": "pilot",
       "returncode": 0,
-      "invocation_id": "20261020T123045490076Z_24100",
+      "invocation_id": "20261021T133659288422Z_21096",
       "status": "completed_pilot",
-      "executed": 6,
-      "resumed": 0,
+      "executed": 0,
+      "resumed": 6,
       "stage_names": [
         "01_audit_sources",
         "02_fetch_data",
@@ -60,10 +60,10 @@
     {
       "mode": "resume_full",
       "returncode": 0,
-      "invocation_id": "20261020T123101215308Z_18600",
+      "invocation_id": "20261021T133701240086Z_17764",
       "status": "completed_restricted_analysis",
-      "executed": 4,
-      "resumed": 6,
+      "executed": 2,
+      "resumed": 8,
       "stage_names": [
         "01_audit_sources",
         "02_fetch_data",
@@ -80,7 +80,7 @@
     {
       "mode": "resume_unchanged",
       "returncode": 0,
-      "invocation_id": "20261020T123200773661Z_38916",
+      "invocation_id": "20261021T133752429457Z_29716",
       "status": "completed_restricted_analysis",
       "executed": 0,
       "resumed": 10,
@@ -99,5 +99,5 @@
     }
   ],
   "status": "passed",
-  "finished_utc": "2026-10-20T12:32:05.156374+00:00"
+  "finished_utc": "2026-10-21T13:37:55.169882+00:00"
 }

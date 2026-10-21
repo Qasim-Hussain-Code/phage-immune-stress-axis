@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "status": "private_repository_verified",
-  "checked_utc": "2026-10-21T01:33:37.224304+00:00",
+  "status": "private_push_verified",
+  "checked_utc": "2026-10-21T13:22:24.092321+00:00",
   "repository": "Qasim-Hussain-Code/phage-immune-stress-axis",
   "visibility": "private",
+  "default_branch": "main",
+  "local_commit": "eb7ba6c8b945670a1f55c493d89435f36750900c",
+  "remote_main_commit": "eb7ba6c8b945670a1f55c493d89435f36750900c",
   "sole_github_contributor": "Qasim-Hussain-Code",
-  "github_contributor_count": 1,
-  "commits_checked": 15,
   "sole_project_author": "Qasim Hussain",
-  "commit_message_rules_passed": true,
-  "coauthor_trailers": false,
-  "visibility_changed_by_this_check": false,
-  "remote_default_branch": "main",
-  "url": "https://github.com/Qasim-Hussain-Code/phage-immune-stress-axis",
+  "commits_checked": 16,
+  "new_blobs_scanned": 24,
+  "tool_sha256": "cd4ba1fe7186e2162e3228eccc6333c12987939cc309ce50ad5c71ca36305f47",
   "force_push": false,
-  "scope": "Repository access and attribution snapshot; final pushed commit is checked separately."
+  "visibility_changed": false,
+  "scope": "Snapshot of the verified version 0.2.2 code push; later evidence-only commits may follow."
 }
