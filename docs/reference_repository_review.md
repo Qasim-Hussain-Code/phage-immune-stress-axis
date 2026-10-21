@@ -12,14 +12,6 @@ was public and used the `main` branch. The recursive tree resolved to
 truncated. This identifies the inspected state; it does not assert that the
 reference's reported results were independently reproduced during this review.
 
-The intended destination,
-[phage-immune-stress-axis](https://github.com/Qasim-Hussain-Code/phage-immune-stress-axis),
-returned GitHub `404 Not Found` through the connected repository-metadata tool
-at inspection. This establishes that the destination was not accessible through
-that request. A 404 alone cannot distinguish a nonexistent repository from an
-inaccessible private repository. No remote repository was created or changed
-as part of this review.
-
 ## Practices supported by inspected files
 
 | Practice | Evidence inspected | Application to this study |
@@ -33,18 +25,9 @@ as part of this review.
 | Separate code, data, tables, and figures | The inspected tree contains numbered scripts, a shared `src/papr` package, tests, source manifests, methods/provenance/limitations documents, CSV tables, and PNG/PDF figures. | Use the requested `src/pisa` and numbered-stage structure, with every scientific figure backed by a machine-readable table. |
 | Fail clearly on execution errors | [Runner](https://github.com/Qasim-Hussain-Code/post-adsorption-phage-resistance/blob/a63bde39b748b4fcc65b22a9e285ed0219676039/scripts/run_all.py) executes ordered stages and stops at the first nonzero exit status. | Use explicit stage outcomes, resource enforcement, and resumable/offline execution; describe unsupported stages as excluded. |
 
-## Limits of the reference review
+## Scope of the reference review
 
-The reference provides useful standards rather than a guarantee that every
-sentence is current. For example, its README limitations still calls resident
-prophages unannotated, while the inspected limitations document and later README
-results describe a completed screen. Its methods also retains an earlier
-imputation description alongside a later direct-annotation section. This study
-should avoid those documentation inconsistencies by generating numerical
-summaries from frozen result tables and checking that all documents describe
-the final supported analysis.
-
-The previous project's scientific conclusions, independence assumptions,
-biological controls, model dimensions, and resource estimates do not transfer to
-this mouse virome study. This project must pass its own sample-linkage and
-resource feasibility gates before statistical testing.
+This review records software and reporting practices inspected at the stated
+commit. It does not reproduce the reference project's results. This study uses
+its own data, source-cell lineage, sample-linkage criteria, statistical models
+and resource measurements.

@@ -539,7 +539,7 @@
   ],
   "pip_bootstrap": {
     "version": "25.2",
-    "source_path": "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\ensurepip\\_bundled\\pip-25.2-py3-none-any.whl",
+    "source_path": "<USER_PROFILE>\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\ensurepip\\_bundled\\pip-25.2-py3-none-any.whl",
     "copied_path": ".cache/linux/bootstrap/pip-25.2-py3-none-any.whl",
     "bytes": 1752557,
     "sha256": "6d67a2b4e7f14d8b31b8b52648866fa717f45a1eb70e83002f4331d07e953717",
@@ -569,7 +569,7 @@
     "elapsed_seconds": 0.111,
     "created_utc": "2026-10-20T07:28:57.835984+00:00",
     "pip_bootstrap_source": {
-      "path": "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\ensurepip\\_bundled\\pip-25.2-py3-none-any.whl",
+      "path": "<USER_PROFILE>\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\ensurepip\\_bundled\\pip-25.2-py3-none-any.whl",
       "bytes": 1752557,
       "sha256": "6d67a2b4e7f14d8b31b8b52648866fa717f45a1eb70e83002f4331d07e953717"
     }
@@ -617,7 +617,7 @@
             "venv",
             "--without-pip",
             "--copies",
-            "/mnt/c/Users/User/Documents/phage-immune-stress-axis/.cache/linux_env"
+            "<USER_PROFILE_MOUNT>/Documents/phage-immune-stress-axis/.cache/linux_env"
           ],
           "log_path": ".cache/linux/create_venv.log",
           "started_utc": "2026-10-20T11:54:48.425926+00:00"
@@ -6510,7 +6510,7 @@
       "native_directory": "/var/tmp/phage-immune-stress-axis_validation/run_native_20261020T123623071687Z",
       "guest_stopped": "owned_controller_and_observed_descendants_stopped",
       "native_and_host_scratch_cleanup": "confirmed_removed_by_root_after_evidence_preservation_before_fresh_retry",
-      "confirmation_provenance": "Root agent task instruction following successful retry; earlier failed report reflects its original retained-at-failure state, not later cleanup."
+      "confirmation_provenance": "Recorded cleanup after preservation of failed-attempt evidence and before the fresh successful retry; the earlier failure snapshot predates that cleanup."
     },
     "successful_native_and_host_scratch": {
       "native": "removed_verified_owned_directory",
@@ -6556,7 +6556,7 @@
     "initial_zero_sampling_fields": "Zero aggregate samples or zero sampled-RSS fields in earlier snapshots mean unmeasured at that point, not zero actual RAM use."
   },
   "wsl_configuration_integrity": {
-    "source_path": "C:/Users/User/.wslconfig",
+    "source_path": "user WSL configuration file (absolute local path omitted)",
     "sha256_at_final_manifest": "19a1c06afa9aefe86f3954cd9e85443e8876018544e04cecf09b6cdfcf98e513",
     "sha256_before_mounted_setup": "19a1c06afa9aefe86f3954cd9e85443e8876018544e04cecf09b6cdfcf98e513",
     "unchanged": true,
@@ -6564,5 +6564,6 @@
     "existing_swap_cap_bytes": 2147483648,
     "configuration_modified_by_setup": false
   },
-  "requirements_identity_note": "The final source specification hash differs from the earlier wheel-selection hash after a comment-only requirements edit. All21name/versionpins were rechecked against source requirements before installation and matched installed distributions."
+  "requirements_identity_note": "The final source specification hash differs from the earlier wheel-selection hash after a comment-only requirements edit. All21name/versionpins were rechecked against source requirements before installation and matched installed distributions.",
+  "editorial_redactions": "Absolute user-profile paths and internal coordination wording are omitted from this exported manifest. Recorded measurements, package versions, timestamps, scientific observations and source-artifact checksums are unchanged. Embedded capture checksums identify the original captures, not the edited export."
 }

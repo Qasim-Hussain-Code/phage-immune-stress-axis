@@ -234,9 +234,9 @@ are exclusively software checks. The measured control groups provide treatment
 references. Independent biological negative and positive controls for the
 unmeasured phage-stability association are unavailable.
 
-The validated project is public at
+The validated project is maintained in the private repository at
 [Qasim-Hussain-Code/phage-immune-stress-axis](https://github.com/Qasim-Hussain-Code/phage-immune-stress-axis).
-The first push was verified by both Git remote references and the GitHub API.
+Repository visibility and sole-contributor attribution are checked before each push.
 See [publication status](docs/publication_status.md) and the
 [machine-readable verification](results/reports/publication_check.json).
 

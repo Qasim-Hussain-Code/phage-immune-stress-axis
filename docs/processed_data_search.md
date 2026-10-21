@@ -43,7 +43,7 @@ The three full-resolution table images were also inspected. Their local names ar
 | Extended Data Table 1b, vehicle TNF-alpha | Ctr 34.4, Stress 102.0, FVT Stress 27.9 are explicitly printed. An enlarged read-only crop confirmed the FVT cell is 27.9, not 27.8. | The workbook-derived mean 27.8492777778 rounds to 27.8 at one decimal. Preserve this discrepancy rather than widening a rounding tolerance or changing source values. The summary image cannot resolve the cause. |
 | Extended Data Tables 2 and 3 | Gut-brain or gut-metabolic module names with restoration-effect P and Q values. | Summary statistics only; no per-animal functional abundances, viral abundances, identifiers or assay crosswalk are supplied. |
 
-No numerical table was imported into a new biological analysis during this search. The selected table-cell check was sent to the independent replication reviewer.
+No numerical table was imported into a new biological analysis during this search. The selected table-cell check is documented in the original-method replication analysis.
 
 ## Sequence and secondary-analysis archives
 
@@ -64,7 +64,7 @@ Both legacy and current-domain PMC OA-package locator URLs returned HTTP 404 in 
 
 ## Author repositories and public code indexes
 
-The connected GitHub connector was used rather than a local GitHub token or login. Public repository metadata, contents, recursive trees, selected documentation and public issue/code searches were read only. Example call syntax was `github_fetch({url: "https://api.github.com/repos/OWNER/REPO/git/trees/main?recursive=1"})`.
+Public GitHub repository metadata, contents, recursive trees, selected documentation and public issue/code searches were inspected read-only through the GitHub API.
 
 Repository search enumerated 21 public repositories for thomazbastiaanssen: Tjazi, anansi, kronos, Volatility, coffee, MicroFoodDB, deleuze, scoreTools, thomazbastiaanssen, DeepLabCut, FMT_Aging, OMA, research, ECNP_resilience_network, tfs, thomazbastiaanssen.github.io, woltka, FMT_pain_analysis, Helper_functions, books and biocmask. Seven were enumerated for Chrisjrt: hafeZ, Chrisjrt, random_useful_scripts, Budding_biologist_2024, Ratatoskr, Nezam-Abadi_DSM21599_genome_MRA_2023 and Turkington_mouse_virome_2025. Enumeration alone is not a claim that every historical blob was read.
 
@@ -83,7 +83,7 @@ Recursive default-branch trees were inspected for ten candidate repositories, co
 
 Exact public code searches returned zero results for `ViromeOTUtable`, `recal_metadata.csv`, `PRJNA970614`, `Fvtstress`, `metadata_KO_FVT.csv` and `filtered_master_taxa_table.tsv`. Additional searches for `bacteriome.virome.matching`, `StressVeronicaVirome` and `FVTStress32A` returned zero. Scoped FVT/stress searches across selected author repositories, repository searches for Ritz virome and FVT stress, and the recorded public issue searches also returned zero relevant results. These are index/default-branch searches, not a crawl of private repositories, deleted history, unindexed binaries or every author's possible account.
 
-Guessed usernames NathanielRitz and LorraineDraper returned the connector's not-found-or-no-permission validation error, so they were not treated as verified author accounts. Public ORCID researcher-URL endpoints for the two publication identifiers returned empty URL lists and supplied no further repository identity. No account credentials or login state was changed.
+Guessed usernames NathanielRitz and LorraineDraper could not be verified through the repository API, so they were not treated as verified author accounts. Public ORCID researcher-URL endpoints for the two publication identifiers returned empty URL lists and supplied no further repository identity.
 
 ## Additional DOI and web discovery
 

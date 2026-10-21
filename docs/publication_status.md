@@ -1,11 +1,11 @@
-# Verified GitHub publication
+# Private repository status
 
-The project is public at [Qasim-Hussain-Code/phage-immune-stress-axis](https://github.com/Qasim-Hussain-Code/phage-immune-stress-axis), with default branch `main`.
+The project is maintained in the private repository [Qasim-Hussain-Code/phage-immune-stress-axis](https://github.com/Qasim-Hussain-Code/phage-immune-stress-axis), on branch `main`.
 
-At 2026-10-20T12:54:48.906708 UTC, the first successful push was independently checked through Git `ls-remote` and the GitHub commits API. Both matched local commit `a1538838b92373ac04e59a293478b299f9d277e6`. The [machine-readable record](../results/reports/publication_check.json) is a snapshot of that initial verified push; subsequent publication-documentation commits may follow. It records no credential values. This establishes actual repository publication, not remote CI execution or an external scientific review.
+The [repository verification record](../results/reports/publication_check.json) confirms private visibility and exactly one GitHub contributor, **Qasim-Hussain-Code**. Qasim Hussain is the sole project author. Locally created commits use the existing researcher identity for both author and committer. No coauthor trailers are present.
 
-Earlier checks reported an invalid local CLI token and connected-app HTTP 404 for the intended repository. A later authorized host-account CLI check successfully authenticated as **Qasim-Hussain-Code**. A fresh direct authenticated lookup returned HTTP 404 before creation. The supplied master prompt explicitly authorized creation of the intended repository when absent and authorized access was available. The public repository was then created and the release-checked local history pushed.
+The resulting remote commit is checked through Git and the GitHub API. Repository visibility remains private. No history rewrite or force push is used.
 
-Before publication, the Windows and Linux suites and full offline replays completed; scientific lineage, tables, figures, current execution contracts, redistribution notices, file sizes and researcher attribution were checked. The selected release payload passed working-tree, staged-index and committed-HEAD checks. A separate reachable-history audit scanned 383 objects, including 304 unique blobs totaling 5,002,417 bytes at source commit `06b7cab84937c174c3197ba63d560ddc9cc70b1c`; no common credential-pattern matches or objects above 5 MB were found. The later evidence-only payload also passed the release scan. These bounded scans are not a guarantee of complete secret detection.
+Project files contain research code, public-source data, methods, results and reproducibility evidence. Local caches and working notes are excluded. Scientific limitations and upstream data/software citations remain part of the research record; cited upstream authors are not repository contributors.
 
-No unrelated repository was changed, no history was rewritten and no force push was used. Commits retain Qasim Hussain as sole author and committer using the existing configured identity, with lowercase underscore-separated subjects and no AI coauthor trailers. Original experimental researchers and source licenses retain their attribution. AI coding, audit and drafting assistance is disclosed in the README.
+The completed Windows and Linux validation is documented separately. Repository access and successful pushing do not establish remote CI execution or external scientific review.

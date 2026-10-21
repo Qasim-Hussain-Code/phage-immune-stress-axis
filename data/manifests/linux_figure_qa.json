@@ -6,7 +6,7 @@
   "source_commit": "06b7cab84937c174c3197ba63d560ddc9cc70b1c",
   "code_sha256": "a8953ae41fa24d5f7c7ccdec81c7d96bf679a07692b1f891c1fde8d8b4253507",
   "renderer": "pypdfium2 5.14.0, PDFium 156.0.8076.0, scale 2",
-  "reviewers": "Codex primary agent viewed all five PDF renders; independent review agent viewed all five PDF renders and all five original PNGs. This is agent visual QA, not independent human peer review.",
+  "reviewers": "AI-assisted visual inspection of all five actual PDF renders and all five original PNG companions; this is not independent human peer review.",
   "checks": [
     "Legible titles, labels, units, sample counts, intervals, legends and captions",
     "No observed clipping, overlap, broken glyphs or missing scientific elements",

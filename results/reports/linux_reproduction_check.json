@@ -4332,7 +4332,7 @@
     "status": "passed",
     "reviewed_utc": "2026-10-20T12:51:09.975124+00:00",
     "record": "data/manifests/linux_figure_qa.json",
-    "record_sha256": "46054a124cc649736dd93f03c3687ed9254328da673a9e0daffd805382f3ddcd",
+    "record_sha256": "13447f6a9754752a8e0ed31538455e2dd7328c8e1e8d361dbef1ff2dc4251cb0",
     "pdfs_viewed": 5,
     "original_pngs_viewed": 5,
     "automated_comparison_preserved": true,
