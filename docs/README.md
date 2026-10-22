@@ -42,12 +42,12 @@ records retain their source revisions and measured environments:
 
 ## Data search and reuse
 
-The [processed-data search](processed_data_search.md) records the sources
-checked on 20 October 2026. The [alternative-study screen](alternative_dataset_search.md)
-and [eligibility audit](alternative_dataset_audit.md) cover other candidates.
-The [Chen prenatal-stress assessment](new_prenatal_stress_candidate.md) and
-[public-route follow-up](chen2026_public_route_followup.md) retain an unresolved
-candidate without substituting it into the analysis.
+The [data-search overview](data_search.md) brings together the October 20
+checks, study comparisons and unresolved inputs. Detailed evidence remains in
+the [primary-data search](processed_data_search.md),
+[alternative-study audit](alternative_dataset_audit.md) and
+[Chen public-route follow-up](chen2026_public_route_followup.md), with links to
+the original screen and source ledgers.
 
 [Third-party notices](third_party_notices.md) record upstream licenses and
 attribution. Repository maintenance instructions are separate:

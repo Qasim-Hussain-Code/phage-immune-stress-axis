@@ -79,6 +79,9 @@ is reported here. This is an availability conclusion, not a biological null.
 
 ## Search scope and requirements for further analysis
 
+The [data-search overview](data_search.md) summarizes the primary release and
+alternative-study checks performed on 20 October 2026.
+
 The [expanded primary-data search](processed_data_search.md), dated 20 October
 2026, checked the complete publisher-linked supplementary package, BioStudies,
 accession-linked analysis and assembly records, MGnify, selected author

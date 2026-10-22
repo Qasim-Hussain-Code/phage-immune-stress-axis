@@ -1,107 +1,133 @@
-# Synthetic software calibration design
+# Calibration under explicit sampling assumptions
 
-This benchmark evaluates software behavior under four explicitly synthetic
-all-null generating models. Every output row is labeled
-`purpose=synthetic_not_biological`. The module reads no experimental outcomes,
-mouse identifiers, real cage assignments or observed effect estimates. It does
-not estimate biological power or validate the actual experiment's unknown
-dependence structure.
+The immune analysis uses small-group Welch comparisons, a six-test
+Benjamini-Hochberg (BH) family and a separate reconstruction of the original
+Tukey-Kramer comparisons. A synthetic benchmark examines their false-positive
+and interval-coverage behavior when stated sampling assumptions hold or are
+deliberately violated. It reads no biological outcomes, animal identifiers,
+observed effect estimates or real cage assignments. Its probabilities describe
+software performance under the generating models below, not biological power
+or the validity of the study's unknown dependence structure.
 
-## Prespecified scenarios
+## Generating models and comparison structure
 
-Each replicate contains three independently generated synthetic endpoints and
-three groups of 10, 10 and nine observations. All true group means are zero.
-For each endpoint, the same middle group's data appear in both adjacent
-contrasts. The resulting six Welch tests form one BH family per replicate.
+Each replicate contains three independent synthetic endpoints and three groups
+of sizes 10, 10 and 9. Every true group mean is zero. Within each endpoint, the
+contrasts are group 1 minus group 0 and group 2 minus group 1. They share group 1,
+so their estimates and P values are dependent. The six tests across the three
+endpoints form one BH family per replicate; the benchmark does not replace them
+with six unrelated uniform P values.
 
-| Scenario | Generating rule | Purpose |
+The following four models were fixed before running the full benchmark. Their
+parameters were not fitted or selected to reproduce a biological result.
+
+| Scenario | Generating model | Assumption examined |
 |---|---|---|
-| Independent Gaussian, equal variance | Independent N(0,1) observations in every group | Reference behavior under independent symmetric equal-variance sampling. |
-| Independent Gaussian, unequal variance | Independent Gaussian observations with group variances 4,1,1 and zero means | Assumption sensitivity to fixed variance heterogeneity. |
-| Independent centered lognormal | exp(N(0,1)) minus exp(0.5) in every group | A skewed distribution with known equal zero means, without fitting its center to source data. |
-| Artificial Gaussian clusters | Five independent unit-variance Gaussian cage effects and independent residuals per endpoint/group; both components scaled by sqrt(0.5) | A generic dependence stress test with marginal variance one and within-pair ICC 0.5. |
+| Independent Gaussian, equal variance | Independent `N(0,1)` observations in all groups | Symmetric, independent sampling with a common variance |
+| Independent Gaussian, unequal variance | Independent zero-mean Gaussian observations with group variances `4,1,1` | Fixed variance heterogeneity |
+| Independent centered lognormal | Independent `exp(Z) - exp(0.5)`, with `Z ~ N(0,1)` | Skewed sampling with identical distributions and known zero means |
+| Artificial Gaussian clusters | `Y_i = sqrt(0.5)*C_k(i) + sqrt(0.5)*E_i`, with independent standard-normal cluster effects and residuals | Dependence within artificial pairs |
 
-The artificial cluster scenario contains five pairs in groups of ten, and four
-pairs plus one singleton in the group of nine. Cluster effects are independent
-across endpoints and groups. This assignment is deliberately artificial. The
-source experiment's stressed groups were singly housed; this scenario does not
-describe their cages, infer shared cages for those animals or claim to estimate
-their ICC. It measures consequences of violating the software's independence
-assumption under one transparent hypothetical design.
+The cluster model uses five independent cluster effects per endpoint and group,
+with `k(i) = floor((i-1)/2) + 1`. Groups of ten contain five pairs; the group of
+nine contains four pairs and a singleton. Each observation has variance one,
+and two observations sharing a cluster have covariance and correlation 0.5.
+This ICC applies only within a synthetic pair. Different clusters, groups and
+endpoints are independent.
 
-The choices were fixed before running the full benchmark. They are not selected
-to reproduce any published or reanalyzed biological P value. The sample-size
-pattern is a generic small-group benchmark; endpoint-specific source missingness
-and biological heterogeneity are not modeled.
+That assignment is hypothetical. The original stressed groups were singly
+housed, whereas unstressed controls were group housed. The benchmark's clusters
+in every group do not reconstruct their cages or estimate their ICC. Likewise,
+independence across synthetic endpoints omits possible immune correlations and
+shared assay batches. The 10/10/9 pattern is a small-group benchmark, not a
+model of endpoint-specific source missingness.
 
-## Estimators and events
+## Estimated probabilities
 
-The vectorized Welch calculation uses unbiased sample variances, finite Welch
-degrees of freedom, two-sided t probabilities and pointwise 95% t intervals.
-Its formulas are independently checked against SciPy's sample-based
-`ttest_ind(equal_var=False)`. Across the six jointly generated P values, the
-standard BH step-up rule is evaluated at 0.05.
+For a pair of groups A and B, the Welch calculation uses unbiased sample
+variances:
 
-The benchmark records:
+```text
+d = mean_A - mean_B
+SE^2 = s_A^2/n_A + s_B^2/n_B
+df = SE^4 / [(s_A^2/n_A)^2/(n_A-1) + (s_B^2/n_B)^2/(n_B-1)]
+95% interval = d +/- t_(0.975,df)*SE
+```
 
-- Unadjusted per-contrast false-positive probability at 0.05.
-- Per-contrast coverage of the true-zero difference by the pointwise 95% Welch
-  interval.
-- Probability of any BH rejection in the all-null six-test family. Because all
-  hypotheses are null, this equals both FWER and FDR in this benchmark.
-- Coverage of all three true pairwise differences by the original-method
-  Tukey-Kramer simultaneous 95% intervals, separately for each endpoint.
+Two-sided t probabilities determine unadjusted rejection at 0.05. For the six
+sorted P values, BH rejects at least one hypothesis when any
+`p_(i) <= i*0.05/6`. Because all hypotheses are null, the probability of any BH
+rejection equals both familywise error rate and false discovery rate in this
+benchmark. That equality is specific to the complete null.
 
-Tukey intervals use the three-group pooled variance and one finite-df
-studentized-range critical value at residual df 26. The critical value is
-computed once and cached. There is no per-replicate studentized-range CDF
-integration. Its family is the three pairs within an endpoint, not all endpoints
-jointly.
+The table records per-contrast unadjusted rejection and pointwise Welch interval
+coverage, plus the six-test BH event. It also records simultaneous coverage of
+all three Tukey-Kramer pairwise intervals within each endpoint. Those intervals
+use
 
-The BH event retains the dependence created by overlapping contrasts; it does
-not simulate six unrelated uniform P values. The three endpoints are otherwise
-independent by design. The result need not describe endpoints correlated through
-actual immune biology, assay batches or actual housing.
+```text
+MSE = sum_g [(n_g-1)*s_g^2] / 26
+pair interval = d +/- q_(0.95;3,26)*sqrt[(MSE/2)*(1/n_A + 1/n_B)]
+```
 
-## Monte Carlo precision and resource bounds
+The residual degrees of freedom are `10 + 10 + 9 - 3 = 26`. The finite-df
+studentized-range critical value is computed once. Tukey coverage concerns a
+three-pair family within one endpoint, not simultaneous coverage across all
+three endpoints. The common-variance formula is deliberately retained under
+unequal variance, skewness and clustering to examine its behavior there.
 
-Full execution defaults to 20,000 independent replicates per scenario, with seed
-`config.seed` and batches of at most 500. Optional `calibration.replicates` and
-`calibration.batch_size` settings control execution size; values above the batch
-bound are rejected. Only batch arrays and event counts are retained. Simulated
-observations are not saved. The largest innovation batch has 500 by 3 by 3 by
-15 float64 entries, approximately 0.54 MB before derived arrays.
+## Findings from the recorded benchmark
 
-Each event proportion has a pointwise Wilson 95% binomial interval. These bounds
-measure Monte Carlo sampling error across generated replicates. They are not
-mouse-effect intervals, do not quantify uncertainty about the true cage ICC and
-are not simultaneous bounds across the entire simulation table. At 20,000
-replicates, the standard error near probability 0.05 is about 0.00154.
+The full run used seed **20261020**, **20,000 independent replicates per
+scenario**, and **40 batches of 500**. The all-null BH family results are:
+
+| Scenario | Replicates with any BH rejection | Estimated probability | Wilson 95% Monte Carlo interval |
+|---|---:|---:|---:|
+| Independent Gaussian, equal variance | 924 / 20,000 | 0.04620 | 0.04338 to 0.04920 |
+| Independent Gaussian, unequal variance | 959 / 20,000 | 0.04795 | 0.04507 to 0.05100 |
+| Independent centered lognormal | 230 / 20,000 | 0.01150 | 0.01011 to 0.01307 |
+| Artificial Gaussian clusters, within-pair ICC 0.5 | 3,299 / 20,000 | 0.16495 | 0.15987 to 0.17016 |
+
+The independent Gaussian models give family rejection probabilities close to
+the nominal 0.05 level. The centered lognormal model is conservative for this
+event at these sample sizes. Ignoring the artificial pair dependence raises
+family rejection well above nominal. In that cluster scenario, the six
+pointwise Welch coverage estimates range from 0.88450 to 0.89220, and the three
+within-endpoint Tukey simultaneous coverage estimates from 0.85640 to 0.86095,
+against nominal 0.95. These findings illustrate the consequences of this
+specified dependence model; they do not show that the study animals followed
+it or provide an adjustment for their unknown dependence.
+
+The [complete table](../results/tables/software_calibration.csv) contains all
+64 performance estimates and their event counts. The
+[generated report](../results/reports/software_calibration.md) summarizes the
+same benchmark. Every row is labeled `purpose=synthetic_not_biological`.
+
+## Monte Carlo uncertainty and reproducibility
+
+Each event probability has a pointwise Wilson 95% binomial interval across
+independent generated replicates. These intervals describe Monte Carlo error,
+not uncertainty about a mouse effect or the actual cage ICC, and are not
+simultaneous intervals across the 64 summaries. At probability 0.05, 20,000
+replicates give a Monte Carlo standard error of about 0.00154. The unadjusted
+zero-null rejection and pointwise coverage events are complementary apart from
+numerical boundary cases.
 
 Each scenario has a fixed PCG64 stream derived from the global seed and stable
-scenario index. Innovations are drawn in replicate-major order with a fixed
-number of draws per replicate; the unused tenth padded observation for group
-two is never analyzed. Exact batch-partition invariance is tested under the
-recorded NumPy implementation. The output records the seed, scenario stream,
-library versions, configured and observed maximum batch sizes, batch count and
-replicate count.
+scenario index. Replicate-major draws use a fixed number of innovations per
+replicate; the tenth padded observation of group 2 is never analyzed. This
+preserves the random sequence across batch partitions under the recorded NumPy
+implementation. The output records the stream index, library versions, batch
+sizes and replicate counts. Only batch arrays and event counts are retained;
+raw simulated observations are not saved, and batch size is capped at 500.
 
-## Validation and interpretation
-
-Quick tests use 128-replicate benchmarks and small deterministic arrays. They
-check vectorized Welch calculations against independent sample-based SciPy
-results, exact seeded batch invariance, BH zero-signal and obvious synthetic
-signal controls, Wilson intervals against statsmodels, and the exact covariance
-matrix implied by the Gaussian cluster mapping. Positive controls only verify
-software orientation and rejection plumbing; they are not biological power
-results.
-
-The 20,000-replicate benchmark runs separately from quick unit tests during the
-full pipeline. Its CSV is `results/tables/software_calibration.csv`, with a
-labeled report in `results/reports/software_calibration.md`. Neither file mixes
-simulations with observed immune measurements. No simulation figure is generated.
-
-Nominal performance in one scenario cannot establish model validity for the
-original study. Poor performance under an artificial dependence model cannot
-establish that the original animals had that dependence. The benchmark cannot
-recover missing virome inputs or substantiate a phageome-immune association.
+[calibration.py](../src/pisa/calibration.py) implements the benchmark, with
+settings in [analysis.yaml](../config/analysis.yaml). Existing small fixtures
+compare Welch calculations with sample-based SciPy results, Wilson intervals
+with statsmodels, and the cluster covariance with its exact analytical matrix;
+they also check seeded batch invariance. Added-signal fixtures verify software
+orientation and rejection behavior only. They are not power estimates. The
+20,000-replicate benchmark runs separately from those quick checks. It cannot
+replace the viral profiles and animal linkage needed to relate viral change to
+endpoint immune phenotypes, or supply the immune baseline needed to study
+within-mouse immune change.

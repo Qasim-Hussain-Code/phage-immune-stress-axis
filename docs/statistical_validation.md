@@ -1,165 +1,131 @@
 # Statistical validation
 
-Current executed test counts, failures, errors and skips are recorded in
-`results/reports/validation_summary.json`, with individual outcomes in
-`results/reports/validation.log`. Each execution record applies to its recorded
-code identity. Completion of the suite, workflow and visual QA is established
-by their matching invocation and review records; an earlier successful run
-does not establish a current invocation's outcome. Resource peaks belong to the
-invocation that measured them; see [resource_usage.md](resource_usage.md) and
-[reproduction_validation.md](reproduction_validation.md).
+The checks in this appendix ask whether the implemented calculations agree
+with independent software, direct enumeration and mathematical identities.
+They also compare selected published statistics with calculations from the
+unchanged source workbook. Agreement supports the numerical implementation;
+it does not establish independent animals, valid censoring assumptions or a
+virome-specific biological effect.
 
-Synthetic fixtures and calibration outputs are software checks only. They are
-kept separate from biological observations and cannot replace missing assays.
+## Calculations checked independently
 
-## Independent estimator checks
-
-| Calculation | Independent reference or identity | Implemented checks |
+| Calculation | Independent reference or identity | Checks |
 |---|---|---|
-| Welch mean contrast | SciPy `ttest_ind(equal_var=False)` and confidence interval | Statistic, finite degrees of freedom, two-sided P and interval across unequal-size/variance fixtures. |
-| Contrast reversal | Analytical identity | Group reversal negates the effect and reverses limits while retaining two-sided P. |
-| BH adjustment | statsmodels `multipletests(method="fdr_bh")` | Full adjusted vector, ties, boundary P values and invalid inputs. |
+| Welch mean contrast | SciPy `ttest_ind(equal_var=False)` and confidence interval | Statistic, finite degrees of freedom, two-sided P and interval on unequal-size and unequal-variance fixtures. |
+| Contrast reversal | Analytical identity | Reversing groups negates the effect and reverses interval limits while retaining the two-sided P value. |
+| BH adjustment | statsmodels `multipletests(method="fdr_bh")` | Complete adjusted vector, ties, boundary P values and invalid inputs. |
 | Leave-one-animal-out ranges | Separate brute-force sample means | Omission count, effect extrema, influential identifier and direction. |
-| Finite-support missingness bounds | Exhaustive support-corner enumeration | Both extrema for every percentage comparison, complete cases, reversal, all-missing cases, invalid support and observed values outside support. |
-| Empirical rank effects | SciPy average ranks and direct cross-animal pair counting | U identity, ties, reversal, superiority, rank-biserial effect and agreement with the existing sensitivity U; pairs remain distinct from animal counts. |
+| Finite-support missingness bounds | Exhaustive support-corner enumeration | Both extrema, complete and all-missing cases, reversal, invalid support and out-of-support observations. |
+| Empirical rank effects | SciPy average ranks and direct cross-animal pair counting | U, ties, reversal, superiority, rank-biserial effect and agreement with the existing sensitivity U. |
 | Original pooled ANOVA and planned contrast | Independently fitted statsmodels OLS and `t_test` | Residual sum of squares, pooled variance, F, contrast effect, standard error, t, P and interval. |
-| Original Tukey-Kramer pairs | statsmodels `pairwise_tukeyhsd` | All three pairs and simultaneous intervals in unequal-size synthetic fixtures. |
-| Aitchison distance | Pairwise log-ratio identity | Independent all-pairs expression versus CLR Euclidean distance. |
+| Original Tukey-Kramer pairs | statsmodels `pairwise_tukeyhsd` | All three pairs and simultaneous intervals on unequal-size fixtures. |
+| Aitchison distance | Pairwise log-ratio identity | All-pairs expression versus CLR Euclidean distance. |
 | Bray-Curtis distance | SciPy `braycurtis` | Agreement after closure on synthetic compositions. |
-| Compositional edge cases | Mathematical invariants | Scale invariance, zero-sum CLR, zero handling and rejection of invalid/all-zero inputs. |
+| Compositional edge cases | Mathematical invariants | Scale invariance, zero-sum CLR, zero handling and rejection of invalid or all-zero inputs. |
 | Vectorized calibration Welch | Independent sample-based SciPy tests | P, degrees of freedom, orientation and intervals from explicit sample arrays. |
 | Artificial cluster generator | Exact linear-map covariance | Marginal variance one, within-pair covariance 0.5 and zero cross-cluster covariance. |
-| Monte Carlo intervals | statsmodels Wilson implementation | Binomial interval agreement including zero and all successes. |
+| Monte Carlo intervals | statsmodels Wilson implementation | Binomial intervals, including zero and all successes. |
 
-The deliberately constant-arm synthetic Welch fixture can produce a SciPy
-precision-loss warning. It is distinct from biological source data. Community
-utilities likewise have no biological matrix to analyze; their successful unit
-checks do not establish a measured phageome stability result.
+The compositional calculations are tested on synthetic fixtures. No retrieved
+biological community matrix was available to apply them to. The deliberately
+constant-arm Welch fixture can produce a SciPy precision-loss warning; it is
+not an experimental observation.
 
-## Real-source reconstruction
+## Reconstruction from the source workbook
 
-The separate original-method table contains group summaries, pooled ANOVA,
-the planned contrast and all three Tukey-Kramer comparisons for each of the
-same three selected endpoints. No supplied observation is excluded. All nine
-selected caption t/P comparisons reproduce at reported precision. Eight of
-nine group-summary comparisons agree, giving 17 matches out of 18 combined
-checks. FVT unstimulated TNF-alpha has source mean 27.8492778 pg/mL, directly
-rounding to 27.8, while the visually verified Table 1b prints 27.9. This one
-discrepancy remains explicit and does not trigger relaxed tolerances.
+The [original-method table](../results/tables/original_method_replication.csv)
+contains group summaries, pooled ANOVA, the planned contrast and all three
+Tukey-Kramer comparisons for the same three selected endpoints. No supplied
+observation is excluded. Seventeen of 18 printed-reference checks agree:
+all nine selected caption-statistic checks and eight of nine group-summary
+checks. The remaining FVT unstimulated TNF-alpha mean is 27.8492778 pg/mL in
+the workbook, which rounds directly to 27.8; the visually checked Extended Data
+Table 1b prints 27.9. The discrepancy remains unresolved, with no changed
+source value or widened rounding tolerance.
 
-The original monocyte FVT Tukey P is reconstructed as 0.106409 from the same
-observations that yield Welch P=0.012645. Pooled variance from all three groups
-and Tukey multiplicity explain the difference. No population change or extra
-exclusion is needed for this reconciliation. Original planned BH q values are
-reference annotations only; the complete original endpoint family remains
-unreconstructed. Detailed evidence is in
-[original_analysis_review.md](original_analysis_review.md).
+For the monocyte FVT comparison, the same observations give Welch P=0.012645
+and Tukey-Kramer P=0.106409. The latter reproduces the published P=0.106.
+Pooling variance across all three groups and adjusting the three pairwise
+comparisons explains the difference. This numerical reconstruction does not
+establish the common-variance assumption or reproduce the unavailable original
+SPSS session. The [reconstruction report](../results/reports/original_method_replication.md)
+and [original-analysis review](original_analysis_review.md) retain the detailed
+calculations and publication comparisons.
 
-## Source identity and independence safeguards
+## Families, biological units and uncertainty
 
-Source IDs retain literal punctuation and are scoped by experiment and group.
-Tests prevent decimal labels, repeated group-local numbers and similar-looking
-sequencing aliases from collapsing into an invented identity. Duplicate
-individual endpoint records and unknown groups fail clearly. The unchanged
-source workbook, blank formatted rows, observed zeroes and missing cells are
-checked separately. Study I remains in the audit without entering the selected
-study II inferential family.
+The exploratory mean-test family contains three FVT-experiment endpoints by two contrasts,
+with one six-test BH adjustment and pointwise 95% Welch intervals. Endpoint
+selection was informed by the published findings. The six rank comparisons
+have their own BH family and concern distributional ordering. Original-method
+Tukey intervals cover three pairs within one endpoint; the publication's
+complete across-outcome BH family remains unreconstructed. The [methods](methods.md)
+define the endpoints and comparisons.
 
-Pool and inoculum records cannot acquire an individual recipient's immune
-outcome. FASTQ files are technical objects, not biological replicates. These
-software rules enforce available metadata; they cannot verify an absent
-animal-to-assay crosswalk or supply missing abundance values.
+Source identifiers retain their punctuation and are scoped by experiment and
+treatment. Tests distinguish missing cells from observed zeroes, reject
+duplicate endpoint records, and prevent pools or inocula from acquiring an
+individual recipient's immune outcome. Sequencing files are not biological
+replicates. These checks cannot create an absent animal crosswalk. Welch
+inference still assumes independent observations; unknown cage and allocation
+details and unresolved upstream exclusions limit its interpretation.
 
-## Acquisition, resources and resumption
+The support bounds and normalized rank effects were added after the earlier
+reanalysis and introduce no hypothesis tests. Bounds concern workbook-row
+animals, conditional on every missing percentage assay having a well-defined
+value in [0,100]. They do not cover omitted animals or sampling uncertainty,
+and TNF-alpha lacks a justified finite upper support. Empirical rank effects
+reuse animals across pairs: the 72 TNF-alpha comparisons involve 17 observed
+animals. Leave-one-animal-out ranges describe influence, not confidence
+limits. See [phenotype robustness](phenotype_robustness.md) for the definitions
+and [limitations](limitations.md) for their biological scope.
 
-Checks cover missing offline inputs, corrupt hashes, capped streaming downloads,
-partial-file cleanup, and code/config/input/output changes that invalidate a
-cached stage. Dynamic Zenodo usage counters are excluded from normalized
-scientific metadata. Stage contracts prevent an unexecuted downstream analysis
-from inheriting success merely because an old file exists.
+## Conditional synthetic calibration
 
-Resource checks distinguish per-process native peaks from sampled concurrent
-descendant RSS. Storage and free-disk constraints use a persistent local
-host/checkout baseline, not historical disk values from another run. Timeouts
-bound elapsed stage time rather than CPU time. Resume and pilot/validation-only
-status are recorded per invocation; they are not claims that all scientific
-stages ran. Figure visual review is separately tied to current file hashes.
+The benchmark generated 20,000 all-null replicates for each of four fixed
+models, using seed 20261020 and batches of 500. Three independent synthetic
+endpoints have group sizes 10/10/9. Each endpoint retains the shared middle
+group in its two adjacent contrasts, so the six Welch P values form one BH
+family with that dependence preserved. The outputs record per-test false
+positives, pointwise Welch coverage, family rejection and within-endpoint
+three-pair Tukey coverage.
 
-## Inferential families and uncertainty
+The recorded probability of any BH rejection at 0.05 is:
 
-The primary biological mean family remains three endpoints by two contrasts,
-using available observations, two-sided Welch inference and one six-test BH
-adjustment. Its 95% intervals are pointwise. Endpoints were selected after the
-published results were known and before calculating these contrasts, so this
-remains exploratory. The rank-based six-test family is a labeled sensitivity
-analysis of distributional ordering, not a replacement mean test. Omission
-ranges are influence diagnostics rather than confidence intervals.
-
-All six observed mean contrasts retain direction after individual omissions.
-This limited observation does not establish stable significance or remove
-housing dependence. TNF-alpha remains method-sensitive: its FVT Welch q is
-0.1551 and rank sensitivity q is 0.01102. Both are reported.
-
-## Descriptive source-cohort robustness
-
-The missingness bounds and normalized rank effects were added after inspecting
-the earlier reanalysis. They add no biological hypothesis tests and do not
-alter either six-test family. The percentage bounds concern animals represented
-by source workbook rows, including explicit missing assays; they do not
-establish completeness of the original randomized cohort. Every missing
-percentage must have a well-defined value in [0,100] for this target to apply.
-These are sharp descriptive support extrema, not confidence intervals,
-imputations, population effects or evidence of robust significance. Missing
-TNF-alpha values and unavailable finite upper support preclude analogous finite
-bounds. See [phenotype_robustness.md](phenotype_robustness.md).
-
-The empirical rank effects describe ordering of observed animal values.
-Average-rank U, direct wins plus half ties, and the existing sensitivity U must
-agree before outputs are written. Pair counts reuse animals; the 72 observed
-TNF-alpha cross-group pairs involve 17 animals, not 72 independent replicates.
-These summaries do not estimate raw mean differences or automatically establish
-a median shift. Source-record coverage, altered U values, out-of-support
-measurements and deterministic output preservation are exercised by prepared-
-stage fixtures. No interval is calculated by treating pairs as independent.
-
-## Conditional synthetic null calibration
-
-The separate benchmark has four fixed zero-mean models: independent equal-
-variance Gaussian, unequal-variance Gaussian, centered lognormal and artificial
-Gaussian clusters with ICC 0.5. It jointly generates the overlapping contrasts
-and records per-test false-positive rates, Welch coverage, all-null BH family
-rejection and within-endpoint three-pair Tukey coverage. Defaults are 20,000
-replicates per scenario and batches at most 500. Quick checks use much smaller
-fixtures. Seeded replicate-major streams are tested for batch invariance.
-
-Every benchmark row has `purpose=synthetic_not_biological`. Wilson bounds measure
-simulation error across replicates, not mouse-effect uncertainty. The artificial
-all-group clusters do not represent the original singly housed stressed groups
-or estimate actual cage ICC. No observed immune values enter the generator,
-and no biological power calculation is claimed. The expanded benchmark
-completed 20,000 replicates per scenario with seed 20261020 and batches of 500.
-Its recorded all-null BH family any-rejection probabilities are:
-
-| Synthetic assumption | Probability | Wilson 95% Monte Carlo interval |
+| Synthetic model | Probability | Wilson 95% Monte Carlo interval |
 |---|---:|---|
 | Independent equal-variance Gaussian | 0.04620 | 0.04338 to 0.04920 |
-| Independent unequal-variance Gaussian | 0.04795 | 0.04507 to 0.05100 |
+| Independent Gaussian, variances 4/1/1 | 0.04795 | 0.04507 to 0.05100 |
 | Independent centered lognormal | 0.01150 | 0.01011 to 0.01307 |
-| Artificial clusters, ICC 0.5 | 0.16495 | 0.15987 to 0.17016 |
+| Artificial Gaussian clusters, ICC 0.5 | 0.16495 | 0.15987 to 0.17016 |
 
-These are measured software behavior under complete-null assumptions. In this
-special case FDR equals FWER; neither probability is an estimate of the actual
-study's error rate. Per-test and interval-coverage outcomes are retained in
-`results/tables/software_calibration.csv`.
-See [calibration_design.md](calibration_design.md).
+These four rows come from [software_calibration.csv](../results/tables/software_calibration.csv).
+Because every null is true, the family rejection probability equals both
+FWER and FDR in this simulation. Wilson intervals describe Monte Carlo error,
+not uncertainty about mouse effects or the real cage structure. The artificial
+clusters were imposed in every group; they do not represent the source
+experiment's singly housed stressed groups or estimate its ICC. No biological
+observations enter the generator, and these results do not calibrate the
+actual experiment under its unknown dependence. The [calibration design](calibration_design.md)
+sets out the scenarios and their interpretation.
 
-## Limits of validation
+## Recorded executions
 
-No empirical cage-aware null calibration of the actual experiment is possible
-without its dependence information. A synthetic assumption stress test does
-not close that gap. No phage-immune permutation test, repeated-measures
-stability model, bacterial-adjusted association or mediation was executed.
-Agreement with trusted software does not establish normality, homoscedasticity,
-independent mice, unbiased censoring, causal treatment attribution or external
-generalizability. The unknown design and missing inputs remain the scientific
-limits described in [limitations.md](limitations.md).
+The Windows suite recorded on 22 October 2026 collected 174 tests, executed
+168 and skipped six platform-specific cases, with zero failures or errors.
+Its code SHA-256 begins `e36ee2869a12`; the full identity and individual
+outcomes are in the [validation summary](../results/reports/validation_summary.json)
+and [log](../results/reports/validation.log).
+
+The fresh committed-source replays on 21 October used commit
+`eb7ba6c8b945670a1f55c493d89435f36750900c`, with code SHA-256 beginning
+`9d62cd4b5958`. Both executed all ten stages offline. Windows collected
+174 tests, executed 168 and skipped six; Linux collected 174, executed 165 and
+skipped nine. Both had zero failures and errors. The
+[Windows replay](../results/reports/reproduction_check.json) reproduced all
+30 scientific files exactly. The [Linux replay](../results/reports/linux_reproduction_check.json)
+passed all 20 CSV comparisons under the fixed policy and matched the ten
+Linux figure files covered by the retained visual review. Its
+[suite summary](../results/reports/linux_validation_summary.json) records the
+Linux cases. These dated replays apply to that earlier source identity; they
+are not a fresh Linux execution of the later `e36ee2869a12` revision.

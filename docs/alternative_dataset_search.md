@@ -47,6 +47,10 @@ syndrome FVT studies. These conditions were not substituted for psychosocial
 stress. A more easily available inflammatory association would not answer the
 specified question.
 
+The Choi accession description above follows the article's data statement.
+The [later supplement audit](alternative_dataset_audit.md) found 46 ENA records
+labelled AMPLICON and did not verify a deposited recipient virome.
+
 ## Consequence
 
 No screened alternative was verified to satisfy the full combination of a
@@ -59,6 +63,11 @@ new linkage audit before association analysis is enabled.
 
 No raw read archives, viral reference databases, or candidate alternative data
 packages were downloaded for this screen. No authors were contacted.
+
+The no-package-download statement describes this initial screen. The
+[later methods and supplement audit](alternative_dataset_audit.md) retrieved
+and inspected candidate supplements; its file-level assessments supersede
+this screen.
 
 ## Subsequent bounded checks
 

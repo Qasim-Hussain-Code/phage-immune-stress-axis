@@ -1,25 +1,81 @@
-# Execution environment and dependency provenance
+# Execution environments and dependency provenance
 
-The original research executions use the existing Windows Python 3.14.0 interpreter and packages. The successful Windows committed-source replay uses that same host environment. A separate Linux validation uses the already installed Ubuntu WSL distribution and Python 3.14.4. Its initial mounted-workspace preparation was cancelled before numerical-package installation. The successful retry used a fresh, separately budgeted directory on native disk-backed `/var/tmp`, independently installed all 21 pinned distributions, and newly completed all ten offline stages. All 20 CSVs passed the fixed comparison policy, and all ten changed figure files passed actual visual review. See [Linux reproduction validation](linux_reproduction_validation.md) and [setup evidence](linux_environment_setup.md).
+The analysis has been executed on Windows and in an existing Ubuntu WSL2
+distribution on the same physical host. The Windows runs reuse an installed
+Python environment. The Linux replays install the pinned dependencies into a
+new temporary environment. These are different reproduction checks and retain
+separate source identities and results.
 
-`requirements.txt` now pins the 21 installed distributions in the observed active dependency closure, including transitive libraries used for figure rendering and independent estimator checks. The shared `pisa.environment` module records their versions without importing numerical libraries into the supervising runner. The runner fingerprint, validation summary and current environment probe use this same distribution set. A change in fonttools, Pillow, Pandas or another recorded dependency therefore invalidates old stage caches even when the main Matplotlib, SciPy and statsmodels versions remain unchanged.
+## Executed source revisions
 
-Tests compare the pinned distribution names with this provenance set, inspect installed requirement metadata for omitted active dependencies, and verify cache invalidation after a mocked transitive-version change. Missing distributions remain explicit `null` values in the inventory rather than disappearing from the record. These are software checks, not additional biological results.
+| Execution | Source | Environment | Result |
+|---|---|---|---|
+| Full Windows workflow, 22 October 2026 | Working source subsequently committed as `21546d6` | CPython 3.14.0; existing packages | Ten stages executed; 174 tests collected, 168 executed, six Linux-only skips; no failures or errors |
+| Fresh Windows checkout, 21 October 2026 | `eb7ba6c` | Same CPython 3.14.0 environment | Ten stages executed without resume; all 30 scientific files reproduced exactly |
+| Fresh Ubuntu WSL2 environment, 21 October 2026 | `eb7ba6c` | CPython 3.14.4; 21 pinned distributions newly installed | Ten stages executed; 174 tests collected, 165 executed, nine Windows-only skips; all 20 CSV comparisons passed |
 
-Version pins identify Python distributions. They do not freeze wheel hashes, BLAS builds, operating-system libraries, font files or hardware. Identical package version strings alone do not establish exact output equality on another platform. The exact-byte reproduction claim is restricted to the actually executed source checkout under the recorded environment.
+The October 22 revision changes the report narrative and the explanation of
+viral–immune eligibility. Its numerical observations, estimates and figures
+match the preceding analysis; only the eligibility table's question and reason
+text changed. The earlier Linux replay does not establish execution of that
+revised report generator. The [current invocation](../results/reports/run_status.json),
+[Windows replay](../results/reports/reproduction_check.json) and
+[Linux replay](../results/reports/linux_reproduction_check.json) retain their
+complete source and execution records.
 
-The existing Ubuntu WSL2 distribution provides Python 3.14.4, glibc 2.43 and an existing 6 GB virtual-machine RAM cap. No distribution or operating-system package was installed and the WSL configuration was not changed. Actual standard-library process fixtures have now exercised Linux cleanup, including observed descendants that change sessions or reparent. The subsequent full scientific execution and independently installed dependency checks are established by [linux_reproduction_check.json](../results/reports/linux_reproduction_check.json); The latest version 0.2.2 Windows/Linux replays collected 174 tests each, with 168/165 executed, six/nine platform-specific skips and zero failures. The temporary native environment was removed after verified evidence extraction.
+## Dependency identity
 
-The bounded environment preparation uses only prebuilt wheels for the same 21 pinned distributions. Its compressed total is 101,465,096 bytes and expanded wheel-member total is 334,183,637 bytes. Downloads remain under a 250 MB ceiling. The host reserves an additional 1.5 GB for native temporary files, including wheels, the environment, source and outputs, while checking physical Windows-volume free space. Linux independently counts that complete native directory. No source build or system-wide install is allowed. Windows host resources and Linux guest resources are measured separately. The Windows process-family measurement does not include the WSL virtual machine, and adding guest RSS to virtual-machine memory would double count allocations. See the fixed [comparison plan and operational amendments](cross_platform_plan.md).
+[requirements.txt](../requirements.txt) pins 21 distributions, including the
+transitive dependencies used by figure rendering and independent estimator
+checks. The environment inventory records the same set. Runner fingerprints
+include these versions, so a change in a recorded rendering library invalidates
+cached stages even if SciPy and Matplotlib retain their versions. Missing
+packages remain explicit in the inventory.
 
-The historical `data/manifests/environment_initial.json` is preserved. Newly observed package versions belong in the current invocation records and the ignored local environment snapshot; historical measurements are not rewritten to imply that an earlier run recorded the expanded inventory.
+Version pins identify distributions; binary builds, operating-system libraries
+and fonts can still differ. The Linux setup additionally verifies each wheel
+against its official PyPI SHA-256 value and records numerical-library build
+configuration. The [installation report](linux_environment_setup.md) links the
+wheel provenance, installed-version checks and retained historical snapshots.
+Windows dependency reinstallation is not part of its same-environment replay.
 
-## Interrupted and failed executions
+## Comparing outputs across platforms
 
-JSON records are serialized before opening the destination, written to a sibling temporary file, flushed and replaced atomically. Windows replacement errors 5, 32 and 33 receive at most five brief retries totaling 0.62 seconds; serialization, writing and unrelated errors are not retried. A persistent replacement failure preserves the previous record. The runner records final resource or reporting failures as failures and preserves the original analysis exception when cleanup also fails. Release checks require the complete latest status to match its per-invocation counterpart and reject a stale success when a newer persisted attempt exists.
+The Windows fresh-checkout comparison requires exact SHA-256 equality for all
+30 scientific files. Linux uses the [fixed comparison protocol](cross_platform_plan.md):
+observations, identifiers, counts, schemas and specified exact fields must
+agree, while a listed set of derived continuous values has numerical
+tolerances. Eighteen CSVs matched exactly; two differed only in derived values
+by at most 3e-14. The tolerances were not widened after execution.
 
-All executable source files and the input catalog use Git's canonical LF text representation. The catalog's CRLF-to-LF normalization changes no field, URL, input checksum or observation. The ten frozen input files remain byte-for-byte unchanged. Any Git configuration overrides are scoped to the individual reproduction process; no global Git configuration is changed.
+Linux PDF and PNG bytes differ from Windows. The October 21 replay produced
+the same ten Linux figure hashes as the retained visual review. Its acceptance
+uses that exact match and makes no claim of a new inspection. See
+[Linux reproduction](linux_reproduction_validation.md) and
+[figure review](pdf_qa.md) for the separate comparison and review records.
 
-On Windows, monitored commands enter a kill-on-close Job Object before their primary thread runs; cleanup terminates remaining ordinary descendants and waits for zero active job members. On Linux, cleanup signals the created process group and retains observed descendant PID/starttime identities, using pidfds when available. Recorded descendants remain targets after session changes or reparenting. Polling cannot guarantee capture of a child that forks and detaches between observations, and the starttime-checked numeric-PID fallback retains a check-to-signal race. This is bounded failure cleanup, not a security sandbox. Other POSIX platforms use process-group cleanup; macOS has not been validated.
+## Resources and execution records
 
-Actual small process fixtures exercised successful and failed parents, timeout, resource failure and interruption paths on both Windows and Linux. These software fixtures acquire no biological data and establish no scientific result. Platform-specific tests are explicitly skipped on the other platform; test totals must distinguish collected tests from executed tests.
+The selected workflow runs serially and limits numerical libraries to one
+thread. The native Linux directory contains the source, wheels, environment,
+logs and outputs under its 1.5 GB allowance. Windows separately checks physical
+disk space and reserves capacity for native virtual-disk growth. Guest process
+RSS and virtual-machine memory have different scopes and are not added
+together. Exact measurements belong to their dated execution reports; the
+[latest resource report](resource_usage.md) describes the current invocation.
+
+The runner writes JSON records atomically and retains a journal for each
+invocation. Resume requires matching source, configuration, dependency, input
+and output fingerprints. A newer failed or interrupted attempt cannot inherit
+an earlier successful status. Historical environment measurements remain
+unchanged; each checkout uses its own local resource baseline.
+
+Process cleanup uses Windows Job Objects or Linux process groups and observed
+descendant identities. The Linux monitor can retain descendants after session
+changes or reparenting, but polling cannot guarantee detection of a process
+that detaches between observations. Platform-specific process fixtures test
+these execution controls. They do not establish independence of the biological
+observations or replace the design assumptions in [methods](methods.md).
+
+For installation commands and analysis modes, use the
+[reproduction guide](reproducibility.md).
