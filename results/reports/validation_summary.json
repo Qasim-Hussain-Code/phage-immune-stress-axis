@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "started_utc": "2026-10-21T13:37:04.095510+00:00",
+  "started_utc": "2026-10-22T00:57:01.063458+00:00",
   "project_version": "0.2.2",
-  "finished_utc": "2026-10-21T13:37:30.176695+00:00",
-  "duration_seconds": 26.081,
-  "code_sha256": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
-  "code_sha256_after": "9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d",
+  "finished_utc": "2026-10-22T00:57:48.572331+00:00",
+  "duration_seconds": 47.509,
+  "code_sha256": "e36ee2869a12c9a10423485309c0cc894e3be4525738f8d9b331f4f2d12842b5",
+  "code_sha256_after": "e36ee2869a12c9a10423485309c0cc894e3be4525738f8d9b331f4f2d12842b5",
   "source_unchanged_during_validation": true,
   "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
   "package_versions": {
@@ -34,699 +34,699 @@
   "test_timings": [
     {
       "test": "test_acquisition.AcquisitionContracts.test_catalog_excludes_usage_stats",
-      "seconds": 0.000219
+      "seconds": 0.000434
     },
     {
       "test": "test_acquisition.AcquisitionContracts.test_correct_hash_does_not_override_wrong_cached_size",
-      "seconds": 0.007179
+      "seconds": 0.046197
     },
     {
       "test": "test_acquisition.AcquisitionContracts.test_download_with_correct_hash_and_wrong_size_is_not_promoted",
-      "seconds": 0.004101
+      "seconds": 0.007359
     },
     {
       "test": "test_acquisition.AcquisitionContracts.test_fingerprint_detects_input_change",
-      "seconds": 0.036665
+      "seconds": 0.182335
     },
     {
       "test": "test_acquisition.AcquisitionContracts.test_input_byte_size_schema_rejects_invalid_and_missing_sizes",
-      "seconds": 0.02354
+      "seconds": 0.174294
     },
     {
       "test": "test_acquisition.AcquisitionContracts.test_malformed_manifest_fails_before_download",
-      "seconds": 0.014883
+      "seconds": 0.096757
     },
     {
       "test": "test_acquisition.AcquisitionContracts.test_offline_missing_and_corrupt_inputs_fail",
-      "seconds": 0.006021
+      "seconds": 0.029281
     },
     {
       "test": "test_acquisition.AcquisitionContracts.test_streaming_cap_is_enforced_and_partial_removed",
-      "seconds": 0.005096
+      "seconds": 0.017698
     },
     {
       "test": "test_acquisition.AcquisitionContracts.test_validation_does_not_write_or_extract",
-      "seconds": 0.006812
+      "seconds": 0.025397
     },
     {
       "test": "test_acquisition.AcquisitionContracts.test_zenodo_download_rejects_wrong_canonical_size",
-      "seconds": 0.005955
+      "seconds": 0.04134
     },
     {
       "test": "test_acquisition.AcquisitionContracts.test_zenodo_download_verifies_canonical_stored_size",
-      "seconds": 0.007858
+      "seconds": 0.050852
     },
     {
       "test": "test_acquisition.AcquisitionContracts.test_zero_byte_input_is_valid_for_cache_and_offline_fetch",
-      "seconds": 0.006691
+      "seconds": 0.037413
     },
     {
       "test": "test_calibration.SoftwareCalibrationTests.test_benchmark_seed_and_batch_invariance",
-      "seconds": 0.838997
+      "seconds": 3.426296
     },
     {
       "test": "test_calibration.SoftwareCalibrationTests.test_cluster_covariance_matches_analytical_contract",
-      "seconds": 0.000241
+      "seconds": 0.003572
     },
     {
       "test": "test_calibration.SoftwareCalibrationTests.test_invalid_and_bounded_settings",
-      "seconds": 8.5e-05
+      "seconds": 0.000243
     },
     {
       "test": "test_calibration.SoftwareCalibrationTests.test_obvious_zero_signal_and_added_signal_controls",
-      "seconds": 0.000216
+      "seconds": 0.000654
     },
     {
       "test": "test_calibration.SoftwareCalibrationTests.test_outputs_need_no_biological_inputs_and_are_labeled",
-      "seconds": 0.038046
+      "seconds": 0.053619
     },
     {
       "test": "test_calibration.SoftwareCalibrationTests.test_replicate_major_generators_preserve_batches_exactly",
-      "seconds": 0.001545
+      "seconds": 0.002564
     },
     {
       "test": "test_calibration.SoftwareCalibrationTests.test_vectorized_welch_against_independent_scipy_samples",
-      "seconds": 0.021287
+      "seconds": 0.048754
     },
     {
       "test": "test_calibration.SoftwareCalibrationTests.test_wilson_matches_statsmodels_including_boundaries",
-      "seconds": 0.344532
+      "seconds": 5.623088
     },
     {
       "test": "test_configuration.ResourcePolicyConfiguration.test_hardware_policy_cannot_be_silently_weakened",
-      "seconds": 0.047582
+      "seconds": 0.302405
     },
     {
       "test": "test_environment.DependencyProvenance.test_missing_distribution_is_explicit",
-      "seconds": 0.013077
+      "seconds": 0.026168
     },
     {
       "test": "test_environment.DependencyProvenance.test_pins_cover_observed_active_dependency_closure",
-      "seconds": 0.029097
+      "seconds": 0.068813
     },
     {
       "test": "test_environment.DependencyProvenance.test_transitive_version_change_invalidates_cache_fingerprint",
-      "seconds": 0.028882
+      "seconds": 0.067145
     },
     {
       "test": "test_figure_qa.RecordedFigureReview.test_missing_review_never_means_pass",
-      "seconds": 0.00056
+      "seconds": 0.001264
     },
     {
       "test": "test_figure_qa.RecordedFigureReview.test_review_is_invalidated_by_changed_or_added_pdf",
-      "seconds": 0.01052
+      "seconds": 0.075232
     },
     {
       "test": "test_immune.TestIndependentStatistics.test_analytical_identity_and_edge_cases",
-      "seconds": 0.000714
+      "seconds": 0.001248
     },
     {
       "test": "test_immune.TestIndependentStatistics.test_bh_matches_statsmodels",
-      "seconds": 0.006469
+      "seconds": 0.028582
     },
     {
       "test": "test_immune.TestIndependentStatistics.test_leave_one_out_agrees_with_brute_force_means",
-      "seconds": 0.001834
+      "seconds": 0.004684
     },
     {
       "test": "test_immune.TestIndependentStatistics.test_welch_matches_scipy",
-      "seconds": 0.005069
+      "seconds": 0.010318
     },
     {
       "test": "test_immune.TestSourceIdentifiers.test_blank_rows_missing_outcomes_and_zero",
-      "seconds": 0.238568
+      "seconds": 0.644199
     },
     {
       "test": "test_immune.TestSourceIdentifiers.test_duplicate_and_unknown_groups_fail",
-      "seconds": 0.064774
+      "seconds": 0.124692
     },
     {
       "test": "test_immune.TestSourceIdentifiers.test_fixed_six_test_family_and_no_study_i_tests",
-      "seconds": 0.063011
+      "seconds": 0.119149
     },
     {
       "test": "test_immune.TestSourceIdentifiers.test_literal_and_composite_ids",
-      "seconds": 6e-05
+      "seconds": 0.000141
     },
     {
       "test": "test_immune.TestSourceIdentifiers.test_unavailable_source_does_not_make_results",
-      "seconds": 0.000587
+      "seconds": 0.001247
     },
     {
       "test": "test_io.AtomicJSON.test_conflict_classifier_requires_windows_permissionerror_and_known_code",
-      "seconds": 0.000166
+      "seconds": 0.000322
     },
     {
       "test": "test_io.AtomicJSON.test_failed_replace_preserves_existing_record",
-      "seconds": 0.023153
+      "seconds": 0.023174
     },
     {
       "test": "test_io.AtomicJSON.test_native_serialization_is_preserved_and_temporary_is_removed",
-      "seconds": 0.005985
+      "seconds": 0.018499
     },
     {
       "test": "test_io.AtomicJSON.test_ordinary_permission_nonwindows_and_other_oserrors_are_not_retried",
-      "seconds": 0.01627
+      "seconds": 0.028159
     },
     {
       "test": "test_io.AtomicJSON.test_persistent_known_windows_conflict_is_bounded_and_preserves_old_bytes",
-      "seconds": 0.01231
+      "seconds": 0.02413
     },
     {
       "test": "test_io.AtomicJSON.test_serialization_failure_never_opens_or_truncates_destination",
-      "seconds": 0.001706
+      "seconds": 0.002655
     },
     {
       "test": "test_io.AtomicJSON.test_transient_windows_conflicts_retry_then_publish_with_real_replace",
-      "seconds": 0.016503
+      "seconds": 0.046672
     },
     {
       "test": "test_metrics.CommunityMath.test_bray_curtis_scipy",
-      "seconds": 0.000237
+      "seconds": 0.000397
     },
     {
       "test": "test_metrics.CommunityMath.test_closure_scale_invariance",
-      "seconds": 0.000164
+      "seconds": 0.000367
     },
     {
       "test": "test_metrics.CommunityMath.test_invalid_abundances",
-      "seconds": 0.000176
+      "seconds": 0.000319
     },
     {
       "test": "test_metrics.CommunityMath.test_pairwise_logratio_identity",
-      "seconds": 0.000146
+      "seconds": 0.000267
     },
     {
       "test": "test_metrics.CommunityMath.test_zero_handling_and_identity",
-      "seconds": 0.000164
+      "seconds": 0.000233
     },
     {
       "test": "test_original_methods.OriginalMethodRealDataVerification.test_cached_source_matches_published_caption_without_extra_exclusions",
-      "seconds": 0.46997
+      "seconds": 0.793409
     },
     {
       "test": "test_original_methods.OriginalMethodSyntheticTests.test_anova_and_contrast_against_independent_ols",
-      "seconds": 1.901513
+      "seconds": 4.941476
     },
     {
       "test": "test_original_methods.OriginalMethodSyntheticTests.test_contrast_covariance_depends_on_unequal_sizes",
-      "seconds": 0.000162
+      "seconds": 6e-05
     },
     {
       "test": "test_original_methods.OriginalMethodSyntheticTests.test_invalid_groups_and_degenerate_variance",
-      "seconds": 0.000634
+      "seconds": 0.000233
     },
     {
       "test": "test_original_methods.OriginalMethodSyntheticTests.test_planned_contrast_is_not_conjunction_of_pairwise_effects",
-      "seconds": 0.908255
+      "seconds": 0.192025
     },
     {
       "test": "test_original_methods.OriginalMethodSyntheticTests.test_published_rounding_is_explicit",
-      "seconds": 0.000116
+      "seconds": 5.3e-05
     },
     {
       "test": "test_original_methods.OriginalMethodSyntheticTests.test_tukey_against_statsmodels_for_unequal_group_sizes",
-      "seconds": 2.151095
+      "seconds": 0.525916
     },
     {
       "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_missing_source_endpoint_record_and_support_violation_fail",
-      "seconds": 0.052044
+      "seconds": 0.070692
     },
     {
       "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_prepared_stage_fixture_outputs_are_descriptive_and_repeatable",
-      "seconds": 0.082874
+      "seconds": 0.117323
     },
     {
       "test": "test_phenotype_robustness.PreparedStageFixtureTests.test_tampered_or_incomplete_existing_u_fails_before_outputs",
-      "seconds": 0.117558
+      "seconds": 0.140687
     },
     {
       "test": "test_phenotype_robustness.RankEffectTests.test_rank_reversal_all_ties_and_invalid_inputs",
-      "seconds": 0.000549
+      "seconds": 0.000234
     },
     {
       "test": "test_phenotype_robustness.RankEffectTests.test_tied_midrank_u_matches_independent_library_and_pair_counts",
-      "seconds": 0.000777
+      "seconds": 0.003549
     },
     {
       "test": "test_phenotype_robustness.SupportBoundTests.test_bounds_equal_independently_enumerated_corners",
-      "seconds": 0.000528
+      "seconds": 0.00025
     },
     {
       "test": "test_phenotype_robustness.SupportBoundTests.test_bounds_reversal_all_missing_and_unknown_support",
-      "seconds": 0.000154
+      "seconds": 6.8e-05
     },
     {
       "test": "test_phenotype_robustness.SupportBoundTests.test_invalid_counts_support_and_outcomes_fail",
-      "seconds": 0.000435
+      "seconds": 0.000187
     },
     {
       "test": "test_pipeline.PipelineContracts.test_execution_contract_rejects_source_config_spec_and_runtime_changes",
-      "seconds": 0.396403
+      "seconds": 0.307282
     },
     {
       "test": "test_pipeline.PipelineContracts.test_expected_input_materialization_does_not_change_source_contract",
-      "seconds": 0.130423
+      "seconds": 0.064871
     },
     {
       "test": "test_pipeline.PipelineContracts.test_malformed_valid_json_cache_is_invalidated_without_exception",
-      "seconds": 0.013337
+      "seconds": 0.006058
     },
     {
       "test": "test_pipeline.PipelineContracts.test_output_tamper_and_exact_output_set",
-      "seconds": 0.02053
+      "seconds": 0.02436
     },
     {
       "test": "test_pipeline.PipelineContracts.test_runtime_change_invalidates_fingerprint",
-      "seconds": 0.031585
+      "seconds": 0.01092
     },
     {
       "test": "test_pipeline.PipelineContracts.test_upstream_changes_invalidate_downstream_cache",
-      "seconds": 0.027849
+      "seconds": 0.044519
     },
     {
       "test": "test_pipeline.PipelineContracts.test_validation_only_does_not_fetch_or_extract",
-      "seconds": 0.008252
+      "seconds": 0.0556
     },
     {
       "test": "test_pipeline_failures.RunnerFinalizationFailures.test_final_resource_failure_cannot_preserve_completed_status",
-      "seconds": 0.144606
+      "seconds": 0.109863
     },
     {
       "test": "test_pipeline_failures.RunnerFinalizationFailures.test_interruption_survives_secondary_finalization_errors",
-      "seconds": 0.109437
+      "seconds": 0.045988
     },
     {
       "test": "test_pipeline_failures.RunnerFinalizationFailures.test_new_reporting_failure_fails_previously_completed_analysis",
-      "seconds": 0.164488
+      "seconds": 0.048675
     },
     {
       "test": "test_pipeline_failures.RunnerFinalizationFailures.test_original_failure_survives_secondary_resource_and_reporting_errors",
-      "seconds": 0.151312
+      "seconds": 0.053029
     },
     {
       "test": "test_pipeline_failures.RunnerFinalizationFailures.test_resource_record_write_failure_is_terminal_and_recorded",
-      "seconds": 0.084581
+      "seconds": 0.043967
     },
     {
       "test": "test_pipeline_failures.RunnerFinalizationFailures.test_status_path_failure_still_records_failed_invocation",
-      "seconds": 0.07797
+      "seconds": 0.036438
     },
     {
       "test": "test_portability.PortabilityContracts.test_absolute_and_relative_boundaries_are_fixed_or_conditions",
-      "seconds": 0.12218
+      "seconds": 0.143255
     },
     {
       "test": "test_portability.PortabilityContracts.test_bounds_limit_detail_without_hiding_total_differences",
-      "seconds": 0.049384
+      "seconds": 0.038781
     },
     {
       "test": "test_portability.PortabilityContracts.test_exact_bytes_and_newline_only_semantic_equality_are_distinct",
-      "seconds": 0.034008
+      "seconds": 0.03967
     },
     {
       "test": "test_portability.PortabilityContracts.test_hard_invalid_figure_takes_precedence_over_other_visual_review",
-      "seconds": 0.541887
+      "seconds": 0.860554
     },
     {
       "test": "test_portability.PortabilityContracts.test_header_row_order_row_count_and_row_width_are_enforced",
-      "seconds": 0.055296
+      "seconds": 0.093785
     },
     {
       "test": "test_portability.PortabilityContracts.test_ids_source_values_counts_json_and_publication_fields_remain_exact",
-      "seconds": 0.156742
+      "seconds": 0.243435
     },
     {
       "test": "test_portability.PortabilityContracts.test_nonfinite_values_are_rejected_even_when_bytes_match",
-      "seconds": 0.212765
+      "seconds": 0.360423
     },
     {
       "test": "test_portability.PortabilityContracts.test_plan_is_deterministic_and_names_every_fixed_schema",
-      "seconds": 0.002738
+      "seconds": 0.002965
     },
     {
       "test": "test_portability.PortabilityContracts.test_tree_inventory_and_figure_review_never_claim_byte_identity",
-      "seconds": 0.805512
+      "seconds": 0.451981
     },
     {
       "test": "test_portability.PortabilityContracts.test_unknown_schema_and_broadened_whitelist_fail_closed",
-      "seconds": 0.024721
+      "seconds": 0.009065
     },
     {
       "test": "test_private_push.GitPolicy.test_clean_new_blob_and_empty_commit_are_supported",
-      "seconds": 1.182888
+      "seconds": 1.871367
     },
     {
       "test": "test_private_push.GitPolicy.test_credentials_removed_by_later_commit_still_block_release",
-      "seconds": 0.997822
+      "seconds": 1.126554
     },
     {
       "test": "test_private_push.GitPolicy.test_default_approved_destination_is_valid",
-      "seconds": 0.356892
+      "seconds": 0.700494
     },
     {
       "test": "test_private_push.GitPolicy.test_explicit_url_rewrite_is_checked_even_with_an_approved_pushurl",
-      "seconds": 0.58722
+      "seconds": 0.660504
     },
     {
       "test": "test_private_push.GitPolicy.test_generic_url_rewrite_is_rejected",
-      "seconds": 0.353058
+      "seconds": 0.533981
     },
     {
       "test": "test_private_push.GitPolicy.test_git_replacement_cannot_conceal_original_credential_blob",
-      "seconds": 0.860074
+      "seconds": 1.436133
     },
     {
       "test": "test_private_push.GitPolicy.test_inherited_config_selector_cannot_hide_transport_rewrites",
-      "seconds": 0.462844
+      "seconds": 0.841242
     },
     {
       "test": "test_private_push.GitPolicy.test_multiple_push_destinations_are_rejected",
-      "seconds": 0.384339
+      "seconds": 0.70104
     },
     {
       "test": "test_private_push.GitPolicy.test_private_working_file_in_new_history_is_rejected",
-      "seconds": 0.657577
+      "seconds": 0.866684
     },
     {
       "test": "test_private_push.GitPolicy.test_push_only_url_rewrite_is_rejected",
-      "seconds": 0.267348
+      "seconds": 0.702851
     },
     {
       "test": "test_private_push.GitPolicy.test_separate_public_push_url_is_rejected",
-      "seconds": 0.25666
+      "seconds": 0.644676
     },
     {
       "test": "test_private_push.ReleaseIdentity.test_api_host_is_pinned_despite_an_inherited_enterprise_host",
-      "seconds": 0.001038
+      "seconds": 0.001674
     },
     {
       "test": "test_private_push.ReleaseIdentity.test_commit_message_format_is_enforced",
-      "seconds": 0.000309
+      "seconds": 0.000421
     },
     {
       "test": "test_private_push.ReleaseIdentity.test_credentials_in_commit_bodies_are_rejected_without_echoing_values",
-      "seconds": 3e-05
+      "seconds": 4.7e-05
     },
     {
       "test": "test_private_push.ReleaseIdentity.test_default_check_never_invokes_a_push",
-      "seconds": 0.000306
+      "seconds": 0.000513
     },
     {
       "test": "test_private_push.ReleaseIdentity.test_optimized_python_cannot_disable_the_private_check",
-      "seconds": 0.252281
+      "seconds": 1.934973
     },
     {
       "test": "test_private_push.ReleaseIdentity.test_other_authors_committers_and_coauthor_trailers_are_rejected",
-      "seconds": 0.000366
+      "seconds": 0.000279
     },
     {
       "test": "test_private_push.ReleaseIdentity.test_private_target_and_single_researcher_are_required",
-      "seconds": 0.00027
+      "seconds": 0.000263
     },
     {
       "test": "test_private_push.ReleaseIdentity.test_public_target_stops_before_any_git_or_push_operation",
-      "seconds": 0.000215
+      "seconds": 0.000193
     },
     {
       "test": "test_private_push.ReleaseIdentity.test_user_authored_github_web_commits_remain_valid",
-      "seconds": 6.2e-05
+      "seconds": 7.5e-05
     },
     {
       "test": "test_private_push.ReleaseIdentity.test_verified_push_pins_commit_and_url_and_blocks_visibility_change",
-      "seconds": 0.001732
+      "seconds": 0.001926
     },
     {
       "test": "test_processes.LinuxIdentityContracts.test_pidfd_capture_rechecks_identity_and_closes_raced_descriptor",
-      "seconds": 0.000766
+      "seconds": 0.000742
     },
     {
       "test": "test_processes.LinuxIdentityContracts.test_reused_pid_is_not_signalled_by_starttime_fallback",
-      "seconds": 0.000345
+      "seconds": 0.000304
     },
     {
       "test": "test_processes.LinuxProcessIntegration.test_keyboard_interrupt_cleans_observed_separate_sessions",
-      "seconds": 3.3e-05
+      "seconds": 3e-05
     },
     {
       "test": "test_processes.LinuxProcessIntegration.test_observed_reparented_leaf_is_cleaned_on_controller_failure",
-      "seconds": 2.6e-05
-    },
-    {
-      "test": "test_processes.LinuxProcessIntegration.test_parent_nonzero_cleans_ordinary_process_group",
-      "seconds": 2.1e-05
-    },
-    {
-      "test": "test_processes.LinuxProcessIntegration.test_parent_success_cleans_ordinary_process_group",
-      "seconds": 2e-05
-    },
-    {
-      "test": "test_processes.LinuxProcessIntegration.test_resource_failure_cleans_observed_separate_sessions",
-      "seconds": 2e-05
-    },
-    {
-      "test": "test_processes.LinuxProcessIntegration.test_timeout_cleans_observed_separate_sessions",
       "seconds": 1.9e-05
     },
     {
+      "test": "test_processes.LinuxProcessIntegration.test_parent_nonzero_cleans_ordinary_process_group",
+      "seconds": 1.4e-05
+    },
+    {
+      "test": "test_processes.LinuxProcessIntegration.test_parent_success_cleans_ordinary_process_group",
+      "seconds": 1.3e-05
+    },
+    {
+      "test": "test_processes.LinuxProcessIntegration.test_resource_failure_cleans_observed_separate_sessions",
+      "seconds": 1.3e-05
+    },
+    {
+      "test": "test_processes.LinuxProcessIntegration.test_timeout_cleans_observed_separate_sessions",
+      "seconds": 1.2e-05
+    },
+    {
       "test": "test_processes.ProcessCleanupContracts.test_normal_parent_success_does_not_hide_cleanup_failure",
-      "seconds": 0.004853
+      "seconds": 0.00235
     },
     {
       "test": "test_processes.ProcessCleanupContracts.test_original_guard_error_survives_secondary_cleanup_error",
-      "seconds": 0.002876
+      "seconds": 0.002273
     },
     {
       "test": "test_processes.ProcessCleanupContracts.test_posix_group_is_signalled_after_leader_has_already_exited",
-      "seconds": 0.000748
+      "seconds": 0.000759
     },
     {
       "test": "test_processes.WindowsJobIntegration.test_argv_cwd_environment_stdin_and_combined_log",
-      "seconds": 0.089689
+      "seconds": 0.639177
     },
     {
       "test": "test_processes.WindowsJobIntegration.test_assignment_failure_never_executes_child_and_closes_handles",
-      "seconds": 0.014564
+      "seconds": 0.013569
     },
     {
       "test": "test_processes.WindowsJobIntegration.test_create_failure_does_not_leak_job_or_stdio_handles",
-      "seconds": 0.003222
+      "seconds": 0.002723
     },
     {
       "test": "test_processes.WindowsJobIntegration.test_keyboard_interrupt_cleans_worker_and_grandchild",
-      "seconds": 0.33373
+      "seconds": 1.060868
     },
     {
       "test": "test_processes.WindowsJobIntegration.test_parent_nonzero_cleans_worker_and_grandchild",
-      "seconds": 0.341877
+      "seconds": 0.820628
     },
     {
       "test": "test_processes.WindowsJobIntegration.test_parent_success_cleans_worker_and_grandchild",
-      "seconds": 0.35569
+      "seconds": 0.749044
     },
     {
       "test": "test_processes.WindowsJobIntegration.test_resource_error_cleans_worker_and_grandchild",
-      "seconds": 0.365735
+      "seconds": 0.751823
     },
     {
       "test": "test_processes.WindowsJobIntegration.test_resume_failure_never_executes_child_and_closes_handles",
-      "seconds": 0.025124
+      "seconds": 0.021481
     },
     {
       "test": "test_processes.WindowsJobIntegration.test_timeout_cleans_worker_and_grandchild",
-      "seconds": 2.782785
+      "seconds": 3.273918
     },
     {
       "test": "test_release.FrozenInputProvenance.test_empty_frozen_input_is_valid",
-      "seconds": 0.018654
+      "seconds": 0.029359
     },
     {
       "test": "test_release.FrozenInputProvenance.test_release_rejects_invalid_size_schema_before_other_checks",
-      "seconds": 0.053807
+      "seconds": 0.120868
     },
     {
       "test": "test_release.FrozenInputProvenance.test_release_rejects_wrong_size_with_correct_hash",
-      "seconds": 0.012341
+      "seconds": 0.021208
     },
     {
       "test": "test_release.FrozenInputProvenance.test_selected_git_input_requires_size_and_checksum",
-      "seconds": 0.477606
+      "seconds": 0.638679
     },
     {
       "test": "test_release.LatestInvocationProof.test_filename_identity_and_simultaneous_attempts_fail_closed",
-      "seconds": 0.039801
+      "seconds": 0.059226
     },
     {
       "test": "test_release.LatestInvocationProof.test_latest_success_matches_counterpart_and_follows_older_failure",
-      "seconds": 0.028238
+      "seconds": 0.046236
     },
     {
       "test": "test_release.LatestInvocationProof.test_malformed_older_record_is_not_silently_ignored",
-      "seconds": 0.107186
+      "seconds": 0.057285
     },
     {
       "test": "test_release.LatestInvocationProof.test_matching_id_but_different_record_body_is_rejected",
-      "seconds": 0.023375
+      "seconds": 0.020919
     },
     {
       "test": "test_release.LatestInvocationProof.test_missing_counterpart_fails_closed",
-      "seconds": 0.022643
+      "seconds": 0.006334
     },
     {
       "test": "test_release.LatestInvocationProof.test_old_completed_record_rejected_after_newer_failed_or_successful_attempt",
-      "seconds": 0.133568
+      "seconds": 0.131235
     },
     {
       "test": "test_release.LatestInvocationProof.test_unsafe_ids_and_naive_or_invalid_start_times_are_rejected",
-      "seconds": 0.221346
+      "seconds": 0.217044
     },
     {
       "test": "test_release.ReleasePayload.test_stale_staged_code_and_missing_new_code_are_rejected",
-      "seconds": 1.07969
+      "seconds": 1.946151
     },
     {
       "test": "test_release.ReleasePayload.test_upstream_bytes_are_never_text_normalized",
-      "seconds": 0.416487
+      "seconds": 0.588109
     },
     {
       "test": "test_reporting.ReportingContracts.test_failed_zero_and_all_skipped_validation_counts_do_not_claim_success",
-      "seconds": 0.004415
+      "seconds": 0.001104
     },
     {
       "test": "test_reporting.ReportingContracts.test_invalid_counts_cannot_generate_negative_executed_tests",
-      "seconds": 0.000334
+      "seconds": 0.000103
     },
     {
       "test": "test_reporting.ReportingContracts.test_local_platform_and_scientific_artifact_preserved",
-      "seconds": 0.034222
+      "seconds": 0.371793
     },
     {
       "test": "test_reporting.ReportingContracts.test_pilot_and_validation_do_not_claim_full_analysis",
-      "seconds": 0.002744
+      "seconds": 0.001077
     },
     {
       "test": "test_reporting.ReportingContracts.test_summary_and_invocation_report_platform_skips_separately",
-      "seconds": 0.045972
+      "seconds": 0.111876
     },
     {
       "test": "test_reporting.ReportingContracts.test_visual_review_requires_matching_file_hash",
-      "seconds": 0.049703
+      "seconds": 0.05602
     },
     {
       "test": "test_reproduction.ReproductionContracts.test_archive_expansion_is_bounded",
-      "seconds": 0.026
+      "seconds": 0.016433
     },
     {
       "test": "test_reproduction.ReproductionContracts.test_archive_rejects_traversal_and_links",
-      "seconds": 0.051923
+      "seconds": 0.036083
     },
     {
       "test": "test_reproduction.ReproductionContracts.test_cleanup_cannot_hide_detected_resource_failure",
-      "seconds": 0.000496
+      "seconds": 0.000177
     },
     {
       "test": "test_reproduction.ReproductionContracts.test_comparison_excludes_operational_records_and_detects_tampering",
-      "seconds": 0.030996
+      "seconds": 0.031669
     },
     {
       "test": "test_reproduction.ReproductionContracts.test_path_containment_rejects_other_shell_and_os_paths",
-      "seconds": 0.010794
+      "seconds": 0.002881
     },
     {
       "test": "test_reproduction.ReproductionContracts.test_recursive_cleanup_cannot_target_workspace_or_cache_root",
-      "seconds": 0.022799
+      "seconds": 0.005729
     },
     {
       "test": "test_reproduction.ReproductionContracts.test_regular_archive_extracts_exact_bytes",
-      "seconds": 0.028459
+      "seconds": 0.033021
     },
     {
       "test": "test_resources.ResourceContracts.test_aggregate_limit_separate_from_per_process_limit",
-      "seconds": 0.036318
+      "seconds": 0.042634
     },
     {
       "test": "test_resources.ResourceContracts.test_family_sums_current_rss_not_historical_peaks",
-      "seconds": 0.00087
+      "seconds": 0.000554
     },
     {
       "test": "test_resources.ResourceContracts.test_local_baseline_ignores_historical_machine_and_does_not_reset",
-      "seconds": 0.045888
+      "seconds": 0.016787
     },
     {
       "test": "test_resources.ResourceContracts.test_timeout_terminates_spawned_process_tree",
-      "seconds": 0.011103
+      "seconds": 0.002464
     },
     {
       "test": "test_samples.SampleIdentityTests.test_decimal_source_ids_do_not_collapse",
-      "seconds": 0.000227
+      "seconds": 0.000103
     },
     {
       "test": "test_samples.SampleIdentityTests.test_duplicate_source_row_fails_instead_of_merging",
-      "seconds": 0.000344
+      "seconds": 0.000191
     },
     {
       "test": "test_samples.SampleIdentityTests.test_fastq_sizes_count_files_not_biological_replicates",
-      "seconds": 0.000168
+      "seconds": 7e-05
     },
     {
       "test": "test_samples.SampleIdentityTests.test_identifiers_require_experiment_and_group",
-      "seconds": 0.00013
+      "seconds": 5.5e-05
     },
     {
       "test": "test_samples.SampleIdentityTests.test_inoculum_not_assigned_to_recipient",
-      "seconds": 0.000104
+      "seconds": 4.6e-05
     },
     {
       "test": "test_samples.SampleIdentityTests.test_pool_cannot_link_to_an_individual",
-      "seconds": 9.5e-05
+      "seconds": 4e-05
     },
     {
       "test": "test_samples.SampleIdentityTests.test_source_rows_match_only_observed_within_row_assays",
-      "seconds": 0.000164
+      "seconds": 7.8e-05
     },
     {
       "test": "test_validation_identity.ValidationIdentity.test_source_edit_during_suite_fails_and_retains_both_identities",
-      "seconds": 0.134176
+      "seconds": 0.079112
     },
     {
       "test": "test_wsl_archive.NativeArchiveContracts.test_expanded_byte_member_and_truncated_stream_bounds",
-      "seconds": 0.019175
+      "seconds": 0.004615
     },
     {
       "test": "test_wsl_archive.NativeArchiveContracts.test_links_special_files_and_duplicate_members_are_rejected",
-      "seconds": 0.021782
+      "seconds": 0.00667
     },
     {
       "test": "test_wsl_archive.NativeArchiveContracts.test_real_nonseekable_tar_stream_extracts_exact_file_bytes",
-      "seconds": 0.030213
+      "seconds": 0.016679
     },
     {
       "test": "test_wsl_archive.NativeArchiveContracts.test_traversal_absolute_and_alternate_separator_paths_are_rejected",
-      "seconds": 0.021014
+      "seconds": 0.00707
     },
     {
       "test": "test_wsl_archive.NativeArchiveContracts.test_verify_file_requires_exact_size_hash_and_safe_path",
-      "seconds": 0.011531
+      "seconds": 0.017884
     },
     {
       "test": "test_wsl_archive.NativeInputIdentity.test_correct_hash_does_not_override_wrong_size",
-      "seconds": 0.054083
+      "seconds": 0.02478
     },
     {
       "test": "test_wsl_archive.NativeInputIdentity.test_prebootstrap_snapshot_imports_no_scientific_packages",
-      "seconds": 0.224605
+      "seconds": 0.710715
     },
     {
       "test": "test_wsl_archive.NativeInputIdentity.test_same_size_tampering_still_fails_checksum",
-      "seconds": 0.04324
+      "seconds": 0.016275
     },
     {
       "test": "test_wsl_archive.NativeInputIdentity.test_size_is_required_and_rejects_negative_bool_string_and_float",
-      "seconds": 0.10869
+      "seconds": 0.211447
     },
     {
       "test": "test_wsl_archive.NativeInputIdentity.test_ten_inputs_and_zero_byte_file_keep_verified_identity",
-      "seconds": 0.111162
+      "seconds": 0.077834
     }
   ],
   "tests_run": 174,
@@ -734,5 +734,5 @@
   "errors": 0,
   "skipped": 6,
   "success": true,
-  "peak_rss_bytes": 192421888
+  "peak_rss_bytes": 191787008
 }

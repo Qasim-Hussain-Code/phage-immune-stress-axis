@@ -1,160 +1,111 @@
 # Limitations
 
-## The primary ecological question was not tested
+## What the available data can answer
 
-No processed viral abundance profile was retrieved. Zero such profiles were
-matched to immune outcomes. Viral composition, within-mouse phageome stability,
-reference-state deviation, dispersion, bacterial-adjusted viral associations and
-phage-host relationships were not estimated. Missing evidence is not a null
-association result.
+The retrieved phenotype workbook supports exploratory treatment comparisons,
+but the processed viral abundance matrices and verified animal map needed for
+an individual viral-immune analysis were not recovered. The original paper
+describes paired individual bulk-metagenome-derived viral profiles alongside
+pooled enriched viromes. Their absence from the inspected releases is a data
+availability finding, not evidence that the measurements never existed or that
+viral change is unrelated to immunity. The
+[data feasibility assessment](data_feasibility.md) distinguishes these sample
+types and the analyses each could support.
 
-The paper describes individual pre/post bulk metagenomes mapped to an
-inoculum-derived viral catalog, alongside pooled enriched viromes. Additional
-analysis may become possible if the abundance matrix, viral annotations and
-verified animal map are released. The present availability gap does not prove
-that all original measurements were pooled or that individual data never
-existed. See [data_feasibility.md](data_feasibility.md) and
-[paper_audit_notes.md](paper_audit_notes.md).
+Repeated individual viromes linked to an immune endpoint could support an
+analysis of viral change versus terminal immune phenotype. Such an analysis
+does not require a prestress immune measurement. A claim about within-mouse
+immune change or immune stability across chronic stress would additionally
+require repeated immune measurements. The selected basal blood and terminal
+spleen assays provide different outcomes, collected four study days apart;
+neither is a prechronic-stress immune baseline.
 
-## Pools and inocula limit linkage
+## Missing observations and measurement scope
 
-Initial enriched viromes combine three or four animals per pool. Twelve
-published pool-by-time profiles are reconstructed from two groups, two sampling
-times and three pools; pool membership across time is unresolved. They are not
-twelve verified longitudinal animal trajectories. The deposited metagenomic
-archive contains 104 specimens, comprising 77 recipient bulk samples, eight
-pool-labeled samples and 19 inocula. Deposited and published counts describe
-different sample categories and are not interchangeable.
-
-A donor inoculum describes administered material, not the recipient's intestinal
-community. Pool measurements cannot be distributed among individual immune rows.
-Literal identifiers also differ across resources. Punctuation removal, presumed
-renumbering and row position do not establish identity. The initial-study mouse
-IDs restart within group and must remain scoped by experiment and treatment.
-
-## Immune outcomes are endpoint phenotypes
-
-The selected LY6Chi monocyte and CD62L-positive measurements are basal blood
-proportions from blood collected on study day 19, before the acute forced-swim
-test and after 16 defeat days. Both flow outcomes are percentages of parent
-populations. Contrasts are percentage
-points, not absolute cell counts or relative percentage changes. Basal here is
-not a prechronic-stress baseline. Changes in proportions need not demonstrate
-changes in absolute circulating cell numbers or cell trafficking.
-
-TNF-alpha is measured in unstimulated splenocyte culture supernatant, in pg/mL,
-from terminal day-23 spleen collection after 19 defeat sessions. Source-row
-linkage does not make the blood and spleen assays contemporaneous.
-It is distinct from plasma TNF-alpha and does not measure a within-mouse change
-across chronic stress. These unit and timing assignments follow Extended Data
-Table 1b,c of the [original article](https://doi.org/10.1038/s41564-023-01564-y),
-whose selected units and timing were checked against the actual table image.
-Eight of nine selected means round to the printed values. FVT unstimulated
-TNF-alpha averages 27.8492778 pg/mL, directly rounding to 27.8, whereas Table 1b
-prints 27.9. The small discrepancy is explicit and unresolved; no tolerance or
-source value was changed to conceal it.
-
-## Sample size, missingness and upstream exclusions
-
-The FVT workbook lists ten animals per treatment. The selected monocyte
-endpoints have 10, 10 and nine observations in Control, Control Stress and FVT
-Stress; TNF-alpha has nine, eight and nine. Endpoint-specific available-case
-analysis preserves all supplied observations and does not impute missing values.
-Mouse 11 has incomplete later measurements, and mouse 31 lacks selected
-monocyte measurements. Availability cannot be assumed independent of outcome.
-
-Conditional [0,100] support bounds describe how missing percentages can change
-the source-row cohort mean differences. They do not address population sampling
-uncertainty, undefined parent-cell populations, upstream omitted animals or
-statistical significance. Missing TNF-alpha has no justified finite upper bound.
-The added rank effects are descriptive; cross-group pairs share animals and
-cannot be treated as additional independent observations.
+The FVT workbook contains ten source rows per treatment. Available monocyte and
+CD62L observations number 10, 10 and nine in Control, Control Stress and FVT
+Stress; TNF-alpha observations number nine, eight and nine. The two n=9 FVT
+sets contain different animals: source ID 31 lacks the selected flow outcomes,
+whereas ID 11 lacks TNF-alpha. Equal counts therefore do not establish complete
+paired endpoints. Availability may depend on the outcome.
 
 The publication excluded measurements outside detection limits, technical
-failures and statistical outliers beyond 2.5 standard deviations. The retrieved
-workbook does not identify every exclusion, censoring threshold or omitted
-value. Keeping every observed source value does not reconstruct observations
-removed upstream. Missingness cannot be reliably modeled from these inputs.
-Small groups and variable completeness yield wide intervals; nonsignificant
-tests do not establish equivalence or absence of a meaningful effect.
+failures and statistical outliers beyond 2.5 standard deviations. The workbook
+does not identify every excluded observation, censoring threshold or omitted
+value. Retaining every supplied observation avoids additional exclusions but
+cannot recover those removed upstream. These records do not support a reliable
+missingness model.
 
-## Inferential calibration is limited by design information
+The percentage support bounds apply only to animals represented by workbook
+rows, conditional on a missing assay having a well-defined value in [0,100].
+An undefined parent-cell population would violate that assumption. The bounds
+do not cover omitted animals or sampling uncertainty. TNF-alpha has no justified
+finite upper support. Empirical rank effects reuse animals across pairs; those
+pairs are not independent replicates.
 
-Welch inference accommodates unequal sample variances but assumes independent
-animal observations. Cage allocation and possible cage-level dependence are
-unavailable. Unstressed controls were group housed and both stressed groups
-singly housed. Housing therefore differs for stress-control comparisons, while
-FVT-versus-stressed comparisons share the stated regime. No cage-adjusted standard errors or
-housing-independent stress effect can be recovered from the available table.
+Flow proportions describe fractions of parent-cell populations, so a change in
+percentage does not establish a change in absolute cell number or trafficking.
+Unstimulated splenocyte TNF-alpha measures ex vivo culture output rather than
+circulating cytokine concentration. Eight of nine selected workbook means
+round to the published table cells. FVT unstimulated TNF-alpha averages
+27.8492778 pg/mL, rounding directly to 27.8, whereas Extended Data Table 1b
+prints 27.9. This small discrepancy remains unresolved.
 
-Three endpoints and two contrasts were selected after reading the published
-results and before computing the present statistics. This is an exploratory
-reanalysis, not a preregistered confirmation. The BH correction concerns the six
-reported mean tests; it does not remove selection informed by prior results.
-The 95% intervals are pointwise and are not simultaneous confidence bands.
+## Design and statistical interpretation
 
-## Restoration and method dependence
+Animal-level Welch inference assumes independent observations. Unstressed
+controls were group housed, while both stressed groups were singly housed.
+The stress-control comparison includes that housing difference. FVT Stress
+versus Control Stress shares the stated housing regime, but missing cage,
+allocation and shared-exposure information still prevents an assessment or
+adjustment of all dependence.
 
-The FVT versus stressed-control monocyte Welch P = 0.01265 differs from the
-published Tukey pairwise P = 0.106. Welch pairwise tests and the original
-three-group analysis have different variance and multiplicity assumptions.
-A separate reconstruction from the same supplied observations gives
-Tukey-Kramer P = 0.106409 and matches all nine selected caption-statistic
-checks. Thus variance pooling and multiplicity explain this difference without
-additional exclusions. Upstream exclusions remain a general availability
-limitation, not a necessary explanation for this numerical comparison. The
-reconstruction does not identify an error in the original test or reproduce its
-complete across-outcome BH family.
+The three endpoints were chosen with knowledge of the published findings.
+This is an exploratory reanalysis. BH adjustment is confined to the six
+reported mean tests; it does not remove the effect of that selection.
+Intervals are pointwise. Small groups and incomplete assays
+limit precision, and nonsignificant results do not establish equivalence.
 
-The CD62L-positive FVT contrast is 15.87 percentage points, but the preceding
-stress contrast is -1.76 points with a 95% interval of -7.58 to 4.06. These data
-do not establish a stress-induced deficit that was subsequently reversed.
+The original common-variance model and the present Welch comparisons have
+different variance and multiplicity assumptions. Reconstructing the selected
+original calculations explains the monocyte FVT Tukey P=0.106409 versus Welch
+P=0.012645 from the same observations; additional exclusions are unnecessary
+to explain this difference. All nine selected caption-statistic checks agree,
+but the original complete across-outcome BH family remains unreconstructed.
 
-Stressed-control TNF-alpha values have a mean of 101.98 pg/mL, median of 40.48
-pg/mL and standard deviation of 112.00 pg/mL. The FVT mean contrast is -74.13
-pg/mL, with a 95% interval of -167.78 to 19.51 and q = 0.1551. Its rank
-sensitivity q = 0.01102 describes a different distributional comparison. With
-unequal distribution shapes, the rank test must not be labeled a test of equal
-means or interpreted automatically as a median shift. Both results are retained.
+Interpretation also depends on the contrast and estimand. The higher
+CD62L-positive fraction under FVT does not establish reversal of a stress
+deficit, because the stress-control estimate is imprecise. TNF-alpha is highly
+dispersed in stressed controls, and its Welch and rank comparisons differ.
+The rank test is a distributional comparison and need not describe a mean or
+median shift when group shapes differ. The [results](results.md) retain both.
+Preserved effect directions under single-animal omission describe influence;
+they do not establish stable significance or resolve confounding.
 
-Leave-one-animal-out effect directions persist in all six contrasts. This does
-not establish stable statistical significance, remove treatment confounding or
-compensate for shared housing. Omission ranges are diagnostic ranges, not
-confidence intervals, and repeated omissions do not create new observations.
+## Biological interpretation and transfer
 
-## Biological and external validity
+Treatment-associated immune differences do not isolate a virome-specific
+mechanism. The FVT experiment has no unstressed FVT arm, and the available
+measurements do not separate every treatment-associated constituent or provide
+a fully factorial intervention analysis. They cannot establish direct phage
+immune regulation or a gut-brain mechanism. Any future computational viral
+classification or bacterial-host assignment would also require its uncertainty
+to be retained.
 
-Treatment-associated immune differences alone do not identify a virome-specific
-causal effect, direct phage immune regulation or a gut-brain mechanism. The
-selected FVT design lacks an unstressed FVT arm. The immune table does not
-provide a fully factorial intervention analysis or measurements that isolate
-viral constituents from every treatment-associated component.
+The cohorts comprise male C57BL/6J mice under specific stress and housing
+conditions. Transfer to females, other strains or human stress responses is
+unestablished. The public-data search is bounded by the sources and dates
+recorded in its ledgers; the newer Chen prenatal-stress candidate remains
+unresolved. Access failures do not establish scientific ineligibility or the
+absence of a public deposit.
 
-The original cohorts involve male C57BL/6J mice in particular stress and housing
-conditions. Generalization to females, other mouse strains or human stress
-responses is not established. Computational viral and host predictions, if
-subsequently acquired, would remain predictions unless independently validated.
+## Scope of computational validation
 
-## Validation cannot supply missing measurements
-
-The software suite verifies calculations, source identity rules and acquisition
-safeguards; the current executed outcome is recorded in
-`results/reports/validation_summary.json`. It does not validate biological independence,
-recover excluded observations, establish statistical power or demonstrate null
-calibration under an unknown cage structure. No biological viral stability
-estimate is validated by testing a distance function on synthetic fixtures.
-
-The separate synthetic calibration benchmark uses known generating assumptions
-and no biological measurements. Its artificial clustered scenario cannot
-identify the actual cage structure, particularly for the original singly
-housed stressed groups. Good or poor simulated calibration is conditional on
-the chosen model. Wilson bounds describe Monte Carlo error, not biological
-uncertainty. The completed benchmark used 20,000 replicates per scenario;
-its results remain conditional software observations, not calibration of the
-actual experiment's unknown dependence.
-
-The expanded public search's 52 evidence records bound what was checked, not
-all possible public or private locations. A newer prenatal-stress candidate
-remains unresolved. Access failures and request-based availability statements
-cannot establish that a study is biologically ineligible or that no public
-deposit exists.
+Reproduction and software tests check source identity, calculations and output
+agreement. They cannot supply missing measurements, cage assignments or
+biological controls. The separate calibration examines known simulated models
+without reading biological observations. Its
+artificial clustering does not identify the original cage structure, and its
+Wilson intervals quantify Monte Carlo error rather than mouse-level
+uncertainty. These checks support the implemented computations under stated
+conditions, not calibration of the experiment under unknown dependence.

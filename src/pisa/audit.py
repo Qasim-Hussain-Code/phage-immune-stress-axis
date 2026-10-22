@@ -56,7 +56,7 @@ sensitivity are excluded until processed matrices and annotations are supplied.
 
 def eligibility(root, config):
     rows = [
-        ('Primary','Within-mouse phage change versus immune disruption','untestable','No retrieved individual abundance matrix, verified crosswalk or chronic-stress immune baseline'),
+        ('Primary','Within-mouse phage change versus endpoint immune phenotype','untestable','Individual longitudinal viral abundance profiles and verified immune-animal crosswalk unavailable; endpoint immune values could support this association but do not measure within-mouse immune change'),
         ('H1','Stress-associated viral composition','untestable','Processed pool and recipient abundance matrices unavailable; no raw reprocessing within budget'),
         ('H2','Reference deviation versus immune outcomes','untestable','No retrieved processed viral profiles linked to immune measurements'),
         ('H3','Bacterial-adjusted viral association','untestable','No matched processed viral or bacterial tables; sample size limits adjustment'),

@@ -175,6 +175,6 @@ test_size_is_required_and_rejects_negative_bool_string_and_float (test_wsl_archi
 test_ten_inputs_and_zero_byte_file_keep_verified_identity (test_wsl_archive.NativeInputIdentity.test_ten_inputs_and_zero_byte_file_keep_verified_identity) ... ok
 
 ----------------------------------------------------------------------
-Ran 174 tests in 25.782s
+Ran 174 tests in 46.528s
 
 OK (skipped=6)

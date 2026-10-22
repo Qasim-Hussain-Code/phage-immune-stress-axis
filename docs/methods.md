@@ -1,178 +1,161 @@
 # Methods
 
-## Design and source selection
+## Study and data
 
-The original study is Ritz et al. (2024), DOI
-[10.1038/s41564-023-01564-y](https://doi.org/10.1038/s41564-023-01564-y).
-The reference repository was inspected first. The article, supplementary
-source workbook, Zenodo code release and three sequencing accession manifests
-were audited. Small frozen inputs are accompanied by URLs and SHA-256 digests.
-No raw sequencing reads, assemblies or viral reference databases were acquired.
-The alternative dataset screen retained the psychosocial-stress question.
-The expanded search records 52 saved evidence responses or representations,
-including the complete supplementary package and scoped archive/repository
-queries. It recovered no missing community matrix or verified crosswalk. The
-prenatal-stress candidate remains unresolved rather than classified from its
-abstract as an analysis-ready substitute. These are bounded retrieval findings;
-see [processed_data_search.md](processed_data_search.md) and
-[new_prenatal_stress_candidate.md](new_prenatal_stress_candidate.md).
+This reanalysis uses the published source data from
+[Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y), which studied
+psychosocial stress and fecal virome transplantation (FVT) in male C57BL/6J
+mice. The research question concerns within-mouse viral change and its
+relationship to immune phenotypes. The retrieved data support an assessment of
+that question's data requirements and a separate exploratory analysis of three
+immune outcomes.
 
-The [feasibility gate](../results/reports/data_feasibility.md) excluded viral
-community and association analyses because the processed matrices and animal
-crosswalk were missing from the inspected releases. The original individual
-bulk-derived viral profiles are distinguished from pooled enriched viromes.
-Public raw specimens cannot substitute for measured abundance features.
+The source collection comprises the article, supplementary phenotype workbook,
+archived analysis scripts and sequencing metadata. Exact sources and checksums
+are recorded in the [input manifest](../data/manifests/inputs.json). The workbook
+contains 20 animal rows from the initial stress experiment and 30 from the
+three-arm FVT experiment. The latter supplies the selected immune comparisons:
+Control, Control Stress and FVT Stress, with ten source rows per group.
+[Data feasibility](data_feasibility.md) describes the available viral samples
+and missing processed community data. Raw sequencing reads were not reprocessed.
 
-## Sample independence and matching
+## Biological units and linkage
 
-Run and BioSample identities must agree exactly. Multiple runs for one specimen
-would be combined only in the inventory, not counted as animals. Explicit pool
-and gavage annotations define specimen roles. No pool has an individual mouse
-ID; no inoculum becomes a recipient community. Before/After comes from
-BioSample annotations. Workbook animal keys include experiment, group and
-literal source identifier. Decimal punctuation remains unchanged. No
-cross-assay match relies on row order, inferred punctuation or renumbering.
-Other accession manifests are inventoried without assigning animals.
+An immune observation is the original per-animal assay summary. The workbook
+is read without modification; fully empty formatted rows are omitted. Exported
+phenotypes retain missing cells and their worksheet, row, column and cell
+coordinates. Animal keys combine experiment, treatment group and the literal
+source identifier, because initial-experiment identifiers restart within group.
+Technical replicates were averaged in the original study and are not available
+for independent reaggregation.
 
-## Immune source data
+Sequencing runs are inventoried by specimen, using exact run and BioSample
+identities. Pool and inoculum annotations distinguish those specimens from
+individual recipient samples. Before/After labels follow BioSample attributes.
+The study includes pooled enriched viromes and individual recipient bulk
+metagenomes mapped to a viral catalog. Neither treatment labels nor similar
+sample counts establish a link between those profiles and workbook animals.
+Cross-assay linkage requires a documented animal map; punctuation changes,
+presumed renumbering and row position are not used to create one.
 
-The unchanged workbook is parsed read-only with openpyxl. Fully empty formatted
-rows are omitted. Every source phenotype, including missing cells, is exported
-with sheet, row, column and source-cell coordinates. Initial and FVT experiments
-contain 20 and 30 nonempty source rows, respectively. Any-assay availability does
-not imply complete cases. Selected endpoints are fixed before the present
-contrast calculations, after the published findings were known.
+## Selected immune outcomes
 
-Selected outcomes are basal LY6Chi monocyte proportion, basal CD62L-positive
-fraction of that population and unstimulated splenocyte TNF-alpha. Extended
-Data Table 1c confirms the flow measurements are percentages of parent
-population. The selected blood was collected on study day 19, five minutes
-before forced swim and after 16 defeat days; fixed cells were analysed the
-following day. Splenocytes came from terminal day-23 collection, after the
-19-session stress regimen. The assays are source-linked but not contemporaneous.
-Effects are percentage points. Table 1b confirms the culture cytokine unit pg/mL. These are relative
-cell proportions and ex vivo culture output, not absolute blood cell counts or
-circulating TNF-alpha. No assay detection threshold is invented. The original
-study reports exclusions below detection and statistical/technical exclusions;
-the available workbook does not identify all such decisions.
+Three endpoints were selected after reading the published findings and before
+calculating the present contrasts. Their assay definitions follow Extended Data
+Table 1b,c and the original collection methods.
 
-All observed endpoint values are retained. No zero substitution, outlier
-deletion, transformation, technical-replicate expansion or missing-value
-imputation is performed. Original per-individual assay summaries are used;
-technical replicates are not available for independent reaggregation.
+| Endpoint | Biological material and collection | Unit |
+|---|---|---|
+| Basal LY6Chi monocyte proportion | Blood collected on study day 19, five minutes before forced swim, after 16 defeat sessions | Percent of parent population |
+| Basal CD62L-positive fraction of LY6Chi monocytes | The same basal blood collection | Percent of parent population |
+| Unstimulated splenocyte TNF-alpha | Terminal day-23 spleen collection, after 19 defeat sessions, followed by ex vivo culture | pg/mL |
 
-## Exploratory statistical analysis
+The fixed blood cells were analysed the following day. Splenocyte methods
+describe a 2.5-hour rest followed by 24-hour culture. Thus collection day and
+assay readout are distinct, and the blood and spleen outcomes are collected
+four study days apart. Basal refers to sampling before the acute forced-swim
+test, after chronic stress exposure had already begun. Flow differences are
+expressed in percentage points; culture TNF-alpha is distinct from circulating
+plasma TNF-alpha.
 
-Two contrasts are calculated per endpoint: stressed control minus unstressed
-control, and FVT stress minus stressed control. Each mean difference uses
-the Welch standard error, Satterthwaite degrees of freedom, two-sided t-test and
-pointwise 95% interval. A single six-test Benjamini-Hochberg correction is used.
-The nominal intervals are not simultaneous multiple-comparison intervals.
-Unstressed controls were group housed, while both stressed groups were singly
-housed. The stress-control contrast therefore bundles the stated housing
-regimes; the FVT-versus-stressed contrast shares the same stated regime.
-Missing cage/allocation details preclude a measured adjustment or a blanket
-claim that all potential dependence is captured by animal-level errors.
-No adjusted or high-dimensional model is fitted.
+Each endpoint uses its available observations. All supplied values are retained
+without transformation, added outlier removal, zero substitution or imputation.
+The original study reports detection-limit, technical and statistical
+exclusions, but the workbook does not identify all omitted observations or
+thresholds. No additional detection rule is inferred.
 
-Mann-Whitney U is a distributional sensitivity check, using SciPy auto exact or
-asymptotic handling, with a separate six-test sensitivity BH family. It does
-not test the same raw-mean estimand. Leave-one-out analysis removes each
-observed animal once and records the full range of refitted differences and
-P values. No favorable refit is substituted for the full estimate. Nonsignificant
-tests are not interpreted as equivalence. A posterior observed-power estimate
-would merely restate the P value and was not used; small-sample precision is
-shown through intervals and influence diagnostics instead.
+## Exploratory treatment contrasts
 
-Additional descriptive diagnostics examine finite-support missingness bounds
-and normalized versions of the existing U statistics. They were added after
-inspecting the earlier reanalysis and do not add hypothesis tests. Their target,
-well-defined-assay assumption, sharp-bound formula and non-independence of
-cross-group pairs are specified in [phenotype_robustness.md](phenotype_robustness.md).
+For each endpoint, the two contrasts are Control Stress minus Control and FVT
+Stress minus Control Stress. The estimand is the difference in arithmetic means
+in the source unit. Each estimate has a Welch standard error, Satterthwaite
+degrees of freedom, two-sided t-test and pointwise 95% confidence interval.
+Benjamini-Hochberg adjustment is applied once to the six mean tests. The
+intervals are not simultaneous intervals, and this correction does not account
+for endpoint selection informed by the published results.
 
-## Separate original-method reconstruction
+These are unadjusted animal-level comparisons. Welch inference allows unequal
+group variances and assumes independent animal observations. Unstressed
+controls were group housed; both stressed groups were singly housed. The
+stress-control contrast therefore includes a housing difference, whereas the
+FVT-versus-stressed contrast compares groups with the same stated housing
+regime. Cage and allocation details are unavailable for adjustment. No adjusted
+or high-dimensional model is fitted.
 
-The same observed study II values are additionally summarized under the
-original three-group common-variance model. The pooled residual sum of squares
-and degrees of freedom determine the planned contrast with coefficients
-`[-0.5, 1, -0.5]` in Ctr, Ctr Stress, FVT Stress order. All three Tukey-Kramer
-pairs are exported, with finite-df studentized-range probabilities and
-simultaneous 95% intervals within each endpoint. Planned-contrast intervals are
-pointwise. The original across-outcome BH family is not reconstructed.
+## Sensitivity and descriptive diagnostics
 
-This layer reproduces all nine selected caption statistics at reported
-precision, including monocyte FVT Tukey P=0.106409 versus the present Welch
-P=0.012645. Pooled variance and Tukey multiplicity explain that difference from
-the same observations; extra exclusions are unnecessary. It does not replace
-the fixed six Welch tests or select a preferred significant result.
+Mann-Whitney U comparisons describe distributional differences, using SciPy's
+automatic exact or asymptotic calculation and a separate six-test BH family.
+They address a different estimand from the raw-mean tests. Leave-one-animal-out
+analysis refits each contrast after omitting each observed animal once and
+records the full ranges of differences and P values. Those ranges describe
+influence, rather than confidence limits. Precision is described by the Welch
+intervals; post hoc observed power is not calculated.
 
-Eight of nine group-summary checks match the published table. FVT unstimulated
-TNF-alpha has source mean 27.8492778 pg/mL, directly rounding to 27.8, versus
-the visibly printed 27.9. That discrepancy is retained. The combined check
-count is 17 matches out of 18, not complete agreement of all table cells.
+Two further diagnostics were added after inspecting the earlier reanalysis,
+without adding hypothesis tests. Conditional support bounds allow missing
+percentage measurements to take any well-defined value in [0,100] and describe
+the resulting extrema of source-row cohort mean differences. A finite upper
+support is unavailable for TNF-alpha. Normalized U statistics describe empirical
+ordering, counting ties as half a comparison. Cross-group pairs share animals
+and do not increase the number of independent observations. The formulas,
+denominators and assumptions appear in
+[phenotype robustness](phenotype_robustness.md).
 
-The paper's label of orthogonal contrasts does not establish independence of
-all contrast estimates with unequal group sizes. Under the common-variance
-model, covariance of contrasts c and d is `MSE * sum(c_i*d_i/n_i)`; unweighted
-coefficient orthogonality is insufficient. Complete original SPSS syntax is
-unavailable. See [original_analysis_review.md](original_analysis_review.md).
+## Reconstruction of the original selected analyses
 
-## Synthetic software calibration
+A separate calculation applies the original three-group common-variance model
+to the same observed FVT-experiment values. The pooled residual mean square and
+degrees of freedom determine the planned contrast, with coefficients
+`[-0.5, 1, -0.5]` in Control, Control Stress, FVT Stress order. All three
+Tukey-Kramer pairwise comparisons are exported using finite-degrees-of-freedom
+studentized-range probabilities and simultaneous 95% intervals within each
+endpoint. Planned-contrast intervals are pointwise. The original across-outcome
+BH family is not reconstructed.
 
-The expanded full pipeline ran a separate 20,000-replicate
-all-null benchmark in each of four fixed scenarios: independent equal-variance
-Gaussian, Gaussian variances 4/1/1, centered lognormal and artificial Gaussian
-clusters with ICC 0.5. Three independently generated endpoints use group sizes
-10/10/9 and jointly retain the two overlapping adjacent contrasts per endpoint.
-The six P values enter one BH family. Reported events are per-test false
-positives, pointwise Welch coverage, all-null family rejection and three-pair
-Tukey interval coverage. Wilson intervals quantify Monte Carlo error only.
+This calculation examines how variance pooling and multiplicity affect the
+selected published statistics; it remains separate from the six Welch tests.
+The planned contrast compares the stressed mean with the average of the other
+two means. Coefficient orthogonality alone does not imply independent contrast
+estimates when sample sizes differ: under this model their covariance is
+`MSE * sum(c_i*d_i/n_i)`. Full original SPSS syntax is unavailable.
+[Original-analysis review](original_analysis_review.md) records the assumptions,
+printed-statistic checks and unresolved group-mean discrepancy.
 
-No actual outcome or cage label is read by that module. Its all-group cluster
-assignment is a generic assumption stress test; it does not describe the
-original singly housed stressed groups or estimate their ICC. Default batches
-are bounded at 500, seeded scenario streams are batch-invariant under the
-recorded NumPy version, and raw simulated observations are not saved. The full
-benchmark completed with seed 20261020 in all four scenarios; its labeled
-table and report record that execution separately from quick unit fixtures. See
-[calibration_design.md](calibration_design.md).
+## Synthetic calibration
 
-## Excluded community inference and controls
+A separate software benchmark generates 20,000 all-null replicates in each of
+four fixed scenarios: independent equal-variance Gaussian outcomes, Gaussian
+variances 4/1/1, centered lognormal outcomes, and artificial Gaussian clusters
+with intraclass correlation 0.5. Three independently generated endpoints use
+group sizes 10/10/9. Each retains the same two overlapping contrasts, giving six
+P values in one BH family. Recorded events include per-test false positives,
+pointwise Welch coverage, all-null family rejection and three-pair Tukey
+interval coverage. Wilson intervals describe Monte Carlo uncertainty.
 
-No viral composition, temporal distance, reference centroid, dispersion,
-taxon-level phage test, bacterial adjustment or host prediction was calculated.
-Validated CLR/Aitchison and Bray-Curtis routines are exercised on explicitly
-synthetic software fixtures only. Zero replacement is explicit and preserves
-positive-component ratios; those tests do not validate a biological normalization
-choice for an unavailable matrix. No synthetic value enters a biological table.
+The benchmark reads no biological outcomes or cage labels. Its clustered
+scenario is a sensitivity to an assumed dependence model, rather than an
+estimate of the original experiment's dependence. The full benchmark used seed
+20261020 and batches of 500; scenario streams are batch-invariant under the
+recorded NumPy version. Raw simulated observations are not saved. Scenario
+definitions and interpretation are in
+[calibration design](calibration_design.md).
 
-Measured unstressed and stressed treatment groups are the available biological
-comparators. No independent phage-specific positive control or exchangeable
-permutation design was identifiable, so none is fabricated. Unknown cage
-allocation precludes a defensible cage-restricted permutation. Analytical
-identities and independently implemented library checks provide computational
-controls rather than biological discoveries.
+## Analysis stages and outputs
 
-## Execution and outputs
+The ten sequential stages audit and acquire inputs, validate sample identities,
+assess viral-data eligibility, extract immune phenotypes, calculate the
+supported contrasts and diagnostics, validate computations, and draw figures.
+The viral QC, stability and bacteriome stages record unavailable analyses,
+as detailed in [data feasibility](data_feasibility.md). The stage named
+`07_immune_associations` exports the separate immune contrasts and an explicit
+phage-immune eligibility report; it fits no viral association.
 
-Ten numbered stages run sequentially. Excluded stages generate explicit
-availability/eligibility reports, never fabricated scientific estimates.
-Pilot, full, offline, resume and validation-only modes are implemented.
-Fingerprinting covers configuration, code, test code and frozen inputs;
-resumption also checks declared output hashes.
-Code, tests, configuration, the dependency specification and runtime must also
-remain unchanged during an invocation and each stage. Validation records code
-identity before discovery and after the suite, rejecting a mismatch between
-those recorded digests. These are checkpoint comparisons.
-Expected retrieval of a checksum-specified missing input is distinguished from
-editing the input manifest or analysis implementation. Streaming fetches reject
-over-cap content and changed hashes, with partial files removed. Native child
-RSS, concurrent descendant RSS, available memory and disk usage are monitored
-during execution. Storage uses a host/checkout-bound persistent local baseline;
-historical environment records do not set another invocation's allowance.
-Resumed results are distinguished from newly measured stage peaks. The
-supported five-figure set uses actual source rows, availability inventories or
-the original-method reconstruction. It does not plot synthetic calibration as
-biology. PNG/PDF files and their visual review are verified separately;
-machine-readable tables retain underlying observations and estimators. A prior
-review establishes current QA only when the recorded file hashes still match.
+Measured treatment groups provide the biological comparisons. The available
+records do not identify an independent phage-specific positive control or a
+defensible cage-restricted permutation. CLR/Aitchison and Bray-Curtis
+calculations, including ratio-preserving zero replacement, are checked on
+synthetic fixtures only. Computational checks, acquisition safeguards, output verification and
+reproduction evidence are documented separately in
+[statistical validation](statistical_validation.md) and
+[environment reproduction](environment_reproduction.md).

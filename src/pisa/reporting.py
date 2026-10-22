@@ -20,81 +20,62 @@ def validation_counts_text(validation):
 
 
 def summarize(root,config):
+    """Write the biological results from the fixed comparisons and source audit."""
     results=read_csv(root/'results/tables/immune_contrasts.csv')
     sensitivities=read_csv(root/'results/tables/immune_sensitivity.csv')
     summary=json.loads((root/'results/reports/sample_audit_summary.json').read_text())
     validation=json.loads((root/'results/reports/validation_summary.json').read_text())
     lines=['# Results','',
-       'This is a public-data feasibility study with a separate exploratory reanalysis of immune source data. '
-       'It does not test a measured phageome stability versus immune-response relationship.','',
-       f"The source workbook contains {summary['workbook_animal_rows']} animal rows across two experiments. "
-       f"The principal archive contains {summary['principal_run_count']} sequencing runs representing "
-       f"{summary['principal_specimen_count']} specimens: "
-       f"{summary['sequencing_category_counts'].get('individual_recipient_bulk_metagenome',0)} individual recipient bulk specimens, "
-       f"{summary['sequencing_category_counts'].get('pooled_fecal_virome',0)} enriched pools and "
-       f"{summary['sequencing_category_counts'].get('transplant_inoculum',0)} inocula. "
-       'The initial paper captions imply 12 pool-by-time enriched profiles across group and time; '
-       'these must not be added to the second experiment as longitudinal animals. '
-       'No processed viral abundance profile was retrieved and zero are matched to immune outcomes. '
-       'This is missing evidence, not a biological null result.','',
-       '## Separate immune contrasts','',
-       'Three endpoints and two contrasts were selected after reading the published paper and before calculating '
-       'the present contrasts. These are exploratory unadjusted animal-level summaries. All estimates use '
-       'untransformed source units. Extended Data Table 1c identifies the two selected flow outcomes as basal '
-       '(blood collected on study day 19 before forced swim, after 16 defeat days), percent of parent '
-       'population; their differences are percentage points. Table 1b identifies unstimulated '
-       'splenocyte TNF-alpha as pg/mL, from terminal day-23 spleen collection after 19 defeat sessions. '
-       'These source-linked assays are not contemporaneous measurements. '
-       'Intervals are pointwise 95% Welch intervals. P values have a six-test BH correction. '
-       'Housing differs for the stress-control contrast: unstressed controls were group housed '
-       'and stressed groups singly housed. Both groups in the FVT-stressed comparison share the '
-       'stated single-housing regime. Incomplete assay measurements, unresolved detection '
-       'censoring and unavailable allocation details still limit interpretation.','',
-       '| Endpoint | Contrast | n first/second | Mean difference | 95% CI | P | BH q |',
-       '|---|---|---:|---:|---|---:|---:|']
-    for row in results:
-        lines.append(f"| {NAMES[row['endpoint']]} | {CONTRAST_NAMES[row['contrast']]} | "
-                     f"{row['n_first']}/{row['n_second']} | {float(row['mean_difference']):.4g} | "
-                     f"{float(row['ci_low']):.4g} to {float(row['ci_high']):.4g} | "
-                     f"{float(row['p_value']):.4g} | {float(row['q_value']):.4g} |")
-    lines.extend(['','## Robustness and interpretation','',
-       'No observed animal was deleted as an outlier. Each contrast was recomputed after omitting each '
-       'observed animal once. Rank-based comparisons are distributional sensitivity checks, with their '
-       'own six-comparison BH family; they do not estimate the same mean difference. The intervals below '
-       'are ranges of refitted effects, not confidence intervals.','',
-       '| Endpoint | Contrast | Leave-one-animal-out difference range | Rank sensitivity P | Direction preserved |',
-       '|---|---|---|---:|---|'])
-    for row in sensitivities:
-        lines.append(f"| {NAMES[row['endpoint']]} | {CONTRAST_NAMES[row['contrast']]} | "
-                     f"{float(row['loo_mean_difference_min']):.4g} to {float(row['loo_mean_difference_max']):.4g} | "
-                     f"{float(row['mann_whitney_p_value']):.4g} | {row['loo_direction_preserved']} |")
-    lines.extend(['',
-       'Group differences in immune source data do not imply that a phage or viral feature caused those '
-       'differences. The original article already reports related treatment-associated immune results. '
-       'Different endpoints and contrasts need not support a uniform restoration interpretation. '
-       'Nonsignificant contrasts are not evidence of equivalence or absence of an immune effect.','',
-       'CD62L-positive monocyte fraction is higher with FVT than stressed control, while its stress-control '
-       'contrast is imprecise. This is not demonstrated reversal of a stress-induced deficit. TNF-alpha '
-       'has a highly dispersed stressed group: its FVT comparison differs between raw-mean Welch and '
-       'rank-based tests. These estimate different aspects of the distribution; neither result is hidden. '
-       'The monocyte FVT comparison differs from the article\'s Tukey pairwise P=0.106. '
-       'The original three-group pooled residual variance and Tukey adjustment differ from the '
-       'present unequal-variance pairwise test and six-test BH family. Those method choices explain '
-       'the numerical difference without requiring different source observations. This comparison '
-       'does not identify an error in the original calculation. Upstream censoring and exclusions '
-       'remain a separate general limitation.','',
-       'Endpoint-specific n=9 FVT groups contain different animals: monocyte and CD62L outcomes lack '
-       'source ID 31, while TNF-alpha lacks ID 11. Equal sample counts do not establish matched endpoints.','',
-       'No viral composition, temporal stability, reference deviation, bacterial-adjusted association or '
-       'phage-host relationship was estimated. Original paired bulk-derived viral profiles could support '
-       'additional work if their processed matrix, confidence annotations and verified animal map become '
-       'available. Endpoint immune measurements would still not measure chronic-stress immune stability.','',
-       '## Validation','',
-       f"Validation: {validation_counts_text(validation)}. "
-       'Independent checks cover Welch inference, BH adjustment, '
-       'community-distance identities and linkage invariants. Synthetic fixtures are software tests only.','',
-       'Source: [Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y). '
-       'Exact values and missingness are in results/tables; raw observations retain source-cell locations.'])
+        'The public source workbook supports an exploratory comparison of three immune outcomes '
+        'in the Control, Control Stress and FVT Stress groups of Ritz et al. (2024). '
+        'The outcomes were selected after reading the published findings, before calculating '
+        'the present contrasts. All supplied observations were retained.','',
+        'The blood samples used for the two flow outcomes were collected on study day 19, '
+        'before forced swim and after 16 defeat days. Their values are percentages of parent '
+        'population, and differences are percentage points rather than absolute cell counts. '
+        'TNF-alpha was measured in unstimulated splenocyte culture supernatant, in pg/mL, '
+        'from spleens collected on day 23 after 19 defeat sessions. These assays belong to '
+        'the same source cohort but were not collected at the same time.','',
+        'Each table reports unadjusted animal-level mean differences with pointwise 95% Welch '
+        'intervals. The six P values form one Benjamini-Hochberg family. Sample sizes are '
+        'available observations for that endpoint.']
+    narratives={
+        'ly6chi_monocytes':('LY6Chi monocytes',
+            'The stressed-control group had a lower basal LY6Chi monocyte proportion than '
+            'Control. The FVT Stress group had a higher proportion than stressed controls. '
+            'The two component comparisons describe the observed pattern more directly than '
+            'a single restoration contrast.'),
+        'ly6chi_monocytes_cd62':('CD62L-positive monocytes',
+            'The CD62L-positive fraction of LY6Chi monocytes was higher in FVT Stress than '
+            'in stressed controls. The stress-versus-Control difference was small and imprecise. '
+            'This is an FVT-associated difference without an established preceding stress '
+            'deficit, so it does not demonstrate reversal of such a deficit.'),
+        'tnfa_splenocyte_unstimulated':('Unstimulated splenocyte TNF-alpha',
+            'The stressed-control group had a higher mean TNF-alpha concentration, with '
+            'substantial dispersion. The FVT-versus-stressed mean difference was negative, '
+            'but both TNF-alpha intervals were wide and included zero. These estimates '
+            'remain imprecise; they do not establish equivalence between groups. '
+            'The measurement describes ex vivo culture output, not circulating plasma TNF-alpha.'),
+    }
+    for endpoint,(title,narrative) in narratives.items():
+        endpoint_rows=[row for row in results if row['endpoint']==endpoint]
+        if not endpoint_rows:
+            continue
+        lines.extend(['','## '+title,'',narrative,'',
+            '| Endpoint | Contrast | n first/second | Mean difference | 95% CI | P | BH q |',
+            '|---|---|---:|---:|---|---:|---:|'])
+        for row in endpoint_rows:
+            lines.append(f"| {NAMES[row['endpoint']]} | {CONTRAST_NAMES[row['contrast']]} | "
+                         f"{row['n_first']}/{row['n_second']} | {float(row['mean_difference']):.4g} | "
+                         f"{float(row['ci_low']):.4g} to {float(row['ci_high']):.4g} | "
+                         f"{float(row['p_value']):.4g} | {float(row['q_value']):.4g} |")
+    lines.extend(['','## Dependence on the statistical comparison','',
+        'The monocyte FVT comparison gives Welch P=0.01265 here and Tukey-Kramer '
+        'P=0.106409 under the original three-group calculation, reproducing the published '
+        'P=0.106. Both use the same observations and mean difference. Pooling the residual '
+        'variance across all three groups and adjusting for three pairwise comparisons '
+        'explains the different uncertainty estimates; additional source exclusions are '
+        'unnecessary for this numerical reconciliation.'])
     replication=root/'results/tables/original_method_replication.csv'
     if replication.is_file():
         replication_rows=read_csv(replication)
@@ -102,36 +83,53 @@ def summarize(root,config):
             checked=[r for r in replication_rows if r['published_agreement'] not in ['not_reported_for_this_statistic','']]
             mismatches=[r for r in checked if r['published_agreement']=='mismatch']
             captions=[r for r in checked if r['record_type']!='group']
-            lines.extend(['','## Original-method reconstruction','',
-                f'A separate reconstruction table contains {len(replication_rows)} records: '
-                '`results/tables/original_method_replication.csv`. It is distinct from the fixed '
-                'Welch family. Its presence does not imply that every original outcome or the '
-                'original full multiplicity family was reconstructed. '
-                f'{len(checked)-len(mismatches)} of {len(checked)} printed reference checks agree, '
-                f'including all {len(captions)} selected caption-statistic checks.', '',
-                'The three-group pooled-variance calculation reproduces the selected planned '
-                't statistics and Tukey comparisons at the published precision. In particular, '
-                'the monocyte FVT comparison is P=0.106409 under Tukey-Kramer, explaining '
-                'the published P=0.106 without additional exclusions. One printed group mean '
-                'remains discrepant: unstimulated FVT TNF-alpha averages 27.8492778 pg/mL '
-                'in the workbook, which rounds directly to 27.8, versus 27.9 in Table 1b. '
-                'The discrepancy is retained; no tolerance was widened and no value changed.', '',
+            caption_matches=sum(r['published_agreement']=='matches_published_precision' for r in captions)
+            lines.extend(['',
+                f'The [original-method reconstruction](../results/reports/original_method_replication.md) '
+                f'contains {len(replication_rows)} records. It matches {caption_matches} of '
+                f'{len(captions)} selected caption-statistic checks and '
+                f'{len(checked)-len(mismatches)} of {len(checked)} combined caption and group-summary '
+                'checks at published precision. One printed mean remains unresolved: FVT '
+                'unstimulated TNF-alpha averages 27.8492778 pg/mL in the workbook, directly '
+                'rounding to 27.8, while Table 1b prints 27.9. Source values and rounding '
+                'tolerances were retained.','',
                 'The planned contrast compares the stressed mean with the average of Control '
                 'and FVT Stress. It does not jointly establish a stress effect and its reversal. '
-                'Tukey intervals cover three pairwise comparisons within one endpoint under '
-                'a common-variance model; the original across-outcome BH family remains unreconstructed.'])
+                'Tukey intervals cover three pairs within each endpoint under a common-variance '
+                'model. The reconstruction verifies compatible calculations, rather than '
+                're-executing the original SPSS session or reconstructing its full BH family.'])
+    lines.extend(['','## Sensitivity and missing observations','',
+        'Each comparison was refitted after omitting each observed animal once. The ranges '
+        'below describe influence on the mean difference; they are not confidence intervals. '
+        'All six observed directions persisted, which does not establish stable significance. '
+        'The Mann-Whitney comparisons describe distributional ordering and use their own '
+        'six-test sensitivity BH family. They do not test the same raw-mean estimand.','',
+        '| Endpoint | Contrast | Leave-one-animal-out difference range | Rank sensitivity P | Direction preserved |',
+        '|---|---|---|---:|---|'])
+    for row in sensitivities:
+        lines.append(f"| {NAMES[row['endpoint']]} | {CONTRAST_NAMES[row['contrast']]} | "
+                     f"{float(row['loo_mean_difference_min']):.4g} to {float(row['loo_mean_difference_max']):.4g} | "
+                     f"{float(row['mann_whitney_p_value']):.4g} | {row['loo_direction_preserved']} |")
+    lines.extend(['',
+        'TNF-alpha illustrates the distinction between the mean and rank comparisons: the '
+        'highly dispersed stressed group produces different results for those different '
+        'features of the distribution. A rank result is not automatically a median shift. '
+        'Neither method is selected as a replacement because it gives a smaller P value.','',
+        'The n=9 FVT samples also differ by assay. Monocyte and CD62L measurements lack '
+        'source ID 31, while TNF-alpha lacks ID 11. Equal sample counts therefore do not '
+        'establish a common complete-case set. The workbook does not identify all upstream '
+        'technical exclusions, detection thresholds or statistical exclusions.'])
     bounds_path=root/'results/tables/immune_missingness_bounds.csv'
     ranks_path=root/'results/tables/immune_rank_effects.csv'
     if bounds_path.is_file() and ranks_path.is_file():
         bounds=read_csv(bounds_path);ranks=read_csv(ranks_path)
         if len(bounds)!=6 or len(ranks)!=6:
             raise ValueError('Descriptive robustness must retain the existing six comparisons')
-        lines.extend(['','## Descriptive missingness and rank effects','',
-            'These diagnostics were added after inspecting the earlier reanalysis. They add '
-            'no hypothesis tests and leave the primary six-test family unchanged. Bounds target '
-            'the animals represented by workbook rows, conditional on missing percentage assays '
-            'having well-defined values anywhere in [0,100]. They are descriptive extrema, '
-            'not confidence intervals or evidence of robust statistical significance.','',
+        lines.extend(['',
+            'Two descriptive checks were added after inspecting the earlier reanalysis. '
+            'For the animals represented by workbook rows, allowing each missing percentage '
+            'assay any well-defined value in [0,100] gives the following sharp support bounds. '
+            'No value is imputed into the analysis.','',
             '| Percentage endpoint | FVT Stress minus Control Stress support bounds |',
             '|---|---|'])
         for row in bounds:
@@ -141,18 +139,42 @@ def summarize(root,config):
         tnf=next(row for row in ranks if row['endpoint']=='tnfa_splenocyte_unstimulated'
                  and row['contrast']=='fvt_stress_minus_ctr_stress')
         lines.extend(['',
-            'Under those support assumptions, neither missing percentage value can reverse '
-            'the source-cohort FVT-versus-stressed mean direction. An undefined parent population '
-            'would violate the well-defined-assay assumption. TNF-alpha has missing values and '
-            'no identified finite upper support, so analogous finite bounds are unavailable.','',
+            'Both source-cohort mean directions remain positive under that support assumption. '
+            'These are descriptive extrema, not confidence intervals or evidence of robust '
+            'significance. An undefined parent population would invalidate the well-defined '
+            'assay assumption. Missing TNF-alpha values have no identified finite upper support, '
+            'so analogous finite bounds are unavailable.','',
             f"For observed TNF-alpha, {tnf['direct_first_greater_pairs']} first-greater and "
             f"{tnf['direct_tied_pairs']} tied comparisons among {tnf['cross_group_pair_count']} cross-group pairs "
             f"give empirical superiority {float(tnf['empirical_probability_first_greater_plus_half_ties']):.6g} "
             f"and rank-biserial effect {float(tnf['rank_biserial_first_minus_second']):.6g} for FVT Stress "
-            f"versus Control Stress. The pairs reuse {tnf['n_observed_animals']} observed animals; "
-            'they are not independent replicates. See `results/reports/phenotype_robustness.md` '
-            'and the complete six-row bounds/rank tables.'])
+            f"versus Control Stress. Those pairs reuse {tnf['n_observed_animals']} animals. They are "
+            'not independent replicates. The full six-comparison tables and definitions are '
+            'in the [descriptive robustness report](../results/reports/phenotype_robustness.md).'])
+    lines.extend(['','## What the dataset leaves unanswered','',
+        f"The workbook contains {summary['workbook_animal_rows']} animal rows across two experiments. "
+        f"The sequencing archive contains {summary['principal_run_count']} runs representing "
+        f"{summary['principal_specimen_count']} specimens: "
+        f"{summary['sequencing_category_counts'].get('individual_recipient_bulk_metagenome',0)} recipient bulk specimens, "
+        f"{summary['sequencing_category_counts'].get('pooled_fecal_virome',0)} enriched pools and "
+        f"{summary['sequencing_category_counts'].get('transplant_inoculum',0)} inocula. "
+        'The initial-study captions imply 12 pool-by-time profiles. Pool membership across '
+        'time remains unresolved, so these are not 12 verified animal trajectories.','',
+        'The intended association between viral change and an immune phenotype requires '
+        'individual longitudinal viral abundance profiles and a verified link to immune '
+        'source animals. No processed viral profile was retrieved and none was matched to '
+        'immune outcomes. Terminal immune measurements could serve as outcomes for such an '
+        'association if those viral inputs became available; they would still not measure '
+        'within-mouse immune change or temporal immune stability. Bacterial adjustment also '
+        'requires the missing matched bacterial profiles.','',
+        'Unstressed controls were group housed and both stressed groups singly housed. '
+        'Thus the stress-versus-Control contrast includes different housing regimes, while '
+        'FVT Stress versus Control Stress shares the stated regime. Unavailable allocation '
+        'details limit the animal-level uncertainty estimates. The treatment comparisons '
+        'describe selected immune phenotypes; they do not isolate a phage mechanism or '
+        'establish immune resilience.'])
     calibration=root/'results/reports/software_calibration.md'
+    calibration_note=''
     if calibration.is_file():
         calibration_rows=read_csv(root/'results/tables/software_calibration.csv')
         expected=config.get('calibration',{}).get('replicates',20000)
@@ -160,17 +182,19 @@ def summarize(root,config):
             r['purpose']!='synthetic_not_biological' or int(r['replicates'])!=expected
             or int(r['seed'])!=config['seed'] for r in calibration_rows):
             raise ValueError('Synthetic calibration output does not match the current configured run')
-        lines.extend(['','## Conditional software calibration','',
-            f'A separate synthetic benchmark completed {expected:,} replicates in each of four '
-            'known zero-mean scenarios, evaluating variance '
-            'heterogeneity, skew and artificial clustering. It reads no biological observations. '
-            'Its Monte Carlo uncertainty is simulation uncertainty, not mouse-level uncertainty. '
-            'See `results/reports/software_calibration.md` and '
-            '`results/tables/software_calibration.csv`. These checks cannot infer missing cage '
-            'assignments or calibrate the actual experiment under an unknown dependence structure.'])
-    text='\n'.join(lines)+'\n'
-    (root/'docs/results.md').write_text(text,encoding='utf-8')
-
+        calibration_note=(f' The separate [software calibration](../results/reports/software_calibration.md) '
+            f'used {expected:,} replicates in each of four known zero-mean scenarios. Its '
+            'Monte Carlo uncertainty is simulation uncertainty and does not calibrate the '
+            'actual experiment under an unknown dependence structure.')
+    lines.extend(['','## Reproducibility','',
+        f"Validation: {validation_counts_text(validation)}. "
+        '[Executed records](../results/reports/validation_summary.json) and '
+        '[statistical checks](statistical_validation.md) document the software verification. '
+        'Synthetic fixtures are kept separate from biological observations.'+calibration_note,'',
+        'Source: [Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y). '
+        'Observation-level source cells, exact estimates and missingness are retained in '
+        '[results/tables](../results/tables) and [data/processed/immune_long.csv](../data/processed/immune_long.csv).'])
+    (root/'docs/results.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
 
 
 def figure_qa_status(root):
@@ -293,7 +317,7 @@ def resource_report(root,usage,invocation=None,config=None):
     (root/'docs/resource_usage.md').write_text(text,encoding='utf-8')
     assessment='# Current invocation assessment\n\n'
     if invocation.get('status')=='completed_restricted_analysis' and (root/'docs/results.md').is_file():
-        assessment=(root/'docs/results.md').read_text(encoding='utf-8')+'\n'
+        assessment+='The full restricted workflow completed. Read the [scientific results](../../docs/results.md) for estimates and interpretation.\n\n'
     else:
         assessment+='Scientific results from earlier invocations are not evidence that this invocation executed those analyses.\n\n'
     assessment+=invocation_text(root,invocation)

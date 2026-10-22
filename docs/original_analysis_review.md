@@ -148,21 +148,17 @@ would add unjustified precision. Small group sizes and missingness also limit
 normal approximation and multivariable adjustment. These constraints are not
 removed by exact agreement with an original P value.
 
-## Recommended implementation scope
+## Implementation and calculation checks
 
-A separate original-method replication module is justified as a provenance and
-calculation check. It should export group counts/variances, pooled ANOVA,
-the planned contrast, all three Tukey-Kramer comparisons and a table comparing
-published rounded statistics. Tests should compare pooled formulas with an
-independent ANOVA/linear-contrast implementation and Tukey calculations with
-`scipy.stats.tukey_hsd` on unequal-size fixtures. The original published BH
-family should remain explicitly unresolved.
+The reconstruction in `src/pisa/original_methods.py` exports group counts and
+variances, pooled ANOVA, the planned contrast, all three Tukey-Kramer pairs and
+comparisons with the published rounded statistics. Independent tests in
+`tests/test_original_methods.py` compare the pooled calculations with
+statsmodels OLS and linear contrasts, and the Tukey calculations with
+statsmodels `pairwise_tukeyhsd` on unequal-size fixtures.
 
-This module is an added verification layer. It must not replace the
-fixed six Welch contrasts, select a favorable method, add unselected endpoints
-or enable unavailable phage-immune analyses. The implementation is
-`src/pisa/original_methods.py`, with independent checks in
-`tests/test_original_methods.py`. On execution, the module writes the verification
-report to `results/reports/original_method_replication.md` and the long result
-table to `results/tables/original_method_replication.csv`. Execution and the independent
-software checks are coordinated serially under the project resource limits.
+The [verification report](../results/reports/original_method_replication.md)
+and [result table](../results/tables/original_method_replication.csv) retain the
+full calculations. This layer checks numerical compatibility with the selected
+published results. The six Welch comparisons remain unchanged, and the original
+full BH family remains unresolved.

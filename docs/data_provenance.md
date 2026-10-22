@@ -1,52 +1,69 @@
 # Data provenance
 
-Acquisition and review date: 2026-10-20, Asia/Taipei. Machine UTC timestamps are
-retained in execution reports; the acquisition date uses the session's local
-date. The main public input manifest is `data/manifests/inputs.json`.
-It contains exact URLs, stored byte sizes, SHA-256 digests, caps and
-transformations. `results/tables/input_integrity.csv` records executed checks.
+The analysis uses public material from
+[Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y), acquired and
+reviewed on 20 October 2026. The ten required files are fixed in the
+[input manifest](../data/manifests/inputs.json), which records source URLs,
+byte sizes, SHA-256 checksums, download limits and transformations. Executed
+size and checksum comparisons are in
+[input integrity](../results/tables/input_integrity.csv).
 
-- Article XML: Europe PMC full text for PMC10847049, corresponding to
-  [Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y).
-- Source workbook: publisher file `41564_2023_1564_MOESM2_ESM.xlsx` (23,358
-  bytes). The working URL uses static-content.springer.com; the older
-  springer-cdn.com hostname failed DNS resolution during this session.
-- Code: [Zenodo concept 10144096](https://doi.org/10.5281/zenodo.10144096)
-  resolves to release [10460215](https://zenodo.org/records/10460215), whose only
-  file is `Fvtstress_scripts_040124.pdf` (502,039 bytes). Its record identifies
-  CC BY 4.0. Both inspected versions contain script PDFs; no abundance table
-  was downloaded from this archive.
-- Sequencing: ENA filereport endpoints for PRJNA970614, PRJEB69687 and
-  PRJEB67706 provide run/sample identity and compressed file sizes. ENA XML
-  supplies PRJNA970614 study/BioSample attributes. These are public metadata;
-  no FASTQ was fetched.
+## Sources
 
-The frozen Zenodo catalog selects record ID, title, license, and sorted file
-key/size/checksum fields. Changing usage statistics and transport serialization
-are intentionally excluded. The exact deterministic transformation is in
-`src/pisa/acquisition.py`. Source PDFs, XML, TSV and XLSX inputs preserve
-downloaded bytes. BioSample attribute CSV is regenerated from frozen XML;
-its values retain source labels. PDF text is an attributed derived audit aid,
-not another uploaded file in the source release. The supplementary historical
-`data/raw/ritz2024_archive/raw_sources.csv` records original audit downloads,
-including PowerShell-serialized JSON and derived extracts; the execution
-manifest separately identifies the required reproducible inputs.
+| Material | Source and retained form | Role |
+|---|---|---|
+| Article | Europe PMC full-text XML for [PMC10847049](https://europepmc.org/articles/PMC10847049) | Experimental design, methods, captions and declared data locations |
+| Phenotype source data | Publisher workbook `41564_2023_1564_MOESM2_ESM.xlsx`, 23,358 bytes | Individual immune and behavioral measurements from the two experiments |
+| Archived code | [Zenodo release 10460215](https://zenodo.org/records/10460215), reached through [concept DOI 10144096](https://doi.org/10.5281/zenodo.10144096) | Release catalog and `Fvtstress_scripts_040124.pdf`, 502,039 bytes |
+| Metagenomic inventory | ENA run report, study XML and sample XML for [PRJNA970614](https://www.ebi.ac.uk/ena/browser/view/PRJNA970614) | Specimen identities, sample roles, time annotations and compressed-read sizes |
+| 16S inventory | ENA run report for [PRJEB69687](https://www.ebi.ac.uk/ena/browser/view/PRJEB69687) | Additional sequencing inventory |
+| Transcriptomic inventory | ENA run report for [PRJEB67706](https://www.ebi.ac.uk/ena/browser/view/PRJEB67706) | Additional sequencing inventory, outside the selected analysis |
 
-The core reproducible input collection contains small public files, with its
-largest original file approximately 0.5 MB. A separate expanded-search evidence
-manifest records 52 saved responses or connector representations and a
-32-member supplementary inventory. The 6.44 MB Europe PMC supplementary ZIP
-and its extracted evidence are ignored audit artifacts, not new individual
-community data. Its XLSX is byte-identical to the frozen source workbook.
-These search manifests are distinct from `inputs.json`; see
-`processed_data_search.md` for URLs, checksums, scope and access failures.
+The publisher workbook is retrieved from its `static-content.springer.com`
+URL. Both inspected Zenodo versions contain script PDFs rather than the
+referenced community tables. Sequence files were inventoried without
+downloading FASTQs. [Data availability](data_feasibility.md) explains which
+biological questions these inputs can support.
 
-Original workbook content is never edited. Source-local keys and cell locations
-make the numerical path auditable. Processed tables and figures are adaptations
-of the original source data and are identified as this reanalysis, without
-transferring original authorship to the project author. License and attribution
-details appear in `third_party_notices.md`.
+## Preservation and transformations
 
-No contact with upstream authors, private dataset, inferred mouse-ID repair,
-raw read acquisition, paid service or external compute was used. Missing
-processed inputs are listed in `results/reports/archive_availability.md`.
+Article XML, source XLSX, script PDF, ENA XML and TSV files preserve their
+retrieved bytes. The Zenodo catalog is normalized to record ID, title, license
+and sorted file names, sizes and checksums. Changing usage counters and
+transport formatting are excluded. The transformation is implemented in
+[acquisition.py](../src/pisa/acquisition.py).
+
+Phenotype extraction reads the unchanged workbook. Every exported observation
+or missing cell retains its source sheet, row, column and cell coordinate.
+Animal keys combine experiment, treatment and literal source identifier;
+punctuation is preserved. BioSample attributes are derived from frozen XML
+without changing source labels. Extracted PDF text is an audit aid derived
+from the archived PDF, not another data file supplied by the original deposit.
+
+The historical
+[source-download ledger](../data/raw/ritz2024_archive/raw_sources.csv) records
+the initial retrievals and derived extracts. The execution manifest separately
+identifies the ten files required by the reproducible workflow.
+
+## Additional search evidence
+
+The [processed-data search](processed_data_search.md) has a separate manifest
+of 52 saved responses or connector representations and a 32-member
+supplementary-file inventory. The complete 6.44 MB Europe PMC supplementary
+package contains the same phenotype workbook, a reporting PDF and figure/table
+images. Its workbook matches the frozen XLSX exactly. These search materials
+do not add individual viral abundance observations.
+
+The complete package and extracted working files remain outside the tracked
+input collection. Search manifests distinguish original response bytes,
+derived text and connector representations, and retain failed access routes
+without treating them as evidence of data absence.
+
+## Attribution and reuse
+
+Processed observations, summaries and figures are adaptations of the original
+source data. Cite Ritz and colleagues for the experiment and measurements,
+and the original accessions and archived scripts for their inputs. Article,
+source-data and code-release terms are recorded in
+[third-party notices](third_party_notices.md). The project's MIT license does
+not replace those upstream terms.

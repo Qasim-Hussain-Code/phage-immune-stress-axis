@@ -1,258 +1,175 @@
 # Gut phageome stability and stress-related immune responses
 
-## Research question and biological context
+## Biological question
 
-Is preservation of a mouse's gut phage community during chronic stress
-associated with less immune disruption, after considering treatment and
-bacterial variation? Phages may alter bacterial ecology, but a viral community
-change alone does not identify bacterial function, immune regulation or a
-gut-brain mechanism. Temporal stability requires repeated measurements of the
-same individual. Cross-sectional similarity, group dispersion and alpha
-diversity are different quantities.
+Do mice whose gut phage communities change less during chronic stress have
+different immune phenotypes at the end of the experiment? Answering that
+question requires repeated viral measurements from individual mice and a
+reliable link to their immune assays. A change in diversity between treatment
+groups cannot supply that information.
 
-The source study is [Ritz et al., Nature Microbiology 9, 359-376
-(2024)](https://doi.org/10.1038/s41564-023-01564-y). Its stress, transplantation,
-immune and behavioral results are upstream findings, not discoveries of this
-repository. The reference research repository was
-[reviewed before implementation](docs/reference_repository_review.md).
+The starting point is [Ritz et al. (2024), *Nature Microbiology*](https://doi.org/10.1038/s41564-023-01564-y),
+which examined chronic social defeat stress and fecal virome transplantation
+(FVT) in mice. Its public source workbook supports a reanalysis of selected
+immune outcomes. The processed viral abundance tables and animal crosswalk
+needed for the ecological question were not recovered from the inspected
+releases. The analysis therefore examines the immune comparisons separately:
+which outcomes differ with stress or FVT, and how much those conclusions depend
+on the statistical comparison being made.
 
-## Data and linkage findings
+## Data and experimental design
 
-| Source | Retrieved material | Observational unit |
+The source workbook contains 20 animal rows from the initial stress experiment
+and 30 from the FVT experiment. The immune reanalysis uses the latter, which has
+three groups of ten male C57BL/6J mice: Control, Control Stress and FVT Stress.
+Available measurements vary by assay; the selected comparisons contain eight
+to ten observed animals per group. Source values and missing cells are retained
+without outlier removal or imputation.
+
+The three selected outcomes cover two different sampling occasions:
+
+| Measurement | Material and timing | Unit |
 |---|---|---|
-| Article / PMC10847049 | Full article XML and experimental methods | Published design and assay descriptions |
-| Supplementary source workbook | 20 initial-study and 30 FVT-study animal rows | Source-local individual mouse row; endpoint missingness varies |
-| [Zenodo 10460215](https://zenodo.org/records/10460215) | 75-page code PDF and frozen file catalog | Scripts referencing absent processed matrices and metadata |
-| [PRJNA970614](https://www.ebi.ac.uk/ena/browser/view/PRJNA970614) | 104 run records and BioSample metadata | 77 individual recipient bulk specimens, 8 pools, 19 inocula |
-| [PRJEB69687](https://www.ebi.ac.uk/ena/browser/view/PRJEB69687) | 52 run records | Initial-study 16S metadata; no source-row crosswalk inferred |
-| [PRJEB67706](https://www.ebi.ac.uk/ena/browser/view/PRJEB67706) | 74 run records | Brain transcriptomic metadata, outside selected analysis |
+| LY6Chi monocyte proportion | Blood on day 19, before forced swim and after 16 defeat sessions | Percent of parent population |
+| CD62L-positive fraction of LY6Chi monocytes | Same basal blood collection | Percent of parent population |
+| Unstimulated splenocyte TNF-alpha | Culture supernatant from terminal day-23 spleen collection, after 19 defeat sessions | pg/mL |
 
-The initial-study captions imply 12 pool-by-time profiles: three per group at
-two times. Their membership and deposited profile crosswalk are unresolved.
-They are not 12 independently verified animals or longitudinal pools.
+Here, **basal means before the acute forced-swim test**, after chronic stress
+has already begun. These are endpoint immune phenotypes. The blood percentages
+describe relative cell populations; the cytokine measurement describes ex vivo
+splenocyte output.
 
-See the mandatory [feasibility gate](results/reports/data_feasibility.md),
-[sample audit](results/reports/sample_linkage.md),
-[machine-readable linkage map](results/tables/sample_linkage_audit.csv) and
-[archive audit](results/reports/archive_availability.md).
+The metagenomic accession [PRJNA970614](https://www.ebi.ac.uk/ena/browser/view/PRJNA970614)
+contains 104 specimens: 77 individual recipient bulk samples, eight enriched
+pools and 19 inocula. Those categories cannot be counted as 104 mice. The
+publication describes individual pre/post bulk-derived viral profiles as well
+as pooled viromes, but the archived code release provides a script PDF rather
+than the referenced processed matrices. [Data availability and linkage](docs/data_feasibility.md)
+sets out what was recovered and what is still required.
 
-## Hypotheses and selected analysis
+## Analysis
 
-The primary within-mouse stability/immune hypothesis and H1-H3/H5 viral
-composition, reference-deviation, adjustment and filtering hypotheses are
-untestable from these inputs. H4 permits only a separate immune treatment
-comparison. Exact criteria are in
-[hypothesis_eligibility.csv](results/tables/hypothesis_eligibility.csv).
-A [focused alternative search](docs/alternative_dataset_search.md) did not
-verify a suitable replacement with public processed profiles and explicit
-immune linkage. This was not a systematic review or proof that none exists.
+Each outcome has two comparisons: **Control Stress minus Control** and
+**FVT Stress minus Control Stress**. Welch tests estimate differences in raw
+means, with pointwise 95% confidence intervals and one Benjamini–Hochberg (BH)
+correction across all six tests. The endpoints were chosen after reading the
+published results, so this is an exploratory reanalysis.
 
-The restricted analysis uses three biologically motivated FVT-study outcomes:
-basal LY6Chi monocyte proportion, basal CD62L-positive monocyte fraction, and
-unstimulated splenocyte TNF-alpha. “Basal” means before forced swim, after
-16 defeat sessions on study day 19; it is not a baseline before chronic stress.
-Spleens were collected on day 23, after 19 defeat sessions, for subsequent
-ex vivo cytokine assays. These assays are not contemporaneous blood measurements.
-Original source
-values remain unchanged. No missing outcome or below-detection value is
-replaced with zero. All observed values are retained.
+Three checks help interpret those estimates. Rank comparisons assess ordering
+rather than raw means. Leaving out each observed animal in turn shows the
+influence of individual observations. A reconstruction of the original
+three-group model explains differences between the present Welch tests and the
+published Tukey comparisons. [Methods](docs/methods.md) gives the definitions
+and [detailed results](docs/results.md) reports the complete comparisons.
 
-For each endpoint, Control Stress minus Control and FVT Stress minus Control
-Stress are analyzed using Welch mean differences, pointwise 95% intervals and
-two-sided P values. One six-test Benjamini-Hochberg family is used. Rank tests
-and leave-one-observed-animal-out fits are sensitivity checks. Endpoint choices
-followed reading the published results and precede the present calculations;
-this is exploratory reanalysis, not preregistered confirmation. Cage allocation,
-original outlier flags and quantitative detection thresholds are unavailable.
-Stressed animals were singly housed while unstressed controls remained group
-housed, so the stress-versus-control comparison also includes housing differences.
-FVT Stress and Control Stress share the reported single-housing regime.
+## Immune findings
 
-## Primary results
+![Observed immune values and the six treatment contrasts](figures/figure4_immune.png)
 
-| Outcome | Contrast | n | Difference (95% CI) | BH q |
+*Dots are observed animals and horizontal bars are group means. The lower
+panels show raw mean differences with pointwise 95% Welch intervals. The q
+values use the six-test BH family. [Observations](results/tables/figure4_data.csv),
+[contrast estimates](results/tables/immune_contrasts.csv) and [vector PDF](figures/figure4_immune.pdf).*
+
+| Outcome | Comparison | n, first / second | Mean difference (95% CI) | BH q |
 |---|---|---:|---|---:|
-| LY6Chi monocytes | Stress minus Control | 10 / 10 | -2.034 percentage points (-3.683, -0.385) | 0.0395 |
-| LY6Chi monocytes | FVT Stress minus Stress | 9 / 10 | +1.556 percentage points (0.389, 2.724) | 0.0379 |
-| CD62L-positive monocytes | Stress minus Control | 10 / 10 | -1.760 percentage points (-7.583, 4.062) | 0.5265 |
-| CD62L-positive monocytes | FVT Stress minus Stress | 9 / 10 | +15.874 percentage points (7.726, 24.021) | 0.00480 |
-| Unstimulated splenocyte TNF-alpha | Stress minus Control | 8 / 9 | +67.543 pg/mL (-26.175, 161.262) | 0.1591 |
-| Unstimulated splenocyte TNF-alpha | FVT Stress minus Stress | 9 / 8 | -74.131 pg/mL (-167.776, 19.513) | 0.1551 |
+| LY6Chi monocytes | Stress − Control | 10 / 10 | −2.03 percentage points (−3.68, −0.38) | 0.0395 |
+| LY6Chi monocytes | FVT Stress − Stress | 9 / 10 | +1.56 percentage points (0.39, 2.72) | 0.0379 |
+| CD62L-positive fraction | Stress − Control | 10 / 10 | −1.76 percentage points (−7.58, 4.06) | 0.5265 |
+| CD62L-positive fraction | FVT Stress − Stress | 9 / 10 | +15.87 percentage points (7.73, 24.02) | 0.00480 |
+| Splenocyte TNF-alpha | Stress − Control | 8 / 9 | +67.54 pg/mL (−26.18, 161.26) | 0.1591 |
+| Splenocyte TNF-alpha | FVT Stress − Stress | 9 / 8 | −74.13 pg/mL (−167.78, 19.51) | 0.1551 |
 
-CD62L is higher with FVT without an established stress-induced deficit, so this
-is not evidence of reversal of that deficit. TNF-alpha is sensitive to the
-estimand: its FVT rank-test sensitivity q is approximately 0.0110, whereas the
-raw mean contrast remains imprecise. The monocyte FVT comparison also differs
-from the article's Tukey P=0.106: Welch P=0.01265 here. The separate
-three-group pooled-variance reconstruction gives Tukey-Kramer P=0.106409 from
-the same source observations. Variance estimation and multiplicity explain the
-difference; no additional exclusions are needed. This is not a correction of
-the original calculation.
-Relative cell percentages do not establish absolute cell expansion.
+**LY6Chi monocyte proportions are lower with stress and higher with FVT in
+these observations.** The stressed control group is lower than Control, while
+FVT Stress is higher than stressed control. The FVT comparison is also sensitive
+to the analysis model: its Welch P value is 0.01265, whereas the reconstructed
+Tukey–Kramer P value is 0.106409, matching the article's reported 0.106. The
+pairwise observations and mean difference are unchanged; Tukey's variance
+estimate also uses the third group.
 
-All nine selected caption-statistic checks match reported precision. Across
-those statistics and nine source group summaries, 17 of 18 checks match. One
-printed mean is retained as a discrepancy: FVT unstimulated TNF-alpha averages
-27.8492778 pg/mL in the workbook, rounding directly to 27.8, while the original
-table image prints 27.9. No source value or rounding tolerance was changed.
-The original complete BH family remains unreconstructed. See the
-[independent review](docs/original_analysis_review.md) and
-[replication table](results/tables/original_method_replication.csv).
+**The CD62L-positive fraction is higher with FVT, but a preceding stress deficit
+is not established.** Its FVT contrast is clearly positive under the selected
+Welch analysis, while the stress–control interval crosses zero. Describing both
+outcomes as a common restoration response would obscure that difference.
 
-Two [post-hoc descriptive checks](docs/phenotype_robustness.md) add no hypothesis
-tests or imputed observations. If each missing percentage assay has a well-defined
-value in [0,100], the FVT-minus-stress mean difference among the ten source rows
-per group lies between 1.166 and 11.166 percentage points for LY6Chi monocytes,
-and between 8.323 and 18.323 points for CD62L-positive monocytes. These bounds
-retain positive direction under that assumption; they are not confidence
-intervals or significance claims. No finite TNF-alpha bounds are justified.
-The TNF-alpha FVT rank comparison has 8 greater and 64 lesser cross-group pairs,
-with no ties. Those 72 pairs reuse 17 animals and are not independent replicates.
+**TNF-alpha depends on what is being compared.** Two large observations make
+the stressed group highly dispersed. Its FVT raw-mean contrast has a wide
+interval crossing zero, while the rank comparison gives q = 0.0110 in the
+separate sensitivity family. The rank result describes ordering of the
+observations and does not resolve uncertainty about the mean.
 
-These are separate immune comparisons. They do not establish a specific phage
-effect, bacterial mediation, immune resilience or a causal gut-brain mechanism.
-See [full results](docs/results.md), [limitations](docs/limitations.md),
-[methods](docs/methods.md) and [novelty assessment](docs/novelty_assessment.md).
+![Identical mean differences under Welch and original Tukey–Kramer intervals](figures/figure8_method_comparison.png)
 
-## Figures and machine-readable results
+*Welch intervals allow unequal variances and cover each contrast separately.
+Tukey–Kramer intervals use the three-group pooled variance and cover all three
+pairs within each endpoint. Their different widths explain why an unchanged
+mean difference can produce a different inferential conclusion.
+[Source table](results/tables/figure8_data.csv), [vector PDF](figures/figure8_method_comparison.pdf)
+and [original-method reconstruction](docs/original_analysis_review.md).*
 
-- [Figure 1](figures/figure1_design.png): study design and public-data coverage.
-- [Figure 4](figures/figure4_immune.png): observed immune values and uncertainty.
-- [Figure 5](figures/figure5_linkage_limit.png): why no phage-immune model was fitted.
-- [Figure 7](figures/figure7_robustness.png): influence of omitting each animal.
-- [Figure 8](figures/figure8_method_comparison.png), original-method comparison: contrasts the fixed Welch intervals
-  with the original pooled-variance Tukey-Kramer intervals, using identical
-  observations and point estimates with different interval coverage scopes.
+Effect directions remain the same after leaving out each animal, although the
+uncertainty changes. Conditional bounds for the missing percentage assays also
+retain positive FVT-minus-stress mean differences among the source rows. Those
+bounds describe possible values within this cohort; they do not provide
+confidence intervals. The [sensitivity report](docs/phenotype_robustness.md)
+explains the assumptions and gives the full results.
 
-All five actual PDF pages were rendered and visually inspected. The
-[review record](docs/pdf_qa.md) binds that inspection to the current PDF hashes.
+## Interpretation
 
-Each figure has a vector PDF and `results/tables/figureN_data.csv`.
-Figure 4 contrast intervals are in `immune_contrasts.csv`. Composition,
-stability and bacteriome figures 2, 3 and 6 are excluded because their necessary
-processed inputs were not retrieved. Their absence is intentional.
+The immune outcomes show different treatment-associated patterns rather than
+a single measure of immune recovery. These observations and related treatment
+effects originate in Ritz and colleagues' experiment. This reanalysis adds an
+explicit comparison of estimands, uncertainty and statistical assumptions.
 
-The separate [software calibration design](docs/calibration_design.md) specifies
-four synthetic all-null scenarios, including skew, unequal variance and an
-artificial cluster dependence stress test. Every simulation row is labeled
-`synthetic_not_biological`. The default full benchmark is 20,000 replicates per
-scenario in batches no larger than 500. The executed benchmark used seed
-20261020 and completed all 20,000 replicates in each scenario. Its all-null BH
-family rejection probabilities were 0.04620 for equal-variance Gaussian,
-0.04795 for unequal-variance Gaussian, 0.01150 for centered lognormal and
-0.16495 for artificial clusters with ICC 0.5. Exact Wilson intervals and
-coverage results are in the [software-only report](results/reports/software_calibration.md).
-These Monte Carlo intervals describe simulation error; no real cage structure
-or biological power is inferred. The artificial clusters do not describe the
-original singly housed stressed groups.
+Housing is part of the stress–control comparison: controls were group housed,
+while stressed animals were singly housed. Both stressed groups share the
+reported housing regime. Missing cage allocation, upstream exclusions and
+assay detection thresholds limit further adjustment. The selected assays
+cannot identify which viral constituent, bacterial response or other treatment
+component accounts for an immune difference.
 
-## Reproduction
+The phageome question remains open. Repeated recipient viral profiles linked
+to the immune rows would permit an association with endpoint phenotype. A claim
+about **within-mouse immune change** would additionally require an appropriate
+immune baseline. [Limitations](docs/limitations.md) and [scope of the contribution](docs/novelty_assessment.md)
+describe these boundaries.
 
-Use Python 3.11 or newer. Version 0.2.2 completed fresh offline workflows with
-CPython 3.14.0 on Windows 11 and CPython 3.14.4 in the existing Ubuntu WSL2
-distribution.
-The Linux check newly installed all 21 pinned distributions in an isolated
-environment from verified official wheels. The Windows reference used its
-existing packages. These runs share one physical host. Exact environment,
-installation and build evidence is in the [environment report](docs/environment_reproduction.md)
-and [Linux setup report](docs/linux_environment_setup.md). Do not use an
-unrelated Python 2 installation on PATH. Small frozen public inputs are
-included for offline reproduction; large raw reads and reference databases
-are excluded.
+## Reproducing the analysis
+
+Use Python 3.11 or newer and the pinned requirements. Small frozen public inputs
+are included, so the analysis can run offline after package installation.
 
 ```bash
-python scripts/environment_probe.py
 python -m venv .venv
-# Linux: source .venv/bin/activate
-# Windows PowerShell: .venv\Scripts\Activate.ps1
+source .venv/bin/activate
 python -m pip install -r requirements.txt
-python scripts/run_all.py --config config/analysis.yaml --threads 4 --offline
-python scripts/run_all.py --config config/analysis.yaml --threads 4 --offline --resume
-python scripts/run_all.py --config config/analysis.yaml --threads 4 --offline --validate-only
-python scripts/run_all.py --config config/analysis.yaml --threads 4 --offline --mode pilot
+python scripts/run_all.py --config config/analysis.yaml --threads 1 --offline
 ```
 
-The environment and installation commands create a fresh environment. Check free
-disk/RAM before installing; a fresh environment is expected to require several
-hundred MB, depending on platform. Cached inputs are verified by SHA-256.
-Omit `--offline` only to retrieve a missing frozen input. Changed public content
-fails checksum validation and requires a documented new audit. Resume checks
-code/config/input fingerprints and declared output hashes. Pilot stops after
-phenotype preparation and does not imply that immune analysis or figures ran.
-Per-invocation records distinguish newly executed stages, verified resumed
-outputs, validation-only runs, pilots and failures. An earlier successful run
-does not establish completion of the current invocation. See
-[reproduction validation](docs/reproduction_validation.md).
+On Windows PowerShell, activate with `.\.venv\Scripts\Activate.ps1` instead.
+Use `--resume` to verify and reuse completed stages or `--validate-only` to run
+the software checks. The selected workflow runs serially and excludes raw
+sequencing reads and large reference databases. [Reproduction guide](docs/reproducibility.md)
+contains the environment requirements, measured comparisons and resource use.
 
-The executed [command-mode checks](results/reports/mode_checks.json) also verify
-that validation leaves scientific files unchanged, the pilot stops after stage
-six, and an unchanged full resume verifies all ten stages without recomputation.
+## Repository guide
 
-`--threads 4` is a ceiling interface; the selected small workflow executes
-serially and restricts numerical-library threads to one. It monitors native
-per-process peaks and sampled concurrent process-family RSS, project storage
-and available memory. Downloads are capped and a 4 GB free-disk reserve is
-preserved. The storage ceiling is initialized from the current host and checkout
-as the smaller of 10 GB or free space minus the reserve; a persistent local
-baseline prevents a restart from resetting that allowance. Historical
-`environment_initial.json` is provenance, not another checkout's resource budget.
-Sampled aggregate RSS is not an exact whole-machine peak. Raw PRJNA970614 FASTQs
-alone total 262.211 GB compressed and were
-excluded. See [resource measurements](docs/resource_usage.md).
+| Location | Contents |
+|---|---|
+| [docs/](docs/README.md) | Methods, interpretation, data availability and technical appendices |
+| [data/manifests/](data/manifests/) | Source URLs, input sizes, checksums and review records |
+| [data/processed/](data/processed/) | Extracted observations with workbook-cell lineage |
+| [results/tables/](results/tables/) | Estimates, sensitivity analyses and figure data |
+| [figures/](figures/) | PNG and vector PDF figures |
+| [src/pisa/](src/pisa/) and [scripts/](scripts/) | Analysis functions and ordered workflow |
+| [tests/](tests/) | Independent estimator checks and workflow tests |
 
-During the latest Windows fresh-checkout replay, sampled concurrent
-process-family RSS peaked at 369.4 MB and the largest native per-process peak
-was 219.1 MB. Project storage peaked at 201.2 MB including disposable files,
-then fell to 191.0 MB after cleanup, with 10.36 GB free. The separate Linux
-run used 482.6 MB in its complete native directory before packaging; its outer
-guest monitor sampled 338.4 MB concurrent RSS. These scopes are reported
-separately, and guest RSS is not added to virtual-machine memory. See the
-[Linux execution evidence](docs/linux_reproduction_validation.md).
+## Citation and license
 
-## Validation and publication status
-
-Version 0.2.2 collected 174 tests on each platform, with zero failures or
-errors. Windows executed 168 and skipped six Linux-only cases; Linux executed
-165 and skipped nine Windows-only cases. A fresh Git archive of commit
-`eb7ba6c8b945670a1f55c493d89435f36750900c` executed all ten stages offline without resume on both platforms.
-All 30 Windows scientific files matched exactly. All 20 Linux CSVs passed the
-fixed exact-field/numeric-tolerance policy: 18 were byte-identical, while two
-had derived-value differences at most 3e-14. All ten new Linux figure files
-exactly match previously visually reviewed Linux bytes. No new visual
-inspection is claimed, and Linux output is not byte-identical overall.
-
-All 30 scientific outputs and all ten frozen inputs also remain byte-for-byte
-unchanged from before the version 0.2.2 validation-hardening changes. Generated
-reports distinguish collected, executed and skipped tests. See the
-[hardening report](docs/validation_hardening.md),
-[Windows evidence](results/reports/reproduction_check.json) and
-[Linux validation](docs/linux_reproduction_validation.md) for source identities,
-comparisons, resources and completed cleanup. The Linux dependencies were
-independently installed on the same physical host; no separate physical-machine,
-Linux Mint, macOS or remote CI execution is claimed. The suite includes
-independent SciPy/statsmodels comparisons, original-method reconstruction,
-analytical identities, missingness, pooling, inoculum, acquisition, resource and
-resume safeguards. Current executed counts and outcomes are in
-`results/reports/validation_summary.json`; current completion is established by
-the matching invocation record. Synthetic fixtures and calibration simulations
-are exclusively software checks. The measured control groups provide treatment
-references. Independent biological negative and positive controls for the
-unmeasured phage-stability association are unavailable.
-
-The validated project is maintained in the private repository at
-[Qasim-Hussain-Code/phage-immune-stress-axis](https://github.com/Qasim-Hussain-Code/phage-immune-stress-axis).
-Repository visibility and sole-contributor attribution are checked before each push.
-See [publication status](docs/publication_status.md) and the
-[machine-readable verification](results/reports/publication_check.json). Use the
-[checked private-push command](docs/private_push.md) for subsequent pushes.
-
-## Provenance, license and attribution
-
-Project code is MIT licensed. Upstream article/source data and the archived
-code PDF retain their CC BY 4.0 licenses and attribution; see
-[data provenance](docs/data_provenance.md) and [third-party notices](docs/third_party_notices.md).
-This does not relicense upstream work. Cite Ritz and colleagues for the
-experiment, the original accessions and archived scripts for their inputs,
-and the software used. Project authorship is Qasim Hussain alone. AI assistance
-was used for coding, audit support and drafting; it does not constitute human
-authorship or independent experimental validation.
+Cite [Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y) for the
+experiment and source measurements. Project citation metadata are in
+[CITATION.cff](CITATION.cff). Project code uses the [MIT license](LICENSE);
+upstream data and archived scripts retain their own licenses and attribution,
+as recorded in [data provenance](docs/data_provenance.md) and
+[third-party notices](docs/third_party_notices.md).
