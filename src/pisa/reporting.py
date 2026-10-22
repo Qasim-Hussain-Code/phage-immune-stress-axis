@@ -34,7 +34,7 @@ def summarize(root,config):
         'before forced swim and after 16 defeat days. Their values are percentages of parent '
         'population, and differences are percentage points rather than absolute cell counts. '
         'TNF-alpha was measured in unstimulated splenocyte culture supernatant, in pg/mL, '
-        'from spleens collected on day 23 after 19 defeat sessions. These assays belong to '
+        'from spleens collected on day 23 after 19 defeat days. These assays belong to '
         'the same source cohort but were not collected at the same time.','',
         'Each table reports unadjusted animal-level mean differences with pointwise 95% Welch '
         'intervals. The six P values form one Benjamini-Hochberg family. Sample sizes are '

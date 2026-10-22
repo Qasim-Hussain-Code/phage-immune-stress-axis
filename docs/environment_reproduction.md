@@ -10,15 +10,17 @@ separate source identities and results.
 
 | Execution | Source | Environment | Result |
 |---|---|---|---|
-| Full Windows workflow, 22 October 2026 | Working source subsequently committed as `21546d6` | CPython 3.14.0; existing packages | Ten stages executed; 174 tests collected, 168 executed, six Linux-only skips; no failures or errors |
+| Full Windows workflow, 22 October 2026 | Reporting and timing terminology revision; [source identity](../results/reports/run_status.json) | CPython 3.14.0; existing packages | Ten stages executed; 174 tests collected, 168 executed, six Linux-only skips; no failures or errors |
 | Fresh Windows checkout, 21 October 2026 | `eb7ba6c` | Same CPython 3.14.0 environment | Ten stages executed without resume; all 30 scientific files reproduced exactly |
 | Fresh Ubuntu WSL2 environment, 21 October 2026 | `eb7ba6c` | CPython 3.14.4; 21 pinned distributions newly installed | Ten stages executed; 174 tests collected, 165 executed, nine Windows-only skips; all 20 CSV comparisons passed |
 
-The October 22 revision changes the report narrative and the explanation of
-viral–immune eligibility. Its numerical observations, estimates and figures
-match the preceding analysis; only the eligibility table's question and reason
-text changed. The earlier Linux replay does not establish execution of that
-revised report generator. The [current invocation](../results/reports/run_status.json),
+The October 22 revisions changed the report narrative, clarified viral–immune
+eligibility and distinguished defeat days from individual bouts. Observations,
+estimates and figures remain unchanged. The earlier eligibility explanation
+changed that table's question and reason text; the final timing-wording rerun
+reproduced all 30 scientific files exactly. The older Linux replay does not
+establish execution of the revised report generator. The
+[current invocation](../results/reports/run_status.json),
 [Windows replay](../results/reports/reproduction_check.json) and
 [Linux replay](../results/reports/linux_reproduction_check.json) retain their
 complete source and execution records.

@@ -30,9 +30,9 @@ The three selected outcomes cover two different sampling occasions:
 
 | Measurement | Material and timing | Unit |
 |---|---|---|
-| LY6Chi monocyte proportion | Blood on day 19, before forced swim and after 16 defeat sessions | Percent of parent population |
+| LY6Chi monocyte proportion | Blood on day 19, before forced swim and after 16 defeat days | Percent of parent population |
 | CD62L-positive fraction of LY6Chi monocytes | Same basal blood collection | Percent of parent population |
-| Unstimulated splenocyte TNF-alpha | Culture supernatant from terminal day-23 spleen collection, after 19 defeat sessions | pg/mL |
+| Unstimulated splenocyte TNF-alpha | Culture supernatant from terminal day-23 spleen collection, after 19 defeat days | pg/mL |
 
 Here, **basal means before the acute forced-swim test**, after chronic stress
 has already begun. These are endpoint immune phenotypes. The blood percentages

@@ -9,8 +9,8 @@ These diagnostics were added after inspecting the earlier reanalysis and remain
 post hoc. They add no hypothesis tests, P values or confidence intervals.
 
 The flow outcomes come from basal blood collected on day 19, before forced swim
-but after 16 defeat sessions. Unstimulated splenocyte TNF-alpha comes from the
-terminal day-23 spleen collection after 19 sessions, followed by ex vivo culture.
+but after 16 defeat days. Unstimulated splenocyte TNF-alpha comes from the
+terminal day-23 spleen collection after 19 defeat days, followed by ex vivo culture.
 Neither is an immune measurement before chronic stress began. The diagnostics
 describe endpoint phenotypes, not within-mouse immune change.
 

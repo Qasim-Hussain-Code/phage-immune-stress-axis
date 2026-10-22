@@ -1,164 +1,171 @@
-# Independent review of the original immune analysis
+# Reconstruction of the original immune analyses
 
-Review date: 2026-10-20. This review uses the same three fixed study II endpoints
-as the exploratory immune analysis. It adds no endpoints, excludes no supplied
-observations and does not replace the existing six-test Welch family.
+The monocyte FVT comparison gives a smaller P value in the Welch analysis than
+in the publication. This appendix asks whether the original result can be
+reconstructed from the same observations, and which features of the statistical
+model explain the difference. The three-group pooled-variance Tukey-Kramer
+calculation gives P = 0.10641, reproducing the published 0.106; the two-group
+Welch calculation gives P = 0.012645. No supplied observation is removed to
+reconcile them.
 
-## Main finding
+The reconstruction uses the same three selected study II endpoints as the
+exploratory analysis. It is a comparison of methods on unchanged observations,
+not an expansion of the endpoint family or a replacement for the six Welch
+tests. All nine selected Figure 4 caption checks agree at published precision.
+One printed group mean remains inconsistent with direct rounding of the source
+values.
 
-The published monocyte FVT pairwise P = 0.106 is reproduced as 0.1064091013 by
-a three-group pooled-variance Tukey-Kramer calculation. The existing pairwise
-Welch P = 0.0126452597 answers a comparison with a different variance estimator
-and multiplicity procedure. The apparent discrepancy is numerically explained
-without changing any source observations or invoking additional exclusions.
+## Observations and group variation
 
-For all three selected endpoints, the reconstructed planned-contrast t statistic
-and each published numeric Tukey pairwise P value match the caption at its
-reported precision. This is evidence of internal consistency between the public
-workbook and those original statistics. It does not validate common variance,
-normality or animal independence.
+The [source workbook](https://static-content.springer.com/esm/art%3A10.1038%2Fs41564-023-01564-y/MediaObjects/41564_2023_1564_MOESM2_ESM.xlsx)
+is the frozen file recorded in the [input manifest](../data/manifests/inputs.json).
+The calculation uses all observed selected values on its `FVT study II` sheet,
+retaining literal animal identifiers and missing assays in the
+[prepared records](../data/processed/immune_long.csv). Fully blank formatted
+rows are not observations. The group summaries below show why a variance model
+can materially affect these small-sample comparisons.
 
-## Evidence and scope
+| Endpoint | Control: n; mean; sample variance | Control Stress: n; mean; sample variance | FVT Stress: n; mean; sample variance |
+|---|---|---|---|
+| Basal LY6Chi monocyte proportion | 10; 4.3844; 4.8800 | 10; 2.3503; 0.85614 | 9; 3.9068; 1.8884 |
+| Basal CD62L-positive fraction of LY6Chi monocytes | 10; 61.397; 15.965 | 10; 59.637; 57.386 | 9; 75.511; 80.966 |
+| Unstimulated splenocyte TNF-alpha | 9; 34.437; 130.25 | 8; 101.98; 12543 | 9; 27.849; 19.204 |
 
-The original [Figure 4 caption and statistical methods](https://www.nature.com/articles/s41564-023-01564-y)
-describe a planned contrast, BH correction and Tukey pairwise comparisons.
-The frozen article is `data/raw/article.xml`; the caption is also independently
-available in the publisher's indexed text. The methods name SPSS v.28 for
-non-sequencing analyses. The inspected code archive does not supply SPSS syntax.
-Consequently, this is a numerical reconstruction of compatible calculations,
-not a re-execution of the original software session. One printed group-mean
-discrepancy is retained separately from the matching caption statistics.
+Flow means are percentages of the parent population, and their variances are
+in squared percentage points. TNF-alpha means are pg/mL from unstimulated
+splenocyte culture, with variances in `(pg/mL)^2`. Basal blood was collected on
+day 19 before forced swim, after chronic stress exposure had begun; the spleen
+was collected on day 23. These are endpoint phenotypes, not within-mouse immune
+changes. The [methods](methods.md) describe collection and assay timing.
 
-The public [supplementary source workbook](https://static-content.springer-cdn.com/esm/art%3A10.1038%2Fs41564-023-01564-y/MediaObjects/41564_2023_1564_MOESM2_ESM.xlsx)
-was read without modification. Values were taken from its `FVT study II` sheet
-through `data/processed/immune_long.csv`, retaining all observed values and
-literal scoped animal IDs. Fully blank formatted rows are not observations.
+## Common-variance model and comparison families
 
-The [publisher PDF](https://www.nature.com/articles/s41564-023-01564-y.pdf),
-Extended Data Table 1b,c, identifies the selected cell outcomes as basal
-percentages of parent population and TNF-alpha as pg/mL from vehicle or
-unstimulated splenocyte culture. The basal cell sample precedes the acute
-forced-swim test, not the chronic stress exposure. Eight of the nine selected
-source means agree with the published rounded means:
+For group sizes `n_g`, means `m_g` and unbiased sample variances `s_g^2`, the
+three-group residual variance and degrees of freedom are
 
-| Endpoint | Ctr n, mean, sample variance | Ctr Stress n, mean, sample variance | FVT Stress n, mean, sample variance | Published means |
-|---|---|---|---|---|
-| Basal LY6Chi monocytes | 10; 4.3843577; 4.88002709 | 10; 2.3503197; 0.85614234 | 9; 3.90681056; 1.88836045 | 4.38; 2.35; 3.91 |
-| Basal CD62L-positive LY6Chi monocytes | 10; 61.397405; 15.96487748 | 10; 59.636964; 57.38627982 | 9; 75.51061889; 80.96588273 | 61.4; 59.6; 75.5 |
-| Unstimulated splenocyte TNF-alpha | 9; 34.43747667; 130.25020977 | 8; 101.98059375; 12543.41025651 | 9; 27.84927778; 19.20394429 | 34.4; 102.0; 27.9 |
+```text
+df = N - 3
+MSE = sum_g [(n_g - 1)*s_g^2] / df
+```
 
-Direct visual inspection of the original table image,
-`data/raw/processed_data_search/41564_2023_1564_Tab1_ESM.webp`, confirms that
-Table 1b prints 27.9 for vehicle/unstimulated FVT Stress TNF-alpha. The source
-mean 27.8492777778 rounds directly to 27.8 at one decimal. This is not an OCR
-ambiguity. The printed number differs by approximately 0.051 pg/mL from the
-calculated mean. Its origin is unresolved; intermediate rounding is possible
-but was not verified. The validation retains this as one mismatch without
-relaxing the stated rounding comparison. All nine selected caption-statistic
-checks still agree with the unchanged observations. The combined check count
-is therefore 17 matches out of 18, including one group-mean discrepancy.
+The planned contrast uses coefficients `[-0.5, 1, -0.5]` in Control, Control
+Stress, FVT Stress order. It compares the stressed mean with the average of the
+other two means:
 
-Cell mean differences are percentage points. Cytokine mean differences are
-pg/mL. Neither is an absolute cell count, a within-mouse chronic-stress change
-or an ecological stability measurement.
+```text
+L = m_stress - (m_control + m_FVT)/2
+SE_L = sqrt[MSE * sum_g (c_g^2/n_g)]
+t = L / SE_L
+```
 
-## Reconstruction
+Its two-sided t probability and pointwise 95% interval use `N - 3` degrees of
+freedom. A nonzero planned contrast does not require both component pairwise
+differences to be nonzero or demonstrate that FVT reverses a stress deficit.
 
-For group sizes n, means m and unbiased sample variances s squared, the residual
-variance is the sum of `(n - 1) * s_squared` divided by `N - 3`. The planned
-contrast uses coefficients `[-0.5, 1, -0.5]` in the order Ctr, Ctr Stress,
-FVT Stress. Its estimate is the stressed-control mean minus the average of the
-other two means, and its standard error is the square root of
-`MSE * sum(coefficient_squared / n)`. The two-sided t reference uses `N - 3`
-degrees of freedom.
+For each of the three pairs, Tukey-Kramer uses the same pooled MSE:
 
-For each pair, Tukey-Kramer uses the absolute mean difference divided by
-`sqrt(MSE * (1/n_first + 1/n_second) / 2)`, evaluated against a studentized range
-with three groups and the same finite residual degrees of freedom. All three
-pairwise comparisons are reported below, including the FVT versus Ctr comparison
-that was not one of this project's two selected biological contrasts.
+```text
+range_scale = sqrt[(MSE/2)*(1/n_A + 1/n_B)]
+q = abs(m_A - m_B) / range_scale
+95% pair interval = (m_A - m_B) +/- q_(0.95;3,df)*range_scale
+```
 
-The calculation used SciPy's finite-df `studentized_range.sf` and `.ppf`, not
-an infinite-df or normal approximation. The assumptions and unequal-size
-Tukey-Kramer convention are documented in the
-[SciPy Tukey reference](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.tukey_hsd.html).
+The studentized-range reference has three groups and finite residual degrees of
+freedom. These intervals are simultaneous within one endpoint's three-pair
+family, not across endpoints. All three pairs are exported to document that
+family, including FVT minus Control, which is not an added primary contrast.
 
-| Endpoint | Residual df | Pooled residual variance | Omnibus F | Omnibus P | Planned contrast t | Planned contrast P | Published t |
-|---|---:|---:|---:|---:|---:|---:|---|
-| LY6Chi monocytes | 26 | 2.5666310920 | 4.381803325 | 0.02291029966 | -2.866926809 | 0.008109467204 | -2.867, df 26 |
-| CD62L-positive LY6Chi monocytes | 26 | 50.3033645204 | 14.02316928 | 0.00007390807938 | -3.180494077 | 0.003781051114 | -3.18, df 26 |
-| Unstimulated splenocyte TNF-alpha | 23 | 3869.5436968707 | 3.616295650 | 0.04309266208 | 2.679946857 | 0.01337308961 | 2.68, df 23 |
+The Welch analysis instead estimates variance from the two groups in each
+comparison, allows unequal group variances and reports pointwise intervals.
+Its six P values have a separate BH adjustment across the three selected
+endpoints and two contrasts. Tukey P values and Welch BH q values therefore
+belong to different procedures and comparison families.
 
-| Endpoint | Pairwise contrast | Mean difference | Tukey-Kramer P | Published pairwise P | Agreement |
-|---|---|---:|---:|---|---|
-| LY6Chi monocytes | Ctr Stress minus Ctr | -2.034038 | 0.02280378315 | <0.05 | Matches inequality |
-| LY6Chi monocytes | FVT Stress minus Ctr Stress | 1.556490856 | 0.1064091013 | 0.106 | Matches rounding |
-| LY6Chi monocytes | FVT Stress minus Ctr | -0.4775471444 | 0.7947058379 | Not individually reported in caption | Additional model verification output |
-| CD62L-positive LY6Chi monocytes | Ctr Stress minus Ctr | -1.760441 | 0.8448303242 | 0.845 | Matches rounding |
-| CD62L-positive LY6Chi monocytes | FVT Stress minus Ctr Stress | 15.87365489 | 0.0001358531699 | <0.001 | Matches inequality |
-| CD62L-positive LY6Chi monocytes | FVT Stress minus Ctr | 14.11321389 | 0.0005582177576 | Not individually reported in caption | Additional model verification output |
-| Unstimulated splenocyte TNF-alpha | Ctr Stress minus Ctr | 67.54311708 | 0.08640501712 | 0.086 | Matches rounding |
-| Unstimulated splenocyte TNF-alpha | FVT Stress minus Ctr Stress | -74.13131597 | 0.05568679863 | 0.056 | Matches rounding |
-| Unstimulated splenocyte TNF-alpha | FVT Stress minus Ctr | -6.588198889 | 0.9725905184 | Not individually reported in caption | Additional model verification output |
+## Reconstructed results
 
-The Tukey 95% interval for the monocyte FVT versus stressed-control difference is
--0.27264 to 3.38562 percentage points. Its pointwise Welch interval is 0.38926
-to 2.72372. The pooled residual variance includes the higher-variance Ctr arm
-even for a pair involving only the other two groups; Tukey also adjusts for
-three pairwise comparisons. This concretely explains why the two intervals
-have different widths and conclusions at a 0.05 threshold.
+| Endpoint | Pooled MSE | Residual df | Planned t | Unadjusted planned P |
+|---|---:|---:|---:|---:|
+| LY6Chi monocyte proportion | 2.5666 | 26 | -2.8669 | 0.0081095 |
+| CD62L-positive fraction of LY6Chi monocytes | 50.303 | 26 | -3.1805 | 0.0037811 |
+| Unstimulated splenocyte TNF-alpha | 3869.5 | 23 | 2.6799 | 0.013373 |
 
-The original BH q values are not reproduced here. Their complete endpoint
-families are not fully specified by the selected source columns and caption.
-Applying BH to only these three planned contrasts would define a new family,
-not reconstruct the publication's q values.
+The FVT-versus-stressed comparison illustrates that identical mean differences
+can have different uncertainty under the two methods:
 
-## Outlier and censoring policy
+| Endpoint | FVT minus Control Stress mean difference | Welch P | Tukey-Kramer P | Published Tukey P |
+|---|---:|---:|---:|---:|
+| LY6Chi monocyte proportion | 1.5565 percentage points | 0.012645 | 0.10641 | 0.106 |
+| CD62L-positive fraction of LY6Chi monocytes | 15.874 percentage points | 0.00079989 | 0.00013585 | <0.001 |
+| Unstimulated splenocyte TNF-alpha | -74.131 pg/mL | 0.10343 | 0.055687 | 0.056 |
 
-The original methods describe technical exclusions, below-detection cytokine
-exclusions and a statistical rule beyond 2.5 standard deviations, with at most
-two statistical exclusions per test. The workbook has missing cells but no
-complete observation-level exclusion log or censoring thresholds. Numerical
-agreement shows that additional deletions are unnecessary to reproduce the
-selected reported statistics. It does not establish that upstream exclusions
-never occurred or that unavailable values can be recovered.
+For monocytes, the Tukey 95% interval is -0.27264 to 3.3856 percentage points,
+whereas the pointwise Welch interval is 0.38926 to 2.7237. The pooled estimate
+includes the higher-variance Control arm even when comparing only FVT Stress
+with Control Stress, and Tukey accounts for all three pairs. Together these
+choices explain the published-versus-Welch difference. The CD62L and TNF-alpha
+results also show that variance pooling and multiplicity do not necessarily
+move a P value in the same direction.
 
-No supplied value was discarded in this reconstruction. Outlier removal must
-not be introduced to force either Welch or original-method significance.
+The exact [reconstruction table](../results/tables/original_method_replication.csv)
+retains full-precision group summaries, omnibus ANOVA, planned contrast, all
+three pairs, interval scopes and comparisons with printed references.
 
-## Scientific interpretation and assumptions
+## Agreement with the publication
 
-The planned contrast does not test a conjunction of both component effects.
-For CD62L-positive monocytes, the FVT-associated rise coexists with a small,
-imprecisely estimated stress-control difference. Reproducing the planned
-contrast therefore does not establish reversal of a demonstrated deficit.
+| Published quantities checked | Matches / checks |
+|---|---:|
+| Figure 4 planned t statistics and reported P thresholds | 3 / 3 |
+| Figure 4 selected Tukey pairwise P values or inequalities | 6 / 6 |
+| Group counts (Figure 4) and rounded means (Extended Data Table 1b,c) | 8 / 9 |
+| Combined | 17 / 18 |
 
-The TNF-alpha sample variances differ markedly, and the stressed group has only
-eight observed values. Matching a pooled-variance statistic does not make the
-common-variance assumption credible. A small-sample variance test would not
-resolve that concern, and no significance-driven assumption selection is
-appropriate. Mean contrasts, rank sensitivity and the original-method
-reconstruction should remain separately labeled.
+The nine caption-statistic checks all agree. The separate group-summary
+mismatch is FVT Stress unstimulated TNF-alpha: its source mean is
+**27.8492778 pg/mL**, which rounds directly to **27.8** at one decimal, while
+Table 1b visibly prints **27.9**. Visual inspection confirms that this is not an
+OCR ambiguity. Its origin is unresolved, and the rounding comparison is not
+relaxed to count it as a match. The [generated verification report](../results/reports/original_method_replication.md)
+records the caption and group-summary checks separately.
 
-All animal-level methods also require valid independence. Cage allocation and
-shared-housing dependence are unavailable; the original stress and handling
-design does not supply a verified exchangeability scheme for a cage-aware
-permutation analysis. Randomly permuting individual labels without that design
-would add unjustified precision. Small group sizes and missingness also limit
-normal approximation and multivariable adjustment. These constraints are not
-removed by exact agreement with an original P value.
+## Interpretation and limits
 
-## Implementation and calculation checks
+Numerical agreement establishes compatibility with selected calculations, not
+the suitability of their assumptions. The TNF-alpha variance is particularly
+large in Control Stress relative to both other groups. Reproducing its
+pooled-variance statistic does not establish a credible common variance or
+normal sampling distribution. Likewise, the CD62L planned contrast does not
+establish restoration when the stress-control difference is small and
+imprecisely estimated.
 
-The reconstruction in `src/pisa/original_methods.py` exports group counts and
-variances, pooled ANOVA, the planned contrast, all three Tukey-Kramer pairs and
-comparisons with the published rounded statistics. Independent tests in
-`tests/test_original_methods.py` compare the pooled calculations with
-statsmodels OLS and linear contrasts, and the Tukey calculations with
-statsmodels `pairwise_tukeyhsd` on unequal-size fixtures.
+All animal-level inference also assumes appropriate independence. Controls were
+group housed and both stressed groups singly housed, so the stress-control
+contrast includes a housing difference; the FVT contrast shares the stated
+housing regime. Missing cage and allocation records prevent a justified
+cage-adjusted model or permutation scheme. These constraints remain after an
+original P value is reproduced.
 
-The [verification report](../results/reports/original_method_replication.md)
-and [result table](../results/tables/original_method_replication.csv) retain the
-full calculations. This layer checks numerical compatibility with the selected
-published results. The six Welch comparisons remain unchanged, and the original
-full BH family remains unresolved.
+The original methods describe technical, detection-limit and statistical
+exclusions, including a rule beyond 2.5 standard deviations with at most two
+statistical exclusions per test. The deposited workbook lacks a complete
+observation-level exclusion log and censoring thresholds. No further deletions
+are needed to reproduce the selected statistics, but that does not establish
+that upstream exclusions never occurred.
+
+The [article](https://www.nature.com/articles/s41564-023-01564-y) names SPSS v.28
+for these analyses; its complete syntax is unavailable. This is a reconstruction
+of compatible calculations, not a rerun of the SPSS session. The paper's
+description of orthogonal contrasts does not establish independence under
+unequal sample sizes: the estimated covariance of contrasts `c` and `d` is
+`MSE * sum_g(c_g*d_g/n_g)`, so an unweighted coefficient dot product of zero is
+insufficient. The complete contrast set cannot be verified from the label.
+
+The publication's full across-outcome BH family is also unresolved. Its printed
+q values are retained as references in the CSV, not reproduced values. Applying
+BH to these three planned contrasts would define a new family. This
+reconstruction remains separate from the unchanged six-test exploratory Welch
+analysis and supplies no viral association.
+
+The implementation is [original_methods.py](../src/pisa/original_methods.py).
+Existing [calculation checks](../tests/test_original_methods.py) compare pooled
+calculations with statsmodels OLS and linear contrasts, and finite-df
+Tukey-Kramer calculations with `pairwise_tukeyhsd` on unequal-size fixtures.

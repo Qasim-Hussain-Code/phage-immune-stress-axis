@@ -1,19 +1,109 @@
-# PDF figure review
+# Figure guide and visual review
 
-All five PDF figures were regenerated or verified by the full offline workflow on 20 October 2026 (Asia/Taipei), rendered from their actual PDF pages with pypdfium2 5.14.0, and visually inspected through the image viewer. Each is one page. Titles, labels, units, intervals, legends and captions are legible, with no observed clipping or overlap.
+The five figures connect the study's biological units, the selected immune
+comparisons and the data needed for a viral–immune analysis. The observations
+come from [Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y);
+the plots and comparisons are adaptations for this reanalysis. Read them with
+the [methods](methods.md) and [results](results.md).
 
-The tracked review record is `data/manifests/figure_qa.json`. It binds the passed visual inspection to exact PDF SHA-256 values and records the UTC review time. `python scripts/check_figures.py` verifies that current PDFs still match this record, including the complete file inventory. It does not perform a new visual inspection.
+## Figure 1: study structure and available data
 
-| Figure | Visual and scientific checks |
+This diagram separates the initial stress and FVT experiments, their phenotype
+rows, pooled enriched viromes and individual bulk-metagenomic route. The
+104 deposited specimens include recipient samples, pools and inocula; they are
+not 104 immune-matched mice. Published pool-by-time profiles also remain
+distinct from verified individual trajectories.
+
+[PNG](../figures/figure1_design.png) · [PDF](../figures/figure1_design.pdf) ·
+[Source counts](../results/tables/figure1_data.csv).
+
+## Figure 4: observed immune outcomes and treatment contrasts
+
+The upper panels show individual observed values and group means for basal
+LY6Chi monocytes, their CD62L-positive fraction and unstimulated splenocyte
+TNF-alpha. Sample counts differ by endpoint. The lower panels show Control
+Stress minus Control and FVT Stress minus Control Stress mean differences.
+Blood outcomes are percentages of parent populations, with contrasts in
+percentage points; culture TNF-alpha uses pg/mL. Blood was collected on day 19
+and spleens on day 23, so these are different sampling occasions.
+
+Intervals are pointwise 95% Welch intervals. The displayed q values belong to
+the six-test BH family; they do not make the intervals simultaneous.
+
+[PNG](../figures/figure4_immune.png) · [PDF](../figures/figure4_immune.pdf) ·
+[Source observations and missing cells](../results/tables/figure4_data.csv) ·
+[Contrast estimates](../results/tables/immune_contrasts.csv).
+
+## Figure 5: the missing viral–immune linkage
+
+This summary sets the available individual immune observations beside the
+unavailable processed viral profiles and animal crosswalk. It explains why
+separate immune contrasts could be calculated but no viral–immune association
+was fitted. Zero retrieved matches is an availability result, rather than a
+zero biological association.
+
+[PNG](../figures/figure5_linkage_limit.png) ·
+[PDF](../figures/figure5_linkage_limit.pdf) ·
+[Source availability counts](../results/tables/figure5_data.csv).
+
+## Figure 7: influence of individual observations
+
+Black points show the full mean differences. Blue ranges span the estimates
+obtained by omitting each observed animal once. They describe influence on
+effect size and direction, not confidence intervals. Repeated omissions do not
+create new observations or establish robust statistical significance. The
+source table also retains the separate rank comparisons.
+
+[PNG](../figures/figure7_robustness.png) ·
+[PDF](../figures/figure7_robustness.pdf) ·
+[Source estimates and diagnostics](../results/tables/figure7_data.csv).
+
+## Figure 8: why the interval method matters
+
+The same pairwise mean differences appear under two interval calculations.
+Welch uses the two groups' unequal-variance standard error and pointwise 95%
+coverage. Tukey–Kramer uses pooled residual variance from all three groups and
+simultaneous 95% coverage for all three pairs within an endpoint, although only
+the two selected comparisons are plotted. The original across-outcome BH family
+is not reconstructed. This figure explains a change in inference without a
+change in the observed pairwise mean difference.
+
+[PNG](../figures/figure8_method_comparison.png) ·
+[PDF](../figures/figure8_method_comparison.pdf) ·
+[Source interval comparison](../results/tables/figure8_data.csv).
+
+## Recorded visual review
+
+The links above point to the Windows reference figures. All five PDFs are
+single-page files. The retained inspections checked titles, labels, units,
+sample counts, intervals, legends and captions, with no observed clipping,
+overlap or broken glyphs.
+
+| Date and scope | Evidence |
 |---|---|
-| 1: study design | Cohorts and pool profiles remain distinct. The 104 archive specimens are not labeled as 104 mice. The zero verified matches gate is visible. |
-| 4: immune outcomes | Individual observations, endpoint-specific sample counts, percentage versus pg/mL units, pointwise Welch intervals and the six-test BH family are labeled. |
-| 5: linkage limit | Retrieved immune measurements and unavailable processed viral inputs are clearly distinguished. |
-| 7: influence | The leave-one-animal-out range is explicitly labeled as an influence diagnostic, not a confidence interval. |
-| 8: method comparison | Identical observed mean differences are displayed with unequal-variance pointwise Welch intervals and pooled-variance simultaneous Tukey-Kramer intervals; their coverage scopes are explicit. |
+| 20 October 2026, 06:23:59 UTC: all five Windows-reference PDFs were rendered from their actual pages and inspected through the image viewer | [Windows review record](../data/manifests/figure_qa.json) |
+| 20 October 2026, 12:51:09 UTC: all five independently generated Linux PDFs were rendered and viewed; their five original PNG companions were also viewed | [Linux review record](../data/manifests/linux_figure_qa.json) |
+| 21 October 2026, 13:34:36 UTC: all ten files from the version 0.2.2 Linux replay matched the previously reviewed Linux hashes exactly | [Exact-byte reuse record](../data/manifests/linux_figure_reuse_0_2_2.json) |
 
-The optional command `python scripts/check_figures.py --render` renders current pages for a new human or agent visual inspection. Rendering alone never updates the passed-review record. The optional renderer is held in the ignored workspace cache and is not a mandatory analysis dependency. PNG companions and machine-readable figure source tables are supplied for all five figures. Unsupported viral composition, stability and bacterial-integration figures are excluded.
+The recorded renderer was pypdfium2 5.14.0 with PDFium 156.0.8076.0.
+The Linux record explicitly identifies AI-assisted visual inspection, not
+independent human peer review. Linux and Windows figure bytes differ and have
+separate records. The October 21 acceptance reused an existing inspection;
+it did not perform a new one. Exact timestamps and file hashes remain in the
+linked manifests.
 
-The independently generated Linux variants were reviewed separately: all five actual PDF renders and all five original PNGs passed. Their different bytes are bound to [linux_figure_qa.json](../data/manifests/linux_figure_qa.json). The Windows reference figures and their existing QA record were retained. See [Linux validation](linux_reproduction_validation.md) for the fixed comparison policy and final acceptance.
+## Maintenance checks
 
-The version 0.2.2 Linux replay generated the same ten PDF/PNG file hashes as the retained Linux review. [linux_figure_reuse_0_2_2.json](../data/manifests/linux_figure_reuse_0_2_2.json) records this exact-byte reuse; it does not claim a new visual inspection.
+From the repository root:
+
+```bash
+python scripts/check_figures.py
+python scripts/check_figures.py --render
+```
+
+The first command checks current PDF identities against the Windows review
+record. The optional second command renders pages for inspection using an
+existing pypdfium2 environment or the workspace renderer cache; pypdfium2 is not
+a required analysis dependency. Rendering alone does not approve the figures
+or update a passed-review record. See [reproduction](reproducibility.md) for
+the separate execution and output-comparison evidence.

@@ -113,8 +113,8 @@ sets out the scenarios and their interpretation.
 
 The Windows suite recorded on 22 October 2026 collected 174 tests, executed
 168 and skipped six platform-specific cases, with zero failures or errors.
-Its code SHA-256 begins `e36ee2869a12`; the full identity and individual
-outcomes are in the [validation summary](../results/reports/validation_summary.json)
+The source identity and individual outcomes from the final defeat-day wording
+revision are in the [validation summary](../results/reports/validation_summary.json)
 and [log](../results/reports/validation.log).
 
 The fresh committed-source replays on 21 October used commit
@@ -128,4 +128,4 @@ passed all 20 CSV comparisons under the fixed policy and matched the ten
 Linux figure files covered by the retained visual review. Its
 [suite summary](../results/reports/linux_validation_summary.json) records the
 Linux cases. These dated replays apply to that earlier source identity; they
-are not a fresh Linux execution of the later `e36ee2869a12` revision.
+are not a fresh Linux execution of the later reporting and timing revision.

@@ -64,11 +64,13 @@ not a fresh replay.
 ## Reproduction evidence
 
 The full Windows workflow was rerun on 22 October 2026 after revising the
-research narrative and eligibility explanation. All ten stages completed;
+research narrative and eligibility explanation, and again after clarifying
+defeat-day terminology. All ten stages completed in the latest run;
 174 tests were collected, 168 executed and six Linux-only cases skipped, with
 zero failures or errors. Observations, numerical estimates and figures
-matched the preceding analysis. The eligibility table changed only its
-question and missing-input explanation. The
+matched the preceding analysis. The earlier eligibility edit changed only its
+question and missing-input explanation; the final timing-wording run reproduced
+all 30 scientific files exactly. The
 [latest invocation](../results/reports/run_status.json) identifies that execution.
 
 The separate fresh-checkout Windows and Linux replays below were completed on

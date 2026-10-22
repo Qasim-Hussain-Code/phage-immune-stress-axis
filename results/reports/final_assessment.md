@@ -4,7 +4,7 @@ The full restricted workflow completed. Read the [scientific results](../../docs
 
 ## Invocation status
 
-Invocation: 20261022T005611732884Z_45836. Mode: full. Status: completed_restricted_analysis.
+Invocation: 20261022T065653884702Z_26348. Mode: full. Status: completed_restricted_analysis.
 10 stages executed and 0 stages resumed after verifying their declared outputs and upstream dependencies.
 All selected restricted-workflow stages completed or were verified from cache. Scientifically excluded analyses remain exclusions.
 Validation (executed in this invocation): 174 tests collected, 168 executed, 6 skipped, 0 failures and 0 errors.

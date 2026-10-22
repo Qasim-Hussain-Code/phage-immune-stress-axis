@@ -2,7 +2,7 @@
 
 The public source workbook supports an exploratory comparison of three immune outcomes in the Control, Control Stress and FVT Stress groups of Ritz et al. (2024). The outcomes were selected after reading the published findings, before calculating the present contrasts. All supplied observations were retained.
 
-The blood samples used for the two flow outcomes were collected on study day 19, before forced swim and after 16 defeat days. Their values are percentages of parent population, and differences are percentage points rather than absolute cell counts. TNF-alpha was measured in unstimulated splenocyte culture supernatant, in pg/mL, from spleens collected on day 23 after 19 defeat sessions. These assays belong to the same source cohort but were not collected at the same time.
+The blood samples used for the two flow outcomes were collected on study day 19, before forced swim and after 16 defeat days. Their values are percentages of parent population, and differences are percentage points rather than absolute cell counts. TNF-alpha was measured in unstimulated splenocyte culture supernatant, in pg/mL, from spleens collected on day 23 after 19 defeat days. These assays belong to the same source cohort but were not collected at the same time.
 
 Each table reports unadjusted animal-level mean differences with pointwise 95% Welch intervals. The six P values form one Benjamini-Hochberg family. Sample sizes are available observations for that endpoint.
 

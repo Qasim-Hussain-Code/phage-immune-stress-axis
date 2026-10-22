@@ -46,9 +46,12 @@ Table 1b,c and the original collection methods.
 
 | Endpoint | Biological material and collection | Unit |
 |---|---|---|
-| Basal LY6Chi monocyte proportion | Blood collected on study day 19, five minutes before forced swim, after 16 defeat sessions | Percent of parent population |
+| Basal LY6Chi monocyte proportion | Blood collected on study day 19, five minutes before forced swim, after 16 defeat days | Percent of parent population |
 | Basal CD62L-positive fraction of LY6Chi monocytes | The same basal blood collection | Percent of parent population |
-| Unstimulated splenocyte TNF-alpha | Terminal day-23 spleen collection, after 19 defeat sessions, followed by ex vivo culture | pg/mL |
+| Unstimulated splenocyte TNF-alpha | Terminal day-23 spleen collection, after 19 defeat days, followed by ex vivo culture | pg/mL |
+
+Each defeat day included two bouts separated by two hours across a perforated
+divider. The counts above refer to defeat days, not individual bouts.
 
 The fixed blood cells were analysed the following day. Splenocyte methods
 describe a 2.5-hour rest followed by 24-hour culture. Thus collection day and
