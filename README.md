@@ -45,15 +45,6 @@ has already begun. These are endpoint immune phenotypes. The blood percentages
 describe relative cell populations; the cytokine measurement describes ex vivo
 splenocyte output.
 
-The archive also includes a heat-inactivated-FVT-labelled arm: ten Before and
-ten After recipient samples, ten inocula and two pools. The retrieved workbook
-has no immune rows for that arm. The article describes three phenotype groups
-and discusses an inactivated control as future work, leaving the archived
-arm's relationship to the reported cohort unresolved. Its immune outcomes,
-allocation and processing records are a priority [data requirement](docs/data_requirements.md).
-An active-versus-inactivated comparison could be informative, although heating
-may alter constituents other than viral infectivity.
-
 ## Analysis
 
 Each outcome has two comparisons: **Control Stress minus Control** and
