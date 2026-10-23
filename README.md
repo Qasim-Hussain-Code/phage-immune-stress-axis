@@ -45,14 +45,6 @@ has already begun. These are endpoint immune phenotypes. The blood percentages
 describe relative cell populations; the cytokine measurement describes ex vivo
 splenocyte output.
 
-The metagenomic accession [PRJNA970614](https://www.ebi.ac.uk/ena/browser/view/PRJNA970614)
-contains 104 specimens: 77 individual recipient bulk samples, eight enriched
-pools and 19 inocula. Those categories cannot be counted as 104 mice. The
-publication describes individual pre/post bulk-derived viral profiles as well
-as pooled viromes, but the archived code release provides a script PDF rather
-than the referenced processed matrices. [Data availability and linkage](docs/data_feasibility.md)
-sets out what was recovered and what is still required.
-
 The archive also includes a heat-inactivated-FVT-labelled arm: ten Before and
 ten After recipient samples, ten inocula and two pools. The retrieved workbook
 has no immune rows for that arm. The article describes three phenotype groups
