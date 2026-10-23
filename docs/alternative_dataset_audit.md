@@ -1,46 +1,187 @@
-# Focused audit of alternative stress–virome datasets
+# Alternative stress–virome datasets
 
-Audited 20 October 2026. This extends the [initial feasibility screen](alternative_dataset_search.md) by reading full methods, data-availability sections, actual supplements where retrievable, and repository metadata. **No screened alternative was verified to provide public processed recipient viromes, measured immune phenotypes, and an explicit individual-animal crosswalk.** Chen 2026 remains an unresolved relevant lead, rather than a demonstrated scientific exclusion. This is a bounded availability audit, not an exhaustive review or a biological null result.
+This assessment extends the [initial feasibility screen](alternative_dataset_search.md)
+with full methods, data-availability statements, supplementary files and
+repository metadata inspected on **20 October 2026**. None of the inspected
+releases established the combination of individual study-animal viral profiles,
+measured immune phenotypes and an explicit animal-level crosswalk needed for
+the proposed association. The reasons differ by study: Choi measures donor
+viromes rather than recipient viromes; Duan and Li do not identify the required
+host immune measurements; Chen remains unresolved because the necessary
+methods and data were not accessible through the checked routes.
 
-Eligibility requires a relevant stress design, recipient fecal viral profiles, directly measured host immune outcomes, independent animal identifiers connecting the assays, and accessible processed inputs within the resource budget. Temporal stability additionally needs repeated individual viromes. Donor inocula, bacterial 16S profiles, metabolites, corticosterone, predicted viral functions, and bacterial antiviral defenses cannot substitute for the respective recipient-virus or host-immune measurements. No condition was changed to obtain a positive association.
+Eligibility requires a relevant stress design, fecal viral profiles from the
+animals with measured host immune outcomes, identifiers linking those assays,
+and accessible processed inputs within the resource budget. FVT studies need
+recipient profiles; non-FVT studies can provide profiles from the individual
+stress-exposed animals themselves. Temporal stability additionally requires
+repeated individual viromes. Donor inocula and bacterial 16S profiles cannot
+replace the relevant viral measurements, while metabolites, corticosterone,
+predicted viral functions and bacterial antiviral defenses do not replace
+measured host immune phenotypes.
 
-## Decisions supported by primary sources
+## Choi: donor viromes and recipient inflammatory transcripts
 
-| Study | What was actually profiled | Host outcomes distinguished | Public files checked and decision |
-|---|---|---|---|
-| [Choi 2026, DOI 10.1038/s41598-026-49647-0](https://www.nature.com/articles/s41598-026-49647-0) | Viral shotgun profiling concerns pooled pre-/post-weaning **piglet donor material**. Recipient mouse feces were profiled with **bacterial 16S amplicons** at four stages. | Colonic TNF-α, IL-6 and IL-10 qRT-PCR are measured immune-related endpoints. Serum corticosterone is endocrine; fecal metabolites and brain transcripts are separate outcomes. | Correct publisher DOCX checked. Six supplementary figures and one aggregate post hoc power table; no embedded workbook, recipient viral matrix, individual immune table or crosswalk. Donor sequencing cannot be assigned to recipient mice. **Does not establish the required recipient-virome measurement.** |
-| [Duan 2022, DOI 10.3389/fmicb.2022.1046894](https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2022.1046894/full) | Individual mouse fecal VLP-enriched viral metagenomics in 21-day chronic restraint stress; control n=7, stress n=8. No donor/recipient FVT design. | Behavioral tests, body weight and targeted fecal neurotransmitter metabolomics. Full assay methods and the correct supplement do not identify a directly measured host cytokine or immune-cell outcome. | Correct Europe PMC supplement checked: two virome composition/function figures and one aggregate baseline behavior table. Raw sequencing PRJNA877780 has 15 ENA WGS runs. **No eligible measured immune pairing in the inspected study.** |
-| [Li 2023, DOI 10.3389/fmicb.2023.1132403](https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2023.1132403/full) | Rat chronic unpredictable mild stress and antidepressant/Xiaoyaosan treatment; endpoint bulk fecal metagenomes from three individual rats in each of five groups. Viral sequences were identified computationally. | Behavior and body weight are reported. Full assay methods do not describe a directly measured host cytokine or immune-cell assay. Bacterial CRISPR/tRNA/BLAST host prediction is not a mammalian immune phenotype. | Raw accession PRJNA910226 verified in article XML and BioStudies links. All eight authentic processed supplementary XLSXs were recovered from Europe PMC and inspected: viral QC and bacterial host assignments/correlations, without individual host immune data or a virus-by-sample abundance matrix. **No eligible measured immune pairing in the inspected study.** |
-| [Chen 2026, DOI 10.1016/j.bbi.2026.106532](https://www.sciencedirect.com/science/article/pii/S0889159126002801) | Public primary preview describes prenatal stress in Sprague–Dawley rats, offspring virome/bacteriome analysis and FVT. | Immune responses are explicitly part of the paper, but complete assays, recipient-level co-measurement, time points and sample IDs were not verified. | Preview offers supporting data through the corresponding author on reasonable request. Full methods/supplement listing were not retrieved. No public processed pairing was verified by the bounded checks. **Unresolved relevant candidate; access unknown is not scientific ineligibility.** See [focused Chen audit](new_prenatal_stress_candidate.md). |
+[Choi et al. (2026)](https://www.nature.com/articles/s41598-026-49647-0)
+describe pooled pre-/post-weaning piglet material used for FVT into mice.
+The [full-text XML](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13276362/fullTextXML),
+particularly “Experimental design,” “Fecal virome transplantation,” “Bacteriome
+analysis” and “Colonic barrier and inflammatory markers,” distinguishes the
+donor and recipient measurements. The pre-weaning and post-weaning FMT/FVT
+pools each combined feces from six piglets. Viral shotgun sequencing used
+donor-source material prepared in parallel; the administered aliquots themselves
+were not sequenced.
 
-## Choi: recipient bacterial data cannot repair the viral gap
+Recipient mouse feces underwent bacterial 16S profiling at four stages, using
+four selected mice per group to align bacterial and behavioral observations.
+Colonic TNF-α, IL-6 and IL-10 qRT-PCR provide measured immune-related endpoints.
+Serum corticosterone is an endocrine outcome; fecal metabolites and brain
+transcripts are separate measurements. The recipient immune assays therefore
+do not lack biological relevance, but neither donor sequencing nor recipient
+16S data supply the recipient viral profiles required for a viral–immune
+association or recipient viral stability.
 
-The [full-text XML](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13276362/fullTextXML), sections “Experimental design,” “Fecal virome transplantation,” “Bacteriome analysis,” and “Colonic barrier and inflammatory markers,” separates the assays. FMT/FVT material was prepared from feces pooled within six pre-weaning and six post-weaning piglets. Viral sequencing used donor-source material prepared in parallel; the administered aliquots themselves were not sequenced. Recipient 16S analysis used four selected mice per group to align bacterial and behavioral observations. That alignment does not establish recipient viromes or viral longitudinal stability.
+The accepted publisher DOCX contains six supplementary figures concerning
+donor bacterial/viral composition, antibiotic depletion, donor particle
+characterization, colon/growth readouts and bacterial–metabolite correlations.
+Its single ten-row, four-column table reports endpoint-level effect sizes and
+post hoc power. The package contains six images and no embedded files; it
+provides no recipient viral matrix, individual immune table or crosswalk.
 
-The correct [publisher DOCX](https://static-content.springer.com/esm/art%3A10.1038%2Fs41598-026-49647-0/MediaObjects/41598_2026_49647_MOESM1_ESM.docx) is 2,031,912 bytes, SHA-256 `a7a4a5b6d51a96c4a6202fdaf94d3741b199dc5dfb25ac8a5174b1d593683515`. Its six figures concern donor bacterial/viral composition, antibiotic depletion, donor particle characterization, colon/growth readouts and bacterial–metabolite correlations. Its one ten-row, four-column table contains endpoint-level effect sizes and power, not animal observations. The package contains six images and no embedded files. These are content checks; no numeric values were digitized from plots.
+The article deposits raw sequencing under PRJNA1250699 and offers other data
+on request. The [ENA run report](https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJNA1250699&result=read_run&fields=run_accession,study_accession,sample_accession,secondary_sample_accession,sample_alias,library_strategy,library_source,scientific_name,fastq_bytes&format=tsv)
+saved on 20 October contains 46 records, all labelled `AMPLICON`, with the same
+broad study description in their aliases. These records do not resolve the
+donor-shotgun deposit or provide recipient viral measurements. They do not
+establish what additional sequencing might exist elsewhere.
 
-The data statement deposits raw sequencing at PRJNA1250699 and offers other data on request. The saved [ENA run report](https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJNA1250699&result=read_run&fields=run_accession,study_accession,sample_accession,secondary_sample_accession,sample_alias,library_strategy,library_source,scientific_name,fastq_bytes&format=tsv) has 46 records, all labelled `AMPLICON`; all aliases use the same broad study description. This repository-label discrepancy does not establish what additional sequencing might exist elsewhere. It supplies neither a recipient viral matrix nor an individual immune crosswalk. BioStudies accession S-EPMC13276362 returned HTTP 404 during this audit; the correct direct publisher supplement was nevertheless obtained.
+## Duan: individual viromes without a verified immune endpoint
 
-## Duan: correct supplement recovered after a misleading mirror
+[Duan et al. (2022)](https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2022.1046894/full)
+study 21-day chronic restraint stress in mice, with seven controls and eight
+stressed animals. Individual fecal samples underwent VLP-enriched viral
+metagenomics; there is no donor/recipient FVT design. The
+[full-text XML](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9706091/fullTextXML)
+describes viral DNA extraction and sequencing alongside behavioral tests, body
+weight and LC–MS/MS fecal neurotransmitter analysis. The reported virome–host
+molecular correlations concern metabolites, including tryptophan-pathway
+compounds. Discussion of immune mechanisms does not establish a measured host
+cytokine or immune-cell outcome.
 
-The [full-text XML](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9706091/fullTextXML) describes viral DNA extraction/sequencing and LC–MS/MS neurotransmitter analysis alongside behavior. Its reported virome–host molecular correlations concern metabolites, including tryptophan-pathway compounds. Discussion of immune mechanisms is not evidence of a measured immune assay.
+The accepted Europe PMC supplement contains two virome composition/function
+figures and one aggregate baseline SPT/FST/TST table, with no embedded files.
+It supplies neither individual immune observations nor an individual viral
+abundance matrix linked to them. The [ENA metadata report](https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJNA877780&result=read_run&fields=run_accession,study_accession,sample_accession,secondary_sample_accession,sample_alias,library_strategy,library_source,scientific_name,fastq_bytes&format=tsv)
+contains 15 WGS records under PRJNA877780, with aliases such as A1 and A38.
+The limitation for this question is the absence of a verified measured immune
+pairing in the inspected study, rather than the lack of individual viromes.
 
-The [Europe PMC supplementary package](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9706091/supplementaryFiles) is 1,098,719 bytes, SHA-256 `7b58dca6d0c4d3b741262252a2acf66710cd1e65f4071ab6d706f635bce3b7fd`. It contains the correct 593,069-byte `Data_Sheet_1.docx`, SHA-256 `3cd29b0d75afd63e87ada4ca9103b36a5f8a6a0847477a26fe3c184eae49b798`, plus article images. The DOCX contains virome overview/function captions and one aggregate baseline SPT/FST/TST table, without embedded files. It does not release an individual virus-by-sample abundance matrix linked to immune measurements. The [ENA metadata report](https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJNA877780&result=read_run&fields=run_accession,study_accession,sample_accession,secondary_sample_accession,sample_alias,library_strategy,library_source,scientific_name,fastq_bytes&format=tsv) lists 15 WGS records with aliases such as A1 and A38; raw sequence availability alone cannot create an unmeasured immune phenotype.
+## Li: processed viral annotations without host immune observations
 
-## Li: authentic processed annotations recovered
+[Li et al. (2023)](https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2023.1132403/full)
+study rat chronic unpredictable mild stress and antidepressant/Xiaoyaosan
+treatment. “Animals, treatments, and collection of fecal samples” in the
+[full-text XML](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10140408/fullTextXML)
+specifies endpoint fecal collection at week 15 from three individual rats in
+each of five groups: HC, CUMS, amitriptyline, fluoxetine and Xiaoyaosan. Viral
+sequences were identified computationally from bulk fecal metagenomes. Methods
+cover viral sequence recovery, taxonomic/functional annotation, lifestyle
+prediction, bacterial host assignment and network analysis. Behavior and body
+weight are reported, but the inspected methods do not describe a host cytokine
+or immune-cell assay. CRISPR/tRNA/BLAST-based bacterial host prediction is not a
+mammalian immune phenotype. An endpoint viral profile also cannot establish
+within-animal temporal stability.
 
-The [full-text XML](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10140408/fullTextXML), “Animals, treatments, and collection of fecal samples,” specifies individual endpoint feces at week 15, three rats per HC, CUMS, amitriptyline, fluoxetine and Xiaoyaosan group. Methods concern viral sequence recovery, taxonomic/functional annotation, lifestyle prediction, bacterial host assignment and network analysis. No host cytokine or immune-cell assay is described in those methods. An endpoint viral profile also cannot establish within-animal temporal stability.
+All eight authentic supplementary XLSXs were recovered from Europe PMC and
+every worksheet inspected. Their contents match the publisher/XML captions:
 
-The publisher/XML captions describe Table S1 as sequencing QC, S2 as CheckV output, S3–S5 as virus–bacterial-host matching, S6–S7 as host lists/assignments, and S8 as viral–bacterial correlations. BioStudies independently lists the eight filenames and sizes, without those table-content descriptions. Its downloaded XLSXs contain unrelated plant genetics and are rejected. A final retry of the [Europe PMC package](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10140408/supplementaryFiles) succeeded: 5,873,635 bytes, SHA-256 `11c85c127b3fb2208e849454e0ba34952ef102fed28de69b04c0a7b15ae21f2a`. All eight correct XLSXs were then extracted and inspected, including every worksheet; they match the intended subject and captions. **Li does release processed annotations, so this study is not labelled raw-only.**
+| Table | Verified contents |
+|---|---|
+| S1 | Sequencing QC for 15 samples, including HC01 |
+| S2 | CheckV quality annotations for 5,029 vOTUs |
+| S3–S5 | Group-specific virus–bacterial-host matches/predictions |
+| S6 | Aggregate bacterial host counts |
+| S7 | 25,106 bacterial host assignments |
+| S8 | 157 viral–bacterial correlation links |
 
-Correct Table S1 contains 15 sequencing-QC sample rows (for example, HC01); S2 contains quality annotations for 5,029 vOTUs; S3–S5 contain group-specific bacterial host predictions; S6 contains aggregate host counts; S7 contains 25,106 bacterial host assignments; and S8 contains 157 viral–bacterial links. There are no additional hidden worksheets. None of these eight tables is a virus-by-individual-sample abundance matrix or a set of individual mammalian immune observations. These statements follow actual cell/header inspection, not the unrelated mirror files. The tracked [inventory](../data/manifests/alternative_supplement_inventory.json) and [package-member hashes](../data/manifests/alternative_supplement_members.json) distinguish both versions. ENA run-metadata requests timed out; the accession itself is independently confirmed in article XML and BioStudies metadata, and those timeouts do not establish deposit absence.
+There are no additional hidden worksheets. These are processed annotations,
+not a raw-only release, but none is a virus-by-individual-sample abundance
+matrix or a set of individual mammalian immune observations. The accession
+PRJNA910226 is verified in article XML and BioStudies links. The 20 October ENA
+run-metadata requests timed out; those failures do not establish deposit
+absence. The content assessment rests on the authentic files, rather than the
+unrelated mirror responses described below.
 
-## Source validation and retrieval limits
+## Chen: relevant biology with unresolved assay and data access
 
-The [BioStudies Duan record](https://www.ebi.ac.uk/biostudies/api/v1/studies/S-EPMC9706091) advertises a 5,534,654-byte DOCX. Its exact redirected file URL returned plant-associated bacterial-isolate tables, unlike the correct 593,069-byte mouse-study supplement recovered from Europe PMC. The [BioStudies Li record](https://www.ebi.ac.uk/biostudies/api/v1/studies/S-EPMC10140408) advertised eight XLSXs whose downloaded sizes matched its inventory, yet the actual cells concern Rubus fruiting, SNPs, Arabidopsis orthologues and other genetic traits. Matching a filename and listed byte size is therefore insufficient. These nine mirror downloads are explicitly marked `rejected_content_mismatch` in the tracked inventory and source ledger. This observation identifies the response mismatch, not its cause or responsible party.
+The public publisher preview for
+[Chen et al. (2026)](https://www.sciencedirect.com/science/article/pii/S0889159126002801),
+inspected through its search-index representation, describes prenatal stress
+in Sprague–Dawley rats, offspring virome/bacteriome analysis, FVT and immune
+responses. It offers supporting data through the corresponding author on
+reasonable request. Full methods and the supplement listing were not recovered
+in the 20 October checks. Consequently immune-assay identity, recipient-level
+co-measurement, sampling times, reusable animal identifiers and public
+processed pairing remained unverified.
 
-The focused newer search used combinations of `virome`, `stress`, `cytokines`, `immune responses`, `chronic restraint`, `chronic unpredictable`, `prenatal`, `2025`, and `2026`. The main new relevant primary lead was Chen 2026. Search returns also included Choi, the original Ritz study, human depression/bipolar studies and reviews; reviews were discovery leads, not independent evidence of assay availability. No arthritis, chemical-exposure, colitis or other easier-to-access inflammatory condition was substituted for the requested stress design. The search is not exhaustive and does not exclude an unindexed, closed-access or subsequently released dataset.
+This is an unresolved relevant candidate, rather than a demonstrated scientific
+exclusion. The [candidate assessment](new_prenatal_stress_candidate.md) and
+[public-route follow-up](chen2026_public_route_followup.md) separate the
+preview's biological claims from the missing methodological and data evidence.
+An on-request availability statement does not establish that no separate public
+deposit exists.
 
-Reviewable provenance is retained in [alternative_search_sources.json](../data/manifests/alternative_search_sources.json), its [CSV view](../data/manifests/alternative_search_sources.csv), and [actual package/cell inventory](../data/manifests/alternative_supplement_inventory.json). There are 51 HTTP attempts, 31 successful responses (18,981,221 bytes), 20 failed requests, nine rejected mirror responses and nine accepted extracted data-file members. The two correct Europe PMC archives have a frozen 31-member inventory. These tracked ledgers contain URLs, request status, successful-response sizes and hashes, accepted/rejected classifications and key audit findings; all saved response and extracted data-file hashes were checked against their ledgers. Raw responses and binary supplements remain ignored local cache under `data/raw/alternative_search/`; they are not required to read the conclusions in a fresh Git checkout. Failed requests are recorded as access failures rather than data-absence evidence.
+## Retrieval record: 20 October 2026
 
-Every download was preceded by the project's resource guard. Requests were capped at 2 MB for metadata/HTML/XLSX and 12 MB for DOCX/package responses. Read-only package/cell inspection peaked at 70,524,928 bytes RSS. No raw sequencing reads, heavy reference databases, new dependencies, author contact or access-control workaround were used. Core scientific inputs and pipeline code were unchanged. The conclusion remains an availability/verification limitation, with Chen explicitly retained as unresolved for future re-audit.
+The accepted documents and packages used for these content assessments are
+identified below. No plot values were digitized into new animal observations.
+
+| Retained artifact | Bytes | SHA-256 |
+|---|---:|---|
+| [Choi publisher DOCX](https://static-content.springer.com/esm/art%3A10.1038%2Fs41598-026-49647-0/MediaObjects/41598_2026_49647_MOESM1_ESM.docx) | 2,031,912 | `a7a4a5b6d51a96c4a6202fdaf94d3741b199dc5dfb25ac8a5174b1d593683515` |
+| [Duan Europe PMC package](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9706091/supplementaryFiles) | 1,098,719 | `7b58dca6d0c4d3b741262252a2acf66710cd1e65f4071ab6d706f635bce3b7fd` |
+| Duan package member `Data_Sheet_1.docx` | 593,069 | `3cd29b0d75afd63e87ada4ca9103b36a5f8a6a0847477a26fe3c184eae49b798` |
+| [Li Europe PMC package](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10140408/supplementaryFiles) | 5,873,635 | `11c85c127b3fb2208e849454e0ba34952ef102fed28de69b04c0a7b15ae21f2a` |
+
+Source validation mattered because filenames and listed sizes were insufficient.
+The [BioStudies Duan record](https://www.ebi.ac.uk/biostudies/api/v1/studies/S-EPMC9706091)
+advertised a 5,534,654-byte DOCX whose exact redirected file URL returned
+plant-associated bacterial-isolate tables. The
+[BioStudies Li record](https://www.ebi.ac.uk/biostudies/api/v1/studies/S-EPMC10140408)
+listed eight XLSX filenames and sizes; it did not supply their content
+descriptions, which came from publisher/XML captions. The downloaded files
+matched those listed sizes but contained Rubus fruiting, SNPs, Arabidopsis
+orthologues and other genetic traits. These nine mirror downloads are marked
+`rejected_content_mismatch` in the inventory and source ledger. The mismatch
+records the observed responses, without assigning a cause or responsible party.
+Choi's BioStudies accession S-EPMC13276362 returned HTTP 404 during this audit;
+its direct publisher supplement was obtained independently.
+
+Queries combined `virome`, `stress`, `cytokines`, `immune responses`, `chronic
+restraint`, `chronic unpredictable`, `prenatal`, `2025` and `2026`. Returns also
+included the original Ritz study, human depression/bipolar studies and reviews;
+reviews served as discovery leads rather than evidence of assay availability.
+Arthritis, chemical-exposure and colitis studies were not substituted for the
+specified stress context.
+
+The [source ledger](../data/manifests/alternative_search_sources.json),
+its [CSV view](../data/manifests/alternative_search_sources.csv),
+[package/cell inventory](../data/manifests/alternative_supplement_inventory.json)
+and [package-member hashes](../data/manifests/alternative_supplement_members.json)
+retain exact URLs, statuses, content decisions and checksums. The record covers
+51 HTTP attempts: 31 successful responses totalling 18,981,221 bytes and
+20 failed requests. It distinguishes nine rejected mirror responses from nine
+accepted extracted data-file members. The two accepted Europe PMC archives
+have a frozen 31-member inventory. Saved responses and extracted data-file
+hashes were checked against these ledgers. Raw responses and binary supplements
+remain ignored local cache under `data/raw/alternative_search/`; the tracked
+ledgers preserve the findings for a fresh checkout.
+
+Requests were preceded by the project resource guard, with caps of 2 MB for
+metadata/HTML/XLSX and 12 MB for DOCX/package responses. Read-only package/cell
+inspection peaked at 70,524,928 bytes RSS. No raw sequencing reads, heavy
+reference databases or new dependencies were acquired, and no authors were
+contacted or access-control workaround used. Core scientific inputs and
+pipeline code were unchanged during this audit. Failed requests are access
+observations, not evidence of data absence. This bounded assessment does not
+exclude unindexed, closed-access or subsequently released datasets.

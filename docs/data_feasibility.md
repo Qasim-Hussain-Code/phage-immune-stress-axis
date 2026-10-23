@@ -69,7 +69,7 @@ or resolve recalibrated and excluded samples.
 | Within-mouse immune change or chronic-stress immune stability | Repeated immune measurements spanning the relevant stress interval | Not supplied by the selected endpoint assays |
 | Bacterial-adjusted viral-immune association | Matched viral, bacterial and immune measurements, with adequate complete-case replication | Processed community tables and crosswalk unavailable |
 
-A prestress immune baseline is not required to relate viral change to a terminal
+A prestress immune baseline is not required to relate viral change to an endpoint
 immune phenotype. It is required, together with a later immune measurement, to
 define within-animal immune change. The current viral-immune endpoint question
 is blocked by the missing viral matrix and crosswalk, independently of the

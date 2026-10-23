@@ -13,7 +13,7 @@ viral change is unrelated to immunity. The
 types and the analyses each could support.
 
 Repeated individual viromes linked to an immune endpoint could support an
-analysis of viral change versus terminal immune phenotype. Such an analysis
+analysis of viral change versus endpoint immune phenotype. Such an analysis
 does not require a prestress immune measurement. A claim about within-mouse
 immune change or immune stability across chronic stress would additionally
 require repeated immune measurements. The selected basal blood and terminal

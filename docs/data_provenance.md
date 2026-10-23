@@ -48,7 +48,8 @@ identifies the ten files required by the reproducible workflow.
 ## Additional search evidence
 
 The [processed-data search](processed_data_search.md) has a separate manifest
-of 52 saved responses or connector representations and a 32-member
+of 52 evidence records comprising HTTP responses, connector representations
+and derived extracts and inventories, alongside a 32-member
 supplementary-file inventory. The complete 6.44 MB Europe PMC supplementary
 package contains the same phenotype workbook, a reporting PDF and figure/table
 images. Its workbook matches the frozen XLSX exactly. These search materials

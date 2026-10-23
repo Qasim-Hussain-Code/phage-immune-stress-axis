@@ -2,7 +2,10 @@
 
 Audited 20 October 2026. DOI [10.1016/j.bbi.2026.106532](https://doi.org/10.1016/j.bbi.2026.106532), PMID 41831535. This follows the [initial candidate audit](new_prenatal_stress_candidate.md) and its existing Crossref, PubMed and OpenAlex snapshots. It follows specific publisher, author-institution and preprint leads rather than repeating the general stress–virome search.
 
-**Decision remains unresolved.** No actual recipient immune-assay protocol, assay timing, animal crosswalk or public processed virome–immune pairing was recovered. Relevant biology is described by the public abstract/preview, but that does not establish an analysis-ready release. The checks below neither show biological ineligibility nor prove that no public deposit exists.
+A separate [23 October recheck](public_data_recheck.md) records fresh responses
+and failures. The route inventory and request totals below refer to 20 October.
+
+The candidate remains unresolved. The public abstract and preview establish its biological relevance, but the inspected routes did not yield the immune-assay protocol, sampling times, animal crosswalk or processed viral–immune pairing needed for reanalysis. This is an access and verification limit; it does not establish scientific ineligibility or the absence of another deposit.
 
 | Route | Verified response | Consequence |
 |---|---|---|
@@ -19,8 +22,10 @@ Targeted title/DOI searches restricted to the authors' university domains, the i
 
 The scientific gaps remain specific: the immune assay and biological material; sampling relative to recipient virome collection and FVT; recipient identifiers and a legitimate crosswalk; public individual viral abundances and immune observations; and repeated individual viromes if temporal stability is to be tested. Prenatal restraint on gestational days 16–20 and adult-offspring shotgun profiling, visible in the publisher preview, do not resolve those gaps.
 
-The identified advertised routes have been followed to metadata-only responses, authentication/subscription barriers, inaccessible institutional infrastructure, incomplete JavaScript navigation, or empty exact-DOI preprint lookups. No further advertised public supplement/static-object URL was identified. This closes this bounded follow-up; it does not assert that every possible public repository or later release has been exhausted.
+The advertised routes yielded bibliographic metadata, subscription links, incomplete institutional navigation and empty exact-DOI preprint lookups. No further advertised public supplement URL was identified in the retrieved material. Other repositories, unlinked manuscripts and later releases remain possible.
+
+## Retrieval record: 20 October 2026
 
 The tracked [JSON source ledger](../data/manifests/chen2026_followup_sources.json) and [CSV request ledger](../data/manifests/chen2026_followup_sources.csv) preserve the route origins, exact URLs, statuses, hashes, content decisions, prior metadata used and remaining unknowns. There were 21 HTTP requests: 15 successful responses totalling 506,867 bytes and six failures. Every saved successful response was checked against its recorded SHA-256 and byte size. HTTP 200 pages were classified by content rather than status alone. Raw snapshots remain ignored local cache; the tracked ledger is self-contained for reviewing these conclusions.
 
-Requests were preceded by the project resource guard, capped at 2 MB for metadata/HTML/assets and 10 MB for the unsuccessful documented PDF attempt. No article PDF, raw reads, new dependencies or scientific analyses were acquired or run. No authors were contacted. Core scientific inputs remain unchanged at 10 records; no scientific code, figures or commit were changed.
+Requests were resource-checked and capped at 2 MB for metadata, HTML and assets, and 10 MB for the unsuccessful documented PDF attempt. No article PDF, raw reads or new dependencies were acquired, and no authors were contacted. This search supplied no new observations to the analysis; the ten frozen scientific inputs remain unchanged.

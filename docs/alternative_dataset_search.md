@@ -13,11 +13,12 @@ for the current file-availability assessment.
 
 ## Inclusion criteria
 
-A replacement would need a relevant stress context, measured fecal viromes and
-immune outcomes, explicit independent animal identifiers linking the assays,
-and accessible processed data small enough for the resource budget. Repeated
-individual viromes would additionally be required for temporal stability. An
-inoculum profile cannot substitute for a recipient profile. A study with only
+A replacement would need a relevant stress context, individual study-animal
+fecal viromes, measured immune outcomes, explicit animal identifiers linking the
+assays, and accessible processed data small enough for the resource budget.
+Repeated individual viromes would additionally be required for temporal
+stability. In an FVT experiment, the viral profiles must come from recipient
+animals; an inoculum profile cannot substitute for them. A study with only
 metabolites or behavior cannot substitute for measured immune phenotypes.
 
 ## Queries
@@ -54,8 +55,8 @@ labelled AMPLICON and did not verify a deposited recipient virome.
 ## Consequence
 
 No screened alternative was verified to satisfy the full combination of a
-relevant stress design, public processed recipient viromes, measured immune
-phenotypes, and explicit individual linkage. This is an availability and
+relevant stress design, public processed individual study-animal viromes,
+measured immune phenotypes, and explicit individual linkage. This is an availability and
 verification conclusion, not a biological null result. The project retains the
 primary study's supported source-data and design analyses. Any future release
 of processed virome matrices and a legitimate animal crosswalk must trigger a

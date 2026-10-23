@@ -2,15 +2,18 @@
 
 Search date: 2026-10-20 (Asia/Taipei). Scope: Ritz et al., Nature Microbiology 2024, DOI [10.1038/s41564-023-01564-y](https://doi.org/10.1038/s41564-023-01564-y). This search extends the initial paper, archive and alternative-dataset audits. No authors were contacted.
 
+The narrower [23 October archive follow-up](public_data_recheck.md) has its own
+dated evidence record. It does not repeat the complete search below.
+
 ## Outcome and scientific consequence
 
 No new processed recipient viral abundance matrix, bacterial abundance matrix, study viral-contig catalog, or verified assay-to-mouse crosswalk was retrieved. The existing restricted analysis remains appropriate. This is a bounded retrieval finding for the sources and searches below, not proof that these objects do not exist elsewhere or that the original study measured only pooled viromes.
 
-The expanded search materially strengthens the attachment and repository audit. An independently retrieved complete Europe PMC supplementary package and its BioStudies counterpart contain the same phenotype workbook already held by this project, a reporting-summary PDF, and figure/table images. They do not supply additional individual community measurements. Individual bulk-metagenome-derived viral profiles remain a published measurement route whose processed inputs and verified crosswalk were not recovered here.
+The complete Europe PMC supplementary package contains the existing phenotype workbook, a reporting-summary PDF and figure/table images. BioStudies independently lists the workbook and reporting PDF; its metadata record is not a second downloaded image package. Neither source supplies additional individual community measurements. Individual bulk-metagenome-derived viral profiles were measured in the original study, but their processed values and verified animal crosswalk were not recovered here.
 
 ## Frozen evidence
 
-New evidence is catalogued in `data/manifests/processed_search_sources.json` and `.csv`: 52 saved records with URLs, byte sizes, SHA256, status and representation/extraction notes. The core scientific `data/manifests/inputs.json` was not changed. The supplementary member inventory is `data/manifests/processed_search_supplementary_members.csv`; it records all 32 members and their individual SHA256 checksums.
+The [source ledger](../data/manifests/processed_search_sources.json) and its [CSV view](../data/manifests/processed_search_sources.csv) contain 52 evidence records: original responses, connector representations, derived extracts and inventories. Each records its URL or source, byte size, SHA-256, status and representation. The [supplement inventory](../data/manifests/processed_search_supplementary_members.csv) lists all 32 package members with individual hashes. These search records are separate from the ten required files in the unchanged [scientific input manifest](../data/manifests/inputs.json).
 
 The source responses and extracted evidence are under ignored `data/raw/processed_data_search/`. The 6.44 MB ZIP remains ignored by Git. Connector snapshots are explicitly identified as saved structured representations, rather than original HTTP bytes. HTTP error pages, a publisher challenge page, and a superseded incorrect API filter are retained with their limitations rather than treated as substantive negative results.
 
@@ -66,7 +69,7 @@ Both legacy and current-domain PMC OA-package locator URLs returned HTTP 404 in 
 
 Public GitHub repository metadata, contents, recursive trees, selected documentation and public issue/code searches were inspected read-only through the GitHub API.
 
-Repository search enumerated 21 public repositories for thomazbastiaanssen: Tjazi, anansi, kronos, Volatility, coffee, MicroFoodDB, deleuze, scoreTools, thomazbastiaanssen, DeepLabCut, FMT_Aging, OMA, research, ECNP_resilience_network, tfs, thomazbastiaanssen.github.io, woltka, FMT_pain_analysis, Helper_functions, books and biocmask. Seven were enumerated for Chrisjrt: hafeZ, Chrisjrt, random_useful_scripts, Budding_biologist_2024, Ratatoskr, Nezam-Abadi_DSM21599_genome_MRA_2023 and Turkington_mouse_virome_2025. Enumeration alone is not a claim that every historical blob was read.
+Repository metadata enumerated 21 public repositories for thomazbastiaanssen and seven for Chrisjrt. The source ledger retains the full inventories. Inspection focused on candidate research and analysis repositories; enumeration does not imply that every historical file was read.
 
 Recursive default-branch trees were inspected for ten candidate repositories, covering 871 untruncated tree entries. The research repository root and the apparently relevant Turkington repository were additionally checked. File inventories and Git object identifiers are frozen in the connector snapshots.
 
@@ -93,8 +96,8 @@ DataCite full-text metadata searches for PRJNA970614 and the article DOI returne
 
 Web discovery included the article DOI with data, PRJNA970614 with MGnify, the DOI with BioStudies, exact missing filenames, the former study title, and author names with GitHub restricted where practical. It found the existing publisher/PMC records, institutional bibliographic pages and the author accounts described above, without an additional verified processed matrix. Search snippets and unrelated personal-name results were not used as data evidence.
 
-## Resource use and stopping point
+## Retrieval record: 20 October 2026
 
-The 33 direct HTTP queries saved 7,017,234 response bytes in total, including the 6,442,714-byte supplementary ZIP. The complete 52-record evidence collection, including extracted members and connector snapshots, is 11,509,954 bytes at manifest creation. All direct response caps were at most 10 MB; no raw sequencing reads or database packages were downloaded and no package was installed during this search. Existing resource guards were checked before the requests and extraction/rendering work. The largest measured process peak was 174,678,016 bytes during read-only PDF inspection; the visual rendering process peaked at 64,098,304 bytes.
+The 33 direct HTTP queries saved 7,017,234 response bytes, including the 6,442,714-byte supplementary ZIP. The complete 52-record collection, including derived extracts and connector snapshots, occupied 11,509,954 bytes at manifest creation. Requests were resource-checked and capped at no more than 10 MB each. The largest measured process peak was 174,678,016 bytes during PDF inspection; the rendering process peaked at 64,098,304 bytes. No raw sequencing reads, reference databases or new software packages were acquired, and no authors were contacted.
 
-The directly advertised attachments, accession-linked analysis/assembly routes, current and legacy MGnify routes, selected author repositories, and supplementary DOI/code indexes have now been checked. No recovered object changes the integrated-analysis gate. A future public release should be assessed against the actual required inputs: individual recipient abundance values, contig quality/taxonomy/host annotations, bacterial abundance values if adjustment is proposed, and explicit mouse/specimen/immune-row mappings including calibration, exclusions and pool membership. Without those inputs, additional computation on the present metadata cannot create an identifiable phage-immune association.
+These checks did not recover the inputs needed for the proposed viral–immune analysis. A usable release would need individual recipient abundances, viral quality and classification annotations, sample times and an explicit map to immune rows documenting calibration, exclusions and pooling. Bacterial adjustment would additionally need matched bacterial abundances. Metadata alone cannot supply those missing biological measurements.

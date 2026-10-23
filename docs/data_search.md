@@ -3,6 +3,10 @@
 Search date: **20 October 2026**. This overview draws on the retained search
 records and retrieved material from that date.
 
+A [focused follow-up on 23 October](public_data_recheck.md) rechecked the Ritz
+archive metadata and the unresolved Chen routes. It recovered no newly usable
+processed pairing. Its dated ledger is separate from the checks summarized here.
+
 The searches recovered individual immune measurements and sequencing metadata
 for the Ritz study, but not the processed community tables and verified animal
 map needed for the proposed analysis. Other stress studies supplied different
@@ -18,7 +22,7 @@ individual immune measurements and explicit identifiers connecting them.
 Donor inocula and group pools cannot be assigned to individual recipients.
 Bacterial adjustment additionally needs matched bacterial profiles. An immune
 baseline is needed to estimate immune change across stress, but is not required
-merely to relate viral change to a terminal immune phenotype.
+merely to relate viral change to an endpoint immune phenotype.
 
 ## The Ritz releases
 
@@ -41,7 +45,8 @@ independently lists the workbook and reporting PDF.
 The search also checked accession-linked ENA analysis files, NCBI assembly and
 nucleotide records, current and legacy MGnify, selected author repositories,
 exact filenames from the scripts, and DOI/data indexes. Its 52 evidence records
-are saved responses or representations, not 52 datasets. No processed recipient
+include responses, connector representations and derived extracts or inventories;
+they are not 52 datasets. No processed recipient
 viral or bacterial matrix, study contig catalog or verified immune-animal
 crosswalk was recovered. Raw reads were inventoried without reprocessing.
 

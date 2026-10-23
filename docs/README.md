@@ -49,6 +49,9 @@ the [primary-data search](processed_data_search.md),
 [Chen public-route follow-up](chen2026_public_route_followup.md), with links to
 the original screen and source ledgers.
 
+The [23 October follow-up](public_data_recheck.md) records the narrower fresh
+archive and Chen checks, separately from those historical searches.
+
 [Third-party notices](third_party_notices.md) record upstream licenses and
 attribution. Repository maintenance instructions are separate:
 [private-push checks](private_push.md) and [access status](publication_status.md).
