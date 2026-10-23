@@ -11,9 +11,9 @@ separate source identities and results.
 | Execution | Source | Environment | Result |
 |---|---|---|---|
 | Full Windows workflow, 23 October 2026 | Conditional design/scale sensitivities, source inventory and figure updates; [source identity](../results/reports/run_status.json) | CPython 3.14.0; existing packages | Ten stages executed; 219 tests collected, 213 executed, six Linux-only skips; no failures or errors |
+| Fresh Windows checkout, 23 October 2026 | `c5504eb`; [replay report](../results/reports/reproduction_check.json) | Same CPython 3.14.0 environment | Ten stages executed without resume; all 39 scientific files reproduced exactly; 219 tests collected, 213 executed, six skips |
 | Earlier Windows workflow, 23 October 2026 | Release source-to-invocation checks; [dated invocation](../results/reports/invocations/20261023T000334060517Z_5240.json) | CPython 3.14.0; existing packages | Ten stages executed; 180 tests collected, 174 executed, six Linux-only skips; no failures or errors |
 | Full Windows workflow, 22 October 2026 | Reporting and timing terminology revision; [dated invocation](../results/reports/invocations/20261022T065653884702Z_26348.json) | CPython 3.14.0; existing packages | Ten stages executed; 174 tests collected, 168 executed, six Linux-only skips; no failures or errors |
-| Fresh Windows checkout, 21 October 2026 | `eb7ba6c` | Same CPython 3.14.0 environment | Ten stages executed without resume; all 30 scientific files reproduced exactly |
 | Fresh Ubuntu WSL2 environment, 21 October 2026 | `eb7ba6c` | CPython 3.14.4; 21 pinned distributions newly installed | Ten stages executed; 174 tests collected, 165 executed, nine Windows-only skips; all 20 CSV comparisons passed |
 
 The October 22 revisions changed the report narrative, clarified viral–immune
@@ -55,8 +55,9 @@ Windows dependency reinstallation is not part of its same-environment replay.
 
 ## Comparing outputs across platforms
 
-The Windows fresh-checkout comparison requires exact SHA-256 equality for all
-30 scientific files. Linux uses the [fixed comparison protocol](cross_platform_plan.md):
+The 23 October Windows fresh-checkout comparison requires exact SHA-256 equality
+for all 39 scientific files. The historical 21 October Linux run uses the
+[fixed comparison protocol](cross_platform_plan.md):
 observations, identifiers, counts, schemas and specified exact fields must
 agree, while a listed set of derived continuous values has numerical
 tolerances. Eighteen CSVs matched exactly; two differed only in derived values
@@ -78,9 +79,11 @@ RSS and virtual-machine memory have different scopes and are not added
 together. Exact measurements belong to their dated execution reports; the
 [latest resource report](resource_usage.md) describes the current invocation.
 
-The runner writes JSON records atomically and retains a journal for each
-invocation. Resume requires matching source, configuration, dependency, input
-and output fingerprints. A newer failed or interrupted attempt cannot inherit
+The runner writes JSON records atomically and journals each invocation locally.
+The repository retains current and cited historical JSON records; duplicate
+Markdown summaries and uncited development journals are omitted. Resume requires
+matching source, configuration, dependency, input and output fingerprints.
+A newer failed or interrupted attempt cannot inherit
 an earlier successful status. Historical environment measurements remain
 unchanged; each checkout uses its own local resource baseline.
 

@@ -1,4 +1,9 @@
-# Independent Linux reproduction validation
+# Historical Linux reproduction validation
+
+This report covers the 21 October 2026 source revision. It does not establish
+Linux execution of the later design/scale sensitivities, fifth calibration
+scenario, revised figures or release checks. The current Windows replay is
+documented [separately](reproduction_validation.md).
 
 Status: **passed with the fixed numerical tolerances and unchanged reviewed figure files**.
 The full run finished at 2026-10-21T13:31:37.550663+00:00. Source commit: `eb7ba6c8b945670a1f55c493d89435f36750900c`.
@@ -15,7 +20,7 @@ selections, seed and 20,000-replicate calibration per scenario.
 
 The [execution report](../results/reports/linux_reproduction_check.json) contains
 the full source, package, command, resource, comparison and cleanup evidence.
-The [current setup manifest](../data/manifests/linux_environment_0_2_2.json)
+The [dated setup manifest](../data/manifests/linux_environment_0_2_2.json)
 links the same 21 wheel hashes to their previously captured official PyPI URLs
 and records the fresh installation. No OS/global package installation, source
 build, network retrieval during analysis or WSL configuration change was requested.
@@ -60,7 +65,8 @@ and errors**. The [validation summary](../results/reports/linux_validation_summa
 and [log](../results/reports/linux_validation.log) retain the executed cases.
 The same committed source on Windows collected 174, executed 168 and skipped
 six Linux-only cases, and reproduced all 30 scientific files byte-for-byte.
-See [Windows reproduction](reproduction_validation.md).
+That earlier Windows report remains in Git history; the
+[current Windows reproduction](reproduction_validation.md) covers 39 files.
 
 Execution was serial with numerical-library threads set to one. The complete
 native directory occupied **482,644,068 logical bytes** after the full run,
@@ -87,7 +93,7 @@ older setup attempts remain historical records, not successful new runs.
 
 The prior version 0.2.1 Linux replay at commit
 `06b7cab84937c174c3197ba63d560ddc9cc70b1c` remains identifiable in repository
-history and the original setup snapshot. This latest report records the new
+history and the original setup snapshot. This report records the 21 October
 source revision rather than attributing that older run to version 0.2.2.
 
 These checks establish software reproduction under the recorded environments.

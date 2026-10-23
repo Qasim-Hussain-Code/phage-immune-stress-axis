@@ -43,8 +43,10 @@ Windows and Ubuntu WSL. Windows reproduced all 30 scientific outputs exactly;
 Linux passed all 20 CSV comparisons and matched all ten previously reviewed
 Linux figure files. Both collected 174 tests, with 168 executed on Windows and
 165 on Linux; the remaining six/nine cases were platform-specific skips.
-See [Windows reproduction](reproduction_validation.md) and
-[Linux reproduction](linux_reproduction_validation.md).
+The earlier Windows replay remains in Git history. The
+[current Windows replay](reproduction_validation.md) covers the later 39-file
+revision; the [Linux report](linux_reproduction_validation.md) retains the
+21 October execution.
 
 The executed command-mode checks passed for the same code digest:
 validation-only changed no scientific inputs, tables or figures; the pilot

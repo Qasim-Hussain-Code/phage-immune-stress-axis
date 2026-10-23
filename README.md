@@ -188,6 +188,11 @@ the software checks. The selected workflow runs serially and excludes raw
 sequencing reads and large reference databases. [Reproduction guide](docs/reproducibility.md)
 contains the environment requirements, measured comparisons and resource use.
 
+A fresh committed-source Windows replay reproduced all 39 scientific files
+exactly on 23 October 2026, with 213 tests executed, six platform skips and no
+failures or errors. See the [execution evidence](docs/reproduction_validation.md)
+for the source revision and comparison scope.
+
 ## Repository guide
 
 | Location | Contents |

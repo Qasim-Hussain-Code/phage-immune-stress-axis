@@ -23,7 +23,7 @@ needed to reproduce the analysis.
 | [Phenotype robustness](phenotype_robustness.md) | Conditional percentage bounds and empirical rank effects |
 | [Design and scale sensitivity](design_sensitivity.md) | Inferred ID strata, conditional control-cage weighting and log TNF ratios |
 | [Statistical validation](statistical_validation.md) | Independent numerical checks and their assumptions |
-| [Calibration design](calibration_design.md) | Four synthetic null scenarios, separate from biological observations |
+| [Calibration design](calibration_design.md) | Five synthetic null scenarios, separate from biological observations |
 | [Article design audit](paper_audit_notes.md) | Source passages supporting sample roles, timing and assay interpretation |
 
 ## Reproduction and evidence
@@ -58,5 +58,4 @@ archive and Chen checks, separately from those historical searches.
 
 [Third-party notices](third_party_notices.md) record upstream licenses and
 attribution. Repository maintenance instructions are separate:
-[private-push checks](maintenance/private_push.md) and
-[access status](maintenance/publication_status.md).
+[private-push checks](maintenance/private_push.md).

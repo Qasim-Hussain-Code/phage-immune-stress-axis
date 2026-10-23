@@ -21,5 +21,6 @@ data/raw/ritz2024_archive/*
 !data/raw/ritz2024_archive/raw_sources.csv
 results/reports/stages/
 results/reports/logs/
+results/reports/invocations/*.md
 data/manifests/environment_local.json
 data/manifests/resource_baseline_local.json

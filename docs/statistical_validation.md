@@ -131,16 +131,18 @@ the output collection to 39 files. The
 [comparison evidence](../results/reports/design_sensitivity_validation.json)
 records exact bytes separately from CSV-record comparisons.
 
-The fresh committed-source replays on 21 October used commit
-`eb7ba6c8b945670a1f55c493d89435f36750900c`, with code SHA-256 beginning
-`9d62cd4b5958`. Both executed all ten stages offline. Windows collected
-174 tests, executed 168 and skipped six; Linux collected 174, executed 165 and
-skipped nine. Both had zero failures and errors. The
-[Windows replay](../results/reports/reproduction_check.json) reproduced all
-30 scientific files exactly. The [Linux replay](../results/reports/linux_reproduction_check.json)
+The fresh [Windows replay](../results/reports/reproduction_check.json) on
+23 October used commit `c5504eb64600300b12b6ad7951a492d32fb33677`. It executed all
+ten stages without resume, reproduced all 39 scientific files exactly, and
+collected 219 tests: 213 executed, six skips, zero failures or errors.
+
+The historical [Linux replay](../results/reports/linux_reproduction_check.json)
+on 21 October used commit `eb7ba6c8b945670a1f55c493d89435f36750900c`, with code
+SHA-256 beginning `9d62cd4b5958`. It collected 174 tests, executed 165 and
+skipped nine, with zero failures or errors. It
 passed all 20 CSV comparisons under the fixed policy and matched the ten
 Linux figure files covered by the retained visual review. Its
 [suite summary](../results/reports/linux_validation_summary.json) records the
-Linux cases. These dated replays apply to that earlier source identity; they
-are not a fresh Linux execution of the later reporting, timing or release-check
-revisions.
+Linux cases. This replay applies to that earlier source identity; it does not
+establish Linux execution of the later reporting, timing, release-check,
+design/scale sensitivity or figure revisions.

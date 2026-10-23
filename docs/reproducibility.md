@@ -57,8 +57,10 @@ a ceiling and numerical libraries use one thread. Main outputs are
 
 The runner writes the latest status to
 [run_status.json](../results/reports/run_status.json) and keeps a separate record
-for each invocation. These distinguish newly executed stages from verified
-cached stages, pilots and validation-only runs. A successful cached resume is
+for each invocation during execution. The repository retains the current and
+cited historical JSON records; redundant Markdown summaries and uncited
+development journals are omitted. These distinguish newly executed stages from
+verified cached stages, pilots and validation-only runs. A successful cached resume is
 not a fresh replay.
 
 ## Reproduction evidence
@@ -82,40 +84,29 @@ The earlier 23 October release-check run collected 180 tests, executed 174 and
 skipped six. Its [comparison record](../results/reports/invocation_binding_validation.json)
 retains the earlier 30-file exact comparison and is not the current sensitivity run.
 
-The 22 October runs revised the research narrative and eligibility explanation,
-then clarified defeat-day terminology. The earlier eligibility edit changed
-only its question and missing-input explanation; the final timing-wording run
-reproduced all 30 scientific files exactly. Those runs collected 174 tests,
-executed 168 and skipped six. Their dated journal records are retained.
+The fresh [Windows replay](reproduction_validation.md) completed on 23 October
+2026 at commit `c5504eb64600300b12b6ad7951a492d32fb33677`. It exported a new Git
+archive, removed generated scientific files and stage receipts, and executed
+all ten stages offline without resume. All **39 scientific files matched by
+exact SHA-256**, including the new sensitivities and revised figures. The suite
+collected 219 tests, executed 213 and skipped six Linux-only cases, with no
+failures or errors. Inputs matched before and after execution, and the disposable
+checkout was removed. The [machine-readable report](../results/reports/reproduction_check.json)
+retains source identities, individual comparisons and resource measurements.
+This replay used the existing Windows interpreter and installed packages.
 
-The separate fresh-checkout Windows and Linux replays below were completed on
-21 October 2026 at commit `eb7ba6c8b945670a1f55c493d89435f36750900c`.
-They precede the revised report text, eligibility wording and source-to-invocation
-release check, new sensitivities and revised figures. Those later revisions
-have not been rerun on Linux.
-
-The [Windows replay report](../results/reports/reproduction_check.json) identifies
-the Git revision exported to a disposable checkout. It removes generated
-scientific files and stage receipts, executes all ten stages offline without
-resume, and compares 30 scientific files by exact SHA-256. The
-[Linux report](../results/reports/linux_reproduction_check.json) identifies its
-separate source export, newly installed dependency environment and comparisons.
-Both use the same physical host.
-
-Windows reproduced all 30 scientific files exactly. Linux passed all 20 CSV
+The [Linux replay](linux_reproduction_validation.md) is historical: it completed
+on 21 October at `eb7ba6c8b945670a1f55c493d89435f36750900c`, on the same physical
+host in a newly installed dependency environment. It passed all 20 CSV
 comparisons: 18 were byte-identical and two differed only in derived floating
-values by at most 3e-14. The fixed policy preserves observations, identifiers,
-counts and schemas exactly; only listed derived fields receive numerical
-tolerances. Linux figure files differ from Windows. All ten match the Linux
-files covered by the retained visual review. Exact source revisions, dates and
-figure acceptance records are in the [Windows](reproduction_validation.md) and
-[Linux](linux_reproduction_validation.md) execution documents.
-
-Those fresh replays each collected 174 tests with zero failures or errors. Windows
-executed 168 with six Linux-only skips; Linux executed 165 with nine Windows-only
-skips. These checks establish calculation and workflow behavior under the
-recorded environments. They do not recover missing biological measurements or
-establish animal independence.
+values by at most 3e-14 under the fixed comparison policy. Its ten figure files
+matched the retained Linux review. It collected 174 tests, executed 165 and
+skipped nine Windows-only cases, with no failures or errors. That run predates
+the current sensitivities, revised figures and later release checks; these
+changes have not been rerun on Linux. The earlier Windows 30-file replay remains
+in Git history. These checks establish software behavior under their recorded
+environments; they do not establish animal independence or recover missing
+biological measurements.
 
 ## Resource requirements
 
