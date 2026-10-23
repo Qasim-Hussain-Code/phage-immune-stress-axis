@@ -43,6 +43,10 @@ This includes blobs added and subsequently deleted before the push. Each blob
 is limited to 5 MB and the new-blob scan to 40 MB. These checks do not determine
 whether arbitrary prose is confidential; keep working notes outside tracked
 files and review the proposed diff.
+The latest full-run journal must match the current source contract and the
+ordered ten verified stage results, with consistent execution/resume counts.
+An older successful journal cannot attest separately rebuilt stages from a
+different source revision.
 Commit messages are scanned as well. Git replacement objects and grafts are
 disabled for child commands, shallow histories are rejected, and a process-only
 configuration selector cannot hide transport URL rewrites from the checks.

@@ -63,20 +63,26 @@ not a fresh replay.
 
 ## Reproduction evidence
 
-The full Windows workflow was rerun on 22 October 2026 after revising the
-research narrative and eligibility explanation, and again after clarifying
-defeat-day terminology. All ten stages completed in the latest run;
-174 tests were collected, 168 executed and six Linux-only cases skipped, with
-zero failures or errors. Observations, numerical estimates and figures
-matched the preceding analysis. The earlier eligibility edit changed only its
-question and missing-input explanation; the final timing-wording run reproduced
-all 30 scientific files exactly. The
-[latest invocation](../results/reports/run_status.json) identifies that execution.
+The latest full Windows workflow completed on 23 October 2026 after strengthening
+the release check's link between the current source, full-run journal and
+verified stage results. All ten stages executed without resume; 180 tests were
+collected, 174 executed and six Linux-only cases skipped, with zero failures or
+errors. All 30 scientific files and all ten frozen inputs exactly matched the
+pre-change snapshot at `e0cd5a5`. The
+[latest invocation](../results/reports/run_status.json) identifies the source,
+and the [comparison record](../results/reports/invocation_binding_validation.json)
+retains the hashes and scope.
+
+The 22 October runs revised the research narrative and eligibility explanation,
+then clarified defeat-day terminology. The earlier eligibility edit changed
+only its question and missing-input explanation; the final timing-wording run
+reproduced all 30 scientific files exactly. Those runs collected 174 tests,
+executed 168 and skipped six. Their dated journal records are retained.
 
 The separate fresh-checkout Windows and Linux replays below were completed on
 21 October 2026 at commit `eb7ba6c8b945670a1f55c493d89435f36750900c`.
-They precede the revised report text and eligibility wording; the updated
-report generator has not been rerun on Linux.
+They precede the revised report text, eligibility wording and source-to-invocation
+release check. Those later revisions have not been rerun on Linux.
 
 The [Windows replay report](../results/reports/reproduction_check.json) identifies
 the Git revision exported to a disposable checkout. It removes generated

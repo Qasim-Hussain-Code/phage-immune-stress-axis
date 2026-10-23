@@ -76,6 +76,45 @@ def verify_latest_invocation(root):
     return latest
 
 
+def verify_invocation_contract(root,status,stage_records):
+    """Bind the full invocation to the current, independently checked stamps.
+
+    A full resume is valid: its captured results still have to equal the
+    verified cached results, and its completed/resumed counts must describe
+    the states actually present in the invocation.
+    """
+    from pisa.pipeline import STAGES,source_contract
+    root=Path(root).resolve()
+    require(status.get('status')=='completed_restricted_analysis' and status.get('mode')=='full',
+            'Latest invocation did not complete the full restricted analysis')
+    expected_source=source_contract(root,root/'config/analysis.yaml')
+    require(isinstance(status.get('source_contract'),dict)
+            and status['source_contract']==expected_source,
+            'Latest invocation source contract differs from the current verified source')
+    require(status.get('runtime')==expected_source['runtime'],
+            'Latest invocation runtime differs from its verified source contract')
+    stages=status.get('stages')
+    require(isinstance(stages,list) and all(isinstance(row,dict) for row in stages),
+            'Latest invocation needs the ordered full stage inventory')
+    require([row.get('name') for row in stages]==STAGES,
+            'Latest invocation needs the ordered full stage inventory')
+    require(set(stage_records)==set(STAGES),'Current verified stage inventory is incomplete')
+    for row in stages:
+        name=row['name']
+        require(isinstance(row.get('status'),str) and row['status'] in {'completed','resumed_verified'},
+                'Latest invocation has an incomplete stage: '+name)
+        require(isinstance(row.get('result'),dict)
+                and row['result']==stage_records[name]['result'],
+                'Latest invocation result differs from the current verified stage: '+name)
+    for counter,state in [('scientific_stages_executed','completed'),
+                          ('scientific_stages_resumed_verified','resumed_verified')]:
+        value=status.get(counter)
+        require(isinstance(value,int) and not isinstance(value,bool)
+                and value==sum(row['status']==state for row in stages),
+                'Latest invocation stage count is inconsistent: '+counter)
+    return status
+
+
 def git_files(root,scope):
     prefix=['git','-c',f'safe.directory={root.as_posix()}']
     repo=subprocess.run(prefix+['rev-parse','--git-dir'],cwd=root,capture_output=True)
@@ -178,13 +217,15 @@ def check(root,scope='working',require_review=True):
     require(validation.get('success') and validation.get('tests_run',0)>0,'No successful executed validation record')
     require(validation.get('code_sha256')==code_digest(root),'Code or test fixtures changed after the executed validation suite')
     status=verify_latest_invocation(root)
-    require(status.get('status')=='completed_restricted_analysis','Latest invocation did not complete the full restricted analysis')
     from pisa.pipeline import STAGES,cache_valid,fingerprint,upstream_hashes
     key=fingerprint(root,root/'config/analysis.yaml')
+    stage_records={}
     for stage in STAGES:
         record=json.loads((root/f'results/reports/stages/{stage}.json').read_text(encoding='utf-8'))
         require(cache_valid(root,stage,record,key,upstream_hashes(root,stage)),
                 'Current scientific output contract is stale: '+stage)
+        stage_records[stage]=record
+    verify_invocation_contract(root,status,stage_records)
     qa=review_status(root)
     if require_review:require(qa['status']=='previous_review_matches_current_files','Current PDF bytes lack a matching recorded visual review')
 

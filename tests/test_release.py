@@ -1,5 +1,6 @@
 """A staged release must contain the observations and code actually verified."""
 import importlib.util
+from copy import deepcopy
 import json
 from pathlib import Path
 import subprocess
@@ -174,3 +175,113 @@ class LatestInvocationProof(unittest.TestCase):
             self.save(root,self.record('simultaneous'))
             with self.assertRaisesRegex(ValueError,'proof stale'):
                 release.verify_latest_invocation(root)
+
+
+class FullInvocationContract(unittest.TestCase):
+    @staticmethod
+    def fixture(root,states=None):
+        from pisa.pipeline import STAGES,source_contract
+        for name,payload in [('src/model.py','value=1\n'),('config/analysis.yaml','seed: 1\n'),
+                             ('requirements.txt','fixture==1\n'),('data/manifests/inputs.json','[]\n')]:
+            path=root/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_text(payload)
+        contract=source_contract(root,root/'config/analysis.yaml')
+        states=states or ['completed']*len(STAGES)
+        records={name:{'result':{'stage_number':index}} for index,name in enumerate(STAGES)}
+        status={'invocation_id':'full','started_utc':'2026-10-22T06:00:00+00:00',
+                'status':'completed_restricted_analysis','mode':'full',
+                'source_contract':contract,'runtime':contract['runtime'],
+                'stages':[{'name':name,'status':state,'result':deepcopy(records[name]['result'])}
+                          for name,state in zip(STAGES,states)],
+                'scientific_stages_executed':states.count('completed'),
+                'scientific_stages_resumed_verified':states.count('resumed_verified')}
+        return status,records
+
+    def test_fresh_mixed_and_fully_resumed_full_invocations_remain_valid(self):
+        for states in [['completed']*10,['resumed_verified']*10,
+                       ['completed']*3+['resumed_verified']*7]:
+            with self.subTest(states=states),tempfile.TemporaryDirectory() as directory:
+                root=Path(directory);status,records=self.fixture(root,states)
+                self.assertEqual(release.verify_invocation_contract(root,status,records),status)
+
+    def test_current_verified_stamps_cannot_attest_an_older_full_source(self):
+        from pisa.pipeline import STAGES,DECLARED,cache_valid,fingerprint,upstream_hashes
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);old_status,records=self.fixture(root)
+            LatestInvocationProof.save(root,old_status,latest=True)
+            # Numbered stage entry points can rebuild all stamps without
+            # updating the full-run journal. Keep every stamp valid for the
+            # changed source, and leave the older successful journal intact.
+            (root/'src/model.py').write_text('value=2\n')
+            key=fingerprint(root,root/'config/analysis.yaml')
+            for name in STAGES:
+                dependencies=upstream_hashes(root,name)
+                for relative in DECLARED[name]:
+                    path=root/relative;path.parent.mkdir(parents=True,exist_ok=True)
+                    path.write_text(json.dumps({'success':True,'tests_run':1,
+                                                'code_sha256':release.code_digest(root)})
+                                    if path.name=='validation_summary.json'
+                                    else 'recomputed output\n')
+                result=json.loads((root/'results/reports/validation_summary.json').read_text()) \
+                       if name==STAGES[8] else records[name]['result']
+                records[name]={'schema_version':2,'stage':name,'fingerprint':key,
+                    'upstream_outputs':dependencies,'result':result,
+                    'resources':{'process_peak_rss_bytes':1},
+                    'outputs':{p:release.digest(root/p) for p in DECLARED[name]}}
+                self.assertTrue(cache_valid(root,name,records[name],key,dependencies))
+            latest=release.verify_latest_invocation(root)
+            self.assertEqual(latest,old_status)
+            with self.assertRaisesRegex(ValueError,'source contract differs'):
+                release.verify_invocation_contract(root,latest,records)
+
+    def test_current_source_cannot_reuse_an_older_stage_result(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);status,records=self.fixture(root)
+            records['09_robustness_checks']['result']={'success':True,'tests_run':999}
+            with self.assertRaisesRegex(ValueError,'result differs.*09_robustness_checks'):
+                release.verify_invocation_contract(root,status,records)
+
+    def test_missing_or_changed_execution_identity_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);status,records=self.fixture(root)
+            invalid=[None,[],{}]
+            invalid.extend({**status['source_contract'],name:'different'}
+                           for name in status['source_contract'])
+            for contract in invalid:
+                with self.subTest(contract=contract),self.assertRaisesRegex(ValueError,'source contract differs'):
+                    release.verify_invocation_contract(root,{**status,'source_contract':contract},records)
+            missing=deepcopy(status);missing.pop('source_contract')
+            with self.assertRaisesRegex(ValueError,'source contract differs'):
+                release.verify_invocation_contract(root,missing,records)
+            with self.assertRaisesRegex(ValueError,'runtime differs'):
+                release.verify_invocation_contract(root,{**status,'runtime':{}},records)
+            for mode in (None,'pilot','validation'):
+                with self.subTest(mode=mode),self.assertRaisesRegex(ValueError,'full restricted analysis'):
+                    release.verify_invocation_contract(root,{**status,'mode':mode},records)
+
+    def test_incomplete_reordered_duplicate_or_malformed_stages_are_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);status,records=self.fixture(root)
+            stages=status['stages']
+            invalid=[None,{},[],stages[:-1],list(reversed(stages)),stages+[stages[0]],
+                     stages[:-1]+[stages[0]],stages[:-1]+[None]]
+            for rows in invalid:
+                with self.subTest(rows=rows),self.assertRaisesRegex(ValueError,'ordered full stage inventory'):
+                    release.verify_invocation_contract(root,{**status,'stages':rows},records)
+            for state in (None,[],{},'running','failed','interrupted'):
+                changed=deepcopy(status);changed['stages'][2]['status']=state
+                with self.subTest(state=state),self.assertRaisesRegex(ValueError,'incomplete stage'):
+                    release.verify_invocation_contract(root,changed,records)
+            changed=deepcopy(status);changed['stages'][2].pop('result')
+            with self.assertRaisesRegex(ValueError,'result differs'):
+                release.verify_invocation_contract(root,changed,records)
+
+    def test_stage_counters_must_describe_the_captured_execution(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);status,records=self.fixture(root,['completed']+['resumed_verified']*9)
+            for name in ('scientific_stages_executed','scientific_stages_resumed_verified'):
+                for value in (None,-1,True,False,'1',1.0,10):
+                    with self.subTest(counter=name,value=value),self.assertRaisesRegex(ValueError,'stage count is inconsistent'):
+                        release.verify_invocation_contract(root,{**status,name:value},records)
+                missing=deepcopy(status);missing.pop(name)
+                with self.assertRaisesRegex(ValueError,'stage count is inconsistent'):
+                    release.verify_invocation_contract(root,missing,records)

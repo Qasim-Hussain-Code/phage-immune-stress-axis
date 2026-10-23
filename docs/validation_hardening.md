@@ -25,7 +25,7 @@ multiple push destinations, environment-hidden rewrites, replacement objects,
 GitHub host selection and credentials deleted by a later commit. No test pushes
 or contacts GitHub.
 
-## Executed verification
+## Executed verification: 21 October 2026
 
 The full Windows offline workflow completed all ten stages for code SHA-256
 `9d62cd4b5958b1275f06687c47eb11acb5250a46dad14f11167e956d67cf4d4d`.
@@ -56,3 +56,29 @@ distinguishes these invocations from the fresh full executions.
 These changes strengthen software and provenance checks. They do not supply the
 missing community matrix or animal crosswalk and do not make the proposed
 phage-stability/immune association identifiable.
+
+## Source-to-invocation binding: 23 October 2026
+
+Release validation now requires the latest full-run journal to describe the
+same source, runtime, configuration, requirements and input manifest as the
+current verified stages. Previously, separately rebuilding the numbered stages
+after a source change could leave an older successful full-run journal in
+place. Current stage files alone did not establish that the recorded full
+invocation had executed that source.
+
+The check compares the ordered ten-stage inventory and captured stage results
+with their fingerprint- and upstream-verified records. Completed and resumed
+counts must match the recorded stage states. Fresh, mixed and fully resumed
+full invocations remain valid when those contracts agree. Six regression tests
+cover the stale-source case, stale stage results, missing identities,
+incomplete or reordered stages, invalid states and inconsistent counters.
+
+The full serial Windows offline run completed all ten stages for code SHA-256
+`f5882a0104e16809ae3c736dbe727db4768b4fe2c8dddf2d21f131856cc1c030`.
+It collected 180 tests, executed 174 and skipped six Linux-only cases, with no
+failures or errors. All 30 scientific files and ten frozen inputs exactly match
+the pre-change snapshot at `e0cd5a5`. The
+[comparison record](../results/reports/invocation_binding_validation.json)
+identifies the run and hashes. This is a working-source check in the existing
+Windows environment; it does not replace the earlier committed-source replays
+or establish a new Linux execution. No estimator, observation or figure changed.

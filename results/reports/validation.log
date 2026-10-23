@@ -129,6 +129,12 @@ test_empty_frozen_input_is_valid (test_release.FrozenInputProvenance.test_empty_
 test_release_rejects_invalid_size_schema_before_other_checks (test_release.FrozenInputProvenance.test_release_rejects_invalid_size_schema_before_other_checks) ... ok
 test_release_rejects_wrong_size_with_correct_hash (test_release.FrozenInputProvenance.test_release_rejects_wrong_size_with_correct_hash) ... ok
 test_selected_git_input_requires_size_and_checksum (test_release.FrozenInputProvenance.test_selected_git_input_requires_size_and_checksum) ... ok
+test_current_source_cannot_reuse_an_older_stage_result (test_release.FullInvocationContract.test_current_source_cannot_reuse_an_older_stage_result) ... ok
+test_current_verified_stamps_cannot_attest_an_older_full_source (test_release.FullInvocationContract.test_current_verified_stamps_cannot_attest_an_older_full_source) ... ok
+test_fresh_mixed_and_fully_resumed_full_invocations_remain_valid (test_release.FullInvocationContract.test_fresh_mixed_and_fully_resumed_full_invocations_remain_valid) ... ok
+test_incomplete_reordered_duplicate_or_malformed_stages_are_rejected (test_release.FullInvocationContract.test_incomplete_reordered_duplicate_or_malformed_stages_are_rejected) ... ok
+test_missing_or_changed_execution_identity_is_rejected (test_release.FullInvocationContract.test_missing_or_changed_execution_identity_is_rejected) ... ok
+test_stage_counters_must_describe_the_captured_execution (test_release.FullInvocationContract.test_stage_counters_must_describe_the_captured_execution) ... ok
 test_filename_identity_and_simultaneous_attempts_fail_closed (test_release.LatestInvocationProof.test_filename_identity_and_simultaneous_attempts_fail_closed) ... ok
 test_latest_success_matches_counterpart_and_follows_older_failure (test_release.LatestInvocationProof.test_latest_success_matches_counterpart_and_follows_older_failure) ... ok
 test_malformed_older_record_is_not_silently_ignored (test_release.LatestInvocationProof.test_malformed_older_record_is_not_silently_ignored) ... ok
@@ -175,6 +181,6 @@ test_size_is_required_and_rejects_negative_bool_string_and_float (test_wsl_archi
 test_ten_inputs_and_zero_byte_file_keep_verified_identity (test_wsl_archive.NativeInputIdentity.test_ten_inputs_and_zero_byte_file_keep_verified_identity) ... ok
 
 ----------------------------------------------------------------------
-Ran 174 tests in 31.201s
+Ran 180 tests in 51.468s
 
 OK (skipped=6)

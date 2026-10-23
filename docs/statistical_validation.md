@@ -111,11 +111,15 @@ sets out the scenarios and their interpretation.
 
 ## Recorded executions
 
-The Windows suite recorded on 22 October 2026 collected 174 tests, executed
-168 and skipped six platform-specific cases, with zero failures or errors.
-The source identity and individual outcomes from the final defeat-day wording
-revision are in the [validation summary](../results/reports/validation_summary.json)
-and [log](../results/reports/validation.log).
+The Windows suite recorded on 23 October 2026 collected 180 tests, executed
+174 and skipped six platform-specific cases, with zero failures or errors.
+The six added cases test the release check's binding of a full invocation to
+the current source and verified stage results, including legitimate resumed
+runs. The source identity and individual outcomes are in the
+[validation summary](../results/reports/validation_summary.json) and
+[log](../results/reports/validation.log). All 30 scientific files exactly
+matched the preceding revision, as recorded in the
+[comparison evidence](../results/reports/invocation_binding_validation.json).
 
 The fresh committed-source replays on 21 October used commit
 `eb7ba6c8b945670a1f55c493d89435f36750900c`, with code SHA-256 beginning
@@ -128,4 +132,5 @@ passed all 20 CSV comparisons under the fixed policy and matched the ten
 Linux figure files covered by the retained visual review. Its
 [suite summary](../results/reports/linux_validation_summary.json) records the
 Linux cases. These dated replays apply to that earlier source identity; they
-are not a fresh Linux execution of the later reporting and timing revision.
+are not a fresh Linux execution of the later reporting, timing or release-check
+revisions.

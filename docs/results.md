@@ -79,6 +79,6 @@ Unstressed controls were group housed and both stressed groups singly housed. Th
 
 ## Reproducibility
 
-Validation: 174 tests collected, 168 executed, 6 skipped, 0 failures and 0 errors. [Executed records](../results/reports/validation_summary.json) and [statistical checks](statistical_validation.md) document the software verification. Synthetic fixtures are kept separate from biological observations. The separate [software calibration](../results/reports/software_calibration.md) used 20,000 replicates in each of four known zero-mean scenarios. Its Monte Carlo uncertainty is simulation uncertainty and does not calibrate the actual experiment under an unknown dependence structure.
+Validation: 180 tests collected, 174 executed, 6 skipped, 0 failures and 0 errors. [Executed records](../results/reports/validation_summary.json) and [statistical checks](statistical_validation.md) document the software verification. Synthetic fixtures are kept separate from biological observations. The separate [software calibration](../results/reports/software_calibration.md) used 20,000 replicates in each of four known zero-mean scenarios. Its Monte Carlo uncertainty is simulation uncertainty and does not calibrate the actual experiment under an unknown dependence structure.
 
 Source: [Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y). Observation-level source cells, exact estimates and missingness are retained in [results/tables](../results/tables) and [data/processed/immune_long.csv](../data/processed/immune_long.csv).
