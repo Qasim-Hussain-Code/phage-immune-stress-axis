@@ -15,7 +15,13 @@ immune outcomes. The processed viral abundance tables and animal crosswalk
 needed for the ecological question were not recovered from the inspected
 releases. The analysis therefore examines the immune comparisons separately:
 which outcomes differ with stress or FVT, and how much those conclusions depend
-on the statistical comparison being made.
+on the statistical comparison, measurement scale and assumed independent unit.
+Raw recipient reads are public: literal Stress/FVT labels identify 17 candidate
+complete Before/After pairs, but those compressed reads alone total about
+85.6 GB. Reprocessing exceeds the local storage budget, and the authors'
+processing, recalibration and exclusion key is still needed to validate the
+linkage. The limitation concerns accessible processed inputs, validated linkage
+and local compute capacity; it does not imply that viral measurements were absent.
 
 ## Data and experimental design
 
@@ -47,6 +53,15 @@ as pooled viromes, but the archived code release provides a script PDF rather
 than the referenced processed matrices. [Data availability and linkage](docs/data_feasibility.md)
 sets out what was recovered and what is still required.
 
+The archive also includes a heat-inactivated-FVT-labelled arm: ten Before and
+ten After recipient samples, ten inocula and two pools. The retrieved workbook
+has no immune rows for that arm. The article describes three phenotype groups
+and discusses an inactivated control as future work, leaving the archived
+arm's relationship to the reported cohort unresolved. Its immune outcomes,
+allocation and processing records are a priority [data requirement](docs/data_requirements.md).
+An active-versus-inactivated comparison could be informative, although heating
+may alter constituents other than viral infectivity.
+
 ## Analysis
 
 Each outcome has two comparisons: **Control Stress minus Control** and
@@ -62,11 +77,18 @@ three-group model explains differences between the present Welch tests and the
 published Tukey comparisons. [Methods](docs/methods.md) gives the definitions
 and [detailed results](docs/results.md) reports the complete comparisons.
 
+Post hoc checks additionally use treatment-balanced ID ranges, conditional
+control-cage means and log-scale TNF-alpha. The ranges and shared ID prefixes
+are observable; their meaning as batches or cages is unverified. These
+[design and scale sensitivities](docs/design_sensitivity.md) retain the original
+six comparisons and use explicitly separate exploratory multiplicity families.
+
 ## Immune findings
 
 ![Observed immune values and the six treatment contrasts](figures/figure4_immune.png)
 
-*Dots are observed animals and horizontal bars are group means. The lower
+*Dots are observed animals and horizontal bars are arithmetic group means.
+The TNF concentration panel uses a log y-axis for visibility. The lower
 panels show raw mean differences with pointwise 95% Welch intervals. The q
 values use the six-test BH family. [Observations](results/tables/figure4_data.csv),
 [contrast estimates](results/tables/immune_contrasts.csv) and [vector PDF](figures/figure4_immune.pdf).*
@@ -80,13 +102,21 @@ values use the six-test BH family. [Observations](results/tables/figure4_data.cs
 | Splenocyte TNF-alpha | Stress − Control | 8 / 9 | +67.54 pg/mL (−26.18, 161.26) | 0.1591 |
 | Splenocyte TNF-alpha | FVT Stress − Stress | 9 / 8 | −74.13 pg/mL (−167.78, 19.51) | 0.1551 |
 
-**LY6Chi monocyte proportions are lower with stress and higher with FVT in
-these observations.** The stressed control group is lower than Control, while
+**The LY6Chi pattern depends partly on the assumed independent unit.**
+The stressed control group is lower than Control, while
 FVT Stress is higher than stressed control. The FVT comparison is also sensitive
 to the analysis model: its Welch P value is 0.01265, whereas the reconstructed
 Tukey–Kramer P value is 0.106409, matching the article's reported 0.106. The
 pairwise observations and mean difference are unchanged; Tukey's variance
 estimate also uses the third group.
+
+Treating the six integer-prefix control groups as putative cages changes the
+Stress–Control estimate to −1.75 percentage points and its sensitivity BH q to
+0.153, compared with −2.03 and q = 0.0395 at the animal level. Equal cage
+weighting changes the estimand as well as the uncertainty. This does not prove
+those prefixes are actual cages. Adjustment for inferred ID strata changes
+the estimates little, and every FVT effect direction holds within both strata;
+direction agreement does not establish replicated significance.
 
 **The CD62L-positive fraction is higher with FVT, but a preceding stress deficit
 is not established.** Its FVT contrast is clearly positive under the selected
@@ -98,6 +128,11 @@ the stressed group highly dispersed. Its FVT raw-mean contrast has a wide
 interval crossing zero, while the rank comparison gives q = 0.0110 in the
 separate sensitivity family. The rank result describes ordering of the
 observations and does not resolve uncertainty about the mean.
+
+The log-scale FVT/Stress geometric-mean ratio is 0.43 (pointwise 95% CI
+0.19–0.97), with raw P = 0.0441 and a two-test sensitivity BH q = 0.0883.
+That analysis describes another estimand and does not provide a new
+confirmatory result. No observed value was removed or replaced.
 
 ![Identical mean differences under Welch and original Tukey–Kramer intervals](figures/figure8_method_comparison.png)
 
@@ -124,8 +159,8 @@ explicit comparison of estimands, uncertainty and statistical assumptions.
 
 Housing is part of the stress–control comparison: controls were group housed,
 while stressed animals were singly housed. Both stressed groups share the
-reported housing regime. Missing cage allocation, upstream exclusions and
-assay detection thresholds limit further adjustment. The selected assays
+reported housing regime. The definitive cage/allocation key, upstream exclusions
+and assay detection thresholds remain unresolved. The selected assays
 cannot identify which viral constituent, bacterial response or other treatment
 component accounts for an immune difference.
 

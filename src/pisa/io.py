@@ -2,6 +2,7 @@ import csv
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import sys
 import tempfile
@@ -35,15 +36,27 @@ def _replace_with_retry(temporary, destination):
             time.sleep(delay)
 
 
+def redact_local_paths(value):
+    """Remove local profile prefixes from derived records, never source bytes."""
+    if isinstance(value,str):
+        value=re.sub(r'(?i)\b[A-Z]:[\\/]+Users[\\/]+[^\\/\r\n\"\'<>]+', '<USER_PROFILE>', value)
+        return re.sub(r'/(?:home|Users)/[^/\s\"\'<>]+', '<USER_PROFILE>', value)
+    if isinstance(value,dict):
+        return {key:redact_local_paths(item) for key,item in value.items()}
+    if isinstance(value,(list,tuple)):
+        return [redact_local_paths(item) for item in value]
+    return value
+
+
 def write_json(path, value):
     path = Path(path)
-    payload=json.dumps(value,indent=2,allow_nan=False)+'\n'
+    payload=json.dumps(redact_local_paths(value),indent=2,allow_nan=False)+'\n'
     path.parent.mkdir(parents=True, exist_ok=True)
     # A sibling temporary file keeps replacement on the same filesystem.
     # Serialize first; a failed write/replacement must preserve the prior record.
     descriptor,temporary=tempfile.mkstemp(prefix='.pisa-'+path.name+'-',suffix='.tmp',dir=path.parent)
     try:
-        with os.fdopen(descriptor,'w',encoding='utf-8',newline=None) as stream:
+        with os.fdopen(descriptor,'w',encoding='utf-8',newline='\n') as stream:
             stream.write(payload)
             stream.flush()
             os.fsync(stream.fileno())
@@ -59,7 +72,7 @@ def write_csv(path, rows, fields=None):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open('w', newline='', encoding='utf-8') as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields or list(rows[0]))
+        writer = csv.DictWriter(stream, fieldnames=fields or list(rows[0]),lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
 

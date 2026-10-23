@@ -5,6 +5,11 @@ Qasim Hussain is the sole project author and `Qasim-Hussain-Code` is the sole
 GitHub contributor. Upstream experimental data and software retain their
 citations and licenses.
 
+The exact approved researcher email is stored in the checkout's local-only Git
+key `pisa.authorEmail`. The command requires exactly one explicit local value;
+it does not infer approval from `user.email`, global settings or included files.
+The email is not embedded in tracked source or printed in policy diagnostics.
+
 After committing the completed, validated work, run:
 
 ```bash

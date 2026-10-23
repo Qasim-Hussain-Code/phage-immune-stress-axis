@@ -16,12 +16,12 @@ def replacement_error(code=None):
 
 
 class AtomicJSON(unittest.TestCase):
-    def test_native_serialization_is_preserved_and_temporary_is_removed(self):
+    def test_lf_serialization_is_preserved_and_temporary_is_removed(self):
         with tempfile.TemporaryDirectory() as directory:
             path=Path(directory)/'record.json'
             value={'label':'immune outcome','values':[1,None,True]}
             write_json(path,value)
-            expected=(json.dumps(value,indent=2,allow_nan=False)+'\n').replace('\n',os.linesep).encode('utf-8')
+            expected=(json.dumps(value,indent=2,allow_nan=False)+'\n').encode('utf-8')
             self.assertEqual(path.read_bytes(),expected)
             self.assertEqual(json.loads(path.read_text()),value)
             self.assertEqual(list(Path(directory).glob('.pisa-*.tmp')),[])

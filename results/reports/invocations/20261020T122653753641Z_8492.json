@@ -103,8 +103,9 @@
   "seed": 20261020,
   "failed_stage": "02_fetch_data",
   "error_type": "PermissionError",
-  "error": "[WinError 5] \u5b58\u53d6\u88ab\u62d2\u3002: 'C:\\\\Users\\\\User\\\\Documents\\\\phage-immune-stress-axis\\\\results\\\\reports\\\\.pisa-run_status.json-b5xx347a.tmp' -> 'C:\\\\Users\\\\User\\\\Documents\\\\phage-immune-stress-axis\\\\results\\\\reports\\\\run_status.json'",
+  "error": "[WinError 5] \u5b58\u53d6\u88ab\u62d2\u3002: '<USER_PROFILE>\\\\Documents\\\\phage-immune-stress-axis\\\\results\\\\reports\\\\.pisa-run_status.json-b5xx347a.tmp' -> '<USER_PROFILE>\\\\Documents\\\\phage-immune-stress-axis\\\\results\\\\reports\\\\run_status.json'",
   "elapsed_seconds": 0.607,
   "finished_utc": "2026-10-20T12:26:54.392986+00:00",
-  "max_measured_stage_peak_rss_bytes": 35016704
+  "max_measured_stage_peak_rss_bytes": 35016704,
+  "path_redaction_note": "Local profile prefixes replaced with <USER_PROFILE>; execution results and scientific values retained."
 }

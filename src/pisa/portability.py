@@ -27,6 +27,11 @@ MAX_RECORDED_DIFFERENCES = 100
 
 _LONG = 'experiment_id|source_sheet|source_row|source_column|source_cell|source_id|mouse_id|source_group|group|endpoint|assay_domain|selected_endpoint|value|observation_status'
 _SENSITIVITY = 'experiment_id|endpoint|contrast|mann_whitney_u_first|mann_whitney_p_value|rank_method|loo_n_refits|loo_mean_difference_min|loo_mean_difference_max|loo_min_difference_omitted_mouse|loo_max_difference_omitted_mouse|loo_p_value_min|loo_p_value_max|loo_direction_preserved|interpretation|mann_whitney_q_value_sensitivity_family'
+_POSTHOC_COMMON = 'experiment_id|endpoint|contrast|first_group|second_group|posthoc_status|assumption_status|effect_units'
+_WELCH = 'n_first|n_second|mean_first|mean_second|mean_difference|standard_error|ci_low|ci_high|confidence_level|t_statistic|degrees_freedom|p_value'
+_HC3 = 'mean_difference|standard_error|t_statistic|degrees_freedom|p_value|ci_low|ci_high|confidence_level'
+_UNADJUSTED_HC3 = '|'.join('unadjusted_hc3_'+column for column in _HC3.split('|'))
+_POSTHOC_BH = 'q_value|bh_family|bh_family_size'
 _HEADERS = {
     'data/processed/immune_long.csv': _LONG,
     'results/tables/archive_files.csv': 'name|bytes|source_record|role',
@@ -48,9 +53,20 @@ _HEADERS = {
     'results/tables/sequencing_inventory.csv': 'accession|sample_type|run_count|sample_count|fastq_file_count|compressed_fastq_bytes|compressed_fastq_gb_decimal|source|analysis_role',
     'results/tables/software_calibration.csv': 'purpose|scenario|scenario_description|endpoint|contrast|metric|successes|replicates|estimate|mc_ci_low|mc_ci_high|mc_interval_method|nominal_probability|alpha|group_0_n|group_1_n|group_2_n|seed|scenario_stream_index|rng|batch_size|max_actual_batch_size|batches|all_null|endpoint_dependence|numpy_version|scipy_version',
     'results/tables/source_inventory.csv': 'experiment_id|source_sheet|source_max_row|source_column_count|phenotype_column_count|nonempty_animal_rows|fully_blank_rows_excluded|observed_phenotype_cells|missing_phenotype_cells|group_counts_json|identifier_scope|virome_linkage_verified',
+    'results/tables/immune_design_membership.csv': 'experiment_id|group|source_id|mouse_id|source_sheet|source_row|id_range_block|putative_control_cage_id|block_verified|cage_verified|posthoc_status|assumption_status|block_basis|cage_basis',
+    'results/tables/immune_block_adjusted.csv': _POSTHOC_COMMON+'|n_first|n_second|n_model_observed|'+_HC3+'|method|model_formula|id_block_B_minus_A_estimate|covariance_scope|model_assumptions|'+_UNADJUSTED_HC3+'|unadjusted_comparator_scope|'+_POSTHOC_BH,
+    'results/tables/immune_within_block.csv': _POSTHOC_COMMON+'|id_range_block|'+_WELCH+'|overall_raw_mean_difference|same_direction_as_overall_raw|method|'+_POSTHOC_BH,
+    'results/tables/immune_putative_cage_units.csv': 'experiment_id|endpoint|group|putative_control_cage_id|source_ids_json|observed_source_ids_json|n_source_animals|n_observed_animals|unit_mean|observation_status|posthoc_status|assumption_status|weighting',
+    'results/tables/immune_putative_cage_means.csv': _POSTHOC_COMMON+'|'+_WELCH+'|n_observed_animals_first|n_observed_animals_second|first_unit|second_unit|n_putative_control_cages|method|estimand|'+_POSTHOC_BH,
+    'results/tables/immune_control_cage_omission.csv': _POSTHOC_COMMON+'|omitted_group|omitted_putative_control_cage_id|omitted_source_ids_json|'+_WELCH+'|method|omission_scope|'+_POSTHOC_BH,
+    'results/tables/immune_tnfa_log_sensitivity.csv': _POSTHOC_COMMON+'|geometric_mean_first|geometric_mean_second|geometric_mean_ratio|ratio_ci_low|ratio_ci_high|n_first|n_second|log_mean_difference|log_standard_error|log_ci_low|log_ci_high|t_statistic|degrees_freedom|p_value|confidence_level|raw_mean_difference|raw_ci_low|raw_ci_high|raw_p_value|raw_effect_units|log_effect_units|method|ratio_units|geometric_mean_units|positivity_policy|raw_comparator_scope|'+_POSTHOC_BH,
+    'results/tables/sequencing_design_inventory.csv': 'accession|source_condition|specimen_role|gavage_status|run_count|specimen_count|fastq_file_count|compressed_fastq_bytes|source',
+    'results/tables/candidate_recipient_pairs.csv': 'workbook_sheet|workbook_row|workbook_group|workbook_id|ena_sample_type|replicate_num|before_sample_accessions|before_run_accessions|before_specimen_count|before_run_count|before_fastq_file_count|before_compressed_fastq_bytes|after_sample_accessions|after_run_accessions|after_specimen_count|after_run_count|after_fastq_file_count|after_compressed_fastq_bytes|total_run_count|total_compressed_fastq_bytes|candidate_status|linkage_status|processed_virome_profiles_retrieved|verified_virome_immune_matches',
 }
 CSV_HEADERS = MappingProxyType({path: tuple(value.split('|')) for path, value in _HEADERS.items()})
 _SENSITIVITY_DERIVED = 'mann_whitney_p_value loo_mean_difference_min loo_mean_difference_max loo_p_value_min loo_p_value_max mann_whitney_q_value_sensitivity_family'
+_WELCH_DERIVED = 'mean_first mean_second mean_difference standard_error ci_low ci_high t_statistic degrees_freedom p_value'
+_HC3_DERIVED = 'mean_difference standard_error t_statistic p_value ci_low ci_high'
 _DERIVED = {
     'figure7_data.csv': _SENSITIVITY_DERIVED + ' full_mean_difference welch_p_value welch_q_value',
     'figure8_data.csv': 'mean_difference ci_low ci_high p_value',
@@ -61,6 +77,13 @@ _DERIVED = {
     'immune_summary.csv': 'mean standard_deviation median',
     'original_method_replication.csv': 'group_mean group_variance group_sse residual_sse pooled_mse effect standard_error statistic p_value ci_low ci_high',
     'software_calibration.csv': 'estimate mc_ci_low mc_ci_high',
+    'immune_block_adjusted.csv': _HC3_DERIVED+' id_block_B_minus_A_estimate '
+        +' '.join('unadjusted_hc3_'+column for column in _HC3_DERIVED.split())+' q_value',
+    'immune_within_block.csv': _WELCH_DERIVED+' overall_raw_mean_difference q_value',
+    'immune_putative_cage_units.csv': 'unit_mean',
+    'immune_putative_cage_means.csv': _WELCH_DERIVED+' q_value',
+    'immune_control_cage_omission.csv': _WELCH_DERIVED+' q_value',
+    'immune_tnfa_log_sensitivity.csv': 'geometric_mean_first geometric_mean_second geometric_mean_ratio ratio_ci_low ratio_ci_high log_mean_difference log_standard_error log_ci_low log_ci_high t_statistic degrees_freedom p_value raw_mean_difference raw_ci_low raw_ci_high raw_p_value q_value',
 }
 DERIVED_COLUMNS = MappingProxyType({path: frozenset(_DERIVED.get(Path(path).name, '').split()) for path in CSV_HEADERS})
 # Numeric validation never changes comparison types. These columns remain exact.
@@ -80,6 +103,15 @@ _EXACT_NUMERIC = {
     'sequencing_inventory.csv': 'run_count sample_count fastq_file_count compressed_fastq_bytes compressed_fastq_gb_decimal',
     'software_calibration.csv': 'successes replicates nominal_probability alpha group_0_n group_1_n group_2_n seed scenario_stream_index batch_size max_actual_batch_size batches',
     'source_inventory.csv': 'source_max_row source_column_count phenotype_column_count nonempty_animal_rows fully_blank_rows_excluded observed_phenotype_cells missing_phenotype_cells',
+    'immune_design_membership.csv': 'source_row',
+    'immune_block_adjusted.csv': 'n_first n_second n_model_observed degrees_freedom confidence_level unadjusted_hc3_degrees_freedom unadjusted_hc3_confidence_level bh_family_size',
+    'immune_within_block.csv': 'n_first n_second confidence_level bh_family_size',
+    'immune_putative_cage_units.csv': 'n_source_animals n_observed_animals',
+    'immune_putative_cage_means.csv': 'n_first n_second confidence_level n_observed_animals_first n_observed_animals_second n_putative_control_cages bh_family_size',
+    'immune_control_cage_omission.csv': 'n_first n_second confidence_level bh_family_size',
+    'immune_tnfa_log_sensitivity.csv': 'n_first n_second confidence_level bh_family_size',
+    'sequencing_design_inventory.csv': 'run_count specimen_count fastq_file_count compressed_fastq_bytes',
+    'candidate_recipient_pairs.csv': 'workbook_row before_specimen_count before_run_count before_fastq_file_count before_compressed_fastq_bytes after_specimen_count after_run_count after_fastq_file_count after_compressed_fastq_bytes total_run_count total_compressed_fastq_bytes processed_virome_profiles_retrieved verified_virome_immune_matches',
 }
 NUMERIC_COLUMNS = MappingProxyType({path: DERIVED_COLUMNS[path] | frozenset(_EXACT_NUMERIC.get(Path(path).name, '').split()) for path in CSV_HEADERS})
 FIGURE_PATHS = tuple(sorted(f'figures/{name}.{extension}' for name in

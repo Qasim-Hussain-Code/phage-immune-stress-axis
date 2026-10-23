@@ -1,0 +1,19 @@
+accession,source_condition,specimen_role,gavage_status,run_count,specimen_count,fastq_file_count,compressed_fastq_bytes,source
+PRJNA970614,Control,individual_recipient_bulk_metagenome,After,10,10,20,19347772064,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,Control,individual_recipient_bulk_metagenome,Before,10,10,20,27340474318,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,Control,pooled_fecal_virome,After,1,1,2,6201417648,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,Control,pooled_fecal_virome,Before,1,1,2,2298342771,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,Control stress,individual_recipient_bulk_metagenome,After,8,8,16,18415480841,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,Control stress,individual_recipient_bulk_metagenome,Before,10,10,20,25175514338,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,Control stress,pooled_fecal_virome,After,1,1,2,3168521803,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,Control stress,pooled_fecal_virome,Before,1,1,2,3029938190,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,FVT gavage,transplant_inoculum,Gavage,9,9,18,21640370591,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,FVT stress,individual_recipient_bulk_metagenome,After,9,9,18,24895462371,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,FVT stress,individual_recipient_bulk_metagenome,Before,10,10,20,24048176624,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,FVT stress,pooled_fecal_virome,After,1,1,2,4003629493,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,FVT stress,pooled_fecal_virome,Before,1,1,2,2884200470,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,hkFVT gavage,transplant_inoculum,Gavage,10,10,20,21179190107,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,hkFVT stress,individual_recipient_bulk_metagenome,After,10,10,20,25074313700,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,hkFVT stress,individual_recipient_bulk_metagenome,Before,10,10,20,25687262797,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,hkFVT stress,pooled_fecal_virome,After,1,1,2,4911773292,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv
+PRJNA970614,hkFVT stress,pooled_fecal_virome,Before,1,1,2,2909615820,data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv;data/raw/ritz2024_archive/PRJNA970614_sample_attributes.csv

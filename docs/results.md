@@ -35,7 +35,7 @@ The stressed-control group had a higher mean TNF-alpha concentration, with subst
 
 ## Dependence on the statistical comparison
 
-The monocyte FVT comparison gives Welch P=0.01265 here and Tukey-Kramer P=0.106409 under the original three-group calculation, reproducing the published P=0.106. Both use the same observations and mean difference. Pooling the residual variance across all three groups and adjusting for three pairwise comparisons explains the different uncertainty estimates; additional source exclusions are unnecessary for this numerical reconciliation.
+The monocyte FVT comparison gives Welch P=0.012645 here and Tukey-Kramer P=0.106409 under the original three-group calculation, reproducing the published P=0.106. Both use the same observations and mean difference. Pooling the residual variance across all three groups and adjusting for three pairwise comparisons explains the different uncertainty estimates; additional source exclusions are unnecessary for this numerical reconciliation.
 
 The [original-method reconstruction](../results/reports/original_method_replication.md) contains 24 records. It matches 9 of 9 selected caption-statistic checks and 17 of 18 combined caption and group-summary checks at published precision. One printed mean remains unresolved: FVT unstimulated TNF-alpha averages 27.8492778 pg/mL in the workbook, directly rounding to 27.8, while Table 1b prints 27.9. Source values and rounding tolerances were retained.
 
@@ -69,16 +69,41 @@ Both source-cohort mean directions remain positive under that support assumption
 
 For observed TNF-alpha, 8 first-greater and 0 tied comparisons among 72 cross-group pairs give empirical superiority 0.111111 and rank-biserial effect -0.777778 for FVT Stress versus Control Stress. Those pairs reuse 17 animals. They are not independent replicates. The full six-comparison tables and definitions are in the [descriptive robustness report](../results/reports/phenotype_robustness.md).
 
+## Post hoc design and scale sensitivities
+
+Literal IDs define two treatment-balanced ranges and six putative control cages with source sizes 2,2,1,2,2,1. Their interpretation as batches or cages is unverified. The following conditional comparisons give each observed control cage mean equal weight, while the singly housed stressed groups retain animals as units. This changes the control estimand as well as its uncertainty. The six comparisons have a separate exploratory BH family.
+
+| Stress minus Control, conditional cage units | Mean difference | Pointwise 95% CI | Raw P | Sensitivity BH q |
+|---|---:|---|---:|---:|
+| Basal LY6Chi monocyte proportion | -1.753 | -4.023 to 0.5166 | 0.108 | 0.1531 |
+| Basal CD62L-positive fraction of LY6Chi monocytes | -1.46 | -7.248 to 4.328 | 0.594 | 0.594 |
+| Unstimulated splenocyte TNF-alpha | 68.57 | -25.14 to 162.3 | 0.1276 | 0.1531 |
+
+The LY6Chi Stress–Control inference depends on the assumed independent unit. Every putative cage was also omitted in turn, retaining the six-test family in each diagnostic refit; LY6Chi Stress–Control q ranges from 0.03073 to 0.09367. These refits are not independent replications or source exclusions.
+
+Treatment-plus-ID-stratum fits use HC3 covariance and finite-df t intervals, with treatment-only HC3 fits as like-for-like reference columns. 6 of 6 FVT endpoint-by-stratum differences preserve their overall raw direction. This is direction agreement, not replicated significance. Adjusted-model tests form a BH family of six; within-stratum tests form a separate family of twelve.
+
+All observed TNF-alpha concentrations are positive. Log-Welch estimates below retain every observed value without a pseudocount and target geometric-mean ratios, rather than raw means or rank ordering. The two tests have their own exploratory BH family. Pointwise intervals do not incorporate that correction.
+
+| TNF-alpha comparison | Geometric-mean ratio | Pointwise 95% CI | Raw P | Two-test BH q |
+|---|---:|---|---:|---:|
+| Control Stress / Control | 1.952 | 0.8546 to 4.457 | 0.09946 | 0.09946 |
+| FVT Stress / Control Stress | 0.4296 | 0.19 to 0.9715 | 0.04414 | 0.08827 |
+
+These post hoc checks quantify dependence on assumptions and scale. They do not replace the primary six-test family or establish confirmed effects. The [design sensitivity appendix](design_sensitivity.md) defines the models, assumptions and full membership, contrast, omission and log-scale tables.
+
 ## What the dataset leaves unanswered
 
 The workbook contains 50 animal rows across two experiments. The sequencing archive contains 104 runs representing 104 specimens: 77 recipient bulk specimens, 8 enriched pools and 19 inocula. The initial-study captions imply 12 pool-by-time profiles. Pool membership across time remains unresolved, so these are not 12 verified animal trajectories.
 
-The intended association between viral change and an immune phenotype requires individual longitudinal viral abundance profiles and a verified link to immune source animals. No processed viral profile was retrieved and none was matched to immune outcomes. Terminal immune measurements could serve as outcomes for such an association if those viral inputs became available; they would still not measure within-mouse immune change or temporal immune stability. Bacterial adjustment also requires the missing matched bacterial profiles.
+The intended association between viral change and an immune phenotype requires individual longitudinal viral abundance profiles and a verified link to immune source animals. No processed viral profile was retrieved and none was matched to immune outcomes. Endpoint immune measurements could serve as outcomes for such an association if those viral inputs became available; they would still not measure within-mouse immune change or temporal immune stability. Bacterial adjustment also requires the missing matched bacterial profiles.
+
+Heat-inactivated-FVT-labelled specimens also occur in the archive: 20 recipient bulk samples, ten inocula and two pools. Their immune outcomes and allocation key are not supplied by the retrieved workbook. This arm could strengthen the active-versus-inactivated comparison, while heating may also alter other transplant constituents. The 17 candidate complete Stress/FVT Before/After pairs require about 85.6 GB of compressed reads alone. The current limit combines missing processed inputs and validated linkage with a local reprocessing constraint. The [data requirements](data_requirements.md) describe what would make these routes usable.
 
 Unstressed controls were group housed and both stressed groups singly housed. Thus the stress-versus-Control contrast includes different housing regimes, while FVT Stress versus Control Stress shares the stated regime. Unavailable allocation details limit the animal-level uncertainty estimates. The treatment comparisons describe selected immune phenotypes; they do not isolate a phage mechanism or establish immune resilience.
 
 ## Reproducibility
 
-Validation: 180 tests collected, 174 executed, 6 skipped, 0 failures and 0 errors. [Executed records](../results/reports/validation_summary.json) and [statistical checks](statistical_validation.md) document the software verification. Synthetic fixtures are kept separate from biological observations. The separate [software calibration](../results/reports/software_calibration.md) used 20,000 replicates in each of four known zero-mean scenarios. Its Monte Carlo uncertainty is simulation uncertainty and does not calibrate the actual experiment under an unknown dependence structure.
+Validation: 219 tests collected, 213 executed, 6 skipped, 0 failures and 0 errors. [Executed records](../results/reports/validation_summary.json) and [statistical checks](statistical_validation.md) document the software verification. Synthetic fixtures are kept separate from biological observations. The separate [software calibration](../results/reports/software_calibration.md) used 20,000 replicates in each of 5 known zero-mean scenarios. Its Monte Carlo uncertainty is simulation uncertainty and does not calibrate the actual experiment under an unknown dependence structure.
 
 Source: [Ritz et al. (2024)](https://doi.org/10.1038/s41564-023-01564-y). Observation-level source cells, exact estimates and missingness are retained in [results/tables](../results/tables) and [data/processed/immune_long.csv](../data/processed/immune_long.csv).

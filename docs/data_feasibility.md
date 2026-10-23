@@ -1,11 +1,18 @@
 # Data available for reanalysis
 
 The public releases inspected on 20 October 2026 provide individual immune
-source data and detailed sequencing metadata. They do not provide the processed
-recipient viral abundance matrix and verified animal crosswalk needed to relate
-viral change to immune phenotypes. The original study did analyse individual
-recipient bulk metagenomes as well as pooled enriched viromes; the missing
-inputs concern access to those measurements and their linkage.
+source data, raw sequencing reads and detailed specimen metadata. Reassessment
+of these frozen inputs on 23 October identified literal sequencing-label
+matches for all 20 Stress/FVT workbook rows and candidate before/after pairs
+for 17. These matches make a recipient reprocessing route identifiable. They
+do not supply the processed viral abundances, calibration records or validated
+crosswalk needed for viral-change versus immune-endpoint analysis.
+
+The original study analysed individual recipient bulk metagenomes as well as
+pooled enriched viromes. The present limits combine missing processed inputs,
+unresolved analytic linkage and the resources required to rebuild those inputs
+from raw reads. The 23 October reassessment used the existing frozen files;
+it did not retrieve sequencing reads or new biological measurements.
 
 ## Retrieved source collection
 
@@ -22,10 +29,9 @@ It records their URLs, byte sizes, SHA-256 checksums and any transformation.
 | [PRJEB69687](https://www.ebi.ac.uk/ena/browser/view/PRJEB69687) | 16S run report | Additional sequence inventory, without a processed bacterial table or verified immune crosswalk |
 | [PRJEB67706](https://www.ebi.ac.uk/ena/browser/view/PRJEB67706) | Transcriptomic run report | Additional sequence inventory, without assigning its samples to workbook animals |
 
-No raw reads were downloaded. PRJNA970614 alone lists 262,211,457,238 bytes of
-compressed FASTQ files, before assembly, reference databases or temporary
-products. Reconstructing the original community tables from those reads was
-outside this small-file reanalysis.
+No raw reads were downloaded. The exact inventory and the narrower candidate
+recipient subset are distinguished below; the whole-project size is not the
+cost of processing only the relevant Stress/FVT labels.
 
 ## Specimens are not interchangeable with animals
 
@@ -38,12 +44,32 @@ and captions differ in their contributor counts. These profiles cannot be
 treated as 12 independent mouse trajectories or assigned individually to the
 20 immune rows.
 
-The FVT experiment contributes 30 workbook rows, ten per treatment, with fewer
-observations for some assays. The deposited PRJNA970614 inventory contains
-104 runs for 104 specimens: 77 individual recipient bulk specimens, eight
-pool-labelled specimens and 19 inocula. These categories include samples from
-a heat-inactivated treatment absent from the source workbook. The inventory
-therefore represents neither 104 animals nor 104 immune-matched profiles.
+The FVT experiment contributes 30 workbook rows, ten per published treatment,
+with fewer observations for some assays. The deposited PRJNA970614 inventory
+contains 104 runs for 104 specimens: 77 individual recipient bulk specimens,
+eight pool-labelled specimens and 19 inocula. Its treatment labels extend
+beyond the three source-workbook groups:
+
+| Deposited condition | Bulk Before | Bulk After | Inocula | Pools Before / After |
+|---|---:|---:|---:|---:|
+| Control | 10 | 10 | 0 | 1 / 1 |
+| Control stress | 10 | 8 | 0 | 1 / 1 |
+| FVT stress / FVT gavage | 10 | 9 | 9 | 1 / 1 |
+| hkFVT stress / hkFVT gavage | 10 | 10 | 10 | 1 / 1 |
+
+The [sequencing design inventory](../results/tables/sequencing_design_inventory.csv)
+retains the literal condition, role and time labels, with run, specimen, file
+and compressed-byte counts. Inocula and pools are not additional recipient
+animals. Technical runs would likewise remain runs of the same specimen.
+
+The 32 hkFVT-labelled specimens are scientifically relevant to treatment
+specificity. Their relationship to the published three-arm experiment is
+unresolved: the workbook has no hkFVT rows, and the article describes assessment
+of fully inactivated FVT as future work (Discussion, XML Sec8). Metadata alone
+does not establish whether these specimens share its cohort, allocation or
+assays. A verified active-versus-inactivated preparation comparison would be
+informative, but heat treatment can alter several constituents; that comparison
+alone would not isolate phage infectivity or prove phage-specific causality.
 
 Individual recipient bulk metagenomes were mapped to an inoculum-derived viral
 catalog in the original analysis. An inoculum measures administered material;
@@ -51,12 +77,46 @@ it cannot replace the recipient's intestinal profile. The
 [article design audit](paper_audit_notes.md) gives the evidence for each
 measurement route and its timing.
 
+## Literal recipient labels and raw-read scope
+
 Within a workbook sheet, assays are linked by experiment, treatment and literal
-source ID. Across sequencing and phenotype resources, a documented map is still
-needed. Aliases such as `Ctr191`, `Ctr19x2` and `Ctr1x2` cannot be equated with
-source IDs such as `1.1` and `19.2` by punctuation removal or row position.
-Some labels are compatible, but compatibility does not supply abundance values
-or resolve recalibrated and excluded samples.
+source ID. The ten Control Stress IDs are `4,5,6,7,8,22,23,24,25,26`; the ten
+FVT Stress IDs are `9,10,11,12,13,27,28,29,30,31`. Every one has an exact
+condition-qualified match to ENA `replicate_num`. Stress IDs 6 and 7 and FVT
+ID 11 have Before specimens only. The other 17 have both Before and After
+specimens: eight Stress and nine FVT candidates. The
+[candidate-pair table](../results/tables/candidate_recipient_pairs.csv) records
+their source rows, accessions, run inventories and bytes without assigning
+processed profiles or verified viral-immune matches.
+
+Control labels require a different caution. Only source IDs `3` and `21`
+match literally. Aliases containing `191`, `19x2` or `1x2` cannot be equated
+with workbook decimals by punctuation removal or row position. Controls are
+therefore excluded from this candidate-pair table. Numeric label blocks do
+not independently verify experimental batches or cages.
+
+| Scope | Runs in scope | Compressed FASTQ bytes | Decimal GB |
+|---|---:|---:|---:|
+| Whole PRJNA970614 project, including pools and inocula | 104 total runs | 262,211,457,238 | 262.211 |
+| All individual recipient bulk specimens | 77 | 189,984,457,053 | 189.984 |
+| All 20 literal Stress/FVT candidate keys | 37 | 92,534,634,174 | 92.535 |
+| Seventeen complete candidate before/after pairs | 34 | 85,586,830,532 | 85.587 |
+
+The roughly 190 GB figure describes all 77 recipient specimens, not just the
+20 Stress/FVT source keys. These are compressed input sizes, excluding
+assembly, databases, outputs and working space. A new resource plan could
+evaluate reprocessing the smaller subset; no such reconstruction was run here.
+
+Literal concordance is a useful starting point, not the final analytic map.
+The archived scripts (pp. 15–16) reference `recal_metadata.csv`,
+`Proposed_mouse_ID`, `Full_ID`, `post_recal_name`, `calib_batch` and calibration
+plate tables. One community-processing path excludes IDs 6, 7 and 11 and
+`Contrasts == "hkFVT"`. Its rationale and translation to the processed columns
+are not supplied by the workbook or ENA metadata. Those filters do not justify
+removing observations from every immune assay. The similarly promising
+`bacteriome.virome.matching.fvt.stress.051022.csv` is used on script p. 23 to
+select taxa by `Location` and recode host phyla; its filename does not verify
+an animal crosswalk.
 
 ## Which questions are currently estimable?
 
@@ -64,16 +124,16 @@ or resolve recalibrated and excluded samples.
 |---|---|---|
 | Treatment differences in selected immune endpoints | Individual immune values and treatment labels | Available for separate exploratory contrasts |
 | Stress-associated viral composition | Processed recipient or pool abundance profiles with appropriate biological units and annotations | Matrix unavailable |
-| Within-mouse viral change | Repeated individual recipient viral profiles and verified pairing across time | Published measurement route identified; processed values and pairing unavailable |
-| Viral change or reference-state deviation versus an immune endpoint | Individual viral features and an explicit map to the measured immune animals | Not estimable from the retrieved inputs |
+| Within-mouse viral change | Repeated individual recipient viral profiles and verified pairing across time | Seventeen literal raw-specimen pairs identified; processed values and final analytic mapping missing |
+| Viral change or reference-state deviation versus an immune endpoint | Individual viral features and an explicit map to the measured immune animals | Twenty candidate Stress/FVT keys identified, 17 paired; no processed viral profiles or validated cross-assay matches |
 | Within-mouse immune change or chronic-stress immune stability | Repeated immune measurements spanning the relevant stress interval | Not supplied by the selected endpoint assays |
 | Bacterial-adjusted viral-immune association | Matched viral, bacterial and immune measurements, with adequate complete-case replication | Processed community tables and crosswalk unavailable |
 
 A prestress immune baseline is not required to relate viral change to an endpoint
 immune phenotype. It is required, together with a later immune measurement, to
 define within-animal immune change. The current viral-immune endpoint question
-is blocked by the missing viral matrix and crosswalk, independently of the
-absence of an immune baseline. No measured viral composition, stability,
+is blocked by the missing viral matrix and validated analytic crosswalk,
+independently of the absence of an immune baseline. No measured viral composition, stability,
 reference deviation, bacterial-adjusted association or phage-host relationship
 is reported here. This is an availability conclusion, not a biological null.
 
@@ -104,7 +164,10 @@ records exclusions, calibration and pool membership; and contig quality and
 viral-classification annotations. Bacterial adjustment additionally requires
 matched bacterial abundances. The inoculum-derived catalog's detectable viral
 fraction, predicted hosts and normalization choices would then need assessment.
-Any release must first pass a new sample-linkage and completeness review.
+The [data requirements](data_requirements.md) give a reusable checklist,
+including hkFVT provenance, calibration and exclusion decisions. Any release
+or reconstructed matrix must first pass a new sample-linkage and completeness
+review.
 
 The supported analysis retains the selected immune contrasts, original-method
 reconstruction and descriptive sensitivity checks described in

@@ -9,6 +9,14 @@ from pisa.reporting import figure_qa_status, invocation_text, resource_report, s
 
 
 class ReportingContracts(unittest.TestCase):
+    def test_failed_invocation_text_redacts_local_profile_prefixes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            text=invocation_text(Path(directory),{'status':'failed','stages':[],
+                'error_type':'OSError','error':r'cannot read C:\Users\Researcher\study\file.json'})
+            self.assertNotIn(r'C:\Users\Researcher',text)
+            self.assertIn('<USER_PROFILE>',text)
+            self.assertIn('did not complete',text)
+
     def test_pilot_and_validation_do_not_claim_full_analysis(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)

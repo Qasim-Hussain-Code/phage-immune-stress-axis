@@ -8,6 +8,11 @@ byte sizes, SHA-256 checksums, download limits and transformations. Executed
 size and checksum comparisons are in
 [input integrity](../results/tables/input_integrity.csv).
 
+The specimen-design and literal-label reassessment dated 23 October 2026 uses
+these same frozen ENA records, workbook and scripts. It adds no sequencing
+downloads or biological measurements and does not replace their retrieval
+dates with the reassessment date.
+
 ## Sources
 
 | Material | Source and retained form | Role |
@@ -39,6 +44,37 @@ Animal keys combine experiment, treatment and literal source identifier;
 punctuation is preserved. BioSample attributes are derived from frozen XML
 without changing source labels. Extracted PDF text is an audit aid derived
 from the archived PDF, not another data file supplied by the original deposit.
+
+### Specimen design and candidate recipient pairs
+
+[source_design.py](../src/pisa/source_design.py) joins the run inventory to
+derived BioSample attributes using both the exact sample accession and alias.
+Duplicate run identities, duplicate sample identities, alias disagreements
+and ambiguous condition/replicate/time assignments fail validation. It sums
+the semicolon-delimited compressed FASTQ sizes and retains separate counts
+of runs, specimens and files. Pool and inoculum labels define separate roles;
+multiple technical runs do not become multiple animals.
+
+The resulting
+[sequencing design inventory](../results/tables/sequencing_design_inventory.csv)
+groups the unchanged condition, specimen role and Before/After/Gavage labels.
+It includes the 32 hkFVT-labelled specimens: 20 recipient bulk specimens,
+ten inocula and two pools. Their relationship to the published three-arm
+workbook remains unresolved. The
+[candidate recipient table](../results/tables/candidate_recipient_pairs.csv)
+contains only the 20 literal, condition-qualified Stress/FVT workbook keys.
+Seventeen have both Before and After metadata; the other three have Before
+only. Control aliases with unresolved decimal translations are excluded.
+
+Candidate rows retain their source worksheet and row, accession lists, run
+lists and exact bytes. They explicitly state that literal-label concordance
+is not a validated analytic crosswalk. Neither table assigns processed viral
+profiles, transfers identifiers between assays or increases the count of
+verified viral-immune matches. Recalibration metadata, processed column names
+and exclusion decisions still require validation. The
+[feasibility assessment](data_feasibility.md) distinguishes the 189.984 GB
+all-recipient inventory from the 92.535 GB subset covering those 20 candidate
+keys; these are raw-read sizes, not new abundance measurements.
 
 The historical
 [source-download ledger](../data/raw/ritz2024_archive/raw_sources.csv) records

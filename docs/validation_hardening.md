@@ -16,7 +16,7 @@ platform-specific skips. Executed counts include failures and errors; a skipped
 or failed suite is not presented as a successful execution. The historical
 unittest `tests_run` field remains unchanged in machine-readable records.
 
-The maintained [private-push tool](private_push.md) checks the actual push URL,
+The maintained [private-push tool](maintenance/private_push.md) checks the actual push URL,
 URL rewrites, private visibility, the account and sole-contributor requirements,
 commit subjects and coauthor trailers. It pins the source commit and destination,
 checks new history and commit messages for common credential patterns, and
@@ -82,3 +82,22 @@ the pre-change snapshot at `e0cd5a5`. The
 identifies the run and hashes. This is a working-source check in the existing
 Windows environment; it does not replace the earlier committed-source replays
 or establish a new Linux execution. No estimator, observation or figure changed.
+
+## Design and scale sensitivity revision: 23 October 2026
+
+The later full Windows run adds conditional ID-stratum, control-cage and log-TNF
+analyses, source-design inventories and a controls-only synthetic scenario.
+It collected 219 tests, executed 213 and skipped six platform-specific cases,
+with no failures or errors. The original raw-scale statistical values and ten
+frozen inputs remain unchanged; the
+[comparison record](../results/reports/design_sensitivity_validation.json)
+documents the 39 current scientific outputs and distinguishes byte equality
+from CSV-record equality. [Figure review](pdf_qa.md) covers the revised PDFs.
+
+CSV and JSON writers now explicitly emit LF, and the atomic-write regression
+checks that contract on Windows as well as other platforms. Generated JSON and
+invocation text redact local profile prefixes. Six historical derived records
+have the same narrow redaction, identified by notes without changing scientific
+values. The exact approved author email is local policy rather than a tracked
+source constant; release still enforces sole authorship and private visibility.
+README sample counts and rounded primary estimates are checked against results.

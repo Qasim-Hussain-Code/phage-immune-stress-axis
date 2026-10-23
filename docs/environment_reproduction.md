@@ -10,7 +10,8 @@ separate source identities and results.
 
 | Execution | Source | Environment | Result |
 |---|---|---|---|
-| Full Windows workflow, 23 October 2026 | Release source-to-invocation checks; [source identity](../results/reports/run_status.json) | CPython 3.14.0; existing packages | Ten stages executed; 180 tests collected, 174 executed, six Linux-only skips; no failures or errors |
+| Full Windows workflow, 23 October 2026 | Conditional design/scale sensitivities, source inventory and figure updates; [source identity](../results/reports/run_status.json) | CPython 3.14.0; existing packages | Ten stages executed; 219 tests collected, 213 executed, six Linux-only skips; no failures or errors |
+| Earlier Windows workflow, 23 October 2026 | Release source-to-invocation checks; [dated invocation](../results/reports/invocations/20261023T000334060517Z_5240.json) | CPython 3.14.0; existing packages | Ten stages executed; 180 tests collected, 174 executed, six Linux-only skips; no failures or errors |
 | Full Windows workflow, 22 October 2026 | Reporting and timing terminology revision; [dated invocation](../results/reports/invocations/20261022T065653884702Z_26348.json) | CPython 3.14.0; existing packages | Ten stages executed; 174 tests collected, 168 executed, six Linux-only skips; no failures or errors |
 | Fresh Windows checkout, 21 October 2026 | `eb7ba6c` | Same CPython 3.14.0 environment | Ten stages executed without resume; all 30 scientific files reproduced exactly |
 | Fresh Ubuntu WSL2 environment, 21 October 2026 | `eb7ba6c` | CPython 3.14.4; 21 pinned distributions newly installed | Ten stages executed; 174 tests collected, 165 executed, nine Windows-only skips; all 20 CSV comparisons passed |
@@ -23,8 +24,14 @@ reproduced all 30 scientific files exactly. On 23 October, the release checker
 was updated to bind the latest full-run journal to the current source and
 verified stage results. Its full Windows rerun again reproduced all 30 files
 exactly; [comparison evidence](../results/reports/invocation_binding_validation.json)
-records the unchanged inputs and outputs. The older Linux replay does not
-establish execution of the revised report generator or release checks. The
+records the unchanged inputs and outputs. The later design-sensitivity run
+adds nine CSVs and a fifth calibration scenario, clarifies primary-result
+annotations, and revises three figures. All primary statistical values and
+the ten frozen inputs are unchanged; the
+[comparison record](../results/reports/design_sensitivity_validation.json)
+distinguishes CSV-record equality from byte equality. Derived CSV/JSON writers
+now explicitly emit LF. The older Linux replay does not establish execution
+of these later revisions. The
 [current invocation](../results/reports/run_status.json),
 [Windows replay](../results/reports/reproduction_check.json) and
 [Linux replay](../results/reports/linux_reproduction_check.json) retain their

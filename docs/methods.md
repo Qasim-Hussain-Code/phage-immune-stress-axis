@@ -61,8 +61,9 @@ test, after chronic stress exposure had already begun. Flow differences are
 expressed in percentage points; culture TNF-alpha is distinct from circulating
 plasma TNF-alpha.
 
-Each endpoint uses its available observations. All supplied values are retained
-without transformation, added outlier removal, zero substitution or imputation.
+Each primary endpoint comparison uses its available observations on the raw
+scale. All supplied values are retained without added outlier removal, zero
+substitution or imputation. The later log-TNF sensitivity is described below.
 The original study reports detection-limit, technical and statistical
 exclusions, but the workbook does not identify all omitted observations or
 thresholds. No additional detection rule is inferred.
@@ -82,8 +83,9 @@ group variances and assumes independent animal observations. Unstressed
 controls were group housed; both stressed groups were singly housed. The
 stress-control contrast therefore includes a housing difference, whereas the
 FVT-versus-stressed contrast compares groups with the same stated housing
-regime. Cage and allocation details are unavailable for adjustment. No adjusted
-or high-dimensional model is fitted.
+regime. Verified cage and allocation details are unavailable. The later
+conditional ID-stratum and putative-cage sensitivities described below do not
+establish that missing design information. No high-dimensional model is fitted.
 
 ## Sensitivity and descriptive diagnostics
 
@@ -104,6 +106,33 @@ ordering, counting ties as half a comparison. Cross-group pairs share animals
 and do not increase the number of independent observations. The formulas,
 denominators and assumptions appear in
 [phenotype robustness](phenotype_robustness.md).
+
+## Post hoc design and scale sensitivities
+
+The literal study-II IDs divide each treatment into two strata of five source
+animals: Control `1`–`3`/`19`–`21` with decimal suffixes retained, Control Stress
+`4`–`8`/`22`–`26`, and FVT Stress `9`–`13`/`27`–`31`. This partition is observed;
+its meaning as batch or allocation block is unverified. Integer prefixes also
+suggest six possible control cages with sizes `2,2,1,2,2,1`, conditional on an
+unverified ID interpretation. No cage or batch key is reconstructed as fact.
+
+Added after the initial reanalysis, the sensitivity fits an additive
+treatment-plus-ID-stratum model with HC3 covariance and residual-df t intervals.
+A treatment-only HC3/t model provides a same-method comparator. Separate BH
+families cover six adjusted treatment contrasts, 12 within-stratum raw Welch
+contrasts and six conditional cage-unit contrasts. In the latter, control cage
+means receive equal weight while singly housed stress animals remain individual
+units, changing the weighting target and control-unit count. All six putative
+control cages are omitted in turn as influence diagnostics; each omission
+refits the original six animal-weighted tests and recomputes its six-test BH
+adjustment. These are conditional refits, not source exclusions.
+
+A separate natural-log TNF-alpha sensitivity verifies that every observed value
+is positive, retains all observed assays, and reports geometric-mean ratios
+with pointwise Welch intervals and its own two-test BH family. No pseudocount,
+imputation or normality-test selection is used. The primary raw-scale contrasts
+remain unchanged. The [design-sensitivity appendix](design_sensitivity.md)
+defines the estimands, assumptions, findings and seven output tables.
 
 ## Reconstruction of the original selected analyses
 
@@ -128,17 +157,20 @@ printed-statistic checks and unresolved group-mean discrepancy.
 ## Synthetic calibration
 
 A separate software benchmark generates 20,000 all-null replicates in each of
-four fixed scenarios: independent equal-variance Gaussian outcomes, Gaussian
-variances 4/1/1, centered lognormal outcomes, and artificial Gaussian clusters
-with intraclass correlation 0.5. Three independently generated endpoints use
+five scenarios: independent equal-variance Gaussian outcomes, Gaussian
+variances 4/1/1, centered lognormal outcomes, artificial all-group Gaussian
+clusters, and hypothetical controls-only clusters. Both cluster scenarios use
+intraclass correlation 0.5. Three independently generated endpoints use
 group sizes 10/10/9. Each retains the same two overlapping contrasts, giving six
 P values in one BH family. Recorded events include per-test false positives,
 pointwise Welch coverage, all-null family rejection and three-pair Tukey
 interval coverage. Wilson intervals describe Monte Carlo uncertainty.
 
-The benchmark reads no biological outcomes or cage labels. Its clustered
-scenario is a sensitivity to an assumed dependence model, rather than an
-estimate of the original experiment's dependence. The full benchmark used seed
+The benchmark reads no biological outcomes or cage labels. The first four
+models precede the added controls-only scenario, whose six control-cluster
+sizes `2,2,1,2,2,1` follow the proposed ID interpretation while leaving both
+stressed groups independent. The scenarios examine assumed dependence rather
+than estimate the experiment's actual cage allocation or ICC. They use seed
 20261020 and batches of 500; scenario streams are batch-invariant under the
 recorded NumPy version. Raw simulated observations are not saved. Scenario
 definitions and interpretation are in
@@ -154,9 +186,9 @@ as detailed in [data feasibility](data_feasibility.md). The stage named
 `07_immune_associations` exports the separate immune contrasts and an explicit
 phage-immune eligibility report; it fits no viral association.
 
-Measured treatment groups provide the biological comparisons. The available
-records do not identify an independent phage-specific positive control or a
-defensible cage-restricted permutation. CLR/Aitchison and Bray-Curtis
+Measured treatment groups provide the biological comparisons. The workbook
+supplies no inactivated-FVT immune comparison, and available allocation records
+do not support a verified cage-restricted permutation. CLR/Aitchison and Bray-Curtis
 calculations, including ratio-preserving zero replacement, are checked on
 synthetic fixtures only. Computational checks, acquisition safeguards, output verification and
 reproduction evidence are documented separately in

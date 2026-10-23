@@ -17,7 +17,7 @@ immune:
     - ly6chi_monocytes_cd62
     - tnfa_splenocyte_unstimulated
   confidence_level: 0.95
-  interpretation: exploratory_unadjusted
+  interpretation: exploratory_without_covariate_adjustment
   multiple_testing: six_contrasts_benjamini_hochberg
 virome:
   enable_biological_analysis: false

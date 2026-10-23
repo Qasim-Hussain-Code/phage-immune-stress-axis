@@ -211,3 +211,44 @@ refused execution before extraction or installation. The actual disk-backed
 that location. A concurrent Windows replay also stopped at its available-memory
 floor. Subsequent replays run serially. Neither refused attempt is a successful
 scientific execution, and neither changes the comparison rules.
+
+## Current protocol extension: 23 October 2026
+
+The current code adds nine scientific CSVs for post hoc design sensitivities
+and source-metadata inventories. Its prospective inventory is **29 CSVs and
+ten figure files**, or 39 scientific outputs. The earlier thirty-output
+protocol, recorded source identities and Linux execution evidence retain their
+original scope. This extension does not establish a new Linux execution or
+extend a previous replay to the added analyses. A new comparison must record
+the current committed source, complete inventory and comparison-plan hash.
+
+Headers and row order are explicit in [portability.py](../src/pisa/portability.py).
+The old twenty CSV schemas and their implemented tolerances are unchanged.
+The following additions use the same absolute `1e-10` or relative `1e-12` rule
+for only the listed derived statistics:
+
+| Added CSV | Tolerant derived fields |
+|---|---|
+| `immune_design_membership.csv` | None |
+| `immune_block_adjusted.csv` | `mean_difference`, `standard_error`, `t_statistic`, `p_value`, `ci_low`, `ci_high`, their six `unadjusted_hc3_` counterparts, `id_block_B_minus_A_estimate`, `q_value` |
+| `immune_within_block.csv` | The Welch fields listed below, `overall_raw_mean_difference`, `q_value` |
+| `immune_putative_cage_units.csv` | `unit_mean` |
+| `immune_putative_cage_means.csv` | The Welch fields listed below and `q_value` |
+| `immune_control_cage_omission.csv` | The Welch fields listed below and `q_value` |
+| `immune_tnfa_log_sensitivity.csv` | `geometric_mean_first`, `geometric_mean_second`, `geometric_mean_ratio`, `ratio_ci_low`, `ratio_ci_high`, `log_mean_difference`, `log_standard_error`, `log_ci_low`, `log_ci_high`, `t_statistic`, `degrees_freedom`, `p_value`, `raw_mean_difference`, `raw_ci_low`, `raw_ci_high`, `raw_p_value`, `q_value` |
+| `sequencing_design_inventory.csv` | None |
+| `candidate_recipient_pairs.csv` | None |
+
+The Welch fields are `mean_first`, `mean_second`, `mean_difference`,
+`standard_error`, `ci_low`, `ci_high`, `t_statistic`, `degrees_freedom` and
+`p_value`. Welch degrees of freedom are continuous; HC3 residual degrees of
+freedom are integer counts and remain exact, including the treatment-only
+comparator. All source and specimen identifiers, workbook rows, counts, byte
+sums, categories, booleans, membership JSON, confidence levels, family sizes
+and assumptions remain exact. Literal label candidates do not become verified
+crosswalks through numerical comparison.
+
+The shared CSV writer now writes LF directly. Native-byte comparisons still
+report actual hashes; decoded agreement never implies byte identity. Figure
+differences still require separate visual review, and this extension changes
+no scientific or causal interpretation of the underlying studies.

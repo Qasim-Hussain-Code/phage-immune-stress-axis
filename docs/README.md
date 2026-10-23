@@ -21,6 +21,7 @@ needed to reproduce the analysis.
 |---|---|
 | [Original-analysis reconstruction](original_analysis_review.md) | Pooled variance, planned contrasts, Tukey–Kramer comparisons and printed-statistic checks |
 | [Phenotype robustness](phenotype_robustness.md) | Conditional percentage bounds and empirical rank effects |
+| [Design and scale sensitivity](design_sensitivity.md) | Inferred ID strata, conditional control-cage weighting and log TNF ratios |
 | [Statistical validation](statistical_validation.md) | Independent numerical checks and their assumptions |
 | [Calibration design](calibration_design.md) | Four synthetic null scenarios, separate from biological observations |
 | [Article design audit](paper_audit_notes.md) | Source passages supporting sample roles, timing and assay interpretation |
@@ -42,6 +43,9 @@ records retain their source revisions and measured environments:
 
 ## Data search and reuse
 
+The [data requirements](data_requirements.md) specify the unresolved allocation,
+heat-inactivated-arm phenotypes and processed-profile linkage needed for further work.
+
 The [data-search overview](data_search.md) brings together the October 20
 checks, study comparisons and unresolved inputs. Detailed evidence remains in
 the [primary-data search](processed_data_search.md),
@@ -54,4 +58,5 @@ archive and Chen checks, separately from those historical searches.
 
 [Third-party notices](third_party_notices.md) record upstream licenses and
 attribution. Repository maintenance instructions are separate:
-[private-push checks](private_push.md) and [access status](publication_status.md).
+[private-push checks](maintenance/private_push.md) and
+[access status](maintenance/publication_status.md).

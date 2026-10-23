@@ -31,7 +31,7 @@ def generate(root,config):
     write_csv(root/'results/tables/figure1_data.csv',data)
     fig,ax=plt.subplots(figsize=(10,5.2));ax.axis('off')
     boxes=[(.02,.55,.43,.36,f'Initial stress experiment\nControl {group_counts["study_i"]["ctr"]}; Stress {group_counts["study_i"]["ctr_stress"]} phenotype rows\n3 pools/group before and after stress\nPool membership across time unresolved'),
-           (.54,.55,.43,.36,f'FVT experiment\nControl {group_counts["study_ii"]["ctr"]}; Stress {group_counts["study_ii"]["ctr_stress"]}; FVT Stress {group_counts["study_ii"]["fvt_stress"]}\nRecipient bulk profiles before/after\n{availability["principal_specimen_count"]} specimens: {categories["individual_recipient_bulk_metagenome"]} bulk; {categories["pooled_fecal_virome"]} pools; {categories["transplant_inoculum"]} inocula'),
+           (.54,.55,.43,.36,f'FVT experiment\nControl {group_counts["study_ii"]["ctr"]}; Stress {group_counts["study_ii"]["ctr_stress"]}; FVT Stress {group_counts["study_ii"]["fvt_stress"]}\nAlso archived: heat-inactivated FVT\nIts cohort relationship is unresolved\nRecipient bulk profiles before/after\n{availability["principal_specimen_count"]} specimens: {categories["individual_recipient_bulk_metagenome"]} bulk; {categories["pooled_fecal_virome"]} pools; {categories["transplant_inoculum"]} inocula'),
            (.02,.09,.43,.31,'Individual immune measurements\nLinked to behavior within source rows\nAssay-specific missingness retained\nNo baseline of chronic immune change'),
            (.54,.09,.43,.31,f'Community analysis gate\nIndividual bulk viral profiles published\nMatrices and mouse crosswalk unavailable\n{availability["verified_virome_immune_matches"]} usable virome-immune matches')]
     for x,y,w,h,label in boxes:
@@ -49,7 +49,7 @@ def generate(root,config):
     contrasts=read_csv(root/'results/tables/immune_contrasts.csv')
     groups=['ctr','ctr_stress','fvt_stress'];labels=['Control','Control\nStress','FVT\nStress']
     colors=['#46799b','#bb6246','#55856b']
-    fig,axes=plt.subplots(2,3,figsize=(12,7),gridspec_kw={'height_ratios':[1.4,1]})
+    fig,axes=plt.subplots(2,3,figsize=(12,7.4),gridspec_kw={'height_ratios':[1.4,1]})
     for column,endpoint in enumerate(endpoints):
         ax=axes[0,column]
         for i,group in enumerate(groups):
@@ -61,6 +61,11 @@ def generate(root,config):
         ns=[sum(r['endpoint']==endpoint and r['group']==g and r['observation_status']=='observed' for r in selected) for g in groups]
         ax.set_xticks(range(3),[f'{label}\n(n={n})' for label,n in zip(['Control','Stress','FVT Stress'],ns)])
         ax.set_ylabel('Percent of parent population' if column<2 else 'TNF-alpha (pg/mL)')
+        if column==2:
+            from matplotlib.ticker import LogLocator,FuncFormatter
+            ax.set_yscale('log')
+            ax.yaxis.set_major_locator(LogLocator(base=10,subs=(1,3)))
+            ax.yaxis.set_major_formatter(FuncFormatter(lambda value,position:f'{value:g}'))
         title={'ly6chi_monocytes':'Basal LY6Chi monocytes','ly6chi_monocytes_cd62':'Basal CD62L-positive monocytes','tnfa_splenocyte_unstimulated':'Unstimulated splenocyte TNF-alpha'}[endpoint]
         ax.set_title(title,fontsize=10,fontweight='bold')
         ax=axes[1,column]
@@ -73,8 +78,9 @@ def generate(root,config):
         ax.set_yticks([0,1],['Stress - Control','FVT Stress - Stress'] if column==0 else ['',''])
         ax.set_xlabel('Difference (percentage points)' if column<2 else 'Difference (pg/mL)')
     fig.suptitle('Separate exploratory immune outcomes',x=.03,ha='left',fontweight='bold',fontsize=14)
-    fig.text(.03,.01,'Dots: observed animals; bars: means. Stress: control treatment with stress. Welch intervals: pointwise 95%; BH family: six tests.',fontsize=9)
-    fig.tight_layout(rect=[0,.045,1,.95],h_pad=3)
+    fig.text(.03,.035,'Dots: observed animals; bars: arithmetic means. TNF concentrations use a log y-axis; mean-difference panels remain linear.',fontsize=8)
+    fig.text(.03,.012,'Stress: SM-buffer vehicle with chronic stress. Welch intervals: pointwise 95%; BH family: six animal-level mean comparisons.',fontsize=8)
+    fig.tight_layout(rect=[0,.085,1,.95],h_pad=3)
     save(fig,'figure4_immune')
 
     eligibility=read_csv(root/'results/tables/hypothesis_eligibility.csv')
@@ -86,8 +92,8 @@ def generate(root,config):
                 {'measurement':'selected_endpoint_max_n_per_group','count':max_n,'status':'observed'}]
     write_csv(root/'results/tables/figure5_data.csv',limitation)
     fig,ax=plt.subplots(figsize=(12,4.5));ax.axis('off')
-    rows=[('Viral community matrix','Unavailable in inspected processed release'),
-          ('Verified mouse crosswalk','Unavailable; literal IDs cannot be repaired by guessing'),
+    rows=[('Viral community matrix','Processed table not retrieved; raw paired subset exceeds local budget'),
+          ('Verified mouse crosswalk','Stress/FVT labels agree; processing and exclusion map still needed'),
           ('Individual immune outcomes',f'Available; endpoints have {min_n}-{max_n} observations/group'),
           ('Matched viral and immune profiles',f'{availability["verified_virome_immune_matches"]} processed profiles matched to immune outcomes'),
           ('Scientific consequence','Phageome stability versus immune response remains unanswered')]

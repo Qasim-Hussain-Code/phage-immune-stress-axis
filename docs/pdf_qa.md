@@ -13,6 +13,8 @@ rows, pooled enriched viromes and individual bulk-metagenomic route. The
 104 deposited specimens include recipient samples, pools and inocula; they are
 not 104 immune-matched mice. Published pool-by-time profiles also remain
 distinct from verified individual trajectories.
+The archive's heat-inactivated-FVT labels are shown separately from the
+published three-group phenotype design; their cohort relationship is unresolved.
 
 [PNG](../figures/figure1_design.png) · [PDF](../figures/figure1_design.pdf) ·
 [Source counts](../results/tables/figure1_data.csv).
@@ -21,7 +23,9 @@ distinct from verified individual trajectories.
 
 The upper panels show individual observed values and group means for basal
 LY6Chi monocytes, their CD62L-positive fraction and unstimulated splenocyte
-TNF-alpha. Sample counts differ by endpoint. The lower panels show Control
+TNF-alpha. The concentration panel uses a log y-axis, with arithmetic mean
+bars retained; the lower raw-mean contrasts remain on linear axes. Sample
+counts differ by endpoint. The lower panels show Control
 Stress minus Control and FVT Stress minus Control Stress mean differences.
 Blood outcomes are percentages of parent populations, with contrasts in
 percentage points; culture TNF-alpha uses pg/mL. Blood was collected on day 19
@@ -37,7 +41,10 @@ the six-test BH family; they do not make the intervals simultaneous.
 ## Figure 5: the missing viral–immune linkage
 
 This summary sets the available individual immune observations beside the
-unavailable processed viral profiles and animal crosswalk. It explains why
+unavailable processed viral profiles and validated animal crosswalk. Literal
+Stress/FVT labels provide candidate pairing, while processing/exclusion
+records remain unresolved and the raw paired subset exceeds the local budget.
+It explains why
 separate immune contrasts could be calculated but no viral–immune association
 was fitted. Zero retrieved matches is an availability result, rather than a
 zero biological association.
@@ -81,11 +88,13 @@ overlap or broken glyphs.
 
 | Date and scope | Evidence |
 |---|---|
-| 20 October 2026, 06:23:59 UTC: all five Windows-reference PDFs were rendered from their actual pages and inspected through the image viewer | [Windows review record](../data/manifests/figure_qa.json) |
+| 23 October 2026, 05:32:33 UTC: all five current Windows PDFs were rendered from their actual pages and inspected through the image viewer after the sensitivity/figure revision | [Current Windows review](../data/manifests/figure_qa.json) |
+| 20 October 2026, 06:23:59 UTC: all five earlier Windows-reference PDFs were rendered and inspected | [Historical Windows review](../data/manifests/windows_figure_qa_20261020.json) |
 | 20 October 2026, 12:51:09 UTC: all five independently generated Linux PDFs were rendered and viewed; their five original PNG companions were also viewed | [Linux review record](../data/manifests/linux_figure_qa.json) |
 | 21 October 2026, 13:34:36 UTC: all ten files from the version 0.2.2 Linux replay matched the previously reviewed Linux hashes exactly | [Exact-byte reuse record](../data/manifests/linux_figure_reuse_0_2_2.json) |
 
-The recorded renderer was pypdfium2 5.14.0 with PDFium 156.0.8076.0.
+The current Windows review used Poppler pdftoppm 26.07.0 at 110 dpi.
+The earlier renderer was pypdfium2 5.14.0 with PDFium 156.0.8076.0.
 The Linux record explicitly identifies AI-assisted visual inspection, not
 independent human peer review. Linux and Windows figure bytes differ and have
 separate records. The October 21 acceptance reused an existing inspection;

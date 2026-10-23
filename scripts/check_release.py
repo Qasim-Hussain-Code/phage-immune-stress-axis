@@ -204,6 +204,8 @@ def check(root,scope='working',require_review=True):
             require(not row['mouse_id'] and not row['metadata_candidate_mouse_id'],'A pool or inoculum was assigned to an individual')
 
     contrasts=read_csv(root/'results/tables/immune_contrasts.csv')
+    from pisa.reporting import verify_readme_primary_table
+    verify_readme_primary_table((root/'README.md').read_text(encoding='utf-8'),contrasts)
     require(len(contrasts)==len(ENDPOINTS)*len(CONTRASTS),'Unexpected inferential family size')
     for row in contrasts:
         a=[float(x['value']) for x in prepared if x['experiment_id']=='study_ii' and x['endpoint']==row['endpoint']

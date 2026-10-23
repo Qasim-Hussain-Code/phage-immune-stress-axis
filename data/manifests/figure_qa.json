@@ -1,43 +1,49 @@
 {
   "schema_version": 1,
-  "review_date_taipei": "2026-10-20",
-  "review_method": "Visual inspection of all five actual PDF page renders through image viewer after full workflow execution",
+  "reviewed_utc": "2026-10-23T05:32:33.305410+00:00",
+  "review_date_taipei": "2026-10-23",
+  "review_method": "Visual inspection of all five actual PDF page renders through image viewer after the full workflow; titles, units, counts, intervals, legends and clipping checked.",
+  "scope": "Figure presentation review, not independent scientific peer review.",
   "renderer": {
-    "package": "pypdfium2",
-    "version": "5.14.0",
-    "pdfium_version": "156.0.8076.0"
+    "package": "Poppler pdftoppm",
+    "version": "26.07.0",
+    "dpi": 110
   },
   "figures": [
     {
       "path": "figures/figure1_design.pdf",
-      "sha256": "967578db43ebacf82d765fcf65ce3df4db81f51ca941fe00b9ce4cd88671548a",
+      "sha256": "6673b649315ae3842f022be544336322ad1e22d727a8d438c9efca5889b0cb6a",
       "page_count": 1,
-      "visual_status": "passed"
+      "visual_status": "passed",
+      "rendered_page_sha256": "73e9ea88d902e4e75afb75ae42bc26464fe01adcb934127d01b31e312e6018dc"
     },
     {
       "path": "figures/figure4_immune.pdf",
-      "sha256": "35917ac4a8a0345a7dfca5102b3ce47a0ae01375f4151c8950cfba57e93cd888",
+      "sha256": "962beaa0c373e0888a7e11c8fa2dc2024df4e68540d9400b07fdf3b84589ccab",
       "page_count": 1,
-      "visual_status": "passed"
+      "visual_status": "passed",
+      "rendered_page_sha256": "cbfa363bab4dd04e7501bac82fd3851fcf6edfbfcc08c402c69f2dee401bbd85"
     },
     {
       "path": "figures/figure5_linkage_limit.pdf",
-      "sha256": "8af3b8017388ae8bbf85c5ade6b79bc6463f55bb2a76a0e44ff512425267b0d0",
+      "sha256": "925987c68d18ed2b2166079a2ec0baa46dcb91b0343ab2483e6106a462742026",
       "page_count": 1,
-      "visual_status": "passed"
+      "visual_status": "passed",
+      "rendered_page_sha256": "306d4148e8945abe6bb2753e2dd8ae48dd5109fb38ab14f59a3a4b244561ab08"
     },
     {
       "path": "figures/figure7_robustness.pdf",
       "sha256": "b9fb5f17dfb7e73cd755c7eda547f01e64807ab632cbdd9b4d17b6a35d23d018",
       "page_count": 1,
-      "visual_status": "passed"
+      "visual_status": "passed",
+      "rendered_page_sha256": "f0f82c603e2e4318d3a9bd801db36b1f1ba7eb9583ea1515c502c6163c19fdcd"
     },
     {
       "path": "figures/figure8_method_comparison.pdf",
       "sha256": "f4093eac8338c645c12a6301adf3f86bc559a9f5cd135f9f23dbffc408b7aa29",
       "page_count": 1,
-      "visual_status": "passed"
+      "visual_status": "passed",
+      "rendered_page_sha256": "26c71063ec991f215469383ae5a378f4f5d7f7845f95ec372f7c5c8b04dfe4ed"
     }
-  ],
-  "reviewed_utc": "2026-10-20T06:23:59.007316+00:00"
+  ]
 }

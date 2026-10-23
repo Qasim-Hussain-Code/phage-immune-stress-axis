@@ -10,7 +10,7 @@ import subprocess
 import sys
 import time
 import traceback
-from .io import digest, write_csv, write_json, code_digest
+from .io import digest, write_csv, write_json, code_digest,redact_local_paths
 from .resources import Guard, project_size, peak_rss, monitored_run
 from .environment import runtime_identity
 
@@ -30,6 +30,10 @@ DECLARED = {
  STAGES[7]:['results/reports/bacteriome_integration.md'],
  STAGES[8]:['results/reports/validation.log','results/reports/validation_summary.json','docs/results.md','results/tables/software_calibration.csv','results/reports/software_calibration.md'],
  STAGES[9]:[f'figures/{name}.{ext}' for name in ['figure1_design','figure4_immune','figure5_linkage_limit','figure7_robustness','figure8_method_comparison'] for ext in ['png','pdf']]+[f'results/tables/figure{n}_data.csv' for n in [1,4,5,7,8]]}
+from .design_sensitivity import OUTPUTS as DESIGN_SENSITIVITY_OUTPUTS
+DECLARED[STAGES[2]] += ['results/tables/sequencing_design_inventory.csv',
+                        'results/tables/candidate_recipient_pairs.csv']
+DECLARED[STAGES[6]] += list(DESIGN_SENSITIVITY_OUTPUTS)
 
 
 def configure_environment(root):
@@ -92,6 +96,8 @@ def cache_valid(root, stage, record, key, dependencies):
 def load_config(path):
     import yaml
     config = yaml.safe_load(Path(path).read_text(encoding='utf-8'))
+    from .immune import validate_plan
+    validate_plan(config)
     fixed = ['ly6chi_monocytes', 'ly6chi_monocytes_cd62', 'tnfa_splenocyte_unstimulated']
     if config['immune']['endpoints'] != fixed:
         raise ValueError('Endpoint changes require an updated analysis plan and test family')
@@ -188,7 +194,10 @@ def dispatch(stage, root, config, guard, offline):
         return result
     if stage == STAGES[2]:
         from .samples import audit as sample_audit
-        return sample_audit(root,config)
+        from .source_design import run as source_design
+        result=sample_audit(root,config)
+        result['source_design_evidence']=source_design(root,config)
+        return result
     if stage == STAGES[3]:
         return audit.virome_qc(root,config)
     if stage == STAGES[4]:
@@ -203,6 +212,8 @@ def dispatch(stage, root, config, guard, offline):
         result['original_method_reconstruction']=replicate_original(root,config)
         from .phenotype_robustness import run as phenotype_robustness
         result['descriptive_phenotype_robustness']=phenotype_robustness(root,config)
+        from .design_sensitivity import run as design_sensitivity
+        result['posthoc_design_sensitivity']=design_sensitivity(root,config)
         audit.association_gate(root,config)
         return result
     if stage == STAGES[7]:
@@ -355,28 +366,28 @@ def main():
         primary_exception=exc
         status['status']='interrupted' if isinstance(exc,KeyboardInterrupt) else 'failed'
         status['failed_stage']=active_stage
-        status['error_type']=type(exc).__name__; status['error']=str(exc)
+        status['error_type']=type(exc).__name__; status['error']=redact_local_paths(str(exc))
         raise
     finally:
         final_exception=None
         def finalization_failure(exc,phase):
             nonlocal final_exception
             status.setdefault('finalization_errors',[]).append({
-                'phase':phase,'error_type':type(exc).__name__,'error':str(exc)})
+                'phase':phase,'error_type':type(exc).__name__,'error':redact_local_paths(str(exc))})
             # Retain the first analysis/interruption exception. A new failure
             # discovered only during finalization must still fail this run.
             if primary_exception is None and final_exception is None:
                 final_exception=exc
                 status['status']='interrupted' if isinstance(exc,KeyboardInterrupt) else 'failed'
                 status['failed_stage']='finalization'
-                status['error_type']=type(exc).__name__; status['error']=str(exc)
+                status['error_type']=type(exc).__name__; status['error']=redact_local_paths(str(exc))
         status['elapsed_seconds']=round(time.monotonic()-started,3)
         status['finished_utc']=datetime.now(timezone.utc).isoformat()
         if guard is not None:
             try:
                 usage=guard.check()
             except BaseException as exc:
-                usage['snapshot_error']=str(exc)
+                usage['snapshot_error']=redact_local_paths(str(exc))
                 finalization_failure(exc,'final_resource_snapshot')
             try:
                 peak=max(peak,guard.max_observed_native_process_peak_rss_bytes,peak_rss())

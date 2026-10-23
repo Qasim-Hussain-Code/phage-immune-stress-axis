@@ -353,8 +353,8 @@
     "scientific_files_written": 0
   },
   "command": [
-    "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
-    "C:\\Users\\User\\Documents\\phage-immune-stress-axis\\.cache\\reproduction\\run_20261021T132322145566Z\\checkout\\scripts\\run_all.py",
+    "<USER_PROFILE>\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+    "<USER_PROFILE>\\Documents\\phage-immune-stress-axis\\.cache\\reproduction\\run_20261021T132322145566Z\\checkout\\scripts\\run_all.py",
     "--config",
     "config/analysis.yaml",
     "--threads",
@@ -1261,5 +1261,6 @@
     "max_sampled_project_bytes_including_disposable_checkout": 201158926
   },
   "elapsed_seconds": 200.911,
-  "finished_utc": "2026-10-21T13:26:43.056490+00:00"
+  "finished_utc": "2026-10-21T13:26:43.056490+00:00",
+  "path_redaction_note": "Local profile prefixes replaced with <USER_PROFILE>; execution results and scientific values retained."
 }

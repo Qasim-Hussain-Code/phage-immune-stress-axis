@@ -63,15 +63,24 @@ not a fresh replay.
 
 ## Reproduction evidence
 
-The latest full Windows workflow completed on 23 October 2026 after strengthening
-the release check's link between the current source, full-run journal and
-verified stage results. All ten stages executed without resume; 180 tests were
-collected, 174 executed and six Linux-only cases skipped, with zero failures or
-errors. All 30 scientific files and all ten frozen inputs exactly matched the
-pre-change snapshot at `e0cd5a5`. The
+The latest full Windows workflow completed on 23 October 2026 with the conditional
+design/scale sensitivities and revised figures. All ten stages executed without
+resume; 219 tests were collected, 213 executed and six Linux-only cases skipped,
+with zero failures or errors. There are now 29 scientific CSVs and ten figure
+files. The six original raw-scale contrasts, their intervals, P and q values
+and the source observations are unchanged from `f20cbdb`. The original four
+calibration scenarios are preserved; the controls-only scenario is appended.
+The ten frozen inputs still match their byte hashes. The
 [latest invocation](../results/reports/run_status.json) identifies the source,
-and the [comparison record](../results/reports/invocation_binding_validation.json)
-retains the hashes and scope.
+and the [comparison record](../results/reports/design_sensitivity_validation.json)
+retains the hashes, CSV-record comparisons and scope. Explicit LF serialization
+avoids native Windows CSV/JSON newline translation. Historical byte-equality
+claims remain specific to their recorded working/reference files and source
+normalization rules; CSV-record equality is reported separately.
+
+The earlier 23 October release-check run collected 180 tests, executed 174 and
+skipped six. Its [comparison record](../results/reports/invocation_binding_validation.json)
+retains the earlier 30-file exact comparison and is not the current sensitivity run.
 
 The 22 October runs revised the research narrative and eligibility explanation,
 then clarified defeat-day terminology. The earlier eligibility edit changed
@@ -82,7 +91,8 @@ executed 168 and skipped six. Their dated journal records are retained.
 The separate fresh-checkout Windows and Linux replays below were completed on
 21 October 2026 at commit `eb7ba6c8b945670a1f55c493d89435f36750900c`.
 They precede the revised report text, eligibility wording and source-to-invocation
-release check. Those later revisions have not been rerun on Linux.
+release check, new sensitivities and revised figures. Those later revisions
+have not been rerun on Linux.
 
 The [Windows replay report](../results/reports/reproduction_check.json) identifies
 the Git revision exported to a disposable checkout. It removes generated

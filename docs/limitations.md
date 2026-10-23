@@ -2,9 +2,13 @@
 
 ## What the available data can answer
 
-The retrieved phenotype workbook supports exploratory treatment comparisons,
-but the processed viral abundance matrices and verified animal map needed for
-an individual viral-immune analysis were not recovered. The original paper
+The retrieved phenotype workbook supports exploratory treatment comparisons.
+Public raw reads and literal condition-qualified labels identify 20 candidate
+Stress/FVT source keys, including 17 before/after specimen pairs. Processed
+viral abundance matrices and a validated analytic animal map were not recovered.
+An individual viral-immune analysis therefore needs both a reconstruction or
+release of the measurements and resolution of their linkage, calibration and
+exclusions. The original paper
 describes paired individual bulk-metagenome-derived viral profiles alongside
 pooled enriched viromes. Their absence from the inspected releases is a data
 availability finding, not evidence that the measurements never existed or that
@@ -58,7 +62,10 @@ controls were group housed, while both stressed groups were singly housed.
 The stress-control comparison includes that housing difference. FVT Stress
 versus Control Stress shares the stated housing regime, but missing cage,
 allocation and shared-exposure information still prevents an assessment or
-adjustment of all dependence.
+adjustment of all dependence. Numeric ID blocks and decimal identifiers can
+motivate requests for allocation records; they are not verified batch or cage
+definitions. Calibration plates in the archived community-processing scripts
+are also not evidence of shared housing or independent biological cohorts.
 
 The three endpoints were chosen with knowledge of the published findings.
 This is an exploratory reanalysis. BH adjustment is confined to the six
@@ -85,12 +92,24 @@ they do not establish stable significance or resolve confounding.
 ## Biological interpretation and transfer
 
 Treatment-associated immune differences do not isolate a virome-specific
-mechanism. The FVT experiment has no unstressed FVT arm, and the available
-measurements do not separate every treatment-associated constituent or provide
-a fully factorial intervention analysis. They cannot establish direct phage
+mechanism. The published three-arm FVT experiment has no unstressed FVT arm,
+and the available measurements do not separate every treatment-associated
+constituent or provide a fully factorial intervention analysis. They cannot establish direct phage
 immune regulation or a gut-brain mechanism. Any future computational viral
 classification or bacterial-host assignment would also require its uncertainty
 to be retained.
+
+The metagenomic deposit additionally includes 20 hkFVT-labelled recipient bulk
+specimens (ten Before and ten After), ten hkFVT inocula and two pools. Their
+cohort, treatment protocol and immune outcomes are unresolved; there are no
+hkFVT phenotype rows in the source workbook. The article describes three FVT
+groups and discusses fully inactivated FVT as future work. These records
+require clarification before defining an additional comparison. Even a verified
+active-versus-heat-inactivated comparison would test a preparation difference:
+heat can alter multiple constituents. Phage-specific interpretation would
+require matched dose and composition, validated loss of infectivity and
+appropriate controls. The [data requirements](data_requirements.md) specify
+the records needed to assess that route.
 
 The cohorts comprise male C57BL/6J mice under specific stress and housing
 conditions. Transfer to females, other strains or human stress responses is

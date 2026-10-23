@@ -2,7 +2,7 @@
   "measured_utc": "2026-10-19T16:07:13.968891+00:00",
   "platform": "Windows-11-10.0.26300-SP0",
   "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
-  "executable": "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+  "executable": "<USER_PROFILE>\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
   "memory": {
     "total_bytes": 16786583552,
     "available_bytes": 375021568
@@ -27,5 +27,6 @@
     "mamba": null,
     "git": "C:\\Program Files\\Git\\cmd\\git.EXE",
     "gh": "C:\\Program Files\\GitHub CLI\\gh.EXE"
-  }
+  },
+  "path_redaction_note": "Local profile prefixes replaced with <USER_PROFILE>; execution results and scientific values retained."
 }

@@ -42,9 +42,20 @@ LONG_FIELDS = (
     "selected_endpoint", "value", "observation_status",
 )
 INFERENTIAL_LIMITS = (
-    "exploratory unadjusted animal-level comparison; cage allocation unavailable; "
+    "exploratory animal-level comparison without covariate adjustment; cage allocation unverified; "
     "upstream censoring and exclusions unresolved; no viral-immune association"
 )
+
+
+def validate_plan(config: dict) -> None:
+    """Direct stage callers must obey the same fixed primary analysis plan."""
+    settings=config.get('immune',{})
+    expected={'endpoints':list(ENDPOINTS),'confidence_level':0.95,
+              'interpretation':'exploratory_without_covariate_adjustment',
+              'multiple_testing':'six_contrasts_benjamini_hochberg'}
+    for key,value in expected.items():
+        if key in settings and settings[key]!=value:
+            raise ValueError('Unsupported fixed immune analysis setting: '+key)
 
 
 def _write_csv(path: Path, rows: list[dict], fields: Sequence[str] | None = None) -> None:
@@ -180,7 +191,7 @@ def parse_workbook(path: Path) -> tuple[list[dict], list[dict]]:
 
 def prepare(root: Path, config: dict) -> dict:
     """Extract the unchanged source workbook and report phenotype missingness."""
-    del config  # Endpoint and contrast choices are fixed by the feasibility gate.
+    validate_plan(config)
     root = Path(root)
     long_rows, inventory = parse_workbook(root / "data/raw/source_data.xlsx")
     groups: dict[tuple[str, str, str], list[dict]] = defaultdict(list)
@@ -313,7 +324,7 @@ def analyze(root: Path, config: dict) -> dict:
     """Analyze the fixed study II family separately from unavailable viral data."""
     from scipy.stats import mannwhitneyu
 
-    del config
+    validate_plan(config)
     root = Path(root)
     rows = _read_long(root / "data/processed/immune_long.csv")
     selected = [row for row in rows if row["experiment_id"] == "study_ii" and row["endpoint"] in ENDPOINTS]

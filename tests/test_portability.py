@@ -84,7 +84,9 @@ class PortabilityContracts(unittest.TestCase):
     def test_nonfinite_values_are_rejected_even_when_bytes_match(self):
         for schema, column in [('data/processed/immune_long.csv', 'value'),
                 ('results/tables/immune_contrasts.csv', 'p_value'),
-                ('results/tables/software_calibration.csv', 'successes')]:
+                ('results/tables/software_calibration.csv', 'successes'),
+                ('results/tables/immune_block_adjusted.csv', 'standard_error'),
+                ('results/tables/immune_putative_cage_units.csv', 'n_observed_animals')]:
             for value in ('NaN', 'Infinity', '-Infinity', '1e309', 'not a number'):
                 with self.subTest(column=column, value=value), self.assertRaises(ValueError):
                     self.compare(schema, [{column: value}], [{column: value}])
@@ -92,6 +94,94 @@ class PortabilityContracts(unittest.TestCase):
             with self.subTest(json_value=value), self.assertRaises(ValueError):
                 self.compare('results/tables/source_inventory.csv',
                     [{'group_counts_json': value}], [{'group_counts_json': value}])
+
+    def test_new_sensitivity_ids_counts_categories_and_booleans_are_exact(self):
+        cases = [
+            ('immune_design_membership.csv', 'source_id', '1.1', '1.10'),
+            ('immune_design_membership.csv', 'source_row', '2', '2.000000000001'),
+            ('immune_design_membership.csv', 'putative_control_cage_id', '1', '1.0'),
+            ('immune_design_membership.csv', 'id_range_block', 'A', 'B'),
+            ('immune_design_membership.csv', 'block_verified', 'False', 'True'),
+            ('immune_block_adjusted.csv', 'n_model_observed', '29', '29.0'),
+            ('immune_block_adjusted.csv', 'degrees_freedom', '25', '25.000000000001'),
+            ('immune_block_adjusted.csv', 'unadjusted_hc3_confidence_level', '0.95', '0.950000000001'),
+            ('immune_within_block.csv', 'same_direction_as_overall_raw', 'True', 'False'),
+            ('immune_putative_cage_units.csv', 'source_ids_json', '["1.1"]', '["1.10"]'),
+            ('immune_putative_cage_units.csv', 'n_source_animals', '2', '2.0'),
+            ('immune_putative_cage_means.csv', 'n_putative_control_cages', '6', '6.000000000001'),
+            ('immune_control_cage_omission.csv', 'omitted_source_ids_json', '["2.1","2.2"]', '["2.1","2.20"]'),
+            ('immune_tnfa_log_sensitivity.csv', 'bh_family_size', '2', '2.0'),
+        ]
+        for name, column, first, second in cases:
+            schema = 'results/tables/'+name
+            with self.subTest(schema=schema, column=column):
+                result = self.compare(schema, [{column:first}], [{column:second}])
+                self.assertFalse(result['semantic_match'])
+                self.assertEqual(result['differences'][0]['kind'], 'exact_field_changed')
+                with self.assertRaisesRegex(ValueError, 'protected column'):
+                    self.compare(schema, [{column:first}], [{column:second}], allowed={column})
+
+    def test_new_derived_statistics_use_only_the_existing_tolerance(self):
+        for name, column in [('immune_block_adjusted.csv','standard_error'),
+                ('immune_within_block.csv','overall_raw_mean_difference'),
+                ('immune_putative_cage_units.csv','unit_mean'),
+                ('immune_putative_cage_means.csv','standard_error'),
+                ('immune_control_cage_omission.csv','degrees_freedom'),
+                ('immune_tnfa_log_sensitivity.csv','log_standard_error')]:
+            schema = 'results/tables/'+name
+            with self.subTest(schema=schema,column=column):
+                tiny = self.compare(schema,[{column:'1'}],[{column:'1.00000000005'}])
+                self.assertTrue(tiny['semantic_match'])
+                self.assertFalse(tiny['byte_identical'])
+                self.assertEqual(tiny['tolerated_numeric_fields'],1)
+                larger = self.compare(schema,[{column:'1'}],[{column:'1.000000001'}])
+                self.assertFalse(larger['semantic_match'])
+                self.assertEqual(larger['differences'][0]['kind'],'outside_numeric_tolerance')
+
+    def test_new_archive_inventory_has_no_tolerant_fields(self):
+        cases = [
+            ('sequencing_design_inventory.csv','run_count','10','10.0'),
+            ('sequencing_design_inventory.csv','compressed_fastq_bytes','123456789','123456789.00000000001'),
+            ('sequencing_design_inventory.csv','specimen_role','recipient','inoculum'),
+            ('candidate_recipient_pairs.csv','workbook_id','9','09'),
+            ('candidate_recipient_pairs.csv','replicate_num','9','9.0'),
+            ('candidate_recipient_pairs.csv','workbook_row','22','22.000000000001'),
+            ('candidate_recipient_pairs.csv','before_specimen_count','1','2'),
+            ('candidate_recipient_pairs.csv','verified_virome_immune_matches','0','1'),
+            ('candidate_recipient_pairs.csv','linkage_status','candidate','verified'),
+        ]
+        for name,column,first,second in cases:
+            schema='results/tables/'+name
+            with self.subTest(schema=schema,column=column):
+                self.assertEqual(p.DERIVED_COLUMNS[schema],frozenset())
+                result=self.compare(schema,[{column:first}],[{column:second}])
+                self.assertFalse(result['semantic_match'])
+                self.assertEqual(result['differences'][0]['kind'],'exact_field_changed')
+        for schema,column in [('results/tables/sequencing_design_inventory.csv','compressed_fastq_bytes'),
+                              ('results/tables/candidate_recipient_pairs.csv','before_run_count')]:
+            with self.subTest(schema=schema),self.assertRaises(ValueError):
+                self.compare(schema,[{column:'NaN'}],[{column:'NaN'}])
+
+    def test_new_headers_match_synthetic_sensitivity_and_source_inventory_writers(self):
+        from pisa.design_sensitivity import ID_RANGES,calculate
+        from pisa.immune import ENDPOINTS,composite_mouse_id
+        from pisa.source_design import INVENTORY_FIELDS,PAIR_FIELDS
+
+        rows=[]
+        for group_index,(group,blocks) in enumerate(ID_RANGES.items()):
+            for index,source_id in enumerate(blocks[0]+blocks[1]):
+                for endpoint_index,endpoint in enumerate(ENDPOINTS):
+                    rows.append({'experiment_id':'study_ii','endpoint':endpoint,'group':group,
+                        'source_id':source_id,'mouse_id':composite_mouse_id('study_ii',group,source_id),
+                        'source_sheet':'synthetic source','source_row':index+2,
+                        'observation_status':'observed',
+                        'value':10+index*index/30+group_index+endpoint_index})
+        for schema,generated in calculate(rows).items():
+            with self.subTest(schema=schema):
+                self.assertEqual(tuple(generated[0]),p.CSV_HEADERS[schema])
+                self.assertTrue(all(tuple(row)==p.CSV_HEADERS[schema] for row in generated))
+        self.assertEqual(tuple(INVENTORY_FIELDS),p.CSV_HEADERS['results/tables/sequencing_design_inventory.csv'])
+        self.assertEqual(tuple(PAIR_FIELDS),p.CSV_HEADERS['results/tables/candidate_recipient_pairs.csv'])
 
     def test_header_row_order_row_count_and_row_width_are_enforced(self):
         schema = 'results/tables/immune_summary.csv'
@@ -145,7 +235,7 @@ class PortabilityContracts(unittest.TestCase):
         result = p.compare_scientific_trees(self.reference, self.copy)
         self.assertEqual(result['status'], 'passed')
         self.assertTrue(result['all_outputs_byte_identical'])
-        self.assertEqual(result['byte_identical_outputs'], 30)
+        self.assertEqual(result['byte_identical_outputs'], 39)
         figure = self.copy/p.FIGURE_PATHS[0]
         figure.write_bytes(b'different synthetic figure bytes')
         result = p.compare_scientific_trees(self.reference, self.copy)
@@ -153,7 +243,7 @@ class PortabilityContracts(unittest.TestCase):
         self.assertTrue(result['csv_semantic_match'])
         self.assertTrue(result['figure_visual_review_required'])
         self.assertFalse(result['all_outputs_byte_identical'])
-        self.assertEqual(result['byte_identical_outputs'], 29)
+        self.assertEqual(result['byte_identical_outputs'], 38)
         (self.copy/'results/tables/unplanned.csv').write_text('x\n1\n')
         self.assertEqual(p.compare_scientific_trees(self.reference, self.copy)['status'], 'failed')
         (self.copy/'results/tables/unplanned.csv').unlink()
@@ -165,8 +255,8 @@ class PortabilityContracts(unittest.TestCase):
     def test_plan_is_deterministic_and_names_every_fixed_schema(self):
         first, second = p.comparison_plan(), p.comparison_plan()
         self.assertEqual(first, second)
-        self.assertEqual(len(first['csv_schemas']), 20)
-        self.assertEqual(len(first['expected_paths']), 30)
+        self.assertEqual(len(first['csv_schemas']), 29)
+        self.assertEqual(len(first['expected_paths']), 39)
         self.assertEqual(first['absolute_tolerance'], '1E-10')
         self.assertEqual(first['relative_tolerance'], '1E-12')
         for path, allowed in p.DERIVED_COLUMNS.items():

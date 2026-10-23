@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "review_date_taipei": "2026-10-20",
+  "review_method": "Visual inspection of all five actual PDF page renders through image viewer after full workflow execution",
+  "renderer": {
+    "package": "pypdfium2",
+    "version": "5.14.0",
+    "pdfium_version": "156.0.8076.0"
+  },
+  "figures": [
+    {
+      "path": "figures/figure1_design.pdf",
+      "sha256": "967578db43ebacf82d765fcf65ce3df4db81f51ca941fe00b9ce4cd88671548a",
+      "page_count": 1,
+      "visual_status": "passed"
+    },
+    {
+      "path": "figures/figure4_immune.pdf",
+      "sha256": "35917ac4a8a0345a7dfca5102b3ce47a0ae01375f4151c8950cfba57e93cd888",
+      "page_count": 1,
+      "visual_status": "passed"
+    },
+    {
+      "path": "figures/figure5_linkage_limit.pdf",
+      "sha256": "8af3b8017388ae8bbf85c5ade6b79bc6463f55bb2a76a0e44ff512425267b0d0",
+      "page_count": 1,
+      "visual_status": "passed"
+    },
+    {
+      "path": "figures/figure7_robustness.pdf",
+      "sha256": "b9fb5f17dfb7e73cd755c7eda547f01e64807ab632cbdd9b4d17b6a35d23d018",
+      "page_count": 1,
+      "visual_status": "passed"
+    },
+    {
+      "path": "figures/figure8_method_comparison.pdf",
+      "sha256": "f4093eac8338c645c12a6301adf3f86bc559a9f5cd135f9f23dbffc408b7aa29",
+      "page_count": 1,
+      "visual_status": "passed"
+    }
+  ],
+  "reviewed_utc": "2026-10-20T06:23:59.007316+00:00"
+}

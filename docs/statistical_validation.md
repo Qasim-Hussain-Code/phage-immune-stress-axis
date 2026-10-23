@@ -82,7 +82,7 @@ and [limitations](limitations.md) for their biological scope.
 
 ## Conditional synthetic calibration
 
-The benchmark generated 20,000 all-null replicates for each of four fixed
+The benchmark generated 20,000 all-null replicates for each of five fixed
 models, using seed 20261020 and batches of 500. Three independent synthetic
 endpoints have group sizes 10/10/9. Each endpoint retains the shared middle
 group in its two adjacent contrasts, so the six Welch P values form one BH
@@ -97,29 +97,39 @@ The recorded probability of any BH rejection at 0.05 is:
 | Independent equal-variance Gaussian | 0.04620 | 0.04338 to 0.04920 |
 | Independent Gaussian, variances 4/1/1 | 0.04795 | 0.04507 to 0.05100 |
 | Independent centered lognormal | 0.01150 | 0.01011 to 0.01307 |
-| Artificial Gaussian clusters, ICC 0.5 | 0.16495 | 0.15987 to 0.17016 |
+| Artificial all-group Gaussian clusters, ICC 0.5 | 0.16495 | 0.15987 to 0.17016 |
+| Hypothetical controls-only clusters, ICC 0.5 | 0.06890 | 0.06547 to 0.07249 |
 
-These four rows come from [software_calibration.csv](../results/tables/software_calibration.csv).
+These five rows come from [software_calibration.csv](../results/tables/software_calibration.csv).
 Because every null is true, the family rejection probability equals both
 FWER and FDR in this simulation. Wilson intervals describe Monte Carlo error,
 not uncertainty about mouse effects or the real cage structure. The artificial
-clusters were imposed in every group; they do not represent the source
-experiment's singly housed stressed groups or estimate its ICC. No biological
+all-group scenario imposes clusters in every group. The added controls-only
+scenario instead uses the inferred control layout and leaves both stressed
+groups independent; its marginal FVT–Stress test law remains independent, while
+the six-test BH family also depends on Stress–Control P values. Neither model
+estimates actual cages or ICC. Their common 10/10/9 group sizes also abstract
+from endpoint-specific missingness. No biological
 observations enter the generator, and these results do not calibrate the
 actual experiment under its unknown dependence. The [calibration design](calibration_design.md)
 sets out the scenarios and their interpretation.
 
 ## Recorded executions
 
-The Windows suite recorded on 23 October 2026 collected 180 tests, executed
-174 and skipped six platform-specific cases, with zero failures or errors.
-The six added cases test the release check's binding of a full invocation to
-the current source and verified stage results, including legitimate resumed
-runs. The source identity and individual outcomes are in the
+The latest Windows suite on 23 October 2026 collected 219 tests, executed
+213 and skipped six platform-specific cases, with zero failures or errors.
+New numerical checks compare HC3 covariance, contrast intervals and P values
+with statsmodels, log-Welch calculations with SciPy, and each declared BH
+family independently. Source tests verify the literal-label inventory without
+turning it into a validated assay join. The suite also retains the release
+check's full-invocation binding and legitimate-resume regressions. The source
+identity and individual outcomes are in the
 [validation summary](../results/reports/validation_summary.json) and
-[log](../results/reports/validation.log). All 30 scientific files exactly
-matched the preceding revision, as recorded in the
-[comparison evidence](../results/reports/invocation_binding_validation.json).
+[log](../results/reports/validation.log). The primary statistical values remain
+unchanged; nine CSVs, a fifth calibration scenario and revised figures extend
+the output collection to 39 files. The
+[comparison evidence](../results/reports/design_sensitivity_validation.json)
+records exact bytes separately from CSV-record comparisons.
 
 The fresh committed-source replays on 21 October used commit
 `eb7ba6c8b945670a1f55c493d89435f36750900c`, with code SHA-256 beginning

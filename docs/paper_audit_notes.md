@@ -3,7 +3,8 @@
 This guide identifies the measurements and experimental units described by
 [Ritz et al. (2024), *Nature Microbiology* 9, 359–376](https://doi.org/10.1038/s41564-023-01564-y).
 It is based on the article and supplementary material reviewed on 20 October
-2026. Section identifiers refer to the frozen
+2026, with a reassessment of the frozen sequencing labels and archived scripts
+on 23 October. This reassessment involved no raw-read retrieval. Section identifiers refer to the frozen
 [article XML](../data/raw/article.xml), available from
 [Europe PMC](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10847049/fullTextXML).
 The article is licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
@@ -40,9 +41,28 @@ For the FVT experiment, Extended Data Figure 4 (XML Fig9) reports pre/post
 bacteriome and virome summaries with group counts 10, eight and nine. These
 support the individual bulk-derived measurement route alongside the pooled
 enriched viromes. They do not supply a verified map to the immune workbook.
-The accession inventory also contains heat-inactivated treatment specimens
-absent from that workbook; the [data assessment](data_feasibility.md) reconciles
-the deposited specimen categories.
+The accession inventory also contains hkFVT-labelled specimens absent from
+that workbook, as distinguished below.
+
+## The additional hkFVT-labelled series
+
+The frozen [PRJNA970614 metadata](https://www.ebi.ac.uk/ena/browser/view/PRJNA970614)
+contain ten Before and ten After individual bulk specimens labelled
+`hkFVT stress`, ten `hkFVT gavage` inocula and two hkFVT pool specimens.
+These 32 specimens must remain visible in the inventory. The source workbook
+has only Control, Control Stress and FVT Stress rows. Article Sec11 likewise
+describes three groups, while Discussion Sec8 identifies assessment of fully
+inactivated FVT effects on microbiota and host as future work.
+
+The deposit alone does not resolve whether the hkFVT material belongs to the
+same cohort, how it was inactivated, which outcomes were measured or why it
+does not appear in those source rows. One archived community-processing path
+explicitly filters `Contrasts == "hkFVT"` (script PDF p. 16); the filter is
+documented, but its rationale is not established. These records do not establish
+an additional matched immune comparison. A validated inactivated
+preparation could strengthen treatment interpretation, although heating can
+change constituents other than infectious phages. It is not by itself a
+phage-specific causal control.
 
 ## Immune measurements and collection times
 
@@ -118,7 +138,9 @@ while controls remained group housed. Stress versus Control therefore includes
 the housing-regime difference. FVT Stress versus Control Stress compares two
 groups with the same stated regime. Missing cage allocation, aggressor
 assignment and other shared-exposure information still prevent a measured
-dependence adjustment.
+dependence adjustment. Neither numeric ID blocks nor decimal source IDs verify
+particular cohorts, batches or cages. Such assignments require allocation and
+housing records, rather than interpretation of label patterns.
 
 The original planned contrast compares the stressed mean with the average of
 Control and FVT Stress. Its significance does not establish both a stress
@@ -127,6 +149,33 @@ component comparisons separately. Upstream detection-limit, technical and
 statistical exclusions remain unresolved at the observation level; Sec32
 describes the original 2.5-standard-deviation rule and a maximum of two
 statistical exclusions per test.
+
+## Recipient labels, calibration and exclusions
+
+Condition-qualified ENA `replicate_num` labels match all ten Control Stress and
+ten FVT Stress workbook identifiers literally. Seventeen have both Before and
+After recipient bulk specimens; Stress IDs 6 and 7 and FVT ID 11 have Before
+only. These are candidate label matches, not validated processed-profile to
+immune-animal links. Control labels contain unresolved decimal/alias changes
+and are excluded from the candidate-pair table. The
+[data assessment](data_feasibility.md) gives exact read sizes and the
+[candidate table](../results/tables/candidate_recipient_pairs.csv) preserves
+the accession-level evidence.
+
+The [archived script PDF](https://zenodo.org/records/10460215/files/Fvtstress_scripts_040124.pdf)
+(pp. 15–16) references `recal_metadata.csv` and links `Proposed_mouse_ID`,
+`Full_ID` and `post_recal_name` during community-table processing. It uses
+`calib_batch` and plate-specific inputs, removes a calibration-plate subset,
+and filters IDs 6, 7 and 11 alongside the hkFVT contrast. The records needed
+to reproduce these translations and decisions were not recovered. Calibration
+plate labels must not be treated as housing assignments, and community-table
+filters must not automatically remove observations from other assays.
+
+On p. 23, `bacteriome.virome.matching.fvt.stress.051022.csv` supplies a list
+selected by `Location == "Differential abundance spp."`, followed by taxon and
+host-phylum handling. That usage does not establish the file as an animal
+crosswalk. The [data requirements](data_requirements.md) distinguish a verified
+sample map from taxonomic host annotations.
 
 ## What the viral signals represent
 

@@ -2,7 +2,7 @@
 
 The project is maintained in the private repository [Qasim-Hussain-Code/phage-immune-stress-axis](https://github.com/Qasim-Hussain-Code/phage-immune-stress-axis), on branch `main`.
 
-The [repository verification record](../results/reports/publication_check.json) confirms private visibility and exactly one GitHub contributor, **Qasim-Hussain-Code**. Qasim Hussain is the sole project author. Locally created commits use the existing researcher identity for both author and committer. No coauthor trailers are present.
+The [repository verification record](../../results/reports/publication_check.json) confirms private visibility and exactly one GitHub contributor, **Qasim-Hussain-Code**. Qasim Hussain is the sole project author. Locally created commits use the existing researcher identity for both author and committer. No coauthor trailers are present.
 
 The resulting remote commit is checked through Git and the GitHub API. Repository visibility remains private. No history rewrite or force push is used.
 

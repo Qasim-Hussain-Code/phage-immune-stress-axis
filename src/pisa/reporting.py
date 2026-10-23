@@ -1,11 +1,41 @@
 import json
-from .io import read_csv
+import re
+from decimal import Decimal
+from .io import read_csv,redact_local_paths
 
 NAMES={'ly6chi_monocytes':'Basal LY6Chi monocyte proportion',
        'ly6chi_monocytes_cd62':'Basal CD62L-positive fraction of LY6Chi monocytes',
        'tnfa_splenocyte_unstimulated':'Unstimulated splenocyte TNF-alpha'}
 CONTRAST_NAMES={'ctr_stress_minus_ctr':'Control Stress minus Control',
                 'fvt_stress_minus_ctr_stress':'FVT Stress minus Control Stress'}
+
+
+def verify_readme_primary_table(text,rows):
+    """Check reader-facing estimates to their displayed decimal precision."""
+    labels={'ly6chi_monocytes':'LY6Chi monocytes','ly6chi_monocytes_cd62':'CD62L-positive fraction',
+            'tnfa_splenocyte_unstimulated':'Splenocyte TNF-alpha'}
+    comparisons={'ctr_stress_minus_ctr':'Stress − Control','fvt_stress_minus_ctr_stress':'FVT Stress − Stress'}
+    table={}
+    for line in text.splitlines():
+        cells=[cell.strip() for cell in line.split('|')[1:-1]]
+        if len(cells)==5 and cells[0] in labels.values():
+            key=(cells[0],cells[1])
+            if key in table: raise ValueError('Duplicate README primary contrast')
+            table[key]=cells
+    if len(table)!=6 or len(rows)!=6: raise ValueError('README must contain the six primary comparisons')
+    for row in rows:
+        cells=table.get((labels[row['endpoint']],comparisons[row['contrast']]))
+        if cells is None or cells[2]!=f"{row['n_first']} / {row['n_second']}":
+            raise ValueError('README primary sample count or comparison differs')
+        displayed=re.findall(r'[+-]?\d+(?:\.\d+)?(?:e[+-]?\d+)?',cells[3].replace('−','-'))
+        values=[row[name] for name in ('mean_difference','ci_low','ci_high')]+[row['q_value']]
+        displayed.append(cells[4])
+        if len(displayed)!=4: raise ValueError('README primary estimate is malformed')
+        for printed,actual in zip(displayed,values):
+            tolerance=0.5*10**Decimal(printed).as_tuple().exponent
+            if abs(float(printed)-float(actual))>tolerance+1e-12:
+                raise ValueError('README primary estimate differs from computed result')
+    return True
 
 
 def validation_counts_text(validation):
@@ -17,6 +47,58 @@ def validation_counts_text(validation):
     executed=counts['tests_run']-counts['skipped']
     return (f"{counts['tests_run']} tests collected, {executed} executed, "
             f"{counts['skipped']} skipped, {counts['failures']} failures and {counts['errors']} errors")
+
+
+def design_sensitivity_lines(root):
+    if not (root/'results/tables/immune_putative_cage_means.csv').is_file(): return []
+    cages=read_csv(root/'results/tables/immune_putative_cage_means.csv')
+    logs=read_csv(root/'results/tables/immune_tnfa_log_sensitivity.csv')
+    within=read_csv(root/'results/tables/immune_within_block.csv')
+    omitted=read_csv(root/'results/tables/immune_control_cage_omission.csv')
+    lines=['','## Post hoc design and scale sensitivities','',
+        'Literal IDs define two treatment-balanced ranges and six putative control cages '
+        'with source sizes 2,2,1,2,2,1. Their interpretation as batches or cages is unverified. '
+        'The following conditional comparisons give each observed control cage mean equal '
+        'weight, while the singly housed stressed groups retain animals as units. This '
+        'changes the control estimand as well as its uncertainty. The six comparisons '
+        'have a separate exploratory BH family.','',
+        '| Stress minus Control, conditional cage units | Mean difference | Pointwise 95% CI | Raw P | Sensitivity BH q |',
+        '|---|---:|---|---:|---:|']
+    for row in cages:
+        if row['contrast']=='ctr_stress_minus_ctr':
+            lines.append(f"| {NAMES[row['endpoint']]} | {float(row['mean_difference']):.4g} | "
+                f"{float(row['ci_low']):.4g} to {float(row['ci_high']):.4g} | "
+                f"{float(row['p_value']):.4g} | {float(row['q_value']):.4g} |")
+    diagnostic=[r for r in omitted if r['endpoint']=='ly6chi_monocytes' and r['contrast']=='ctr_stress_minus_ctr']
+    fvts=[r for r in within if r['contrast']=='fvt_stress_minus_ctr_stress']
+    lines.extend(['',
+        'The LY6Chi Stress–Control inference depends on the assumed independent unit. '
+        'Every putative cage was also omitted in turn, retaining the six-test family '
+        f"in each diagnostic refit; LY6Chi Stress–Control q ranges from {min(float(r['q_value']) for r in diagnostic):.4g} "
+        f"to {max(float(r['q_value']) for r in diagnostic):.4g}. These refits are not independent replications or source exclusions.",'',
+        'Treatment-plus-ID-stratum fits use HC3 covariance and finite-df t intervals, '
+        'with treatment-only HC3 fits as like-for-like reference columns. '
+        f"{sum(r['same_direction_as_overall_raw']=='True' for r in fvts)} of {len(fvts)} FVT endpoint-by-stratum differences preserve their overall raw direction. "
+        'This is direction agreement, not replicated significance. Adjusted-model '
+        'tests form a BH family of six; within-stratum tests form a separate family of twelve.','',
+        'All observed TNF-alpha concentrations are positive. Log-Welch estimates below '
+        'retain every observed value without a pseudocount and target geometric-mean '
+        'ratios, rather than raw means or rank ordering. The two tests have their own '
+        'exploratory BH family. Pointwise intervals do not incorporate that correction.','',
+        '| TNF-alpha comparison | Geometric-mean ratio | Pointwise 95% CI | Raw P | Two-test BH q |',
+        '|---|---:|---|---:|---:|'])
+    for row in logs:
+        ratio_label={'ctr_stress_minus_ctr':'Control Stress / Control',
+                     'fvt_stress_minus_ctr_stress':'FVT Stress / Control Stress'}[row['contrast']]
+        lines.append(f"| {ratio_label} | {float(row['geometric_mean_ratio']):.4g} | "
+            f"{float(row['ratio_ci_low']):.4g} to {float(row['ratio_ci_high']):.4g} | "
+            f"{float(row['p_value']):.4g} | {float(row['q_value']):.4g} |")
+    lines.extend(['',
+        'These post hoc checks quantify dependence on assumptions and scale. They '
+        'do not replace the primary six-test family or establish confirmed effects. '
+        'The [design sensitivity appendix](design_sensitivity.md) defines the models, '
+        'assumptions and full membership, contrast, omission and log-scale tables.'])
+    return lines
 
 
 def summarize(root,config):
@@ -69,14 +151,20 @@ def summarize(root,config):
                          f"{row['n_first']}/{row['n_second']} | {float(row['mean_difference']):.4g} | "
                          f"{float(row['ci_low']):.4g} to {float(row['ci_high']):.4g} | "
                          f"{float(row['p_value']):.4g} | {float(row['q_value']):.4g} |")
-    lines.extend(['','## Dependence on the statistical comparison','',
-        'The monocyte FVT comparison gives Welch P=0.01265 here and Tukey-Kramer '
-        'P=0.106409 under the original three-group calculation, reproducing the published '
-        'P=0.106. Both use the same observations and mean difference. Pooling the residual '
-        'variance across all three groups and adjusting for three pairwise comparisons '
-        'explains the different uncertainty estimates; additional source exclusions are '
-        'unnecessary for this numerical reconciliation.'])
     replication=root/'results/tables/original_method_replication.csv'
+    replication_rows=read_csv(replication) if replication.is_file() else []
+    monocyte=next((r for r in results if r['endpoint']=='ly6chi_monocytes'
+                  and r['contrast']=='fvt_stress_minus_ctr_stress'),None)
+    tukey=next((r for r in replication_rows if r['endpoint']=='ly6chi_monocytes'
+               and r['record_type']=='tukey_kramer' and r['contrast']=='fvt_stress_minus_ctr_stress'),None)
+    if monocyte and tukey:
+        lines.extend(['','## Dependence on the statistical comparison','',
+            f"The monocyte FVT comparison gives Welch P={float(monocyte['p_value']):.5g} here and "
+            f"Tukey-Kramer P={float(tukey['p_value']):.6g} under the original three-group calculation, "
+            f"reproducing the published P={tukey['published_p_value']}. Both use the same observations "
+            'and mean difference. Pooling the residual variance across all three groups and '
+            'adjusting for three pairwise comparisons explains the different uncertainty estimates; '
+            'additional source exclusions are unnecessary for this numerical reconciliation.'])
     if replication.is_file():
         replication_rows=read_csv(replication)
         if replication_rows:
@@ -84,14 +172,16 @@ def summarize(root,config):
             mismatches=[r for r in checked if r['published_agreement']=='mismatch']
             captions=[r for r in checked if r['record_type']!='group']
             caption_matches=sum(r['published_agreement']=='matches_published_precision' for r in captions)
+            tnf_group=next(r for r in replication_rows if r['endpoint']=='tnfa_splenocyte_unstimulated'
+                           and r['record_type']=='group' and r['group_first']=='fvt_stress')
             lines.extend(['',
                 f'The [original-method reconstruction](../results/reports/original_method_replication.md) '
                 f'contains {len(replication_rows)} records. It matches {caption_matches} of '
                 f'{len(captions)} selected caption-statistic checks and '
                 f'{len(checked)-len(mismatches)} of {len(checked)} combined caption and group-summary '
                 'checks at published precision. One printed mean remains unresolved: FVT '
-                'unstimulated TNF-alpha averages 27.8492778 pg/mL in the workbook, directly '
-                'rounding to 27.8, while Table 1b prints 27.9. Source values and rounding '
+                f"unstimulated TNF-alpha averages {float(tnf_group['group_mean']):.9g} pg/mL in the workbook, directly "
+                f"rounding to {float(tnf_group['group_mean']):.1f}, while Table 1b prints {tnf_group['published_mean']}. Source values and rounding "
                 'tolerances were retained.','',
                 'The planned contrast compares the stressed mean with the average of Control '
                 'and FVT Stress. It does not jointly establish a stress effect and its reversal. '
@@ -151,6 +241,7 @@ def summarize(root,config):
             f"versus Control Stress. Those pairs reuse {tnf['n_observed_animals']} animals. They are "
             'not independent replicates. The full six-comparison tables and definitions are '
             'in the [descriptive robustness report](../results/reports/phenotype_robustness.md).'])
+    lines.extend(design_sensitivity_lines(root))
     lines.extend(['','## What the dataset leaves unanswered','',
         f"The workbook contains {summary['workbook_animal_rows']} animal rows across two experiments. "
         f"The sequencing archive contains {summary['principal_run_count']} runs representing "
@@ -163,10 +254,19 @@ def summarize(root,config):
         'The intended association between viral change and an immune phenotype requires '
         'individual longitudinal viral abundance profiles and a verified link to immune '
         'source animals. No processed viral profile was retrieved and none was matched to '
-        'immune outcomes. Terminal immune measurements could serve as outcomes for such an '
+        'immune outcomes. Endpoint immune measurements could serve as outcomes for such an '
         'association if those viral inputs became available; they would still not measure '
         'within-mouse immune change or temporal immune stability. Bacterial adjustment also '
         'requires the missing matched bacterial profiles.','',
+        'Heat-inactivated-FVT-labelled specimens also occur in the archive: 20 recipient '
+        'bulk samples, ten inocula and two pools. Their immune outcomes and allocation '
+        'key are not supplied by the retrieved workbook. This arm could strengthen '
+        'the active-versus-inactivated comparison, while heating may also alter other '
+        'transplant constituents. The 17 candidate complete Stress/FVT Before/After '
+        'pairs require about 85.6 GB of compressed reads alone. The current limit '
+        'combines missing processed inputs and validated linkage with a local '
+        'reprocessing constraint. The [data requirements](data_requirements.md) '
+        'describe what would make these routes usable.','',
         'Unstressed controls were group housed and both stressed groups singly housed. '
         'Thus the stress-versus-Control contrast includes different housing regimes, while '
         'FVT Stress versus Control Stress shares the stated regime. Unavailable allocation '
@@ -178,12 +278,13 @@ def summarize(root,config):
     if calibration.is_file():
         calibration_rows=read_csv(root/'results/tables/software_calibration.csv')
         expected=config.get('calibration',{}).get('replicates',20000)
-        if len(calibration_rows)!=64 or any(
+        from .calibration import SCENARIOS
+        if len(calibration_rows)!=16*len(SCENARIOS) or any(
             r['purpose']!='synthetic_not_biological' or int(r['replicates'])!=expected
             or int(r['seed'])!=config['seed'] for r in calibration_rows):
             raise ValueError('Synthetic calibration output does not match the current configured run')
         calibration_note=(f' The separate [software calibration](../results/reports/software_calibration.md) '
-            f'used {expected:,} replicates in each of four known zero-mean scenarios. Its '
+            f'used {expected:,} replicates in each of {len(SCENARIOS)} known zero-mean scenarios. Its '
             'Monte Carlo uncertainty is simulation uncertainty and does not calibrate the '
             'actual experiment under an unknown dependence structure.')
     lines.extend(['','## Reproducibility','',
@@ -221,6 +322,7 @@ def figure_qa_status(root):
 
 def invocation_text(root, invocation):
     """Only this invocation's evidence may establish its completion status."""
+    invocation=redact_local_paths(invocation)
     state=invocation.get('status','resource_snapshot_only')
     stages=invocation.get('stages',[])
     completed=sum(row.get('status')=='completed' for row in stages)
@@ -255,12 +357,13 @@ def invocation_text(root, invocation):
         lines.append(f"Prior visual review dated {qa['reviewed_utc']} matches the current bytes of {qa['figures_verified']} PDF files. This is not a new visual review by this invocation.")
     else:
         lines.append('Current figure visual QA is unverified: '+qa['reason']+'.')
-    lines.extend(['','Publication status is documented separately in `docs/publication_status.md`; executing this pipeline does not establish a GitHub publication.',
+    lines.extend(['','Publication status is documented separately in `docs/maintenance/publication_status.md`; executing this pipeline does not establish a GitHub publication.',
                   'Researcher and sole project author: Qasim Hussain. No causal phage mechanism or stability-immune association is established by this restricted analysis.'])
     return '\n'.join(lines)+'\n'
 
 
 def resource_report(root,usage,invocation=None,config=None):
+    usage=redact_local_paths(usage)
     """Report local measurements without rewriting a cached scientific artifact."""
     invocation=invocation or {'status':'resource_snapshot_only'}
     config=config or {'resources':{}}

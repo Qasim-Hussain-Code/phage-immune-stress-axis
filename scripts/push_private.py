@@ -17,8 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 LOGIN = 'Qasim-Hussain-Code'
 REPOSITORY = LOGIN + '/phage-immune-stress-axis'
 URL = 'https://github.com/' + REPOSITORY + '.git'
-AUTHOR = ('Qasim Hussain', 'qasimhussain470@yahoo.com')
-COMMITTERS = {AUTHOR, ('GitHub', 'noreply@github.com')}
+AUTHOR_NAME = 'Qasim Hussain'
+GITHUB_COMMITTER = ('GitHub', 'noreply@github.com')
 MAX_BLOB_BYTES = 5_000_000
 MAX_SCAN_BYTES = 40_000_000
 SECRET_PATTERNS = [re.compile(pattern) for pattern in (
@@ -103,7 +103,36 @@ def check_destinations(commands):
                 'A Git URL rewrite redirects the approved destination.')
 
 
-def validate_history(history):
+def _valid_author_email(value):
+    if not isinstance(value,str) or not 3 <= len(value) <= 254 or value.count('@')!=1:
+        return False
+    local,domain=value.split('@')
+    return (len(local)<=64 and not local.startswith('.') and not local.endswith('.') and '..' not in local
+            and re.fullmatch(r"[A-Za-z0-9!#$%&'*+/=?^_`{|}~.-]+",local) is not None
+            and re.fullmatch(r'[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?'
+                             r'(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+',domain) is not None)
+
+
+def load_approved_author(commands):
+    """Read one explicit repository-local approval, never current user.email."""
+    payload=commands.git('config','--local','--no-includes','--null','--get-all','pisa.authorEmail',
+                         binary=True,allowed_codes=(0,1))
+    message='Configure exactly one well-formed approved email in local pisa.authorEmail before release.'
+    require(isinstance(payload,bytes),message)
+    values=payload.split(b'\0')
+    require(len(values)==2 and values[-1]==b'',message)
+    try:
+        email=values[0].decode('utf-8')
+    except UnicodeError as error:
+        raise PolicyError(message) from error
+    require(_valid_author_email(email),message)
+    return AUTHOR_NAME,email
+
+
+def validate_history(history,approved_author):
+    require(isinstance(approved_author,tuple) and len(approved_author)==2
+            and approved_author[0]==AUTHOR_NAME and _valid_author_email(approved_author[1]),
+            'An explicit approved researcher identity is required.')
     encoded = history.encode('utf-8')
     require(len(encoded) <= MAX_BLOB_BYTES, 'Commit metadata exceeds its 5 MB scan bound.')
     require(not any(pattern.search(encoded) for pattern in SECRET_PATTERNS),
@@ -116,8 +145,8 @@ def validate_history(history):
         require(len(fields) == 7, 'Malformed commit metadata.')
         sha, author, email, committer, committer_email, subject, body = fields
         require(re.fullmatch(r'[0-9a-f]{40}', sha) is not None, 'Invalid commit identity.')
-        require((author, email) == AUTHOR, 'Only the researcher may author project commits.')
-        require((committer, committer_email) in COMMITTERS, 'Unexpected commit committer.')
+        require((author, email) == approved_author, 'Only the researcher may author project commits.')
+        require((committer, committer_email) in {approved_author,GITHUB_COMMITTER}, 'Unexpected commit committer.')
         require(re.fullmatch(r'[a-z]+(?:_[a-z]+){1,2}', subject) is not None,
                 'Commit subjects require two or three lowercase underscore-separated words.')
         require(re.search(r'(?im)^\s*co-authored-by\s*:', body) is None,
@@ -184,6 +213,7 @@ def preflight(commands):
     require(isinstance(identity, dict) and identity.get('login') == LOGIN, 'Unexpected authenticated account.')
     validate_repository(commands.github('repos/' + REPOSITORY))
     validate_contributors(commands.github('repos/' + REPOSITORY + '/contributors?anon=true&per_page=100', paginate=True))
+    approved_author=load_approved_author(commands)
     check_destinations(commands)
     require(not commands.git('status', '--porcelain=v1'), 'Commit or remove working changes before release.')
     require(commands.git('branch', '--show-current') == 'main', 'Release requires the main branch.')
@@ -191,7 +221,8 @@ def preflight(commands):
             'A complete local history is required for release checks.')
     head = commands.git('rev-parse', 'HEAD')
     require(re.fullmatch(r'[0-9a-f]{40}', head) is not None, 'Invalid local commit.')
-    count = validate_history(commands.git('log', 'HEAD', '--format=%x1e%H%x00%an%x00%ae%x00%cn%x00%ce%x00%s%x00%b'))
+    count = validate_history(commands.git('log', 'HEAD', '--format=%x1e%H%x00%an%x00%ae%x00%cn%x00%ce%x00%s%x00%b'),
+                             approved_author)
     remote = commands.github('repos/' + REPOSITORY + '/commits/main')
     remote_sha = remote.get('sha') if isinstance(remote, dict) else None
     require(isinstance(remote_sha, str) and re.fullmatch(r'[0-9a-f]{40}', remote_sha) is not None,
@@ -210,7 +241,7 @@ def execute(commands, push=False):
               'repository': REPOSITORY, 'visibility': 'private', 'local_commit': head,
               'remote_main_commit_before': previous, 'commits_checked': count,
               'new_blobs_scanned': scanned, 'sole_github_contributor': LOGIN,
-              'sole_project_author': AUTHOR[0], 'force_push': False, 'visibility_changed': False,
+              'sole_project_author': AUTHOR_NAME, 'force_push': False, 'visibility_changed': False,
               'tool_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
     if push:
         check_destinations(commands)

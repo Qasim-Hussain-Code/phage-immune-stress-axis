@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "checked_utc": "2026-10-23T05:31:24.819409+00:00",
+  "baseline_commit": "f20cbdbea970216d8defe5b78e0e780d50878b14",
+  "invocation_id": "20261023T052913453635Z_4004",
+  "code_sha256": "c57dab4a92d7e5edb1ba92d75fe113b9a9cba0880cf0674890a9edaa63b359f4",
+  "scope": "Full working-source Windows run in existing dependencies; no new committed-source replay or Linux execution.",
+  "stages_executed": 10,
+  "stages_resumed": 0,
+  "tests_collected": 219,
+  "tests_executed": 213,
+  "tests_skipped": 6,
+  "failures": 0,
+  "errors": 0,
+  "primary_numerical_results": "All six raw-scale contrasts, counts, means, intervals, P and q values unchanged.",
+  "observations": "immune_long.csv exactly unchanged by SHA-256; ten frozen input files exactly unchanged.",
+  "csv_comparisons": [
+    {
+      "path": "results/tables/archive_files.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 1,
+      "rows_after": 1
+    },
+    {
+      "path": "results/tables/article_methods_evidence.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 4,
+      "rows_after": 4
+    },
+    {
+      "path": "results/tables/figure1_data.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 6,
+      "rows_after": 6
+    },
+    {
+      "path": "results/tables/figure4_data.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 90,
+      "rows_after": 90
+    },
+    {
+      "path": "results/tables/figure5_data.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 4,
+      "rows_after": 4
+    },
+    {
+      "path": "results/tables/figure7_data.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 6,
+      "rows_after": 6
+    },
+    {
+      "path": "results/tables/figure8_data.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 12,
+      "rows_after": 12
+    },
+    {
+      "path": "results/tables/hypothesis_eligibility.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 6,
+      "rows_after": 6
+    },
+    {
+      "path": "results/tables/immune_contrasts.csv",
+      "status": "all statistical/source fields exactly preserved; interpretation wording clarified",
+      "rows_before": 6,
+      "rows_after": 6
+    },
+    {
+      "path": "results/tables/immune_missingness.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 124,
+      "rows_after": 124
+    },
+    {
+      "path": "results/tables/immune_missingness_bounds.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 6,
+      "rows_after": 6
+    },
+    {
+      "path": "results/tables/immune_rank_effects.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 6,
+      "rows_after": 6
+    },
+    {
+      "path": "results/tables/immune_sensitivity.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 6,
+      "rows_after": 6
+    },
+    {
+      "path": "results/tables/immune_summary.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 9,
+      "rows_after": 9
+    },
+    {
+      "path": "results/tables/input_integrity.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 10,
+      "rows_after": 10
+    },
+    {
+      "path": "results/tables/original_method_replication.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 24,
+      "rows_after": 24
+    },
+    {
+      "path": "results/tables/sample_linkage_audit.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 154,
+      "rows_after": 154
+    },
+    {
+      "path": "results/tables/sequencing_inventory.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 5,
+      "rows_after": 5
+    },
+    {
+      "path": "results/tables/software_calibration.csv",
+      "status": "original four scenarios exactly preserved as CSV records; fifth appended",
+      "rows_before": 64,
+      "rows_after": 80
+    },
+    {
+      "path": "results/tables/source_inventory.csv",
+      "status": "all CSV records exactly preserved",
+      "rows_before": 2,
+      "rows_after": 2
+    }
+  ],
+  "scientific_file_count": 39,
+  "scientific_sha256": {
+    "data/processed/immune_long.csv": "256da99b84bc8c4c53e274941d17be20f1960aea432ea6b4a232d5cb344f2b30",
+    "results/tables/archive_files.csv": "1a74450c5cead69011be1541c15bad40745e83c39faea16482c5a78e15288a08",
+    "results/tables/article_methods_evidence.csv": "c36afd43c3757274c08aea9b5d00814b7b2e905d34dd3617cec6859769c9efb4",
+    "results/tables/candidate_recipient_pairs.csv": "41fee5b7d3c98f81aebc2ff78f23f1a764526573f9a8c04780316148e97f2402",
+    "results/tables/figure1_data.csv": "91d83ae95113dc902ebd1fd6c646265d42be86ab815daa9680c57dc37a18aea1",
+    "results/tables/figure4_data.csv": "4dc54d95050eabe466f1a8f05000f54a6acda489ccc97908bfd7b78bb85bd749",
+    "results/tables/figure5_data.csv": "e143e8be7c4a125842b989e501598926e0992d191032ad3c99bc51a22613446e",
+    "results/tables/figure7_data.csv": "c762a83b141b57f9029b7fc287e03845b895579b7d539dc93e477b62523a6650",
+    "results/tables/figure8_data.csv": "f5189d970c0824ea1a0b61e90920bc62bcca0d0dcbb2cd69f7df3aa12c72183c",
+    "results/tables/hypothesis_eligibility.csv": "691df8e3f6e63b3388fbfaf26781803d8c3bdb0dd062b808b9245a99bb46ad29",
+    "results/tables/immune_block_adjusted.csv": "9e1da97dbe67435019cd02a381652413d3521e6d914785babeadf928cc561d7c",
+    "results/tables/immune_contrasts.csv": "d400e3908400ef90cde732c5afe48e5db3a8f300275f08cfb66e201dc7877ff6",
+    "results/tables/immune_control_cage_omission.csv": "ee0be9677483f065439faf7039bc90c9d49a33ef015edb34b7bd1fe5b52ed8d3",
+    "results/tables/immune_design_membership.csv": "31e6d4e2d572c243706b609caf97fbeeeba821e605449aa9dad8670a434add0f",
+    "results/tables/immune_missingness.csv": "43a400077a4780994d23f366f52b281c7b4ac0037cd24b9a553f871a56ad97dd",
+    "results/tables/immune_missingness_bounds.csv": "36524c929087b71740c4d3da634224cb85cf97d8ad5d5bcb95bf9aedc534e5e5",
+    "results/tables/immune_putative_cage_means.csv": "a55f208d6c0490b9c9d476d51df606ed1ab6b833c3e98b382dd232e5cc0f1698",
+    "results/tables/immune_putative_cage_units.csv": "e25cbfa032e023253ba53eedff7d0a8f3132445b940793760c7176dfa768862c",
+    "results/tables/immune_rank_effects.csv": "5df5a8f2cd427efa6bbc4e06ad3846e5634af0deb56d6c0c6a57c998fb939261",
+    "results/tables/immune_sensitivity.csv": "4537ed14675219033d366a5030dd1170dd5ff39720e9b3e70b3b5dbdf04ae867",
+    "results/tables/immune_summary.csv": "16736574826686e0b579b2839e61646c8bc60d71c114cda924bd48ab9ce09abf",
+    "results/tables/immune_tnfa_log_sensitivity.csv": "ba239ddf5f33ebb289d2f9f46f2e67388169fc035eb0d8905658688886b9c69b",
+    "results/tables/immune_within_block.csv": "360f1b1ca7184ac666c65de2405c728b047fdae62d503b7a13bb613cf73b0645",
+    "results/tables/original_method_replication.csv": "0aeb87be3b7c3aea076499b0ca440d679c3d6b8efff6b9b243d3e055e98129a4",
+    "results/tables/sample_linkage_audit.csv": "2f68cbe9a4c258e8891d8d084c903e85d42460ccb6148b0289444df16ace030b",
+    "results/tables/sequencing_design_inventory.csv": "489c526cce77a3c541aa6aa7aa0ad330a68fdfe9e56e43726fabf2c5674efafd",
+    "results/tables/sequencing_inventory.csv": "23575518adcce88557f6d62d26e8122e2513f0f04e8c1523b6922b2d8e0b560e",
+    "results/tables/software_calibration.csv": "04ba1c7953985ab67f672d8b074f0132f8e6f2f5b60f3e227f08eff5dbeaf987",
+    "results/tables/source_inventory.csv": "43ac0485dcae76377232029d5e5b5872fbc2d260a5405ade9e1086b98b3c477e",
+    "figures/figure1_design.pdf": "6673b649315ae3842f022be544336322ad1e22d727a8d438c9efca5889b0cb6a",
+    "figures/figure1_design.png": "f2f6b710dda3480a998f918747573154c2d87be48c20970998d2e76ee73f0903",
+    "figures/figure4_immune.pdf": "962beaa0c373e0888a7e11c8fa2dc2024df4e68540d9400b07fdf3b84589ccab",
+    "figures/figure4_immune.png": "0ab882d7160c1a3880bb803c197646f6de4b71ecd4ea4341a20ad0c07d2aeef2",
+    "figures/figure5_linkage_limit.pdf": "925987c68d18ed2b2166079a2ec0baa46dcb91b0343ab2483e6106a462742026",
+    "figures/figure5_linkage_limit.png": "a0603e51f371c055fd5a07e65b76aef96aed9d69e900f3842423534f1eb6b4f6",
+    "figures/figure7_robustness.pdf": "b9fb5f17dfb7e73cd755c7eda547f01e64807ab632cbdd9b4d17b6a35d23d018",
+    "figures/figure7_robustness.png": "373ed2e00e3079e23751c7cb6ecf903d1078c6d3b2ac8f0e67b8cb0ff3487880",
+    "figures/figure8_method_comparison.pdf": "f4093eac8338c645c12a6301adf3f86bc559a9f5cd135f9f23dbffc408b7aa29",
+    "figures/figure8_method_comparison.png": "ff7d6914e08198a81701b8c5dee9bbcfd8cb4f507c949c12227a0c6d5b8b0298"
+  },
+  "baseline_file_byte_comparison": {
+    "data/processed/immune_long.csv": "unchanged",
+    "figures/figure1_design.pdf": "changed",
+    "figures/figure1_design.png": "changed",
+    "figures/figure4_immune.pdf": "changed",
+    "figures/figure4_immune.png": "changed",
+    "figures/figure5_linkage_limit.pdf": "changed",
+    "figures/figure5_linkage_limit.png": "changed",
+    "figures/figure7_robustness.pdf": "unchanged",
+    "figures/figure7_robustness.png": "unchanged",
+    "figures/figure8_method_comparison.pdf": "unchanged",
+    "figures/figure8_method_comparison.png": "unchanged",
+    "results/tables/archive_files.csv": "changed",
+    "results/tables/article_methods_evidence.csv": "changed",
+    "results/tables/figure1_data.csv": "changed",
+    "results/tables/figure4_data.csv": "changed",
+    "results/tables/figure5_data.csv": "changed",
+    "results/tables/figure7_data.csv": "changed",
+    "results/tables/figure8_data.csv": "changed",
+    "results/tables/hypothesis_eligibility.csv": "changed",
+    "results/tables/immune_contrasts.csv": "changed",
+    "results/tables/immune_missingness.csv": "unchanged",
+    "results/tables/immune_missingness_bounds.csv": "unchanged",
+    "results/tables/immune_rank_effects.csv": "unchanged",
+    "results/tables/immune_sensitivity.csv": "unchanged",
+    "results/tables/immune_summary.csv": "unchanged",
+    "results/tables/original_method_replication.csv": "unchanged",
+    "results/tables/sample_linkage_audit.csv": "changed",
+    "results/tables/sequencing_inventory.csv": "changed",
+    "results/tables/software_calibration.csv": "changed",
+    "results/tables/source_inventory.csv": "unchanged"
+  },
+  "frozen_inputs_sha256": {
+    "data/raw/ritz2024_archive/Fvtstress_scripts_040124.pdf": "1a510d1e8691d01856383446999a5af57776b65d68504f73a54ef28733c59048",
+    "data/raw/ritz2024_archive/PRJNA970614_study.xml": "792c910856c5ab7fb480dc5049752ad59d98cd0e36188cdd35c07c0a3f0e5926",
+    "data/raw/ritz2024_archive/PRJNA970614_selected_samples.xml": "454f36c66a50bc22a09cb3aa36827571be130b540bf2112cd9bd38c5ba04c3bc",
+    "data/raw/ritz2024_archive/PRJNA970614_samples.xml": "4c0f1bed9763ea00bc0399e72f8196308281ca4b36aa5d4dced0addaa90fba43",
+    "data/raw/ritz2024_archive/PRJNA970614_ena_runs.tsv": "e9cc15f4d70609ffe5268631117cfc9a1e0bea09b107d99bd25b9539342f9e70",
+    "data/raw/ritz2024_archive/PRJEB69687_ena_runs.tsv": "71e69fe20f66cf1529ade4ca2d3c21bde143316d1d8135e1f6d71fc62c949fdc",
+    "data/raw/ritz2024_archive/PRJEB67706_ena_runs.tsv": "f789ebee1d8aac1aa99f254fccc0c89651df35f326eeeda2ec1bfda3aae649ec",
+    "data/raw/article.xml": "930377c6ff5be3a31815126ab34394eb80cd6e0e9f9ab1246b3e069767a701e6",
+    "data/raw/source_data.xlsx": "1eac33250329c4160caff224c8ae4618a4a4849d5a086986bd12e5bb1c50d368",
+    "data/manifests/zenodo_release.json": "76fda2c0a52bed064f829ba066fd03acf95229fcf493e2ace07d4f4c399c29db"
+  },
+  "byte_scope": "CSV-record comparisons are distinct from byte equality. LF serialization, clarified annotation, appended calibration and revised figures are disclosed above."
+}

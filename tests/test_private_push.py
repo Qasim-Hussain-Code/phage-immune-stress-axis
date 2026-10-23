@@ -12,9 +12,10 @@ SCRIPT = Path(__file__).resolve().parents[1]/'scripts/push_private.py'
 spec = importlib.util.spec_from_file_location('private_push', SCRIPT)
 policy = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(policy)
+APPROVED_AUTHOR = (policy.AUTHOR_NAME, 'researcher@example.invalid')
 
 
-def history(author=policy.AUTHOR, committer=policy.AUTHOR, subject='update_research_results', body=''):
+def history(author=APPROVED_AUTHOR, committer=APPROVED_AUTHOR, subject='update_research_results', body=''):
     return '\x1e' + '\0'.join(['a'*40, *author, *committer, subject, body]) + '\n'
 
 
@@ -43,7 +44,7 @@ class ReleaseIdentity(unittest.TestCase):
                 policy.validate_contributors(people)
 
     def test_user_authored_github_web_commits_remain_valid(self):
-        self.assertEqual(policy.validate_history(history(committer=('GitHub', 'noreply@github.com'))), 1)
+        self.assertEqual(policy.validate_history(history(committer=('GitHub', 'noreply@github.com')), APPROVED_AUTHOR), 1)
 
     def test_other_authors_committers_and_coauthor_trailers_are_rejected(self):
         for record in (history(author=('Someone else', 'other@example.invalid')),
@@ -51,18 +52,18 @@ class ReleaseIdentity(unittest.TestCase):
                        history(body='Co-authored-by: Someone else <other@example.invalid>'),
                        history(body='  co-AUTHORED-by: Someone else <other@example.invalid>')):
             with self.subTest(record=record), self.assertRaises(policy.PolicyError):
-                policy.validate_history(record)
+                policy.validate_history(record, APPROVED_AUTHOR)
 
     def test_commit_message_format_is_enforced(self):
         for subject in ('Update README', 'single', 'four_words_are_invalid', 'update-readme', 'Update_readme', 'update_readme!'):
             with self.subTest(subject=subject), self.assertRaises(policy.PolicyError):
-                policy.validate_history(history(subject=subject))
-        self.assertEqual(policy.validate_history(history(subject='update_readme')), 1)
+                policy.validate_history(history(subject=subject), APPROVED_AUTHOR)
+        self.assertEqual(policy.validate_history(history(subject='update_readme'), APPROVED_AUTHOR), 1)
 
     def test_credentials_in_commit_bodies_are_rejected_without_echoing_values(self):
         marker = 'gh' + 'p_' + 'Z'*36
         with self.assertRaises(policy.PolicyError) as error:
-            policy.validate_history(history(body='An accidentally pasted value: '+marker))
+            policy.validate_history(history(body='An accidentally pasted value: '+marker), APPROVED_AUTHOR)
         self.assertNotIn(marker, str(error.exception))
 
     def test_public_target_stops_before_any_git_or_push_operation(self):
@@ -142,8 +143,9 @@ class GitPolicy(unittest.TestCase):
                 del self.commands.environment[key]
         self.commands.git('init', '--quiet')
         self.commands.git('config', 'core.autocrlf', 'false')
-        self.commands.git('config', 'user.name', policy.AUTHOR[0])
-        self.commands.git('config', 'user.email', policy.AUTHOR[1])
+        self.commands.git('config', 'user.name', APPROVED_AUTHOR[0])
+        self.commands.git('config', 'user.email', APPROVED_AUTHOR[1])
+        self.commands.git('config', '--local', 'pisa.authorEmail', APPROVED_AUTHOR[1])
         self.commands.git('remote', 'add', 'origin', policy.URL)
 
     def tearDown(self):
@@ -156,6 +158,57 @@ class GitPolicy(unittest.TestCase):
 
     def test_default_approved_destination_is_valid(self):
         policy.check_destinations(self.commands)
+
+    def test_local_author_approval_is_explicit_and_history_remains_exact(self):
+        approved=policy.load_approved_author(self.commands)
+        self.assertEqual(approved,APPROVED_AUTHOR)
+        self.assertEqual(policy.validate_history(history(),approved),1)
+        self.commands.git('config','user.email','different@example.invalid')
+        self.assertEqual(policy.load_approved_author(self.commands),APPROVED_AUTHOR)
+        self.commit()
+        actual=self.commands.git('log','HEAD','--format=%x1e%H%x00%an%x00%ae%x00%cn%x00%ce%x00%s%x00%b')
+        with self.assertRaisesRegex(policy.PolicyError,'Only the researcher'):
+            policy.validate_history(actual,approved)
+
+    def test_current_git_identity_without_approval_is_insufficient(self):
+        self.commands.git('config','--local','--unset-all','pisa.authorEmail')
+        self.assertEqual(self.commands.git('config','user.email'),APPROVED_AUTHOR[1])
+        with self.assertRaisesRegex(policy.PolicyError,'local pisa.authorEmail'):
+            policy.load_approved_author(self.commands)
+
+    def test_duplicate_local_author_approval_is_rejected(self):
+        for second in (APPROVED_AUTHOR[1],'different@example.invalid'):
+            self.commands.git('config','--local','--replace-all','pisa.authorEmail',APPROVED_AUTHOR[1])
+            self.commands.git('config','--local','--add','pisa.authorEmail',second)
+            with self.subTest(second=second),self.assertRaisesRegex(policy.PolicyError,'exactly one'):
+                policy.load_approved_author(self.commands)
+
+    def test_invalid_local_author_approval_is_rejected_without_echoing_it(self):
+        invalid=('', ' ', 'not-an-email', 'Name <researcher@example.invalid>',
+                 'a..b@example.invalid', '.a@example.invalid', 'a.@example.invalid',
+                 'a@-example.invalid', 'a@example', 'a@example.invalid\nextra',
+                 ' researcher@example.invalid', 'researcher@example.invalid ')
+        for email in invalid:
+            self.commands.git('config','--local','--replace-all','pisa.authorEmail',email)
+            with self.subTest(email=email),self.assertRaisesRegex(policy.PolicyError,'well-formed') as failure:
+                policy.load_approved_author(self.commands)
+            if email.strip():
+                self.assertNotIn(email,str(failure.exception))
+
+    def test_global_inherited_and_included_values_cannot_supply_local_approval(self):
+        self.commands.git('config','--local','--unset-all','pisa.authorEmail')
+        global_config=self.root/'global-config'
+        self.commands.git('config','--file',str(global_config),'pisa.authorEmail',APPROVED_AUTHOR[1])
+        self.commands.environment['GIT_CONFIG_GLOBAL']=str(global_config)
+        with self.assertRaisesRegex(policy.PolicyError,'local pisa.authorEmail'):
+            policy.load_approved_author(self.commands)
+        self.commands.environment.update(GIT_CONFIG_COUNT='1',GIT_CONFIG_KEY_0='pisa.authorEmail',
+                                         GIT_CONFIG_VALUE_0=APPROVED_AUTHOR[1])
+        with self.assertRaisesRegex(policy.PolicyError,'local pisa.authorEmail'):
+            policy.load_approved_author(self.commands)
+        self.commands.git('config','--local','include.path',str(global_config))
+        with self.assertRaisesRegex(policy.PolicyError,'local pisa.authorEmail'):
+            policy.load_approved_author(self.commands)
 
     def test_separate_public_push_url_is_rejected(self):
         self.commands.git('remote', 'set-url', '--push', 'origin', 'https://example.invalid/public.git')
